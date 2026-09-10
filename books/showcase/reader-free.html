@@ -1,0 +1,150 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="The Showcase — a reflowable edition"><title>The Showcase — Reader</title><style>
+  :root { color-scheme: light dark; --paper:#fcfcfe; --ink:#1a1a2e; --muted:#586174; --line:#e1e4eb; --card:#fff; --accent:#6366F1; --measure:46rem; font: 18px/1.65 Inter, ui-sans-serif, system-ui, sans-serif; }
+  * { box-sizing:border-box; } body { margin:0; background:#f2f3f7; color:var(--ink); } a { color:inherit; } .reader-bar { position:sticky; top:0; z-index:2; display:flex; gap:.7rem; align-items:center; justify-content:space-between; padding:.75rem max(1rem, calc((100vw - var(--measure))/2)); background:color-mix(in srgb, var(--paper) 94%, transparent); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); } .reader-bar a { text-decoration:none; font-weight:700; } .controls { display:flex; gap:.35rem; } button { border:1px solid var(--line); border-radius:.5rem; padding:.28rem .55rem; background:var(--card); color:inherit; font:inherit; cursor:pointer; } main { max-width:var(--measure); margin:auto; background:var(--paper); min-height:100vh; padding:clamp(2rem, 8vw, 6rem) clamp(1.15rem, 6vw, 4.5rem); } .cover { min-height:62vh; display:flex; flex-direction:column; justify-content:center; border-bottom:1px solid var(--line); } .kicker { color:var(--accent); font-size:.76rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; } .cover h1 { font-size:clamp(2.5rem, 9vw, 5.6rem); line-height:1; letter-spacing:-.055em; margin:.65rem 0; } .subtitle { color:var(--muted); font-size:1.25rem; max-width:35rem; } .author { margin-top:2rem; font-weight:700; } nav { margin:3rem 0 4rem; padding:1.5rem; border:1px solid var(--line); border-radius:1rem; background:var(--card); } nav h2 { margin-top:0; } nav ol { padding-left:1.4rem; } nav li + li { margin-top:.45rem; } .part { margin:5rem 0 1.25rem; color:var(--accent); font-size:.82rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; } article { scroll-margin-top:5rem; } article + article { margin-top:4rem; padding-top:4rem; border-top:1px solid var(--line); } .sheet { display:block; padding:0; background:transparent; min-height:0; width:auto; height:auto; } .sheet .tab, .sheet .top, .sheet .foot, .sheet .rule, .sheet .sr { display:none; } .sheet .title { font-size:clamp(2rem, 6vw, 3.6rem); line-height:1.06; letter-spacing:-.045em; margin:0; } .sheet .sub { color:var(--muted); font-size:1.15rem; margin:.4rem 0 1.8rem; } .sheet .diagram, .sheet .photo { margin:1.5rem 0; } .sheet .diagram svg, .sheet .photo img { display:block; width:100%; max-height:none; height:auto; border-radius:.85rem; } .sheet .explain { font-size:1.05rem; } .sheet .explain p + p { margin-top:1em; } .sheet .ask { margin-top:1.5rem; padding:1rem 1.2rem; border-left:4px solid var(--accent); background:color-mix(in srgb, var(--accent) 7%, var(--card)); border-radius:.5rem; } .sheet .ask .lbl { font-size:.76rem; font-weight:800; letter-spacing:.1em; color:var(--accent); } .sheet .ask p { margin:.35rem 0 0; } .sheet .cue { color:var(--muted); } .sheet a { text-decoration-color:var(--accent); text-underline-offset:.16em; } body.dark { --paper:#161923; --ink:#f3f5fb; --muted:#b1b9ca; --line:#343a4b; --card:#202532; background:#0e1118; } @media (max-width: 36rem) { :root { font-size:16px; } .reader-bar { padding:.65rem 1rem; } main { padding:2.5rem 1.15rem; } } @media print { .reader-bar { display:none; } body, main { background:#fff; } main { max-width:none; padding:0; } article { break-inside:avoid; } }</style></head><body><header class="reader-bar"><a href="#top">The Showcase</a><div class="controls"><button type="button" data-size="-1" aria-label="Smaller text">A−</button><button type="button" data-size="1" aria-label="Larger text">A+</button><button type="button" id="theme" aria-label="Toggle colour theme">◐</button></div></header><main id="top"><section class="cover"><p class="kicker">Reflowable edition</p><h1>The Showcase</h1><p class="subtitle">Ten pages, ten subjects, one engine.</p><p class="author">Built with the paper engine</p></section><nav aria-label="Contents"><h2>Contents</h2><ol><li><strong>Things you make</strong><ol><li><a href="#resting-meat-1">Resting meat</a></li><li><a href="#the-bloom-2">The bloom</a></li></ol></li><li><strong>Things you practise</strong><ol><li><a href="#progressive-overload-3">Progressive overload</a></li></ol></li><li><strong>Things you protect</strong><ol><li><a href="#circuit-breaker-4">Circuit breaker</a></li></ol></li></ol></nav><article id="resting-meat-1"><div class="sheet bb">
+      <h2 class="sr">Resting meat: heat drives the juices to the centre of the meat, so cutting it straight off the pan spills them onto the board. A few minutes off the heat lets them settle back through the whole piece.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>The showcase</b></div>
+        <span class="pill">Cooking</span>
+      </div>
+      <h1 class="title">Resting meat</h1>
+      <div class="sub">Why you wait before you cut</div>
+      <hr class="rule">
+      <figure class="photo">
+        <img src="images/resting-meat.jpg" alt="A cooked steak resting on a wooden board, juices gathering underneath, a knife beside it.">
+      </figure>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you pull a steak off the pan and cut it right away. The juice runs out over the board, and <span class="bad">what's left on your plate is dry</span>.</p>
+        <p>Heat pushes the juice toward the middle of the meat. Give it a few minutes off the heat and <span class="hl">it settles back through the whole piece</span>. Same steak, <span class="good">nothing lost to the board</span>.</p>
+        <p class="close">The waiting is part of the cooking.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">TRY THIS TONIGHT</span>
+        <p>Take it off the heat, put it on a warm plate, cover it loosely. Five minutes for a steak, fifteen for a roast. Then cut.</p>
+      </div>
+      <div class="foot"><span class="brand">yoursite.com</span><span class="pg"></span><span class="series">The showcase</span></div>
+    </section>
+
+    <!-- ================================================== 2 · COFFEE (photo) --></div></article>
+<article id="the-bloom-2"><div class="sheet bb">
+      <h2 class="sr">The bloom: fresh coffee grounds are full of carbon dioxide that pushes water away. A small first pour and a thirty second wait lets the gas escape so the rest of the water can actually reach the coffee.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>The showcase</b></div>
+        <span class="pill">Coffee</span>
+      </div>
+      <h1 class="title">The bloom</h1>
+      <div class="sub">The first pour, and why it is small</div>
+      <hr class="rule">
+      <figure class="photo">
+        <img src="images/coffee-bloom.jpg" alt="Hot water poured over fresh coffee grounds in a plain white dripper, the grounds swelling into a domed crust of fine bubbles.">
+      </figure>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say your coffee keeps coming out thin and sour, and you've already tried grinding finer. Fresh grounds are <span class="hl">full of gas</span>, and gas pushes water away, so most of your pour runs past the coffee.</p>
+        <p>Wet them with a splash first, twice the weight of the coffee, and wait. The bed puffs into a dome and the bubbles stop. Now <span class="good">the water can get in</span>.</p>
+        <p class="close">Thirty seconds, and the rest of the pour finally works.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">TRY THIS TOMORROW</span>
+        <p>Pour twice the coffee's weight in water, just enough to wet everything. Wait thirty seconds. Then pour the rest.</p>
+      </div>
+      <div class="foot"><span class="brand">yoursite.com</span><span class="pg"></span><span class="series">The showcase</span></div>
+    </section>
+
+    <!-- ================================================== 3 · GARDENING (photo) --></div></article>
+<article id="progressive-overload-3"><div class="sheet bb">
+      <h2 class="sr">Progressive overload: your body adapts to exactly what you ask of it, so lifting the same weight every week keeps you the same. Adding a small amount each week is what makes you stronger.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>The showcase</b></div>
+        <span class="pill">Fitness</span>
+      </div>
+      <h1 class="title">Progressive overload</h1>
+      <div class="sub">A little more than last week</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: four weekly bars each slightly taller than the last, with a rising teal line along their tops, against a flat red dashed line showing what happens if the weight never changes.">
+          <defs>
+            <marker id="chapter-3-ar6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          </defs>
+          <line x1="30" y1="146" x2="570" y2="146" stroke="#E7E9EF" stroke-width="1.5"/>
+          <rect x="70" y="108" width="76" height="38" rx="6" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/>
+          <rect x="196" y="96" width="76" height="50" rx="6" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/>
+          <rect x="322" y="84" width="76" height="62" rx="6" fill="#E6E9FD" stroke="#D5D8FA" stroke-width="1"/>
+          <rect x="448" y="72" width="76" height="74" rx="6" fill="#DDE1FC" stroke="#C7CCF8" stroke-width="1"/>
+          <line x1="70" y1="108" x2="524" y2="108" stroke="#DC2626" stroke-width="1.6" stroke-dasharray="5 5"/>
+          <text x="586" y="104" text-anchor="end" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#DC2626">never add, stay here</text>
+          <path d="M108 108 L234 96 L360 84 L490 72" fill="none" stroke="#0D9488" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#chapter-3-ar6)"/>
+          <text x="300" y="46" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:600;fill:#0D9488">a little more each week</text>
+          <text x="108" y="164" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#5B6472">Week 1</text>
+          <text x="234" y="164" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#5B6472">Week 2</text>
+          <text x="360" y="164" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#5B6472">Week 3</text>
+          <text x="486" y="164" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#5B6472">Week 4</text>
+          <text x="296" y="190" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">ask for a little more · your body adapts · repeat</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you've been going to the gym for months, you never miss a session, and you look exactly the same. <span class="bad">You've been lifting the same weight the whole time.</span></p>
+        <p>Your body only builds what it keeps being asked for. Ask for the same thing every week and it has no reason to change. <span class="hl">Ask for slightly more</span>, one extra rep or the smallest plate on the bar, and <span class="good">it has to adapt</span>.</p>
+        <p class="close">Small, boring, every week. That is the whole method.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">THIS WEEK</span>
+        <p>Write down what you lifted. Next session add one rep, or the smallest weight you own. If you can't, keep it and try again next week.</p>
+      </div>
+      <div class="foot"><span class="brand">yoursite.com</span><span class="pg"></span><span class="series">The showcase</span></div>
+    </section>
+
+    <!-- ================================================== 7 · MONEY (diagram) --></div></article>
+<article id="circuit-breaker-4"><div class="sheet bb">
+      <h2 class="sr">Circuit breaker: after a service fails a few times in a row, the breaker stops calling it and returns a fallback immediately, so one broken dependency cannot make the whole app hang.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>The showcase</b></div>
+        <span class="pill">Code</span>
+      </div>
+      <h1 class="title">Circuit breaker</h1>
+      <div class="sub">Stop calling the thing that's down</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: your app calls a service through a circuit breaker; when the service is down the breaker opens and returns a fallback answer straight away instead of waiting.">
+          <defs>
+            <marker id="chapter-4-ar10" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <filter id="chapter-4-cs10" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter>
+          </defs>
+          <rect x="1" y="74" width="150" height="62" rx="13" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#chapter-4-cs10)"/>
+          <text x="76" y="100" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#1A1A2E">Your app</text>
+          <text x="76" y="118" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">asks for something</text>
+          <rect x="211" y="74" width="170" height="62" rx="13" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#chapter-4-cs10)"/>
+          <text x="296" y="100" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#4F46E5">The breaker</text>
+          <text x="296" y="118" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#6366F1">counts the failures</text>
+          <rect x="441" y="14" width="150" height="58" rx="13" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1" filter="url(#chapter-4-cs10)"/>
+          <text x="516" y="38" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#DC2626">The service</text>
+          <text x="516" y="56" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#DC2626">down</text>
+          <rect x="441" y="130" width="150" height="58" rx="13" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1" filter="url(#chapter-4-cs10)"/>
+          <text x="516" y="154" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#0D9488">A fallback</text>
+          <text x="516" y="172" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">right now, no waiting</text>
+          <line x1="151" y1="105" x2="211" y2="105" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#chapter-4-ar10)"/>
+          <path d="M381 92 L441 52" fill="none" stroke="#DC2626" stroke-width="1.75" stroke-dasharray="5 4" marker-end="url(#chapter-4-ar10)"/>
+          <path d="M381 118 L441 152" fill="none" stroke="#0D9488" stroke-width="1.75" marker-end="url(#chapter-4-ar10)"/>
+          <circle cx="181" cy="105" r="11" fill="#6366F1"/><text x="181" y="105" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#FFFFFF">1</text>
+          <circle cx="404" cy="66" r="11" fill="#6366F1"/><text x="404" y="66" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#FFFFFF">2</text>
+          <circle cx="404" cy="141" r="11" fill="#6366F1"/><text x="404" y="141" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#FFFFFF">3</text>
+          <text x="296" y="196" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">1 it asks · 2 it keeps failing · 3 stop asking, answer anyway</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say your app asks another service for something, maybe a payment check. One morning it's down, and <span class="bad">your whole app goes slow</span>, including the parts that don't use it.</p>
+        <p>Every request sits there waiting to time out. A breaker counts the failures, and after a few in a row it <span class="hl">stops calling and answers straight away</span> with whatever you chose to say instead. Now and then it tries one real call.</p>
+        <p class="close">One thing broke. Not everything.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">TELL THE AI</span>
+        <p>Put a circuit breaker around my calls to this service. Open it after a few failures, return a fallback right away, and retry one call now and then.</p>
+      </div>
+      <div class="foot"><span class="brand">yoursite.com</span><span class="pg"></span><span class="series">The showcase</span></div>
+    </div></article></main><script>const root=document.documentElement, saved=Number(localStorage.getItem('paper-engine-font')||0); root.style.fontSize=18+saved+'px'; document.querySelectorAll('[data-size]').forEach(b=>b.onclick=()=>{const n=Math.max(-3,Math.min(8,Number(localStorage.getItem('paper-engine-font')||0)+Number(b.dataset.size)));localStorage.setItem('paper-engine-font',n);root.style.fontSize=18+n+'px'});document.getElementById('theme').onclick=()=>document.body.classList.toggle('dark');</script></body></html>

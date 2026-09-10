@@ -10,6 +10,7 @@
     "shot": "node engine/tools/shot.mjs",
     "export": "node engine/tools/export.mjs",
     "reader": "node engine/tools/build-reader.mjs",
+    "studio": "node engine/tools/studio.mjs",
     "image": "node engine/tools/gen-image.mjs"
   },
   "devDependencies": {
