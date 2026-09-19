@@ -128,7 +128,7 @@ export async function exportEpub(bookHtml, out, { json = {}, edition = null, dat
       xhtml: p.xhtml.replace(/<img\b[^>]*?data-epub-img="([^"]+)"[^>]*>/g, (tag, key) => {
         const clean = tag.replace(/\sdata-epub-img="[^"]*"/, '');
         return srcOf.has(key) ? clean.replace(/\ssrc="[^"]*"/, ` src="${srcOf.get(key)}"`) : clean;
-      }),
+      }).replace(/href="#s(\d+)"/g, (m, n) => `href="p${String(n).padStart(4, '0')}.xhtml"`),   // cross-references: one sheet, one file
     }));
     size = { w: Math.round(got.w), h: Math.round(got.h) };
     lang = json.language || got.lang || 'en';

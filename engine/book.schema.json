@@ -107,8 +107,8 @@
     "matterPage": {
       "type": "object", "required": ["kind"], "additionalProperties": false,
       "properties": {
-        "kind": { "type": "string", "enum": ["dedication", "epigraph", "prose", "list", "sources"], "description": "dedication: a few centred lines. epigraph: a quotation. prose: a heading and paragraphs (preface, introduction, about the author). list: a heading and named items (also by, further reading). sources: generated from FACTS.md, nothing to write." },
-        "title": { "type": "string", "description": "The heading, and the line in the contents. Needed for prose and list. Sources defaults to Sources." },
+        "kind": { "type": "string", "enum": ["dedication", "epigraph", "prose", "list", "sources", "glossary"], "description": "glossary: generated from GLOSSARY.md, nothing to write. dedication: a few centred lines. epigraph: a quotation. prose: a heading and paragraphs (preface, introduction, about the author). list: a heading and named items (also by, further reading). sources: generated from FACTS.md, nothing to write." },
+        "title": { "type": "string", "description": "The heading, and the line in the contents. Needed for prose and list. Sources and glossary default to Sources and Glossary." },
         "body": { "type": "array", "items": { "type": "string" }, "description": "One string per paragraph (per line, for a dedication). **bold** and *italic* work. A paragraph starting with '## ' is a subheading. Long prose continues onto another sheet by itself." },
         "by": { "type": "string", "description": "Who said the epigraph, or the name a preface is signed with." },
         "items": {

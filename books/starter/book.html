@@ -152,12 +152,13 @@
     .gp.matter .mt-sources .nm{ flex:1; font-size:13.5px; font-weight:600; color:var(--ink); }
     .gp.matter .mt-sources .sr{ font-size:12px; line-height:1.5; color:var(--muted); }
     .gp.matter .mt-sources .ck{ white-space:nowrap; }
+    .gp.matter .mt-sources .df{ font-size:13px; line-height:1.5; color:var(--ink); }
   </style>
 </head>
 <body>
   <main class="deck">
 
-    <section class="sheet gp cover">
+    <section id="s1" class="sheet gp cover">
       <div class="in">
         <div class="gp-tab"></div>
         <div class="cv-kicker">A paper-engine book</div>
@@ -176,7 +177,7 @@
       </div>
     </section>
 
-    <section class="sheet gp colophon">
+    <section id="s2" class="sheet gp colophon">
       <div class="in">
         <div class="gp-tab"></div>
         <div class="cl-mid">
@@ -194,7 +195,7 @@
       </div>
     </section>
 
-    <section class="sheet gp toc">
+    <section id="s3" class="sheet gp toc">
       <div class="in">
         <div class="gp-top">
           <div class="gp-tab"></div>
@@ -209,13 +210,14 @@
           </div>
           <div class="toc-part">
             <div class="toc-row"><span class="nm">Sources</span><span class="pg">6</span></div>
+            <div class="toc-row"><span class="nm">Glossary</span><span class="pg">7</span></div>
           </div>
         </div>
         <div class="gp-foot"><span>yoursite.com</span><span>My First Book</span></div>
       </div>
     </section>
 
-    <section class="sheet gp divider">
+    <section id="s4" class="sheet gp divider">
       <div class="in">
         <div class="gp-top">
           <div class="gp-tab"></div>
@@ -236,7 +238,7 @@
       </div>
     </section>
 
-    <section class="sheet bb">
+    <section id="s5" class="sheet bb">
       <h2 class="sr">SSRF explainer page: an attacker pastes a URL that points back at your app's own machine; the app fetches it from inside its trusted network and the secret keys leak back out to the attacker.</h2>
       <div class="tab"></div>
       <div class="top">
@@ -285,7 +287,7 @@
       <div class="foot"><span class="brand">yoursite.com</span><span class="pg"></span><span class="series">Your first part</span></div>
     </section>
 
-    <section class="sheet gp matter m-sources" data-title="Sources">
+    <section id="s6" class="sheet gp matter m-sources" data-title="Sources">
       <div class="in">
         <div class="gp-top"><div class="gp-tab"></div></div>
         <h1 class="lp-title">Sources</h1>
@@ -300,7 +302,22 @@
       </div>
     </section>
 
-    <section class="sheet gp index">
+    <section id="s7" class="sheet gp matter m-glossary" data-title="Glossary">
+      <div class="in">
+        <div class="gp-top"><div class="gp-tab"></div></div>
+        <h1 class="lp-title">Glossary</h1>
+        <hr class="gp-rule">
+        <div class="mt-body">
+          
+          <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">SSRF</span><span class="pg">p. 5</span></div><div class="sr df">An attacker gives your app a URL that points back at your app's own machine. Your app fetches it from inside, and hands over things no outsider can reach.</div></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>yoursite.com</span><span>My First Book</span></div>
+      </div>
+    </section>
+
+    <section id="s8" class="sheet gp index">
       <div class="in">
         <div class="gp-top">
           <div class="gp-tab"></div>

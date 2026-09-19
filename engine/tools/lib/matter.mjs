@@ -24,12 +24,20 @@
            sources      GENERATED from FACTS.md: every fact a page in this
                         edition cites, its source, and the page that uses it.
                         Nothing is written by hand, so nothing can be invented.
+           glossary     GENERATED from GLOSSARY.md: every term a page in this
+                        edition uses, what it means, and the pages that use it.
+
+   The same pass resolves cross-references (lib/refs.mjs): a
+   <span class="xref">Page title</span> in a page becomes a link with the real
+   page number, and every sheet gets an id (s1, s2, ...) to link to.
    ========================================================================== */
 import { loadPlan } from './plan.mjs';
+import { loadRefs, XREF } from './refs.mjs';
 
-export const KINDS = ['dedication', 'epigraph', 'prose', 'list', 'sources'];
+export const KINDS = ['dedication', 'epigraph', 'prose', 'list', 'sources', 'glossary'];
+const GENERATED = new Set(['sources', 'glossary']);
 const BEFORE_CONTENTS = new Set(['dedication', 'epigraph']);
-const DEFAULT_TITLE = { dedication: 'Dedication', epigraph: 'Epigraph', sources: 'Sources' };
+const DEFAULT_TITLE = { dedication: 'Dedication', epigraph: 'Epigraph', sources: 'Sources', glossary: 'Glossary' };
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 /* **bold** and *italic*, and nothing else: this is a book.json string, not a document */
@@ -56,7 +64,7 @@ export function matterProblems(json, edition = null) {
     const at = `matter.${where}[${i}]${titleOf(m) ? ` (${titleOf(m)})` : ''}`;
     if (!KINDS.includes(m.kind)) { errors.push(`${at}: "kind" should be one of ${KINDS.join(', ')}`); return; }
     if ((m.kind === 'prose' || m.kind === 'list') && !titleOf(m)) errors.push(`${at}: a ${m.kind} page needs a "title"`);
-    if (m.kind !== 'sources' && m.kind !== 'list' && !lines(m.body).length) errors.push(`${at}: "body" is empty, so the page would be blank`);
+    if (!GENERATED.has(m.kind) && m.kind !== 'list' && !lines(m.body).length) errors.push(`${at}: "body" is empty, so the page would be blank`);
     const long = lines(m.body).find((p) => p.length > 2200);
     if (long) errors.push(`${at}: one paragraph is ${long.length} characters, more than a sheet holds. Break it into paragraphs (a blank line) and it will continue onto the next sheet by itself`);
     if (m.kind === 'list' && !(m.items || []).length) errors.push(`${at}: a list page needs "items"`);
@@ -73,6 +81,7 @@ export function matterProblems(json, edition = null) {
 const FIRST_PX = 690, NEXT_PX = 750;
 const proseCost = (p) => (p.startsWith('## ') ? 50 : Math.ceil(p.length / 76) * 23.2 + 13);
 const sourceCost = (f) => 21 + Math.ceil((f.source.length + 24) / 72) * 18 + 21;
+const termCost = (t) => 21 + Math.ceil(t.means.length / 74) * 19 + 21;
 const itemCost = (it) => 22 + (it.note ? Math.ceil(it.note.length / 78) * 20 : 0) + 13;
 
 function paginate(things, cost, reserve = 0) {
@@ -89,7 +98,7 @@ function paginate(things, cost, reserve = 0) {
 }
 
 /* ------------------------------------------------------------------ sheets */
-function sheetsFor(item, B, facts) {
+function sheetsFor(item, B, facts, terms) {
   const title = titleOf(item);
   const foot = `<div class="gp-foot"><span>${esc(B.brand || B.series)}</span><span>${esc(B.title)}</span></div>`;
   const open = (cls) => `    <section class="sheet gp matter ${cls}" data-title="${esc(title)}">\n      <div class="in">`;
@@ -120,6 +129,17 @@ function sheetsFor(item, B, facts) {
       `\n          <ul class="mt-items">\n            ` +
       bin.map((it) => `<li><span class="nm">${inline(it.name)}</span>${it.note ? `<span class="nt">${inline(it.note)}</span>` : ''}</li>`).join('\n            ') +
       `\n          </ul>\n        </div>\n        ${foot}${close}`);
+  }
+
+  if (item.kind === 'glossary') {
+    const intro = lines(item.body);
+    const bins = paginate(terms, termCost, intro.reduce((n, p) => n + proseCost(p), 0));
+    return bins.map((bin, i) => `${open('m-glossary')}${headed(i === 0)}\n        <div class="mt-body">\n          ` +
+      (i === 0 ? intro.map((p) => `<p>${inline(p)}</p>`).join('\n          ') : '') +
+      `\n          <ol class="mt-sources">\n            ` +
+      bin.map((t) => `<li><div class="sh"><span class="nm">${esc(t.term)}</span><span class="pg">{{TERM:${terms.indexOf(t)}}}</span></div>` +
+        `<div class="sr df">${inline(t.means)}</div></li>`).join('\n            ') +
+      `\n          </ol>\n        </div>\n        ${foot}${close}`);
   }
 
   /* sources: `facts` is already only what this edition cites; page numbers are filled in later */
@@ -155,7 +175,12 @@ const CSS = `    /* ============================================================
     .gp.matter .mt-sources .sh{ display:flex; align-items:baseline; gap:12px; line-height:1.5; }
     .gp.matter .mt-sources .nm{ flex:1; font-size:13.5px; font-weight:600; color:var(--ink); }
     .gp.matter .mt-sources .sr{ font-size:12px; line-height:1.5; color:var(--muted); }
-    .gp.matter .mt-sources .ck{ white-space:nowrap; }`;
+    .gp.matter .mt-sources .ck{ white-space:nowrap; }
+    .gp.matter .mt-sources .df{ font-size:13px; line-height:1.5; color:var(--ink); }`;
+
+const XREF_CSS = `    /* cross-references, resolved by engine/tools/lib/matter.mjs */
+    .sheet a.xref{ color:inherit; text-decoration:none; }
+    .sheet .xref .xref-pg{ white-space:nowrap; opacity:.7; font-variant-numeric:tabular-nums; }`;
 
 /* ------------------------------------------------------------------ the rebuild */
 const OPEN = /<section class="sheet (?:gp|bb)[^"]*"[^>]*>/g;
@@ -168,7 +193,8 @@ const kindOfSheet = (s) => {
    matter in it, or the same string untouched if this edition has none. */
 export function applyMatter(html, json, { dir, edition = null } = {}) {
   const { front, back } = matterFor(json, edition);
-  if (!front.length && !back.length) return { html, added: 0, notes: [] };
+  const hasXrefs = html.replace(/<!--[\s\S]*?-->/g, '').search(new RegExp(XREF.source)) !== -1;
+  if (!front.length && !back.length && !hasXrefs) return { html, added: 0, notes: [] };
   const bad = matterProblems(json, edition).errors;
   if (bad.length) throw new Error('book.json "matter" has errors, so the book was not built:\n' + bad.map((e) => '  - ' + e).join('\n'));
 
@@ -204,8 +230,17 @@ export function applyMatter(html, json, { dir, edition = null } = {}) {
     facts.sort((a, b) => Math.min(...a.titles.map((t) => allTitles.indexOf(t))) - Math.min(...b.titles.map((t) => allTitles.indexOf(t))));
     if (!facts.length) notes.push(plan.hasFacts ? 'Sources page left out: no page in this edition cites a fact from FACTS.md.' : 'Sources page left out: there is no FACTS.md.');
   }
-  const make = (list) => list.filter((m) => m.kind !== 'sources' || facts.length)
-    .map((m) => ({ item: m, sheets: sheetsFor(m, B, facts).map((h) => ({ html: h, kind: 'matter' })) }));
+  /* glossary: only the terms a page in THIS edition uses */
+  let terms = [];
+  const refs = loadRefs(dir, edition);
+  if ([...front, ...back].some((m) => m.kind === 'glossary')) {
+    terms = refs.terms.filter((t) => t.means && t.usedBy.length);
+    if (!terms.length) notes.push(refs.hasGlossary ? 'Glossary page left out: no page in this edition uses a term from GLOSSARY.md.' : 'Glossary page left out: there is no GLOSSARY.md.');
+  }
+  for (const x of refs.xrefs.filter((x) => x.state === 'unknown'))
+    notes.push(`${x.from} points at "${x.to}", and no page has that title. It was left as plain words; preflight will fail it.`);
+  const make = (list) => list.filter((m) => (m.kind !== 'sources' || facts.length) && (m.kind !== 'glossary' || terms.length))
+    .map((m) => ({ item: m, sheets: sheetsFor(m, B, facts, terms).map((h) => ({ html: h, kind: 'matter' })) }));
   const F = make(front), K = make(back);
   const frontA = F.filter((x) => BEFORE_CONTENTS.has(x.item.kind)), frontB = F.filter((x) => !BEFORE_CONTENTS.has(x.item.kind));
 
@@ -263,12 +298,19 @@ export function applyMatter(html, json, { dir, edition = null } = {}) {
     if (s.kind === 'matter') s.html = s.html.replace(/\{\{PAGES:(F\d+)\}\}/g, (m, id) => {
       const nums = [...new Set(facts.find((f) => f.id === id).titles.map((t) => pageOf.get(t)))].sort((a, b) => a - b);
       return `p. ${nums.join(', ')}`;
+    }).replace(/\{\{TERM:(\d+)\}\}/g, (m, i) => `p. ${terms[+i].usedBy.map((t) => pageOf.get(t)).sort((a, b) => a - b).join(', ')}`);
+    /* one page pointing at another: the number is where the target really is. A target
+       that is not in this edition stays plain words, because there is no page to turn to. */
+    if (s.kind === 'page') s.html = s.html.replace(XREF, (m, to, inner) => {
+      const n = pageOf.get((to ?? inner.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ')).trim());
+      return n && n !== at(s) ? `<a class="xref" href="#s${n}">${inner}<span class="xref-pg"> (p. ${n})</span></a>` : inner;
     });
   }
+  seq.forEach((s, n) => { s.html = s.html.replace(/^(\s*<section )/, `$1id="s${n + 1}" `); });
 
   /* trimmed like build-book's own sheets, so the indent has to be put back */
   const out = seq.map((s) => (s.html.startsWith('    ') ? s.html : '    ' + s.html)).join('\n\n');
-  const merged = head.replace('</head>', `  <style>\n${CSS}\n  </style>\n</head>`) + out + '\n' + tail;
+  const merged = head.replace('</head>', `  <style>\n${[F.length + K.length ? CSS : '', hasXrefs ? XREF_CSS : ''].filter(Boolean).join('\n\n')}\n  </style>\n</head>`) + out + '\n' + tail;
   const count = (list) => list.reduce((n, x) => n + x.sheets.length, 0);
-  return { html: merged, added: count(F) + count(K), front: count(F), back: count(K), total: seq.length, notes };
+  return { html: merged, changed: true, added: count(F) + count(K), front: count(F), back: count(K), total: seq.length, notes };
 }

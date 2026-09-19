@@ -6,7 +6,7 @@ record of who looked at what, and releases you can find again.
 
 ```
 WRITE ──> BUILD ──> PREFLIGHT ──> REVIEW ──> RELEASE
-pages     book.html   18 checks     a person     dated folder in dist/
+pages     book.html   19 checks     a person     dated folder in dist/
                                     approves     PDF + print PDF + EPUB + manifest
 ```
 
@@ -89,6 +89,7 @@ node engine/tools/preflight.mjs books/<slug> [--edition free] [--strict] [--json
 | Facts | a page cites a fact id that is not in `FACTS.md`, a cited fact has no Source, or an id is defined twice | there is no `FACTS.md`, an entry has no Facts line, or a figure printed on a page is not in the facts that page cites |
 | Image rights | `images.json` breaks its schema, or a picture shown in the book is missing from it, is `licensed` or `public-domain` with no licence written down, or is `licensed` with no credit or url | there is no `images.json`, a file in `images/` is on no page, a generated picture has no subject or prompt, or no licence is recorded |
 | Front/back matter | a `matter` page cannot be made: a prose or list page with no title, an empty body, a paragraph longer than a sheet | an epigraph with no `by`, starter placeholders in the text, a `sources` page with nothing to list |
+| References | a cross-reference names a page that does not exist or the page it is on, `GLOSSARY.md` defines a term twice or with no `Means` line | a cross-reference's target is not in this edition (it prints with no number), a glossary term no page uses, a `GLOSSARY.md` with no `glossary` page to print it, or the reverse |
 | Build | `book.html` is missing or older than its source | |
 | Pages fit | any page is past the bottom edge, or the stylesheet never loaded | |
 | Images load | any image is broken | |
@@ -179,6 +180,7 @@ node engine/tools/build.mjs books/<slug>        # build-book.mjs, then the matte
   ],
   "back": [
     { "kind": "sources" },
+    { "kind": "glossary" },
     { "kind": "prose", "title": "About the author", "body": ["…"] },
     { "kind": "list", "title": "Also by", "items": [{ "name": "Another book", "note": "One line about it." }] },
     { "kind": "prose", "title": "Get the full book", "body": ["…"], "editions": ["free"] }
@@ -201,6 +203,33 @@ estimated, on the careful side, and preflight still measures every sheet in a br
 source, the date you checked it, and the page that uses it. There is nothing to write, so
 there is nothing to get wrong. In the Studio, all of this is the **Front and back matter**
 panel of the Structure tab.
+
+### The glossary and cross-references
+
+```markdown
+## SSRF
+- **Means:** A request your server is tricked into making for someone else.
+- **Also:** server-side request forgery
+```
+
+`books/<slug>/GLOSSARY.md` holds the terms, and `{ "kind": "glossary" }` under `matter`
+prints them: alphabetical, each with what it means and the pages that use it. Only terms a
+page in that edition actually uses are printed. Which pages those are is **read from the
+pages** (the term, or anything on its `Also` line, as a whole word, any case), so the
+numbers cannot go stale and there is nothing to keep in step.
+
+To point one page at another, write the target's exact title in the page:
+
+```html
+See <span class="xref">Circuit breaker</span>.
+See <span class="xref" data-to="Circuit breaker">the page on breakers</span>.
+```
+
+`build.mjs` turns that into "Circuit breaker (p. 21)", with the number taken from where
+the page really is, as a link that works in the PDF and the fixed-layout EPUB. In an
+edition that leaves the target out, the words stay and no number is printed. Preflight
+fails a reference to a title that does not exist. The number makes the line a little
+longer, so check the page still reads `0 mm`.
 
 ### Publishing metadata
 

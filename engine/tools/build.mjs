@@ -37,9 +37,9 @@ catch (e) {
   fs.rmSync(outPath, { force: true });   // half a book is worse than none: its contents would be wrong
   console.error('\n' + e.message + '\n'); process.exit(1);
 }
+if (r.changed) fs.writeFileSync(outPath, r.html);   // matter added, or cross-references given their numbers
 if (!r.added && !r.notes.length) { process.stdout.write(b.stdout); process.exit(0); }
 
-if (r.added) fs.writeFileSync(outPath, r.html);
 const out = b.stdout.split('\n');
 if (r.added) {
   out[0] = out[0].replace(/^wrote \d+ pages/, `wrote ${r.total} pages`);

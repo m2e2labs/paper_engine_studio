@@ -230,7 +230,7 @@ function bookSummary(slug) {
 }
 
 /* The two plain-markdown sources the Studio may edit, by name and never by path. */
-const SOURCES = { blocks: 'blocks.md', facts: 'FACTS.md', images: 'images.json' };
+const SOURCES = { blocks: 'blocks.md', facts: 'FACTS.md', images: 'images.json', glossary: 'GLOSSARY.md' };
 
 function planSummary(dir) {
   try { const p = loadPlan(dir); return { ...p.counts, hasBlocks: p.hasBlocks, hasFacts: p.hasFacts }; } catch { return null; }

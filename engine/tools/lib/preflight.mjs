@@ -16,6 +16,7 @@ import { inspectBook } from './measure.mjs';
 import { loadPlan } from './plan.mjs';
 import { loadImages } from './images.mjs';
 import { matterFor, matterProblems, titleOf } from './matter.mjs';
+import { loadRefs } from './refs.mjs';
 import { validateBookJson, publishingFor, isbnOk, isbnDigits } from './schema.mjs';
 
 const PLACEHOLDERS = ['Your Name', 'yoursite.com', 'My First Book', 'My first book'];
@@ -140,6 +141,28 @@ export async function preflight(dir, { bookHtml, edition = null, strict = false 
     else add('matter', 'Front/back matter', 'pass', `${mtAll.length} page(s): ${mtAll.map(titleOf).join(', ')}.`);
   }
 
+  /* ---- 2e. the glossary, and pages that point at other pages */
+  const refs = loadRefs(dir, edition);
+  const wantsGlossary = mtAll.some((m) => m.kind === 'glossary');
+  {
+    const hard = [
+      ...refs.xrefs.filter((x) => x.state === 'unknown').map((x) => `${x.from}: points at "${x.to}", and no page has that title`),
+      ...refs.xrefs.filter((x) => x.state === 'self').map((x) => `${x.from}: points at itself`),
+      ...refs.duplicates.map((t) => `GLOSSARY.md defines "${t}" twice`),
+      ...refs.terms.filter((t) => !t.means).map((t) => `GLOSSARY.md: "${t.term}" has no Means line`),
+    ];
+    const soft = [
+      ...refs.xrefs.filter((x) => x.state === 'absent').map((x) => `${x.from}: points at "${x.to}", which is not in this ${edition ? 'edition' : 'book'}, so no page number is printed`),
+      ...refs.terms.filter((t) => t.means && !t.usedBy.length).map((t) => `"${t.term}" is in GLOSSARY.md, but no page in this ${edition ? 'edition' : 'book'} uses it`),
+      ...(wantsGlossary && !refs.hasGlossary ? ['a glossary page is asked for, but there is no GLOSSARY.md, so it is left out'] : []),
+      ...(refs.hasGlossary && refs.terms.length && !wantsGlossary ? ['there is a GLOSSARY.md, but no "glossary" page in book.json\'s matter, so it is not printed'] : []),
+    ];
+    const used = refs.terms.filter((t) => t.usedBy.length).length, okRefs = refs.xrefs.filter((x) => x.state === 'ok').length;
+    if (hard.length) add('refs', 'References', 'fail', 'A cross-reference or a glossary entry leads nowhere.', [...hard, ...soft]);
+    else if (soft.length) add('refs', 'References', 'warn', 'The references need a look.', soft);
+    else add('refs', 'References', 'pass', used || okRefs ? `${okRefs} cross-reference(s) and ${used} glossary term(s), every one leading to a page.` : 'No glossary and no cross-references.');
+  }
+
   /* ---- 3. is book.html the book we are about to look at? */
   if (!fs.existsSync(htmlPath)) {
     add('build', 'Build', 'fail', `${path.basename(htmlPath)} does not exist. Build the book first.`);
@@ -147,10 +170,13 @@ export async function preflight(dir, { bookHtml, edition = null, strict = false 
   }
   const built = fs.statSync(htmlPath).mtimeMs;
   const sources = [book.interiorPath, book.jsonPath];
+  if (wantsGlossary) sources.push(path.join(dir, 'GLOSSARY.md'));
   if (mtAll.some((m) => m.kind === 'sources') && plan.hasFacts) sources.push(path.join(dir, 'FACTS.md'), path.join(dir, 'blocks.md'));   // the sources page is made from these
   const newer = sources.filter((f) => fs.existsSync(f) && fs.statSync(f).mtimeMs > built + 1000);
-  const bare = mtAll.some((m) => m.kind !== 'sources') && !/class="sheet gp matter /.test(fs.readFileSync(htmlPath, 'utf8'));
-  if (bare) add('build', 'Build', 'fail', `${path.basename(htmlPath)} was built without its front and back matter. Build with build.mjs, not build-book.mjs.`);
+  const builtHtml = fs.readFileSync(htmlPath, 'utf8');
+  const bare = (mtAll.some((m) => m.kind !== 'sources' && m.kind !== 'glossary') && !/class="sheet gp matter /.test(builtHtml)) ||
+    (refs.xrefs.length > 0 && /<span class="xref"/.test(builtHtml.replace(/<!--[\s\S]*?-->/g, '')) && !/ id="s1"/.test(builtHtml));
+  if (bare) add('build', 'Build', 'fail', `${path.basename(htmlPath)} was built without its front and back matter or its cross-references. Build with build.mjs, not build-book.mjs.`);
   else if (newer.length) add('build', 'Build', 'fail', `${path.basename(htmlPath)} is older than its source. Rebuild.`, newer.map((f) => path.basename(f)));
   else add('build', 'Build', 'pass', `${path.basename(htmlPath)} is up to date.`);
 

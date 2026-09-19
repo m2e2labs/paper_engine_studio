@@ -58,6 +58,15 @@ Never skip this. It is their one chance to lead the page before you fill in the 
    block's Facts line, and only then write the sentence. Never write the sentence first.
    If the book has no `FACTS.md`, copy `books/starter/FACTS.md` and start one.
 
+5. `books/<slug>/GLOSSARY.md`, if the book has one — the author's terms and what they mean
+   by them. Use a term the way its `Means` line says. Do not add a term or rewrite a
+   definition yourself: ask the author, as with a fact.
+
+**Pointing at another page.** Write `<span class="xref">Exact page title</span>` (or
+`<span class="xref" data-to="Exact page title">your words</span>`). Never type a page
+number. `build.mjs` prints the real one, "Circuit breaker (p. 21)", so leave room on the
+line for it and run `check.mjs` afterwards. Only point at a page that exists.
+
 ## Step 1 — diagram or photo?
 
 The band is one picture. Decide which kind before you write, because it changes the copy.
@@ -117,7 +126,7 @@ gone wrong on real pages, and it wins over the general guidance when they disagr
 ## Step 4 — verify, and actually look
 
 ```bash
-node engine/tools/build.mjs books/<slug>          # assemble
+node engine/tools/build.mjs books/<slug>          # assemble (also gives every xref its page number)
 node engine/tools/check.mjs books/<slug>/book.html  # MUST be 0 mm on every page
 node engine/tools/shot.mjs  books/<slug>/book.html  # then READ the PNGs
 ```

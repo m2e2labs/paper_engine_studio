@@ -52,7 +52,7 @@ cropped through its subject, or a diagram that says the wrong thing. **Always ru
 The loop above is for writing. To ship, use the production tools (`docs/PRODUCTION.md`):
 
 ```bash
-node engine/tools/preflight.mjs books/<slug>                     # the release gate, 18 checks
+node engine/tools/preflight.mjs books/<slug>                     # the release gate, 19 checks
 node engine/tools/release.mjs   books/<slug> --editions all --bleed 3 --epub
 npm run studio                                                   # the same, as a local web UI
 ```
@@ -70,12 +70,20 @@ npm run studio                                                   # the same, as 
   JSON Schema keywords that file uses and throws on any other, on purpose.
 - **Never invent an ISBN, a price or a publication date.** Those come from the author.
 - **Front and back matter lives in `book.json` under `matter`** (`front` and `back`: a
-  `dedication`, an `epigraph`, `prose`, a `list`, or `sources`). `build.mjs` runs
+  `dedication`, an `epigraph`, `prose`, a `list`, `sources` or `glossary`). `build.mjs` runs
   `build-book.mjs` and then adds those sheets, and rewrites the contents and index numbers
   from where every sheet really ended up. Always build with `build.mjs`; preflight fails a
   book with matter that was built without it. A dedication, a preface, a biography and an
   "also by" list are the author's words: **never write one the author did not give you.**
   The `sources` page is generated from `FACTS.md`, so there is nothing to write.
+- **`books/<slug>/GLOSSARY.md` is the author's list of terms** (`## Term`, a `Means` line, an
+  optional `Also` line). A `glossary` matter page prints the terms the pages actually use.
+  Which pages use a term is read from the pages, never written down. A definition is the
+  author's meaning: ask before adding a term, as with a fact.
+- **To point at another page, write `<span class="xref">Exact page title</span>`** (or
+  `data-to="Exact page title"` when the words differ). Never type a page number: `build.mjs`
+  prints the real one, and leaves plain words in an edition that does not hold the target.
+  The number adds a few characters to the line, so run `check.mjs` after adding one.
 - `dist/`, `.studio/` and `book-<edition>.html` are regenerable and gitignored.
 - Shared code for these tools lives in `engine/tools/lib/`. `build-book.mjs`, `check.mjs`
   and `shot.mjs` are untouched upstream files (`build.mjs` wraps the first); keep them that way so upstream still merges.

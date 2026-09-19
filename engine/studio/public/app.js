@@ -635,9 +635,9 @@ function viewStructure() {
 
   /* ---- front and back matter: the pages around the pages */
   const mt = (d.matter ||= {});
-  const KIND_LABEL = { dedication: 'Dedication', epigraph: 'Epigraph', prose: 'Prose page', list: 'List', sources: 'Sources (from FACTS.md)' };
+  const KIND_LABEL = { dedication: 'Dedication', epigraph: 'Epigraph', prose: 'Prose page', list: 'List', sources: 'Sources (from FACTS.md)', glossary: 'Glossary (from GLOSSARY.md)' };
   const STARTER = { dedication: { kind: 'dedication', body: [] }, epigraph: { kind: 'epigraph', body: [], by: '' }, prose: { kind: 'prose', title: '', body: [] },
-    list: { kind: 'list', title: '', items: [] }, sources: { kind: 'sources' } };
+    list: { kind: 'list', title: '', items: [] }, sources: { kind: 'sources' }, glossary: { kind: 'glossary' } };
   const matterItem = (list, m, i) => {
     const perLine = m.kind === 'dedication';
     const inToc = m.toc === undefined ? !['dedication', 'epigraph'].includes(m.kind) : m.toc;
@@ -645,18 +645,20 @@ function viewStructure() {
     return h('div.part',
       h('div.part-top', h('span.tag', KIND_LABEL[m.kind] || m.kind),
         m.kind !== 'dedication' && m.kind !== 'epigraph'
-          ? h('input', { type: 'text', placeholder: m.kind === 'sources' ? 'Sources' : 'Heading: Preface, About the author, …', ...bind(m, 'title') }) : h('span.grow'),
+          ? h('input', { type: 'text', placeholder: m.kind === 'sources' ? 'Sources' : m.kind === 'glossary' ? 'Glossary' : 'Heading: Preface, About the author, …', ...bind(m, 'title') }) : h('span.grow'),
         h('button.btn.small', { onclick: () => move(list, i, -1), disabled: i === 0, 'aria-label': 'Move up' }, '↑'),
         h('button.btn.small', { onclick: () => move(list, i, 1), disabled: i === list.length - 1, 'aria-label': 'Move down' }, '↓'),
         h('button.btn.small.danger', { onclick: () => { if (confirm('Remove this page?')) { list.splice(i, 1); touch(); } } }, 'Remove')),
       h('div.fields',
-        h('label.f.span', m.kind === 'sources' ? 'A line above the list, if you want one' : m.kind === 'list' ? 'A line above the list, if you want one' : perLine ? 'The words, one line per line' : 'The words. A blank line starts a paragraph; a paragraph starting with ## is a subheading; **bold** and *italic* work',
+        h('label.f.span', m.kind === 'sources' || m.kind === 'glossary' ? 'A line above the list, if you want one' : m.kind === 'list' ? 'A line above the list, if you want one' : perLine ? 'The words, one line per line' : 'The words. A blank line starts a paragraph; a paragraph starting with ## is a subheading; **bold** and *italic* work',
           h('textarea', { rows: m.kind === 'prose' ? 9 : 3, value: (m.body || []).join(perLine ? '\n' : '\n\n'),
             oninput: (e) => { m.body = e.target.value.split(perLine ? '\n' : /\n\s*\n/).map((x) => x.trim()).filter(Boolean); markDirty(); } })),
         m.kind === 'list' && h('label.f.span', 'Items, one per line:  Name | a note about it',
           h('textarea', { rows: 5, value: (m.items || []).map((it) => (it.note ? `${it.name} | ${it.note}` : it.name)).join('\n'),
             oninput: (e) => { m.items = e.target.value.split('\n').map((x) => x.trim()).filter(Boolean).map((x) => { const [name, ...rest] = x.split('|'); const note = rest.join('|').trim(); return note ? { name: name.trim(), note } : { name: name.trim() }; }).filter((it) => it.name); markDirty(); } })),
         (m.kind === 'epigraph' || m.kind === 'prose') && h('label.f', m.kind === 'epigraph' ? 'Who said it' : 'Signed (optional)', h('input', { type: 'text', ...bind(m, 'by') }))),
+      m.kind === 'glossary' && h('p.hint', { style: 'margin:10px 0 0' }, 'Nothing to write here. It prints every term in GLOSSARY.md that a page in the book uses, with what it means and the pages that use it. ',
+        h('a', { href: '#', style: 'color:var(--accent)', onclick: (e) => { e.preventDefault(); editSource('glossary', 'GLOSSARY.md', 'One ## heading per term, then a Means line and an optional Also line. Which pages use a term is read from the pages.', '# Glossary\n\nThe words this book uses in its own way. A "glossary" page in book.json prints the ones a page\nactually uses, with the pages that use them. Write only what you mean by the word.\n\n## A term\n- **Means:** What you mean by it, in a sentence or two.\n- **Also:** other spellings, plurals, the long form\n'); } }, 'Edit GLOSSARY.md')),
       m.kind === 'sources' && h('p.hint', { style: 'margin:10px 0 0' }, 'Nothing to write. It lists every fact in FACTS.md that a page in the book cites, with its source and the page that uses it.'),
       h('div', { style: 'display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;align-items:center' },
         h('label.check', h('input', { type: 'checkbox', checked: inToc, onchange: (e) => { m.toc = e.target.checked; markDirty(); } }), 'List in the contents'),
@@ -671,7 +673,7 @@ function viewStructure() {
       list.map((m, i) => matterItem(list, m, i)),
       h('div', { style: 'display:flex;gap:6px;flex-wrap:wrap;margin-top:10px' },
         Object.keys(STARTER).filter((k) => key === 'front' || (k !== 'dedication' && k !== 'epigraph'))
-          .map((k) => h('button.btn.small', { onclick: () => { list.push(structuredClone(STARTER[k])); touch(); } }, `+ ${KIND_LABEL[k].replace(' (from FACTS.md)', '')}`))));
+          .map((k) => h('button.btn.small', { onclick: () => { list.push(structuredClone(STARTER[k])); touch(); } }, `+ ${KIND_LABEL[k].replace(/ \(from .*\)/, '')}`))));
   };
   const matter = h('div.panel', h('h2', 'Front and back matter'),
     h('p.hint', 'The pages around your pages. They take real page numbers, and the contents and the index are renumbered to match. Long prose continues onto another sheet by itself. Write only what is true: nobody invents a dedication or a biography for you.'),
@@ -685,7 +687,7 @@ function viewStructure() {
 function viewPreflight() {
   const pre = S.book.preflight;
   const runBtn = h('button.btn.primary', { 'data-runs': true, onclick: () => run('preflight') }, pre ? 'Run preflight again' : 'Run preflight');
-  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'The checks between a book that builds and a book that is ready to ship: details, book.json, publishing, running order, plan, facts, image rights, front and back matter, stale build, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
+  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'The checks between a book that builds and a book that is ready to ship: details, book.json, publishing, running order, plan, facts, image rights, front and back matter, references, stale build, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
   const word = { pass: 'Ready to release', warn: 'Ready, with warnings', fail: 'Not ready' }[pre.result];
   return [
     h('div.verdict', h('span.tag.' + pre.result, pre.result.toUpperCase()), h('span.big', word),
