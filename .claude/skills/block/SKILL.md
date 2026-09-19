@@ -45,9 +45,18 @@ Never skip this. It is their one chance to lead the page before you fill in the 
 **Then read three files, in this order:**
 
 1. `books/<slug>/blocks.md` — what this page is about. **Never invent the topic.**
+   Its **Facts** line names the facts this page may state.
 2. `books/<slug>/VOICE.md` — how this book sounds. This is law.
 3. `books/<slug>/book.json` — the chrome (series label, brand, whether pages are
    numbered) and which part the page belongs to.
+
+4. `books/<slug>/FACTS.md` — what the author actually knows, each fact with its source.
+   Read the facts the block cites. **A page may only state what those facts state**:
+   every figure, name, study and personal story on the page has to be in one of them.
+   If the page needs a fact that is not there, stop and ask the author for it and where
+   it came from, add it to `FACTS.md` under the next free id, cite that id on the
+   block's Facts line, and only then write the sentence. Never write the sentence first.
+   If the book has no `FACTS.md`, copy `books/starter/FACTS.md` and start one.
 
 ## Step 1 — diagram or photo?
 
@@ -123,6 +132,9 @@ bottom of the drawing instead of fixing anything.
 ## Hard rules
 
 - **Never invent the topic.** It comes from `blocks.md`.
+- **Never invent a fact.** Every figure, name, study and story comes from a fact in
+  `FACTS.md` that the block cites. `preflight.mjs` compares the figures on the page with
+  those facts and lists the ones it cannot trace. Fix the source, not the check.
 - **Never fabricate** a number, a study, a quote, or a personal story.
 - **No em dashes.** Commas or full stops.
 - **Write for someone who does not know the term.** The only unfamiliar word allowed is

@@ -6,7 +6,7 @@ record of who looked at what, and releases you can find again.
 
 ```
 WRITE ──> BUILD ──> PREFLIGHT ──> REVIEW ──> RELEASE
-pages     book.html   12 checks     a person     dated folder in dist/
+pages     book.html   14 checks     a person     dated folder in dist/
                                     approves     PDF + print PDF + EPUB + manifest
 ```
 
@@ -20,6 +20,7 @@ npm run studio          # http://localhost:4173
 
 | Tab | What you do there |
 |---|---|
+| **Plan** | `blocks.md` and `FACTS.md` read as data: every planned page with its status (planned, draft, in review, approved), the facts it may state, and any figure printed on the page that those facts do not cover. **Start page** turns a planned entry into a blank page in the right part. Both files open in an editor. |
 | **Pages** | Every page as a proof thumbnail, in book order. Click one to review it full size, leave a note, and set it to Draft, In review or Approved. `←` `→` move, `A` approves and advances, `R` sends back to review. **Edit source** opens the page's HTML; saving writes it into the interior and runs proof. |
 | **Structure** | `book.json` as a form: book details, parts, page order, and which pages each edition keeps. Reordering a book is still a JSON edit; this is just a nicer way to make it. |
 | **Preflight** | The last report, check by check. |
@@ -81,6 +82,8 @@ node engine/tools/preflight.mjs books/<slug> [--edition free] [--strict] [--json
 |---|---|---|
 | Book details | no title or author | starter placeholders remain ("Your Name", "yoursite.com") |
 | Running order | `book.json` lists an unwritten page, or an edition lists an unknown one | a written page is in no part |
+| Plan | | there is no `blocks.md`, or a page in the book has no entry in it |
+| Facts | a page cites a fact id that is not in `FACTS.md`, a cited fact has no Source, or an id is defined twice | there is no `FACTS.md`, an entry has no Facts line, or a figure printed on a page is not in the facts that page cites |
 | Build | `book.html` is missing or older than its source | |
 | Pages fit | any page is past the bottom edge, or the stylesheet never loaded | |
 | Images load | any image is broken | |
@@ -91,6 +94,11 @@ node engine/tools/preflight.mjs books/<slug> [--edition free] [--strict] [--json
 | Alt text | | a photo has no `alt`, or a diagram no `aria-label` |
 | Print limits | | under 24 or over 828 pages, or the safe margin is narrower than KDP's inside margin for that page count |
 | Reviewed | with `--strict`: any page is not approved | any page is not approved |
+
+The Facts check reads figures (`30`, `169.254.169.254`) and spelled-out amounts from three
+up (`thirty`, `twice`) in a page's prose, not in its diagram, and looks for each in the
+Claim of a fact that page cites. It is a tripwire, not a fact-checker: it cannot tell
+whether a source is any good, only that you wrote one down.
 
 A fail blocks a release. A warn is yours to read and decide. Preflight still cannot tell
 you a diagram says the wrong thing. That is what review is for.

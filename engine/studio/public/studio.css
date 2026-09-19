@@ -147,6 +147,25 @@ button,input,select,textarea{ font:inherit; color:inherit; }
 .tag.changed{ color:var(--warn); border-color:#7a5d14; }
 .tag.pass{ color:var(--pass); border-color:#1f6b52; } .tag.warn{ color:var(--warn); border-color:#7a5d14; } .tag.fail{ color:var(--fail); border-color:#7f3030; }
 
+/* ---- plan ---- */
+table.plan{ border-collapse:collapse; width:100%; font-size:13px; }
+.plan th{ text-align:left; font-weight:500; color:var(--muted); padding:6px 10px; border-bottom:1px solid var(--line); white-space:nowrap; }
+.plan td{ padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+.plan tr.prt td{ font-family:var(--display); font-size:14px; font-weight:600; padding-top:16px; color:var(--text); }
+.plan tr.prt td span{ color:var(--muted); font-weight:400; font-size:12.5px; margin-left:8px; }
+.plan .ttl{ font-weight:500; } .plan .what{ color:var(--muted); margin-top:2px; max-width:52em; }
+.plan .tags{ display:flex; gap:4px; flex-wrap:wrap; }
+.tag.planned{ border-style:dashed; }
+.tag.factid{ font-family:var(--mono); font-size:11px; cursor:help; }
+.tag.draft{ color:var(--muted); }
+.fact{ border:1px solid var(--line); border-left:3px solid var(--faint); border-radius:9px; padding:10px 14px; margin-top:8px; background:#23252f; }
+.fact.bad{ border-left-color:var(--fail); } .fact.unused{ border-left-color:var(--warn); } .fact.ok{ border-left-color:var(--pass); }
+.fact .top{ display:flex; gap:8px; align-items:baseline; flex-wrap:wrap; }
+.fact .id{ font:600 12px var(--mono); color:var(--accent); }
+.fact .claim{ margin:5px 0 0; } .fact .src{ margin:4px 0 0; color:var(--muted); font-size:12.5px; word-break:break-word; }
+#modal.wide{ width:min(900px,94vw); }
+.md-edit{ font:12.5px/1.55 var(--mono); min-height:56vh; white-space:pre-wrap; tab-size:2; }
+
 /* ---- forms ---- */
 .panel{ background:var(--desk-2); border:1px solid var(--line); border-radius:12px; padding:18px; margin-bottom:18px; }
 .panel h2{ font-size:16px; font-weight:600; margin-bottom:4px; }

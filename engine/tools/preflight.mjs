@@ -2,7 +2,8 @@
    preflight.mjs  -  the release gate. Everything check.mjs is, and the rest.
    --------------------------------------------------------------------------
    check.mjs proves every page fits. This proves the book is ready to ship:
-   book details filled in, running order complete, build not stale, pages fit,
+   book details filled in, running order complete, every page planned and every
+   figure traced to a fact with a source, build not stale, pages fit,
    images load and have the pixels to print, fonts loaded, no SVG label past
    the edge of its drawing, nothing fetched from the network, alt text
    present, inside print-on-demand limits, and every page approved by a person.

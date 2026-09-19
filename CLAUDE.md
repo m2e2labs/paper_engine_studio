@@ -29,7 +29,11 @@ When asked to write or lay out a page, use the **`block` skill** in
 - **Diagrams are inline SVG, never generated images.** An image model garbles labels and
   the result cannot be edited. Photographs are for physical subjects only.
 - **Never invent a fact, a number, a study, or a personal story** for a page. If the
-  author did not say it, do not write it.
+  author did not say it, do not write it. What the author did say lives in
+  `books/<slug>/FACTS.md`, each fact with its source, and each entry in `blocks.md` names
+  the fact ids its page may state. Need a fact that is not there? Ask the author, add it
+  to `FACTS.md` with its source, cite it, then write the sentence. Never invent a source
+  either, and never add a fact just to make preflight pass.
 
 ## The loop, after every edit
 
@@ -48,7 +52,7 @@ cropped through its subject, or a diagram that says the wrong thing. **Always ru
 The loop above is for writing. To ship, use the production tools (`docs/PRODUCTION.md`):
 
 ```bash
-node engine/tools/preflight.mjs books/<slug>                     # the release gate, 12 checks
+node engine/tools/preflight.mjs books/<slug>                     # the release gate, 14 checks
 node engine/tools/release.mjs   books/<slug> --editions all --bleed 3 --epub
 npm run studio                                                   # the same, as a local web UI
 ```

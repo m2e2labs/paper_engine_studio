@@ -13,6 +13,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { loadBook, loadWorkflow, reviewSummary, statusOf } from './book.mjs';
 import { inspectBook } from './measure.mjs';
+import { loadPlan } from './plan.mjs';
 
 const PLACEHOLDERS = ['Your Name', 'yoursite.com', 'My First Book', 'My first book'];
 
@@ -41,6 +42,31 @@ export async function preflight(dir, { bookHtml, edition = null, strict = false 
   else if (unknownInEditions.length) add('structure', 'Running order', 'fail', 'An edition lists pages that do not exist.', unknownInEditions);
   else if (book.orphans.length) add('structure', 'Running order', 'warn', `${book.orphans.length} written page(s) are not in any part, so they are not in the book.`, book.orphans);
   else add('structure', 'Running order', 'pass', `${book.ordered.length} pages in ${(j.parts || []).length} part(s), none left out.`);
+
+  /* ---- 2b. the plan and the facts: can every claim in this book be traced? */
+  const keepSet = edition ? new Set((j.editions || {})[edition] || []) : null;
+  const plan = loadPlan(dir);
+  const entries = plan.parts.flatMap((p) => p.blocks).filter((b) => b.inBook && (!keepSet || keepSet.has(b.title)));
+  const unplanned = plan.unplanned.filter((t) => book.partOf.has(t) && (!keepSet || keepSet.has(t)));
+  if (!plan.hasBlocks) add('plan', 'Plan', 'warn', 'No blocks.md, so no page in this book was planned before it was written.');
+  else if (unplanned.length) add('plan', 'Plan', 'warn', `${unplanned.length} page(s) in the book have no entry in blocks.md.`, unplanned);
+  else add('plan', 'Plan', 'pass', `Every page in the book has an entry in blocks.md${plan.counts.planned ? `; ${plan.counts.planned} more planned` : ''}.`);
+
+  const unknown = entries.filter((b) => b.unknownFacts.length).map((b) => `${b.title}: cites ${b.unknownFacts.join(', ')}, not in FACTS.md`);
+  const noSource = plan.facts.filter((f) => f.usedBy.length && !f.source).map((f) => `${f.id} ${f.label}: no Source line`);
+  const dupes = plan.duplicateFacts.map((id) => `${id} is defined twice`);
+  const undecided = entries.filter((b) => b.facts === null).map((b) => `${b.title}: no Facts line (write the ids, or "none")`);
+  const unbacked = entries.filter((b) => b.unbacked.length).map((b) => `${b.title}: ${b.unbacked.join(', ')}`);
+  const withNumbers = book.pages.filter((p) => book.partOf.has(p.title)).length;
+  if (unknown.length || noSource.length || dupes.length)
+    add('facts', 'Facts', 'fail', 'Pages cite facts that cannot be traced to a source.', [...unknown, ...noSource, ...dupes]);
+  else if (!plan.hasFacts)
+    add('facts', 'Facts', 'warn', `No FACTS.md. Nothing records where the figures on these ${withNumbers} pages came from.`,
+      unbacked.length ? ['Figures printed in the book:', ...unbacked] : []);
+  else if (undecided.length || unbacked.length)
+    add('facts', 'Facts', 'warn', 'Some figures on the page are not in the facts that page cites. Add the fact, cite it, or cut the figure.',
+      [...undecided, ...unbacked]);
+  else add('facts', 'Facts', 'pass', `${plan.facts.length} fact(s), every one with a source, and every figure in the book traced to one.`);
 
   /* ---- 3. is book.html the book we are about to look at? */
   if (!fs.existsSync(htmlPath)) {

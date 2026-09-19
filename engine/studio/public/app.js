@@ -24,7 +24,7 @@ function h(spec, attrs, ...kids) {
 }
 
 const S = {
-  books: [], slug: null, book: null, tab: 'pages',
+  books: [], slug: null, book: null, plan: null, tab: 'pages',
   filter: 'all', showGenerated: false,
   draft: null, dirty: false,          // Structure tab works on a copy of book.json
   job: null,
@@ -62,7 +62,9 @@ async function openBook(slug) {
 }
 async function refresh() {
   if (!S.slug) return render();
-  setBook(await api('GET', bookUrl()));
+  const [state, plan] = await Promise.all([api('GET', bookUrl()), api('GET', bookUrl('/plan')).catch(() => null)]);
+  S.plan = plan;
+  setBook(state);
 }
 function setBook(state) {
   S.book = state;
@@ -123,12 +125,12 @@ function renderPipeline() {
   const b = S.book, pre = b.preflight, rv = b.review, last = b.releases[0];
   const words = b.pages.reduce((n, p) => n + p.words, 0);
   const steps = [
-    { k: 'Write', v: `${rv.total} pages`, d: b.missing.length ? `${b.missing.length} listed but not written` : `${words.toLocaleString()} words`,
+    { k: 'Write', v: `${rv.total} pages`, d: b.missing.length ? `${b.missing.length} listed but not written` : b.plan?.planned ? `${b.plan.planned} more planned · ${words.toLocaleString()} words` : `${words.toLocaleString()} words`,
       level: b.missing.length ? 'fail' : rv.total ? 'pass' : 'idle' },
     { k: 'Build', v: !b.build.exists ? 'Not built' : b.build.stale ? 'Out of date' : 'Up to date', d: b.build.exists ? `book.html · ${ago(b.build.at)}` : 'Run proof to build',
       level: !b.build.exists ? 'idle' : b.build.stale ? 'warn' : 'pass' },
     { k: 'Preflight', v: !pre ? 'Not run' : b.preflightStale ? 'Out of date' : pre.result === 'pass' ? 'All clear' : pre.result === 'warn' ? `${pre.warns} warning${pre.warns > 1 ? 's' : ''}` : `${pre.fails} failing`,
-      d: pre ? `${pre.checks.filter((c) => c.level === 'pass').length} of ${pre.checks.length} checks pass` : '12 checks',
+      d: pre ? `${pre.checks.filter((c) => c.level === 'pass').length} of ${pre.checks.length} checks pass` : '14 checks',
       level: !pre ? 'idle' : b.preflightStale ? 'warn' : pre.result },
     { k: 'Review', v: `${rv.approved} / ${rv.total} approved`, d: [rv.review && `${rv.review} in review`, rv.changed && `${rv.changed} edited since`, rv.draft && `${rv.draft} draft`].filter(Boolean).join(' · ') || 'Every page signed off',
       level: !rv.total ? 'idle' : rv.approved === rv.total ? 'pass' : rv.changed ? 'warn' : 'idle' },
@@ -152,7 +154,7 @@ function render() {
   document.querySelectorAll('#tabs button').forEach((b) => b.classList.toggle('on', b.dataset.tab === S.tab));
   const view = $('#view');
   const top = view.scrollTop;
-  view.replaceChildren(...({ pages: viewPages, structure: viewStructure, preflight: viewPreflight, release: viewRelease }[S.tab]()));
+  view.replaceChildren(...({ plan: viewPlan, pages: viewPages, structure: viewStructure, preflight: viewPreflight, release: viewRelease }[S.tab]()));
   view.scrollTop = top;
   setJob(S.job);
 }
@@ -319,6 +321,7 @@ function dialog(title, fields, submitLabel, onSubmit) {
   }) },
     h('h2', title), fields,
     h('div.actions', h('button.btn.ghost', { type: 'button', onclick: () => dlg.close() }, 'Cancel'), h('button.btn.primary', { type: 'submit' }, submitLabel)));
+  dlg.classList.remove('wide');
   dlg.replaceChildren(form);
   dlg.showModal();
 }
@@ -348,6 +351,88 @@ function newPageDialog() {
     setBook(r.state);
     viewer.editing = true; openViewer(r.title);
   });
+}
+
+/* ------------------------------------------------------------------ Plan
+   blocks.md and FACTS.md, read as data. What is planned, what is written, and whether
+   every figure on a written page can be traced to a fact with a source. */
+const PLAN_STATUS = { planned: 'Planned', draft: 'Draft', review: 'In review', approved: 'Approved', changed: 'Edited since' };
+
+function editSource(which, title, hint) {
+  const dlg = $('#modal');
+  const area = h('textarea.md-edit', { spellcheck: true, value: 'Loading…', disabled: true });
+  api('GET', bookUrl(`/source?file=${which}`)).then((r) => { area.value = r.text; area.disabled = false; area.focus(); }).catch((e) => toast(e.message));
+  const form = h('form', { method: 'dialog', onsubmit: guard(async (e) => {
+    e.preventDefault();
+    const r = await api('PUT', bookUrl(`/source?file=${which}`), { text: area.value });
+    S.plan = r.plan; setBook(r.state); dlg.close(); toast(`${title} saved`, true);
+  }) },
+    h('h2', title), h('p.muted', { style: 'margin:0;font-size:13px' }, hint), area,
+    h('div.actions', h('button.btn.ghost', { type: 'button', onclick: () => dlg.close() }, 'Cancel'), h('button.btn.primary', { type: 'submit' }, 'Save')));
+  dlg.classList.add('wide');
+  dlg.replaceChildren(form);
+  dlg.showModal();
+}
+
+function viewPlan() {
+  const plan = S.plan, b = S.book;
+  if (!plan) return [h('div.empty', 'The plan could not be read.')];
+  const factById = new Map(plan.facts.map((f) => [f.id, f]));
+  const editBlocks = () => editSource('blocks', 'blocks.md', 'One entry per page: What, Use when, Action, Band, Facts. A title with no page yet is planned.');
+  const editFacts = () => editSource('facts', 'FACTS.md', 'What you actually know, each with its source. Pages may only state what their cited facts state.');
+
+  const writePage = guard(async (entry, partName, partPos) => {
+    const parts = b.json.parts || [];
+    const at = parts.findIndex((p) => (p.name || '').trim().toLowerCase() === partName.trim().toLowerCase());
+    const r = await api('POST', bookUrl('/page'), { title: entry.title, pill: entry.category || 'Topic', part: at !== -1 ? at : Math.min(partPos, parts.length - 1) });
+    await refresh();
+    viewer.editing = true; openViewer(r.title);
+  });
+
+  const c = plan.counts;
+  const top = h('div.toolbar',
+    h('span.muted', `${c.entries} planned page${c.entries === 1 ? '' : 's'}: ${c.written} written, ${c.planned} to go · ${c.facts} fact${c.facts === 1 ? '' : 's'}`),
+    h('span.grow'),
+    h('button.btn', { onclick: editBlocks }, plan.hasBlocks ? 'Edit blocks.md' : 'Create blocks.md'),
+    h('button.btn', { onclick: editFacts }, plan.hasFacts ? 'Edit FACTS.md' : 'Create FACTS.md'));
+
+  const notices = [];
+  if (!plan.hasFacts) notices.push(h('div.notice', h('b', 'No FACTS.md. '), 'Nothing records where the figures in this book came from, so a page can state anything. Create it, write down what you actually know with its source, then cite the ids on each page\'s Facts line.'));
+  if (plan.unplanned.length) notices.push(h('div.notice', h('b', `${plan.unplanned.length} written page(s) are not in the plan: `), plan.unplanned.join(', ')));
+
+  const rows = [];
+  plan.parts.forEach((part, pi) => {
+    rows.push(h('tr.prt', h('td', { colSpan: 4 }, `Part ${pi + 1}`, h('span', part.name))));
+    for (const e of part.blocks) {
+      const facts = e.facts === null ? [h('span.tag.warn', 'no Facts line')]
+        : e.facts.length === 0 ? [h('span.tag', 'none')]
+        : e.facts.map((id) => h('span.tag.factid' + (factById.has(id) ? '' : '.fail'), { title: factById.get(id)?.claim || 'Not in FACTS.md' }, id));
+      rows.push(h('tr',
+        h('td', h('div.ttl', e.title), h('div.what', e.what || h('span.tag.warn', 'no What line'))),
+        h('td', h('div.tags', e.category && h('span.tag', e.category), e.band && h('span.tag', e.band))),
+        h('td', h('div.tags', facts, e.unbacked.length > 0 && h('span.tag.warn', { title: 'Printed on the page, but not in the facts it cites' }, `untraced: ${e.unbacked.join(', ')}`))),
+        h('td', { style: 'white-space:nowrap' }, e.status === 'planned'
+          ? h('button.btn.small', { onclick: () => writePage(e, part.name, pi) }, 'Start page')
+          : h('button.btn.small.ghost', { onclick: () => openViewer(e.title) }, h('span.dot.' + e.status), ' ', PLAN_STATUS[e.status]),
+          e.status !== 'planned' && !e.inBook && h('div.muted', { style: 'font-size:12px;margin-top:3px' }, 'not in a part'))));
+    }
+  });
+  const table = plan.parts.length
+    ? h('div.panel', h('h2', 'The plan'), h('p.hint', 'From blocks.md. Status is worked out, never typed: no page yet is planned, a page is a draft until a person approves it.'),
+        h('div.scroll-x', h('table.plan', h('thead', h('tr', h('th', 'Page'), h('th', 'Kind'), h('th', 'Facts it may state'), h('th', 'Status'))), h('tbody', rows))))
+    : h('div.panel', h('h2', 'No plan yet'), h('p.hint', 'blocks.md is where a page starts: what it is about, when it is worth reading, what the reader should do, and which facts it may state.'), h('button.btn.primary', { onclick: editBlocks }, 'Write the plan'));
+
+  const factsPanel = h('div.panel', h('h2', 'Facts'), h('p.hint', 'From FACTS.md. A fact with no source fails preflight once a page cites it. A fact no page cites is just waiting.'),
+    plan.facts.length ? plan.facts.map((f) => {
+      const state = !f.source ? 'bad' : f.usedBy.length ? 'ok' : 'unused';
+      return h('div.fact.' + state,
+        h('div.top', h('span.id', f.id), h('b', f.label || 'Untitled'), f.kind && h('span.tag', f.kind), f.checked && h('span.tag', `checked ${f.checked}`),
+          !f.source && h('span.tag.fail', 'no source'), h('span.muted', { style: 'margin-left:auto;font-size:12.5px' }, f.usedBy.length ? `used by ${f.usedBy.join(', ')}` : 'not cited yet')),
+        h('p.claim', f.claim || h('span.tag.warn', 'no Claim line')),
+        f.source && h('p.src', f.source));
+    }) : h('div.muted', 'No facts recorded.'));
+
+  return [top, ...notices, table, factsPanel];
 }
 
 /* ------------------------------------------------------------------ Structure */
@@ -453,7 +538,7 @@ function viewStructure() {
 function viewPreflight() {
   const pre = S.book.preflight;
   const runBtn = h('button.btn.primary', { 'data-runs': true, onclick: () => run('preflight') }, pre ? 'Run preflight again' : 'Run preflight');
-  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'Twelve checks between a book that builds and a book that is ready to ship: details, running order, stale build, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
+  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'Fourteen checks between a book that builds and a book that is ready to ship: details, running order, plan, facts, stale build, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
   const word = { pass: 'Ready to release', warn: 'Ready, with warnings', fail: 'Not ready' }[pre.result];
   return [
     h('div.verdict', h('span.tag.' + pre.result, pre.result.toUpperCase()), h('span.big', word),

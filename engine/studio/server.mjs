@@ -48,6 +48,7 @@ import {
   ROOT, BOOKS, SLUG_RE, STATUSES, listBooks, bookDir, loadBook, loadWorkflow, saveJson,
   statusOf, setStatus, reviewSummary, replacePage, addPage, blankPage,
 } from '../tools/lib/book.mjs';
+import { loadPlan } from '../tools/lib/plan.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(HERE, 'public');
@@ -220,6 +221,13 @@ function bookSummary(slug) {
   } catch (e) { return { slug, title: slug, error: e.message }; }
 }
 
+/* The two plain-markdown sources the Studio may edit, by name and never by path. */
+const SOURCES = { blocks: 'blocks.md', facts: 'FACTS.md' };
+
+function planSummary(dir) {
+  try { const p = loadPlan(dir); return { ...p.counts, hasBlocks: p.hasBlocks, hasFacts: p.hasFacts }; } catch { return null; }
+}
+
 function bookState(slug) {
   const dir = bookDir(slug);
   const book = loadBook(dir);
@@ -262,6 +270,7 @@ function bookState(slug) {
     slug, json: book.json, pages, orphans: book.orphans, missing: book.missing,
     interior: path.basename(book.interiorPath),
     review: reviewSummary(book, wf),
+    plan: planSummary(dir),
     build: { exists: built > 0, stale: built > 0 && built + 1000 < sourceAt, at: built },
     preflight: pre, preflightStale: preStale,
     shots: { count: shotFiles.length, stale: shotsAt > 0 && shotsAt + 1000 < sourceAt, v: Math.round(shotsAt) },
@@ -277,7 +286,7 @@ function createBook({ slug, title, author }) {
   if (!fs.existsSync(starter)) throw new Error('books/starter is missing, and new books are copied from it.');
 
   fs.mkdirSync(dir, { recursive: true });
-  for (const f of ['VOICE.md', 'blocks.md'])
+  for (const f of ['VOICE.md', 'blocks.md', 'FACTS.md'])
     if (fs.existsSync(path.join(starter, f))) fs.copyFileSync(path.join(starter, f), path.join(dir, f));
 
   const t = String(title || slug).trim(), a = String(author || '').trim();
@@ -411,6 +420,21 @@ const handle = async (req, res) => {
         if (!String(title || '').trim()) return fail(res, 400, 'A page needs a title.');
         const t = addPage(dir, blankPage(String(title).trim(), String(pill || 'Topic').trim()), Number(part ?? 0));
         return send(res, 201, { title: t, state: bookState(slug) });
+      }
+
+      if (sub === 'plan' && method === 'GET') return send(res, 200, loadPlan(dir));
+
+      if (sub === 'source') {
+        const name = SOURCES[url.searchParams.get('file')];
+        if (!name) return fail(res, 400, 'Unknown source file.');
+        const file = path.join(dir, name);
+        if (method === 'GET') return send(res, 200, { name, exists: fs.existsSync(file), text: fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : '' });
+        if (method === 'PUT') {
+          const { text } = await readBody(req);
+          if (typeof text !== 'string') return fail(res, 400, 'Nothing to save.');
+          fs.writeFileSync(file, text.replace(/\r\n/g, '\n').replace(/\s*$/, '\n'));
+          return send(res, 200, { plan: loadPlan(dir), state: bookState(slug) });
+        }
       }
 
       if (sub === 'status' && method === 'POST') {

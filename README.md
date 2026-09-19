@@ -86,7 +86,11 @@ Then, in that folder:
 1. **`book.json`** — the title, your name, the site in the footer, and the running order.
 2. **`VOICE.md`** — how your book sounds. Rewrite it. It is the file that decides whether
    your pages read like you or like a machine.
-3. **`blocks.md`** — a line for each page you mean to write.
+3. **`blocks.md`** — the plan: an entry for each page you mean to write, and which facts it
+   may state.
+4. **`FACTS.md`** — what you actually know, each fact with where it came from. A page may
+   only print a figure, a name, a study or a story that is in here, and preflight lists
+   any figure it cannot trace. This is what keeps an AI-drafted book honest.
 
 Now open the folder in Claude Code and say:
 
@@ -192,14 +196,15 @@ The loop gets a page right. Three more tools get a book out of the door, and
 
 ```bash
 npm run studio                                                  # the workflow as a local web UI
-node engine/tools/preflight.mjs books/showcase                  # 12 checks between "it builds" and "it ships"
+node engine/tools/preflight.mjs books/showcase                  # 14 checks between "it builds" and "it ships"
 node engine/tools/release.mjs   books/showcase --editions all --bleed 3 --epub
 ```
 
-- **Preflight** is the release gate: overflow, broken images, print resolution, fonts,
+- **Preflight** is the release gate: every page planned, every figure traced to a sourced
+  fact, overflow, broken images, print resolution, fonts,
   clipped diagram labels, stale builds, print-on-demand limits, and whether a person has
   approved every page.
-- **The Studio** shows every page as a proof, lets you approve them one keystroke at a
+- **The Studio** shows the plan next to what is written, shows every page as a proof, lets you approve them one keystroke at a
   time, edits `book.json` as a form, and keeps an approval pinned to the exact content
   that was approved.
 - **Release** builds every edition fresh, stops if preflight fails, and writes PDFs (with
