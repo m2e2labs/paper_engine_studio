@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/m2e2labs/paper_engine_studio/engine/images.schema.json",
+  "title": "images.json",
+  "description": "Every picture in a book's images/ folder: where it came from, what rights you hold, and the prompt that made it, so the whole set can be made again in one style. Which page uses which picture is not written here; it is read from the pages.",
+  "type": "object",
+  "required": ["images"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string", "description": "Path to this schema, for your editor. The engine ignores it." },
+    "style": { "type": "string", "description": "The book's shared style sentence: light, angle, background, palette, and no text in the image. It is added to the end of every image's subject, which is what makes one book's photographs look like one book." },
+    "aspect": { "type": "string", "pattern": "^\\d{1,2}:\\d{1,2}$", "description": "Default aspect ratio. 16:9 suits the page's photo band." },
+    "provider": { "type": "string", "enum": ["agy", "gemini"], "description": "Default generator. agy is the Antigravity CLI; gemini is the metered API." },
+    "licence": { "type": "string", "description": "The rights statement that covers every image unless the image says otherwise. Example: CC0, or All rights reserved." },
+    "images": {
+      "type": "object",
+      "description": "One entry per file in images/, keyed by file name.",
+      "propertyNames": { "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*\\.(jpe?g|png|webp|gif|svg)$" },
+      "additionalProperties": {
+        "type": "object", "required": ["source"], "additionalProperties": false,
+        "properties": {
+          "source": { "type": "string", "enum": ["generated", "own", "licensed", "public-domain"], "description": "generated: made with gen-image.mjs. own: you took or drew it. licensed: someone else's, used under a licence. public-domain: free of copyright." },
+          "subject": { "type": "string", "description": "What is in the picture. The shared style is added after it to make the prompt." },
+          "prompt": { "type": "string", "description": "The whole prompt, used exactly as written, ignoring the shared style. For a picture that must differ, or one made before the style was settled." },
+          "aspect": { "type": "string", "pattern": "^\\d{1,2}:\\d{1,2}$" },
+          "provider": { "type": "string", "enum": ["agy", "gemini"] },
+          "refs": { "type": "array", "maxItems": 3, "items": { "type": "string" }, "description": "Up to three reference images, as file names in images/, to hold a look." },
+          "generated": { "type": "string", "pattern": "^$|^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$", "description": "When this file was last generated. Written by images.mjs." },
+          "licence": { "type": "string", "description": "This image's rights statement, if it differs from the book's." },
+          "credit": { "type": "string", "description": "Who made it, as they ask to be credited." },
+          "url": { "type": "string", "description": "Where it came from, or where its licence can be read." },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}

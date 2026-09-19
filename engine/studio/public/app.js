@@ -24,7 +24,7 @@ function h(spec, attrs, ...kids) {
 }
 
 const S = {
-  books: [], slug: null, book: null, plan: null, tab: 'pages',
+  books: [], slug: null, book: null, plan: null, images: null, tab: 'pages',
   filter: 'all', showGenerated: false,
   draft: null, dirty: false,          // Structure tab works on a copy of book.json
   job: null,
@@ -62,8 +62,8 @@ async function openBook(slug) {
 }
 async function refresh() {
   if (!S.slug) return render();
-  const [state, plan] = await Promise.all([api('GET', bookUrl()), api('GET', bookUrl('/plan')).catch(() => null)]);
-  S.plan = plan;
+  const [state, plan, images] = await Promise.all([api('GET', bookUrl()), api('GET', bookUrl('/plan')).catch(() => null), api('GET', bookUrl('/images')).catch(() => null)]);
+  S.plan = plan; S.images = images;
   setBook(state);
 }
 function setBook(state) {
@@ -154,7 +154,7 @@ function render() {
   document.querySelectorAll('#tabs button').forEach((b) => b.classList.toggle('on', b.dataset.tab === S.tab));
   const view = $('#view');
   const top = view.scrollTop;
-  view.replaceChildren(...({ plan: viewPlan, pages: viewPages, structure: viewStructure, preflight: viewPreflight, release: viewRelease }[S.tab]()));
+  view.replaceChildren(...({ plan: viewPlan, pages: viewPages, images: viewImages, structure: viewStructure, preflight: viewPreflight, release: viewRelease }[S.tab]()));
   view.scrollTop = top;
   setJob(S.job);
 }
@@ -358,14 +358,14 @@ function newPageDialog() {
    every figure on a written page can be traced to a fact with a source. */
 const PLAN_STATUS = { planned: 'Planned', draft: 'Draft', review: 'In review', approved: 'Approved', changed: 'Edited since' };
 
-function editSource(which, title, hint) {
+function editSource(which, title, hint, startWith) {
   const dlg = $('#modal');
   const area = h('textarea.md-edit', { spellcheck: true, value: 'Loading…', disabled: true });
-  api('GET', bookUrl(`/source?file=${which}`)).then((r) => { area.value = r.text; area.disabled = false; area.focus(); }).catch((e) => toast(e.message));
+  api('GET', bookUrl(`/source?file=${which}`)).then((r) => { area.value = r.exists || !startWith ? r.text : startWith; area.disabled = false; area.focus(); }).catch((e) => toast(e.message));
   const form = h('form', { method: 'dialog', onsubmit: guard(async (e) => {
     e.preventDefault();
     const r = await api('PUT', bookUrl(`/source?file=${which}`), { text: area.value });
-    S.plan = r.plan; setBook(r.state); dlg.close(); toast(`${title} saved`, true);
+    S.plan = r.plan; S.images = r.images; setBook(r.state); dlg.close(); toast(`${title} saved`, true);
   }) },
     h('h2', title), h('p.muted', { style: 'margin:0;font-size:13px' }, hint), area,
     h('div.actions', h('button.btn.ghost', { type: 'button', onclick: () => dlg.close() }, 'Cancel'), h('button.btn.primary', { type: 'submit' }, 'Save')));
@@ -433,6 +433,57 @@ function viewPlan() {
     }) : h('div.muted', 'No facts recorded.'));
 
   return [top, ...notices, table, factsPanel];
+}
+
+/* ------------------------------------------------------------------ Images
+   images.json, read as data: every picture, where it came from, what rights are on
+   record, the prompt that made it, and the pages that show it. */
+const SOURCE_LABEL = { generated: 'Generated', own: 'Your own', licensed: 'Licensed', 'public-domain': 'Public domain' };
+
+function viewImages() {
+  const im = S.images;
+  if (!im) return [h('div.empty', 'The images could not be read.')];
+  const HINT = 'One shared "style" for the book, then one entry per file in images/: source, subject or prompt, and licence. Which page uses a picture is read from the pages, not written here.';
+  const edit = guard(async () => {
+    const draft = im.hasManifest ? null : (await api('POST', bookUrl('/images/draft'), {})).text;
+    editSource('images', 'images.json', HINT, draft);
+  });
+  const regenerate = (name) => {
+    if (!confirm(`Generate ${name} again?\n\nIt uses your image quota or API credit and replaces the file. The current picture is kept in images/.previous/.`)) return;
+    run('images', { names: [name] });
+  };
+
+  const c = im.counts;
+  const top = h('div.toolbar',
+    h('span.muted', `${c.files} file${c.files === 1 ? '' : 's'} in images/: ${c.used} on a page, ${c.unused} unused`),
+    h('span.grow'),
+    h('button.btn', { onclick: edit }, im.hasManifest ? 'Edit images.json' : 'Create images.json'));
+
+  const notices = [];
+  if (im.parseError) notices.push(h('div.notice', h('b', 'images.json is not valid JSON. '), im.parseError));
+  else if (!im.hasManifest && im.entries.length) notices.push(h('div.notice', h('b', 'No images.json. '), 'Nothing records where these pictures came from, what rights you hold, or how to make them again. Create it: the Studio drafts it from the folder, and leaves the licence for you to fill in.'));
+  for (const e of im.shape.errors) notices.push(h('div.notice', h('b', 'images.json: '), e));
+
+  const style = im.hasManifest && h('div.panel', h('h2', 'Shared style'),
+    h('p.hint', 'Added to the end of every subject. Change it, regenerate, and the whole book’s photographs change together.'),
+    im.style ? h('p.stylebox', im.style) : h('p.muted', { style: 'margin:0' }, 'None yet. Pictures with a whole "prompt" do not use it; pictures with a "subject" do.'));
+
+  const cards = im.entries.map((e) => h('div.pic' + (e.problems.length ? '.bad' : ''),
+    h('div.shot', e.exists ? h('img', { src: `/books/${S.slug}/images/${encodeURIComponent(e.name)}?v=${e.mtime}`, loading: 'lazy', alt: '' }) : 'No file yet'),
+    h('div.body',
+      h('div.nm', e.name),
+      h('div.tags', { style: 'display:flex;gap:4px;flex-wrap:wrap' },
+        e.entry ? h('span.tag', SOURCE_LABEL[e.entry.source] || e.entry.source) : im.hasManifest && h('span.tag.fail', 'not in images.json'),
+        e.licence ? h('span.tag.pass', { title: e.licence }, e.licence.length > 28 ? e.licence.slice(0, 27) + '…' : e.licence) : e.entry && h('span.tag.warn', 'no licence'),
+        e.entry?.credit && h('span.tag', e.entry.credit), e.entry?.generated && h('span.tag', e.entry.generated),
+        e.exists && h('span.tag', `${Math.round(e.bytes / 1024)} KB`)),
+      e.problems.map((x) => h('div.prob', x)),
+      e.prompt && h('div.prompt', { title: 'Hover to read all of it' }, e.prompt),
+      h('div.foot',
+        h('span.muted', { style: 'font-size:12.5px' }, e.usedBy.length ? ['on ', e.usedBy.map((t, i) => [i > 0 && ', ', h('a', { href: '#', style: 'color:var(--accent);text-decoration:none', onclick: (ev) => { ev.preventDefault(); openViewer(t); } }, t)])] : 'no page shows it'),
+        e.entry?.source === 'generated' && e.prompt && h('button.btn.small', { 'data-runs': true, onclick: () => regenerate(e.name) }, e.exists ? 'Regenerate' : 'Generate')))));
+
+  return [top, ...notices, style, cards.length ? h('div.pics', cards) : h('div.empty', 'No pictures in this book. Most pages want a diagram, and a diagram is code.')];
 }
 
 /* ------------------------------------------------------------------ Structure */
@@ -585,7 +636,7 @@ function viewStructure() {
 function viewPreflight() {
   const pre = S.book.preflight;
   const runBtn = h('button.btn.primary', { 'data-runs': true, onclick: () => run('preflight') }, pre ? 'Run preflight again' : 'Run preflight');
-  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'The checks between a book that builds and a book that is ready to ship: details, book.json, publishing, running order, plan, facts, stale build, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
+  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'The checks between a book that builds and a book that is ready to ship: details, book.json, publishing, running order, plan, facts, image rights, stale build, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
   const word = { pass: 'Ready to release', warn: 'Ready, with warnings', fail: 'Not ready' }[pre.result];
   return [
     h('div.verdict', h('span.tag.' + pre.result, pre.result.toUpperCase()), h('span.big', word),

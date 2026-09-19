@@ -22,18 +22,39 @@ written as SVG, which is text, prints sharp at any size, and costs nothing.
 
 ## Making one
 
+A book's pictures are listed in `books/<slug>/images.json`: one shared `style` sentence for
+the whole book, then one entry per file. Add the new picture there first, as a `subject`
+(what is in the frame, and nothing about light or background: the style says that once,
+for every picture), then generate it from the manifest:
+
+```json
+"images": {
+  "<name>.jpg": { "source": "generated", "subject": "A cooked steak resting on a wooden board, juices gathering under it, a plain knife beside it." }
+}
+```
+
 ```bash
 node engine/tools/gen-image.mjs --check
-node engine/tools/gen-image.mjs --prompt-file books/<slug>/images/<name>.txt \
-      books/<slug>/images/<name>.jpg --aspect 16:9
+node engine/tools/images.mjs books/<slug> --generate <name>.jpg      # subject + the book's style
+node engine/tools/images.mjs books/<slug>                            # the report: every picture, its rights, its page
 ```
+
+No `images.json` yet? `node engine/tools/images.mjs books/<slug> --init` drafts one from the
+folder. If the book has no `style` yet, agree one with the author before the first photo;
+it is the hardest thing to change later. Generating costs quota or money, so it is never
+run for a file you did not name. `gen-image.mjs` still works on its own for a one-off.
+
+**Rights are the author's to state, never yours.** `source` is `generated` only for a
+picture this tool made. For anything else (`own`, `licensed`, `public-domain`), ask the
+author for the licence, the credit and where it came from, and write down what they say.
+Do not guess a licence. Preflight fails a book that shows a picture nobody can account for.
 
 The band is wide and short, so **16:9** is the right aspect. The page crops it to the
 band height from the centre, so keep the subject centred and leave the top and bottom of
 the frame expendable.
 
-Save the prompt next to the image as `<name>.txt`. It costs nothing and it means anybody
-can see how the picture was made, and regenerate it.
+The prompt that was used is saved next to the image as `<name>.txt` for you. It costs
+nothing and it means anybody can see how the picture was made.
 
 ## Writing the prompt
 
@@ -50,8 +71,8 @@ of adjectives:
 > "Soft natural daylight from the left, gentle shadows, shallow depth of field, plain
 > warm neutral background, muted natural colours, calm and uncluttered."
 
-**3. Give every photo in one book the same style sentence.** Paste the same closing
-lines into every prompt. That is what makes ten photos look like one book instead of a
+**3. Give every photo in one book the same style sentence.** It lives once, in
+`images.json` as `style`, and is added to the end of every subject for you. That is what makes ten photos look like one book instead of a
 mood board. Change the subject, keep the style.
 
 **4. Nothing branded and nobody real.** No logos, no brand names, no embossed lettering

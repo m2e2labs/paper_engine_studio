@@ -6,7 +6,7 @@ record of who looked at what, and releases you can find again.
 
 ```
 WRITE ──> BUILD ──> PREFLIGHT ──> REVIEW ──> RELEASE
-pages     book.html   16 checks     a person     dated folder in dist/
+pages     book.html   17 checks     a person     dated folder in dist/
                                     approves     PDF + print PDF + EPUB + manifest
 ```
 
@@ -22,6 +22,7 @@ npm run studio          # http://localhost:4173
 |---|---|
 | **Plan** | `blocks.md` and `FACTS.md` read as data: every planned page with its status (planned, draft, in review, approved), the facts it may state, and any figure printed on the page that those facts do not cover. **Start page** turns a planned entry into a blank page in the right part. Both files open in an editor. |
 | **Pages** | Every page as a proof thumbnail, in book order. Click one to review it full size, leave a note, and set it to Draft, In review or Approved. `←` `→` move, `A` approves and advances, `R` sends back to review. **Edit source** opens the page's HTML; saving writes it into the interior and runs proof. |
+| **Images** | `images.json` read as data: every picture with its source, licence, prompt and the pages that show it, plus stray files no page uses. **Regenerate** remakes one generated picture from its subject and the book's shared style; the picture it replaces is kept in `images/.previous/`. |
 | **Structure** | `book.json` as a form: book details, parts, page order, which pages each edition keeps, and the **Publishing** panel (description, keywords, categories, price, ISBNs with a live check digit, per-edition ISBNs). A save the schema rejects is refused, with the reason. Reordering a book is still a JSON edit; this is just a nicer way to make it. |
 | **Preflight** | The last report, check by check. |
 | **Release** | Pick editions, bleed and EPUB, run a release, and download anything you have ever shipped. |
@@ -86,6 +87,7 @@ node engine/tools/preflight.mjs books/<slug> [--edition free] [--strict] [--json
 | Running order | `book.json` lists an unwritten page, or an edition lists an unknown one | a written page is in no part |
 | Plan | | there is no `blocks.md`, or a page in the book has no entry in it |
 | Facts | a page cites a fact id that is not in `FACTS.md`, a cited fact has no Source, or an id is defined twice | there is no `FACTS.md`, an entry has no Facts line, or a figure printed on a page is not in the facts that page cites |
+| Image rights | `images.json` breaks its schema, or a picture shown in the book is missing from it, is `licensed` or `public-domain` with no licence written down, or is `licensed` with no credit or url | there is no `images.json`, a file in `images/` is on no page, a generated picture has no subject or prompt, or no licence is recorded |
 | Build | `book.html` is missing or older than its source | |
 | Pages fit | any page is past the bottom edge, or the stylesheet never loaded | |
 | Images load | any image is broken | |
@@ -139,6 +141,28 @@ books/<slug>/dist/edition-1.0_20260919-111604/
 It also counts the pages in each PDF and stops if that differs from the number of sheets,
 which is the one way a strict page can silently go wrong in print. Folders are dated and
 never overwritten. `--force` ships past failing checks, and the manifest says it did.
+
+### The image manifest
+
+```bash
+node engine/tools/images.mjs books/<slug>                      # the report
+node engine/tools/images.mjs books/<slug> --init               # draft images.json from the folder
+node engine/tools/images.mjs books/<slug> --generate a.jpg     # remake one, from subject + style
+node engine/tools/images.mjs books/<slug> --generate --all     # the whole set, in the current style
+```
+
+`books/<slug>/images.json` (schema: [`engine/images.schema.json`](../engine/images.schema.json))
+holds one shared `style` sentence for the book and, per file in `images/`, its `source`
+(`generated`, `own`, `licensed`, `public-domain`), its licence and credit, and the `subject`
+it is generated from. The prompt is the subject plus the style, so changing the style and
+running `--generate --all` restyles every photograph together. A picture that must differ
+keeps a whole `prompt` of its own instead.
+
+`--init` records only what the folder can prove: a picture with a saved prompt beside it
+was generated. It leaves `licence` empty, because only you know what rights you hold. Two
+things are deliberately not stored: which page uses a picture, and its alt text. Both are
+read from the pages, so they cannot go stale. Generating costs quota or money, so it never
+runs for a file you did not name, and `--dry-run` prints the commands without running them.
 
 ### Publishing metadata
 

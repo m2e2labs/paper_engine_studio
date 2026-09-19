@@ -14,6 +14,7 @@ import path from 'node:path';
 import { loadBook, loadWorkflow, reviewSummary, statusOf } from './book.mjs';
 import { inspectBook } from './measure.mjs';
 import { loadPlan } from './plan.mjs';
+import { loadImages } from './images.mjs';
 import { validateBookJson, publishingFor, isbnOk, isbnDigits } from './schema.mjs';
 
 const PLACEHOLDERS = ['Your Name', 'yoursite.com', 'My First Book', 'My first book'];
@@ -98,6 +99,27 @@ export async function preflight(dir, { bookHtml, edition = null, strict = false 
     add('facts', 'Facts', 'warn', 'Some figures on the page are not in the facts that page cites. Add the fact, cite it, or cut the figure.',
       [...undecided, ...unbacked]);
   else add('facts', 'Facts', 'pass', `${plan.facts.length} fact(s), every one with a source, and every figure in the book traced to one.`);
+
+  /* ---- 2c. the pictures: do we know where each one came from, and may we print it? */
+  const pics = loadImages(dir);
+  const shown = pics.entries.filter((e) => e.inBook.some((t) => !keepSet || keepSet.has(t)));
+  if (pics.parseError) add('rights', 'Image rights', 'fail', 'images.json is not valid JSON.', [pics.parseError]);
+  else if (!shown.length && !pics.hasManifest) add('rights', 'Image rights', 'pass', 'No pictures in this book.');
+  else if (!pics.hasManifest) add('rights', 'Image rights', 'warn', `No images.json. Nothing records where these ${shown.length} picture(s) came from or what rights you hold.`,
+    [...shown.map((e) => `${e.name} (on ${e.inBook.join(', ')})`), 'Start one: node engine/tools/images.mjs books/' + book.slug + ' --init']);
+  else {
+    const hard = [...pics.shape.errors, ...shown.flatMap((e) => e.problems.map((p) => `${e.name}: ${p}`))];
+    const soft = [
+      ...pics.shape.unknown.map((k) => `unknown key: ${k}`),
+      ...pics.entries.filter((e) => !shown.includes(e)).flatMap((e) => e.problems.map((p) => `${e.name}: ${p}`)),
+      ...pics.entries.filter((e) => e.exists && !e.usedBy.length).map((e) => `${e.name}: in images/, but no page shows it`),
+      ...(shown.some((e) => e.entry?.source === 'generated' && e.entry.subject) && !pics.style ? ['no shared "style" sentence, so subjects have nothing to keep them looking like one book'] : []),
+      ...(shown.some((e) => !e.licence) ? [`no licence recorded for: ${shown.filter((e) => !e.licence).map((e) => e.name).join(', ')}`] : []),
+    ];
+    if (hard.length) add('rights', 'Image rights', 'fail', 'A picture in the book cannot be accounted for.', [...hard, ...soft]);
+    else if (soft.length) add('rights', 'Image rights', 'warn', 'The image manifest needs tidying.', soft);
+    else add('rights', 'Image rights', 'pass', `${shown.length} picture(s), each with a source and a licence on record.`);
+  }
 
   /* ---- 3. is book.html the book we are about to look at? */
   if (!fs.existsSync(htmlPath)) {

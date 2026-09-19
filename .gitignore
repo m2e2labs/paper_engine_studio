@@ -25,5 +25,8 @@ books/**/dist/
 # workflow.json (who approved what) is NOT ignored. It is part of the book's history.
 books/**/.studio/
 
+# images.mjs keeps the picture it just replaced here, until the next time.
+books/**/images/.previous/
+
 # Edition builds are regenerable from book.json.
 books/**/book-*.html

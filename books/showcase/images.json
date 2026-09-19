@@ -1,0 +1,28 @@
+{
+  "$schema": "../../engine/images.schema.json",
+  "style": "",
+  "aspect": "16:9",
+  "licence": "CC0 1.0 (public domain), as stated on this book's copyright page",
+  "images": {
+    "coffee-bloom.jpg": {
+      "source": "generated",
+      "prompt": "A plain unbranded white ceramic pour-over dripper on a clear glass carafe, hot water just poured over fresh coffee grounds, the grounds swelling into a domed crust with fine bubbles releasing across the surface, a plain steel gooseneck kettle spout entering at the top right. Completely smooth unmarked surfaces with no logos, no embossing and no engraved lettering on any object. Soft natural daylight from the left, gentle shadows, shallow depth of field, plain warm neutral background, muted natural colours, calm and uncluttered, no people, absolutely no text, letters, numbers or labels anywhere in the image."
+    },
+    "companion-planting.jpg": {
+      "source": "generated",
+      "prompt": "A young tomato plant growing in dark garden soil with leafy basil planted close around its base, seen from a low angle at plant level, healthy green leaves, a few small marigolds nearby. Soft natural daylight from the left, gentle shadows, shallow depth of field, plain warm neutral background, muted natural colours, calm and uncluttered, nothing branded, no people, absolutely no text, letters, numbers or labels anywhere in the image."
+    },
+    "golden-hour.jpg": {
+      "source": "generated",
+      "prompt": "A quiet landscape of rolling grass and a single tree in the last hour of sunlight, the low sun raking across from the left, long soft shadows stretching over the grass, warm amber light, hazy air. Shallow depth of field, muted natural colours, calm and uncluttered, nothing branded, no people, absolutely no text, letters, numbers or labels anywhere in the image."
+    },
+    "packing-cubes.jpg": {
+      "source": "generated",
+      "prompt": "An open carry-on suitcase seen from directly above, filled with four neat rectangular fabric packing cubes in muted earth tones, each zipped and squared off, clothes folded flat inside one open cube. Soft natural daylight from the left, gentle shadows, plain warm neutral floor, muted natural colours, calm and uncluttered, nothing branded, no people, absolutely no text, letters, numbers or labels anywhere in the image."
+    },
+    "resting-meat.jpg": {
+      "source": "generated",
+      "prompt": "A thick cooked steak resting on a worn wooden cutting board, seen from a low three-quarter angle, a carving knife lying beside it, a shallow pool of juices gathering under the meat. Soft natural daylight from the left, gentle shadows, shallow depth of field, plain warm neutral background, muted natural colours, calm and uncluttered, nothing branded, no people, absolutely no text, letters, numbers or labels anywhere in the image."
+    }
+  }
+}

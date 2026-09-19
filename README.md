@@ -199,11 +199,11 @@ The loop gets a page right. Three more tools get a book out of the door, and
 
 ```bash
 npm run studio                                                  # the workflow as a local web UI
-node engine/tools/preflight.mjs books/showcase                  # 16 checks between "it builds" and "it ships"
+node engine/tools/preflight.mjs books/showcase                  # 17 checks between "it builds" and "it ships"
 node engine/tools/release.mjs   books/showcase --editions all --bleed 3 --epub
 ```
 
-- **Preflight** is the release gate: `book.json` valid, the store listing complete, every
+- **Preflight** is the release gate: every picture's source and rights on record, `book.json` valid, the store listing complete, every
   page planned, every figure traced to a sourced
   fact, overflow, broken images, print resolution, fonts,
   clipped diagram labels, stale builds, print-on-demand limits, and whether a person has

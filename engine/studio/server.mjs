@@ -50,6 +50,7 @@ import {
 } from '../tools/lib/book.mjs';
 import { loadPlan } from '../tools/lib/plan.mjs';
 import { validateBookJson } from '../tools/lib/schema.mjs';
+import { loadImages, validateImagesJson, draftManifest } from '../tools/lib/images.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(HERE, 'public');
@@ -162,6 +163,11 @@ function stepsFor(task, slug, opt = {}) {
   if (task === 'build') return [build];
   if (task === 'preflight') return [build, pre];
   if (task === 'proof') return [build, pre, shots];
+  if (task === 'images') {   // regenerate named pictures from images.json; never "all" from a button
+    const names = (opt.names || []).filter((n) => /^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(n));
+    if (!names.length) return null;
+    return [{ name: 'Generate', args: [tool('images.mjs'), dir, '--generate', ...names] }];
+  }
   if (task === 'release') {
     const args = [tool('release.mjs'), dir];
     const known = Object.keys(loadBook(bookDir(slug)).json.editions || {});
@@ -223,7 +229,7 @@ function bookSummary(slug) {
 }
 
 /* The two plain-markdown sources the Studio may edit, by name and never by path. */
-const SOURCES = { blocks: 'blocks.md', facts: 'FACTS.md' };
+const SOURCES = { blocks: 'blocks.md', facts: 'FACTS.md', images: 'images.json' };
 
 function planSummary(dir) {
   try { const p = loadPlan(dir); return { ...p.counts, hasBlocks: p.hasBlocks, hasFacts: p.hasFacts }; } catch { return null; }
@@ -426,6 +432,8 @@ const handle = async (req, res) => {
       }
 
       if (sub === 'plan' && method === 'GET') return send(res, 200, loadPlan(dir));
+      if (sub === 'images' && method === 'GET') return send(res, 200, loadImages(dir));
+      if (sub === 'images' && parts[4] === 'draft' && method === 'POST') return send(res, 200, { text: JSON.stringify(draftManifest(dir), null, 2) + '\n' });
 
       if (sub === 'source') {
         const name = SOURCES[url.searchParams.get('file')];
@@ -435,8 +443,13 @@ const handle = async (req, res) => {
         if (method === 'PUT') {
           const { text } = await readBody(req);
           if (typeof text !== 'string') return fail(res, 400, 'Nothing to save.');
+          if (name.endsWith('.json')) {   // never let a manifest the schema rejects reach disk
+            let parsed; try { parsed = JSON.parse(text); } catch (e) { return fail(res, 400, `Not valid JSON: ${e.message}`); }
+            const shape = validateImagesJson(parsed);
+            if (shape.errors.length) return fail(res, 400, shape.errors.slice(0, 3).join('  ·  '));
+          }
           fs.writeFileSync(file, text.replace(/\r\n/g, '\n').replace(/\s*$/, '\n'));
-          return send(res, 200, { plan: loadPlan(dir), state: bookState(slug) });
+          return send(res, 200, { plan: loadPlan(dir), images: loadImages(dir), state: bookState(slug) });
         }
       }
 

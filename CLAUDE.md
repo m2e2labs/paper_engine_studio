@@ -52,7 +52,7 @@ cropped through its subject, or a diagram that says the wrong thing. **Always ru
 The loop above is for writing. To ship, use the production tools (`docs/PRODUCTION.md`):
 
 ```bash
-node engine/tools/preflight.mjs books/<slug>                     # the release gate, 16 checks
+node engine/tools/preflight.mjs books/<slug>                     # the release gate, 17 checks
 node engine/tools/release.mjs   books/<slug> --editions all --bleed 3 --epub
 npm run studio                                                   # the same, as a local web UI
 ```
@@ -91,9 +91,14 @@ surgery.
 into a Google account, no API key, no per-image charge). `--provider gemini` is the
 metered fallback and needs `GEMINI_API_KEY` in `.env`.
 
-Prompts must forbid text in the image, name the light and angle and background, and
-repeat the book's shared style sentence. Save every prompt next to its image as
-`<name>.txt`. See `.claude/skills/block/references/photo-blocks.md`.
+`books/<slug>/images.json` is the image manifest: one shared `style` sentence for the book,
+and per file its `source`, its licence, and the `subject` it is generated from. Generate
+from it with `node engine/tools/images.mjs books/<slug> --generate <name>.jpg`, never for
+a file nobody named. **Never guess a licence or a credit**: rights are the author's to
+state. Which page uses a picture, and its alt text, are read from the pages, not stored.
+
+The style must forbid text in the image and name the light, the angle and the background.
+See `.claude/skills/block/references/photo-blocks.md`.
 
 ## Notes
 

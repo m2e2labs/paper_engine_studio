@@ -1,6 +1,6 @@
 # engine/tools
 
-Five commands for writing a book, and four for shipping one. Every one takes paths relative to the repo root, and every one carries a
+Five commands for writing a book, and five for shipping one. Every one takes paths relative to the repo root, and every one carries a
 full usage block at the top of its own file.
 
 One-time setup:
@@ -34,7 +34,8 @@ The loop is how you write a book. These are how you ship one. The full walkthrou
 
 | Tool | What it does | Run it |
 |---|---|---|
-| `preflight.mjs` | **The release gate.** Everything `check.mjs` is, plus: `book.json` valid against `engine/book.schema.json`, the store listing complete, book details filled in, running order complete, every page planned in `blocks.md` and every figure traced to a sourced fact in `FACTS.md`, build not stale, images at print resolution (300 dpi), fonts loaded, no SVG label past the edge of its drawing, nothing fetched from the network, alt text, print-on-demand limits, and every page approved. Exits 1 on failure. | `node engine/tools/preflight.mjs books/<slug>` |
+| `images.mjs` | The image manifest. Reports every picture with its source, rights and the pages that show it; `--init` drafts `images.json` from the folder; `--generate` remakes named pictures from their subject plus the book's one shared style. | `node engine/tools/images.mjs books/<slug> [--init \| --generate <file…>]` |
+| `preflight.mjs` | **The release gate.** Everything `check.mjs` is, plus: `book.json` valid against `engine/book.schema.json`, every picture's source and rights on record in `images.json`, the store listing complete, book details filled in, running order complete, every page planned in `blocks.md` and every figure traced to a sourced fact in `FACTS.md`, build not stale, images at print resolution (300 dpi), fonts loaded, no SVG label past the edge of its drawing, nothing fetched from the network, alt text, print-on-demand limits, and every page approved. Exits 1 on failure. | `node engine/tools/preflight.mjs books/<slug>` |
 | `epub.mjs` | A **fixed-layout** EPUB 3 from a built book (the reflowable one comes from `build-reader.mjs`): one page per sheet, same CSS and fonts, SVG diagrams still live text. Every page is parsed back as XML before the file is written. | `node engine/tools/epub.mjs books/<slug> [--edition free]` |
 | `release.mjs` | Build, preflight, export, for the full book and any editions, plus EPUBs with `--epub` and a store listing sheet, into a new dated folder under `books/<slug>/dist/` with a manifest and checksums. Stops before writing anything if preflight fails. | `node engine/tools/release.mjs books/<slug> --editions all --bleed 3` |
 | `../studio/server.mjs` | The Studio: the same commands behind a local web UI, with page-by-page review and approval. | `npm run studio` |
