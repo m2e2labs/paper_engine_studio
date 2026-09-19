@@ -52,7 +52,7 @@ cropped through its subject, or a diagram that says the wrong thing. **Always ru
 The loop above is for writing. To ship, use the production tools (`docs/PRODUCTION.md`):
 
 ```bash
-node engine/tools/preflight.mjs books/<slug>                     # the release gate, 19 checks
+node engine/tools/preflight.mjs books/<slug>                     # the release gate, 20 checks
 node engine/tools/release.mjs   books/<slug> --editions all --bleed 3 --epub
 npm run studio                                                   # the same, as a local web UI
 ```
@@ -84,6 +84,12 @@ npm run studio                                                   # the same, as 
   `data-to="Exact page title"` when the words differ). Never type a page number: `build.mjs`
   prints the real one, and leaves plain words in an edition that does not hold the target.
   The number adds a few characters to the line, so run `check.mjs` after adding one.
+- **A book's own colours live in `book.json`**: `accent`, `accentStrong`, and `theme` (`signal`,
+  `danger`, `warn`, `ink`, `muted`, `line`, `surface`, `card`). **Pages and diagrams are still
+  written in the studio palette, always**, exactly as the diagram system says; `build.mjs`
+  repaints the finished book, tints included. Never hand-write a book's theme colours into a
+  page or an SVG, and never add a per-book stylesheet. A theme changes what a role looks
+  like, never what it means.
 - `dist/`, `.studio/` and `book-<edition>.html` are regenerable and gitignored.
 - Shared code for these tools lives in `engine/tools/lib/`. `build-book.mjs`, `check.mjs`
   and `shot.mjs` are untouched upstream files (`build.mjs` wraps the first); keep them that way so upstream still merges.

@@ -17,6 +17,7 @@ import { loadPlan } from './plan.mjs';
 import { loadImages } from './images.mjs';
 import { matterFor, matterProblems, titleOf } from './matter.mjs';
 import { loadRefs } from './refs.mjs';
+import { themeProblems, TOKENS, DEFAULTS } from './theme.mjs';
 import { validateBookJson, publishingFor, isbnOk, isbnDigits } from './schema.mjs';
 
 const PLACEHOLDERS = ['Your Name', 'yoursite.com', 'My First Book', 'My first book'];
@@ -163,6 +164,12 @@ export async function preflight(dir, { bookHtml, edition = null, strict = false 
     else add('refs', 'References', 'pass', used || okRefs ? `${okRefs} cross-reference(s) and ${used} glossary term(s), every one leading to a page.` : 'No glossary and no cross-references.');
   }
 
+  /* ---- 2f. the book's own colours: can they be read, can the roles be told apart? */
+  const tp = themeProblems(j);
+  if (tp.errors.length) add('theme', 'Theme', 'fail', 'The book\'s colours cannot be used as they are.', [...tp.errors, ...tp.warnings]);
+  else if (tp.warnings.length) add('theme', 'Theme', 'warn', 'The book\'s colours need a look.', tp.warnings);
+  else add('theme', 'Theme', 'pass', tp.theme ? `Its own colours: ${TOKENS.filter((k) => tp.theme[k] !== DEFAULTS[k]).join(', ')}. Readable, and the roles can be told apart.` : 'The studio palette.');
+
   /* ---- 3. is book.html the book we are about to look at? */
   if (!fs.existsSync(htmlPath)) {
     add('build', 'Build', 'fail', `${path.basename(htmlPath)} does not exist. Build the book first.`);
@@ -175,8 +182,9 @@ export async function preflight(dir, { bookHtml, edition = null, strict = false 
   const newer = sources.filter((f) => fs.existsSync(f) && fs.statSync(f).mtimeMs > built + 1000);
   const builtHtml = fs.readFileSync(htmlPath, 'utf8');
   const bare = (mtAll.some((m) => m.kind !== 'sources' && m.kind !== 'glossary') && !/class="sheet gp matter /.test(builtHtml)) ||
+    (!!tp.theme && !builtHtml.includes('THEME: this book')) ||
     (refs.xrefs.length > 0 && /<span class="xref"/.test(builtHtml.replace(/<!--[\s\S]*?-->/g, '')) && !/ id="s1"/.test(builtHtml));
-  if (bare) add('build', 'Build', 'fail', `${path.basename(htmlPath)} was built without its front and back matter or its cross-references. Build with build.mjs, not build-book.mjs.`);
+  if (bare) add('build', 'Build', 'fail', `${path.basename(htmlPath)} was built without its front and back matter, its cross-references or its colours. Build with build.mjs, not build-book.mjs.`);
   else if (newer.length) add('build', 'Build', 'fail', `${path.basename(htmlPath)} is older than its source. Rebuild.`, newer.map((f) => path.basename(f)));
   else add('build', 'Build', 'pass', `${path.basename(htmlPath)} is up to date.`);
 

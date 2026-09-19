@@ -505,6 +505,7 @@ function viewStructure() {
   const save = guard(async () => {
     if (d.publishing) { prune(d.publishing); if (!Object.keys(d.publishing).length) delete d.publishing; }
     if (d.language === '') delete d.language;
+    if (d.theme) { prune(d.theme); if (!Object.keys(d.theme).length) delete d.theme; }
     if (d.matter) {   // an empty field is not a key, and a book with no matter has no "matter"
       for (const k of ['front', 'back']) for (const m of d.matter[k] || []) { prune(m); if (m.editions && !m.editions.length) delete m.editions; }
       prune(d.matter); if (!Object.keys(d.matter).length) delete d.matter;
@@ -532,8 +533,7 @@ function viewStructure() {
       h('label.f.span', 'Rights line', h('input', { type: 'text', ...bind(d.copyright, 'rights') })),
       h('label.f.span', 'Copyright page lines (one per line)',
         h('textarea', { rows: 3, value: (d.copyright.lines || []).join('\n'), oninput: (e) => { d.copyright.lines = e.target.value.split('\n').map((s) => s.trim()).filter(Boolean); markDirty(); } })),
-      h('label.f', 'Accent', h('input', { type: 'color', value: d.accent || '#6366F1', oninput: (e) => { d.accent = e.target.value; markDirty(); } })),
-      h('label.f', 'Accent, strong', h('input', { type: 'color', value: d.accentStrong || '#4F46E5', oninput: (e) => { d.accentStrong = e.target.value; markDirty(); } }))),
+      ),
     h('div', { style: 'display:flex;gap:18px;margin-top:14px;flex-wrap:wrap' }, tick('numbered', 'Number the pages (No. 01)'), tick('contents', 'Contents'), tick('index', 'Index')));
 
   /* ---- parts */
@@ -633,6 +633,44 @@ function viewStructure() {
         return h('div.part', h('div.part-top', h('b', n)), h('div.fields', isbnField('ISBN, print', e.isbn, 'print'), isbnField('ISBN, EPUB', e.isbn, 'epub'),
           h('label.f.span', 'Description, if it differs', h('textarea', { rows: 2, value: e.description || '', oninput: (ev) => { e.description = ev.target.value; markDirty(); } })))); })));
 
+  /* ---- colours. Pages are written in the studio palette; the build repaints the book. */
+  const STUDIO = { accent: '#6366F1', accentStrong: '#4F46E5', signal: '#0D9488', danger: '#DC2626', warn: '#B45309', ink: '#1A1A2E', muted: '#5B6472', line: '#E7E9EF', surface: '#FAFAFC', card: '#FFFFFF' };
+  const ROLE = { accent: 'Accent: the mechanism being taught', accentStrong: 'Accent as text (worked out if left alone)', signal: 'Signal: the good outcome', danger: 'Danger: the threat or mistake',
+    warn: 'Warn: the thing worth protecting', ink: 'Ink: text', muted: 'Muted: quiet text', line: 'Line: rules and borders', surface: 'Surface: the page', card: 'Card: the explainer, neutral diagram cards' };
+  const th = (d.theme ||= {});
+  const home = (k) => (k === 'accent' || k === 'accentStrong' ? d : th);
+  const rgbOf = (x) => [1, 3, 5].map((i) => parseInt(x.slice(i, i + 2), 16));
+  const mixOf = (a, b, n) => '#' + rgbOf(a).map((v, i) => Math.round(rgbOf(b)[i] + (v - rgbOf(b)[i]) * n).toString(16).padStart(2, '0')).join('');
+  const lumOf = (x) => { const [r, g, b2] = rgbOf(x).map((v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b2; };
+  const ratio = (a, b) => { const [hi, lo] = [lumOf(a), lumOf(b)].sort((x, y) => y - x); return (hi + 0.05) / (lo + 0.05); };
+  const now = () => { const t = { ...STUDIO }; for (const k of Object.keys(STUDIO)) if (/^#[0-9a-f]{6}$/i.test(home(k)[k] || '')) t[k] = home(k)[k];
+    if (t.accent !== STUDIO.accent && !d.accentStrong) t.accentStrong = mixOf(t.ink, t.accent, 0.22); return t; };
+  const preview = h('div.swatch');
+  const paint = () => {
+    const t = now(), c = ratio(t.ink, t.surface);
+    const box = (role, label) => h('span', { style: `background:${mixOf(t[role], t.card, 0.1)};border:1px solid ${mixOf(t[role], t.card, 0.27)};color:${role === 'accent' ? t.accentStrong : t[role]};padding:5px 10px;border-radius:8px;font-weight:600;font-size:12.5px` }, label);
+    preview.replaceChildren(h('div', { style: `background:${t.surface};color:${t.ink};border:1px solid ${t.line};border-radius:12px;padding:16px 18px` },
+      h('div', { style: `width:44px;height:6px;border-radius:99px;background:${t.accent}` }),
+      h('div', { style: `font:600 22px "Space Grotesk",sans-serif;margin-top:10px` }, d.title || 'Title'),
+      h('div', { style: `color:${t.muted};font-size:13.5px` }, 'The subtitle, the eyebrow and the foot are muted.'),
+      h('div', { style: 'display:flex;gap:8px;flex-wrap:wrap;margin:12px 0' }, box('accent', 'Mechanism'), box('signal', 'Good'), box('danger', 'Threat'), box('warn', 'Protected')),
+      h('div', { style: `background:${t.card};border:1px solid ${t.line};border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55` },
+        'Plain words, ', h('b', { style: `color:${t.danger}` }, 'the problem'), ', ', h('b', { style: `color:${t.accentStrong}` }, 'the idea'), ' and ', h('b', { style: `color:${t.signal}` }, 'the good outcome'), '.')),
+      h('p.hint', { style: `margin:8px 0 0;color:${c < 4.5 ? 'var(--fail)' : ''}` }, `Text on the page: ${c.toFixed(1)}:1${c < 4.5 ? '. Under 4.5:1 it cannot be read, and preflight will fail it.' : '.'}`));
+  };
+  const colour = (k) => {
+    const o = home(k), input = h('input', { type: 'color', value: o[k] || now()[k], oninput: (e) => { o[k] = e.target.value.toUpperCase(); mark.textContent = o[k]; markDirty(); paint(); } });
+    const mark = h('span.muted', { style: 'font:12px var(--mono)' }, o[k] || 'studio');
+    return h('label.f', ROLE[k], h('span', { style: 'display:flex;gap:8px;align-items:center' }, input, mark,
+      h('button.btn.small', { type: 'button', title: 'Back to the studio colour', onclick: (e) => { e.preventDefault(); delete o[k]; touch(); } }, 'Reset')));
+  };
+  paint();
+  const colours = h('div.panel', h('h2', 'Colours'),
+    h('p.hint', 'The book’s own palette. Pages and diagrams are still written in the studio colours; the build repaints the finished book, diagrams included. The roles never change, only what they look like.'),
+    h('div', { style: 'display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,340px);gap:20px;align-items:start' },
+      h('div.fields', Object.keys(STUDIO).map(colour)), preview),
+    h('button.btn', { style: 'margin-top:12px', onclick: () => { delete d.accent; delete d.accentStrong; d.theme = {}; touch(); } }, 'Back to the studio palette'));
+
   /* ---- front and back matter: the pages around the pages */
   const mt = (d.matter ||= {});
   const KIND_LABEL = { dedication: 'Dedication', epigraph: 'Epigraph', prose: 'Prose page', list: 'List', sources: 'Sources (from FACTS.md)', glossary: 'Glossary (from GLOSSARY.md)' };
@@ -680,14 +718,14 @@ function viewStructure() {
     matterList('front', 'Front', 'A dedication and an epigraph go before the contents. Everything else comes after it, before Part 1.'),
     matterList('back', 'Back', 'After the last page, before the index.'));
 
-  return [savebar, details, order, matter, editions, publishing];
+  return [savebar, details, colours, order, matter, editions, publishing];
 }
 
 /* ------------------------------------------------------------------ Preflight */
 function viewPreflight() {
   const pre = S.book.preflight;
   const runBtn = h('button.btn.primary', { 'data-runs': true, onclick: () => run('preflight') }, pre ? 'Run preflight again' : 'Run preflight');
-  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'The checks between a book that builds and a book that is ready to ship: details, book.json, publishing, running order, plan, facts, image rights, front and back matter, references, stale build, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
+  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'The checks between a book that builds and a book that is ready to ship: details, book.json, publishing, running order, plan, facts, image rights, front and back matter, references, theme, stale build, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
   const word = { pass: 'Ready to release', warn: 'Ready, with warnings', fail: 'Not ready' }[pre.result];
   return [
     h('div.verdict', h('span.tag.' + pre.result, pre.result.toUpperCase()), h('span.big', word),

@@ -199,7 +199,7 @@ The loop gets a page right. Three more tools get a book out of the door, and
 
 ```bash
 npm run studio                                                  # the workflow as a local web UI
-node engine/tools/preflight.mjs books/showcase                  # 19 checks between "it builds" and "it ships"
+node engine/tools/preflight.mjs books/showcase                  # 20 checks between "it builds" and "it ships"
 node engine/tools/release.mjs   books/showcase --editions all --bleed 3 --epub
 ```
 
@@ -214,6 +214,9 @@ node engine/tools/release.mjs   books/showcase --editions all --bleed 3 --epub
 - **A glossary and cross-references**: terms in `GLOSSARY.md`, printed with the pages that use
   them, and `<span class="xref">Page title</span>` in a page becomes "Page title (p. 21)" with
   the real number, a live link in the PDF and the EPUB.
+- **A book's own colours**: `accent` and a `theme` block in `book.json` repaint the finished
+  book, diagrams included, light or dark, while every page stays written in one palette and
+  the colour roles stay the same. Preflight checks it can be read.
 - **The Studio** shows the plan next to what is written, shows every page as a proof, lets you approve them one keystroke at a
   time, edits `book.json` as a form, and keeps an approval pinned to the exact content
   that was approved.

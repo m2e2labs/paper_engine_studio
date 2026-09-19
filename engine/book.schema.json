@@ -22,8 +22,22 @@
     "numbered": { "type": "boolean", "description": "Print No. 01, No. 02 in the eyebrow. Default: true." },
     "contents": { "type": "boolean", "description": "Generate a contents page. Default: true." },
     "index": { "type": "boolean", "description": "Generate an alphabetical index. Default: true." },
-    "accent": { "$ref": "#/$defs/colour", "description": "Accent colour on generated pages." },
-    "accentStrong": { "$ref": "#/$defs/colour", "description": "The darker accent, for small caps labels." },
+    "accent": { "$ref": "#/$defs/colour", "description": "The book's accent: the colour of the mechanism being taught, on every page and in every diagram. Default: #6366F1." },
+    "accentStrong": { "$ref": "#/$defs/colour", "description": "The accent as text: highlighted words, small caps labels. Left out, it is worked out from accent." },
+    "theme": {
+      "type": "object", "additionalProperties": false,
+      "description": "The rest of the book's colours. Pages are always written in the studio palette; build.mjs repaints the finished book, diagrams included. The roles never change, only what they look like.",
+      "properties": {
+        "signal": { "$ref": "#/$defs/colour", "description": "The good outcome. Default: #0D9488." },
+        "danger": { "$ref": "#/$defs/colour", "description": "The threat or the mistake. Default: #DC2626." },
+        "warn": { "$ref": "#/$defs/colour", "description": "The thing worth protecting. Default: #B45309." },
+        "ink": { "$ref": "#/$defs/colour", "description": "Text. Default: #1A1A2E." },
+        "muted": { "$ref": "#/$defs/colour", "description": "Quiet text: the subtitle, the eyebrow, the foot. Default: #5B6472." },
+        "line": { "$ref": "#/$defs/colour", "description": "Rules and borders. Default: #E7E9EF." },
+        "surface": { "$ref": "#/$defs/colour", "description": "The page. Default: #FAFAFC." },
+        "card": { "$ref": "#/$defs/colour", "description": "The explainer card, and neutral cards in diagrams. Default: #FFFFFF." }
+      }
+    },
 
     "cover": {
       "type": "object", "additionalProperties": false,

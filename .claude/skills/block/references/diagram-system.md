@@ -31,6 +31,11 @@ The diagram is one inline `<svg>` between the title block and the explainer. It 
 
 Two or three accents max, plus neutrals. Every color carries meaning. Don't decorate.
 
+**Always use exactly these hex values, even in a book with its own colours.** A book's
+`theme` in `book.json` is applied by the build, which looks for these values and repaints
+them, tints included. A colour that is not in this table is left as it is, and will look
+wrong in a themed book.
+
 | Role | Use for | Fill | Stroke | Title text | Subtitle text |
 |---|---|---|---|---|---|
 | Neutral | your app/server, structural boxes | `#FFFFFF` | `#E7E9EF` | `#1A1A2E` | `#5B6472` |

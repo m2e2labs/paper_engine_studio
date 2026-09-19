@@ -6,7 +6,7 @@ record of who looked at what, and releases you can find again.
 
 ```
 WRITE ──> BUILD ──> PREFLIGHT ──> REVIEW ──> RELEASE
-pages     book.html   19 checks     a person     dated folder in dist/
+pages     book.html   20 checks     a person     dated folder in dist/
                                     approves     PDF + print PDF + EPUB + manifest
 ```
 
@@ -90,6 +90,7 @@ node engine/tools/preflight.mjs books/<slug> [--edition free] [--strict] [--json
 | Image rights | `images.json` breaks its schema, or a picture shown in the book is missing from it, is `licensed` or `public-domain` with no licence written down, or is `licensed` with no credit or url | there is no `images.json`, a file in `images/` is on no page, a generated picture has no subject or prompt, or no licence is recorded |
 | Front/back matter | a `matter` page cannot be made: a prose or list page with no title, an empty body, a paragraph longer than a sheet | an epigraph with no `by`, starter placeholders in the text, a `sources` page with nothing to list |
 | References | a cross-reference names a page that does not exist or the page it is on, `GLOSSARY.md` defines a term twice or with no `Means` line | a cross-reference's target is not in this edition (it prints with no number), a glossary term no page uses, a `GLOSSARY.md` with no `glossary` page to print it, or the reverse |
+| Theme | a colour is not a hex value, or `ink` on `surface` or `card` is under 4.5:1 | `muted` under 4.5:1, a role colour under 3:1 on the card, two roles nearly the same colour |
 | Build | `book.html` is missing or older than its source | |
 | Pages fit | any page is past the bottom edge, or the stylesheet never loaded | |
 | Images load | any image is broken | |
@@ -230,6 +231,30 @@ the page really is, as a link that works in the PDF and the fixed-layout EPUB. I
 edition that leaves the target out, the words stay and no number is printed. Preflight
 fails a reference to a title that does not exist. The number makes the line a little
 longer, so check the page still reads `0 mm`.
+
+### The book's own colours
+
+```json
+"accent": "#0E7490",
+"theme": { "signal": "#15803D", "surface": "#FBF8F1", "line": "#E6DFD0", "ink": "#1F2421" }
+```
+
+Ten tokens: `accent` and `accentStrong` at the top level of `book.json` (they were already
+there, for the generated pages), and `signal`, `danger`, `warn`, `ink`, `muted`, `line`,
+`surface` and `card` under `theme`. Leave one out and it keeps the studio value; give an
+`accent` with no `accentStrong` and one is worked out.
+
+Nothing about writing a page changes. Pages and diagrams are written in the studio
+palette, as the diagram system describes, and `build.mjs` repaints the finished book: the
+CSS tokens on every sheet, generated pages and matter included, and every palette colour
+inside every diagram. A role's card fill and stroke are its colour mixed into the card
+colour, in the same proportions as the original, so a dark `surface` and `card` give a
+dark book with diagrams that still read. A book with no theme builds byte for byte as before.
+
+The roles do not move: `accent` is still the mechanism, `signal` the good outcome, `danger`
+the threat, `warn` the thing worth protecting. Preflight fails text that cannot be read
+(`ink` on the page under 4.5:1) and warns when two roles are close enough to confuse.
+`build-reader.mjs` (the reflowable reader) is not themed.
 
 ### Publishing metadata
 
