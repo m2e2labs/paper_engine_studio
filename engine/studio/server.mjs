@@ -49,6 +49,7 @@ import {
   statusOf, setStatus, reviewSummary, replacePage, addPage, blankPage,
 } from '../tools/lib/book.mjs';
 import { loadPlan } from '../tools/lib/plan.mjs';
+import { validateBookJson } from '../tools/lib/schema.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(HERE, 'public');
@@ -320,6 +321,8 @@ function cleanJson(next, book) {
     if (!Array.isArray(list)) throw new Error(`Edition "${name}" has to be a list of page titles.`);
   }
   if (next.interior && next.interior !== book.json.interior) throw new Error('The interior file cannot be changed from the Studio.');
+  const shape = validateBookJson(next);
+  if (shape.errors.length) throw new Error(shape.errors.slice(0, 3).join('  ·  ') + (shape.errors.length > 3 ? `  ·  and ${shape.errors.length - 3} more` : ''));
   return next;
 }
 

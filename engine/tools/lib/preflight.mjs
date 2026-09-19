@@ -14,6 +14,7 @@ import path from 'node:path';
 import { loadBook, loadWorkflow, reviewSummary, statusOf } from './book.mjs';
 import { inspectBook } from './measure.mjs';
 import { loadPlan } from './plan.mjs';
+import { validateBookJson, publishingFor, isbnOk, isbnDigits } from './schema.mjs';
 
 const PLACEHOLDERS = ['Your Name', 'yoursite.com', 'My First Book', 'My first book'];
 
@@ -34,6 +35,36 @@ export async function preflight(dir, { bookHtml, edition = null, strict = false 
   if (blank.length) add('metadata', 'Book details', 'fail', `book.json has no ${blank.join(' or ')}.`);
   else if (stale.length) add('metadata', 'Book details', 'warn', 'Starter placeholders are still in book.json.', stale);
   else add('metadata', 'Book details', 'pass', `${j.title}, by ${j.author}.`);
+
+  /* ---- 1b. is book.json the shape the engine and the stores expect? */
+  const shape = validateBookJson(j);
+  if (shape.errors.length) add('schema', 'book.json', 'fail', `${shape.errors.length} value(s) in book.json are not what the schema allows.`, shape.errors);
+  else if (shape.unknown.length) add('schema', 'book.json', 'warn', 'book.json has keys the engine does not know. A typo? They are ignored.', shape.unknown);
+  else add('schema', 'book.json', 'pass', 'Matches engine/book.schema.json.');
+
+  /* ---- 1c. what a store listing needs. Only asked of a book that says it is for sale. */
+  if (!j.publishing) add('publishing', 'Publishing', 'pass', 'No "publishing" block. Fine for a PDF you hand out; add one before a store listing.');
+  else {
+    const l = publishingFor(j, edition);
+    const bad = [], thin = [];
+    for (const [fmt, n] of Object.entries(l.isbn)) if (!isbnOk(n)) bad.push(`ISBN (${fmt}) ${n}: the check digit does not add up`);
+    const all = [j.publishing.isbn, ...Object.values(j.publishing.editions || {}).map((e) => e.isbn)].flatMap((o) => Object.values(o || {})).filter(Boolean).map(isbnDigits);
+    for (const n of new Set(all.filter((n, i) => all.indexOf(n) !== i))) bad.push(`ISBN ${n} is used for more than one format or edition`);
+    for (const name of Object.keys(j.publishing.editions || {})) if (!(j.editions || {})[name]) bad.push(`publishing.editions.${name}: there is no edition called "${name}"`);
+
+    if (!l.language) thin.push('no "language" (en, ar, fr-CA): the EPUB will say "en"');
+    if (l.description.length < 80) thin.push(l.description ? `the description is only ${l.description.length} characters` : 'no description');
+    if (!l.keywords.length) thin.push('no keywords (KDP takes up to seven)');
+    if (!l.categories.length) thin.push('no categories');
+    if (!l.published) thin.push('no publication date');
+    if (!l.price) thin.push('no price');
+    const printed = `${(j.copyright?.lines || []).join(' ')} ${j.copyright?.rights || ''}`.replace(/[-\s]/g, '');
+    if (l.isbn.print && !printed.includes(isbnDigits(l.isbn.print))) thin.push(`the print ISBN is not on the copyright page: add it to copyright.lines`);
+
+    if (bad.length) add('publishing', 'Publishing', 'fail', 'The listing data has errors a store will reject.', [...bad, ...thin]);
+    else if (thin.length) add('publishing', 'Publishing', 'warn', 'The store listing is incomplete.', thin);
+    else add('publishing', 'Publishing', 'pass', `Listing complete: ${l.keywords.length} keywords, ${l.categories.length} categor${l.categories.length === 1 ? 'y' : 'ies'}, ${Object.keys(l.isbn).length} ISBN(s).`);
+  }
 
   /* ---- 2. the running order */
   const unknownInEditions = Object.entries(j.editions || {}).flatMap(([name, list]) =>

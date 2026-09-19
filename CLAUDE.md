@@ -52,7 +52,7 @@ cropped through its subject, or a diagram that says the wrong thing. **Always ru
 The loop above is for writing. To ship, use the production tools (`docs/PRODUCTION.md`):
 
 ```bash
-node engine/tools/preflight.mjs books/<slug>                     # the release gate, 14 checks
+node engine/tools/preflight.mjs books/<slug>                     # the release gate, 16 checks
 node engine/tools/release.mjs   books/<slug> --editions all --bleed 3 --epub
 npm run studio                                                   # the same, as a local web UI
 ```
@@ -64,6 +64,11 @@ npm run studio                                                   # the same, as 
 - There are two EPUBs, on purpose. `epub.mjs` / `release.mjs --epub` writes a FIXED-LAYOUT
   EPUB, the PDF's twin, page for page. `build-reader.mjs` writes a REFLOWABLE `book.epub`
   and `reader.html` for phones. Do not turn one into the other.
+- `engine/book.schema.json` describes `book.json`, including the `publishing` block (listing
+  data: description, keywords, categories, ISBNs, price). Add a key to the schema before
+  you use it, or preflight reports it as unknown. `lib/schema.mjs` implements only the
+  JSON Schema keywords that file uses and throws on any other, on purpose.
+- **Never invent an ISBN, a price or a publication date.** Those come from the author.
 - `dist/`, `.studio/` and `book-<edition>.html` are regenerable and gitignored.
 - Shared code for these tools lives in `engine/tools/lib/`. `build-book.mjs`, `check.mjs`
   and `shot.mjs` are untouched upstream files; keep them that way so upstream still merges.

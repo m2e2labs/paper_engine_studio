@@ -6,7 +6,7 @@ record of who looked at what, and releases you can find again.
 
 ```
 WRITE ──> BUILD ──> PREFLIGHT ──> REVIEW ──> RELEASE
-pages     book.html   14 checks     a person     dated folder in dist/
+pages     book.html   16 checks     a person     dated folder in dist/
                                     approves     PDF + print PDF + EPUB + manifest
 ```
 
@@ -22,7 +22,7 @@ npm run studio          # http://localhost:4173
 |---|---|
 | **Plan** | `blocks.md` and `FACTS.md` read as data: every planned page with its status (planned, draft, in review, approved), the facts it may state, and any figure printed on the page that those facts do not cover. **Start page** turns a planned entry into a blank page in the right part. Both files open in an editor. |
 | **Pages** | Every page as a proof thumbnail, in book order. Click one to review it full size, leave a note, and set it to Draft, In review or Approved. `←` `→` move, `A` approves and advances, `R` sends back to review. **Edit source** opens the page's HTML; saving writes it into the interior and runs proof. |
-| **Structure** | `book.json` as a form: book details, parts, page order, and which pages each edition keeps. Reordering a book is still a JSON edit; this is just a nicer way to make it. |
+| **Structure** | `book.json` as a form: book details, parts, page order, which pages each edition keeps, and the **Publishing** panel (description, keywords, categories, price, ISBNs with a live check digit, per-edition ISBNs). A save the schema rejects is refused, with the reason. Reordering a book is still a JSON edit; this is just a nicer way to make it. |
 | **Preflight** | The last report, check by check. |
 | **Release** | Pick editions, bleed and EPUB, run a release, and download anything you have ever shipped. |
 
@@ -81,6 +81,8 @@ node engine/tools/preflight.mjs books/<slug> [--edition free] [--strict] [--json
 | Check | Fails when | Warns when |
 |---|---|---|
 | Book details | no title or author | starter placeholders remain ("Your Name", "yoursite.com") |
+| book.json | a value breaks `engine/book.schema.json`: wrong type, a bad colour, date or language tag, more than seven keywords, an edition called `full` | a key the engine does not know (usually a typo) |
+| Publishing | an ISBN's check digit is wrong, one ISBN is used for two formats or editions, or `publishing.editions` names an edition that does not exist | there is a `publishing` block but no language, description, keywords, categories, date or price, or the print ISBN is not on the copyright page. No `publishing` block at all passes: not every book is for sale |
 | Running order | `book.json` lists an unwritten page, or an edition lists an unknown one | a written page is in no part |
 | Plan | | there is no `blocks.md`, or a page in the book has no entry in it |
 | Facts | a page cites a fact id that is not in `FACTS.md`, a cited fact has no Source, or an id is defined twice | there is no `FACTS.md`, an entry has no Facts line, or a figure printed on a page is not in the facts that page cites |
@@ -128,6 +130,8 @@ books/<slug>/dist/edition-1.0_20260919-111604/
   <slug>.epub                with --epub: fixed-layout EPUB 3
   <slug>-free.pdf            one per edition
   <slug>-preflight.json      the report this release passed
+  <slug>-listing.md          title, blurb, keywords, categories, ISBNs, price, page count:
+                             what you paste into a store's listing form
   <slug>-proofs/             with --proofs: one PNG per page
   manifest.json              commit, date, page counts, sha256 of every file
 ```
@@ -135,6 +139,34 @@ books/<slug>/dist/edition-1.0_20260919-111604/
 It also counts the pages in each PDF and stops if that differs from the number of sheets,
 which is the one way a strict page can silently go wrong in print. Folders are dated and
 never overwritten. `--force` ships past failing checks, and the manifest says it did.
+
+### Publishing metadata
+
+`book.json` takes an optional `publishing` block, described (like everything else in the
+file) by [`engine/book.schema.json`](../engine/book.schema.json). Start a book's
+`book.json` with `"$schema": "../../engine/book.schema.json"` and VS Code, and most other
+editors, complete and check it as you type.
+
+```json
+"language": "en",
+"publishing": {
+  "description": "The blurb a store shows.",
+  "keywords": ["up to", "seven"],
+  "categories": ["COM053000", "Computers / Security / General"],
+  "publisher": "Your imprint",
+  "published": "2026-10-01",
+  "price": { "amount": 9.99, "currency": "USD" },
+  "isbn": { "print": "978-…", "epub": "978-…" },
+  "editions": { "free": { "isbn": { "epub": "978-…" } } }
+}
+```
+
+None of it is printed in the book. It goes into the EPUB (`dc:description`, `dc:subject`,
+`dc:publisher`, `dc:date`, and the EPUB ISBN becomes the book's `urn:isbn:` identifier) and
+into `<slug>-listing.md` in every release. An edition never inherits the full book's ISBN:
+a different set of pages is a different product. The print ISBN is not added to the
+copyright page for you; put it in `copyright.lines`, and preflight reminds you if it is
+missing. PDFs carry only the title, because that is all Chromium writes.
 
 ### Bleed
 

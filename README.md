@@ -83,7 +83,10 @@ mv books/my-book/starter.html books/my-book/my-book.html
 
 Then, in that folder:
 
-1. **`book.json`** — the title, your name, the site in the footer, and the running order.
+1. **`book.json`** — the title, your name, the site in the footer, the running order, and
+   (when you are ready to sell it) what a store listing asks for: description, keywords,
+   categories, ISBNs, price. It points at [`engine/book.schema.json`](engine/book.schema.json),
+   so your editor completes and checks it as you type.
 2. **`VOICE.md`** — how your book sounds. Rewrite it. It is the file that decides whether
    your pages read like you or like a machine.
 3. **`blocks.md`** — the plan: an entry for each page you mean to write, and which facts it
@@ -196,11 +199,12 @@ The loop gets a page right. Three more tools get a book out of the door, and
 
 ```bash
 npm run studio                                                  # the workflow as a local web UI
-node engine/tools/preflight.mjs books/showcase                  # 14 checks between "it builds" and "it ships"
+node engine/tools/preflight.mjs books/showcase                  # 16 checks between "it builds" and "it ships"
 node engine/tools/release.mjs   books/showcase --editions all --bleed 3 --epub
 ```
 
-- **Preflight** is the release gate: every page planned, every figure traced to a sourced
+- **Preflight** is the release gate: `book.json` valid, the store listing complete, every
+  page planned, every figure traced to a sourced
   fact, overflow, broken images, print resolution, fonts,
   clipped diagram labels, stale builds, print-on-demand limits, and whether a person has
   approved every page.
@@ -208,7 +212,7 @@ node engine/tools/release.mjs   books/showcase --editions all --bleed 3 --epub
   time, edits `book.json` as a form, and keeps an approval pinned to the exact content
   that was approved.
 - **Release** builds every edition fresh, stops if preflight fails, and writes PDFs (with
-  a bleed version for a printer), a fixed-layout EPUB for the ebook stores, a manifest and checksums into a dated folder that is
+  a bleed version for a printer), a fixed-layout EPUB for the ebook stores, a listing sheet to paste into a store's form, a manifest and checksums into a dated folder that is
   never overwritten.
 
 ## What is where

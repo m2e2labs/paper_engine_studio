@@ -1,4 +1,6 @@
 {
+  "$schema": "../../engine/book.schema.json",
+
   "title": "My First Book",
   "subtitle": "One idea per page, and every page is the same shape.",
   "author": "Your Name",
@@ -36,5 +38,16 @@
 
   "editions": {
     "free": ["SSRF"]
+  },
+
+  "language": "en",
+  "publishing": {
+    "description": "",
+    "keywords": [],
+    "categories": [],
+    "publisher": "",
+    "published": "",
+    "audience": "",
+    "isbn": { "print": "", "epub": "" }
   }
 }

@@ -130,7 +130,7 @@ function renderPipeline() {
     { k: 'Build', v: !b.build.exists ? 'Not built' : b.build.stale ? 'Out of date' : 'Up to date', d: b.build.exists ? `book.html · ${ago(b.build.at)}` : 'Run proof to build',
       level: !b.build.exists ? 'idle' : b.build.stale ? 'warn' : 'pass' },
     { k: 'Preflight', v: !pre ? 'Not run' : b.preflightStale ? 'Out of date' : pre.result === 'pass' ? 'All clear' : pre.result === 'warn' ? `${pre.warns} warning${pre.warns > 1 ? 's' : ''}` : `${pre.fails} failing`,
-      d: pre ? `${pre.checks.filter((c) => c.level === 'pass').length} of ${pre.checks.length} checks pass` : '14 checks',
+      d: pre ? `${pre.checks.filter((c) => c.level === 'pass').length} of ${pre.checks.length} checks pass` : 'The release gate',
       level: !pre ? 'idle' : b.preflightStale ? 'warn' : pre.result },
     { k: 'Review', v: `${rv.approved} / ${rv.total} approved`, d: [rv.review && `${rv.review} in review`, rv.changed && `${rv.changed} edited since`, rv.draft && `${rv.draft} draft`].filter(Boolean).join(' · ') || 'Every page signed off',
       level: !rv.total ? 'idle' : rv.approved === rv.total ? 'pass' : rv.changed ? 'warn' : 'idle' },
@@ -445,7 +445,15 @@ function viewStructure() {
   const tick = (key, label) => h('label.check', h('input', { type: 'checkbox', checked: d[key] !== false, onchange: (e) => { d[key] = e.target.checked; markDirty(); } }), label);
   d.cover ||= {}; d.copyright ||= {}; d.editions ||= {};
 
+  const prune = (o) => {
+    for (const [k, v] of Object.entries(o)) {
+      if (v && typeof v === 'object' && !Array.isArray(v)) { prune(v); if (!Object.keys(v).length) delete o[k]; }
+      else if (v === '' || v === null || (Array.isArray(v) && !v.length)) delete o[k];
+    }
+  };
   const save = guard(async () => {
+    if (d.publishing) { prune(d.publishing); if (!Object.keys(d.publishing).length) delete d.publishing; }
+    if (d.language === '') delete d.language;
     const state = await api('PUT', bookUrl('/json'), d);
     S.dirty = false; setBook(state); toast('book.json saved', true);
   });
@@ -531,14 +539,53 @@ function viewStructure() {
       d.editions[n] = []; touch();
     } }, '+ Add edition'));
 
-  return [savebar, details, order, editions];
+  /* ---- publishing: what a store asks for. Empty values are dropped on save, so a book
+     that is not for sale keeps a clean book.json. */
+  const pub = (d.publishing ||= {});
+  pub.isbn ||= {}; pub.editions ||= {};
+  const counter = (el, max, read) => { const c = h('span.muted', { style: 'font-size:12px' }); const upd = () => { const n = read(); c.textContent = `${n} / ${max}`; c.style.color = n > max ? 'var(--fail)' : ''; }; el.addEventListener('input', upd); upd(); return c; };
+  const isbnOk = (v) => { const x = v.replace(/[-\s]/g, ''); return /^97[89]\d{10}$/.test(x) && [...x].reduce((n, c, i) => n + c * (i % 2 ? 3 : 1), 0) % 10 === 0; };
+  const isbnField = (label, obj, key) => {
+    const mark = h('span', { style: 'font-size:12px' });
+    const upd = () => { const v = obj[key] || ''; mark.textContent = !v ? '' : isbnOk(v) ? '✓ check digit ok' : '✗ not a valid ISBN-13'; mark.style.color = !v || isbnOk(v) ? 'var(--pass)' : 'var(--fail)'; };
+    const input = h('input', { type: 'text', placeholder: '978-…', value: obj[key] || '', oninput: (e) => { obj[key] = e.target.value.trim(); upd(); markDirty(); } });
+    upd();
+    return h('label.f', label, input, mark);
+  };
+  const desc = h('textarea', { rows: 6, value: pub.description || '', placeholder: 'The blurb a store shows. Who it is for, what they will be able to do, why this book.', oninput: (e) => { pub.description = e.target.value; markDirty(); } });
+  const kw = h('input', { type: 'text', value: (pub.keywords || []).join(', '), placeholder: 'ssrf, web security for beginners, …', oninput: (e) => { pub.keywords = e.target.value.split(',').map((x) => x.trim()).filter(Boolean); markDirty(); } });
+  pub.price ||= null;
+  const priceOf = () => (pub.price ||= { amount: 0, currency: 'USD' });
+
+  const publishing = h('div.panel', h('h2', 'Publishing'),
+    h('p.hint', 'What a store listing asks for. None of it is printed in the book: it goes into the EPUB’s metadata and into a listing sheet in every release. Leave it empty for a PDF you hand out.'),
+    h('div.fields',
+      h('label.f', 'Language (BCP 47: en, en-GB, ar)', h('input', { type: 'text', ...bind(d, 'language'), placeholder: 'en' })),
+      h('label.f', 'Publisher / imprint', h('input', { type: 'text', ...bind(pub, 'publisher'), placeholder: d.brand || '' })),
+      h('label.f', 'Publication date', h('input', { type: 'date', value: pub.published || '', oninput: (e) => { pub.published = e.target.value; markDirty(); } })),
+      h('label.f', 'Audience', h('input', { type: 'text', ...bind(pub, 'audience'), placeholder: 'Builders shipping their first app' })),
+      h('label.f.span', h('span', { style: 'display:flex;justify-content:space-between' }, 'Description', counter(desc, 4000, () => desc.value.length)), desc),
+      h('label.f.span', h('span', { style: 'display:flex;justify-content:space-between' }, 'Keywords, comma separated', counter(kw, 7, () => kw.value.split(',').filter((x) => x.trim()).length)), kw),
+      h('label.f.span', 'Categories, one per line (BISAC code or the store’s path)',
+        h('textarea', { rows: 3, value: (pub.categories || []).join('\n'), placeholder: 'COM053000\nComputers / Security / General', oninput: (e) => { pub.categories = e.target.value.split('\n').map((x) => x.trim()).filter(Boolean); markDirty(); } })),
+      h('label.f', 'Price', h('input', { type: 'number', min: '0', step: '0.01', value: pub.price ? String(pub.price.amount) : '', placeholder: '9.99',
+        oninput: (e) => { if (e.target.value === '') pub.price = null; else priceOf().amount = Number(e.target.value); markDirty(); } })),
+      h('label.f', 'Currency (ISO 4217)', h('input', { type: 'text', maxLength: 3, value: pub.price?.currency || 'USD', oninput: (e) => { if (pub.price) pub.price.currency = e.target.value.toUpperCase(); markDirty(); } })),
+      isbnField('ISBN, print', pub.isbn, 'print'), isbnField('ISBN, EPUB', pub.isbn, 'epub'), isbnField('ISBN, PDF', pub.isbn, 'pdf')),
+    names.length > 0 && h('div', { style: 'margin-top:16px' }, h('div.v-label', 'Per edition'),
+      h('p.hint', 'An edition never inherits the full book’s ISBN. A different set of pages is a different product.'),
+      names.map((n) => { const e = (pub.editions[n] ||= {}); e.isbn ||= {};
+        return h('div.part', h('div.part-top', h('b', n)), h('div.fields', isbnField('ISBN, print', e.isbn, 'print'), isbnField('ISBN, EPUB', e.isbn, 'epub'),
+          h('label.f.span', 'Description, if it differs', h('textarea', { rows: 2, value: e.description || '', oninput: (ev) => { e.description = ev.target.value; markDirty(); } })))); })));
+
+  return [savebar, details, order, editions, publishing];
 }
 
 /* ------------------------------------------------------------------ Preflight */
 function viewPreflight() {
   const pre = S.book.preflight;
   const runBtn = h('button.btn.primary', { 'data-runs': true, onclick: () => run('preflight') }, pre ? 'Run preflight again' : 'Run preflight');
-  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'Fourteen checks between a book that builds and a book that is ready to ship: details, running order, plan, facts, stale build, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
+  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'The checks between a book that builds and a book that is ready to ship: details, book.json, publishing, running order, plan, facts, stale build, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
   const word = { pass: 'Ready to release', warn: 'Ready, with warnings', fail: 'Not ready' }[pre.result];
   return [
     h('div.verdict', h('span.tag.' + pre.result, pre.result.toUpperCase()), h('span.big', word),

@@ -10,7 +10,9 @@
      4. exports a print PDF  with --bleed, the file a printer wants
      5. exports an EPUB      with --epub, fixed-layout, the PDF's twin for ebook stores
      6. writes proofs        with --proofs, one PNG per page
-     7. writes a manifest    what was built, from which commit, with checksums
+     7. writes a listing     <slug>-listing.md: title, blurb, keywords, ISBNs, price,
+                             ready to paste into a store's form
+     8. writes a manifest    what was built, from which commit, with checksums
 
    Everything lands in books/<slug>/dist/<label>_<date>/ and nothing is ever
    overwritten, so every file you have sent anyone can be found again.
@@ -34,6 +36,7 @@ import { preflight, printReport } from './lib/preflight.mjs';
 import { exportPdfs } from './lib/pdf.mjs';
 import { exportEpub } from './lib/epub.mjs';
 import { pdfPageCount } from './lib/measure.mjs';
+import { listingMarkdown, publishingFor } from './lib/schema.mjs';
 
 const VALUE_FLAGS = ['--editions', '--bleed'];
 const argv = process.argv.slice(2);
@@ -130,11 +133,14 @@ for (const p of plan) {
     if (s.status !== 0) die(`Proofs failed:\n${s.stderr || s.stdout}`);
   }
   fs.writeFileSync(path.join(dist, `${base}-preflight.json`), JSON.stringify(p.rep, null, 2) + '\n');
+  fs.writeFileSync(path.join(dist, `${base}-listing.md`),
+    listingMarkdown(book.json, p.name, { pages, trim: '176 x 250 mm (B5), 6.93 x 9.84 in', files: files.map((f) => f.file) }));
 
   manifest.editions.push({
     edition: p.ed, pages,
     blocks: p.rep.sheets.filter((s) => s.kind === 'page').length,
     preflight: p.rep.result, warnings: p.rep.warns, failures: p.rep.fails, files,
+    listing: `${base}-listing.md`, isbn: publishingFor(book.json, p.name).isbn,
   });
   for (const f of files) console.log(`  wrote ${rel(path.join(dist, f.file))}  (${(f.bytes / 1048576).toFixed(1)} MB, ${pages} pages)`);
 }

@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/m2e2labs/paper_engine_studio/engine/book.schema.json",
+  "title": "book.json",
+  "description": "Everything printed around your pages, the running order, and what a store needs to list the book. Point at this file from a book with \"$schema\": \"../../engine/book.schema.json\" and your editor will complete and check it as you type.",
+  "type": "object",
+  "required": ["title", "parts"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string", "description": "Path to this schema, for your editor. The engine ignores it." },
+
+    "title": { "type": "string", "minLength": 1, "description": "The book's title, as printed on the cover." },
+    "subtitle": { "type": "string", "description": "One line under the title on the cover and the copyright page." },
+    "author": { "type": "string", "description": "Printed on the cover, and the creator in the EPUB." },
+    "series": { "type": "string", "description": "The label in every page's eyebrow. Defaults to the title." },
+    "brand": { "type": "string", "description": "The left of every page's running foot. Usually your site." },
+    "editionLabel": { "type": "string", "description": "Printed on the copyright page, and the start of a release folder's name. Example: Edition 1.0" },
+    "unit": { "type": "string", "description": "What you call a page, plural, in printed copy. Default: blocks." },
+    "unitSingular": { "type": "string", "description": "The singular of unit, if dropping the s is not enough." },
+    "interior": { "type": "string", "pattern": "^[^/\\\\]+\\.html?$", "description": "The file holding your pages, if it is not <slug>.html. A file name, not a path." },
+
+    "numbered": { "type": "boolean", "description": "Print No. 01, No. 02 in the eyebrow. Default: true." },
+    "contents": { "type": "boolean", "description": "Generate a contents page. Default: true." },
+    "index": { "type": "boolean", "description": "Generate an alphabetical index. Default: true." },
+    "accent": { "$ref": "#/$defs/colour", "description": "Accent colour on generated pages." },
+    "accentStrong": { "$ref": "#/$defs/colour", "description": "The darker accent, for small caps labels." },
+
+    "cover": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "kicker": { "type": "string", "description": "Small caps line above the title." },
+        "note": { "type": "string", "description": "A line at the foot of the cover." }
+      }
+    },
+    "copyright": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "year": { "type": "integer", "minimum": 1900, "maximum": 2200 },
+        "rights": { "type": "string", "description": "The rights line. Default: (c) <year> <author>. All rights reserved." },
+        "lines": { "type": "array", "items": { "type": "string" }, "description": "Extra lines on the copyright page, above the rights line. Put your ISBN here: it is not printed for you." }
+      }
+    },
+
+    "parts": {
+      "type": "array", "minItems": 1,
+      "description": "The running order. Every part gets a divider page.",
+      "items": {
+        "type": "object", "required": ["name", "blocks"], "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "eyebrow": { "type": "string", "description": "Small caps line on the divider." },
+          "why": { "type": "string", "description": "One line telling the reader why these pages belong together." },
+          "listLabel": { "type": "string", "description": "Heading over the divider's page list. Default: In this part." },
+          "blocks": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 }, "description": "Page titles, in reading order, exactly as in each page's <h1 class=\"title\">." }
+        }
+      }
+    },
+    "editions": {
+      "type": "object",
+      "description": "The same pages cut into different books. Each edition is the list of page titles it keeps.",
+      "propertyNames": { "pattern": "^(?!(?:full|all)$)[a-z0-9][a-z0-9-]*$" },
+      "additionalProperties": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }
+    },
+
+    "language": { "type": "string", "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$", "description": "BCP 47 language tag: en, en-GB, ar, fr-CA. Goes into the EPUB and tells a store what it is selling." },
+    "identifier": { "type": "string", "pattern": "^urn:[a-z0-9][a-z0-9-]{0,31}:.+$", "description": "The EPUB's unique id, as a URN. Only needed if you have no EPUB ISBN and want your own id; otherwise one is derived from the book's folder and stays stable." },
+
+    "publishing": {
+      "type": "object", "additionalProperties": false,
+      "description": "What a store listing asks for. None of it is printed in the book. It goes into the EPUB's metadata and into listing.md in every release.",
+      "properties": {
+        "description": { "type": "string", "maxLength": 4000, "description": "The blurb. Stores cap it at 4000 characters." },
+        "keywords": { "type": "array", "maxItems": 7, "uniqueItems": true, "items": { "type": "string", "minLength": 1, "maxLength": 50 }, "description": "Search phrases. KDP takes seven." },
+        "categories": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 }, "description": "BISAC codes or the store's own category paths. Example: COM053000 or Computers / Security / General" },
+        "publisher": { "type": "string", "description": "The imprint. Defaults to brand in the EPUB." },
+        "published": { "$ref": "#/$defs/date", "description": "Publication date, YYYY-MM-DD." },
+        "audience": { "type": "string", "description": "Who it is for, in a few words. For you and for the listing sheet." },
+        "price": { "$ref": "#/$defs/price" },
+        "isbn": { "$ref": "#/$defs/isbns" },
+        "editions": {
+          "type": "object",
+          "description": "Anything that differs for one edition. Keys are edition names from \"editions\".",
+          "additionalProperties": {
+            "type": "object", "additionalProperties": false,
+            "properties": {
+              "title": { "type": "string", "description": "Listing title for this edition, if it is not \"<title> (<edition> edition)\"." },
+              "description": { "type": "string", "maxLength": 4000 },
+              "price": { "$ref": "#/$defs/price" },
+              "isbn": { "$ref": "#/$defs/isbns" }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "$defs": {
+    "colour": { "type": "string", "pattern": "^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$" },
+    "date": { "type": "string", "pattern": "^$|^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$" },
+    "isbn": { "type": "string", "pattern": "^$|^(97[89])[- ]?(\\d[- ]?){9}\\d$", "description": "ISBN-13, hyphens optional. The check digit is verified by preflight." },
+    "isbns": {
+      "type": "object", "additionalProperties": false,
+      "description": "One ISBN per format. A print book and its ebook may not share one.",
+      "properties": { "print": { "$ref": "#/$defs/isbn" }, "epub": { "$ref": "#/$defs/isbn" }, "pdf": { "$ref": "#/$defs/isbn" } }
+    },
+    "price": {
+      "type": "object", "required": ["amount", "currency"], "additionalProperties": false,
+      "properties": {
+        "amount": { "type": "number", "minimum": 0 },
+        "currency": { "type": "string", "pattern": "^[A-Z]{3}$", "description": "ISO 4217: USD, EUR, GBP." }
+      }
+    }
+  }
+}

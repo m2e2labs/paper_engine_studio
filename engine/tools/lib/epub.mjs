@@ -20,6 +20,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import { zip } from './zip.mjs';
+import { publishingFor, isbnDigits } from './schema.mjs';
 
 const xml = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const MEDIA = {
@@ -149,10 +150,13 @@ export async function exportEpub(bookHtml, out, { json = {}, edition = null, dat
   }
 
   /* ---- the package */
-  const title = (json.title || path.basename(path.dirname(abs))) + (edition ? ` (${edition} edition)` : '');
+  const pub = publishingFor({ title: path.basename(path.dirname(abs)), ...json }, edition);
+  const title = pub.title;
   const seed = crypto.createHash('sha256').update(`paper-engine:${path.basename(path.dirname(abs))}:${edition || 'full'}`).digest('hex');
   const uuid = `${seed.slice(0, 8)}-${seed.slice(8, 12)}-5${seed.slice(13, 16)}-a${seed.slice(17, 20)}-${seed.slice(20, 32)}`;
-  const identifier = json.identifier || `urn:uuid:${uuid}`;   // same book, same id, every release
+  /* An EPUB ISBN is the id. Without one: your own urn, or one derived from the folder.
+     Either way it is the same book, same id, every release. */
+  const identifier = pub.isbn.epub ? `urn:isbn:${isbnDigits(pub.isbn.epub)}` : json.identifier || `urn:uuid:${uuid}`;
   const file = (i) => `pages/p${String(i + 1).padStart(4, '0')}.xhtml`;
   const stores = assets.entries();
 
@@ -171,10 +175,12 @@ export async function exportEpub(bookHtml, out, { json = {}, edition = null, dat
     <dc:identifier id="pub-id">${xml(identifier)}</dc:identifier>
     <dc:title>${xml(title)}</dc:title>
     <dc:language>${xml(lang)}</dc:language>
-    ${json.author ? `<dc:creator>${xml(json.author)}</dc:creator>` : ''}
-    ${json.subtitle ? `<dc:description>${xml(json.subtitle)}</dc:description>` : ''}
-    ${json.brand ? `<dc:publisher>${xml(json.brand)}</dc:publisher>` : ''}
-    ${json.copyright?.rights ? `<dc:rights>${xml(json.copyright.rights)}</dc:rights>` : ''}
+    ${pub.author ? `<dc:creator>${xml(pub.author)}</dc:creator>` : ''}
+    ${pub.description || pub.subtitle ? `<dc:description>${xml(pub.description || pub.subtitle)}</dc:description>` : ''}
+    ${pub.publisher ? `<dc:publisher>${xml(pub.publisher)}</dc:publisher>` : ''}
+    ${pub.published ? `<dc:date>${xml(pub.published)}</dc:date>` : ''}
+    ${[...pub.keywords, ...pub.categories].map((k) => `<dc:subject>${xml(k)}</dc:subject>`).join('\n    ')}
+    ${pub.rights ? `<dc:rights>${xml(pub.rights)}</dc:rights>` : ''}
     <meta property="dcterms:modified">${date.toISOString().slice(0, 19)}Z</meta>
     <meta property="rendition:layout">pre-paginated</meta>
     <meta property="rendition:orientation">auto</meta>
