@@ -6,7 +6,7 @@ record of who looked at what, and releases you can find again.
 
 ```
 WRITE ──> BUILD ──> PREFLIGHT ──> REVIEW ──> RELEASE
-pages     book.html   21 checks     a person     dated folder in dist/
+pages     book.html   22 checks     a person     dated folder in dist/
                                     approves     PDF + print PDF + EPUB + manifest
 ```
 
@@ -88,10 +88,11 @@ node engine/tools/preflight.mjs books/<slug> [--edition free] [--strict] [--json
 | Plan | | there is no `blocks.md`, or a page in the book has no entry in it |
 | Facts | a page cites a fact id that is not in `FACTS.md`, a cited fact has no Source, or an id is defined twice | there is no `FACTS.md`, an entry has no Facts line, or a figure printed on a page is not in the facts that page cites |
 | Research | never | findings in `RESEARCH.md` nobody has decided on, or a cited fact not checked in the last `research.maxAgeDays` days (default 365) |
-| Image rights | `images.json` breaks its schema, or a picture shown in the book is missing from it, is `licensed` or `public-domain` with no licence written down, or is `licensed` with no credit or url | there is no `images.json`, a file in `images/` is on no page, a generated picture has no subject or prompt, or no licence is recorded |
+| Image rights | `images.json` breaks its schema, or a picture shown in the book is missing from it, is `licensed`, `public-domain` or a `screenshot` with no licence written down, or is `licensed` with no credit or url | there is no `images.json`, a file in `images/` is on no page, a generated picture has no subject or prompt, or no licence is recorded |
 | Front/back matter | a `matter` page cannot be made: a prose or list page with no title, an empty body, a paragraph longer than a sheet | an epigraph with no `by`, starter placeholders in the text, a `sources` page with nothing to list |
 | References | a cross-reference names a page that does not exist or the page it is on, `GLOSSARY.md` defines a term twice or with no `Means` line | a cross-reference's target is not in this edition (it prints with no number), a glossary term no page uses, a `GLOSSARY.md` with no `glossary` page to print it, or the reverse |
 | Theme | a colour is not a hex value, or `ink` on `surface` or `card` is under 4.5:1 | `muted` under 4.5:1, a role colour under 3:1 on the card, two roles nearly the same colour |
+| Screenshots | a capture printed under 40% of its real size or under 110 dpi, or a pin or mark placed off the capture | printed under 62% or under 200 dpi, not looked over for private data (`cleared`), no `captured` date or one older than `research.maxAgeDays`, no `app`, pins with no caption |
 | Build | `book.html` is missing or older than its source | |
 | Pages fit | any page is past the bottom edge, or the stylesheet never loaded | |
 | Images load | any image is broken | |
@@ -145,6 +146,51 @@ books/<slug>/dist/edition-1.0_20260919-111604/
 It also counts the pages in each PDF and stops if that differs from the number of sheets,
 which is the one way a strict page can silently go wrong in print. Folders are dated and
 never overwritten. `--force` ships past failing checks, and the manifest says it did.
+
+### Screenshots
+
+```bash
+node engine/tools/screenshot.mjs books/<slug> --add ~/Desktop/roles.png --name rls-manage-roles.png \
+     --app "Power BI Desktop" --version "<version>" --scale 2          # a capture you took
+node engine/tools/screenshot.mjs books/<slug> --url https://… --name docs-roles.png --width 620 --height 320   # a public page, captured at 2x
+```
+
+A book about software has to show where to click, and neither a diagram nor a photograph
+does that. The third kind of band is a real capture:
+
+```html
+<figure class="shot">
+  <div class="frame">
+    <img src="images/rls-manage-roles.png" alt="The Manage roles dialog, one role selected, a DAX filter on the Region table.">
+    <span class="pin" style="left:18%;top:32%">1</span>
+    <span class="mark" style="left:52%;top:50%;width:40%;height:16%"></span>
+  </div>
+  <figcaption>1 name the role</figcaption>
+</figure>
+```
+
+Unlike the photo band it never crops: the whole capture is shown, scaled to fit (200
+points deep, 300 with `class="shot tall"`). Pins and marks are placed in percent of the
+capture, so they stay on their button at any size, in the PDF and in the EPUB, and they take
+the book's colours. The stylesheet is added by `build.mjs` only to a book that has one.
+
+The tool files the capture in `images/`, keeps the one it replaces in `images/.previous/`,
+and records it in `images.json` as `"source": "screenshot"` with `app`, `version`,
+`captured` and `scale` (capture pixels per screen point: 2 on a 200% or Retina display).
+Two things it leaves for you, because only you can know them:
+
+- **`licence`**: what lets you print it. Most vendors publish screenshot terms; read
+  them and write down what they say, or "my own software". Preflight fails a
+  screenshot with nothing written.
+- **`cleared`**: the day you looked it over at full size for names, emails, company and
+  customer names, keys and file paths. The Images tab has a button for it. A new capture of
+  the same file clears it again.
+
+The check that matters most is legibility. A full window shrunk into the band prints its
+text at 3 pt. Preflight works out how big the capture is printed against how big it was on
+screen (that is what `scale` is for), fails under 40%, and warns under 62%. The fix is
+always the same: crop to the dialog or pane the page is about. It never signs in to
+anything; a desktop app or anything behind a login is a capture you take yourself.
 
 ### The research inbox
 

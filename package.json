@@ -12,6 +12,7 @@
     "reader": "node engine/tools/build-reader.mjs",
     "image": "node engine/tools/gen-image.mjs",
     "epub": "node engine/tools/epub.mjs",
+    "screenshot": "node engine/tools/screenshot.mjs",
     "research": "node engine/tools/research.mjs",
     "images": "node engine/tools/images.mjs",
     "preflight": "node engine/tools/preflight.mjs",

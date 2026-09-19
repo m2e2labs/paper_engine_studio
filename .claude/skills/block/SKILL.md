@@ -22,7 +22,7 @@ Every page has the same seven parts, in this order:
 | accent tab | `<div class="tab">` | a bar of the book's colour |
 | eyebrow + pill | `<div class="top">` | the series label and the category |
 | title + subtitle | `<h1 class="title">`, `<div class="sub">` | the concept, and what it means in plain words |
-| band | `<div class="diagram">` or `<figure class="photo">` | ONE picture of the idea |
+| band | `<div class="diagram">`, `<figure class="photo">` or `<figure class="shot">` | ONE picture of the idea |
 | explainer | `<div class="explain">` | two or three short paragraphs plus a closer |
 | action box | `<div class="ask">` | the one thing to go and do |
 | footer | `<div class="foot">` | brand, page number, part name |
@@ -71,7 +71,7 @@ Never skip this. It is their one chance to lead the page before you fill in the 
 number. `build.mjs` prints the real one, "Circuit breaker (p. 21)", so leave room on the
 line for it and run `check.mjs` afterwards. Only point at a page that exists.
 
-## Step 1 — diagram or photo?
+## Step 1 — diagram, photo or screenshot?
 
 The band is one picture. Decide which kind before you write, because it changes the copy.
 
@@ -96,6 +96,12 @@ Pick the shape from the type of idea. Full catalogue and copy-paste parts in
 **A photograph**, when the thing being taught is **physical**: a dish, a plant, a
 posture, a finished print, a tool held the right way. Something the reader has to
 recognise by sight. See `references/photo-blocks.md`.
+
+**A screenshot**, when the thing being taught is **where to click in real software**: a
+dialog, a menu, a pane, a setting. It is always a real capture, supplied or approved by
+the author, never generated and never mocked up, cropped to the part the page is about,
+with numbered pins for the steps. See `references/screenshot-blocks.md`. A page about
+*why* something works still wants a diagram, even in a software book.
 
 ## Step 2 — draft the words, then stop
 

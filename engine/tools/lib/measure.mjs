@@ -54,6 +54,7 @@ export async function inspectBook(bookHtml) {
           const scale = ok ? Math.max(b.width / img.naturalWidth, b.height / img.naturalHeight) : 0;
           return {
             src: img.getAttribute('src'), page: sheetIndex(img), ok,
+            shot: !!img.closest('.shot'), cssW: Math.round(b.width), natW: ok ? img.naturalWidth : 0,
             alt: (img.getAttribute('alt') || '').trim().length > 0,
             px: ok ? `${img.naturalWidth}x${img.naturalHeight}` : '',
             widthMm: r1(b.width * MM),

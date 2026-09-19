@@ -19,6 +19,7 @@ import { matterFor, matterProblems, titleOf } from './matter.mjs';
 import { loadRefs } from './refs.mjs';
 import { themeProblems, TOKENS, DEFAULTS } from './theme.mjs';
 import { loadResearch } from './research.mjs';
+import { shotsIn, SHOT_RE } from './screens.mjs';
 import { validateBookJson, publishingFor, isbnOk, isbnDigits } from './schema.mjs';
 
 const PLACEHOLDERS = ['Your Name', 'yoursite.com', 'My First Book', 'My first book'];
@@ -198,8 +199,9 @@ export async function preflight(dir, { bookHtml, edition = null, strict = false 
   const builtHtml = fs.readFileSync(htmlPath, 'utf8');
   const bare = (mtAll.some((m) => m.kind !== 'sources' && m.kind !== 'glossary') && !/class="sheet gp matter /.test(builtHtml)) ||
     (!!tp.theme && !builtHtml.includes('THEME: this book')) ||
+    (SHOT_RE.test(builtHtml.replace(/<!--[\s\S]*?-->/g, '')) && !builtHtml.includes('SCREENSHOTS, written by')) ||
     (refs.xrefs.length > 0 && /<span class="xref"/.test(builtHtml.replace(/<!--[\s\S]*?-->/g, '')) && !/ id="s1"/.test(builtHtml));
-  if (bare) add('build', 'Build', 'fail', `${path.basename(htmlPath)} was built without its front and back matter, its cross-references or its colours. Build with build.mjs, not build-book.mjs.`);
+  if (bare) add('build', 'Build', 'fail', `${path.basename(htmlPath)} was built without its front and back matter, cross-references, colours or screenshot styles. Build with build.mjs, not build-book.mjs.`);
   else if (newer.length) add('build', 'Build', 'fail', `${path.basename(htmlPath)} is older than its source. Rebuild.`, newer.map((f) => path.basename(f)));
   else add('build', 'Build', 'pass', `${path.basename(htmlPath)} is up to date.`);
 
@@ -219,7 +221,44 @@ export async function preflight(dir, { bookHtml, edition = null, strict = false 
   if (broken.length) add('images', 'Images load', 'fail', `${broken.length} image(s) failed to load.`, broken.map((i) => `p${i.page} ${i.src}`));
   else add('images', 'Images load', 'pass', r.images.length ? `${r.images.length} image(s) loaded.` : 'No images in this book.');
 
-  const good = r.images.filter((i) => i.ok);
+  /* ---- 5b. screenshots: can the text in them be read, are they current, were they looked over? */
+  {
+    const manifest = pics.manifest?.images || {};
+    const maxAge = j.research?.maxAgeDays || 365;
+    const hard = [], soft = [];
+    const pagesIn = book.pages.filter((p) => book.partOf.has(p.title) && (!keepSet || keepSet.has(p.title)));
+    let n = 0;
+    for (const p of pagesIn) for (const s of shotsIn(p.html)) {
+      n++;
+      const e = manifest[s.src];
+      const at = `${p.title}: ${s.src || 'a screenshot with no image'}`;
+      if (s.offImage) hard.push(`${at}: ${s.offImage} pin(s) or mark(s) are placed off the capture (left and top are percentages, 0 to 100)`);
+      if (!s.hasCaption && s.pins) soft.push(`${at}: numbered pins but no caption saying what each one is`);
+      if (e && e.source !== 'screenshot') soft.push(`${at}: shown as a screenshot, but images.json calls it "${e.source}"`);
+      if (e?.source === 'screenshot') {
+        if (!e.cleared) soft.push(`${at}: nobody has said it is free of names, emails, keys or customer data. Look it over, then set "cleared" (the Images tab has a button)`);
+        const age = /^\d{4}-\d{2}-\d{2}$/.test(e.captured || '') ? Math.floor((Date.now() - new Date(e.captured + 'T00:00:00').getTime()) / 864e5) : null;
+        if (age === null) soft.push(`${at}: no "captured" date, so nobody can tell whether the software still looks like this`);
+        else if (age > maxAge) soft.push(`${at}: captured ${e.captured}, over ${maxAge} days ago. Does the screen still look like this?`);
+        if (!e.app) soft.push(`${at}: images.json does not say which software it shows ("app")`);
+      }
+    }
+    for (const i of r.images.filter((x) => x.ok && x.shot)) {
+      const name = decodeURIComponent((i.src || '').replace(/^images\//, ''));
+      const scale = manifest[name]?.scale || 1;
+      const ratio = i.cssW / (i.natW / scale);   // 1 = the size it was on the screen it was captured from
+      const line = `p${i.page} ${name}: printed at ${Math.round(ratio * 100)}% of its real size, so ordinary interface text (12 px) comes out near ${(9 * ratio).toFixed(1)} pt`;
+      if (ratio < 0.4) hard.push(`${line}. Nobody can read that. Crop to the part the page is about`);
+      else if (ratio < 0.62) soft.push(`${line}. Crop tighter, or use class="shot tall"`);
+      if (i.dpi < 110) hard.push(`p${i.page} ${name}: ${i.dpi} dpi at its printed size. Capture it again on a 200% display, or crop less and scale less`);
+      else if (i.dpi < 200) soft.push(`p${i.page} ${name}: ${i.dpi} dpi. Readable, but soft in print: a 200% (Retina) capture doubles it`);
+    }
+    if (hard.length) add('screens', 'Screenshots', 'fail', 'A screenshot cannot be used as it is.', [...hard, ...soft]);
+    else if (soft.length) add('screens', 'Screenshots', 'warn', 'The screenshots need a look.', soft);
+    else add('screens', 'Screenshots', 'pass', n ? `${n} screenshot(s): legible, current, looked over.` : 'No screenshots in this book.');
+  }
+
+  const good = r.images.filter((i) => i.ok && !i.shot);   // captures are judged above, by whether their text can be read
   const low = good.filter((i) => i.dpi < 150), soft = good.filter((i) => i.dpi >= 150 && i.dpi < 300);
   const dpiLine = (i) => `p${i.page} ${i.src}: ${i.dpi} dpi (${i.px} across ${i.widthMm} mm)`;
   if (low.length) add('resolution', 'Print resolution', 'fail', `${low.length} image(s) are under 150 dpi and will print visibly soft.`, low.map(dpiLine));

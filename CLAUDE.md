@@ -59,7 +59,7 @@ cropped through its subject, or a diagram that says the wrong thing. **Always ru
 The loop above is for writing. To ship, use the production tools (`docs/PRODUCTION.md`):
 
 ```bash
-node engine/tools/preflight.mjs books/<slug>                     # the release gate, 21 checks
+node engine/tools/preflight.mjs books/<slug>                     # the release gate, 22 checks
 node engine/tools/release.mjs   books/<slug> --editions all --bleed 3 --epub
 npm run studio                                                   # the same, as a local web UI
 ```
@@ -127,6 +127,15 @@ state. Which page uses a picture, and its alt text, are read from the pages, not
 
 The style must forbid text in the image and name the light, the angle and the background.
 See `.claude/skills/block/references/photo-blocks.md`.
+
+**Screenshots** are the third kind of band, for showing where to click in real software:
+`<figure class="shot">`, never cropped by the page, with `.pin` and `.mark` placed in percent.
+`node engine/tools/screenshot.mjs books/<slug> --add <file> | --url <url>` brings one in and
+records it in `images.json` as `"source": "screenshot"`. **A screenshot is always a real
+capture: never generate one, never mock one up, never sign in to anything to get one.**
+Never write its `licence` or set its `cleared` date: what permits printing it, and whether
+it shows private data, are the author's to state. See
+`.claude/skills/block/references/screenshot-blocks.md`.
 
 ## Notes
 

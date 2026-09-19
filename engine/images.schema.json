@@ -19,7 +19,7 @@
       "additionalProperties": {
         "type": "object", "required": ["source"], "additionalProperties": false,
         "properties": {
-          "source": { "type": "string", "enum": ["generated", "own", "licensed", "public-domain"], "description": "generated: made with gen-image.mjs. own: you took or drew it. licensed: someone else's, used under a licence. public-domain: free of copyright." },
+          "source": { "type": "string", "enum": ["generated", "own", "licensed", "public-domain", "screenshot"], "description": "screenshot: a capture of real software (screenshot.mjs). generated: made with gen-image.mjs. own: you took or drew it. licensed: someone else's, used under a licence. public-domain: free of copyright." },
           "subject": { "type": "string", "description": "What is in the picture. The shared style is added after it to make the prompt." },
           "prompt": { "type": "string", "description": "The whole prompt, used exactly as written, ignoring the shared style. For a picture that must differ, or one made before the style was settled." },
           "aspect": { "type": "string", "pattern": "^\\d{1,2}:\\d{1,2}$" },
@@ -29,6 +29,11 @@
           "licence": { "type": "string", "description": "This image's rights statement, if it differs from the book's." },
           "credit": { "type": "string", "description": "Who made it, as they ask to be credited." },
           "url": { "type": "string", "description": "Where it came from, or where its licence can be read." },
+          "app": { "type": "string", "description": "For a screenshot: the software it shows. Example: Power BI Desktop." },
+          "version": { "type": "string", "description": "For a screenshot: the version or release it was taken in." },
+          "captured": { "type": "string", "pattern": "^$|^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$", "description": "For a screenshot: the day it was taken. Software changes; preflight flags an old one." },
+          "scale": { "type": "number", "minimum": 1, "maximum": 4, "description": "For a screenshot: capture pixels per screen point. 2 on a Retina or 200% display, 1 otherwise. Tells preflight how big the text in it really is." },
+          "cleared": { "type": "string", "pattern": "^$|^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$", "description": "For a screenshot: the day YOU looked it over and found no names, emails, keys or customer data. Only the author sets this." },
           "note": { "type": "string" }
         }
       }

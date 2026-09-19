@@ -451,6 +451,16 @@ const handle = async (req, res) => {
         else return fail(res, 400, 'Unknown action.');
         return send(res, 200, { done, research: loadResearch(dir, { maxAgeDays }), plan: loadPlan(dir), state: bookState(slug) });
       }
+      if (sub === 'images' && parts[4] === 'cleared' && method === 'POST') {   // the author, saying they looked
+        const { name } = await readBody(req);
+        const file = path.join(dir, 'images.json');
+        const m = JSON.parse(fs.readFileSync(file, 'utf8'));
+        if (m.images?.[name]?.source !== 'screenshot') return fail(res, 400, 'That is not a screenshot in images.json.');
+        const d = new Date();
+        m.images[name].cleared = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+        fs.writeFileSync(file, JSON.stringify(m, null, 2) + '\n');
+        return send(res, 200, { images: loadImages(dir), state: bookState(slug) });
+      }
       if (sub === 'images' && parts[4] === 'draft' && method === 'POST') return send(res, 200, { text: JSON.stringify(draftManifest(dir), null, 2) + '\n' });
 
       if (sub === 'source') {

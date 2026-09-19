@@ -199,7 +199,7 @@ The loop gets a page right. Three more tools get a book out of the door, and
 
 ```bash
 npm run studio                                                  # the workflow as a local web UI
-node engine/tools/preflight.mjs books/showcase                  # 21 checks between "it builds" and "it ships"
+node engine/tools/preflight.mjs books/showcase                  # 22 checks between "it builds" and "it ships"
 node engine/tools/release.mjs   books/showcase --editions all --bleed 3 --epub
 ```
 
@@ -208,6 +208,9 @@ node engine/tools/release.mjs   books/showcase --editions all --bleed 3 --epub
   fact, overflow, broken images, print resolution, fonts,
   clipped diagram labels, stale builds, print-on-demand limits, and whether a person has
   approved every page.
+- **Screenshots**, for books about software: a band that never crops the capture, numbered
+  pins and marks placed in percent, a capture tool, and a preflight check that measures
+  whether the text in the capture can still be read at its printed size.
 - **A research inbox**: what a search turns up lands in `RESEARCH.md` with its source and the
   words on that page that back it. `--verify` opens every source and looks for the quote. You
   accept a finding and it becomes a sourced fact, cited on its page; nothing gets into

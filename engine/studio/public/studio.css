@@ -183,6 +183,7 @@ table.plan{ border-collapse:collapse; width:100%; font-size:13px; }
 .pic.bad{ border-color:#7f3030; }
 .pic .shot{ aspect-ratio:16/9; background:#15171d; display:grid; place-items:center; color:var(--faint); font-size:12.5px; }
 .pic .shot img{ width:100%; height:100%; object-fit:cover; display:block; }
+.pic .shot.whole img{ object-fit:contain; }
 .pic .body{ padding:12px 14px; display:flex; flex-direction:column; gap:8px; flex:1; }
 .pic .nm{ font:500 13px var(--mono); word-break:break-all; }
 .pic .prompt{ color:var(--muted); font-size:12.5px; line-height:1.5; display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden; }

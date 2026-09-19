@@ -39,7 +39,7 @@ Security · diagram
 <!-- Copy the shape above for your own pages.
 
 #### <Title>
-<Category> · <diagram|photo>
+<Category> · <diagram|photo|screenshot>
 - **What:**
 - **Use when:**  ... **Skip when:**
 - **Action:**

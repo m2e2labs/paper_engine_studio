@@ -49,7 +49,7 @@ export function parseBlocks(md) {
     if (!part) { part = { name: '', line, blocks: [] }; parts.push(part); }
     part.blocks.push({
       title: h[2].trim(), line,
-      category: category || '', band: /photo/i.test(bandKind || '') ? 'photo' : /diagram/i.test(bandKind || '') ? 'diagram' : '',
+      category: category || '', band: /screen/i.test(bandKind || '') ? 'screenshot' : /photo/i.test(bandKind || '') ? 'photo' : /diagram/i.test(bandKind || '') ? 'diagram' : '',
       what: field(body, 'What'), useWhen: field(body, 'Use when'), skipWhen: field(body, 'Skip when'),
       action: field(body, 'Action'), bandNote: field(body, 'Band'),
       /* null = the line is missing (nobody has thought about it); [] = "none", on purpose */

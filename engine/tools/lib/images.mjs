@@ -18,7 +18,7 @@ import { validate } from './schema.mjs';
 
 export const IMAGE_RE = /\.(jpe?g|png|webp|gif|svg)$/i;
 const SCHEMA = path.join(ROOT, 'engine', 'images.schema.json');
-const NEEDS_LICENCE = new Set(['licensed', 'public-domain']);
+const NEEDS_LICENCE = new Set(['licensed', 'public-domain', 'screenshot']);
 
 export const validateImagesJson = (json) => validate(json, JSON.parse(fs.readFileSync(SCHEMA, 'utf8')));
 
@@ -67,7 +67,9 @@ export function loadImages(dir) {
     const problems = [];
     if (!exists) problems.push(usedBy.length ? 'a page shows it, but the file is missing' : 'listed in images.json, but there is no such file');
     if (manifest && !e && exists) problems.push('not in images.json');
-    if (e && NEEDS_LICENCE.has(e.source) && !licence) problems.push(`${e.source}, but no licence is written down`);
+    if (e && NEEDS_LICENCE.has(e.source) && !licence) problems.push(e.source === 'screenshot'
+      ? 'a screenshot, but no licence says what lets you print it: the vendor\'s screenshot permission, or "my own software"'
+      : `${e.source}, but no licence is written down`);
     if (e && e.source === 'licensed' && !e.credit && !e.url) problems.push('licensed, but no credit or url says from whom');
     if (e && e.source === 'generated' && !e.prompt && !e.subject) problems.push('generated, but no subject or prompt, so it cannot be made again');
     return {

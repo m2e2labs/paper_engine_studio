@@ -506,7 +506,7 @@ function viewResearch() {
 /* ------------------------------------------------------------------ Images
    images.json, read as data: every picture, where it came from, what rights are on
    record, the prompt that made it, and the pages that show it. */
-const SOURCE_LABEL = { generated: 'Generated', own: 'Your own', licensed: 'Licensed', 'public-domain': 'Public domain' };
+const SOURCE_LABEL = { generated: 'Generated', own: 'Your own', licensed: 'Licensed', 'public-domain': 'Public domain', screenshot: 'Screenshot' };
 
 function viewImages() {
   const im = S.images;
@@ -537,18 +537,23 @@ function viewImages() {
     im.style ? h('p.stylebox', im.style) : h('p.muted', { style: 'margin:0' }, 'None yet. Pictures with a whole "prompt" do not use it; pictures with a "subject" do.'));
 
   const cards = im.entries.map((e) => h('div.pic' + (e.problems.length ? '.bad' : ''),
-    h('div.shot', e.exists ? h('img', { src: `/books/${S.slug}/images/${encodeURIComponent(e.name)}?v=${e.mtime}`, loading: 'lazy', alt: '' }) : 'No file yet'),
+    h('div.shot' + (e.entry?.source === 'screenshot' ? '.whole' : ''), e.exists ? h('img', { src: `/books/${S.slug}/images/${encodeURIComponent(e.name)}?v=${e.mtime}`, loading: 'lazy', alt: '' }) : 'No file yet'),
     h('div.body',
       h('div.nm', e.name),
       h('div.tags', { style: 'display:flex;gap:4px;flex-wrap:wrap' },
         e.entry ? h('span.tag', SOURCE_LABEL[e.entry.source] || e.entry.source) : im.hasManifest && h('span.tag.fail', 'not in images.json'),
         e.licence ? h('span.tag.pass', { title: e.licence }, e.licence.length > 28 ? e.licence.slice(0, 27) + '…' : e.licence) : e.entry && h('span.tag.warn', 'no licence'),
         e.entry?.credit && h('span.tag', e.entry.credit), e.entry?.generated && h('span.tag', e.entry.generated),
+        e.entry?.app && h('span.tag', [e.entry.app, e.entry.version].filter(Boolean).join(' ')), e.entry?.captured && h('span.tag', { title: 'When it was captured' }, e.entry.captured),
+        e.entry?.source === 'screenshot' && (e.entry.cleared ? h('span.tag.pass', { title: `Looked over on ${e.entry.cleared}` }, 'no private data') : h('span.tag.warn', 'not looked over')),
         e.exists && h('span.tag', `${Math.round(e.bytes / 1024)} KB`)),
       e.problems.map((x) => h('div.prob', x)),
       e.prompt && h('div.prompt', { title: 'Hover to read all of it' }, e.prompt),
       h('div.foot',
         h('span.muted', { style: 'font-size:12.5px' }, e.usedBy.length ? ['on ', e.usedBy.map((t, i) => [i > 0 && ', ', h('a', { href: '#', style: 'color:var(--accent);text-decoration:none', onclick: (ev) => { ev.preventDefault(); openViewer(t); } }, t)])] : 'no page shows it'),
+        e.entry?.source === 'screenshot' && !e.entry.cleared && e.exists && h('button.btn.small', { title: 'Names, emails, tenant and customer names, keys, file paths, other people’s data',
+          onclick: guard(async () => { if (!confirm(`Have you looked over ${e.name} at full size?\n\nNames, emails, company and customer names, keys, file paths, anything in a side panel or a title bar. Saying yes puts today’s date on record.`)) return;
+            const r = await api('POST', bookUrl('/images/cleared'), { name: e.name }); S.images = r.images; setBook(r.state); toast(`${e.name}: looked over today`, true); }) }, 'I looked: no private data'),
         e.entry?.source === 'generated' && e.prompt && h('button.btn.small', { 'data-runs': true, onclick: () => regenerate(e.name) }, e.exists ? 'Regenerate' : 'Generate')))));
 
   return [top, ...notices, style, cards.length ? h('div.pics', cards) : h('div.empty', 'No pictures in this book. Most pages want a diagram, and a diagram is code.')];
@@ -793,7 +798,7 @@ function viewStructure() {
 function viewPreflight() {
   const pre = S.book.preflight;
   const runBtn = h('button.btn.primary', { 'data-runs': true, onclick: () => run('preflight') }, pre ? 'Run preflight again' : 'Run preflight');
-  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'The checks between a book that builds and a book that is ready to ship: details, book.json, publishing, running order, plan, facts, image rights, research, front and back matter, references, theme, stale build, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
+  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'The checks between a book that builds and a book that is ready to ship: details, book.json, publishing, running order, plan, facts, image rights, research, front and back matter, references, theme, stale build, screenshots, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
   const word = { pass: 'Ready to release', warn: 'Ready, with warnings', fail: 'Not ready' }[pre.result];
   return [
     h('div.verdict', h('span.tag.' + pre.result, pre.result.toUpperCase()), h('span.big', word),
