@@ -6,7 +6,7 @@ Wants=network-online.target
 [Service]
 Type=simple
 WorkingDirectory=/home/m2e2/Documents/Paper_Engine_Studio/paper-engine
-ExecStart=/home/m2e2/.local/bin/node engine/tools/studio.mjs
+ExecStart=/home/m2e2/.local/bin/node engine/studio/server.mjs
 Environment=PORT=4173
 Restart=on-failure
 RestartSec=3
