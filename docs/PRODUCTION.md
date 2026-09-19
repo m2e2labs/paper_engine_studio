@@ -28,8 +28,48 @@ npm run studio          # http://localhost:4173
 **Run proof** (top right) is the loop in one button: build, preflight, screenshot every
 page. The log at the bottom shows the exact commands, so nothing the Studio does is magic.
 
-The Studio listens on `127.0.0.1` only, serves nothing outside `books/` and `engine/`, and
-writes nowhere outside `books/<slug>/`.
+The Studio serves nothing outside `books/` and `engine/`, and writes nowhere outside
+`books/<slug>/`. It listens in exactly one place at a time: `127.0.0.1` by default.
+
+### On your tailnet, and only there
+
+```bash
+npm run studio -- --host tailscale      # https://<machine>.<tailnet>.ts.net:4173
+```
+
+With `--host tailscale` (or `HOST=tailscale`) the Studio binds to this machine's
+Tailscale address and **nothing else**: not localhost, not the LAN, not `0.0.0.0`. Only
+devices on your tailnet can connect. The Studio has no login, because it can edit books
+and run builds, so Tailscale's ACLs are the login, and `--host` refuses every other
+address. On the machine itself you open the same tailnet address; `localhost:4173` will
+not answer.
+
+It serves **HTTPS** when it can. `tailscale cert` issues a real certificate for the
+machine's MagicDNS name (kept in `~/.paper-engine-studio`, renewed while the Studio
+runs). The same port also answers plain HTTP, so typing the bare address works too:
+`https://<name>:4173` and `http://100.x.y.z:4173` are the same Studio. (No certificate
+can cover an IP address, so by address it is always `http://`.) Two things have to be
+true for HTTPS, once:
+
+- **HTTPS Certificates** is on for the tailnet (admin console, DNS page). The very first
+  start then takes half a minute while the certificate is issued.
+- On Linux, your user is the Tailscale operator: `sudo tailscale set --operator=$USER`.
+
+If either is missing the Studio does not fail. It serves plain **HTTP** on the Tailscale
+address instead, by name or by IP (`http://100.x.y.z:4173`), and says why in the terminal
+and in the sidebar. Tailnet traffic is WireGuard-encrypted either way. `STUDIO_TLS=off`
+skips the certificate on purpose.
+
+The sidebar's **Share on tailnet** switch does the same move on a running Studio: it
+leaves localhost, starts answering on the Tailscale address, and the page reopens there.
+Flip it back and it returns to localhost. Only the machine itself can flip it. A switch
+flipped in the sidebar is not remembered; `--host tailscale` is what makes it permanent,
+and `paper-engine-studio.service` sets it. If Tailscale is not up yet the Studio exits
+and systemd tries again every ten seconds. `ALLOWED_HOSTS=name1,name2` lets the Studio
+answer to a hostname of your own if you put a proxy in front of it.
+
+On Windows, the first time Node listens beyond loopback the firewall asks whether to
+allow it. Allow it on private networks; Tailscale's interface is one.
 
 ## Preflight: the release gate
 

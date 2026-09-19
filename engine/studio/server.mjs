@@ -7,14 +7,42 @@
 
        node engine/studio/server.mjs            http://localhost:4173
        node engine/studio/server.mjs --port 8080
+       node engine/studio/server.mjs --host tailscale     on your tailnet, and ONLY there
 
-   No dependencies beyond Node. It listens on 127.0.0.1 only, serves nothing
-   outside books/ and engine/, and writes nowhere outside books/<slug>/.
+   No dependencies beyond Node. It serves nothing outside books/ and engine/,
+   and writes nowhere outside books/<slug>/.
+
+   It listens in exactly one place at a time:
+
+     default            127.0.0.1:<port>. This machine only.
+     --host tailscale   <this machine's Tailscale address>:<port>, and nothing
+                        else: not localhost, not the LAN, not 0.0.0.0. Only
+                        devices on your tailnet can connect. (HOST=tailscale
+                        does the same.)
+
+   The Studio has no login of its own, because it can edit books and run
+   builds; on a tailnet, Tailscale's ACLs are the login. That is why --host
+   refuses every other address.
+
+   On the tailnet it serves HTTPS when it can: `tailscale cert` issues a real
+   certificate for the machine's MagicDNS name, kept in ~/.paper-engine-studio.
+   The same port also answers plain HTTP, so typing the bare address works:
+   https://<name>:4173 and http://100.x.y.z:4173 are the same Studio.
+   If that is refused (HTTPS certificates off for the tailnet, or on Linux the
+   user is not the Tailscale operator) it serves plain HTTP on the tailnet
+   address instead and says why. Tailnet traffic is WireGuard-encrypted either
+   way. STUDIO_TLS=off skips the certificate.
+
+   The sidebar's "Share on tailnet" switch moves a running Studio from one
+   address to the other. ALLOWED_HOSTS=a,b names extra hostnames it answers to.
    ========================================================================== */
 import http from 'node:http';
+import https from 'node:https';
+import net from 'node:net';
 import fs from 'node:fs';
 import path from 'node:path';
-import { spawn } from 'node:child_process';
+import os from 'node:os';
+import { spawn, execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import {
   ROOT, BOOKS, SLUG_RE, STATUSES, listBooks, bookDir, loadBook, loadWorkflow, saveJson,
@@ -25,6 +53,65 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(HERE, 'public');
 const pi = process.argv.indexOf('--port');
 const PORT = Number(pi === -1 ? process.env.PORT || 4173 : process.argv[pi + 1]);
+const hi = process.argv.indexOf('--host');
+const HOST = (hi === -1 ? process.env.HOST || '' : process.argv[hi + 1] || '').trim().toLowerCase();
+const TS_BIN = process.env.TAILSCALE_BIN || 'tailscale';
+const WANT_TLS = !/^(off|0|false|no)$/i.test(process.env.STUDIO_TLS || '');
+const CERT_DIR = path.join(os.homedir(), '.paper-engine-studio');   // never inside the repo: the repo may be a synced drive
+
+if (HOST && !['tailscale', 'localhost', '127.0.0.1'].includes(HOST)) {
+  console.error(`--host ${HOST}: refused. The Studio has no login, so it only ever listens on loopback\n` +
+                "or on this machine's Tailscale address. Use --host tailscale.");
+  process.exit(1);
+}
+
+const ts = (args, timeout = 8000) => execFileSync(TS_BIN, args, { encoding: 'utf8', timeout, stdio: ['ignore', 'pipe', 'pipe'] });
+const isTailnetIp = (ip) => { const [a, b] = String(ip).split('.').map(Number); return a === 100 && b >= 64 && b <= 127; };
+
+/* Where this machine sits on the tailnet. The address comes from the network interfaces
+   (Tailscale always hands out 100.64.0.0/10), so it works without the CLI; the MagicDNS
+   name, which is the name on the certificate, needs the CLI. */
+function findTailnet() {
+  const ip = Object.values(os.networkInterfaces()).flat()
+    .find((i) => i && i.family === 'IPv4' && !i.internal && isTailnetIp(i.address))?.address;
+  if (!ip) throw new Error('No Tailscale address on this machine. Is Tailscale installed and connected?');
+  let name = null;
+  try {
+    const st = JSON.parse(ts(['status', '--json']));
+    name = String(st.Self?.DNSName || '').replace(/\.$/, '').toLowerCase() || null;
+  } catch { /* no CLI on PATH: the address still works */ }
+  return { ip, name };
+}
+
+/* A real certificate for the MagicDNS name, from Tailscale. Returns null, with the reason
+   in `why`, when there is none to be had; the caller falls back to HTTP. */
+function tailnetCert(name, why) {
+  if (!WANT_TLS) { why.note = 'STUDIO_TLS=off.'; return null; }
+  if (!name) { why.note = 'The tailscale command was not found, so no certificate could be requested.'; return null; }
+  const cert = path.join(CERT_DIR, `${name}.crt`), key = path.join(CERT_DIR, `${name}.key`);
+  try {
+    fs.mkdirSync(CERT_DIR, { recursive: true, mode: 0o700 });
+    ts(['cert', '--cert-file', cert, '--key-file', key, name], 90000);   // reuses a valid one, renews a stale one
+    return { cert: fs.readFileSync(cert), key: fs.readFileSync(key) };
+  } catch (e) {
+    const said = `${e.stderr || ''} ${e.stdout || ''} ${e.message || ''}`;
+    if (/denied|operator|sudo|permission/i.test(said)) {
+      why.note = 'This user may not ask Tailscale for a certificate.';
+      why.hint = `sudo tailscale set --operator=${os.userInfo().username}`;
+    } else if (/https/i.test(said) && /enable|not enabled|admin|support/i.test(said)) {
+      why.note = 'HTTPS certificates are off for this tailnet (admin console, DNS page).';
+      why.hint = 'https://login.tailscale.com/admin/dns';
+    } else why.note = said.trim().split('\n').filter(Boolean).slice(-2).join(' ').slice(0, 300) || 'tailscale cert failed.';
+    return null;
+  }
+}
+
+const EXTRA_HOSTS = (process.env.ALLOWED_HOSTS || '').split(',').map((h) => h.trim().toLowerCase()).filter(Boolean);
+const LOCAL_HOSTS = ['localhost', '127.0.0.1', '[::1]'];
+
+/* The one place the Studio is listening right now. */
+const at = { mode: null, server: null, ip: null, name: null, tls: false, url: null, ipUrl: null, hosts: new Set(), note: null, hint: null, error: null };
+const pinned = HOST === 'tailscale';
 
 const MIME = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8',
@@ -240,12 +327,19 @@ function serveFile(res, base, relPath) {
 }
 
 /* ------------------------------------------------------------------ routes */
-const server = http.createServer(async (req, res) => {
+const handle = async (req, res) => {
   try {
-    /* Local only, and only when addressed as local: a page on another site cannot
-       reach this by pointing a hostname at 127.0.0.1. */
-    const host = (req.headers.host || '').replace(/:\d+$/, '');
-    if (!['localhost', '127.0.0.1', '[::1]'].includes(host)) return fail(res, 403, 'Local requests only.');
+    /* Only when addressed by a name we own: a page on another site cannot reach this
+       by pointing a hostname of its own at 127.0.0.1. */
+    const host = (req.headers.host || '').replace(/:\d+$/, '').toLowerCase();
+    if (!at.hosts.has(host)) return fail(res, 403, `Not served under the name "${host}". Add it to ALLOWED_HOSTS if it is yours.`);
+    /* Plain HTTP by NAME, when we hold a certificate for that name: send them to HTTPS.
+       Plain HTTP by ADDRESS is served as it is. No certificate can cover 100.x.y.z, and
+       typing the address has to work; the tailnet is encrypted underneath either way. */
+    if (at.tls && !req.socket.encrypted && host === at.name && req.method === 'GET') {
+      res.writeHead(302, { Location: at.url + req.url, 'Cache-Control': 'no-store' });
+      return res.end();
+    }
     const url = new URL(req.url, 'http://localhost');
     const parts = url.pathname.split('/').filter(Boolean).map(decodeURIComponent);
     const method = req.method;
@@ -259,6 +353,21 @@ const server = http.createServer(async (req, res) => {
       if (parts[0] === 'books') return serveFile(res, BOOKS, parts.slice(1).join('/'));
       if (parts[0] === 'engine') return serveFile(res, path.join(ROOT, 'engine'), parts.slice(1).join('/'));
       return fail(res, 404, 'Not found.');
+    }
+
+    if (parts[1] === 'tailnet' && parts.length === 2) {
+      /* Moving the Studio between addresses is for whoever is AT the machine. We listen
+         directly now, so the socket's address is the truth: this machine reaches its own
+         tailnet address from that same address. */
+      const from = (req.socket.remoteAddress || '').replace(/^::ffff:/, '');
+      const local = ['127.0.0.1', '::1', at.ip].includes(from);
+      if (method === 'GET') return send(res, 200, tailnetState(local));
+      if (method === 'POST') {
+        if (!local) return fail(res, 403, 'Only this machine itself can move the Studio on or off the tailnet.');
+        const { on } = await readBody(req);
+        const moved = await listen(on ? 'tailnet' : 'local');
+        return send(res, 200, { ...tailnetState(true), moved });
+      }
     }
 
     if (parts[1] === 'events' && method === 'GET') {
@@ -323,14 +432,93 @@ const server = http.createServer(async (req, res) => {
   } catch (e) {
     return fail(res, 400, e.message || String(e));
   }
+};
+
+const tailnetState = (local) => ({
+  on: at.mode === 'tailnet', url: at.url, ipUrl: at.ipUrl, tls: at.tls,
+  note: at.note, hint: at.hint, error: at.error, pinned, canChange: !!local,
+  localUrl: `http://localhost:${PORT}`,
 });
 
-server.on('error', (e) => {
-  console.error(e.code === 'EADDRINUSE' ? `Port ${PORT} is taken. Try: node engine/studio/server.mjs --port ${PORT + 1}` : e.message);
-  process.exit(1);
-});
-server.listen(PORT, '127.0.0.1', () => {
-  console.log(`\n  Paper Engine Studio   http://localhost:${PORT}\n`);
-  console.log(`  books: ${listBooks().join(', ') || 'none yet'}`);
+/* Start listening at `mode`, and only once that works, stop listening where we were.
+   One address at a time, never both: that is the whole point of --host tailscale. */
+async function listen(mode) {
+  if (at.mode === mode) return false;
+  const next = { mode, ip: null, name: null, tls: false, note: null, hint: null, error: null };
+  let server;
+  try {
+    if (mode === 'tailnet') {
+      Object.assign(next, findTailnet());
+      const tlsFiles = tailnetCert(next.name, next);
+      next.tls = !!tlsFiles;
+      if (!tlsFiles) server = http.createServer(handle);
+      else {
+        /* One port, both protocols. A TLS handshake always opens with byte 0x16; anything
+           else is plain HTTP. So https://<name>:4173 and http://100.x.y.z:4173 both work,
+           and nobody has to remember which port is which. */
+        const secure = https.createServer(tlsFiles, handle), plain = http.createServer(handle);
+        const open = new Set();
+        server = net.createServer((sock) => {
+          open.add(sock); sock.on('close', () => open.delete(sock)); sock.on('error', () => {});
+          /* read(1) then unshift, never a 'data' listener: that would set the socket
+             flowing, and the TLS side would never see the bytes of its own handshake. */
+          const sniff = () => {
+            const first = sock.read(1);
+            if (first === null) return sock.once('readable', sniff);
+            sock.unshift(first);
+            (first[0] === 0x16 ? secure : plain).emit('connection', sock);
+          };
+          sock.once('readable', sniff);
+        });
+        server.closeAllConnections = () => open.forEach((k) => k.destroy());
+        // a Studio left running for months still has a fresh certificate
+        const renew = setInterval(() => { const f = tailnetCert(next.name, {}); if (f) secure.setSecureContext(f); }, 24 * 3600 * 1000);
+        renew.unref();
+        server.on('close', () => clearInterval(renew));
+      }
+    } else server = http.createServer(handle);
+
+    const bind = mode === 'tailnet' ? next.ip : '127.0.0.1';
+    await new Promise((resolve, reject) => { server.once('error', reject); server.listen(PORT, bind, resolve); });
+  } catch (e) {
+    at.error = e.code === 'EADDRINUSE' ? `Port ${PORT} is already taken on ${mode === 'tailnet' ? 'the Tailscale address' : 'localhost'}.`
+      : e.code === 'EADDRNOTAVAIL' ? 'The Tailscale address is not up yet.' : e.message;
+    if (!at.server) throw new Error(at.error);    // nothing to fall back to: the caller exits
+    return false;
+  }
+
+  const old = at.server;
+  const scheme = next.tls ? 'https' : 'http';
+  const names = mode === 'tailnet' ? [next.name, next.name?.split('.')[0], next.ip].filter(Boolean) : LOCAL_HOSTS;
+  Object.assign(at, next, {
+    server,
+    hosts: new Set([...names, ...EXTRA_HOSTS]),
+    url: mode === 'tailnet' ? `${scheme}://${next.name || next.ip}:${PORT}` : `http://localhost:${PORT}`,
+    ipUrl: mode === 'tailnet' && next.name ? `http://${next.ip}:${PORT}` : null,   // by address it is always http: no certificate covers an IP
+  });
+  if (old) setTimeout(() => { old.close(); old.closeAllConnections?.(); clients.clear(); }, 400);   // let this reply get out first
+  return true;
+}
+
+const where = () => {
+  console.log(`\n  Paper Engine Studio   ${at.url}${at.ipUrl ? '   or   ' + at.ipUrl : ''}`);
+  if (at.mode === 'tailnet') {
+    console.log('  Tailscale address only. Not on localhost, not on the LAN.');
+    if (!at.tls) console.log(`  Plain HTTP (the tailnet itself is encrypted). ${at.note || ''}${at.hint ? '\n    ' + at.hint : ''}`);
+  }
+  console.log(`\n  books: ${listBooks().join(', ') || 'none yet'}`);
   console.log('  Ctrl+C to stop.\n');
-});
+};
+
+process.on('SIGINT', () => process.exit(0));
+process.on('SIGTERM', () => process.exit(0));
+
+try {
+  await listen(pinned ? 'tailnet' : 'local');
+  where();
+} catch (e) {
+  console.error(`\n  ${pinned ? '--host tailscale: ' : ''}${e.message}`);
+  if (/taken/.test(e.message)) console.error(`  Try: node engine/studio/server.mjs --port ${PORT + 1}`);
+  console.error('');
+  process.exit(1);    // under systemd, Restart=on-failure tries again once Tailscale is up
+}

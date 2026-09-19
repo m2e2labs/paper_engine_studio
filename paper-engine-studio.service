@@ -8,8 +8,14 @@ Type=simple
 WorkingDirectory=/home/m2e2/Documents/Paper_Engine_Studio/paper-engine
 ExecStart=/home/m2e2/.local/bin/node engine/studio/server.mjs
 Environment=PORT=4173
+# Listen on this machine's Tailscale address ONLY: not localhost, not the LAN.
+# HTTPS if `tailscale cert` is allowed (once: sudo tailscale set --operator=%u, and HTTPS
+# Certificates on in the admin console); otherwise plain HTTP on the tailnet address.
+Environment=HOST=tailscale
+# If Tailscale is not up yet the Studio exits; this is what tries again. (A user unit
+# cannot order itself after the system's tailscaled.service.)
 Restart=on-failure
-RestartSec=3
+RestartSec=10
 
 [Install]
 WantedBy=default.target

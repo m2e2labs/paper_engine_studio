@@ -509,6 +509,63 @@ function viewRelease() {
   return [form, list];
 }
 
+/* ------------------------------------------------------------------ share on tailnet
+   The Studio listens in one place at a time. Flipping this moves it, so the page you are
+   on stops answering; we go to the new address ourselves. */
+const T = { state: null, busy: false };
+
+async function loadTailnet() {
+  try { T.state = await api('GET', '/api/tailnet'); } catch { T.state = null; }
+  renderTailnet();
+}
+
+function renderTailnet() {
+  const box = $('#tailnet'), t = T.state;
+  if (!t) return box.replaceChildren();
+  const flip = guard(async () => {
+    if (S.dirty) return toast('Save or discard your structure changes first.');
+    if (S.job) return toast('Wait for the running job to finish.');
+    const ask = t.on
+      ? 'Take the Studio off the tailnet?\n\nIt will answer on localhost only, and your other devices lose it straight away.'
+      : 'Move the Studio onto your tailnet?\n\nIt will answer on this machine\'s Tailscale address ONLY, no longer on localhost, and this page will reopen there.';
+    if (!confirm(ask)) return;
+    T.busy = true; renderTailnet();
+    try {
+      const r = await api('POST', '/api/tailnet', { on: !t.on });
+      if (r.moved) { location.href = r.url + '/' + location.hash; return; }
+      T.state = r;
+    } finally { T.busy = false; renderTailnet(); }
+  });
+  const copy = (text) => () => (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject())
+    .then(() => toast('Copied', true), () => toast('Select it and copy by hand.'));
+  const fix = t.hint && [
+    h('code', t.hint),
+    h('div.row2', /^https:/.test(t.hint)
+      ? h('a.btn.small', { href: t.hint, target: '_blank', rel: 'noopener' }, 'Open admin console')
+      : h('button.btn.small', { onclick: copy(t.hint) }, 'Copy command')),
+  ];
+
+  box.replaceChildren(h('div.tn',
+    h('div.tn-top',
+      h('span.dot' + (t.on ? (t.tls ? '.approved' : '.changed') : t.error ? '.changed' : '')),
+      h('span.t', 'Share on tailnet'),
+      h('button.switch', { role: 'switch', 'aria-checked': String(t.on), 'aria-label': 'Share on tailnet',
+        disabled: T.busy || !t.canChange, onclick: flip, title: t.canChange ? '' : 'Only at the machine itself' })),
+    T.busy ? h('p', t.on ? 'Moving back to localhost…' : 'Moving to the Tailscale address. A first certificate takes about half a minute.')
+      : t.on ? [
+          h('p', h('a', { href: t.url }, t.url)),
+          t.ipUrl && h('p', 'or ', h('a', { href: t.ipUrl }, t.ipUrl)),
+          h('div.row2', h('button.btn.small', { onclick: copy(t.url) }, 'Copy link')),
+          h('p', t.tls ? 'On the Tailscale address only. Not on localhost, not on your LAN. HTTPS by name, plain HTTP by address.'
+            : 'Plain HTTP, on the Tailscale address only. The tailnet itself is encrypted. ' + (t.note || '')),
+          !t.tls && fix,
+          !t.tls && t.hint && h('p', /^https:/.test(t.hint) ? 'Turn it on, then restart the Studio for HTTPS.' : 'Run it once in a terminal on this machine, then restart the Studio for HTTPS.'),
+          !t.canChange && h('p', 'Only the machine itself can take it off the tailnet.'),
+          t.pinned && t.canChange && h('p', 'Started with --host tailscale, so it comes back here on every start.')]
+      : t.error ? [h('p.err', t.error), fix]
+      : h('p', 'Move the Studio onto this machine\'s Tailscale address, so your phone or another computer can open it. It leaves localhost while it is there.')));
+}
+
 /* ------------------------------------------------------------------ start */
 $('#new-book').onclick = newBookDialog;
 $('#run-proof').dataset.runs = '1';
@@ -525,6 +582,7 @@ document.querySelectorAll('#tabs button').forEach((b) => (b.onclick = () => {
 window.addEventListener('beforeunload', (e) => { if (S.dirty) e.preventDefault(); });
 
 connect();
+loadTailnet();
 await loadBooks();
 const wanted = location.hash.slice(1);
 const first = S.books.find((b) => b.slug === wanted) || S.books.find((b) => b.slug !== 'starter') || S.books[0];

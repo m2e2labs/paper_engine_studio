@@ -42,6 +42,23 @@ button,input,select,textarea{ font:inherit; color:inherit; }
 .bar{ flex:1; height:4px; border-radius:99px; background:var(--line); overflow:hidden; }
 .bar i{ display:block; height:100%; background:var(--pass); }
 
+/* ---- tailnet sharing ---- */
+#tailnet{ margin-top:auto; padding-top:16px; }
+.tn{ border:1px solid var(--line); border-radius:10px; padding:11px 12px; background:var(--desk-2); font-size:12.5px; }
+.tn-top{ display:flex; align-items:center; gap:8px; }
+.tn-top .t{ flex:1; font-weight:500; font-size:13px; }
+.tn p{ margin:7px 0 0; color:var(--muted); line-height:1.45; }
+.tn .err{ color:var(--fail); }
+.tn a{ color:var(--accent); word-break:break-all; text-decoration:none; } .tn a:hover{ text-decoration:underline; }
+.tn code{ display:block; margin-top:7px; padding:6px 8px; background:#15171d; border:1px solid var(--line); border-radius:6px; font:11.5px/1.45 var(--mono); color:#c4c9d6; word-break:break-all; user-select:all; }
+.tn .row2{ display:flex; gap:6px; margin-top:8px; }
+.switch{ all:unset; cursor:pointer; width:34px; height:20px; border-radius:99px; background:var(--line); position:relative; flex:none; transition:background .15s; }
+.switch::after{ content:""; position:absolute; top:3px; left:3px; width:14px; height:14px; border-radius:99px; background:#fff; transition:transform .15s; }
+.switch[aria-checked="true"]{ background:var(--pass); } .switch[aria-checked="true"]::after{ transform:translateX(14px); }
+.switch:disabled{ opacity:.45; cursor:not-allowed; }
+.switch:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+@media (prefers-reduced-motion:reduce){ .switch,.switch::after{ transition:none; } }
+
 /* ---- main ---- */
 #main{ flex:1; min-width:0; display:flex; flex-direction:column; height:100vh; }
 #book{ flex:1; min-height:0; display:flex; flex-direction:column; }
@@ -230,7 +247,7 @@ kbd{ font:11px var(--mono); border:1px solid var(--line); border-radius:4px; pad
 #toast.ok{ border-left-color:var(--pass); }
 
 @media (max-width:900px){
-  #side{ width:64px; padding:14px 6px; } .brand,.side-label,.book-link .s,#new-book{ display:none; }
+  #side{ width:64px; padding:14px 6px; } .brand,.side-label,.book-link .s,#new-book,#tailnet{ display:none; }
   .book-link .t{ font-size:11px; text-align:center; }
   #pipeline{ grid-template-columns:repeat(2,minmax(0,1fr)); }
   #head,#tabs,#view{ padding-left:16px; padding-right:16px; }
