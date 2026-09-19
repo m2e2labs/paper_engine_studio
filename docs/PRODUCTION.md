@@ -6,7 +6,7 @@ record of who looked at what, and releases you can find again.
 
 ```
 WRITE ──> BUILD ──> PREFLIGHT ──> REVIEW ──> RELEASE
-pages     book.html   20 checks     a person     dated folder in dist/
+pages     book.html   21 checks     a person     dated folder in dist/
                                     approves     PDF + print PDF + EPUB + manifest
 ```
 
@@ -87,6 +87,7 @@ node engine/tools/preflight.mjs books/<slug> [--edition free] [--strict] [--json
 | Running order | `book.json` lists an unwritten page, or an edition lists an unknown one | a written page is in no part |
 | Plan | | there is no `blocks.md`, or a page in the book has no entry in it |
 | Facts | a page cites a fact id that is not in `FACTS.md`, a cited fact has no Source, or an id is defined twice | there is no `FACTS.md`, an entry has no Facts line, or a figure printed on a page is not in the facts that page cites |
+| Research | never | findings in `RESEARCH.md` nobody has decided on, or a cited fact not checked in the last `research.maxAgeDays` days (default 365) |
 | Image rights | `images.json` breaks its schema, or a picture shown in the book is missing from it, is `licensed` or `public-domain` with no licence written down, or is `licensed` with no credit or url | there is no `images.json`, a file in `images/` is on no page, a generated picture has no subject or prompt, or no licence is recorded |
 | Front/back matter | a `matter` page cannot be made: a prose or list page with no title, an empty body, a paragraph longer than a sheet | an epigraph with no `by`, starter placeholders in the text, a `sources` page with nothing to list |
 | References | a cross-reference names a page that does not exist or the page it is on, `GLOSSARY.md` defines a term twice or with no `Means` line | a cross-reference's target is not in this edition (it prints with no number), a glossary term no page uses, a `GLOSSARY.md` with no `glossary` page to print it, or the reverse |
@@ -144,6 +145,45 @@ books/<slug>/dist/edition-1.0_20260919-111604/
 It also counts the pages in each PDF and stops if that differs from the number of sheets,
 which is the one way a strict page can silently go wrong in print. Folders are dated and
 never overwritten. `--force` ships past failing checks, and the manifest says it did.
+
+### The research inbox
+
+```bash
+node engine/tools/research.mjs books/<slug>                  # the inbox, and facts gone stale
+node engine/tools/research.mjs books/<slug> --add --claim "…" --source "Title: https://…" --quote "…" --for "Page title"
+node engine/tools/research.mjs books/<slug> --verify         # open every source: does it answer, is the quote on it?
+node engine/tools/research.mjs books/<slug> --accept R3      # yours to run, nobody else's
+node engine/tools/research.mjs books/<slug> --reject R3 --why "superseded"
+node engine/tools/research.mjs books/<slug> --check-links    # do the sources in FACTS.md still answer?
+```
+
+`FACTS.md` is what you know. A search does not know anything: it finds pages. So what a
+search finds (you, Claude with the `/research` skill, a docs server such as Microsoft
+Learn's, plain web search) goes into `books/<slug>/RESEARCH.md` as a **finding**: one
+claim, the page it came from, and the few words on that page that back it.
+
+```markdown
+## R3 · Row-level security roles
+- **Claim:** One plain sentence, in the book's own words.
+- **Source:** Microsoft Learn, "Row-level security (RLS) with Power BI": https://…
+- **Quote:** "the words on that page that say so"
+- **Kind:** reference
+- **Retrieved:** 2026-09-19
+- **For:** Row-level security
+- **Status:** new
+```
+
+`--verify` fetches each source and looks for the quote, so a finding that was paraphrased
+from memory, or cites the wrong page, shows up before you spend time on it. Then you decide,
+in the Studio's **Research** tab or on the command line. **Accept**: it becomes the next
+fact in `FACTS.md`, checked today, and its id is added to the Facts line of the page it
+was for in `blocks.md`. You can fix the wording first. **Reject**: it stays in the file with
+your reason, so the same thing is not filed again. The quote is for checking and is never
+printed; a page states the fact in the book's own voice.
+
+Facts age. The same tab lists facts whose `Checked` date is older than
+`"research": { "maxAgeDays": 180 }` in `book.json` (default 365) with a link to the source
+and an "I checked it today" button, and preflight warns about the ones a page cites.
 
 ### The image manifest
 

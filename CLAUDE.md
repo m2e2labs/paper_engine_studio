@@ -6,6 +6,8 @@ works and `engine/tools/README.md` for the commands.
 
 When asked to write or lay out a page, use the **`block` skill** in
 `.claude/skills/block/`. It owns the voice, the diagram system, and the design rules.
+When asked to research a page or a topic, use the **`research` skill** in
+`.claude/skills/research/`.
 
 ## Hard invariants
 
@@ -34,6 +36,11 @@ When asked to write or lay out a page, use the **`block` skill** in
   the fact ids its page may state. Need a fact that is not there? Ask the author, add it
   to `FACTS.md` with its source, cite it, then write the sentence. Never invent a source
   either, and never add a fact just to make preflight pass.
+- **What a search finds is a finding, not a fact.** It goes in `books/<slug>/RESEARCH.md`
+  (`node engine/tools/research.mjs books/<slug> --add …`) with its source and the exact words
+  on that page that back it. **Only the author accepts a finding into `FACTS.md`**, in the
+  Studio's Research tab or with `--accept`. Never run `--accept` or `--reject`, never edit a
+  Status line, and never copy a finding into `FACTS.md` yourself.
 
 ## The loop, after every edit
 
@@ -52,7 +59,7 @@ cropped through its subject, or a diagram that says the wrong thing. **Always ru
 The loop above is for writing. To ship, use the production tools (`docs/PRODUCTION.md`):
 
 ```bash
-node engine/tools/preflight.mjs books/<slug>                     # the release gate, 20 checks
+node engine/tools/preflight.mjs books/<slug>                     # the release gate, 21 checks
 node engine/tools/release.mjs   books/<slug> --editions all --bleed 3 --epub
 npm run studio                                                   # the same, as a local web UI
 ```

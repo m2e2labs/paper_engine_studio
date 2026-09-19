@@ -166,6 +166,17 @@ table.plan{ border-collapse:collapse; width:100%; font-size:13px; }
 #modal.wide{ width:min(900px,94vw); }
 .md-edit{ font:12.5px/1.55 var(--mono); min-height:56vh; white-space:pre-wrap; tab-size:2; }
 
+/* ---- research ---- */
+.finding{ border:1px solid var(--line); border-radius:12px; background:var(--desk-2); padding:14px 16px; margin-bottom:12px; }
+.finding.rejected{ opacity:.6; }
+.finding .ftop{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:8px; }
+.finding .ftop b{ font-size:14.5px; }
+.finding textarea, .finding input[type=text]{ width:100%; }
+.finding .quote{ border-left:3px solid var(--line); padding:2px 0 2px 12px; margin:8px 0; color:var(--muted); font-size:13px; font-style:italic; }
+.finding .src{ font-size:12.5px; color:var(--muted); overflow-wrap:anywhere; }
+.finding .src a{ color:var(--accent); }
+.finding .acts{ display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; align-items:center; }
+
 /* ---- images ---- */
 .pics{ display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
 .pic{ border:1px solid var(--line); border-radius:12px; overflow:hidden; background:var(--desk-2); display:flex; flex-direction:column; }

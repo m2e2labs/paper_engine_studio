@@ -24,7 +24,7 @@ function h(spec, attrs, ...kids) {
 }
 
 const S = {
-  books: [], slug: null, book: null, plan: null, images: null, tab: 'pages',
+  books: [], slug: null, book: null, plan: null, images: null, research: null, tab: 'pages',
   filter: 'all', showGenerated: false,
   draft: null, dirty: false,          // Structure tab works on a copy of book.json
   job: null,
@@ -62,8 +62,8 @@ async function openBook(slug) {
 }
 async function refresh() {
   if (!S.slug) return render();
-  const [state, plan, images] = await Promise.all([api('GET', bookUrl()), api('GET', bookUrl('/plan')).catch(() => null), api('GET', bookUrl('/images')).catch(() => null)]);
-  S.plan = plan; S.images = images;
+  const [state, plan, images, research] = await Promise.all([api('GET', bookUrl()), api('GET', bookUrl('/plan')).catch(() => null), api('GET', bookUrl('/images')).catch(() => null), api('GET', bookUrl('/research')).catch(() => null)]);
+  S.plan = plan; S.images = images; S.research = research;
   setBook(state);
 }
 function setBook(state) {
@@ -154,7 +154,7 @@ function render() {
   document.querySelectorAll('#tabs button').forEach((b) => b.classList.toggle('on', b.dataset.tab === S.tab));
   const view = $('#view');
   const top = view.scrollTop;
-  view.replaceChildren(...({ plan: viewPlan, pages: viewPages, images: viewImages, structure: viewStructure, preflight: viewPreflight, release: viewRelease }[S.tab]()));
+  view.replaceChildren(...({ plan: viewPlan, research: viewResearch, pages: viewPages, images: viewImages, structure: viewStructure, preflight: viewPreflight, release: viewRelease }[S.tab]().filter(Boolean)));   // a view leaves out a section with `cond && h(...)`
   view.scrollTop = top;
   setJob(S.job);
 }
@@ -365,7 +365,7 @@ function editSource(which, title, hint, startWith) {
   const form = h('form', { method: 'dialog', onsubmit: guard(async (e) => {
     e.preventDefault();
     const r = await api('PUT', bookUrl(`/source?file=${which}`), { text: area.value });
-    S.plan = r.plan; S.images = r.images; setBook(r.state); dlg.close(); toast(`${title} saved`, true);
+    S.plan = r.plan; S.images = r.images; if (r.research) S.research = r.research; setBook(r.state); dlg.close(); toast(`${title} saved`, true);
   }) },
     h('h2', title), h('p.muted', { style: 'margin:0;font-size:13px' }, hint), area,
     h('div.actions', h('button.btn.ghost', { type: 'button', onclick: () => dlg.close() }, 'Cancel'), h('button.btn.primary', { type: 'submit' }, 'Save')));
@@ -433,6 +433,74 @@ function viewPlan() {
     }) : h('div.muted', 'No facts recorded.'));
 
   return [top, ...notices, table, factsPanel];
+}
+
+/* ------------------------------------------------------------------ Research
+   RESEARCH.md: what a search turned up, waiting for the author. Accepting is the only
+   way into FACTS.md from here, and it is a button a person presses. */
+const researchUi = { show: 'new' };
+
+function viewResearch() {
+  const rs = S.research;
+  if (!rs) return [h('div.empty', 'The research inbox could not be read.')];
+  const act = guard(async (body, msg) => {
+    const r = await api('POST', bookUrl('/research'), body);
+    S.research = r.research; S.plan = r.plan; setBook(r.state);
+    toast(typeof msg === 'function' ? msg(r.done) : msg, true);
+  });
+  const c = rs.counts;
+  const tabBtn = (k, label) => h('button.btn.small' + (researchUi.show === k ? '.primary' : ''), { onclick: () => { researchUi.show = k; render(); } }, `${label} (${c[k]})`);
+
+  const addDialog = () => dialog('File a finding', [
+    h('label.f', 'The claim, in one plain sentence', h('textarea', { name: 'claim', rows: 3, required: true })),
+    h('label.f', 'Source: a title and a link', h('input', { type: 'text', name: 'source', required: true, placeholder: 'Microsoft Learn, "Row-level security": https://…' })),
+    h('label.f', 'The words on that page that say so (for checking, never printed)', h('textarea', { name: 'quote', rows: 2 })),
+    h('label.f', 'For which page', h('select', { name: 'for' }, h('option', { value: '' }, 'No page in particular'),
+      (S.plan?.parts || []).flatMap((p) => p.blocks).map((b) => h('option', { value: b.title }, b.title)))),
+    h('label.f', 'Kind', h('select', { name: 'kind' }, ['reference', 'experience', 'measurement', 'quote'].map((k) => h('option', { value: k }, k)))),
+  ], 'File it', (v) => act({ action: 'add', ...v }, (d) => `Filed as ${d.id}`));
+
+  const top = h('div.toolbar',
+    tabBtn('new', 'Waiting'), tabBtn('accepted', 'Accepted'), tabBtn('rejected', 'Rejected'),
+    h('span.grow'),
+    h('button.btn', { 'data-runs': true, disabled: !c.new, title: 'Opens every source: does it answer, and are the quoted words on it?', onclick: () => run('verify') }, 'Verify sources'),
+    h('button.btn', { onclick: addDialog }, 'File a finding'),
+    rs.hasResearch && h('button.btn', { onclick: () => editSource('research', 'RESEARCH.md', 'Findings waiting for you. Accept and reject from the Research tab; edit here to fix wording.') }, 'Edit RESEARCH.md'));
+
+  const intro = !rs.findings.length && h('div.notice', h('b', 'Nothing has been researched yet. '),
+    'Ask Claude to research a planned page (the /research skill), or file a finding yourself. Whatever a search turns up lands here with its source, and only becomes a fact in FACTS.md when you accept it.');
+
+  const card = (r) => {
+    const draft = { claim: r.claim, label: r.label };
+    const bad = r.verified.includes('NOT OK');
+    return h('div.finding' + (r.status === 'rejected' ? '.rejected' : ''),
+      h('div.ftop', h('span.tag', r.id), h('b', r.label), h('span.tag', r.kind),
+        r.for.map((t) => h('span.tag', { title: 'The page this is for' }, t)),
+        r.verified ? h('span.tag' + (bad ? '.fail' : '.pass'), { title: r.verified }, bad ? 'source not confirmed' : 'source confirmed') : r.status === 'new' && h('span.tag.warn', 'not verified'),
+        r.status === 'accepted' && h('span.tag.pass', `now ${r.factId}`)),
+      r.status === 'new'
+        ? h('textarea', { rows: 2, 'aria-label': 'Claim', value: r.claim, oninput: (e) => { draft.claim = e.target.value; } })
+        : h('div', { style: 'font-size:14px;line-height:1.55' }, r.claim),
+      r.quote && h('div.quote', '“', r.quote, '”'),
+      h('div.src', r.url ? [r.source.replace(r.url, '').replace(/[:\s]+$/, ''), ' ', h('a', { href: r.url, target: '_blank', rel: 'noopener noreferrer' }, r.url)] : r.source,
+        r.retrieved && ` · retrieved ${r.retrieved}`),
+      r.why && h('div.src', 'Rejected because: ', r.why),
+      r.problems.map((p) => h('div.prob', { style: 'color:var(--warn);font-size:12.5px;margin-top:6px' }, p)),
+      r.status === 'new' && h('div.acts',
+        h('button.btn.primary.small', { onclick: () => act({ action: 'accept', id: r.id, claim: draft.claim, label: draft.label }, (d) => `${r.id} is now ${d.factId}${d.cited.length ? `, cited on ${d.cited.join(', ')}` : ''}`) }, 'Accept as a fact'),
+        h('button.btn.small', { onclick: () => { const why = prompt(`Why reject ${r.id}? (kept, so it is not filed again)`); if (why !== null) act({ action: 'reject', id: r.id, why }, `${r.id} rejected`); } }, 'Reject'),
+        h('span.muted', { style: 'font-size:12.5px' }, 'Open the source and read it first. Accepting says you checked it today.')),
+      r.status === 'rejected' && h('div.acts', h('button.btn.small', { onclick: () => act({ action: 'reopen', id: r.id }, `${r.id} is waiting again`) }, 'Reconsider')));
+  };
+
+  const list = rs.findings.filter((r) => r.status === researchUi.show);
+  const stale = rs.stale.length > 0 && h('div.panel', h('h2', 'Facts to look at again'),
+    h('p.hint', `Not checked in the last ${rs.maxAgeDays} days. Links rot and software changes. Open the source, and if it still holds, say so.`),
+    h('div.rows', rs.stale.map((f) => h('div.row', h('span.tag', f.id), h('span.name', f.label), h('span.muted', f.checked ? `checked ${f.checked}` : 'never checked'),
+      f.url && h('a', { href: f.url, target: '_blank', rel: 'noopener noreferrer', style: 'color:var(--accent);font-size:12.5px' }, 'open source'),
+      h('button.btn.small', { onclick: () => act({ action: 'checked', factId: f.id }, `${f.id} checked today`) }, 'I checked it today')))));
+
+  return [top, intro, ...list.map(card), !list.length && rs.findings.length > 0 && h('div.empty', researchUi.show === 'new' ? 'Nothing waiting. The inbox is empty.' : 'None.'), stale];
 }
 
 /* ------------------------------------------------------------------ Images
@@ -725,7 +793,7 @@ function viewStructure() {
 function viewPreflight() {
   const pre = S.book.preflight;
   const runBtn = h('button.btn.primary', { 'data-runs': true, onclick: () => run('preflight') }, pre ? 'Run preflight again' : 'Run preflight');
-  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'The checks between a book that builds and a book that is ready to ship: details, book.json, publishing, running order, plan, facts, image rights, front and back matter, references, theme, stale build, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
+  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'The checks between a book that builds and a book that is ready to ship: details, book.json, publishing, running order, plan, facts, image rights, research, front and back matter, references, theme, stale build, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
   const word = { pass: 'Ready to release', warn: 'Ready, with warnings', fail: 'Not ready' }[pre.result];
   return [
     h('div.verdict', h('span.tag.' + pre.result, pre.result.toUpperCase()), h('span.big', word),

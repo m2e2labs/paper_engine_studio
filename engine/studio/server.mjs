@@ -52,6 +52,7 @@ import { loadPlan } from '../tools/lib/plan.mjs';
 import { validateBookJson } from '../tools/lib/schema.mjs';
 import { loadImages, validateImagesJson, draftManifest } from '../tools/lib/images.mjs';
 import { matterProblems } from '../tools/lib/matter.mjs';
+import { loadResearch, addFinding, acceptFinding, rejectFinding, reopenFinding, markChecked } from '../tools/lib/research.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(HERE, 'public');
@@ -164,6 +165,7 @@ function stepsFor(task, slug, opt = {}) {
   if (task === 'build') return [build];
   if (task === 'preflight') return [build, pre];
   if (task === 'proof') return [build, pre, shots];
+  if (task === 'verify') return [{ name: 'Verify sources', args: [tool('research.mjs'), dir, '--verify'], mayFail: true }];
   if (task === 'images') {   // regenerate named pictures from images.json; never "all" from a button
     const names = (opt.names || []).filter((n) => /^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(n));
     if (!names.length) return null;
@@ -230,7 +232,7 @@ function bookSummary(slug) {
 }
 
 /* The two plain-markdown sources the Studio may edit, by name and never by path. */
-const SOURCES = { blocks: 'blocks.md', facts: 'FACTS.md', images: 'images.json', glossary: 'GLOSSARY.md' };
+const SOURCES = { blocks: 'blocks.md', facts: 'FACTS.md', images: 'images.json', glossary: 'GLOSSARY.md', research: 'RESEARCH.md' };
 
 function planSummary(dir) {
   try { const p = loadPlan(dir); return { ...p.counts, hasBlocks: p.hasBlocks, hasFacts: p.hasFacts }; } catch { return null; }
@@ -436,6 +438,19 @@ const handle = async (req, res) => {
 
       if (sub === 'plan' && method === 'GET') return send(res, 200, loadPlan(dir));
       if (sub === 'images' && method === 'GET') return send(res, 200, loadImages(dir));
+      const maxAgeDays = loadBook(dir).json.research?.maxAgeDays || 365;
+      if (sub === 'research' && method === 'GET') return send(res, 200, loadResearch(dir, { maxAgeDays }));
+      if (sub === 'research' && method === 'POST') {   // every one of these is the author's decision, made in the Studio
+        const b = await readBody(req);
+        let done = {};
+        if (b.action === 'add') done = { id: addFinding(dir, b) };
+        else if (b.action === 'accept') done = acceptFinding(dir, b.id, b);
+        else if (b.action === 'reject') rejectFinding(dir, b.id, b.why);
+        else if (b.action === 'reopen') reopenFinding(dir, b.id);
+        else if (b.action === 'checked') markChecked(dir, b.factId);
+        else return fail(res, 400, 'Unknown action.');
+        return send(res, 200, { done, research: loadResearch(dir, { maxAgeDays }), plan: loadPlan(dir), state: bookState(slug) });
+      }
       if (sub === 'images' && parts[4] === 'draft' && method === 'POST') return send(res, 200, { text: JSON.stringify(draftManifest(dir), null, 2) + '\n' });
 
       if (sub === 'source') {
@@ -452,7 +467,7 @@ const handle = async (req, res) => {
             if (shape.errors.length) return fail(res, 400, shape.errors.slice(0, 3).join('  ·  '));
           }
           fs.writeFileSync(file, text.replace(/\r\n/g, '\n').replace(/\s*$/, '\n'));
-          return send(res, 200, { plan: loadPlan(dir), images: loadImages(dir), state: bookState(slug) });
+          return send(res, 200, { plan: loadPlan(dir), images: loadImages(dir), research: loadResearch(dir), state: bookState(slug) });
         }
       }
 

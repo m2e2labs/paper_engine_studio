@@ -18,6 +18,7 @@ import { loadImages } from './images.mjs';
 import { matterFor, matterProblems, titleOf } from './matter.mjs';
 import { loadRefs } from './refs.mjs';
 import { themeProblems, TOKENS, DEFAULTS } from './theme.mjs';
+import { loadResearch } from './research.mjs';
 import { validateBookJson, publishingFor, isbnOk, isbnDigits } from './schema.mjs';
 
 const PLACEHOLDERS = ['Your Name', 'yoursite.com', 'My First Book', 'My first book'];
@@ -102,6 +103,20 @@ export async function preflight(dir, { bookHtml, edition = null, strict = false 
     add('facts', 'Facts', 'warn', 'Some figures on the page are not in the facts that page cites. Add the fact, cite it, or cut the figure.',
       [...undecided, ...unbacked]);
   else add('facts', 'Facts', 'pass', `${plan.facts.length} fact(s), every one with a source, and every figure in the book traced to one.`);
+
+  /* ---- 2b'. research: findings nobody has read, and facts nobody has looked at lately. Never a fail. */
+  {
+    const rs = loadResearch(dir, { maxAgeDays: j.research?.maxAgeDays || 365 });
+    const inBook = (t) => book.partOf.has(t) && (!keepSet || keepSet.has(t));
+    const waiting = rs.findings.filter((r) => r.status === 'new' && (!r.for.length || r.for.some(inBook)));
+    const citedStale = rs.stale.filter((s) => plan.facts.find((f) => f.id === s.id)?.usedBy.some(inBook));
+    const soft = [
+      ...(waiting.length ? [`${waiting.length} finding(s) in RESEARCH.md are waiting for you: ${waiting.map((r) => r.id).join(', ')}`] : []),
+      ...citedStale.map((s) => `${s.id} ${s.label}: ${s.checked ? `last checked ${s.checked}, over ${rs.maxAgeDays} days ago` : 'has no Checked date'}`),
+    ];
+    if (soft.length) add('research', 'Research', 'warn', 'Things to read before this ships.', soft);
+    else add('research', 'Research', 'pass', rs.hasResearch ? `Inbox empty. Every cited fact was checked in the last ${rs.maxAgeDays} days.` : `No research waiting. Every cited fact was checked in the last ${rs.maxAgeDays} days.`);
+  }
 
   /* ---- 2c. the pictures: do we know where each one came from, and may we print it? */
   const pics = loadImages(dir);

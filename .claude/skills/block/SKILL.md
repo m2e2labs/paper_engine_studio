@@ -57,6 +57,10 @@ Never skip this. It is their one chance to lead the page before you fill in the 
    it came from, add it to `FACTS.md` under the next free id, cite that id on the
    block's Facts line, and only then write the sentence. Never write the sentence first.
    If the book has no `FACTS.md`, copy `books/starter/FACTS.md` and start one.
+   If the missing fact is something that can be looked up (documentation, a standard, a
+   release note), use the `research` skill: it files a sourced finding in `RESEARCH.md`
+   for the author to accept. A finding is not a fact. Do not write from one until the
+   author has accepted it and it has an `F` id.
 
 5. `books/<slug>/GLOSSARY.md`, if the book has one — the author's terms and what they mean
    by them. Use a term the way its `Means` line says. Do not add a term or rewrite a
