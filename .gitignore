@@ -17,3 +17,13 @@ node_modules/
 # images like docs/images/page-anatomy.png, silently, and break the README on GitHub.
 books/**/page*.png
 /page*.png
+
+# Production output. release.mjs writes dated folders of PDFs, proofs and manifests here.
+books/**/dist/
+
+# The Studio's working files: proof screenshots and the last preflight report.
+# workflow.json (who approved what) is NOT ignored. It is part of the book's history.
+books/**/.studio/
+
+# Edition builds are regenerable from book.json.
+books/**/book-*.html

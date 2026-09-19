@@ -180,6 +180,27 @@ page in the free edition you give away.
 
 ---
 
+## Shipping it: preflight, review, release
+
+The loop gets a page right. Three more tools get a book out of the door, and
+[docs/PRODUCTION.md](docs/PRODUCTION.md) walks through them.
+
+```bash
+npm run studio                                                  # the workflow as a local web UI
+node engine/tools/preflight.mjs books/showcase                  # 12 checks between "it builds" and "it ships"
+node engine/tools/release.mjs   books/showcase --editions all --bleed 3 --epub
+```
+
+- **Preflight** is the release gate: overflow, broken images, print resolution, fonts,
+  clipped diagram labels, stale builds, print-on-demand limits, and whether a person has
+  approved every page.
+- **The Studio** shows every page as a proof, lets you approve them one keystroke at a
+  time, edits `book.json` as a form, and keeps an approval pinned to the exact content
+  that was approved.
+- **Release** builds every edition fresh, stops if preflight fails, and writes PDFs (with
+  a bleed version for a printer), a fixed-layout EPUB for the ebook stores, a manifest and checksums into a dated folder that is
+  never overwritten.
+
 ## What is where
 
 ```

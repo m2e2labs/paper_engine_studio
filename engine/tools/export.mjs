@@ -17,14 +17,20 @@
        node engine/tools/export.mjs books/showcase/book.html          -> book.pdf
        node engine/tools/export.mjs books/showcase/book.html out.pdf  -> out.pdf
        node engine/tools/export.mjs a.html b.html                     -> a.pdf, b.pdf
-   ========================================================================== */
-import { chromium } from 'playwright';
-import { pathToFileURL } from 'node:url';
-import path from 'node:path';
+       node engine/tools/export.mjs books/showcase/book.html --bleed 3 -> book-print.pdf
 
-const argv = process.argv.slice(2);
-if (argv.length === 0) {
-  console.error('Usage: node engine/tools/export.mjs <book.html> [out.pdf | more .html files...]');
+   --bleed <mm> writes a printer's file: every sheet sits unchanged on paper
+   that is <mm> larger on each side, filled with the sheet's own paper colour.
+   KDP and most printers ask for 3 mm (0.125 in). See lib/pdf.mjs.
+   ========================================================================== */
+import { exportPdfs } from './lib/pdf.mjs';
+
+const args = process.argv.slice(2);
+const bi = args.indexOf('--bleed');
+const bleedMm = bi === -1 ? 0 : Number(args[bi + 1]);
+const argv = bi === -1 ? args : args.filter((_, i) => i !== bi && i !== bi + 1);
+if (argv.length === 0 || Number.isNaN(bleedMm) || bleedMm < 0 || bleedMm > 10) {
+  console.error('Usage: node engine/tools/export.mjs <book.html> [out.pdf | more .html files...] [--bleed <mm, 0-10>]');
   process.exit(1);
 }
 
@@ -33,23 +39,8 @@ let jobs;
 if (argv.length === 2 && /\.pdf$/i.test(argv[1])) {
   jobs = [{ in: argv[0], out: argv[1] }];
 } else {
-  jobs = argv.map((f) => ({ in: f, out: f.replace(/\.html?$/i, '.pdf') }));
+  jobs = argv.map((f) => ({ in: f, out: f.replace(/\.html?$/i, bleedMm ? '-print.pdf' : '.pdf') }));
 }
 
-const browser = await chromium.launch();
-try {
-  const page = await browser.newPage();
-  for (const job of jobs) {
-    const abs = path.resolve(job.in);
-    await page.goto(pathToFileURL(abs).href, { waitUntil: 'networkidle' });
-    await page.evaluate(() => document.fonts.ready);   // web fonts change text height
-    await page.pdf({
-      path: path.resolve(job.out),
-      preferCSSPageSize: true,   // obey @page { size:B5; margin:0 }
-      printBackground: true,     // keep the colours
-    });
-    console.log('  wrote ' + job.out);
-  }
-} finally {
-  await browser.close();
-}
+await exportPdfs(jobs, { bleedMm });
+for (const job of jobs) console.log('  wrote ' + job.out + (bleedMm ? `  (+${bleedMm} mm bleed)` : ''));

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paper Engine Studio</title>
+  <link rel="stylesheet" href="/engine/fonts/fonts.css">
+  <link rel="stylesheet" href="/studio/studio.css">
+</head>
+<body>
+  <aside id="side">
+    <div class="brand"><span class="brand-tab"></span>Paper Engine <b>Studio</b></div>
+    <div class="side-label">Books</div>
+    <nav id="books"></nav>
+    <button id="new-book" class="btn ghost wide">+ New book</button>
+  </aside>
+
+  <main id="main">
+    <div id="empty" class="empty" hidden>
+      <h1>No book selected</h1>
+      <p>Pick a book on the left, or start a new one from the starter.</p>
+    </div>
+
+    <div id="book" hidden>
+      <header id="head">
+        <div class="head-row">
+          <div>
+            <h1 id="book-title"></h1>
+            <div id="book-sub" class="muted"></div>
+          </div>
+          <div class="head-actions">
+            <a id="open-live" class="btn ghost" target="_blank" rel="noopener">Open book.html</a>
+            <button id="run-proof" class="btn primary" title="Build, preflight, then screenshot every page">Run proof</button>
+          </div>
+        </div>
+        <ol id="pipeline"></ol>
+      </header>
+
+      <nav id="tabs">
+        <button data-tab="pages">Pages</button>
+        <button data-tab="structure">Structure</button>
+        <button data-tab="preflight">Preflight</button>
+        <button data-tab="release">Release</button>
+      </nav>
+
+      <section id="view"></section>
+    </div>
+
+    <footer id="log" class="closed">
+      <button id="log-toggle"><span id="log-state">Log</span><span id="log-caret">▴</span></button>
+      <pre id="log-body"></pre>
+    </footer>
+  </main>
+
+  <dialog id="viewer"></dialog>
+  <dialog id="modal"></dialog>
+  <div id="toast" hidden></div>
+
+  <script type="module" src="/studio/app.js"></script>
+</body>
+</html>

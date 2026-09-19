@@ -43,6 +43,27 @@ node engine/tools/shot.mjs       books/<slug>/book.html  # then READ the PNGs
 cropped through its subject, or a diagram that says the wrong thing. **Always run
 `shot.mjs` and actually look at the images.** A page is not done until you have.
 
+## Shipping a book
+
+The loop above is for writing. To ship, use the production tools (`docs/PRODUCTION.md`):
+
+```bash
+node engine/tools/preflight.mjs books/<slug>                     # the release gate, 12 checks
+node engine/tools/release.mjs   books/<slug> --editions all --bleed 3 --epub
+npm run studio                                                   # the same, as a local web UI
+```
+
+- **`books/<slug>/workflow.json` is the review record.** A person approves pages in the
+  Studio. Never mark a page approved yourself, and never edit that file to get a release
+  through. An approval is pinned to the page's content hash, so editing an approved page
+  correctly puts it back in the queue.
+- There are two EPUBs, on purpose. `epub.mjs` / `release.mjs --epub` writes a FIXED-LAYOUT
+  EPUB, the PDF's twin, page for page. `build-reader.mjs` writes a REFLOWABLE `book.epub`
+  and `reader.html` for phones. Do not turn one into the other.
+- `dist/`, `.studio/` and `book-<edition>.html` are regenerable and gitignored.
+- Shared code for these tools lives in `engine/tools/lib/`. `build-book.mjs`, `check.mjs`
+  and `shot.mjs` are untouched upstream files; keep them that way so upstream still merges.
+
 ## Adding a page
 
 1. Write it into `books/<slug>/<slug>.html` as one `<section class="sheet bb">`. Copy

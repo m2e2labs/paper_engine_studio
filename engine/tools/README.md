@@ -1,6 +1,6 @@
 # engine/tools
 
-Five commands. Every one takes paths relative to the repo root, and every one carries a
+Five commands for writing a book, and four for shipping one. Every one takes paths relative to the repo root, and every one carries a
 full usage block at the top of its own file.
 
 One-time setup:
@@ -26,6 +26,18 @@ export.**
 photo cropped through its subject, or a diagram that says the wrong thing. Only the PNGs
 show those. Always look.
 
+## Shipping
+
+The loop is how you write a book. These are how you ship one. The full walkthrough is in
+`docs/PRODUCTION.md`.
+
+| Tool | What it does | Run it |
+|---|---|---|
+| `preflight.mjs` | **The release gate.** Everything `check.mjs` is, plus: book details filled in, running order complete, build not stale, images at print resolution (300 dpi), fonts loaded, no SVG label past the edge of its drawing, nothing fetched from the network, alt text, print-on-demand limits, and every page approved. Exits 1 on failure. | `node engine/tools/preflight.mjs books/<slug>` |
+| `epub.mjs` | A fixed-layout EPUB 3 from a built book: one page per sheet, same CSS and fonts, SVG diagrams still live text. Every page is parsed back as XML before the file is written. | `node engine/tools/epub.mjs books/<slug> [--edition free]` |
+| `release.mjs` | Build, preflight, export, for the full book and any editions, plus EPUBs with `--epub`, into a new dated folder under `books/<slug>/dist/` with a manifest and checksums. Stops before writing anything if preflight fails. | `node engine/tools/release.mjs books/<slug> --editions all --bleed 3` |
+| `../studio/server.mjs` | The Studio: the same commands behind a local web UI, with page-by-page review and approval. | `npm run studio` |
+
 ## Images
 
 | Tool | What it does | Run it |
@@ -47,6 +59,19 @@ one book, are in `.claude/skills/block/references/photo-blocks.md`.
 ```
 build-book.mjs  --edition <name>     build a subset listed under "editions" in book.json
                 --out <file>         write somewhere other than book.html
+
+export.mjs      --bleed 3            a printer's PDF: same sheets, on paper 3 mm larger per side
+
+preflight.mjs   --edition <name>     check an edition build (book-<name>.html)
+                --strict             unapproved pages fail instead of warn
+                --json <file>        write the report as JSON
+
+release.mjs     --editions full,free which to ship; "all" is the full book plus every edition
+                --bleed 3            also write <slug>-print.pdf with bleed
+                --epub               also write <slug>.epub, fixed-layout, per edition
+                --proofs             also write one PNG per page
+                --strict             every page must be approved
+                --force              ship despite failing checks (the manifest records it)
 
 gen-image.mjs   --check              verify the CLI before you rely on it
                 --provider gemini    the metered fallback

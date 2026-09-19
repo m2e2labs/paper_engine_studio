@@ -1,0 +1,531 @@
+/* ==========================================================================
+   Paper Engine Studio, the front end. No framework and no build step: one
+   state object, one render per tab. Every string that came from a book goes
+   in through textContent, never innerHTML.
+   ========================================================================== */
+const $ = (s) => document.querySelector(s);
+
+/* h('div#id.card', {onclick}, child, 'text', ...) */
+function h(spec, attrs, ...kids) {
+  const [head, ...cls] = spec.split('.');
+  const [tag, id] = head.split('#');
+  const el = document.createElement(tag || 'div');
+  if (id) el.id = id;
+  if (cls.length) el.className = cls.join(' ');
+  if (attrs && (attrs instanceof Node || typeof attrs !== 'object' || Array.isArray(attrs))) { kids.unshift(attrs); attrs = null; }
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v === null || v === undefined || v === false) continue;
+    if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
+    else if (k in el && k !== 'list') el[k] = v;
+    else el.setAttribute(k, v === true ? '' : v);
+  }
+  for (const kid of kids.flat(Infinity)) if (kid !== null && kid !== undefined && kid !== false) el.append(kid);
+  return el;
+}
+
+const S = {
+  books: [], slug: null, book: null, tab: 'pages',
+  filter: 'all', showGenerated: false,
+  draft: null, dirty: false,          // Structure tab works on a copy of book.json
+  job: null,
+  release: { editions: ['full'], bleed: 0, epub: false, proofs: false, strict: true, force: false },
+};
+
+/* ------------------------------------------------------------------ server */
+async function api(method, url, body) {
+  const res = await fetch(url, {
+    method, headers: body ? { 'Content-Type': 'application/json' } : {},
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || `${method} ${url} failed (${res.status})`);
+  return data;
+}
+const bookUrl = (rest = '') => `/api/books/${encodeURIComponent(S.slug)}${rest}`;
+
+function toast(msg, ok = false) {
+  const t = $('#toast');
+  t.textContent = msg; t.className = ok ? 'ok' : ''; t.hidden = false;
+  clearTimeout(toast.t); toast.t = setTimeout(() => (t.hidden = true), ok ? 2200 : 6000);
+}
+const guard = (fn) => async (...a) => { try { return await fn(...a); } catch (e) { toast(e.message); } };
+
+async function loadBooks() {
+  S.books = await api('GET', '/api/books');
+  renderSide();
+}
+async function openBook(slug) {
+  if (S.dirty && !confirm('Discard unsaved changes to the structure?')) return;
+  S.slug = slug; S.draft = null; S.dirty = false;
+  history.replaceState(null, '', '#' + slug);
+  await refresh();
+}
+async function refresh() {
+  if (!S.slug) return render();
+  setBook(await api('GET', bookUrl()));
+}
+function setBook(state) {
+  S.book = state;
+  if (!S.dirty) S.draft = structuredClone(state.json);
+  render();
+  loadBooks();
+}
+
+const run = guard(async (task, options) => {
+  if (S.dirty) return toast('Save or discard your structure changes first.');
+  await api('POST', bookUrl('/run'), { task, options });
+});
+
+/* ------------------------------------------------------------------ events */
+function connect() {
+  const es = new EventSource('/api/events');
+  const log = $('#log-body');
+  es.addEventListener('hello', (e) => setJob(JSON.parse(e.data).job));
+  es.addEventListener('log', (e) => {
+    const { line, kind } = JSON.parse(e.data);
+    log.append(h('span', { className: kind === 'out' ? '' : kind }, line + '\n'));
+    log.scrollTop = log.scrollHeight;
+  });
+  es.addEventListener('job', (e) => {
+    const j = JSON.parse(e.data);
+    if (j.state === 'running') { setJob(j); $('#log').classList.remove('closed'); }
+    else {
+      setJob(null);
+      $('#log-state').textContent = `Log · ${j.task} ${j.state} in ${(j.ms / 1000).toFixed(1)}s`;
+      if (j.state === 'done') toast(`${j.task} finished`, true); else toast(`${j.task} failed. Read the log.`);
+      if (j.slug === S.slug) refresh().then(() => viewer.title && openViewer(viewer.title));
+    }
+  });
+}
+function setJob(j) {
+  S.job = j;
+  $('#log').classList.toggle('busy', !!j);
+  if (j) $('#log-state').textContent = `Running ${j.task} on ${j.slug}…`;
+  document.querySelectorAll('[data-runs]').forEach((b) => (b.disabled = !!j));
+}
+
+/* ------------------------------------------------------------------ sidebar + header */
+function renderSide() {
+  $('#books').replaceChildren(...S.books.map((b) =>
+    h('button.book-link' + (b.slug === S.slug ? '.on' : ''), { onclick: () => openBook(b.slug) },
+      h('span.t', b.title),
+      h('span.s', b.error ? 'book.json is broken'
+        : [`${b.pages} pp`, h('span.bar', h('i', { style: `width:${b.review.total ? (b.review.approved / b.review.total) * 100 : 0}%` }))]))));
+}
+
+const ago = (ms) => {
+  if (!ms) return '';
+  const s = (Date.now() - ms) / 1000;
+  return s < 90 ? 'just now' : s < 5400 ? `${Math.round(s / 60)} min ago` : s < 129600 ? `${Math.round(s / 3600)} h ago` : new Date(ms).toLocaleDateString();
+};
+
+function renderPipeline() {
+  const b = S.book, pre = b.preflight, rv = b.review, last = b.releases[0];
+  const words = b.pages.reduce((n, p) => n + p.words, 0);
+  const steps = [
+    { k: 'Write', v: `${rv.total} pages`, d: b.missing.length ? `${b.missing.length} listed but not written` : `${words.toLocaleString()} words`,
+      level: b.missing.length ? 'fail' : rv.total ? 'pass' : 'idle' },
+    { k: 'Build', v: !b.build.exists ? 'Not built' : b.build.stale ? 'Out of date' : 'Up to date', d: b.build.exists ? `book.html · ${ago(b.build.at)}` : 'Run proof to build',
+      level: !b.build.exists ? 'idle' : b.build.stale ? 'warn' : 'pass' },
+    { k: 'Preflight', v: !pre ? 'Not run' : b.preflightStale ? 'Out of date' : pre.result === 'pass' ? 'All clear' : pre.result === 'warn' ? `${pre.warns} warning${pre.warns > 1 ? 's' : ''}` : `${pre.fails} failing`,
+      d: pre ? `${pre.checks.filter((c) => c.level === 'pass').length} of ${pre.checks.length} checks pass` : '12 checks',
+      level: !pre ? 'idle' : b.preflightStale ? 'warn' : pre.result },
+    { k: 'Review', v: `${rv.approved} / ${rv.total} approved`, d: [rv.review && `${rv.review} in review`, rv.changed && `${rv.changed} edited since`, rv.draft && `${rv.draft} draft`].filter(Boolean).join(' · ') || 'Every page signed off',
+      level: !rv.total ? 'idle' : rv.approved === rv.total ? 'pass' : rv.changed ? 'warn' : 'idle' },
+    { k: 'Release', v: last ? last.manifest.label || last.folder : 'Nothing shipped', d: last ? `${ago(Date.parse(last.manifest.released))} · ${last.manifest.editions.length} edition(s)` : 'No files in dist/ yet',
+      level: last ? (last.manifest.forced ? 'warn' : 'pass') : 'idle' },
+  ];
+  $('#pipeline').replaceChildren(...steps.map((s, i) =>
+    h('li.step.' + s.level, h('div.k', h('span', s.k), h('span', String(i + 1))), h('div.v', s.v), h('div.d', s.d))));
+}
+
+function render() {
+  const has = !!S.book;
+  $('#empty').hidden = has; $('#book').hidden = !has;
+  if (!has) return;
+  const j = S.book.json;
+  $('#book-title').textContent = j.title || S.slug;
+  $('#book-sub').textContent = [j.author, j.editionLabel, `books/${S.slug}/`].filter(Boolean).join(' · ');
+  $('#open-live').href = `/books/${S.slug}/book.html`;
+  $('#open-live').hidden = !S.book.build.exists;
+  renderPipeline();
+  document.querySelectorAll('#tabs button').forEach((b) => b.classList.toggle('on', b.dataset.tab === S.tab));
+  const view = $('#view');
+  const top = view.scrollTop;
+  view.replaceChildren(...({ pages: viewPages, structure: viewStructure, preflight: viewPreflight, release: viewRelease }[S.tab]()));
+  view.scrollTop = top;
+  setJob(S.job);
+}
+
+/* ------------------------------------------------------------------ Pages */
+const STATUS_LABEL = { draft: 'Draft', review: 'In review', approved: 'Approved', changed: 'Edited since approval' };
+const shotUrl = (n) => `/books/${S.slug}/.studio/shots/page${n}.png?v=${S.book.shots.v}`;
+
+function cardsInOrder() {
+  const b = S.book, byTitle = new Map(b.pages.map((p) => [p.title, p]));
+  const out = [], placed = new Set();
+  for (const s of b.preflight?.sheets || []) {
+    if (s.kind === 'page' && byTitle.has(s.title)) { out.push({ page: byTitle.get(s.title), sheet: s }); placed.add(s.title); }
+    else if (s.kind !== 'page') out.push({ sheet: s });
+  }
+  const rest = b.pages.filter((p) => !placed.has(p.title));
+  return { built: out, rest };
+}
+
+function viewPages() {
+  const b = S.book;
+  const filters = [['all', 'All'], ['draft', 'Draft'], ['review', 'In review'], ['changed', 'Edited since'], ['approved', 'Approved'], ['problem', 'Overflowing']];
+  const match = (p) => S.filter === 'all' || (S.filter === 'problem' ? p.overMm >= 0.5 : p.status === S.filter);
+  const count = (f) => (f === 'all' ? b.pages.length : b.pages.filter((p) => (f === 'problem' ? p.overMm >= 0.5 : p.status === f)).length);
+
+  const bar = h('div.toolbar',
+    h('div.chips', filters.map(([f, label]) =>
+      h('button.chip' + (S.filter === f ? '.on' : ''), { onclick: () => { S.filter = f; render(); } }, `${label} ${count(f)}`))),
+    h('span.grow'),
+    h('label.check', h('input', { type: 'checkbox', checked: S.showGenerated, onchange: (e) => { S.showGenerated = e.target.checked; render(); } }), 'Cover, contents, dividers, index'),
+    h('button.btn', { onclick: newPageDialog }, '+ New page'));
+
+  const notices = [];
+  if (!b.shots.count) notices.push(h('div.notice', h('b', 'No proofs yet. '), 'Run proof to build the book, check it, and screenshot every page so you can review them here.'));
+  else if (b.shots.stale || b.build.stale) notices.push(h('div.notice', h('b', 'These proofs are out of date. '), 'The source changed after they were taken. Run proof again before you approve anything.'));
+
+  const { built, rest } = cardsInOrder();
+  const cards = [];
+  let part = null;
+  for (const c of built) {
+    if (!c.page) { if (S.showGenerated && S.filter === 'all') cards.push(card(null, c.sheet)); continue; }
+    if (!match(c.page)) continue;
+    if (c.page.part !== part) {
+      part = c.page.part;
+      const p = b.json.parts[part];
+      if (p) cards.push(h('div.part-h', h('b', `Part ${part + 1}`), p.name));
+    }
+    cards.push(card(c.page, c.sheet));
+  }
+  const loose = rest.filter(match);
+  if (loose.length) {
+    cards.push(h('div.part-h', h('b', 'Not in the built book'), 'Not listed in a part, or written since the last build'));
+    loose.forEach((p) => cards.push(card(p, null)));
+  }
+  return [bar, ...notices, cards.length ? h('div.grid', cards) : h('div.empty', 'No pages match this filter.')];
+}
+
+function card(page, sheet) {
+  const hasShot = sheet && sheet.page <= S.book.shots.count;
+  const thumb = h('div.thumb',
+    hasShot ? h('img', { src: shotUrl(sheet.page), loading: 'lazy', alt: '' }) : h('div.none', page ? (page.part === null ? 'Not in a part' : 'No proof yet') : ''),
+    sheet && h('span.no', String(sheet.page)),
+    sheet && sheet.overMm >= 0.5 && h('span.flag', `+${sheet.overMm} mm`));
+  if (!page)
+    return h('div.card.gen', thumb, h('div.meta', h('span.name.muted', sheet.title || sheet.kind), h('span.tag', sheet.kind)));
+  return h('button.card', { onclick: () => openViewer(page.title), title: STATUS_LABEL[page.status] },
+    thumb, h('div.meta', h('span.dot.' + page.status), h('span.name', page.title)));
+}
+
+/* ------------------------------------------------------------------ the review viewer */
+const viewer = { title: null, editing: false };
+
+function reviewOrder() {
+  const { built, rest } = cardsInOrder();
+  return [...built.filter((c) => c.page).map((c) => c.page), ...rest];
+}
+
+function openViewer(title) {
+  const page = S.book.pages.find((p) => p.title === title);
+  const dlg = $('#viewer');
+  if (!page) { dlg.close(); return; }
+  viewer.title = title;
+  const order = reviewOrder(), i = order.findIndex((p) => p.title === title);
+  const go = (d) => { const n = order[i + d]; if (n) { viewer.editing = false; openViewer(n.title); } };
+  const hasShot = page.sheet && page.sheet <= S.book.shots.count;
+
+  const setStatus = guard(async (status) => {
+    const note = dlg.querySelector('#v-note')?.value;
+    setBook(await api('POST', bookUrl('/status'), { title, status, note }));
+    if (status === 'approved' && order[i + 1]) go(1); else openViewer(title);
+  });
+
+  const left = h('div.v-page',
+    hasShot ? h('img', { src: shotUrl(page.sheet), alt: `Proof of ${title}` })
+      : h('div.none', page.part === null ? 'This page is written but not listed in any part, so it is not in the book. Add it under Structure.' : 'No proof of this page yet. Run proof.'),
+    i > 0 && h('button.btn.v-nav.prev', { onclick: () => go(-1), 'aria-label': 'Previous page' }, '←'),
+    i < order.length - 1 && h('button.btn.v-nav.next', { onclick: () => go(1), 'aria-label': 'Next page' }, '→'));
+
+  const stale = S.book.shots.stale || S.book.build.stale;
+  const body = viewer.editing ? editorBody(page) : h('div.v-body',
+    stale && h('div.notice', h('b', 'Proof is out of date. '), 'Run proof before approving.'),
+    h('div', h('div.v-label', 'Status'),
+      h('div.seg', ['draft', 'review', 'approved'].map((s) =>
+        h('button' + (page.status === s ? `.on.${s}` : ''), { onclick: () => setStatus(s) }, STATUS_LABEL[s]))),
+      page.status === 'changed' && h('p.muted', { style: 'margin:8px 0 0' }, 'This page was approved, then edited. It needs another look.')),
+    h('div', h('div.v-label', 'Review note'),
+      h('textarea#v-note', { rows: 5, placeholder: 'What has to change before this page is done?', value: page.note || '',
+        onblur: guard(async (e) => { if (e.target.value !== (page.note || '')) setBook(await api('POST', bookUrl('/status'), { title, status: page.status === 'changed' ? 'review' : page.status, note: e.target.value })); }) })),
+    h('div', h('div.v-label', 'What the check cannot see'),
+      h('p.muted', { style: 'margin:0;font-size:13px' }, 'Overlap, a clipped label, a squashed row, a photo cropped through its subject, a diagram that says the wrong thing. Only your eyes catch those.')));
+
+  const right = h('div.v-side',
+    h('div.v-head', h('h2', title),
+      h('div.facts',
+        h('span.tag.' + page.status, STATUS_LABEL[page.status]),
+        page.sheet && h('span.tag', `page ${page.sheet}`),
+        h('span.tag', page.kind), page.pill && h('span.tag', page.pill), h('span.tag', `${page.words} words`),
+        page.overMm >= 0.5 ? h('span.tag.fail', `+${page.overMm} mm over`) : page.overMm !== null && h('span.tag.pass', '0 mm'))),
+    body,
+    h('div.v-foot',
+      h('span.keys', h('kbd', '←'), ' ', h('kbd', '→'), ' move · ', h('kbd', 'A'), ' approve · ', h('kbd', 'R'), ' review'),
+      h('span', { style: 'display:flex;gap:8px' },
+        !viewer.editing && h('button.btn', { onclick: () => { viewer.editing = true; openViewer(title); } }, 'Edit source'),
+        h('button.btn.ghost', { onclick: () => dlg.close() }, 'Close'))));
+
+  dlg.replaceChildren(left, right);
+  viewer.keys = (e) => {
+    if (e.target.matches('textarea,input,select') || e.ctrlKey || e.metaKey || e.altKey) return;
+    if (e.key === 'ArrowLeft') go(-1);
+    else if (e.key === 'ArrowRight') go(1);
+    else if (e.key.toLowerCase() === 'a') setStatus('approved');
+    else if (e.key.toLowerCase() === 'r') setStatus('review');
+  };
+  if (!dlg.open) dlg.showModal();
+}
+
+function editorBody(page) {
+  const area = h('textarea.v-src', { spellcheck: false, value: 'Loading…', disabled: true });
+  api('GET', bookUrl(`/page?title=${encodeURIComponent(page.title)}`))
+    .then((p) => { area.value = p.html; area.disabled = false; }).catch((e) => toast(e.message));
+  const save = guard(async () => {
+    const r = await api('PUT', bookUrl('/page'), { title: page.title, html: area.value });
+    viewer.editing = false; viewer.title = r.title;
+    setBook(r.state);
+    await run('proof');      // the loop, after every edit
+    openViewer(r.title);
+  });
+  return h('div.v-body',
+    h('div', h('div.v-label', `Source · ${S.book.interior}`),
+      h('p.muted', { style: 'margin:0;font-size:13px' }, 'One <section class="sheet bb">. Saving writes it into the interior and runs proof. If it overflows, cut words; never shrink the viewBox.')),
+    area,
+    h('div', { style: 'display:flex;gap:8px;justify-content:flex-end' },
+      h('button.btn.ghost', { onclick: () => { viewer.editing = false; openViewer(page.title); } }, 'Cancel'),
+      h('button.btn.primary', { onclick: save, 'data-runs': true, disabled: !!S.job }, 'Save and run proof')));
+}
+
+/* ------------------------------------------------------------------ dialogs */
+function dialog(title, fields, submitLabel, onSubmit) {
+  const dlg = $('#modal');
+  const form = h('form', { method: 'dialog', onsubmit: guard(async (e) => {
+    e.preventDefault();
+    await onSubmit(Object.fromEntries(new FormData(form)));
+    dlg.close();
+  }) },
+    h('h2', title), fields,
+    h('div.actions', h('button.btn.ghost', { type: 'button', onclick: () => dlg.close() }, 'Cancel'), h('button.btn.primary', { type: 'submit' }, submitLabel)));
+  dlg.replaceChildren(form);
+  dlg.showModal();
+}
+const field = (label, name, attrs = {}) => h('label.f', label, h('input', { type: 'text', name, ...attrs }));
+
+function newBookDialog() {
+  dialog('New book', [
+    field('Title', 'title', { required: true, placeholder: 'The Field Guide' }),
+    field('Author', 'author', { placeholder: 'Your name' }),
+    field('Folder name', 'slug', { required: true, pattern: '[a-z0-9][a-z0-9-]*', placeholder: 'field-guide', title: 'lowercase letters, digits and hyphens' }),
+    h('p.muted', { style: 'margin:0;font-size:13px' }, 'Copies books/starter: its voice file, its page plan, and one finished example page to replace.'),
+  ], 'Create book', async (v) => {
+    const { slug } = await api('POST', '/api/books', v);
+    await loadBooks(); await openBook(slug);
+  });
+}
+
+function newPageDialog() {
+  const parts = S.book.json.parts || [];
+  dialog('New page', [
+    field('Title', 'title', { required: true, placeholder: 'One concept' }),
+    field('Category pill', 'pill', { placeholder: 'Security' }),
+    h('label.f', 'Part', h('select', { name: 'part' }, parts.map((p, i) => h('option', { value: String(i) }, `${i + 1}. ${p.name}`)))),
+    h('p.muted', { style: 'margin:0;font-size:13px' }, 'Adds a blank page in the engine’s shape to the interior and lists it in book.json. Write it with the block skill, or edit its source here.'),
+  ], 'Add page', async (v) => {
+    const r = await api('POST', bookUrl('/page'), { ...v, part: Number(v.part) });
+    setBook(r.state);
+    viewer.editing = true; openViewer(r.title);
+  });
+}
+
+/* ------------------------------------------------------------------ Structure */
+function touch() { S.dirty = true; render(); }
+
+function viewStructure() {
+  const d = S.draft, b = S.book;
+  const bind = (obj, key) => ({ value: obj[key] ?? '', oninput: (e) => { obj[key] = e.target.value; markDirty(); } });
+  const markDirty = () => { if (!S.dirty) { S.dirty = true; $('#savebar-state').textContent = 'Unsaved changes'; document.querySelectorAll('.savebar .btn').forEach((x) => (x.disabled = false)); } };
+  const tick = (key, label) => h('label.check', h('input', { type: 'checkbox', checked: d[key] !== false, onchange: (e) => { d[key] = e.target.checked; markDirty(); } }), label);
+  d.cover ||= {}; d.copyright ||= {}; d.editions ||= {};
+
+  const save = guard(async () => {
+    const state = await api('PUT', bookUrl('/json'), d);
+    S.dirty = false; setBook(state); toast('book.json saved', true);
+  });
+
+  const savebar = h('div.savebar',
+    h('button.btn.primary', { onclick: save, disabled: !S.dirty }, 'Save book.json'),
+    h('button.btn.ghost', { disabled: !S.dirty, onclick: () => { S.dirty = false; S.draft = structuredClone(b.json); render(); } }, 'Discard'),
+    h('span#savebar-state.muted', S.dirty ? 'Unsaved changes' : 'Reordering a book is a JSON edit, never HTML surgery.'));
+
+  const details = h('div.panel', h('h2', 'Book details'), h('p.hint', 'Everything printed on the cover, the copyright page and the running feet.'),
+    h('div.fields',
+      h('label.f', 'Title', h('input', { type: 'text', ...bind(d, 'title') })),
+      h('label.f', 'Author', h('input', { type: 'text', ...bind(d, 'author') })),
+      h('label.f.span', 'Subtitle', h('input', { type: 'text', ...bind(d, 'subtitle') })),
+      h('label.f', 'Series (page eyebrow)', h('input', { type: 'text', ...bind(d, 'series') })),
+      h('label.f', 'Brand (page foot)', h('input', { type: 'text', ...bind(d, 'brand') })),
+      h('label.f', 'Edition label', h('input', { type: 'text', ...bind(d, 'editionLabel') })),
+      h('label.f', 'What you call a page', h('input', { type: 'text', ...bind(d, 'unit') })),
+      h('label.f', 'Cover kicker', h('input', { type: 'text', ...bind(d.cover, 'kicker') })),
+      h('label.f', 'Cover note', h('input', { type: 'text', ...bind(d.cover, 'note') })),
+      h('label.f.span', 'Rights line', h('input', { type: 'text', ...bind(d.copyright, 'rights') })),
+      h('label.f.span', 'Copyright page lines (one per line)',
+        h('textarea', { rows: 3, value: (d.copyright.lines || []).join('\n'), oninput: (e) => { d.copyright.lines = e.target.value.split('\n').map((s) => s.trim()).filter(Boolean); markDirty(); } })),
+      h('label.f', 'Accent', h('input', { type: 'color', value: d.accent || '#6366F1', oninput: (e) => { d.accent = e.target.value; markDirty(); } })),
+      h('label.f', 'Accent, strong', h('input', { type: 'color', value: d.accentStrong || '#4F46E5', oninput: (e) => { d.accentStrong = e.target.value; markDirty(); } }))),
+    h('div', { style: 'display:flex;gap:18px;margin-top:14px;flex-wrap:wrap' }, tick('numbered', 'Number the pages (No. 01)'), tick('contents', 'Contents'), tick('index', 'Index')));
+
+  /* ---- parts */
+  const written = new Set(b.pages.map((p) => p.title));
+  const listed = new Set(d.parts.flatMap((p) => p.blocks));
+  const unplaced = b.pages.map((p) => p.title).filter((t) => !listed.has(t));
+  const move = (arr, i, by) => { const j = i + by; if (j < 0 || j >= arr.length) return; [arr[i], arr[j]] = [arr[j], arr[i]]; touch(); };
+
+  const partEl = (p, pi) => h('div.part',
+    h('div.part-top', h('span.n', String(pi + 1)),
+      h('input', { type: 'text', placeholder: 'Part name', ...bind(p, 'name') }),
+      h('button.btn.small', { onclick: () => move(d.parts, pi, -1), disabled: pi === 0, 'aria-label': 'Move part up' }, '↑'),
+      h('button.btn.small', { onclick: () => move(d.parts, pi, 1), disabled: pi === d.parts.length - 1, 'aria-label': 'Move part down' }, '↓'),
+      h('button.btn.small.danger', { disabled: p.blocks.length > 0 || d.parts.length === 1, title: p.blocks.length ? 'Move its pages out first' : 'Remove this part',
+        onclick: () => { d.parts.splice(pi, 1); touch(); } }, 'Remove')),
+    h('div.fields',
+      h('label.f', 'Eyebrow', h('input', { type: 'text', ...bind(p, 'eyebrow') })),
+      h('label.f', 'Why these pages belong together', h('input', { type: 'text', ...bind(p, 'why') }))),
+    h('div.rows', p.blocks.length ? p.blocks.map((t, i) =>
+      h('div.row' + (written.has(t) ? '' : '.missing'),
+        h('span.muted', { style: 'width:22px;font-variant-numeric:tabular-nums' }, String(i + 1)),
+        h('span.name', { title: t }, t, !written.has(t) && ' (not written)'),
+        h('select', { 'aria-label': 'Move to part', onchange: (e) => { p.blocks.splice(i, 1); d.parts[+e.target.value].blocks.push(t); touch(); } },
+          d.parts.map((q, qi) => h('option', { value: String(qi), selected: qi === pi }, `Part ${qi + 1}`))),
+        h('button.btn.small', { onclick: () => move(p.blocks, i, -1), disabled: i === 0, 'aria-label': 'Move up' }, '↑'),
+        h('button.btn.small', { onclick: () => move(p.blocks, i, 1), disabled: i === p.blocks.length - 1, 'aria-label': 'Move down' }, '↓'),
+        h('button.btn.small', { title: 'Take it out of the book. The page stays in the interior.', onclick: () => {
+          p.blocks.splice(i, 1);
+          for (const k of Object.keys(d.editions)) d.editions[k] = d.editions[k].filter((x) => x !== t);
+          touch();
+        } }, 'Take out')))
+      : h('div.muted', { style: 'padding:6px 8px' }, 'No pages in this part yet.')));
+
+  const order = h('div.panel', h('h2', 'Running order'), h('p.hint', 'Parts and the pages in them, in reading order. Every part gets a divider page.'),
+    d.parts.map(partEl),
+    h('button.btn', { style: 'margin-top:12px', onclick: () => { d.parts.push({ name: 'New part', eyebrow: '', why: '', blocks: [] }); touch(); } }, '+ Add part'),
+    unplaced.length > 0 && h('div.part', h('div.v-label', 'Written, but not in the book'),
+      h('div.rows', unplaced.map((t) => h('div.row', h('span.name', t),
+        h('select', { 'aria-label': 'Add to part', onchange: (e) => { if (e.target.value === '') return; d.parts[+e.target.value].blocks.push(t); touch(); } },
+          h('option', { value: '' }, 'Add to…'), d.parts.map((q, qi) => h('option', { value: String(qi) }, `Part ${qi + 1} · ${q.name}`))))))));
+
+  /* ---- editions */
+  const names = Object.keys(d.editions);
+  const all = d.parts.flatMap((p) => p.blocks);
+  const editions = h('div.panel', h('h2', 'Editions'), h('p.hint', 'The same pages cut into different books: a free sample, a short edition. The full book is always available.'),
+    names.length ? h('div.scroll-x', h('table.matrix',
+      h('thead', h('tr', h('th', 'Page'), names.map((n) => h('th', n, ' ', h('span.muted', `(${d.editions[n].length})`), ' ',
+        h('button.btn.small.danger', { onclick: () => { if (confirm(`Remove the "${n}" edition?`)) { delete d.editions[n]; touch(); } } }, '×'))))),
+      h('tbody', all.map((t) => h('tr', h('td', t), names.map((n) => h('td',
+        h('input', { type: 'checkbox', 'aria-label': `${t} in ${n}`, checked: d.editions[n].includes(t), onchange: (e) => {
+          const set = new Set(d.editions[n]); e.target.checked ? set.add(t) : set.delete(t);
+          d.editions[n] = all.filter((x) => set.has(x)); touch();
+        } })))))))) : h('div.muted', 'No editions yet.'),
+    h('button.btn', { style: 'margin-top:12px', onclick: () => {
+      const n = (prompt('Edition name (lowercase, e.g. free):') || '').trim().toLowerCase();
+      if (!n) return;
+      if (!/^[a-z0-9][a-z0-9-]*$/.test(n) || n === 'full' || n === 'all' || d.editions[n]) return toast('Pick a new lowercase name. "full" and "all" are reserved.');
+      d.editions[n] = []; touch();
+    } }, '+ Add edition'));
+
+  return [savebar, details, order, editions];
+}
+
+/* ------------------------------------------------------------------ Preflight */
+function viewPreflight() {
+  const pre = S.book.preflight;
+  const runBtn = h('button.btn.primary', { 'data-runs': true, onclick: () => run('preflight') }, pre ? 'Run preflight again' : 'Run preflight');
+  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'Twelve checks between a book that builds and a book that is ready to ship: details, running order, stale build, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
+  const word = { pass: 'Ready to release', warn: 'Ready, with warnings', fail: 'Not ready' }[pre.result];
+  return [
+    h('div.verdict', h('span.tag.' + pre.result, pre.result.toUpperCase()), h('span.big', word),
+      h('span.muted', `${new Date(pre.at).toLocaleString()}${S.book.preflightStale ? ' · source changed since' : ''}`), h('span', { style: 'flex:1' }), runBtn),
+    S.book.preflightStale && h('div.notice', h('b', 'This report is out of date. '), 'The book changed after it ran.'),
+    h('div.checks', pre.checks.map((c) => h('div.chk.' + c.level,
+      h('div.top', h('span.lbl', c.label), h('span.msg', c.message), h('span.tag.' + c.level, c.level)),
+      c.details.length > 0 && h('ul', c.details.map((x) => h('li', x)))))),
+  ];
+}
+
+/* ------------------------------------------------------------------ Release */
+function viewRelease() {
+  const b = S.book, o = S.release, rv = b.review;
+  const names = ['full', ...Object.keys(b.json.editions || {})];
+  o.editions = o.editions.filter((e) => names.includes(e));
+  const opt = (key, label, hint) => h('label.check', { title: hint }, h('input', { type: 'checkbox', checked: o[key], onchange: (e) => { o[key] = e.target.checked; render(); } }), label);
+
+  const blockers = [];
+  if (b.preflight?.result === 'fail' && !b.preflightStale) blockers.push(`Preflight has ${b.preflight.fails} failing check(s).`);
+  if (o.strict && rv.approved < rv.total) blockers.push(`${rv.total - rv.approved} page(s) are not approved, and "require approval" is on.`);
+
+  const form = h('div.panel', h('h2', 'Cut a release'),
+    h('p.hint', 'Builds fresh, runs preflight, and only then writes PDFs into a new dated folder under dist/. Nothing is ever overwritten.'),
+    h('div.v-label', 'Editions'),
+    h('div', { style: 'display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px' }, names.map((n) =>
+      h('label.check', h('input', { type: 'checkbox', checked: o.editions.includes(n), onchange: (e) => {
+        o.editions = e.target.checked ? [...o.editions, n] : o.editions.filter((x) => x !== n); render();
+      } }), n === 'full' ? 'Full book' : n))),
+    h('div.fields',
+      h('label.f', 'Print PDF with bleed', h('select', { onchange: (e) => { o.bleed = Number(e.target.value); } },
+        [[0, 'No print file'], [3, '3 mm (KDP, most printers)'], [3.2, '3.2 mm (0.125 in exactly)'], [5, '5 mm']].map(([v, l]) => h('option', { value: String(v), selected: o.bleed === v }, l))))),
+    h('div', { style: 'display:flex;gap:18px;flex-wrap:wrap;margin:14px 0' },
+      opt('strict', 'Require every page approved', 'Unapproved pages fail preflight instead of warning'),
+      opt('epub', 'EPUB (fixed layout)', 'The same pages as an ebook, for Apple Books, Kobo, Google Play and Kindle'),
+      opt('proofs', 'Include page proofs (PNG)', 'One PNG per page next to the PDF'),
+      opt('force', 'Ship despite failing checks', 'The manifest records that it was forced')),
+    blockers.length > 0 && h('div.notice', h('b', o.force ? 'Forcing past: ' : 'This release will stop: '), blockers.join(' ')),
+    h('button.btn.primary', { 'data-runs': true, disabled: !o.editions.length, onclick: () => run('release', o) }, 'Run release'));
+
+  const list = h('div.panel', h('h2', 'Releases'), h('p.hint', `books/${S.slug}/dist/`),
+    b.releases.length ? b.releases.map((r) => {
+      const m = r.manifest;
+      return h('div.rel',
+        h('div.rel-top', h('b', m.label || r.folder), h('span.muted', new Date(m.released).toLocaleString()),
+          m.commit && h('span.tag', `${m.commit}${m.dirty ? ' + uncommitted' : ''}`), m.bleedMm > 0 && h('span.tag', `${m.bleedMm} mm bleed`), m.epub && h('span.tag', 'epub'),
+          m.forced && h('span.tag.fail', 'forced')),
+        h('div.files', m.editions.flatMap((e) => e.files.map((f) =>
+          h('div.file', h('a', { href: `/books/${S.slug}/dist/${encodeURIComponent(r.folder)}/${encodeURIComponent(f.file)}`, target: '_blank', rel: 'noopener' }, f.file),
+            h('span.muted', `${e.pages} pages · ${(f.bytes / 1048576).toFixed(1)} MB`), h('span.tag.' + e.preflight, `preflight ${e.preflight}`),
+            h('code', { title: 'sha256' }, f.sha256.slice(0, 12)))))));
+    }) : h('div.muted', 'Nothing released yet.'));
+  return [form, list];
+}
+
+/* ------------------------------------------------------------------ start */
+$('#new-book').onclick = newBookDialog;
+$('#run-proof').dataset.runs = '1';
+$('#run-proof').onclick = () => run('proof');
+$('#log-toggle').onclick = () => $('#log').classList.toggle('closed');
+$('#viewer').addEventListener('close', () => { viewer.title = null; viewer.editing = false; });
+/* On the document, not the dialog: re-rendering the viewer removes whatever had focus,
+   and focus falls back to <body>, outside the dialog's own key events. */
+document.addEventListener('keydown', (e) => { if ($('#viewer').open && viewer.keys) viewer.keys(e); });
+document.querySelectorAll('#tabs button').forEach((b) => (b.onclick = () => {
+  if (S.dirty && S.tab === 'structure' && !confirm('Leave with unsaved structure changes? They are kept until you discard them.')) return;
+  S.tab = b.dataset.tab; render();
+}));
+window.addEventListener('beforeunload', (e) => { if (S.dirty) e.preventDefault(); });
+
+connect();
+await loadBooks();
+const wanted = location.hash.slice(1);
+const first = S.books.find((b) => b.slug === wanted) || S.books.find((b) => b.slug !== 'starter') || S.books[0];
+if (first) await openBook(first.slug); else render();

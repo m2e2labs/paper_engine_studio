@@ -9,7 +9,11 @@
     "check": "node engine/tools/check.mjs",
     "shot": "node engine/tools/shot.mjs",
     "export": "node engine/tools/export.mjs",
-    "image": "node engine/tools/gen-image.mjs"
+    "image": "node engine/tools/gen-image.mjs",
+    "epub": "node engine/tools/epub.mjs",
+    "preflight": "node engine/tools/preflight.mjs",
+    "release": "node engine/tools/release.mjs",
+    "studio": "node engine/studio/server.mjs"
   },
   "devDependencies": {
     "playwright": "^1.48.0"
