@@ -33,7 +33,7 @@ const slug = path.basename(dir);
 const edition = flag('edition');
 const html = path.join(dir, edition ? `book-${edition}.html` : 'book.html');
 if (!fs.existsSync(html)) {
-  console.error(`\nNo ${path.basename(html)} in ${bookDir}. Build it first:\n  node engine/tools/build-book.mjs ${bookDir}${edition ? ` --edition ${edition}` : ''}\n`);
+  console.error(`\nNo ${path.basename(html)} in ${bookDir}. Build it first:\n  node engine/tools/build.mjs ${bookDir}${edition ? ` --edition ${edition}` : ''}\n`);
   process.exit(1);
 }
 const json = JSON.parse(fs.readFileSync(path.join(dir, 'book.json'), 'utf8'));

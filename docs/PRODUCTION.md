@@ -6,7 +6,7 @@ record of who looked at what, and releases you can find again.
 
 ```
 WRITE ──> BUILD ──> PREFLIGHT ──> REVIEW ──> RELEASE
-pages     book.html   17 checks     a person     dated folder in dist/
+pages     book.html   18 checks     a person     dated folder in dist/
                                     approves     PDF + print PDF + EPUB + manifest
 ```
 
@@ -88,6 +88,7 @@ node engine/tools/preflight.mjs books/<slug> [--edition free] [--strict] [--json
 | Plan | | there is no `blocks.md`, or a page in the book has no entry in it |
 | Facts | a page cites a fact id that is not in `FACTS.md`, a cited fact has no Source, or an id is defined twice | there is no `FACTS.md`, an entry has no Facts line, or a figure printed on a page is not in the facts that page cites |
 | Image rights | `images.json` breaks its schema, or a picture shown in the book is missing from it, is `licensed` or `public-domain` with no licence written down, or is `licensed` with no credit or url | there is no `images.json`, a file in `images/` is on no page, a generated picture has no subject or prompt, or no licence is recorded |
+| Front/back matter | a `matter` page cannot be made: a prose or list page with no title, an empty body, a paragraph longer than a sheet | an epigraph with no `by`, starter placeholders in the text, a `sources` page with nothing to list |
 | Build | `book.html` is missing or older than its source | |
 | Pages fit | any page is past the bottom edge, or the stylesheet never loaded | |
 | Images load | any image is broken | |
@@ -163,6 +164,43 @@ was generated. It leaves `licence` empty, because only you know what rights you 
 things are deliberately not stored: which page uses a picture, and its alt text. Both are
 read from the pages, so they cannot go stale. Generating costs quota or money, so it never
 runs for a file you did not name, and `--dry-run` prints the commands without running them.
+
+### Front and back matter
+
+```bash
+node engine/tools/build.mjs books/<slug>        # build-book.mjs, then the matter
+```
+
+```json
+"matter": {
+  "front": [
+    { "kind": "dedication", "body": ["For Sam."] },
+    { "kind": "prose", "title": "Preface", "body": ["First paragraph.", "## A subheading", "Second paragraph."], "by": "Your Name" }
+  ],
+  "back": [
+    { "kind": "sources" },
+    { "kind": "prose", "title": "About the author", "body": ["…"] },
+    { "kind": "list", "title": "Also by", "items": [{ "name": "Another book", "note": "One line about it." }] },
+    { "kind": "prose", "title": "Get the full book", "body": ["…"], "editions": ["free"] }
+  ]
+}
+```
+
+A dedication and an epigraph go before the contents; the rest of `front` comes after it,
+before Part 1; `back` sits between the last page and the index. `build.mjs` runs the
+untouched `build-book.mjs`, adds these sheets, then writes the contents and every index
+number again **from where each sheet actually ended up**, so a printed number cannot
+disagree with the PDF. Matter pages are listed in the contents (`"toc": false` to leave
+one out) and in the EPUB's navigation. `"editions"` keeps a page to the editions named;
+`full` is the whole book. A book with no `matter` builds byte for byte as before.
+
+Prose that is too long for one sheet continues onto the next by itself. The fit is
+estimated, on the careful side, and preflight still measures every sheet in a browser.
+
+`sources` is generated: every fact in `FACTS.md` that a page in this edition cites, its
+source, the date you checked it, and the page that uses it. There is nothing to write, so
+there is nothing to get wrong. In the Studio, all of this is the **Front and back matter**
+panel of the Structure tab.
 
 ### Publishing metadata
 

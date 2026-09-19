@@ -96,7 +96,7 @@ export async function exportEpub(bookHtml, out, { json = {}, edition = null, dat
       const r = sheets[0].getBoundingClientRect();
       const images = [];
       const kindOf = (el) => el.classList.contains('bb') ? 'page'
-        : ['cover', 'colophon', 'toc', 'divider', 'index'].find((k) => el.classList.contains(k)) || 'other';
+        : ['matter', 'cover', 'colophon', 'toc', 'divider', 'index'].find((k) => el.classList.contains(k)) || 'other';
       const out = sheets.map((el, i) => {
         const clone = el.cloneNode(true);
         clone.classList.remove('is-overflowing');
@@ -109,7 +109,7 @@ export async function exportEpub(bookHtml, out, { json = {}, edition = null, dat
         });
         return {
           kind: kindOf(el),
-          title: (el.querySelector('.title, .dv-name, .lp-title, .cv-title, .cl-title')?.textContent || '').replace(/\s+/g, ' ').trim(),
+          title: el.dataset.title || (el.querySelector('.title, .dv-name, .lp-title, .cv-title, .cl-title')?.textContent || '').replace(/\s+/g, ' ').trim(),
           xhtml: new XMLSerializer().serializeToString(clone),
         };
       });
@@ -248,13 +248,14 @@ function navDoc(pages, file, title, lang) {
   const link = (i, label) => `<a href="${file(i)}">${xml(label)}</a>`;
   const NAMES = { cover: 'Cover', colophon: 'Copyright', toc: 'Contents', index: 'Index' };
   const items = [];
-  let open = false, lastKind = null;
+  let open = false, lastKind = null, lastTitle = null;
   pages.forEach((p, i) => {
     if (p.kind === 'page') { items.push(`      <li>${link(i, p.title)}</li>`); return; }
     if (open) { items.push('    </ol></li>'); open = false; }
     if (p.kind === 'divider') { items.push(`    <li>${link(i, p.title || 'Part')}<ol>`); open = true; }
+    else if (p.kind === 'matter') { if (p.title !== lastTitle) items.push(`    <li>${link(i, p.title || 'Page')}</li>`); }   // a preface over two sheets is one entry
     else if (p.kind !== lastKind) items.push(`    <li>${link(i, NAMES[p.kind] || p.title || 'Page')}</li>`);   // a 2-sheet contents is one entry
-    lastKind = p.kind;
+    lastKind = p.kind; lastTitle = p.title;
   });
   if (open) items.push('    </ol></li>');
   /* a part with no pages would leave an empty <ol>, which is invalid */

@@ -51,6 +51,7 @@ import {
 import { loadPlan } from '../tools/lib/plan.mjs';
 import { validateBookJson } from '../tools/lib/schema.mjs';
 import { loadImages, validateImagesJson, draftManifest } from '../tools/lib/images.mjs';
+import { matterProblems } from '../tools/lib/matter.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.join(HERE, 'public');
@@ -157,7 +158,7 @@ const tool = (name) => path.join('engine', 'tools', name);
 function stepsFor(task, slug, opt = {}) {
   const dir = `books/${slug}`;
   const sdir = `${dir}/.studio`;
-  const build = { name: 'Build', args: [tool('build-book.mjs'), dir] };
+  const build = { name: 'Build', args: [tool('build.mjs'), dir] };
   const pre = { name: 'Preflight', args: [tool('preflight.mjs'), dir, '--json', `${sdir}/preflight.json`], mayFail: true };
   const shots = { name: 'Proofs', args: [tool('shot.mjs'), `${dir}/book.html`, `${sdir}/shots`], before: () => clearShots(slug) };
   if (task === 'build') return [build];
@@ -329,6 +330,8 @@ function cleanJson(next, book) {
   if (next.interior && next.interior !== book.json.interior) throw new Error('The interior file cannot be changed from the Studio.');
   const shape = validateBookJson(next);
   if (shape.errors.length) throw new Error(shape.errors.slice(0, 3).join('  ·  ') + (shape.errors.length > 3 ? `  ·  and ${shape.errors.length - 3} more` : ''));
+  const mp = [...matterProblems(next).errors, ...Object.keys(next.editions || {}).flatMap((e) => matterProblems(next, e).errors)];
+  if (mp.length) throw new Error([...new Set(mp)].slice(0, 3).join('  ·  '));
   return next;
 }
 

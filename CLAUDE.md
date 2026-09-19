@@ -38,7 +38,7 @@ When asked to write or lay out a page, use the **`block` skill** in
 ## The loop, after every edit
 
 ```bash
-node engine/tools/build-book.mjs books/<slug>            # assemble book.html
+node engine/tools/build.mjs      books/<slug>            # assemble book.html
 node engine/tools/check.mjs      books/<slug>/book.html  # MUST be 0 mm, no broken images
 node engine/tools/shot.mjs       books/<slug>/book.html  # then READ the PNGs
 ```
@@ -52,7 +52,7 @@ cropped through its subject, or a diagram that says the wrong thing. **Always ru
 The loop above is for writing. To ship, use the production tools (`docs/PRODUCTION.md`):
 
 ```bash
-node engine/tools/preflight.mjs books/<slug>                     # the release gate, 17 checks
+node engine/tools/preflight.mjs books/<slug>                     # the release gate, 18 checks
 node engine/tools/release.mjs   books/<slug> --editions all --bleed 3 --epub
 npm run studio                                                   # the same, as a local web UI
 ```
@@ -69,9 +69,16 @@ npm run studio                                                   # the same, as 
   you use it, or preflight reports it as unknown. `lib/schema.mjs` implements only the
   JSON Schema keywords that file uses and throws on any other, on purpose.
 - **Never invent an ISBN, a price or a publication date.** Those come from the author.
+- **Front and back matter lives in `book.json` under `matter`** (`front` and `back`: a
+  `dedication`, an `epigraph`, `prose`, a `list`, or `sources`). `build.mjs` runs
+  `build-book.mjs` and then adds those sheets, and rewrites the contents and index numbers
+  from where every sheet really ended up. Always build with `build.mjs`; preflight fails a
+  book with matter that was built without it. A dedication, a preface, a biography and an
+  "also by" list are the author's words: **never write one the author did not give you.**
+  The `sources` page is generated from `FACTS.md`, so there is nothing to write.
 - `dist/`, `.studio/` and `book-<edition>.html` are regenerable and gitignored.
 - Shared code for these tools lives in `engine/tools/lib/`. `build-book.mjs`, `check.mjs`
-  and `shot.mjs` are untouched upstream files; keep them that way so upstream still merges.
+  and `shot.mjs` are untouched upstream files (`build.mjs` wraps the first); keep them that way so upstream still merges.
 
 ## Adding a page
 

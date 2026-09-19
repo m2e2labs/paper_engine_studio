@@ -4,7 +4,7 @@
    The loop (build, check, shot, export) is how you WRITE a book. This is how
    you SHIP one. For the full book and for every edition you name, it:
 
-     1. builds               build-book.mjs, fresh, so nothing stale ships
+     1. builds               build.mjs, fresh, so nothing stale ships
      2. runs preflight       and STOPS if any check fails
      3. exports the PDF      the screen PDF, 1:1 with what you reviewed
      4. exports a print PDF  with --bleed, the file a printer wants
@@ -83,7 +83,7 @@ let blocked = false;
 for (const ed of editions) {
   const name = ed === 'full' ? null : ed;
   const html = path.join(dir, name ? `book-${name}.html` : 'book.html');
-  const b = node('build-book.mjs', rel(dir), ...(name ? ['--edition', name] : []));
+  const b = node('build.mjs', rel(dir), ...(name ? ['--edition', name] : []));
   if (b.status !== 0) die(`Build failed for the ${ed} edition:\n${b.stderr || b.stdout}`);
   console.log(`[${ed}] ${b.stdout.split('\n')[0]}`);
 

@@ -117,7 +117,7 @@ gone wrong on real pages, and it wins over the general guidance when they disagr
 ## Step 4 — verify, and actually look
 
 ```bash
-node engine/tools/build-book.mjs books/<slug>     # assemble
+node engine/tools/build.mjs books/<slug>          # assemble
 node engine/tools/check.mjs books/<slug>/book.html  # MUST be 0 mm on every page
 node engine/tools/shot.mjs  books/<slug>/book.html  # then READ the PNGs
 ```

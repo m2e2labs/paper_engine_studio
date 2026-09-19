@@ -128,11 +128,36 @@
     .sheet.gp, .sheet.bb{ counter-increment:pageno; }
     .bb .foot .pg::before{ content:counter(pageno); }
   </style>
+  <style>
+    /* ====================================================================
+       FRONT AND BACK MATTER, written by engine/tools/lib/matter.mjs from
+       book.json "matter". Scoped .sheet.gp.matter, on top of build-book's .gp.
+       ==================================================================== */
+    .gp.matter .mt-mid{ flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:0 12mm 18mm; }
+    .gp.matter.m-dedication .mt-mid p{ font-size:17px; line-height:1.6; font-style:italic; color:var(--ink); margin:0 0 6px; }
+    .gp.matter.m-epigraph blockquote{ margin:0; max-width:27em; }
+    .gp.matter.m-epigraph blockquote p{ font-family:"Space Grotesk",sans-serif; font-size:21px; line-height:1.45; letter-spacing:-.01em; color:var(--ink); margin:0 0 10px; }
+    .gp.matter .mt-mid .mt-by{ font-size:13.5px; font-style:normal; color:var(--muted); margin:16px 0 0; }
+    .gp.matter .mt-body{ margin-top:2px; overflow-wrap:anywhere; }
+    .gp.matter .mt-body p{ font-size:14.5px; line-height:1.6; color:var(--ink); margin:0 0 13px; max-width:40em; }
+    .gp.matter .mt-body h2{ font-family:"Space Grotesk",sans-serif; font-size:17px; font-weight:600; letter-spacing:-.01em; margin:20px 0 8px; }
+    .gp.matter .mt-body h2:first-child{ margin-top:0; }
+    .gp.matter .mt-body .mt-by{ font-family:"Space Grotesk",sans-serif; font-weight:600; color:var(--ink); margin-top:20px; }
+    .gp.matter .mt-items, .gp.matter .mt-sources{ list-style:none; margin:4px 0 0; padding:0; }
+    .gp.matter .mt-items li{ padding:0 0 12px; margin:0 0 12px; border-bottom:1px solid #EFF1F5; }
+    .gp.matter .mt-items .nm{ display:block; font-size:14.5px; font-weight:600; color:var(--ink); line-height:1.5; }
+    .gp.matter .mt-items .nt{ display:block; font-size:13px; line-height:1.55; color:var(--muted); }
+    .gp.matter .mt-sources li{ padding:0 0 10px; margin:0 0 10px; border-bottom:1px solid #EFF1F5; break-inside:avoid; }
+    .gp.matter .mt-sources .sh{ display:flex; align-items:baseline; gap:12px; line-height:1.5; }
+    .gp.matter .mt-sources .nm{ flex:1; font-size:13.5px; font-weight:600; color:var(--ink); }
+    .gp.matter .mt-sources .sr{ font-size:12px; line-height:1.5; color:var(--muted); }
+    .gp.matter .mt-sources .ck{ white-space:nowrap; }
+  </style>
 </head>
 <body>
   <main class="deck">
 
-        <section class="sheet gp cover">
+    <section class="sheet gp cover">
       <div class="in">
         <div class="gp-tab"></div>
         <div class="cv-kicker">A paper-engine book</div>
@@ -182,6 +207,9 @@
             <div class="toc-ph"><span class="pn">Part 1 · Your first part</span><span class="pg">4</span></div>
             <div class="toc-row"><span class="nm">SSRF</span><span class="pg">5</span></div>
           </div>
+          <div class="toc-part">
+            <div class="toc-row"><span class="nm">Sources</span><span class="pg">6</span></div>
+          </div>
         </div>
         <div class="gp-foot"><span>yoursite.com</span><span>My First Book</span></div>
       </div>
@@ -208,7 +236,7 @@
       </div>
     </section>
 
-<section class="sheet bb">
+    <section class="sheet bb">
       <h2 class="sr">SSRF explainer page: an attacker pastes a URL that points back at your app's own machine; the app fetches it from inside its trusted network and the secret keys leak back out to the attacker.</h2>
       <div class="tab"></div>
       <div class="top">
@@ -257,6 +285,21 @@
       <div class="foot"><span class="brand">yoursite.com</span><span class="pg"></span><span class="series">Your first part</span></div>
     </section>
 
+    <section class="sheet gp matter m-sources" data-title="Sources">
+      <div class="in">
+        <div class="gp-top"><div class="gp-tab"></div></div>
+        <h1 class="lp-title">Sources</h1>
+        <hr class="gp-rule">
+        <div class="mt-body">
+          
+          <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">Cloud metadata address</span><span class="pg">p. 5</span></div><div class="sr">AWS EC2 User Guide, "Access instance metadata for an EC2 instance": https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html <span class="ck">Checked 2026-09-19.</span></div></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>yoursite.com</span><span>My First Book</span></div>
+      </div>
+    </section>
+
     <section class="sheet gp index">
       <div class="in">
         <div class="gp-top">
@@ -271,6 +314,7 @@
         <div class="gp-foot"><span>yoursite.com</span><span>My First Book</span></div>
       </div>
     </section>
+
 
 
   </main>

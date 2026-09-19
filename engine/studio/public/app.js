@@ -505,6 +505,10 @@ function viewStructure() {
   const save = guard(async () => {
     if (d.publishing) { prune(d.publishing); if (!Object.keys(d.publishing).length) delete d.publishing; }
     if (d.language === '') delete d.language;
+    if (d.matter) {   // an empty field is not a key, and a book with no matter has no "matter"
+      for (const k of ['front', 'back']) for (const m of d.matter[k] || []) { prune(m); if (m.editions && !m.editions.length) delete m.editions; }
+      prune(d.matter); if (!Object.keys(d.matter).length) delete d.matter;
+    }
     const state = await api('PUT', bookUrl('/json'), d);
     S.dirty = false; setBook(state); toast('book.json saved', true);
   });
@@ -629,14 +633,59 @@ function viewStructure() {
         return h('div.part', h('div.part-top', h('b', n)), h('div.fields', isbnField('ISBN, print', e.isbn, 'print'), isbnField('ISBN, EPUB', e.isbn, 'epub'),
           h('label.f.span', 'Description, if it differs', h('textarea', { rows: 2, value: e.description || '', oninput: (ev) => { e.description = ev.target.value; markDirty(); } })))); })));
 
-  return [savebar, details, order, editions, publishing];
+  /* ---- front and back matter: the pages around the pages */
+  const mt = (d.matter ||= {});
+  const KIND_LABEL = { dedication: 'Dedication', epigraph: 'Epigraph', prose: 'Prose page', list: 'List', sources: 'Sources (from FACTS.md)' };
+  const STARTER = { dedication: { kind: 'dedication', body: [] }, epigraph: { kind: 'epigraph', body: [], by: '' }, prose: { kind: 'prose', title: '', body: [] },
+    list: { kind: 'list', title: '', items: [] }, sources: { kind: 'sources' } };
+  const matterItem = (list, m, i) => {
+    const perLine = m.kind === 'dedication';
+    const inToc = m.toc === undefined ? !['dedication', 'epigraph'].includes(m.kind) : m.toc;
+    const only = new Set(m.editions || []);
+    return h('div.part',
+      h('div.part-top', h('span.tag', KIND_LABEL[m.kind] || m.kind),
+        m.kind !== 'dedication' && m.kind !== 'epigraph'
+          ? h('input', { type: 'text', placeholder: m.kind === 'sources' ? 'Sources' : 'Heading: Preface, About the author, …', ...bind(m, 'title') }) : h('span.grow'),
+        h('button.btn.small', { onclick: () => move(list, i, -1), disabled: i === 0, 'aria-label': 'Move up' }, '↑'),
+        h('button.btn.small', { onclick: () => move(list, i, 1), disabled: i === list.length - 1, 'aria-label': 'Move down' }, '↓'),
+        h('button.btn.small.danger', { onclick: () => { if (confirm('Remove this page?')) { list.splice(i, 1); touch(); } } }, 'Remove')),
+      h('div.fields',
+        h('label.f.span', m.kind === 'sources' ? 'A line above the list, if you want one' : m.kind === 'list' ? 'A line above the list, if you want one' : perLine ? 'The words, one line per line' : 'The words. A blank line starts a paragraph; a paragraph starting with ## is a subheading; **bold** and *italic* work',
+          h('textarea', { rows: m.kind === 'prose' ? 9 : 3, value: (m.body || []).join(perLine ? '\n' : '\n\n'),
+            oninput: (e) => { m.body = e.target.value.split(perLine ? '\n' : /\n\s*\n/).map((x) => x.trim()).filter(Boolean); markDirty(); } })),
+        m.kind === 'list' && h('label.f.span', 'Items, one per line:  Name | a note about it',
+          h('textarea', { rows: 5, value: (m.items || []).map((it) => (it.note ? `${it.name} | ${it.note}` : it.name)).join('\n'),
+            oninput: (e) => { m.items = e.target.value.split('\n').map((x) => x.trim()).filter(Boolean).map((x) => { const [name, ...rest] = x.split('|'); const note = rest.join('|').trim(); return note ? { name: name.trim(), note } : { name: name.trim() }; }).filter((it) => it.name); markDirty(); } })),
+        (m.kind === 'epigraph' || m.kind === 'prose') && h('label.f', m.kind === 'epigraph' ? 'Who said it' : 'Signed (optional)', h('input', { type: 'text', ...bind(m, 'by') }))),
+      m.kind === 'sources' && h('p.hint', { style: 'margin:10px 0 0' }, 'Nothing to write. It lists every fact in FACTS.md that a page in the book cites, with its source and the page that uses it.'),
+      h('div', { style: 'display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;align-items:center' },
+        h('label.check', h('input', { type: 'checkbox', checked: inToc, onchange: (e) => { m.toc = e.target.checked; markDirty(); } }), 'List in the contents'),
+        names.length > 0 && h('span.muted', { style: 'font-size:12.5px' }, 'Only in:'),
+        names.length > 0 && ['full', ...names].map((n) => h('label.check', h('input', { type: 'checkbox', checked: only.has(n), onchange: (e) => {
+          e.target.checked ? only.add(n) : only.delete(n); m.editions = ['full', ...names].filter((x) => only.has(x)); markDirty(); } }), n)),
+        names.length > 0 && h('span.muted', { style: 'font-size:12.5px' }, '(none ticked: every edition)')));
+  };
+  const matterList = (key, title, hint) => {
+    const list = (mt[key] ||= []);
+    return h('div', { style: 'margin-top:14px' }, h('div.v-label', title), h('p.hint', hint),
+      list.map((m, i) => matterItem(list, m, i)),
+      h('div', { style: 'display:flex;gap:6px;flex-wrap:wrap;margin-top:10px' },
+        Object.keys(STARTER).filter((k) => key === 'front' || (k !== 'dedication' && k !== 'epigraph'))
+          .map((k) => h('button.btn.small', { onclick: () => { list.push(structuredClone(STARTER[k])); touch(); } }, `+ ${KIND_LABEL[k].replace(' (from FACTS.md)', '')}`))));
+  };
+  const matter = h('div.panel', h('h2', 'Front and back matter'),
+    h('p.hint', 'The pages around your pages. They take real page numbers, and the contents and the index are renumbered to match. Long prose continues onto another sheet by itself. Write only what is true: nobody invents a dedication or a biography for you.'),
+    matterList('front', 'Front', 'A dedication and an epigraph go before the contents. Everything else comes after it, before Part 1.'),
+    matterList('back', 'Back', 'After the last page, before the index.'));
+
+  return [savebar, details, order, matter, editions, publishing];
 }
 
 /* ------------------------------------------------------------------ Preflight */
 function viewPreflight() {
   const pre = S.book.preflight;
   const runBtn = h('button.btn.primary', { 'data-runs': true, onclick: () => run('preflight') }, pre ? 'Run preflight again' : 'Run preflight');
-  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'The checks between a book that builds and a book that is ready to ship: details, book.json, publishing, running order, plan, facts, image rights, stale build, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
+  if (!pre) return [h('div.panel', h('h2', 'Preflight has not run'), h('p.hint', 'The checks between a book that builds and a book that is ready to ship: details, book.json, publishing, running order, plan, facts, image rights, front and back matter, stale build, overflow, images, print resolution, fonts, diagram labels, network, alt text, print limits, and review.'), runBtn)];
   const word = { pass: 'Ready to release', warn: 'Ready, with warnings', fail: 'Not ready' }[pre.result];
   return [
     h('div.verdict', h('span.tag.' + pre.result, pre.result.toUpperCase()), h('span.big', word),

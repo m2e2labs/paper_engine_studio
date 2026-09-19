@@ -27,7 +27,7 @@ export async function inspectBook(bookHtml) {
       const sheets = [...document.querySelectorAll('.sheet')];
       const kindOf = (el) =>
         el.classList.contains('bb') ? 'page'
-          : ['cover', 'colophon', 'toc', 'divider', 'index'].find((k) => el.classList.contains(k)) || 'other';
+          : ['matter', 'cover', 'colophon', 'toc', 'divider', 'index'].find((k) => el.classList.contains(k)) || 'other';
       const sheetIndex = (el) => sheets.indexOf(el.closest('.sheet')) + 1;
 
       const first = sheets[0];
@@ -39,7 +39,7 @@ export async function inspectBook(bookHtml) {
           page: i + 1,
           kind: kindOf(el),
           title: (el.querySelector('.title')?.textContent || '').replace(/\s+/g, ' ').trim() ||
-                 (el.querySelector('.dv-name, .lp-title, .cv-title, .cl-title')?.textContent || '').trim(),
+                 (el.querySelector('.dv-name, .lp-title, .cv-title, .cl-title')?.textContent || '').trim() || el.dataset.title || '',
           overMm: r1(Math.max(0, el.scrollHeight - el.clientHeight) * MM),
         })),
         unstyled: !first || Math.round(first.getBoundingClientRect().width) < 200,

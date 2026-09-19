@@ -15,6 +15,7 @@ import { loadBook, loadWorkflow, reviewSummary, statusOf } from './book.mjs';
 import { inspectBook } from './measure.mjs';
 import { loadPlan } from './plan.mjs';
 import { loadImages } from './images.mjs';
+import { matterFor, matterProblems, titleOf } from './matter.mjs';
 import { validateBookJson, publishingFor, isbnOk, isbnDigits } from './schema.mjs';
 
 const PLACEHOLDERS = ['Your Name', 'yoursite.com', 'My First Book', 'My first book'];
@@ -121,14 +122,36 @@ export async function preflight(dir, { bookHtml, edition = null, strict = false 
     else add('rights', 'Image rights', 'pass', `${shown.length} picture(s), each with a source and a licence on record.`);
   }
 
+  /* ---- 2d. the pages around the pages */
+  const mt = matterFor(j, edition);
+  const mtAll = [...mt.front, ...mt.back];
+  if (!mtAll.length) add('matter', 'Front/back matter', 'pass', 'None. The book opens at the contents and ends at the index.');
+  else {
+    const mp = matterProblems(j, edition);
+    const soft = [...mp.warnings];
+    const held = PLACEHOLDERS.filter((p) => JSON.stringify(mtAll).includes(p));
+    if (held.length) soft.push(`starter placeholders are still in the text: ${held.join(', ')}`);
+    if (mtAll.some((m) => m.kind === 'sources')) {
+      const cited = plan.facts.filter((f) => f.source && f.usedBy.some((t) => book.partOf.has(t) && (!keepSet || keepSet.has(t))));
+      if (!cited.length) soft.push(plan.hasFacts ? 'a sources page is asked for, but no page in this edition cites a fact, so it is left out' : 'a sources page is asked for, but there is no FACTS.md, so it is left out');
+    }
+    if (mp.errors.length) add('matter', 'Front/back matter', 'fail', 'A front or back matter page cannot be made.', [...mp.errors, ...soft]);
+    else if (soft.length) add('matter', 'Front/back matter', 'warn', 'The front and back matter needs a look.', soft);
+    else add('matter', 'Front/back matter', 'pass', `${mtAll.length} page(s): ${mtAll.map(titleOf).join(', ')}.`);
+  }
+
   /* ---- 3. is book.html the book we are about to look at? */
   if (!fs.existsSync(htmlPath)) {
     add('build', 'Build', 'fail', `${path.basename(htmlPath)} does not exist. Build the book first.`);
     return finish(book, wf, checks, null, htmlPath);
   }
   const built = fs.statSync(htmlPath).mtimeMs;
-  const newer = [book.interiorPath, book.jsonPath].filter((f) => fs.statSync(f).mtimeMs > built + 1000);
-  if (newer.length) add('build', 'Build', 'fail', `${path.basename(htmlPath)} is older than its source. Rebuild.`, newer.map((f) => path.basename(f)));
+  const sources = [book.interiorPath, book.jsonPath];
+  if (mtAll.some((m) => m.kind === 'sources') && plan.hasFacts) sources.push(path.join(dir, 'FACTS.md'), path.join(dir, 'blocks.md'));   // the sources page is made from these
+  const newer = sources.filter((f) => fs.existsSync(f) && fs.statSync(f).mtimeMs > built + 1000);
+  const bare = mtAll.some((m) => m.kind !== 'sources') && !/class="sheet gp matter /.test(fs.readFileSync(htmlPath, 'utf8'));
+  if (bare) add('build', 'Build', 'fail', `${path.basename(htmlPath)} was built without its front and back matter. Build with build.mjs, not build-book.mjs.`);
+  else if (newer.length) add('build', 'Build', 'fail', `${path.basename(htmlPath)} is older than its source. Rebuild.`, newer.map((f) => path.basename(f)));
   else add('build', 'Build', 'pass', `${path.basename(htmlPath)} is up to date.`);
 
   const r = await inspectBook(htmlPath);
