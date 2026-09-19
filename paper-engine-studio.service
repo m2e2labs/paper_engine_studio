@@ -1,0 +1,15 @@
+[Unit]
+Description=Paper Engine Studio
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/m2e2/Documents/Paper_Engine_Studio/paper-engine
+ExecStart=/home/m2e2/.local/bin/node engine/tools/studio.mjs
+Environment=PORT=4173
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

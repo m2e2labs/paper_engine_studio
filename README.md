@@ -67,7 +67,12 @@ npm run build  -- books/showcase              # -> books/showcase/book.html
 npm run check  -- books/showcase/book.html    # every page must read 0 mm
 npm run shot   -- books/showcase/book.html    # one PNG per page. LOOK at them.
 npm run export -- books/showcase/book.html    # -> books/showcase/book.pdf
+npm run reader -- books/showcase              # -> reader.html + reflowable book.epub
 ```
+
+`reader` is the screen edition: it has an offline responsive reader, contents navigation,
+font-size controls and a dark theme. It also writes an EPUB 3 file for ebook-reading apps.
+The PDF remains the fixed B5 print edition; do not expect a phone to reproduce a paper page.
 
 ## Your own book
 

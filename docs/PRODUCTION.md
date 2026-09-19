@@ -113,6 +113,12 @@ layout and the "it fits or it doesn't" rule. So the EPUB is the PDF's twin: one 
 document per sheet, the same CSS, the same self-hosted fonts embedded, and SVG diagrams
 that are still live, selectable, searchable text.
 
+This repo makes **two** EPUBs, and they are different products. `npm run reader` writes
+a *reflowable* `book.epub` (and `reader.html`) for phones, where font size matters more
+than layout. `--epub` writes the *fixed-layout* `<slug>.epub` described here, where the
+page is the point. Ship whichever the store listing calls for; they do not share a file
+name, so they never overwrite each other.
+
 What is in it: a cover image (a render of the cover sheet, which is what stores show), a
 navigation document with the parts and pages as a nested contents, landmarks, a page
 list matching the printed numbers, and accessibility metadata. The identifier is
