@@ -149,7 +149,7 @@ function sheetsFor(item, B, facts, terms) {
     (i === 0 ? intro.map((p) => `<p>${inline(p)}</p>`).join('\n          ') : '') +
     `\n          <ol class="mt-sources">\n            ` +
     bin.map((f) => `<li><div class="sh"><span class="nm">${esc(f.label || f.id)}</span><span class="pg">{{PAGES:${f.id}}}</span></div>` +
-      `<div class="sr">${esc(f.source)}${f.checked ? ` <span class="ck">Checked ${esc(f.checked)}.</span>` : ''}</div></li>`).join('\n            ') +
+      `<div class="sr">${esc(f.source)}${f.checked ? ` <span class="ck">· Checked ${esc(f.checked)}.</span>` : ''}</div></li>`).join('\n            ') +
     `\n          </ol>\n        </div>\n        ${foot}${close}`);
 }
 

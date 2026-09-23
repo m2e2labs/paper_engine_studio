@@ -167,3 +167,33 @@ These live in `engine/themes/studio.css`, so they apply to **every** book page a
 - **Inline links** (a real product or resource named in the copy): wrap in a
   plain `<a href>` and let `.bb a` style it — **ink text with an accent underline**, NOT a colored word, so
   it doesn't read as a role-emphasis (`.hl`) span. Link in body copy, not inside SVG/diagram figure labels.
+
+## Inline SVG traps: ids, whitespace, label baselines (from power-bi-dax pages 03, 26 and 28)
+
+Three ways an inline SVG goes wrong that **`check.mjs` and `preflight` both pass**. Every one of them
+was found only by rendering the page and looking at the PNG.
+
+- **Every SVG id is document-global.** `build.mjs` assembles the cover and all the pages into ONE HTML
+  document, so `filter`, gradient, marker and clip-path ids share a single namespace. Where two SVGs
+  define the same id, **the first definition in the document wins for every `url(#id)` reference after
+  it**, and nothing warns you. Give every id a per-page suffix — `cs17`, `sk27`, `coverSketch` — and
+  never a bare `sketch` or `shadow`. Identical definitions colliding is harmless, which is why a shared
+  drop-shadow never breaks; it is **differing** definitions that bite. (power-bi-dax page 03: the cover
+  defined `filter id="sketch"` as `userSpaceOnUse` sized to its own 400×200 viewBox, so page 03's
+  592-wide hand-drawn diagram was clipped in half at x=400 while the page still read 0 mm. Book 1,
+  `power-bi-beginner`, still reuses one `sketch` id across 14 pages and escapes only because its cover
+  filter is `objectBoundingBox`.)
+- **`filterUnits="userSpaceOnUse"` is required for a hand-drawn stroke on a `<line>`**: the default
+  `objectBoundingBox` region is degenerate on a zero-height element and the line disappears completely.
+  Size the region to the viewBox. That is also exactly what makes an id collision destructive rather
+  than harmless, so those ids above all must be unique.
+- **Leading spaces collapse inside `<text>`.** `<text>  SUM(...)</text>` renders flush left, because XML
+  collapses the whitespace. Indent with a larger `x` instead, roughly 24 units per level, never with
+  spaces. (power-bi-dax page 26 lost its indentation entirely — on the page whose whole subject is
+  indenting a DAX formula.)
+- **Keep label baselines at `y >= 12` for 11.5px text.** Preflight's "Diagram labels" check is a
+  rendered-bbox test (`measure.mjs` compares each `text`'s `getBoundingClientRect()` against the SVG's),
+  so a label at `y="10"` fails on its ascender alone, which sits about 10.4 units above the baseline.
+- **Read a card helper's real height before laying out rows of them.** A three-line status card is ~62
+  tall, not the ~48 it looks like. Six labels ended up outside the viewBox because the second row was
+  placed at `y=90` inside a 126-tall drawing. (power-bi-dax page 28.)

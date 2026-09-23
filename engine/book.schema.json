@@ -43,7 +43,8 @@
       "type": "object", "additionalProperties": false,
       "properties": {
         "kicker": { "type": "string", "description": "Small caps line above the title." },
-        "note": { "type": "string", "description": "A line at the foot of the cover." }
+        "note": { "type": "string", "description": "A line at the foot of the cover." },
+        "art": { "type": "string", "description": "Optional self-contained inline SVG markup for a small illustration on the cover, between the subtitle and the author line. No external references." }
       }
     },
     "copyright": {

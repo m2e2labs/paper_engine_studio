@@ -22,6 +22,7 @@ import { ROOT } from './lib/book.mjs';
 import { applyMatter } from './lib/matter.mjs';
 import { applyTheme } from './lib/theme.mjs';
 import { applyShots } from './lib/screens.mjs';
+import { applyCoverArt } from './lib/cover-art.mjs';
 
 const argv = process.argv.slice(2);
 const flag = (name) => { const i = argv.indexOf('--' + name); return i === -1 ? null : argv[i + 1]; };
@@ -35,17 +36,18 @@ const edition = flag('edition');
 const outPath = path.resolve(flag('out') || path.join(dir, edition ? `book-${edition}.html` : 'book.html'));
 const json = JSON.parse(fs.readFileSync(path.join(dir, 'book.json'), 'utf8'));
 
-let r, th, sh;
+let r, th, sh, ca;
 try {
   r = applyMatter(fs.readFileSync(outPath, 'utf8'), json, { dir, edition });
   sh = applyShots(r.html);         // the screenshot band's stylesheet, only if a page has one
-  th = applyTheme(sh.html, json);  // last: it repaints the matter pages too
+  ca = applyCoverArt(sh.html, json);   // the cover's own illustration, only if book.json sets one
+  th = applyTheme(ca.html, json);  // last: it repaints the matter pages too, and the cover art
 }
 catch (e) {
   fs.rmSync(outPath, { force: true });   // half a book is worse than none: its contents would be wrong
   console.error('\n' + e.message + '\n'); process.exit(1);
 }
-if (r.changed || sh.changed || th.changed) fs.writeFileSync(outPath, th.html);   // matter added, cross-references numbered, or the book's own colours
+if (r.changed || sh.changed || ca.changed || th.changed) fs.writeFileSync(outPath, th.html);   // matter added, cross-references numbered, cover art dropped in, or the book's own colours
 if (th.changed) r.notes.push(`painted in this book's colours: accent ${th.theme.accent}, on ${th.theme.surface}`);
 if (!r.added && !r.notes.length) { process.stdout.write(b.stdout); process.exit(0); }
 
