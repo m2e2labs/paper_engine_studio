@@ -1,0 +1,1168 @@
+<!doctype html>
+<!--
+  THE INTERIOR - this book's source file. You (and the /block skill) edit THIS.
+
+  One <section class="sheet bb"> per lesson, in reading order. Everything else
+  (cover, copyright, contents, part dividers, matter, index, page numbers) is
+  generated into book.html by:
+
+    node engine/tools/build.mjs books/power-bi-dax
+
+  Never hand-edit book.html. It is overwritten on every build.
+
+  NOTE: SVG ids (filters) are document-global once the book is assembled, so
+  every page suffixes its own: cs01, cs02, sk03, cs04 ...
+-->
+<html lang="en" data-size="b5">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power BI DAX for Absolute Beginners</title>
+  <link rel="stylesheet" href="../../engine/sheet.css">
+  <link rel="stylesheet" href="../../engine/sizes/b5.css">
+  <link rel="stylesheet" href="../../engine/themes/studio.css">
+</head>
+<body>
+  <main class="deck">
+
+    <section class="sheet bb">
+      <h2 class="sr">Overview page: Power BI holds two formula languages, M in Power Query which runs while the data loads, and DAX which runs later when a visual asks a question, and DAX points at whole columns and tables rather than at cells the way Excel does.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 01</div>
+        <span class="pill">Overview</span>
+      </div>
+      <h1 class="title">DAX Is Not Excel, and Not Power Query</h1>
+      <div class="sub">Two languages in one app, and Excel isn't either of them.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 118" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: your file goes through Power Query, whose language is M and which runs while the data loads, into the model, and then through DAX, which runs when someone looks, to the chart.">
+  <defs><filter id="cs01" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <rect x="24" y="14" width="150" height="54" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs01)"/><text x="99.0" y="37" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#1A1A2E">Your file</text><text x="99.0" y="52" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">wherever it came from</text>
+  <rect x="220" y="14" width="150" height="54" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs01)"/><text x="295.0" y="37" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#1A1A2E">The model</text><text x="295.0" y="52" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">tables, loaded</text>
+  <rect x="416" y="14" width="150" height="54" rx="12" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" filter="url(#cs01)"/><text x="491.0" y="37" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#0D9488">The chart</text><text x="491.0" y="52" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">what they look at</text>
+  <line x1="178" y1="41" x2="208" y2="41" stroke="#94A3B8" stroke-width="2"/><polygon points="208,36 216,41 208,46" fill="#94A3B8"/>
+  <line x1="374" y1="41" x2="404" y2="41" stroke="#4F46E5" stroke-width="2"/><polygon points="404,36 412,41 404,46" fill="#4F46E5"/>
+  <text x="197" y="98" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472">M, while it loads</text>
+  <text x="393" y="98" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">DAX, when someone looks</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you've typed a formula that would've worked in Excel, and Power BI has underlined it in red. You're writing in <span class="bad">the wrong language</span>.</p>
+        <p>Power Query's language is <strong>M</strong>. It runs on the way in, while the data loads. <span class="hl">DAX</span> runs later, when a chart asks it something. And DAX never points at a cell. It takes <span class="good">a whole column, or a whole table</span>.</p>
+        <p class="close">M shapes the data on the way in. DAX answers questions once it's there.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Open Power Query, read the Applied Steps list, then close it again. Every step in that list is M. None of it is DAX.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Where formulas live page: the same DAX language is written in three places, a calculated column and a calculated table which both store their values in the model, and a measure which stores nothing and has no result until something gives it a context.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 02</div>
+        <span class="pill">Where it lives</span>
+      </div>
+      <h1 class="title">Measure, Calculated Column, Calculated Table</h1>
+      <div class="sub">Same language, different homes. The wrong one costs you speed.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: three homes for a DAX formula. A calculated column and a calculated table are both stored in the file. A measure, in the middle, is stored nowhere.">
+  <defs><filter id="cs02" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <rect x="24" y="14" width="150" height="62" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs02)"/><text x="99.0" y="35" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#1A1A2E">Calculated column</text><text x="99.0" y="50" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">a column in a table</text><text x="99.0" y="66" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472">stored</text>
+  <rect x="220" y="14" width="150" height="62" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs02)"/><text x="295.0" y="35" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#4F46E5">Measure</text><text x="295.0" y="50" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">worked out on demand</text><text x="295.0" y="66" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">stored nowhere</text>
+  <rect x="416" y="14" width="150" height="62" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs02)"/><text x="491.0" y="35" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#1A1A2E">Calculated table</text><text x="491.0" y="50" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">a whole new table</text><text x="491.0" y="66" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472">stored</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you right-clicked a table and were offered New measure, New column and New table.</p>
+        <p>Every one of them is DAX. A calculated column works a value out for every row and keeps it, <span class="bad">taking up room even when nobody looks</span>. A <span class="hl">measure</span> <span class="good">keeps nothing</span> until something asks.</p>
+        <p class="close">A column is something you store. A measure is something you ask.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Right-click a table in the Data pane and read the New options without clicking. Say which one you want, and why, before you pick.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Interface page: a new measure is started from the Calculations group on the Home tab or from a table's menu in the Data pane, the formula bar offers a drop-down list of every DAX function beginning with the letters typed, and Shift and Enter together add a new line below.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 03</div>
+        <span class="pill">Interface</span>
+      </div>
+      <h1 class="title">Where You Type It: The Formula Bar</h1>
+      <div class="sub">Two ways in, one bar, and a list that finishes your typing.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 152" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hand-drawn diagram of the Power BI window: the Home tab of the ribbon with the New measure button in the Calculations group, the formula bar below it with equals S U typed in, and a suggestion list showing SUM and SUMX.">
+  <defs><filter id="sk03" x="-6%" y="-18%" width="112%" height="136%"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="5" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+  <rect x="56" y="10" width="480" height="48" rx="6" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2.5" filter="url(#sk03)"/>
+  <line x1="56" y1="32" x2="370" y2="32" stroke="#E7E9EF" stroke-width="1.5"/>
+  <rect x="386" y="18" width="134" height="24" rx="7" fill="#EEF0FE" stroke="#4F46E5" stroke-width="2" filter="url(#sk03)"/>
+  <rect x="56" y="66" width="480" height="30" rx="6" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2.5" filter="url(#sk03)"/>
+  <rect x="86" y="104" width="212" height="36" rx="6" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sk03)"/>
+  <rect x="88" y="106" width="208" height="17" fill="#EEF0FE"/>
+  <text x="76" y="26" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E">Home</text>
+  <text x="128" y="26" style="font-family:'Inter',sans-serif;font-size:11px;fill:#94A3B8">Insert</text>
+  <text x="180" y="26" style="font-family:'Inter',sans-serif;font-size:11px;fill:#94A3B8">Modeling</text>
+  <text x="252" y="26" style="font-family:'Inter',sans-serif;font-size:11px;fill:#94A3B8">View</text>
+  <text x="453" y="34" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">New measure</text>
+  <text x="453" y="53" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-size:10px;fill:#94A3B8">Calculations</text>
+  <text x="72" y="87" style="font-family:'JetBrains Mono',monospace;font-size:14px;fill:#1A1A2E">= SU</text>
+  <line x1="112" y1="74" x2="112" y2="90" stroke="#4F46E5" stroke-width="1.5"/>
+  <text x="100" y="119" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;fill:#4F46E5">SUM</text>
+  <text x="100" y="136" style="font-family:'JetBrains Mono',monospace;font-size:12px;fill:#1A1A2E">SUMX</text>
+  <text x="322" y="126" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472">Everything starting with SU.</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you know what the number should be and <span class="bad">not where to put it</span>. <span class="hl">New measure</span> is in the Calculations group on the Home tab, and on every table's menu.</p>
+        <p>Start typing and a list drops down with every DAX function beginning with those letters. <span class="good">Shift+Enter adds a line below</span>, so a long measure stays readable.</p>
+        <p class="close">You don't have to remember function names. You have to remember how they start.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Make a new measure from the Home tab, type SU, and read the list. Then press Shift+Enter and watch the bar grow a line.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Errors page: a red squiggle under a formula usually means Power BI cannot tell which column is meant, and the fix is a habit, always writing a column as the table name followed by the column in square brackets and never writing a table name in front of a measure.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 04</div>
+        <span class="pill">Errors</span>
+      </div>
+      <h1 class="title">When the Formula Turns Red</h1>
+      <div class="sub">Usually one problem, and a habit that fixes it for good.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram in two rows. A column reference written bare as Amount in brackets is wrong, and written as Sales then Amount in brackets is right. A measure reference written as Sales then Total Sales in brackets is wrong, and written bare as Total Sales in brackets is right.">
+  <defs><filter id="cs04" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="296" y="14" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">A COLUMN ALWAYS SAYS WHICH TABLE</text>
+  <rect x="64" y="28" width="210" height="38" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#cs04)"/><text x="82" y="53" style="font-family:'Inter',sans-serif;font-size:11px;font-size:14px;font-weight:700;fill:#DC2626">&#10007;</text><text x="179.0" y="53" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:13px"><tspan fill="#1A1A2E">[Amount]</tspan></text>
+  <rect x="318" y="28" width="210" height="38" rx="10" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" filter="url(#cs04)"/><text x="336" y="53" style="font-family:'Inter',sans-serif;font-size:11px;font-size:14px;font-weight:700;fill:#0D9488">&#10003;</text><text x="433.0" y="53" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:13px"><tspan fill="#4F46E5" font-weight="600">Sales</tspan><tspan fill="#1A1A2E">[Amount]</tspan></text>
+  <text x="296" y="92" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">A MEASURE NEVER DOES</text>
+  <rect x="64" y="106" width="210" height="38" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#cs04)"/><text x="82" y="131" style="font-family:'Inter',sans-serif;font-size:11px;font-size:14px;font-weight:700;fill:#DC2626">&#10007;</text><text x="179.0" y="131" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:13px"><tspan fill="#4F46E5" font-weight="600">Sales</tspan><tspan fill="#1A1A2E">[Total Sales]</tspan></text>
+  <rect x="318" y="106" width="210" height="38" rx="10" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" filter="url(#cs04)"/><text x="336" y="131" style="font-family:'Inter',sans-serif;font-size:11px;font-size:14px;font-weight:700;fill:#0D9488">&#10003;</text><text x="433.0" y="131" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:13px"><tspan fill="#1A1A2E">[Total Sales]</tspan></text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say there's a red line under your formula and the message beneath it means nothing to you yet. Usually <span class="bad">Power BI can't tell which column you mean</span>.</p>
+        <p>So write a column as <span class="hl">the table name and then the column in brackets</span>, every time. Write a measure with no table name: it can move tables later, and <span class="good">a formula that never named one keeps working</span>. And a blank isn't an error.</p>
+        <p class="close">A column always says which table. A measure never does.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Take a measure that works, delete the table name in front of one of its columns, and watch the squiggle arrive. Then put it back.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Context page: filter context is the set of filters a measure is evaluated in, made from filters on model columns plus filters carried across relationships, a separate query runs for every cell of a result, and the context changes when fields or slicers change.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 05</div>
+        <span class="pill">Context</span>
+      </div>
+      <h1 class="title">Filter Context: The Question the Cell Is Asking</h1>
+      <div class="sub">One formula, a different question in every cell.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 132" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: three different sets of filters, one per cell of a visual, each feeding the same measure, so the same formula is evaluated separately for each of them.">
+  <defs><filter id="cs05" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="296" y="14" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">THE SAME MEASURE, ASKED AGAIN</text>
+  <rect x="36" y="24" width="240" height="28" rx="14.0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="156.0" y="42.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E">Category = Bikes</text>
+  <rect x="36" y="58" width="240" height="28" rx="14.0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="156.0" y="76.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E">Category = Clothing</text>
+  <rect x="36" y="92" width="240" height="28" rx="14.0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="156.0" y="110.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E">everything (the total)</text>
+  <line x1="284" y1="38" x2="368" y2="63" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="284" y1="72" x2="368" y2="72" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="284" y1="106" x2="368" y2="81" stroke="#94A3B8" stroke-width="1.5"/>
+  <polygon points="368,67 380,72 368,77" fill="#94A3B8"/>
+  <rect x="392" y="45" width="164" height="54" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs05)"/><text x="474.0" y="68" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#4F46E5">Total Sales</text><text x="474.0" y="83" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">one formula</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say one measure sits in a table and every row shows a different number. Nothing is broken.</p>
+        <p><span class="hl">A separate query runs for every cell.</span> The formula is the same each time; the filters around it are not. <span class="bad">Change a field or a slicer</span> and <span class="good">you have changed the question</span>.</p>
+        <p class="close">One formula, asked again in every cell, with different filters each time.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Put the same measure in a card and in a table split by category. One formula, two numbers.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Context page: row context is what calculated column formulas and iterator expressions are evaluated in, it holds the values of every column in the current row, and an aggregation written inside a calculated column returns the same result on every row because the whole table is in context.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 06</div>
+        <span class="pill">Context</span>
+      </div>
+      <h1 class="title">Row Context: What a Calculated Column Sees</h1>
+      <div class="sub">One row at a time, and why a total looks broken.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram comparing two things: a calculated column formula sees one row at a time, shown as a table with a single row highlighted, while a SUM inside it is handed the whole table, shown as a table shaded throughout.">
+  <defs><filter id="cs06" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="152" y="16" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">WHAT THE ROW SEES</text>
+  <text x="440" y="16" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">WHAT SUM ASKS FOR</text>
+  <rect x="52" y="26" width="200" height="70" rx="3" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="1.5" filter="url(#cs06)"/><rect x="53" y="44.5" width="198" height="17.5" fill="#EEF0FE"/><line x1="52" y1="43.5" x2="252" y2="43.5" stroke="#E7E9EF" stroke-width="1"/><line x1="52" y1="61.0" x2="252" y2="61.0" stroke="#E7E9EF" stroke-width="1"/><line x1="52" y1="78.5" x2="252" y2="78.5" stroke="#E7E9EF" stroke-width="1"/><line x1="118.66666666666667" y1="26" x2="118.66666666666667" y2="96" stroke="#E7E9EF" stroke-width="1"/><line x1="185.33333333333334" y1="26" x2="185.33333333333334" y2="96" stroke="#E7E9EF" stroke-width="1"/>
+  <rect x="340" y="26" width="200" height="70" rx="3" fill="#EEF0FE" stroke="#1A1A2E" stroke-width="1.5" filter="url(#cs06)"/><line x1="340" y1="43.5" x2="540" y2="43.5" stroke="#E7E9EF" stroke-width="1"/><line x1="340" y1="61.0" x2="540" y2="61.0" stroke="#E7E9EF" stroke-width="1"/><line x1="340" y1="78.5" x2="540" y2="78.5" stroke="#E7E9EF" stroke-width="1"/><line x1="406.6666666666667" y1="26" x2="406.6666666666667" y2="96" stroke="#E7E9EF" stroke-width="1"/><line x1="473.33333333333337" y1="26" x2="473.33333333333337" y2="96" stroke="#E7E9EF" stroke-width="1"/>
+  <text x="152" y="118" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472">one row at a time</text>
+  <text x="440" y="118" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">the whole column, every time</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you added a calculated column that sums an amount, and <span class="bad">every row came back with the same number</span>. It looks broken. It isn't.</p>
+        <p>A calculated column is worked out one row at a time, and sees every column of <span class="hl">that</span> row. But a sum doesn't want a row. It wants the whole column, so it gets the whole table, every time.</p>
+        <p class="close">A row context says which row you're on. It doesn't narrow what a total sees.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Add a calculated column of = SUM over your amount column. Same number, every row.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Context page: CALCULATE evaluates an expression in a modified filter context, adding a filter when the named columns were not already filtered and overwriting the existing filter when they were.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 07</div>
+        <span class="pill">Context</span>
+      </div>
+      <h1 class="title">CALCULATE: Changing the Question</h1>
+      <div class="sub">The one function that can change the filters a measure sees.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: two rows passing through one CALCULATE box. On a column nothing had filtered, the new filter is added. On a column already filtered, the new filter replaces the old one.">
+  <defs><filter id="cs07" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="296" y="16" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">CALCULATE CHANGES THE FILTERS</text>
+  <rect x="236" y="28" width="120" height="84" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs07)"/>
+  <text x="296" y="75" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;fill:#4F46E5">CALCULATE</text>
+  <rect x="24" y="34" width="190" height="28" rx="14.0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="119.0" y="52.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E">Colour: no filter</text>
+  <rect x="378" y="34" width="190" height="28" rx="14.0" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/><text x="473.0" y="52.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">Colour = Blue, added</text>
+  <rect x="24" y="80" width="190" height="28" rx="14.0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="119.0" y="98.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E">Colour = Red</text>
+  <rect x="378" y="80" width="190" height="28" rx="14.0" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1"/><text x="473.0" y="98.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#DC2626">Colour = Blue, replaced</text>
+  <line x1="214" y1="48" x2="224" y2="48" stroke="#94A3B8" stroke-width="2"/><polygon points="224,43 232,48 224,53" fill="#94A3B8"/>
+  <line x1="214" y1="94" x2="224" y2="94" stroke="#94A3B8" stroke-width="2"/><polygon points="224,89 232,94 224,99" fill="#94A3B8"/>
+  <line x1="360" y1="48" x2="366" y2="48" stroke="#0D9488" stroke-width="2"/><polygon points="366,43 374,48 366,53" fill="#0D9488"/>
+  <line x1="360" y1="94" x2="366" y2="94" stroke="#DC2626" stroke-width="2"/><polygon points="366,89 374,94 366,99" fill="#DC2626"/>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you need sales for one colour, and the visual isn't filtered that way. <span class="hl">CALCULATE</span> works your expression out in a filter context it changed first.</p>
+        <p>Name a column nothing had filtered and <span class="good">your filter is added</span>. Name one the visual already filtered and <span class="bad">yours replaces theirs</span>. That is where the surprises come from.</p>
+        <p class="close">CALCULATE doesn't do the sum. It changes what the sum is looking at.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Split a table by Colour, with your total in it. Add the total again, wrapped in CALCULATE with Colour = "Blue". That column stops moving.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Context page: CALCULATE with no filter arguments turns a row context into a filter context, a model measure used in a row context performs that transition automatically, and the transition is what is needed when an expression summarising model data is evaluated inside a calculated column or an iterator.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 08</div>
+        <span class="pill">Context</span>
+      </div>
+      <h1 class="title">Context Transition: The Thing Nobody Explains</h1>
+      <div class="sub">Inside a row, a measure quietly starts seeing only that row.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 134" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the row a formula is currently on is lifted out of the table and becomes a filter, and that filter is what the measure is then evaluated under.">
+  <defs><filter id="cs08" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="296" y="16" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">THE ROW YOU ARE ON BECOMES A FILTER</text>
+  <rect x="24" y="28" width="180" height="76" rx="3" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="1.5" filter="url(#cs08)"/><rect x="25" y="48.0" width="178" height="19.0" fill="#EEF0FE"/><line x1="24" y1="47.0" x2="204" y2="47.0" stroke="#E7E9EF" stroke-width="1"/><line x1="24" y1="66.0" x2="204" y2="66.0" stroke="#E7E9EF" stroke-width="1"/><line x1="24" y1="85.0" x2="204" y2="85.0" stroke="#E7E9EF" stroke-width="1"/><line x1="84.0" y1="28" x2="84.0" y2="104" stroke="#E7E9EF" stroke-width="1"/><line x1="144.0" y1="28" x2="144.0" y2="104" stroke="#E7E9EF" stroke-width="1"/>
+  <line x1="212" y1="66" x2="242" y2="66" stroke="#4F46E5" stroke-width="2"/><polygon points="242,61 250,66 242,71" fill="#4F46E5"/>
+  <rect x="258" y="52" width="120" height="28" rx="14.0" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="318.0" y="70.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">just that row</text>
+  <line x1="386" y1="66" x2="408" y2="66" stroke="#4F46E5" stroke-width="2"/><polygon points="408,61 416,66 408,71" fill="#4F46E5"/>
+  <rect x="424" y="39" width="144" height="54" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs08)"/><text x="496.0" y="62" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#1A1A2E">The measure</text><text x="496.0" y="77" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">evaluated under it</text>
+  <text x="296" y="126" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">No CALCULATE typed: a model measure does it for you.</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you dropped a measure inside an iterator and the answer came out nothing like the same maths written longhand.</p>
+        <p><span class="hl">That is context transition.</span> Put CALCULATE inside a row context and <span class="bad">the row you are on becomes a filter</span>. You needn't type it either: <span class="good">a model measure does it on its own</span>. It is why a measure behaves differently inside an iterator.</p>
+        <p class="close">Inside a row, a measure stops seeing the table and starts seeing the row.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>In a calculated column, write the calculation bare, then again wrapped in CALCULATE. Compare the columns.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Functions page: an aggregation function works out a single value such as a sum, an average, a minimum or a maximum over all the rows of a column, SUM adds up the numbers in one column, and MAX returns either the largest number in a column or the larger of two expressions.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 09</div>
+        <span class="pill">Functions</span>
+      </div>
+      <h1 class="title">SUM, AVERAGE, MIN and MAX</h1>
+      <div class="sub">One column in, one number out, every time.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 138" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: one column of numbers on the left, with an arrow leading to four results: SUM adds the numbers up, AVERAGE gives the mean of them, MIN the smallest and MAX the largest.">
+  <defs><filter id="cs09" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="104" y="14" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">ONE COLUMN</text>
+  <rect x="44" y="24" width="120" height="96" rx="3" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="1.5" filter="url(#cs09)"/><line x1="44" y1="40.0" x2="164" y2="40.0" stroke="#E7E9EF" stroke-width="1"/><line x1="44" y1="56.0" x2="164" y2="56.0" stroke="#E7E9EF" stroke-width="1"/><line x1="44" y1="72.0" x2="164" y2="72.0" stroke="#E7E9EF" stroke-width="1"/><line x1="44" y1="88.0" x2="164" y2="88.0" stroke="#E7E9EF" stroke-width="1"/><line x1="44" y1="104.0" x2="164" y2="104.0" stroke="#E7E9EF" stroke-width="1"/>
+  <text x="104" y="35" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">120</text>
+  <text x="104" y="51" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">85</text>
+  <text x="104" y="67" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">40</text>
+  <text x="104" y="83" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">210</text>
+  <text x="104" y="99" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">95</text>
+  <text x="104" y="115" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">60</text>
+  <line x1="180" y1="72" x2="230" y2="72" stroke="#94A3B8" stroke-width="2"/><polygon points="230,67 238,72 230,77" fill="#94A3B8"/>
+  <rect x="248" y="24" width="308" height="24" rx="12.0" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="402.0" y="40.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">SUM &middot; adds the numbers up</text>
+  <rect x="248" y="52" width="308" height="24" rx="12.0" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="402.0" y="68.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">AVERAGE &middot; the mean of them</text>
+  <rect x="248" y="80" width="308" height="24" rx="12.0" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="402.0" y="96.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">MIN &middot; the smallest one</text>
+  <rect x="248" y="108" width="308" height="24" rx="12.0" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="402.0" y="124.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">MAX &middot; the largest one</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you need the total of an amount column. That is an aggregator's whole job: <span class="hl">one column in, one number out</span>.</p>
+        <p>SUM adds the numbers up. AVERAGE, MIN and MAX are written the same way over the same column, so learning the shape once gets you the rest of them. MAX will also take two expressions and hand back the larger of them.</p>
+        <p class="close">One column in, one number out. That is the whole shape.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Put SUM, AVERAGE, MIN and MAX over the same column in one table visual. Same data, different stories.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Functions page: COUNT skips blanks and will not accept true or false values, COUNTA counts the same non-blank rows but does accept them, COUNTROWS is Microsoft's recommendation for counting rows and performs better, DISTINCTCOUNT treats blank as one of the distinct values, and a distinct count total is not the sum of the values above it.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 10</div>
+        <span class="pill">Functions</span>
+      </div>
+      <h1 class="title">Counting Things Without Getting It Wrong</h1>
+      <div class="sub">They all count. They don't agree on real data.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: one column of six rows holding 12, a blank, 12, 7, a blank and 7. COUNT gives 4 because it skips the blanks, COUNTA gives 4 as well and also accepts true or false, COUNTROWS gives 6 because it counts every row and is faster, and DISTINCTCOUNT gives 3 because blank counts as one of the values.">
+  <defs><filter id="cs10" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="95" y="12" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">ONE COLUMN, SIX ROWS</text>
+  <rect x="40" y="18" width="110" height="96" rx="3" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="1.5" filter="url(#cs10)"/><line x1="40" y1="34.0" x2="150" y2="34.0" stroke="#E7E9EF" stroke-width="1"/><line x1="40" y1="50.0" x2="150" y2="50.0" stroke="#E7E9EF" stroke-width="1"/><line x1="40" y1="66.0" x2="150" y2="66.0" stroke="#E7E9EF" stroke-width="1"/><line x1="40" y1="82.0" x2="150" y2="82.0" stroke="#E7E9EF" stroke-width="1"/><line x1="40" y1="98.0" x2="150" y2="98.0" stroke="#E7E9EF" stroke-width="1"/>
+  <text x="95" y="29" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:12px;fill:#1A1A2E">12</text>
+  <text x="95" y="45" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-style:italic;fill:#94A3B8">blank</text>
+  <text x="95" y="61" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:12px;fill:#1A1A2E">12</text>
+  <text x="95" y="77" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:12px;fill:#1A1A2E">7</text>
+  <text x="95" y="93" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-style:italic;fill:#94A3B8">blank</text>
+  <text x="95" y="109" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:12px;fill:#1A1A2E">7</text>
+  <line x1="166" y1="64" x2="214" y2="64" stroke="#94A3B8" stroke-width="2"/><polygon points="214,59 222,64 214,69" fill="#94A3B8"/>
+  <rect x="232" y="14" width="324" height="26" rx="13.0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="394.0" y="31.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E">COUNT = 4 &middot; skips the blanks</text>
+  <rect x="232" y="40" width="324" height="26" rx="13.0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="394.0" y="57.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E">COUNTA = 4 &middot; and takes true or false</text>
+  <rect x="232" y="66" width="324" height="26" rx="13.0" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/><text x="394.0" y="83.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">COUNTROWS = 6 &middot; every row, and faster</text>
+  <rect x="232" y="92" width="324" height="26" rx="13.0" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="394.0" y="109.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">DISTINCTCOUNT = 3 &middot; blank counts as one</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say two people counted your customers and got different numbers. <span class="bad">Nothing errored.</span> They just picked different count functions.</p>
+        <p>COUNT skips blanks and won't take true or false. COUNTA counts the same rows but does. <span class="good">COUNTROWS just counts rows</span>, and Microsoft recommends it when rows are the point.</p>
+        <p class="close">If the counts disagree, that is your data talking, not a bug.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Put all of them over the same table. If they don't match, you've learned something about your data.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Functions page: DIVIDE performs a division and returns either an alternate result or blank when it is asked to divide by zero, Microsoft recommends DIVIDE wherever the denominator is an expression that could come back zero or blank and the divide operator where the denominator is a constant, and returning blank is usually the better design because visuals drop groupings whose summarisation is blank.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 11</div>
+        <span class="pill">Functions</span>
+      </div>
+      <h1 class="title">DIVIDE, and the One Time the Slash Is Fine</h1>
+      <div class="sub">A slash can leave Infinity in the cell. DIVIDE leaves a blank.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the same division written two ways. With a slash, a blank on the bottom puts Infinity in the cell instead of a blank. With DIVIDE it comes back blank, and the visual drops it. Underneath, a note that where the bottom is a constant the slash is fine, because it cannot fail.">
+  <defs><filter id="cs11" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="296" y="14" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">THE SAME DIVISION, TWO WAYS</text>
+  <rect x="16" y="24" width="318" height="38" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#cs11)"/><text x="175" y="47" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px"><tspan fill="#1A1A2E">SUM(Sales[Amount]) / SUM(Sales[Qty])</tspan></text>
+  <line x1="340" y1="43" x2="356" y2="43" stroke="#DC2626" stroke-width="2"/><polygon points="356,38 364,43 356,48" fill="#DC2626"/>
+  <rect x="370" y="24" width="206" height="38" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#cs11)"/>
+  <text x="473" y="47" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#DC2626">Infinity, not a blank</text>
+  <rect x="16" y="72" width="318" height="38" rx="10" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" filter="url(#cs11)"/><text x="175" y="95" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px"><tspan fill="#4F46E5" font-weight="600">DIVIDE</tspan><tspan fill="#1A1A2E">(SUM(Sales[Amount]), SUM(Sales[Qty]))</tspan></text>
+  <line x1="340" y1="91" x2="356" y2="91" stroke="#0D9488" stroke-width="2"/><polygon points="356,86 364,91 356,96" fill="#0D9488"/>
+  <rect x="370" y="72" width="206" height="38" rx="10" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" filter="url(#cs11)"/>
+  <text x="473" y="95" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">a blank, and the visual drops it</text>
+  <text x="296" y="122" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472">a constant on the bottom cannot fail, so the slash is fine there</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say a product has sales this month but its quantity came in blank. <span class="bad">The slash shows Infinity in the cell</span>, and it ships.</p>
+        <p>DIVIDE hands back a blank instead, and it takes a last argument for what to show in place of it. Blank is usually what you want, because <span class="good">a visual drops the groups that come back blank</span> and shows only the ones with data.</p>
+        <p class="close">Where the bottom could be zero or blank, use DIVIDE. Where it is a constant, the slash is fine.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Find a measure of yours with a slash in it. If the bottom isn't a constant, rewrite it with DIVIDE.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Functions page: SWITCH exists in part to save you writing nested IF statements, setting its first argument to TRUE is the common way to handle ranges and bands, the first condition that matches wins and the rest are never evaluated, every result including the fallback must share a data type, an IF with no false value returns blank, and Microsoft's guidance is that once you are nesting IFs, SWITCH is likely the better option.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 12</div>
+        <span class="pill">Functions</span>
+      </div>
+      <h1 class="title">IF and SWITCH</h1>
+      <div class="sub">Nest a few IFs and nobody can read it, including you.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram comparing two ways to write the same banding of Sales Amount into small, medium and large. Nested IF functions step further right on every line like a staircase. SWITCH starting with TRUE lays the same two tests and the same fallback out flat, one condition and one result on each line.">
+  <defs><filter id="cs12" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="152" y="14" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">NESTED IF</text>
+  <text x="440" y="14" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">SWITCH WITH TRUE</text>
+  <rect x="16" y="24" width="272" height="92" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#cs12)"/>
+  <text x="30" y="43" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">IF ( Sales[Amount] &lt; 100, "small",</text>
+  <text x="54" y="59" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">IF ( Sales[Amount] &lt; 500, "medium",</text>
+  <text x="78" y="75" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">"large"</text>
+  <text x="54" y="91" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">)</text>
+  <text x="30" y="107" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">)</text>
+  <rect x="304" y="24" width="272" height="92" rx="10" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" filter="url(#cs12)"/>
+  <text x="318" y="43" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">SWITCH ( TRUE (),</text>
+  <text x="342" y="59" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">Sales[Amount] &lt; 100, "small",</text>
+  <text x="342" y="75" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">Sales[Amount] &lt; 500, "medium",</text>
+  <text x="342" y="91" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">"large"</text>
+  <text x="318" y="107" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">)</text>
+  <text x="152" y="132" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#DC2626">every test steps further right</text>
+  <text x="440" y="132" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">first one that matches wins</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you are banding each sale into small, medium and large. With IF you nest one inside another inside another, and <span class="bad">the formula stops being readable fast</span>.</p>
+        <p>SWITCH lays the same choices out flat, one condition and one result to a line. Start it with TRUE and it handles ranges and bands. <span class="hl">The first condition that matches wins</span>, so the order you write them in matters, and every result has to be the same data type.</p>
+        <p class="close">Once you are nesting IFs, Microsoft's own advice is to reach for SWITCH.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>In a calculated column on Sales, band Amount with nested IFs, then again with SWITCH. Keep the one you would rather meet next year.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Iterators page: an iterator is a DAX function that walks every row of a table and evaluates a given expression once for each of them, and iterators exist to give you control over how a calculation summarises the data rather than accepting what a plain aggregation does.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 13</div>
+        <span class="pill">Iterators</span>
+      </div>
+      <h1 class="title">What an Iterator Actually Does</h1>
+      <div class="sub">Row by row first, then add it all up.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 126" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a table of quantities and prices, with the multiplication worked out once on every row, and the per-row answers then added together into one total.">
+  <defs><filter id="cs13" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="160" y="14" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">ONCE PER ROW</text>
+  <rect x="40" y="20" width="240" height="84" rx="3" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="1.5" filter="url(#cs13)"/><line x1="40" y1="41.0" x2="280" y2="41.0" stroke="#E7E9EF" stroke-width="1"/><line x1="40" y1="62.0" x2="280" y2="62.0" stroke="#E7E9EF" stroke-width="1"/><line x1="40" y1="83.0" x2="280" y2="83.0" stroke="#E7E9EF" stroke-width="1"/><line x1="120.0" y1="20" x2="120.0" y2="104" stroke="#E7E9EF" stroke-width="1"/><line x1="200.0" y1="20" x2="200.0" y2="104" stroke="#E7E9EF" stroke-width="1"/>
+  <text x="80" y="34" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">2</text>
+  <text x="160" y="34" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">5</text>
+  <text x="240" y="34" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;fill:#4F46E5">10</text>
+  <text x="80" y="55" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">3</text>
+  <text x="160" y="55" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">4</text>
+  <text x="240" y="55" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;fill:#4F46E5">12</text>
+  <text x="80" y="76" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">1</text>
+  <text x="160" y="76" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">9</text>
+  <text x="240" y="76" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;fill:#4F46E5">9</text>
+  <text x="80" y="97" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">4</text>
+  <text x="160" y="97" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">2</text>
+  <text x="240" y="97" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;fill:#4F46E5">8</text>
+  <text x="160" y="120" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472">Qty &times; Price, worked out on each row</text>
+  <line x1="296" y1="62" x2="342" y2="62" stroke="#94A3B8" stroke-width="2"/><polygon points="342,57 350,62 342,67" fill="#94A3B8"/>
+  <rect x="364" y="35" width="190" height="54" rx="12" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" filter="url(#cs13)"/><text x="459.0" y="58" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#0D9488">39</text><text x="459.0" y="73" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">then aggregated</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say the maths has to happen on each row before anything gets added together. <span class="hl">That is the whole reason an X function exists.</span></p>
+        <p>An iterator takes a table and an expression, works the expression out once on every row of it, and then aggregates all of those answers. <span class="good">Every X function is that same shape.</span> It's there so you decide how the calculation summarises, instead of taking what a plain aggregation gives you.</p>
+        <p class="close">For each row, do this, then add it all up. That is an iterator.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Read a measure out loud as: for each row, do this, then add it up. If that fits, you want an X function.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Iterators page: SUMX returns the sum of an expression evaluated once for each row of a table, SUM simply adds the numbers already sitting in a column, SUMX is the function to use when the values being summed have to be filtered or worked out first, and SUMX counts only the numbers because blanks, text and true or false values are all ignored.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 14</div>
+        <span class="pill">Iterators</span>
+      </div>
+      <h1 class="title">SUMX vs SUM: When You Need the X</h1>
+      <div class="sub">Add a column, or build the value first and then add.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 132" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: one table holding quantity and price but no amount column, and two routes out of it. Summing quantity and multiplying by an average price gives the wrong number. SUMX multiplying on each row and then adding gives the right one.">
+  <defs><filter id="cs14" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="114" y="14" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">QTY AND PRICE, NO AMOUNT</text>
+  <rect x="24" y="24" width="180" height="84" rx="3" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="1.5" filter="url(#cs14)"/><line x1="24" y1="45.0" x2="204" y2="45.0" stroke="#E7E9EF" stroke-width="1"/><line x1="24" y1="66.0" x2="204" y2="66.0" stroke="#E7E9EF" stroke-width="1"/><line x1="24" y1="87.0" x2="204" y2="87.0" stroke="#E7E9EF" stroke-width="1"/><line x1="114.0" y1="24" x2="114.0" y2="108" stroke="#E7E9EF" stroke-width="1"/>
+  <text x="69" y="38" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">Qty</text>
+  <text x="159" y="38" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">Price</text>
+  <text x="69" y="59" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">2</text>
+  <text x="159" y="59" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">5</text>
+  <text x="69" y="80" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">3</text>
+  <text x="159" y="80" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">4</text>
+  <text x="69" y="101" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">1</text>
+  <text x="159" y="101" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">9</text>
+  <line x1="210" y1="66" x2="242" y2="66" stroke="#94A3B8" stroke-width="2"/><polygon points="242,61 250,66 242,71" fill="#94A3B8"/>
+  <rect x="256" y="38" width="320" height="30" rx="15.0" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1"/><text x="416.0" y="57.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#DC2626">SUM(Sales[Qty]) * AVERAGE(Sales[Price]) &middot; wrong</text>
+  <rect x="256" y="78" width="320" height="30" rx="15.0" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/><text x="416.0" y="97.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">SUMX(Sales, Sales[Qty] * Sales[Price]) &middot; right</text>
+  <text x="114" y="124" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472">the column you need isn't there yet</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you need revenue, and your table holds quantity and price but not the two multiplied together. <span class="bad">Summing quantity and multiplying by an average price</span> gives a number that looks plausible and is wrong.</p>
+        <p>SUM adds numbers that are already sitting in a column. SUMX builds the value on each row first, then adds those up. <span class="good">Reach for the X whenever the values need working out or filtering before they can be summed.</span></p>
+        <p class="close">If the column isn't there yet, you need the X.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Work revenue out both ways in one table: SUM of Qty times AVERAGE of Price, and SUMX. Note which one you'd have shipped.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Iterators page: AVERAGEX works out the arithmetic mean of a set of expressions evaluated over a table, every X function takes a table as its first argument and an expression as its second, MAXX returns the largest number found by evaluating the expression for each row, and MINX returns the smallest.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 15</div>
+        <span class="pill">Iterators</span>
+      </div>
+      <h1 class="title">AVERAGEX, MAXX and the Rest of the Family</h1>
+      <div class="sub">SUM, AVERAGE, MIN and MAX each have an X twin.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 112" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: each plain aggregator paired with its X twin. SUM with SUMX, AVERAGE with AVERAGEX, MIN with MINX, MAX with MAXX. Every twin on the right takes the same shape: a table first and an expression second.">
+  <defs><filter id="cs15" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="128" y="11" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">PLAIN</text>
+  <text x="336" y="11" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">THE X TWIN</text>
+  <rect x="48" y="16" width="160" height="22" rx="11.0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="128.0" y="31.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E">SUM</text>
+  <rect x="256" y="16" width="160" height="22" rx="11.0" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="336.0" y="31.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">SUMX</text>
+  <line x1="214" y1="27" x2="242" y2="27" stroke="#94A3B8" stroke-width="2"/><polygon points="242,22 250,27 242,32" fill="#94A3B8"/>
+  <rect x="48" y="38" width="160" height="22" rx="11.0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="128.0" y="53.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E">AVERAGE</text>
+  <rect x="256" y="38" width="160" height="22" rx="11.0" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="336.0" y="53.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">AVERAGEX</text>
+  <line x1="214" y1="49" x2="242" y2="49" stroke="#94A3B8" stroke-width="2"/><polygon points="242,44 250,49 242,54" fill="#94A3B8"/>
+  <rect x="48" y="60" width="160" height="22" rx="11.0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="128.0" y="75.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E">MIN</text>
+  <rect x="256" y="60" width="160" height="22" rx="11.0" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="336.0" y="75.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">MINX</text>
+  <line x1="214" y1="71" x2="242" y2="71" stroke="#94A3B8" stroke-width="2"/><polygon points="242,66 250,71 242,76" fill="#94A3B8"/>
+  <rect x="48" y="82" width="160" height="22" rx="11.0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="128.0" y="97.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E">MAX</text>
+  <rect x="256" y="82" width="160" height="22" rx="11.0" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="336.0" y="97.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">MAXX</text>
+  <line x1="214" y1="93" x2="242" y2="93" stroke="#94A3B8" stroke-width="2"/><polygon points="242,88 250,93 242,98" fill="#94A3B8"/>
+  <path d="M432,16 L440,16 L440,104 L432,104" fill="none" stroke="#A7F3D0" stroke-width="2"/>
+  <text x="452" y="54" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">table first,</text>
+  <text x="452" y="72" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">expression second</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you want the average sale <span class="hl">per customer</span>, not the average of the rows. Different questions, and usually the first one was meant.</p>
+        <p>AVERAGEX over the Customer table, with a sales measure as the expression, answers it. The X functions all share one shape: <span class="good">a table first, an expression second</span>. MAXX gives the largest it produced, MINX the smallest.</p>
+        <p class="close">Table first, expression second. Learn it once, use it everywhere.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Write AVERAGEX over your Customer table with a sales measure. That's average per customer, properly.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Functions page: RELATED follows an existing relationship from the many side to the one side and fetches the value out of the column you named, it cannot invent a connection so where no relationship exists you have to create one first, it only works where there is a row context such as a calculated column or a function that scans a table, and RELATEDTABLE reaches the other way to return rows from the many side.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 16</div>
+        <span class="pill">Functions</span>
+      </div>
+      <h1 class="title">RELATED: Reaching Across a Relationship</h1>
+      <div class="sub">The value lives in the other table. Go and get it.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 116" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the Sales table on the many side and the Product table on the one side, joined by a relationship. RELATED reaches from the row you are standing on across to the one side, and the category value comes back.">
+  <defs><filter id="cs16" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="125" y="16" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">SALES &middot; MANY SIDE</text>
+  <text x="467" y="16" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">PRODUCT &middot; ONE SIDE</text>
+  <rect x="30" y="24" width="190" height="80" rx="3" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="1.5" filter="url(#cs16)"/><rect x="31" y="45.0" width="188" height="20.0" fill="#EEF0FE"/><line x1="30" y1="44.0" x2="220" y2="44.0" stroke="#E7E9EF" stroke-width="1"/><line x1="30" y1="64.0" x2="220" y2="64.0" stroke="#E7E9EF" stroke-width="1"/><line x1="30" y1="84.0" x2="220" y2="84.0" stroke="#E7E9EF" stroke-width="1"/><line x1="93.33333333333334" y1="24" x2="93.33333333333334" y2="104" stroke="#E7E9EF" stroke-width="1"/><line x1="156.66666666666669" y1="24" x2="156.66666666666669" y2="104" stroke="#E7E9EF" stroke-width="1"/>
+  <rect x="372" y="24" width="190" height="80" rx="3" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="1.5" filter="url(#cs16)"/><line x1="372" y1="44.0" x2="562" y2="44.0" stroke="#E7E9EF" stroke-width="1"/><line x1="372" y1="64.0" x2="562" y2="64.0" stroke="#E7E9EF" stroke-width="1"/><line x1="372" y1="84.0" x2="562" y2="84.0" stroke="#E7E9EF" stroke-width="1"/><line x1="467.0" y1="24" x2="467.0" y2="104" stroke="#E7E9EF" stroke-width="1"/>
+  <text x="296" y="42" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">RELATED asks</text>
+  <line x1="230" y1="54" x2="358" y2="54" stroke="#4F46E5" stroke-width="2"/><polygon points="358,49 366,54 358,59" fill="#4F46E5"/>
+  <line x1="362" y1="82" x2="238" y2="82" stroke="#0D9488" stroke-width="2"/>
+  <polygon points="238,77 226,82 238,87" fill="#0D9488"/>
+  <text x="296" y="102" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">Category comes back</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say your Sales table has a product key in it but the category is over in the Product table. <span class="hl">RELATED goes and fetches it.</span></p>
+        <p>It follows a relationship that already exists, from the many side to the one side, and it only works where there's a row context. <span class="bad">It can't invent a connection</span>: no relationship, no RELATED. RELATEDTABLE goes the other way and hands back rows.</p>
+        <p class="close">If RELATED errors in a calculated column, check the relationship.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>In a calculated column on Sales, write = RELATED(Product[Category]). If it errors, fix the relationship.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Filters page: FILTER hands back a table, a subset of the one it was given, it is never used on its own but only inside another function that wants a table, Microsoft recommends plain Boolean expressions as filter arguments wherever possible for performance, FILTER should be kept for the cases that need it, and a measure cannot appear in a Boolean filter argument, which is exactly when FILTER becomes necessary.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 17</div>
+        <span class="pill">Filters</span>
+      </div>
+      <h1 class="title">FILTER Returns a Table, Not a Yes or No</h1>
+      <div class="sub">A smaller table comes out, not a true or false.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a table goes into FILTER and a shorter table comes out of it. Both of them sit inside something that wants a table, such as CALCULATE or an iterator, which is why FILTER never stands on its own.">
+  <defs><filter id="cs17" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="85" y="14" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">THE TABLE</text>
+  <rect x="20" y="24" width="130" height="80" rx="3" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="1.5" filter="url(#cs17)"/><line x1="20" y1="40.0" x2="150" y2="40.0" stroke="#E7E9EF" stroke-width="1"/><line x1="20" y1="56.0" x2="150" y2="56.0" stroke="#E7E9EF" stroke-width="1"/><line x1="20" y1="72.0" x2="150" y2="72.0" stroke="#E7E9EF" stroke-width="1"/><line x1="20" y1="88.0" x2="150" y2="88.0" stroke="#E7E9EF" stroke-width="1"/><line x1="85.0" y1="24" x2="85.0" y2="104" stroke="#E7E9EF" stroke-width="1"/>
+  <line x1="158" y1="64" x2="192" y2="64" stroke="#94A3B8" stroke-width="2"/><polygon points="192,59 200,64 192,69" fill="#94A3B8"/>
+  <rect x="204" y="18" width="368" height="92" rx="14" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <rect x="222" y="40" width="112" height="48" rx="10" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs17)"/>
+  <text x="278" y="70" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#4F46E5">FILTER</text>
+  <line x1="342" y1="64" x2="378" y2="64" stroke="#4F46E5" stroke-width="2"/><polygon points="378,59 386,64 378,69" fill="#4F46E5"/>
+  <rect x="396" y="42" width="120" height="44" rx="3" fill="#ECFDF5" stroke="#1A1A2E" stroke-width="1.5" filter="url(#cs17)"/><line x1="396" y1="56.666666666666664" x2="516" y2="56.666666666666664" stroke="#E7E9EF" stroke-width="1"/><line x1="396" y1="71.33333333333333" x2="516" y2="71.33333333333333" stroke="#E7E9EF" stroke-width="1"/><line x1="456.0" y1="42" x2="456.0" y2="86" stroke="#E7E9EF" stroke-width="1"/>
+  <text x="456" y="104" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">a shorter table</text>
+  <text x="388" y="124" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472">inside CALCULATE, or inside an iterator</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you wrote a measure that was just FILTER, and Power BI wouldn't have it. <span class="hl">FILTER doesn't answer yes or no. It hands back a table.</span></p>
+        <p>So it always sits inside something that wants a table. It is also slower than a plain condition, so <span class="good">pass a plain true-or-false filter where you can</span> and keep FILTER for when you can't.</p>
+        <p class="close">A measure can't go in a plain filter. That is when FILTER earns its place.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Wrap your total in a CALCULATE with a FILTER over the Sales table. Then say out loud what FILTER handed to CALCULATE.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Filters page: ALL returns every row of a table or every value of a column, ignoring the filters that had been applied, it exists for clearing filters and calculating across all the rows, naming columns rather than the whole table removes the filters on those columns only, and where the tool supports REMOVEFILTERS Microsoft says to use that instead of ALL for removing filters.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 18</div>
+        <span class="pill">Filters</span>
+      </div>
+      <h1 class="title">ALL: Taking a Filter Off on Purpose</h1>
+      <div class="sub">The visual stays filtered. Your measure doesn't have to.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 126" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the filters the visual set, listed on the left, pass through ALL of the Sales table and come out on the right struck through, because the measure no longer sees any of them.">
+  <defs><filter id="cs18" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="106" y="14" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">WHAT THE VISUAL SET</text>
+  <text x="477" y="14" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">WHAT THE MEASURE SEES</text>
+  <rect x="16" y="24" width="180" height="26" rx="13.0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="106.0" y="41.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E">Category = Bikes</text>
+  <rect x="16" y="56" width="180" height="26" rx="13.0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="106.0" y="73.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E">Year = 2025</text>
+  <rect x="16" y="88" width="180" height="26" rx="13.0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="106.0" y="105.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E">Region = North</text>
+  <line x1="202" y1="74" x2="214" y2="74" stroke="#94A3B8" stroke-width="2"/><polygon points="214,69 222,74 214,79" fill="#94A3B8"/>
+  <rect x="226" y="52" width="130" height="44" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs18)"/>
+  <text x="291" y="79" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#4F46E5">ALL ( Sales )</text>
+  <line x1="362" y1="74" x2="378" y2="74" stroke="#4F46E5" stroke-width="2"/><polygon points="378,69 386,74 378,79" fill="#4F46E5"/>
+  <rect x="392" y="24" width="170" height="26" rx="13.0" fill="#F8F9FB" stroke="#E7E9EF" stroke-width="1"/><text x="477.0" y="41.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#94A3B8">Category = Bikes</text>
+  <rect x="392" y="56" width="170" height="26" rx="13.0" fill="#F8F9FB" stroke="#E7E9EF" stroke-width="1"/><text x="477.0" y="73.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#94A3B8">Year = 2025</text>
+  <rect x="392" y="88" width="170" height="26" rx="13.0" fill="#F8F9FB" stroke="#E7E9EF" stroke-width="1"/><text x="477.0" y="105.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#94A3B8">Region = North</text>
+  <line x1="404" y1="37" x2="550" y2="37" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="404" y1="69" x2="550" y2="69" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="404" y1="101" x2="550" y2="101" stroke="#94A3B8" stroke-width="1.5"/>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say every row of your table shows its own total, and you need <span class="hl">the total of everything</span> beside it to divide by. ALL is how you get it.</p>
+        <p>ALL ignores the filters on a column or on a whole table, so the measure sees the bigger picture while the visual around it stays sliced. Name columns instead of the table and <span class="good">only those filters come off</span>, with the rest still applying.</p>
+        <p class="close">Where your tool has REMOVEFILTERS, Microsoft says use that for this job instead.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Put CALCULATE([Total Sales], ALL(Sales)) next to your plain total in a table by category. Watch one column go flat.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Patterns page: removing the filters from a whole table is what you do when you want a ratio of one aggregated value to the total, in the percent of total pattern it is the denominator that strips the filter while the numerator keeps the row's filters, and Microsoft's own worked example divides a sum by the same sum with the filters removed.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 19</div>
+        <span class="pill">Patterns</span>
+      </div>
+      <h1 class="title">Percent of Total, the Pattern You'll Reuse Forever</h1>
+      <div class="sub">This row's value, over the same value unfiltered.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 122" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of the pattern written as a fraction: the same measure on the top and the bottom, the top keeping the row's filters and the bottom having them taken off with ALL, and DIVIDE turning the two into a share of the total.">
+  <defs><filter id="cs19" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <rect x="36" y="16" width="260" height="42" rx="10" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs19)"/>
+  <text x="166" y="34" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#1A1A2E">Total Sales</text>
+  <text x="166" y="50" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">the row's filters stay on</text>
+  <line x1="26" y1="66" x2="306" y2="66" stroke="#1A1A2E" stroke-width="2"/>
+  <rect x="36" y="74" width="260" height="42" rx="10" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs19)"/>
+  <text x="166" y="92" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#4F46E5">Total Sales</text>
+  <text x="166" y="108" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">ALL takes them off</text>
+  <text x="352" y="54" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472">DIVIDE</text>
+  <line x1="322" y1="66" x2="374" y2="66" stroke="#94A3B8" stroke-width="2"/><polygon points="374,61 382,66 374,71" fill="#94A3B8"/>
+  <rect x="396" y="45" width="168" height="42" rx="12" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" filter="url(#cs19)"/><text x="480.0" y="68" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#0D9488">38%</text><text x="480.0" y="83" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">share of the total</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you want each category's share of the whole. <span class="hl">That's this row's value over the same value, unfiltered.</span></p>
+        <p>The top keeps whatever the row is filtered by. <span class="good">The bottom strips the filter off</span>, using ALL. Microsoft's own example is this exact shape: a sum over the same sum, filters removed.</p>
+        <p class="close">Once this clicks, a great many patterns in a real report turn out to be variations on it.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Write it with a VAR for the top and a VAR for the bottom, then read it back. It should read like a sentence.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Filters page: SELECTEDVALUE returns the value when the column has been filtered down to exactly one and otherwise returns the alternate result, leaving the second argument off makes that fallback blank, it achieves the same outcome as the older IF, HASONEVALUE and VALUES pattern more efficiently and more elegantly, comparing a table of several rows against a single value raises an error which is why the old pattern had to test first, and VALUES returns a one-column table of the distinct values in a column.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 20</div>
+        <span class="pill">Filters</span>
+      </div>
+      <h1 class="title">SELECTEDVALUE: Reading the Slicer</h1>
+      <div class="sub">One thing picked, or a fallback. Never stale.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 124" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: when the slicer has left exactly one value selected, SELECTEDVALUE returns that value. When it has left more than one, SELECTEDVALUE returns the fallback you gave it instead.">
+  <defs><filter id="cs20" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="99" y="12" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">WHAT THE SLICER LEFT</text>
+  <rect x="24" y="18" width="150" height="48" rx="3" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="1.5" filter="url(#cs20)"/><rect x="25" y="35.0" width="148" height="16.0" fill="#EEF0FE"/><line x1="24" y1="34.0" x2="174" y2="34.0" stroke="#E7E9EF" stroke-width="1"/><line x1="24" y1="50.0" x2="174" y2="50.0" stroke="#E7E9EF" stroke-width="1"/>
+  <text x="40" y="29" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#94A3B8">2024</text>
+  <text x="40" y="45" style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;fill:#4F46E5">2025</text>
+  <text x="40" y="61" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#94A3B8">2026</text>
+  <line x1="182" y1="42" x2="228" y2="42" stroke="#94A3B8" stroke-width="2"/><polygon points="228,37 236,42 228,47" fill="#94A3B8"/>
+  <rect x="250" y="20" width="220" height="44" rx="12" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" filter="url(#cs20)"/><text x="360.0" y="43" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;fill:#0D9488">2025</text><text x="360.0" y="58" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">the value comes back</text>
+  <text x="524" y="46" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">exactly one</text>
+  <rect x="24" y="72" width="150" height="48" rx="3" fill="#EEF0FE" stroke="#1A1A2E" stroke-width="1.5" filter="url(#cs20)"/><line x1="24" y1="88.0" x2="174" y2="88.0" stroke="#E7E9EF" stroke-width="1"/><line x1="24" y1="104.0" x2="174" y2="104.0" stroke="#E7E9EF" stroke-width="1"/>
+  <text x="40" y="83" style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;fill:#4F46E5">2024</text>
+  <text x="40" y="99" style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;fill:#4F46E5">2025</text>
+  <text x="40" y="115" style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;fill:#4F46E5">2026</text>
+  <line x1="182" y1="96" x2="228" y2="96" stroke="#4F46E5" stroke-width="2"/><polygon points="228,91 236,96 228,101" fill="#4F46E5"/>
+  <rect x="250" y="74" width="220" height="44" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs20)"/><text x="360.0" y="97" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;fill:#4F46E5">"All years"</text><text x="360.0" y="112" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">the fallback comes back</text>
+  <text x="524" y="100" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">more than one</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say your chart title says Sales by Month whatever the reader picks. <span class="bad">It goes stale the moment they click.</span></p>
+        <p>SELECTEDVALUE hands back the value when the column is down to exactly one, and your fallback when it isn't. Leave it off and it's blank. <span class="good">It replaces the old IF and HASONEVALUE dance.</span></p>
+        <p class="close">VALUES gives the distinct values. SELECTEDVALUE gives the one picked.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Put SELECTEDVALUE('Date'[Year], "All years") in a card above your chart, then click around the slicer.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Dates page: using the DAX time intelligence functions at all requires the model to have a date table, a date table stores one row per date so you can filter and group by periods, its date column must contain no blanks and no missing dates and must span whole years, a gap between the first and last date throws an error with the classic time intelligence functions, Power BI validates a table you mark as the date table, and marking your own removes the automatically created hidden tables so anything built on those stops working.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 21</div>
+        <span class="pill">Dates</span>
+      </div>
+      <h1 class="title">Why Every Model Needs a Date Table</h1>
+      <div class="sub">No date table, no time intelligence. Not really.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 112" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the order dates in a fact table are scattered and repeated, while the date table beside it holds one row per date from 1 January to 31 December with nothing missing, and a relationship joins the two.">
+  <defs><filter id="cs21" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="120" y="12" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">ORDER DATES</text>
+  <text x="472" y="12" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">THE DATE TABLE</text>
+  <rect x="30" y="18" width="180" height="80" rx="3" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="1.5" filter="url(#cs21)"/><line x1="30" y1="34.0" x2="210" y2="34.0" stroke="#E7E9EF" stroke-width="1"/><line x1="30" y1="50.0" x2="210" y2="50.0" stroke="#E7E9EF" stroke-width="1"/><line x1="30" y1="66.0" x2="210" y2="66.0" stroke="#E7E9EF" stroke-width="1"/><line x1="30" y1="82.0" x2="210" y2="82.0" stroke="#E7E9EF" stroke-width="1"/>
+  <text x="120" y="30" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">3 Jan</text>
+  <text x="120" y="46" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">3 Jan</text>
+  <text x="120" y="62" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">9 Jan</text>
+  <text x="120" y="78" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">22 Jan</text>
+  <text x="120" y="94" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">22 Jan</text>
+  <rect x="382" y="18" width="180" height="80" rx="3" fill="#ECFDF5" stroke="#1A1A2E" stroke-width="1.5" filter="url(#cs21)"/><line x1="382" y1="34.0" x2="562" y2="34.0" stroke="#E7E9EF" stroke-width="1"/><line x1="382" y1="50.0" x2="562" y2="50.0" stroke="#E7E9EF" stroke-width="1"/><line x1="382" y1="66.0" x2="562" y2="66.0" stroke="#E7E9EF" stroke-width="1"/><line x1="382" y1="82.0" x2="562" y2="82.0" stroke="#E7E9EF" stroke-width="1"/>
+  <text x="472" y="30" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">1 Jan</text>
+  <text x="472" y="46" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">2 Jan</text>
+  <text x="472" y="62" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">3 Jan</text>
+  <text x="472" y="78" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">&#8230;</text>
+  <text x="472" y="94" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">31 Dec</text>
+  <line x1="216" y1="58" x2="376" y2="58" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="296" y="48" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472">related</text>
+  <text x="296" y="78" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">no gaps</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say last year came back blank and nothing errored. <span class="bad">That is the shape of a missing date table</span>, and a blank ships where an error wouldn't.</p>
+        <p>The time functions need a table that is nothing but dates: one row per date, <span class="hl">no blanks, no missing days, whole years</span>. Mark it and Power BI checks for blanks, duplicates and gaps, and drops the hidden tables it had been making for you.</p>
+        <p class="close">A gap between the first date and the last throws an error. Better than silence.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Open Model view. If you can't see a table that is nothing but dates, you have work to do before the next page.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Dates page: CALENDAR returns a single column table holding a contiguous run of dates between the start and end you give it, both included, CALENDARAUTO instead covers every date in the model and guarantees full years, calculated columns are then added for the filtering and grouping you need, a text column on an axis is ordered alphabetically by default which is why months come out April, August, December, and Sort by Column needs the two columns at the same granularity with each value mapping to exactly one sort value.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 22</div>
+        <span class="pill">Dates</span>
+      </div>
+      <h1 class="title">Building One with CALENDAR</h1>
+      <div class="sub">One line for the dates, then the columns you need.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 116" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: CALENDAR with a start and an end produces the run of dates, calculated columns for year, month name and month number are added beside it, and the month name is then sorted by the month number.">
+  <defs><filter id="cs22" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="110" y="12" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">ONE LINE</text>
+  <rect x="20" y="20" width="180" height="28" rx="14.0" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="110.0" y="38.0" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">CALENDAR ( start, end )</text>
+  <line x1="206" y1="34" x2="240" y2="34" stroke="#94A3B8" stroke-width="2"/><polygon points="240,29 248,34 240,39" fill="#94A3B8"/>
+  <rect x="252" y="16" width="320" height="80" rx="3" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="1.5" filter="url(#cs22)"/><line x1="252" y1="36.0" x2="572" y2="36.0" stroke="#E7E9EF" stroke-width="1"/><line x1="252" y1="56.0" x2="572" y2="56.0" stroke="#E7E9EF" stroke-width="1"/><line x1="252" y1="76.0" x2="572" y2="76.0" stroke="#E7E9EF" stroke-width="1"/><line x1="332.0" y1="16" x2="332.0" y2="96" stroke="#E7E9EF" stroke-width="1"/><line x1="412.0" y1="16" x2="412.0" y2="96" stroke="#E7E9EF" stroke-width="1"/><line x1="492.0" y1="16" x2="492.0" y2="96" stroke="#E7E9EF" stroke-width="1"/>
+  <text x="292" y="30" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472">Date</text>
+  <text x="372" y="30" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472">Year</text>
+  <text x="452" y="30" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472">Month</text>
+  <text x="532" y="30" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472">No</text>
+  <text x="292" y="50" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">1 Jan</text>
+  <text x="372" y="50" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">2025</text>
+  <text x="452" y="50" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">January</text>
+  <text x="532" y="50" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#4F46E5">1</text>
+  <text x="292" y="70" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">2 Jan</text>
+  <text x="372" y="70" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">2025</text>
+  <text x="452" y="70" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">January</text>
+  <text x="532" y="70" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#4F46E5">1</text>
+  <text x="292" y="90" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">3 Jan</text>
+  <text x="372" y="90" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">2025</text>
+  <text x="452" y="90" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">January</text>
+  <text x="532" y="90" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#4F46E5">1</text>
+  <line x1="432" y1="106" x2="504" y2="106" stroke="#0D9488" stroke-width="2"/><polygon points="504,101 512,106 504,111" fill="#0D9488"/>
+  <text x="380" y="110" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">Sort by Column</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say your months came out April, August, December. <span class="bad">Power BI sorts text alphabetically</span>, and a month name is text.</p>
+        <p>CALENDAR takes a start and an end and gives you every date between, both included. CALENDARAUTO covers every date in the model and guarantees whole years. Then add the columns you want to group by, and <span class="good">sort the month name by the month number</span>.</p>
+        <p class="close">Each month name has to map to exactly one number, or Power BI refuses the sort.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Add Month Name and Month Number, then set Sort by Column. Check that January lands first.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Dates page: TOTALYTD works out the year to date value of an expression in whatever context it finds itself, it takes an optional year end date and assumes 31 December without one, and every time intelligence function gets its result the same way, by modifying the filter context for date filters.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 23</div>
+        <span class="pill">Dates</span>
+      </div>
+      <h1 class="title">Year to Date with TOTALYTD</h1>
+      <div class="sub">Everything from the start of the year up to here.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 122" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a small bar for each month along the bottom, and a line on the same scale that starts at January's bar and climbs above the rest as the year to date total accumulates month by month.">
+  <text x="296" y="12" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">THE MONTHS, AND THE RUNNING TOTAL</text>
+  <rect x="40" y="95.0" width="26" height="5.0" rx="2" fill="#C7CBF7" stroke="#A5ABF0"/>
+  <rect x="82" y="93.4" width="26" height="6.6" rx="2" fill="#C7CBF7" stroke="#A5ABF0"/>
+  <rect x="124" y="94.2" width="26" height="5.8" rx="2" fill="#C7CBF7" stroke="#A5ABF0"/>
+  <rect x="166" y="92.5" width="26" height="7.5" rx="2" fill="#C7CBF7" stroke="#A5ABF0"/>
+  <rect x="208" y="95.0" width="26" height="5.0" rx="2" fill="#C7CBF7" stroke="#A5ABF0"/>
+  <rect x="250" y="93.4" width="26" height="6.6" rx="2" fill="#C7CBF7" stroke="#A5ABF0"/>
+  <rect x="292" y="94.2" width="26" height="5.8" rx="2" fill="#C7CBF7" stroke="#A5ABF0"/>
+  <rect x="334" y="92.5" width="26" height="7.5" rx="2" fill="#C7CBF7" stroke="#A5ABF0"/>
+  <rect x="376" y="94.2" width="26" height="5.8" rx="2" fill="#C7CBF7" stroke="#A5ABF0"/>
+  <rect x="418" y="93.4" width="26" height="6.6" rx="2" fill="#C7CBF7" stroke="#A5ABF0"/>
+  <rect x="460" y="92.5" width="26" height="7.5" rx="2" fill="#C7CBF7" stroke="#A5ABF0"/>
+  <rect x="502" y="91.7" width="26" height="8.3" rx="2" fill="#C7CBF7" stroke="#A5ABF0"/>
+  <polyline points="53,95.0 95,88.4 137,82.6 179,75.1 221,70.1 263,63.5 305,57.7 347,50.2 389,44.4 431,37.8 473,30.3 515,22.0" fill="none" stroke="#0D9488" stroke-width="2.5"/>
+  <circle cx="515" cy="22" r="4" fill="#0D9488"/>
+  <line x1="30" y1="100" x2="540" y2="100" stroke="#1A1A2E" stroke-width="1.5"/>
+  <text x="53" y="114" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">Jan</text>
+  <text x="515" y="114" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">Dec</text>
+  <text x="296" y="114" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">TOTALYTD climbs as the year fills up</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you need the running total inside a year, month by month. <span class="hl">TOTALYTD is one line</span>, as long as the date table behind it is right.</p>
+        <p>It adds everything from the start of the year up to the latest date in the context it finds itself in. Hand it a year-end date if yours isn't 31 December. <span class="good">Every time function works the same way underneath</span>: it changes the date filters, then evaluates.</p>
+        <p class="close">December's running total should match the year's own figure exactly.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Put TOTALYTD next to your plain monthly total. If December doesn't match the year, suspect the date table.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Dates page: SAMEPERIODLASTYEAR returns the dates of the current selection shifted one year back, it returns exactly the dates DATEADD with a shift of minus one year would return, and where the selection takes in the last two days of a month the shifted range runs on to the end of that month.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 24</div>
+        <span class="pill">Dates</span>
+      </div>
+      <h1 class="title">SAMEPERIODLASTYEAR and DATEADD</h1>
+      <div class="sub">Slide the dates back, then ask the same question.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the months selected this year, shown highlighted along a timeline, shifted back to the same months of the year before, with SAMEPERIODLASTYEAR doing the shifting.">
+  <defs><filter id="cs24" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="28" y="30" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">2025</text>
+  <text x="28" y="86" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">2024</text>
+  <rect x="72" y="14" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="112" y="14" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="152" y="14" width="36" height="22" rx="4" fill="#EEF0FE" stroke="#D5D8FA"/>
+  <rect x="192" y="14" width="36" height="22" rx="4" fill="#EEF0FE" stroke="#D5D8FA"/>
+  <rect x="232" y="14" width="36" height="22" rx="4" fill="#EEF0FE" stroke="#D5D8FA"/>
+  <rect x="272" y="14" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="312" y="14" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="352" y="14" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="392" y="14" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="432" y="14" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="472" y="14" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="512" y="14" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="72" y="70" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="112" y="70" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="152" y="70" width="36" height="22" rx="4" fill="#ECFDF5" stroke="#A7F3D0"/>
+  <rect x="192" y="70" width="36" height="22" rx="4" fill="#ECFDF5" stroke="#A7F3D0"/>
+  <rect x="232" y="70" width="36" height="22" rx="4" fill="#ECFDF5" stroke="#A7F3D0"/>
+  <rect x="272" y="70" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="312" y="70" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="352" y="70" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="392" y="70" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="432" y="70" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="472" y="70" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <rect x="512" y="70" width="36" height="22" rx="4" fill="#FFFFFF" stroke="#E7E9EF"/>
+  <line x1="210" y1="40" x2="210" y2="60" stroke="#4F46E5" stroke-width="2"/>
+  <polygon points="205,60 210,70 215,60" fill="#4F46E5"/>
+  <text x="400" y="55" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">SAMEPERIODLASTYEAR shifts the selection back</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you need this year beside last year. <span class="hl">SAMEPERIODLASTYEAR shifts the selected dates back a year.</span></p>
+        <p>DATEADD does the same for days, months, quarters or years, and SAMEPERIODLASTYEAR returns exactly what DATEADD minus one year would. <span class="good">Both hand the shifted dates to CALCULATE</span>, which does the work.</p>
+        <p class="close">Select a month's last days and the shifted range runs on to that month's end.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Build the set: this year, last year, and the difference. One table visual, one afternoon's credibility.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Craft page: VAR stores the result of an expression under a name that can then be handed to other expressions, a variable's value is fixed once it has been worked out even where it is referenced again, variables improve performance, reliability and readability, writing the same expression twice makes Power BI work it out twice, Microsoft's own year over year example produced the same result in about half the query time once the repeated expression was pulled into a variable, and a variable is always evaluated outside whatever filters the RETURN expression goes on to apply.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 25</div>
+        <span class="pill">Craft</span>
+      </div>
+      <h1 class="title">VAR and RETURN: Naming the Middle Step</h1>
+      <div class="sub">Work it out once, name it, use it as often as you like.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 118" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram comparing the same measure written twice. On the left the same sum appears in two places and is worked out both times. On the right a variable holds it, worked out once and then used by name.">
+  <defs><filter id="cs25" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="150" y="12" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">WORKED OUT TWICE</text>
+  <text x="442" y="12" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">WORKED OUT ONCE</text>
+  <rect x="20" y="18" width="260" height="88" rx="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#cs25)"/>
+  <text x="34" y="40" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">IF (</text>
+  <text x="52" y="60" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#DC2626">SUM(Sales[Amount]) &gt; 0,</text>
+  <text x="52" y="80" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#DC2626">SUM(Sales[Amount])</text>
+  <text x="34" y="100" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">)</text>
+  <rect x="312" y="18" width="260" height="88" rx="10" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" filter="url(#cs25)"/>
+  <text x="326" y="44" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#4F46E5">VAR Total = SUM(Sales[Amount])</text>
+  <text x="326" y="68" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">RETURN</text>
+  <text x="344" y="92" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#1A1A2E">IF ( Total &gt; 0, Total )</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say the same expression turns up twice in one measure. <span class="bad">Power BI works it out twice</span>, and that is time you're paying for and not getting back.</p>
+        <p>A VAR works it out once and hands it a name. In Microsoft's own year-over-year example that one change gave the same answer in about half the query time, and <span class="good">it makes the formula readable</span>, which is the part you'll thank yourself for.</p>
+        <p class="close">A variable is fixed the moment it's worked out, even where you use it again later.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Take your longest measure and pull one repeated expression into a VAR. Read it again. Shorter, and it says more.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Craft page: Microsoft states that formatting your DAX is a best practice which improves readability, Power BI's own formatter indents with tabs, capitalises DAX function names and breaks the formula across extra lines, the indentation also lets you collapse and expand sections of a long formula, in DAX query view SHIFT+ALT+F formats the current query, a commented line is skipped entirely when the DAX runs, and CTRL+/ toggles a line between commented and uncommented.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 26</div>
+        <span class="pill">Craft</span>
+      </div>
+      <h1 class="title">Formatting a Formula So Future You Can Read It</h1>
+      <div class="sub">One argument a line. Shift+Enter is the toolkit.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 154" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the same measure written as one long line, and then written again broken across lines with each argument indented on its own line and the closing bracket on a line of its own.">
+  <defs><filter id="cs26" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <text x="24" y="14" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">BEFORE</text>
+  <rect x="20" y="20" width="552" height="28" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#cs26)"/>
+  <text x="34" y="38" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">CALCULATE ( SUM ( Sales[Amount] ), Product[Colour] = "Blue", 'Date'[Year] = 2025 )</text>
+  <text x="24" y="64" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">AFTER</text>
+  <rect x="20" y="70" width="552" height="78" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" filter="url(#cs26)"/>
+  <text x="34" y="87" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">CALCULATE (</text>
+  <text x="58" y="100" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">SUM ( Sales[Amount] ),</text>
+  <text x="58" y="113" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">Product[Colour] = "Blue",</text>
+  <text x="58" y="126" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">'Date'[Year] = 2025</text>
+  <text x="34" y="139" style="font-family:'JetBrains Mono',monospace;font-size:10px;fill:#1A1A2E">)</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say your measure is one long line running off the edge of the bar. <span class="bad">Nobody can read that</span>, you included.</p>
+        <p>Microsoft calls formatting your DAX a best practice outright. In <span class="hl">DAX query view</span>, SHIFT+ALT+F indents, capitalises the function names and breaks the query across lines. The indents let you collapse a long one.</p>
+        <p class="close">There, CTRL+/ comments a line out, and a commented line is skipped when it runs.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Right-click your ugliest measure, choose Quick queries, then Define and evaluate. In DAX query view, press SHIFT+ALT+F.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Craft page: a measure is a model level object so its name has to be unique across the whole model rather than within one table, the table a measure appears under in the Data pane is cosmetic and can be changed, a table holding nothing but measures always appears at the top of the Data pane, you hide its one placeholder column but not the table itself, fields can be grouped into display folders named in the Properties pane, and a backslash in a display folder name creates a subfolder.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 27</div>
+        <span class="pill">Craft</span>
+      </div>
+      <h1 class="title">Where to Keep Your Measures</h1>
+      <div class="sub">An empty table, and folders inside it.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 126" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hand-drawn diagram of the Power BI Data pane: a table called Measures sitting at the top with display folders named Sales and Margin nested under it, and the ordinary tables Customer, Date and Product listed below.">
+  <defs><filter id="sk27" x="-6%" y="-18%" width="112%" height="136%"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="9" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+  <rect x="150" y="10" width="292" height="108" rx="8" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2.5" filter="url(#sk27)"/>
+  <line x1="150" y1="32" x2="442" y2="32" stroke="#E7E9EF" stroke-width="1.5"/>
+  <text x="166" y="26" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E">Data</text>
+  <rect x="160" y="38" width="272" height="20" rx="5" fill="#EEF0FE" stroke="#4F46E5" stroke-width="2" filter="url(#sk27)"/>
+  <text x="172" y="52" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">Measures</text>
+  <text x="192" y="72" style="font-family:'Inter',sans-serif;font-size:11px;fill:#1A1A2E">Sales</text>
+  <text x="192" y="88" style="font-family:'Inter',sans-serif;font-size:11px;fill:#1A1A2E">Margin</text>
+  <line x1="180" y1="62" x2="180" y2="84" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="180" y1="68" x2="188" y2="68" stroke="#94A3B8" stroke-width="1.5"/>
+  <line x1="180" y1="84" x2="188" y2="84" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="172" y="108" style="font-family:'Inter',sans-serif;font-size:11px;fill:#94A3B8">Customer &middot; Date &middot; Product</text>
+  <text x="466" y="52" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5">always at the top</text>
+  <text x="466" y="80" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">display folders</text>
+  <line x1="436" y1="48" x2="462" y2="48" stroke="#4F46E5" stroke-width="1.5"/>
+  <line x1="436" y1="76" x2="462" y2="76" stroke="#0D9488" stroke-width="1.5"/>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say your measures are scattered over whichever table you happened to create them on. <span class="bad">Nobody else can maintain that file</span>, and before long that includes you.</p>
+        <p>A measure belongs to the model rather than a table, so the table it appears under is cosmetic and you can change it. Make an empty table, move them in and <span class="good">hide its one placeholder column</span>, but not the table itself.</p>
+        <p class="close">Group them with display folders, and a backslash in the name makes a subfolder.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Make an empty table called Measures, move a few of your measures into it, and hide the placeholder column.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb">
+      <h2 class="sr">Review page: every new measure arrives with a default name and keeps it unless you rename it there and then, Power BI generates its automatic date handling by creating hidden tables in the model on your behalf, and marking your own table as the date table removes the automatically created one so anything already built on it stops working properly.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> &middot; No. 28</div>
+        <span class="pill">Review</span>
+      </div>
+      <h1 class="title">Mistakes Almost Every Beginner Makes in DAX</h1>
+      <div class="sub">The short list, and the one-line fix for each.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 136" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of the common beginner mistakes, each paired with its fix: a calculated column where a measure belonged, dividing with a slash, counting with the wrong count function, no date table, fighting the filter context, and measures left on their default names.">
+  <defs><filter id="cs28" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+  <rect x="16" y="4" width="180" height="62" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#cs28)"/><text x="106.0" y="25" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#DC2626">Calculated column</text><text x="106.0" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">where a measure belonged</text><text x="106.0" y="56" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">write a measure</text>
+  <rect x="206" y="4" width="180" height="62" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#cs28)"/><text x="296.0" y="25" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#DC2626">Dividing with /</text><text x="296.0" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">shows Infinity, not a blank</text><text x="296.0" y="56" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">use DIVIDE</text>
+  <rect x="396" y="4" width="180" height="62" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#cs28)"/><text x="486.0" y="25" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#DC2626">The wrong COUNT</text><text x="486.0" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">nothing errors, it just lies</text><text x="486.0" y="56" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">use COUNTROWS for rows</text>
+  <rect x="16" y="70" width="180" height="62" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#cs28)"/><text x="106.0" y="91" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#DC2626">No date table</text><text x="106.0" y="106" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">the hidden ones are in play</text><text x="106.0" y="122" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">make one and mark it</text>
+  <rect x="206" y="70" width="180" height="62" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#cs28)"/><text x="296.0" y="91" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#DC2626">Fighting the context</text><text x="296.0" y="106" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">instead of using it</text><text x="296.0" y="122" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">CALCULATE changes it</text>
+  <rect x="396" y="70" width="180" height="62" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" filter="url(#cs28)"/><text x="486.0" y="91" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#DC2626">Default names</text><text x="486.0" y="106" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">every measure arrives with one</text><text x="486.0" y="122" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488">rename it there and then</text>
+</svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you've shipped a report and something in it is quietly wrong. <span class="hl">It is usually one of a handful of things</span>, and they are all above.</p>
+        <p>Most of them don't error. That's what makes them worth knowing by name: <span class="bad">a number that is merely wrong looks exactly like a number that is right</span>, and it ships either way.</p>
+        <p class="close">Fix one of these today, not next week.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Open your own file and look for two of these. Start with the one that would embarrass you most.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Absolute Beginners</span></div>
+    </section>
+
+  </main>
+  <script src="../../engine/sheet-tools.js"></script>
+</body>
+</html>

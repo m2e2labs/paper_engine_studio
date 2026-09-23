@@ -1,0 +1,144 @@
+{
+  "$schema": "../../engine/book.schema.json",
+  "title": "Power BI DAX for Absolute Beginners",
+  "subtitle": "From your first SUM to the formulas that run a real report.",
+  "author": "M2E2 Labs",
+  "series": "Absolute Beginners",
+  "brand": "Third Watch Press",
+  "editionLabel": "Edition 1.0",
+  "unit": "lessons",
+  "numbered": true,
+  "contents": true,
+  "index": true,
+  "cover": {
+    "kicker": "Still No Experience Required",
+    "note": "One idea per page. Every formula explained.",
+    "art": "<svg viewBox=\"0 0 400 200\" width=\"440\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A sketch of a table of rows collapsing into a single number.\"><defs><filter id=\"coverSketch\" filterUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"400\" height=\"200\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.045\" numOctaves=\"2\" seed=\"11\" result=\"noise\"/><feDisplacementMap in=\"SourceGraphic\" in2=\"noise\" scale=\"2.5\" xChannelSelector=\"R\" yChannelSelector=\"G\"/></filter></defs><g filter=\"url(#coverSketch)\"><rect x=\"26\" y=\"30\" width=\"140\" height=\"140\" rx=\"2\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><rect x=\"120\" y=\"55\" width=\"44\" height=\"113\" fill=\"#4F46E5\" opacity=\"0.85\"/><line x1=\"26\" y1=\"54\" x2=\"166\" y2=\"54\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><line x1=\"26\" y1=\"83\" x2=\"166\" y2=\"83\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"26\" y1=\"112\" x2=\"166\" y2=\"112\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"26\" y1=\"141\" x2=\"166\" y2=\"141\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"73\" y1=\"30\" x2=\"73\" y2=\"170\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"120\" y1=\"30\" x2=\"120\" y2=\"170\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"182\" y1=\"100\" x2=\"216\" y2=\"100\" stroke=\"#0D9488\" stroke-width=\"4\" stroke-linecap=\"round\"/><polygon points=\"216,92 232,100 216,108\" fill=\"#0D9488\"/><rect x=\"246\" y=\"55\" width=\"128\" height=\"90\" rx=\"12\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><path d=\"M333,76 L288,76 L310,100 L288,124 L333,124\" fill=\"none\" stroke=\"#4F46E5\" stroke-width=\"6.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g></svg>"
+  },
+  "copyright": {
+    "year": 2026,
+    "rights": "© 2026 M2E2 Labs. All rights reserved.",
+    "lines": [
+      "Set in Space Grotesk, Inter and JetBrains Mono.",
+      "Power BI and DAX are trademarks of Microsoft Corporation. This is an independent guide, not published by or affiliated with Microsoft."
+    ]
+  },
+  "parts": [
+    {
+      "name": "What DAX Actually Is",
+      "eyebrow": "Before your first formula",
+      "why": "Which of the two formula languages in Power BI you're writing, where it lives, and what it looks like when it goes wrong.",
+      "blocks": [
+        "DAX Is Not Excel, and Not Power Query",
+        "Measure, Calculated Column, Calculated Table",
+        "Where You Type It: The Formula Bar",
+        "When the Formula Turns Red"
+      ]
+    },
+    {
+      "name": "Context, the Idea Everything Rests On",
+      "eyebrow": "Why your number changes",
+      "why": "The one thing that separates people who guess at DAX from people who write it.",
+      "blocks": [
+        "Filter Context: The Question the Cell Is Asking",
+        "Row Context: What a Calculated Column Sees",
+        "CALCULATE: Changing the Question",
+        "Context Transition: The Thing Nobody Explains"
+      ]
+    },
+    {
+      "name": "The Everyday Functions",
+      "eyebrow": "The ones you'll actually type",
+      "why": "The dozen or so functions that cover most of what a real report needs.",
+      "blocks": [
+        "SUM, AVERAGE, MIN and MAX",
+        "Counting Things Without Getting It Wrong",
+        "DIVIDE, and the One Time the Slash Is Fine",
+        "IF and SWITCH"
+      ]
+    },
+    {
+      "name": "Iterators",
+      "eyebrow": "The X functions",
+      "why": "When the maths has to happen row by row before anything gets added up.",
+      "blocks": [
+        "What an Iterator Actually Does",
+        "SUMX vs SUM: When You Need the X",
+        "AVERAGEX, MAXX and the Rest of the Family",
+        "RELATED: Reaching Across a Relationship"
+      ]
+    },
+    {
+      "name": "Filters You Control",
+      "eyebrow": "Tables in, tables out",
+      "why": "Taking filters off, putting them on, and reading what the reader selected.",
+      "blocks": [
+        "FILTER Returns a Table, Not a Yes or No",
+        "ALL: Taking a Filter Off on Purpose",
+        "Percent of Total, the Pattern You'll Reuse Forever",
+        "SELECTEDVALUE: Reading the Slicer"
+      ]
+    },
+    {
+      "name": "Time Intelligence",
+      "eyebrow": "Dates, properly",
+      "why": "Why this year against last year needs a table of its own, and how to build one.",
+      "blocks": [
+        "Why Every Model Needs a Date Table",
+        "Building One with CALENDAR",
+        "Year to Date with TOTALYTD",
+        "SAMEPERIODLASTYEAR and DATEADD"
+      ]
+    },
+    {
+      "name": "DAX You Can Live With",
+      "eyebrow": "Writing it so it lasts",
+      "why": "The habits that decide whether you can still read your own file in six months.",
+      "blocks": [
+        "VAR and RETURN: Naming the Middle Step",
+        "Formatting a Formula So Future You Can Read It",
+        "Where to Keep Your Measures",
+        "Mistakes Almost Every Beginner Makes in DAX"
+      ]
+    }
+  ],
+  "matter": {
+    "front": [],
+    "back": [
+      {
+        "kind": "sources"
+      },
+      {
+        "kind": "glossary"
+      }
+    ]
+  },
+  "language": "en",
+  "publishing": {
+    "description": "You can build a Power BI report without writing much DAX. You just can't build a good one.\n\nPower BI DAX for Absolute Beginners picks up where the first book left off. Your data is in, there's a chart on the canvas, and now every real question you want to ask needs a formula. This is 28 short lessons, one idea per page, each with a clear diagram of what's actually happening and one small thing to try in the file you already have open.\n\nInside, you'll learn how to:\n- Tell DAX apart from Excel formulas and from Power Query, and know which one you need\n- Choose between a measure, a calculated column and a calculated table, and know why it matters\n- Understand filter context and row context, the two ideas everything else rests on\n- Use CALCULATE to change the question a measure is answering\n- Count things without getting it quietly wrong, and divide without breaking the report\n- Write iterators like SUMX, and know when you actually need the X\n- Build a proper date table and compare this year to last year in one line\n- Use VAR to write formulas you can still read in six months\n- Avoid the handful of DAX mistakes almost every beginner makes\n\nNo unexplained acronyms, no assumed expertise, no wall of reference documentation. Every function turns up at the moment you need it, in the order you'll meet it.\n\nBy the last page, you won't be copying formulas off the internet and hoping. You'll know what they do.",
+    "keywords": [
+      "dax for beginners",
+      "power bi dax tutorial",
+      "learn dax",
+      "power bi measures",
+      "calculate function power bi",
+      "dax formulas explained",
+      "time intelligence dax"
+    ],
+    "categories": [
+      "COM021030",
+      "COM005030"
+    ],
+    "publisher": "Third Watch Press",
+    "published": "",
+    "audience": "Readers who can already build a basic Power BI report and are ready to write real formulas.",
+    "isbn": {
+      "print": "",
+      "epub": ""
+    },
+    "price": {
+      "amount": 7.99,
+      "currency": "USD"
+    }
+  }
+}

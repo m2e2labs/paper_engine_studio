@@ -1,0 +1,1775 @@
+<!doctype html>
+<!--
+  THE INTERIOR — your book's source file. You (and the /block skill) edit THIS.
+
+  Power BI for Absolute Beginners: 24 lessons, one <section class="sheet bb">
+  per concept. book.json decides which pages are in the book and in what order,
+  matching them by their <h1 class="title">. Everything else (cover, copyright,
+  contents, part dividers, sources, index, page numbers) is generated into
+  book.html by:
+
+    node engine/tools/build.mjs books/power-bi-beginner
+
+  Never hand-edit book.html. It is overwritten on every build.
+
+  ---------------------------------------------------------------------------
+  SVG FILTER IDS IN THIS BOOK: SHARED ON PURPOSE, AND SAFE ONLY BY ACCIDENT.
+
+  build.mjs assembles the cover and every page into ONE HTML document, so every
+  SVG id shares a single namespace. 14 pages here define filter id="sketch" and
+  10 define filter id="cs". Nothing renders wrong today, for one reason only:
+
+    every definition of each id is BYTE-IDENTICAL, and both use percentage
+    (objectBoundingBox) filter regions, which scale to each element.
+
+  So whichever definition the document happens to resolve first gives the same
+  result everywhere. This breaks the moment either is no longer true:
+
+    * changing ONE page's "sketch" or "cs" filter (a different region, a
+      different baseFrequency) silently applies that change to the other 13/9,
+      because the first definition in the document wins for every url(#id)
+      after it;
+    * switching one to filterUnits="userSpaceOnUse" — which you need for a
+      hand-drawn stroke on a zero-height <line>, or the line vanishes — clips
+      every later page to the first page's region. That exact bug cut a diagram
+      in half in books/power-bi-dax, and check.mjs still read 0 mm while
+      preflight passed. Only the PNG showed it.
+
+  So: any NEW page in this book gets its own suffixed ids (sk25, cs25, ...), and
+  any EDIT to a shared filter means suffixing that page's ids first. Renaming the
+  existing 24 was considered and declined: it changes every page's content hash
+  and would put all 24 approved pages back in the review queue for no rendering
+  change at all. See .claude/skills/block/references/design-rules.md, "Inline SVG
+  traps".
+  ---------------------------------------------------------------------------
+-->
+<html lang="en" data-size="b5">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power BI for Absolute Beginners</title>
+  <link rel="stylesheet" href="../../engine/sheet.css">
+  <link rel="stylesheet" href="../../engine/sizes/b5.css">
+  <link rel="stylesheet" href="../../engine/themes/studio.css">
+  <style>
+    /* ====================================================================
+       GENERATED PAGES — cover, copyright, contents, part dividers, index.
+       Written by engine/tools/build-book.mjs. Scoped .sheet.gp so it can never
+       touch a book page (.sheet.bb).
+       ==================================================================== */
+    .sheet.gp{
+      --ink:#1A1A2E; --muted:#5B6472; --line:#E7E9EF;
+      --accent:#6366F1; --accent-strong:#4F46E5;
+      padding:0; background:#FAFAFC; color:var(--ink);
+      font-family:"Inter",system-ui,sans-serif;
+    }
+    .gp .in{ position:absolute; inset:0; display:flex; flex-direction:column; padding:13mm 15mm; }
+    .gp .in > *{ flex-shrink:0; }
+    /* flex:none, not a basis: .in is a column and .gp-top is a row, and a basis
+       would be read as height in one and width in the other. */
+    .gp-tab{ width:56px; height:7px; flex:none; border-radius:99px; background:var(--accent); }
+    .gp-top{ display:flex; justify-content:space-between; align-items:center; gap:14px; }
+    .gp-pill{
+      font-size:12px; font-weight:500; color:#4B5563; background:#F1F2F6;
+      border:1px solid var(--line); padding:5px 13px; border-radius:99px; white-space:nowrap;
+    }
+    .gp-rule{ height:1px; flex:0 0 1px; background:var(--line); border:0; margin:15px 0; }
+    .gp-foot{
+      display:flex; justify-content:space-between; align-items:center;
+      font-size:12.5px; color:var(--muted); margin-top:auto; padding-top:13px;
+      border-top:1px solid var(--line);
+    }
+
+    /* ---- cover ---- */
+    .gp.cover .cv-kicker{
+      font-size:13px; font-weight:600; letter-spacing:.18em; text-transform:uppercase;
+      color:var(--accent-strong); margin-top:20px;
+    }
+    .gp.cover .cv-mid{ flex:1; display:flex; flex-direction:column; justify-content:center; }
+    .gp.cover .cv-title{
+      font-family:"Space Grotesk",sans-serif; font-size:64px; font-weight:700;
+      line-height:1.02; letter-spacing:-.03em; margin:0; color:var(--ink);
+    }
+    .gp.cover .cv-sub{ font-size:22px; line-height:1.4; color:var(--muted); margin:18px 0 0; max-width:22em; }
+    .gp.cover .cv-meta{ display:flex; justify-content:space-between; align-items:baseline; }
+    .gp.cover .cv-author{ font-family:"Space Grotesk",sans-serif; font-size:19px; font-weight:600; color:var(--ink); }
+    .gp.cover .cv-count{ font-size:14px; color:var(--muted); font-variant-numeric:tabular-nums; }
+    .gp.cover .cv-note{ font-size:13.5px; color:var(--muted); margin:12px 0 0; }
+
+    /* ---- copyright ---- */
+    .gp.colophon .cl-mid{ flex:1; display:flex; flex-direction:column; justify-content:flex-end; }
+    .gp.colophon .cl-title{ font-family:"Space Grotesk",sans-serif; font-size:27px; font-weight:600; letter-spacing:-.02em; margin:0; }
+    .gp.colophon .cl-sub{ font-size:16px; color:var(--muted); margin:5px 0 0; }
+    .gp.colophon .cl-body p{ font-size:13.5px; line-height:1.6; color:var(--muted); margin:0 0 8px; }
+
+    /* ---- part divider ---- */
+    .gp.divider .dv-mid{ flex:1; display:flex; flex-direction:column; justify-content:center; }
+    .gp.divider .dv-eyebrow{
+      font-size:12.5px; font-weight:600; letter-spacing:.18em; text-transform:uppercase;
+      color:var(--accent-strong); margin:0;
+    }
+    .gp.divider .dv-num{
+      font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:78px;
+      line-height:.92; letter-spacing:-.03em; color:var(--ink); margin:4px 0 0;
+    }
+    .gp.divider .dv-name{
+      font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:40px;
+      line-height:1.05; letter-spacing:-.02em; color:var(--ink); margin:12px 0 0;
+    }
+    .gp.divider .dv-why{ font-size:17px; line-height:1.5; color:var(--muted); margin:12px 0 0; max-width:30em; }
+    .gp.divider .dv-list-label{
+      font-size:11.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+      color:var(--muted); margin:0 0 12px;
+    }
+    .gp.divider .dv-list{
+      list-style:none; margin:0; padding:0;
+      display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px 30px;
+    }
+    .gp.divider .dv-list li{ display:flex; align-items:baseline; gap:10px; }
+    .gp.divider .dv-list .n{
+      font-family:"Space Grotesk",sans-serif; font-weight:600; font-size:13px;
+      color:var(--accent); font-variant-numeric:tabular-nums; min-width:1.6em;
+    }
+    .gp.divider .dv-list .nm{ font-size:15px; color:var(--ink); }
+
+    /* ---- contents + index ---- */
+    .gp .lp-title{ font-family:"Space Grotesk",sans-serif; font-size:30px; font-weight:600; letter-spacing:-.02em; margin:11px 0 0; }
+    .gp.toc .toc-part{ margin-top:14px; }
+    .gp.toc .toc-part:first-child{ margin-top:2px; }
+    .gp.toc .toc-ph{ display:flex; align-items:baseline; gap:10px; line-height:1.4; }
+    .gp.toc .toc-ph .pn{ flex:1; font-family:"Space Grotesk",sans-serif; font-size:14.5px; font-weight:600; color:var(--ink); }
+    .gp.toc .toc-row{ display:flex; align-items:baseline; gap:12px; margin-top:6px; padding-left:3px; line-height:1.4; }
+    .gp.toc .toc-row .nm{ flex:1; font-size:13.5px; color:var(--ink); }
+    .gp .pg{ font-variant-numeric:tabular-nums; font-size:13px; color:var(--muted); }
+    .gp.index .idx{ margin-top:4px; column-count:3; column-gap:22px; }
+    .gp.index .idx-row{
+      display:flex; align-items:baseline; gap:10px; break-inside:avoid;
+      padding:2px 1px; border-bottom:1px solid #EFF1F5;
+    }
+    .gp.index .idx-row .nm{ flex:1; font-size:12px; color:var(--ink); }
+    .gp.index .idx-row .pg{ font-size:12px; }
+
+    /* ====================================================================
+       ONE PAGE COUNTER for the whole book. Every sheet advances it; only the
+       book pages print it, so a printed number is the real page in the PDF.
+       Overrides the theme's page-only counter (inline wins over linked).
+       ==================================================================== */
+    .deck{ counter-reset:pageno; }
+    .sheet.gp, .sheet.bb{ counter-increment:pageno; }
+    .bb .foot .pg::before{ content:counter(pageno); }
+  </style>
+  <style>
+    /* ====================================================================
+       FRONT AND BACK MATTER, written by engine/tools/lib/matter.mjs from
+       book.json "matter". Scoped .sheet.gp.matter, on top of build-book's .gp.
+       ==================================================================== */
+    .gp.matter .mt-mid{ flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:0 12mm 18mm; }
+    .gp.matter.m-dedication .mt-mid p{ font-size:17px; line-height:1.6; font-style:italic; color:var(--ink); margin:0 0 6px; }
+    .gp.matter.m-epigraph blockquote{ margin:0; max-width:27em; }
+    .gp.matter.m-epigraph blockquote p{ font-family:"Space Grotesk",sans-serif; font-size:21px; line-height:1.45; letter-spacing:-.01em; color:var(--ink); margin:0 0 10px; }
+    .gp.matter .mt-mid .mt-by{ font-size:13.5px; font-style:normal; color:var(--muted); margin:16px 0 0; }
+    .gp.matter .mt-body{ margin-top:2px; overflow-wrap:anywhere; }
+    .gp.matter .mt-body p{ font-size:14.5px; line-height:1.6; color:var(--ink); margin:0 0 13px; max-width:40em; }
+    .gp.matter .mt-body h2{ font-family:"Space Grotesk",sans-serif; font-size:17px; font-weight:600; letter-spacing:-.01em; margin:20px 0 8px; }
+    .gp.matter .mt-body h2:first-child{ margin-top:0; }
+    .gp.matter .mt-body .mt-by{ font-family:"Space Grotesk",sans-serif; font-weight:600; color:var(--ink); margin-top:20px; }
+    .gp.matter .mt-items, .gp.matter .mt-sources{ list-style:none; margin:4px 0 0; padding:0; }
+    .gp.matter .mt-items li{ padding:0 0 12px; margin:0 0 12px; border-bottom:1px solid #EFF1F5; }
+    .gp.matter .mt-items .nm{ display:block; font-size:14.5px; font-weight:600; color:var(--ink); line-height:1.5; }
+    .gp.matter .mt-items .nt{ display:block; font-size:13px; line-height:1.55; color:var(--muted); }
+    .gp.matter .mt-sources li{ padding:0 0 10px; margin:0 0 10px; border-bottom:1px solid #EFF1F5; break-inside:avoid; }
+    .gp.matter .mt-sources .sh{ display:flex; align-items:baseline; gap:12px; line-height:1.5; }
+    .gp.matter .mt-sources .nm{ flex:1; font-size:13.5px; font-weight:600; color:var(--ink); }
+    .gp.matter .mt-sources .sr{ font-size:12px; line-height:1.5; color:var(--muted); }
+    .gp.matter .mt-sources .ck{ white-space:nowrap; }
+    .gp.matter .mt-sources .df{ font-size:13px; line-height:1.5; color:var(--ink); }
+  </style>
+</head>
+<body>
+  <main class="deck">
+
+    <section id="s1" class="sheet gp cover">
+      <div class="in">
+        <div class="gp-tab"></div>
+        <div class="cv-kicker">No Experience Required</div>
+        <div class="cv-mid">
+          <h1 class="cv-title">Power BI for Absolute Beginners</h1>
+          <p class="cv-sub">From opening the app to publishing your first report.</p>
+        
+          <div class="cv-art" style="margin-top:32px;display:flex;justify-content:center"><svg viewBox="0 0 400 220" width="440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sketch of a monitor showing a rising bar chart."><defs><filter id="sketch" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/></filter></defs><rect x="60" y="10" width="280" height="170" rx="14" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2.5" filter="url(#sketch)"/><line x1="80" y1="150" x2="320" y2="150" stroke="#94A3B8" stroke-width="1.5"/><rect x="100" y="110" width="30" height="40" fill="#4F46E5" filter="url(#sketch)"/><rect x="150" y="90" width="30" height="60" fill="#4F46E5" filter="url(#sketch)"/><rect x="200" y="65" width="30" height="85" fill="#4F46E5" filter="url(#sketch)"/><rect x="250" y="45" width="30" height="105" fill="#4F46E5" filter="url(#sketch)"/><path d="M95,138 L145,112 L195,85 L245,58 L286,39" fill="none" stroke="#0D9488" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#sketch)"/><polygon points="300,26 280,35 293,50" fill="#0D9488" filter="url(#sketch)"/><rect x="180" y="184" width="40" height="14" fill="#1A1A2E" filter="url(#sketch)"/><rect x="150" y="198" width="100" height="8" rx="4" fill="#1A1A2E" filter="url(#sketch)"/></svg></div>
+        </div>
+        <div class="cv-bottom">
+          <hr class="gp-rule">
+          <div class="cv-meta">
+            <span class="cv-author">M2E2 Labs</span>
+            <span class="cv-count">24 lessons</span>
+          </div>
+          <p class="cv-note">One idea per page. No jargon left unexplained.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="s2" class="sheet gp colophon">
+      <div class="in">
+        <div class="gp-tab"></div>
+        <div class="cl-mid">
+          <h2 class="cl-title">Power BI for Absolute Beginners</h2>
+          <p class="cl-sub">From opening the app to publishing your first report.</p>
+          <hr class="gp-rule">
+          <div class="cl-body">
+            <p>Set in Space Grotesk, Inter and JetBrains Mono.</p>
+          <p>Power BI is a trademark of Microsoft Corporation. This is an independent guide, not published by or affiliated with Microsoft.</p>
+            <p>© 2026 M2E2 Labs. All rights reserved.</p>
+            <p>Edition 1.0 · Third Watch Press</p>
+          </div>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Edition 1.0</span></div>
+      </div>
+    </section>
+
+    <section id="s3" class="sheet gp toc">
+      <div class="in">
+        <div class="gp-top">
+          <div class="gp-tab"></div>
+          <span class="gp-pill">Contents</span>
+        </div>
+        <h1 class="lp-title">Contents</h1>
+        <hr class="gp-rule">
+        <div class="toc-list">
+          <div class="toc-part">
+            <div class="toc-ph"><span class="pn">Part 1 · Meet Power BI</span><span class="pg">5</span></div>
+            <div class="toc-row"><span class="nm">What Power BI Actually Is</span><span class="pg">6</span></div>
+            <div class="toc-row"><span class="nm">Installing Power BI Desktop</span><span class="pg">7</span></div>
+            <div class="toc-row"><span class="nm">A Tour of the Power BI Desktop Window</span><span class="pg">8</span></div>
+          </div>
+          <div class="toc-part">
+            <div class="toc-ph"><span class="pn">Part 2 · Getting Your Data In</span><span class="pg">9</span></div>
+            <div class="toc-row"><span class="nm">Connecting to an Excel Workbook</span><span class="pg">10</span></div>
+            <div class="toc-row"><span class="nm">The Power Query Editor at a Glance</span><span class="pg">11</span></div>
+            <div class="toc-row"><span class="nm">Fixing a Column's Data Type</span><span class="pg">12</span></div>
+            <div class="toc-row"><span class="nm">Removing Columns and Rows You Don't Need</span><span class="pg">13</span></div>
+            <div class="toc-row"><span class="nm">Combining Two Queries: Append vs Merge</span><span class="pg">14</span></div>
+          </div>
+          <div class="toc-part">
+            <div class="toc-ph"><span class="pn">Part 3 · Shaping the Model</span><span class="pg">15</span></div>
+            <div class="toc-row"><span class="nm">What a Data Model Is</span><span class="pg">16</span></div>
+            <div class="toc-row"><span class="nm">Fact Tables and Dimension Tables</span><span class="pg">17</span></div>
+            <div class="toc-row"><span class="nm">Building a Relationship Between Two Tables</span><span class="pg">18</span></div>
+            <div class="toc-row"><span class="nm">Calculated Column vs Measure</span><span class="pg">19</span></div>
+          </div>
+          <div class="toc-part">
+            <div class="toc-ph"><span class="pn">Part 4 · Writing Your First DAX</span><span class="pg">20</span></div>
+            <div class="toc-row"><span class="nm">What DAX Actually Is</span><span class="pg">21</span></div>
+            <div class="toc-row"><span class="nm">Your First Measure: A Simple SUM</span><span class="pg">22</span></div>
+            <div class="toc-row"><span class="nm">CALCULATE and the Filter Context</span><span class="pg">23</span></div>
+            <div class="toc-row"><span class="nm">The Functions Worth Knowing Early</span><span class="pg">24</span></div>
+          </div>
+          <div class="toc-part">
+            <div class="toc-ph"><span class="pn">Part 5 · Building the Report</span><span class="pg">25</span></div>
+            <div class="toc-row"><span class="nm">Choosing the Right Visual</span><span class="pg">26</span></div>
+            <div class="toc-row"><span class="nm">Building Your First Bar Chart</span><span class="pg">27</span></div>
+            <div class="toc-row"><span class="nm">Slicers: Letting the Reader Filter the Page</span><span class="pg">28</span></div>
+            <div class="toc-row"><span class="nm">Formatting a Visual So It's Readable</span><span class="pg">29</span></div>
+          </div>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Power BI for Absolute Beginners</span></div>
+      </div>
+    </section>
+
+    <section id="s4" class="sheet gp toc">
+      <div class="in">
+        <div class="gp-top">
+          <div class="gp-tab"></div>
+          <span class="gp-pill">Contents</span>
+        </div>
+        <hr class="gp-rule" style="margin-top:15px">
+        <div class="toc-list">
+          <div class="toc-part">
+            <div class="toc-ph"><span class="pn">Part 6 · Sharing What You Built</span><span class="pg">30</span></div>
+            <div class="toc-row"><span class="nm">Publishing a Report to the Power BI Service</span><span class="pg">31</span></div>
+            <div class="toc-row"><span class="nm">Sharing a Report With Someone Else</span><span class="pg">32</span></div>
+            <div class="toc-row"><span class="nm">Scheduling a Data Refresh</span><span class="pg">33</span></div>
+          </div>
+          <div class="toc-part">
+            <div class="toc-ph"><span class="pn">Part 7 · Where to Go From Here</span><span class="pg">34</span></div>
+            <div class="toc-row"><span class="nm">Mistakes Almost Every Beginner Makes</span><span class="pg">35</span></div>
+          </div>
+          <div class="toc-part">
+            <div class="toc-row"><span class="nm">Sources</span><span class="pg">36</span></div>
+          </div>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Power BI for Absolute Beginners</span></div>
+      </div>
+    </section>
+
+    <section id="s5" class="sheet gp divider">
+      <div class="in">
+        <div class="gp-top">
+          <div class="gp-tab"></div>
+          <span class="gp-pill">Part 1 of 7</span>
+        </div>
+        <div class="dv-mid">
+          <div class="dv-eyebrow">Before you open it</div>
+          <div class="dv-num">1</div>
+          <h2 class="dv-name">Meet Power BI</h2>
+          <p class="dv-why">What the app actually is and what you're looking at the first time you open it.</p>
+          <hr class="gp-rule">
+          <div class="dv-list-label">In this part</div>
+          <ol class="dv-list">
+            <li><span class="n">01</span><span class="nm">What Power BI Actually Is</span></li>
+            <li><span class="n">02</span><span class="nm">Installing Power BI Desktop</span></li>
+            <li><span class="n">03</span><span class="nm">A Tour of the Power BI Desktop Window</span></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Edition 1.0</span></div>
+      </div>
+    </section>
+
+    <section id="s6" class="sheet bb">
+      <h2 class="sr">Overview page: Power BI is Desktop, where you build reports, plus the online Service, where you publish them, plus a mobile app for checking them on your phone.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 01</div>
+        <span class="pill">Overview</span>
+      </div>
+      <h1 class="title">What Power BI Actually Is</h1>
+      <div class="sub">Desktop, the Service, and the app in your pocket.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: Power BI Desktop, where you build, with an arrow to the Power BI Service, where you publish, and a second arrow to the Power BI mobile app, where you check in from your phone.">
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <filter id="cs" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter>
+          </defs>
+          <rect x="24" y="90" width="150" height="54" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs)"/>
+          <text x="99" y="113" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#4F46E5">Desktop</text>
+          <text x="99" y="128" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#6366F1">where you build</text>
+          <rect x="220" y="90" width="150" height="54" rx="12" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1" filter="url(#cs)"/>
+          <text x="295" y="113" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#0D9488">The Service</text>
+          <text x="295" y="128" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">where you publish</text>
+          <rect x="416" y="90" width="150" height="54" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs)"/>
+          <text x="491" y="113" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#1A1A2E">Mobile</text>
+          <text x="491" y="128" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">where you check in</text>
+          <line x1="174" y1="117" x2="220" y2="117" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#ar)"/>
+          <line x1="370" y1="117" x2="416" y2="117" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#ar)"/>
+          <circle cx="197" cy="117" r="11" fill="#6366F1"/><text x="197" y="117" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#FFFFFF">1</text>
+          <circle cx="393" cy="117" r="11" fill="#6366F1"/><text x="393" y="117" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#FFFFFF">2</text>
+          <text x="296" y="160" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">1 publish from Desktop · 2 open it on your phone</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say a coworker tells you to "just check it in Power BI," and you don't know which app that means. It's really two pieces wearing one name: <span class="hl">Desktop</span>, where you build, and the <span class="good">Service</span>, the website where a finished report gets published. There's also a phone app, but for almost everything here, "Power BI" means <strong>Desktop</strong>.</p>
+        <p class="close">One name, two places to build and share, plus a screen in your pocket.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Before you do anything else, write down which of these you actually need this week. For almost every beginner, that's Desktop.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Meet Power BI</span></div>
+    </section>
+
+    <section id="s7" class="sheet bb">
+      <h2 class="sr">Setup page: Power BI Desktop is a free Windows app you install from the Microsoft Store or a direct download, and it updates itself about once a month.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 02</div>
+        <span class="pill">Setup</span>
+      </div>
+      <h1 class="title">Installing Power BI Desktop</h1>
+      <div class="sub">Free, and open on your screen by the end of this page.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sketch of the Power BI Desktop listing on the Microsoft Store: its name and the Install button called out.">
+          <defs>
+            <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <rect x="146" y="10" width="300" height="156" rx="14" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <text x="170" y="36" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.06em;fill:#5B6472">MICROSOFT STORE</text>
+          <text x="170" y="66" style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:700;fill:#1A1A2E">Power BI Desktop</text>
+          <rect x="170" y="92" width="118" height="40" rx="10" fill="#4F46E5" stroke="#1A1A2E" stroke-width="1.75" filter="url(#sketch)"/>
+          <text x="229" y="117" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#FFFFFF">Install</text>
+          <circle cx="288" cy="112" r="13" fill="#4F46E5" stroke="#FFFFFF" stroke-width="2" filter="url(#sketch)"/>
+          <text x="288" y="112" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">1</text>
+          <text x="296" y="190" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">1 select Install</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you've read about Power BI and you're ready to open it. <span class="hl">Power BI Desktop</span> doesn't cost anything, and you get it from the Microsoft Store or as a direct installer. It updates about once a month, so don't worry when it asks. That's <span class="good">normal</span>, not broken.</p>
+        <p class="close">Quick to grab, and it's on your machine.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Install it now. The rest of this book assumes it's open on your screen.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Meet Power BI</span></div>
+    </section>
+
+    <section id="s8" class="sheet bb">
+      <h2 class="sr">Interface page: the first three view icons on the left edge of the Power BI Desktop window are Report, Table and Model view, with a ribbon of tools across the top and a Data pane on the right once data is loaded.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 03</div>
+        <span class="pill">Interface</span>
+      </div>
+      <h1 class="title">A Tour of the Power BI Desktop Window</h1>
+      <div class="sub">The views you'll use first sit down the left edge.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sketch of the Power BI Desktop window: a ribbon with File, Home, Insert, Modeling, View and Help tabs and Get data, Excel workbook and OneLake catalog buttons, and the Report, Table and Model view icons stacked on the left edge, with Report view highlighted.">
+          <defs>
+            <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <rect x="20" y="34" width="552" height="212" rx="10" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <rect x="20" y="10" width="552" height="24" rx="10" fill="#1A1A2E" filter="url(#sketch)"/>
+          <text x="296" y="26" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#FFFFFF">Untitled - Power BI Desktop</text>
+          <text x="512" y="27" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#FFFFFF">–</text>
+          <text x="534" y="27" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#FFFFFF">□</text>
+          <text x="556" y="27" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#FFFFFF">✕</text>
+          <text x="40" y="60" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">File</text>
+          <text x="76" y="60" style="font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;fill:#1A1A2E">Home</text>
+          <rect x="76" y="65" width="42" height="2.5" fill="#4F46E5"/>
+          <text x="134" y="60" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">Insert</text>
+          <text x="184" y="60" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">Modeling</text>
+          <text x="254" y="60" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">View</text>
+          <text x="296" y="60" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">Help</text>
+          <line x1="34" y1="76" x2="558" y2="76" stroke="#E7E9EF" stroke-width="1.5"/>
+          <rect x="150" y="86" width="46" height="40" rx="8" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5" filter="url(#sketch)"/>
+          <text x="173" y="140" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:10px;fill:#5B6472">Get data</text>
+          <rect x="210" y="86" width="46" height="40" rx="8" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5" filter="url(#sketch)"/>
+          <text x="233" y="140" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:10px;fill:#5B6472">Excel</text>
+          <text x="233" y="152" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:10px;fill:#5B6472">workbook</text>
+          <rect x="270" y="86" width="46" height="40" rx="8" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5" filter="url(#sketch)"/>
+          <text x="293" y="140" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:10px;fill:#5B6472">OneLake</text>
+          <text x="293" y="152" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:10px;fill:#5B6472">catalog</text>
+          <circle cx="332" cy="106" r="11" fill="#4F46E5"/><text x="332" y="106" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">2</text>
+          <rect x="34" y="88" width="34" height="34" rx="8" fill="#4F46E5" filter="url(#sketch)"/>
+          <text x="51" y="109" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:14px;fill:#FFFFFF">▤</text>
+          <rect x="34" y="128" width="34" height="34" rx="8" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5" filter="url(#sketch)"/>
+          <text x="51" y="149" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:14px;fill:#5B6472">▦</text>
+          <rect x="34" y="168" width="34" height="34" rx="8" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5" filter="url(#sketch)"/>
+          <text x="51" y="189" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:14px;fill:#5B6472">⛓</text>
+          <circle cx="30" cy="204" r="11" fill="#4F46E5"/><text x="30" y="204" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">1</text>
+          <text x="296" y="270" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">1 the views you'll use first · 2 the ribbon</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say Power BI Desktop is open. Start with the <span class="hl">three views</span> at the top of the left edge: Report, Table and Model. The ribbon runs along the top.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Click the Report, Table and Model icons once each. You can't break anything by looking.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Meet Power BI</span></div>
+    </section>
+
+    <section id="s9" class="sheet gp divider">
+      <div class="in">
+        <div class="gp-top">
+          <div class="gp-tab"></div>
+          <span class="gp-pill">Part 2 of 7</span>
+        </div>
+        <div class="dv-mid">
+          <div class="dv-eyebrow">Power Query</div>
+          <div class="dv-num">2</div>
+          <h2 class="dv-name">Getting Your Data In</h2>
+          <p class="dv-why">Bringing a spreadsheet or a file into Power BI and cleaning it up before you build anything.</p>
+          <hr class="gp-rule">
+          <div class="dv-list-label">In this part</div>
+          <ol class="dv-list">
+            <li><span class="n">01</span><span class="nm">Connecting to an Excel Workbook</span></li>
+            <li><span class="n">02</span><span class="nm">The Power Query Editor at a Glance</span></li>
+            <li><span class="n">03</span><span class="nm">Fixing a Column's Data Type</span></li>
+            <li><span class="n">04</span><span class="nm">Removing Columns and Rows You Don't Need</span></li>
+            <li><span class="n">05</span><span class="nm">Combining Two Queries: Append vs Merge</span></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Edition 1.0</span></div>
+      </div>
+    </section>
+
+    <section id="s10" class="sheet bb">
+      <h2 class="sr">Power Query page: to connect an Excel workbook, select Get Data on the Home ribbon, then tick the sheet or table you want in the Navigator window.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 04</div>
+        <span class="pill">Power Query</span>
+      </div>
+      <h1 class="title">Connecting to an Excel Workbook</h1>
+      <div class="sub">Get Data, on the Home ribbon, is where you start.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sketch of the Navigator window after connecting to an Excel workbook, with the Sheet1 table ticked and the financials table left unticked.">
+          <defs>
+            <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <rect x="146" y="10" width="300" height="170" rx="12" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <text x="170" y="38" style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;fill:#1A1A2E">Navigator</text>
+          <rect x="170" y="50" width="252" height="24" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5" filter="url(#sketch)"/>
+          <text x="182" y="66" style="font-family:'Inter',sans-serif;font-size:11px;fill:#94A3B8">🔍</text>
+          <text x="182" y="96" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E">📁 Financial Sample.xlsx [2]</text>
+          <rect x="186" y="110" width="14" height="14" rx="3" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+          <text x="207" y="122" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E">financials</text>
+          <rect x="170" y="140" width="252" height="26" rx="6" fill="#EEF0FE" stroke="#4F46E5" stroke-width="1.5" filter="url(#sketch)"/>
+          <rect x="186" y="146" width="14" height="14" rx="3" fill="#0D9488"/>
+          <path d="M189.5 153.5 L192.5 156.5 L197 149.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="207" y="158" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E">Sheet1</text>
+          <circle cx="446" cy="153" r="11" fill="#4F46E5"/><text x="446" y="153" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">1</text>
+          <text x="296" y="200" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">1 tick the table</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say your numbers live in a spreadsheet, true for almost everyone starting out. To bring it in, select <span class="hl">Get Data</span> on the Home ribbon and pick Excel workbook. Point it at your file, and a Navigator window opens. Tick the sheets you want, the way one is ticked here.</p>
+        <p class="close">One button, then a checkbox. That's the whole first step.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Open Get Data now and connect your own spreadsheet.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Getting Your Data In</span></div>
+    </section>
+
+    <section id="s11" class="sheet bb">
+      <h2 class="sr">Power Query page: the Power Query Editor records every change you make as a step in the Applied Steps list, and clicking a step replays your data as it looked at that point.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 05</div>
+        <span class="pill">Power Query</span>
+      </div>
+      <h1 class="title">The Power Query Editor at a Glance</h1>
+      <div class="sub">Every click you make gets written down as a step.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sketch of the Query Settings pane in Power Query Editor, showing the Applied Steps list: Source, Navigation, Promoted Headers, and Changed Type selected.">
+          <defs>
+            <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <rect x="196" y="10" width="200" height="210" rx="10" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <text x="216" y="36" style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;fill:#1A1A2E">Query Settings</text>
+          <text x="216" y="64" style="font-family:'Inter',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.05em;fill:#5B6472">APPLIED STEPS</text>
+          <text x="216" y="88" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E">Source</text>
+          <text x="216" y="110" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E">Navigation</text>
+          <text x="216" y="132" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E">Promoted Headers</text>
+          <rect x="206" y="144" width="180" height="26" rx="6" fill="#EEF0FE" stroke="#4F46E5" stroke-width="1.5" filter="url(#sketch)"/>
+          <text x="216" y="161" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E">Changed Type</text>
+          <circle cx="374" cy="157" r="11" fill="#4F46E5"/><text x="374" y="157" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">1</text>
+          <text x="296" y="244" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">1 the applied steps list</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you've connected a file. <span class="hl">Power Query</span> cleans it before it reaches a report. Every change lands in <strong>Applied Steps</strong>. Click one to jump back.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Click the second-to-last step in Applied Steps.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Getting Your Data In</span></div>
+    </section>
+
+    <section id="s12" class="sheet bb">
+      <h2 class="sr">Power Query page: Power BI guesses a data type for every column on load, and you can set it yourself from the Data Type dropdown on the Transform ribbon.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 06</div>
+        <span class="pill">Power Query</span>
+      </div>
+      <h1 class="title">Fixing a Column's Data Type</h1>
+      <div class="sub">The guess Power BI makes isn't always the one you need.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sketch of the Transform ribbon in Power Query Editor with the Data Type dropdown open, listing Decimal Number, Whole Number, Date, Text, and other column types.">
+          <defs>
+            <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <text x="150" y="30" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">File</text>
+          <text x="190" y="30" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">Home</text>
+          <text x="246" y="30" style="font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;fill:#1A1A2E">Transform</text>
+          <rect x="246" y="35" width="70" height="2.5" fill="#4F46E5"/>
+          <text x="330" y="30" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">Add Column</text>
+          <line x1="150" y1="44" x2="442" y2="44" stroke="#E7E9EF" stroke-width="1.5"/>
+          <rect x="196" y="56" width="150" height="30" rx="7" fill="#EEF0FE" stroke="#4F46E5" stroke-width="1.75" filter="url(#sketch)"/>
+          <text x="210" y="76" style="font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;fill:#1A1A2E">Data Type: Text ▾</text>
+          <rect x="196" y="90" width="150" height="128" rx="8" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <text x="210" y="112" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E">Decimal Number</text>
+          <rect x="204" y="122" width="134" height="22" rx="5" fill="#EEF0FE" filter="url(#sketch)"/>
+          <text x="210" y="137" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E">Whole Number</text>
+          <text x="210" y="162" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E">Date</text>
+          <text x="210" y="187" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E">Time</text>
+          <text x="210" y="207" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E">Text</text>
+          <circle cx="350" cy="133" r="11" fill="#4F46E5"/><text x="350" y="133" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">1</text>
+          <text x="296" y="244" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">1 pick the real type</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say a column of numbers lines up on the left, a sign it's text. Power BI <span class="hl">guesses a data type</span> on load, and the guess isn't always the one you need. Select the column and set <strong>Data Type</strong> yourself.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Click the type icon in a column header and set it on purpose.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Getting Your Data In</span></div>
+    </section>
+
+    <section id="s13" class="sheet bb">
+      <h2 class="sr">Power Query page: right-click a column header and choose Remove columns to drop it, or use Remove Top Rows to cut a fixed number of junk rows off the top.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 07</div>
+        <span class="pill">Power Query</span>
+      </div>
+      <h1 class="title">Removing Columns and Rows You Don't Need</h1>
+      <div class="sub">A smaller table is a faster, clearer model later.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 196" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sketch of a right-click menu over a sample sales table's GUID column, with Remove columns called out near the top of the menu.">
+          <defs>
+            <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <rect x="40" y="14" width="330" height="150" rx="8" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5" filter="url(#sketch)"/>
+          <line x1="40" y1="46" x2="370" y2="46" stroke="#E7E9EF" stroke-width="1.5"/>
+          <text x="52" y="38" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">Date</text>
+          <text x="132" y="38" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">Product</text>
+          <text x="222" y="38" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">SalesPerson</text>
+          <text x="322" y="38" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;fill:#1A1A2E">GUID</text>
+          <text x="52" y="68" style="font-family:'Inter',sans-serif;font-size:11px;fill:#1A1A2E">1/1/2024</text>
+          <text x="132" y="68" style="font-family:'Inter',sans-serif;font-size:11px;fill:#1A1A2E">Shirt</text>
+          <text x="322" y="68" style="font-family:'Inter',sans-serif;font-size:11px;fill:#94A3B8">0001-aa…</text>
+          <text x="52" y="94" style="font-family:'Inter',sans-serif;font-size:11px;fill:#1A1A2E">1/2/2024</text>
+          <text x="132" y="94" style="font-family:'Inter',sans-serif;font-size:11px;fill:#1A1A2E">Jeans</text>
+          <text x="322" y="94" style="font-family:'Inter',sans-serif;font-size:11px;fill:#94A3B8">1112-bb…</text>
+          <rect x="284" y="52" width="144" height="118" rx="8" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <text x="296" y="72" style="font-family:'Inter',sans-serif;font-size:10.5px;fill:#1A1A2E">Copy</text>
+          <rect x="290" y="82" width="132" height="22" rx="5" fill="#EEF0FE" stroke="#4F46E5" stroke-width="1.5" filter="url(#sketch)"/>
+          <text x="296" y="97" style="font-family:'Inter',sans-serif;font-size:10.5px;font-weight:600;fill:#1A1A2E">Remove columns</text>
+          <text x="296" y="122" style="font-family:'Inter',sans-serif;font-size:10.5px;fill:#1A1A2E">Remove other columns</text>
+          <circle cx="444" cy="93" r="11" fill="#4F46E5"/><text x="444" y="93" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">1</text>
+          <text x="296" y="188" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">1 remove columns</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say your source came with a column nobody will ever use, like an internal ID. Right-click its header and choose <span class="hl">Remove columns</span> from the menu. There's also a Remove Top Rows command, for cutting a fixed number of junk rows off the top.</p>
+        <p class="close">It's reversible. The step just sits in Applied Steps until you delete it.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Remove one column you're sure you'll never chart. You can always undo it later.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Getting Your Data In</span></div>
+    </section>
+
+    <section id="s14" class="sheet bb">
+      <h2 class="sr">Power Query page: Append stacks two tables with the same columns into one longer table, while Merge lines two tables up side by side, matched on a shared column, into one wider table.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 08</div>
+        <span class="pill">Power Query</span>
+      </div>
+      <h1 class="title">Combining Two Queries: Append vs Merge</h1>
+      <div class="sub">Stacking rows is different from lining up columns.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: Append stacks two tables of the same columns into one longer table. Merge lines two tables up side by side, joined on a shared column, into one wider table.">
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <filter id="cs" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter>
+          </defs>
+          <line x1="296" y1="38" x2="296" y2="178" stroke="#CBD2DC" stroke-width="1" stroke-dasharray="5 5"/>
+          <text x="147" y="42" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">APPEND</text>
+          <text x="445" y="42" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">MERGE</text>
+          <rect x="87" y="54" width="120" height="30" rx="10" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs)"/>
+          <text x="147" y="73" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E">Jan sales</text>
+          <rect x="87" y="90" width="120" height="30" rx="10" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs)"/>
+          <text x="147" y="109" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E">Feb sales</text>
+          <line x1="147" y1="121" x2="147" y2="142" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#ar)"/>
+          <rect x="57" y="146" width="180" height="34" rx="12" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1" filter="url(#cs)"/>
+          <text x="147" y="167" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#0D9488">One longer table</text>
+          <rect x="352" y="58" width="85" height="34" rx="10" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs)"/>
+          <text x="394" y="79" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E">Sales</text>
+          <rect x="463" y="58" width="85" height="34" rx="10" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs)"/>
+          <text x="505" y="79" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E">Targets</text>
+          <line x1="437" y1="75" x2="463" y2="75" stroke="#6366F1" stroke-width="1.75"/>
+          <line x1="449" y1="93" x2="449" y2="142" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#ar)"/>
+          <rect x="379" y="146" width="140" height="34" rx="12" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1" filter="url(#cs)"/>
+          <text x="449" y="167" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#0D9488">One wider table</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you have two related tables and aren't sure which button joins them. <span class="hl">Append</span> stacks tables with the same columns into one longer table, like January's sales under February's. <span class="hl">Merge</span> lines two tables up side by side, matched on a shared column, like sales next to targets.</p>
+        <p class="close">More rows of the same thing is Append. More columns about the same thing is Merge.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Ask yourself which you need before you click either button: more rows, or more columns.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Getting Your Data In</span></div>
+    </section>
+
+    <section id="s15" class="sheet gp divider">
+      <div class="in">
+        <div class="gp-top">
+          <div class="gp-tab"></div>
+          <span class="gp-pill">Part 3 of 7</span>
+        </div>
+        <div class="dv-mid">
+          <div class="dv-eyebrow">Tables and relationships</div>
+          <div class="dv-num">3</div>
+          <h2 class="dv-name">Shaping the Model</h2>
+          <p class="dv-why">How separate tables connect into one model that can answer real questions.</p>
+          <hr class="gp-rule">
+          <div class="dv-list-label">In this part</div>
+          <ol class="dv-list">
+            <li><span class="n">01</span><span class="nm">What a Data Model Is</span></li>
+            <li><span class="n">02</span><span class="nm">Fact Tables and Dimension Tables</span></li>
+            <li><span class="n">03</span><span class="nm">Building a Relationship Between Two Tables</span></li>
+            <li><span class="n">04</span><span class="nm">Calculated Column vs Measure</span></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Edition 1.0</span></div>
+      </div>
+    </section>
+
+    <section id="s16" class="sheet bb">
+      <h2 class="sr">Modeling page: a data model is your tables plus the relationship lines connecting them, and Model view draws those lines so you can see which tables can filter each other and which ones are floating alone.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 09</div>
+        <span class="pill">Modeling</span>
+      </div>
+      <h1 class="title">What a Data Model Is</h1>
+      <div class="sub">Your tables, plus the lines connecting them.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a Sales table connected by a line to a Products table, and a Notes table floating alone in red with no relationship line.">
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <filter id="cs" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter>
+          </defs>
+          <rect x="48" y="46" width="140" height="50" rx="13" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs)"/>
+          <text x="118" y="68" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#1A1A2E">Sales</text>
+          <text x="118" y="84" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">one row per order</text>
+          <rect x="316" y="46" width="140" height="50" rx="13" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs)"/>
+          <text x="386" y="68" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#1A1A2E">Products</text>
+          <text x="386" y="84" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">one row per item</text>
+          <line x1="188" y1="71" x2="316" y2="71" stroke="#6366F1" stroke-width="2"/>
+          <rect x="177" y="132" width="140" height="46" rx="13" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1" filter="url(#cs)"/>
+          <text x="247" y="153" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#DC2626">Notes</text>
+          <text x="247" y="169" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">no line to anything</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you've loaded a handful of tables and your report just won't filter the way you expect. A <span class="hl">data model</span> is just your tables plus the lines connecting them. Model view draws those lines so you can see the shape of what you've built, and a table sitting alone, like <span class="bad">Notes</span> here, can't be filtered by anything else yet.</p>
+        <p class="close">A floating table isn't broken. It's just not connected yet.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Open Model view. If you see a table with no line to anything else, that's the one to fix first.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Shaping the Model</span></div>
+    </section>
+
+    <section id="s17" class="sheet bb">
+      <h2 class="sr">Modeling page: a fact table stores events, one row per sale or order, while dimension tables store the describing details, like product names, store names, and dates, that you use to filter and group the facts.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 10</div>
+        <span class="pill">Modeling</span>
+      </div>
+      <h1 class="title">Fact Tables and Dimension Tables</h1>
+      <div class="sub">One holds events. The others describe them.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: three dimension tables, Products, Stores, and Dates, each connected by a line down to one wide Sales fact table.">
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <filter id="cs" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter>
+          </defs>
+          <text x="296" y="38" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">DIMENSIONS</text>
+          <rect x="34" y="46" width="118" height="40" rx="11" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs)"/>
+          <text x="93" y="70" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#1A1A2E">Products</text>
+          <rect x="237" y="46" width="118" height="40" rx="11" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs)"/>
+          <text x="296" y="70" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#1A1A2E">Stores</text>
+          <rect x="440" y="46" width="118" height="40" rx="11" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs)"/>
+          <text x="499" y="70" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#1A1A2E">Dates</text>
+          <line x1="93" y1="87" x2="160" y2="128" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#ar)"/>
+          <line x1="296" y1="87" x2="296" y2="128" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#ar)"/>
+          <line x1="499" y1="87" x2="432" y2="128" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#ar)"/>
+          <rect x="100" y="132" width="392" height="46" rx="13" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs)"/>
+          <text x="296" y="153" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#4F46E5">Sales</text>
+          <text x="296" y="169" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#6366F1">the fact table, one row per sale</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you have a transactions table and a lookup table and you're not sure which is which. A <span class="hl">fact table</span> holds the events, one row per sale, with a number attached. The <strong>dimension tables</strong> around it hold the describing words, like product names or dates, that you use to slice those numbers.</p>
+        <p class="close">Facts are the things that happened. Dimensions describe them.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Point at your longest table. If each row is one event, you've just found your fact table.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Shaping the Model</span></div>
+    </section>
+
+    <section id="s18" class="sheet bb">
+      <h2 class="sr">Modeling page: in Model view you drag a shared column from one table onto its match in another table to create a relationship, and Power BI often creates that same relationship for you automatically when it loads two related tables.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 11</div>
+        <span class="pill">Modeling</span>
+      </div>
+      <h1 class="title">Building a Relationship Between Two Tables</h1>
+      <div class="sub">Drag one shared column onto its match.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sketch of Model view showing the Connections table's Seat ID column linked by a line to the Unique Seats table's seatId column, with the many-to-one cardinality badge, asterisk to 1, called out.">
+          <defs>
+            <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <rect x="40" y="60" width="180" height="110" rx="10" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <text x="56" y="84" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;fill:#1A1A2E">Connections</text>
+          <line x1="40" y1="94" x2="220" y2="94" stroke="#E7E9EF" stroke-width="1.5"/>
+          <text x="56" y="114" style="font-family:'Inter',sans-serif;font-size:12px;fill:#5B6472">Recorded At</text>
+          <rect x="48" y="122" width="164" height="22" rx="5" fill="#EEF0FE" filter="url(#sketch)"/>
+          <text x="56" y="138" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E">Seat ID</text>
+          <text x="56" y="160" style="font-family:'Inter',sans-serif;font-size:12px;fill:#5B6472">Σ Total Connections</text>
+          <rect x="372" y="30" width="180" height="170" rx="10" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <text x="388" y="54" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;fill:#1A1A2E">Unique Seats</text>
+          <line x1="372" y1="64" x2="552" y2="64" stroke="#E7E9EF" stroke-width="1.5"/>
+          <text x="388" y="84" style="font-family:'Inter',sans-serif;font-size:12px;fill:#94A3B8">contractId</text>
+          <text x="388" y="106" style="font-family:'Inter',sans-serif;font-size:12px;fill:#5B6472">createdAt</text>
+          <text x="388" y="128" style="font-family:'Inter',sans-serif;font-size:12px;fill:#94A3B8">email</text>
+          <rect x="380" y="136" width="164" height="22" rx="5" fill="#EEF0FE" filter="url(#sketch)"/>
+          <text x="388" y="152" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E">seatId</text>
+          <text x="388" y="178" style="font-family:'Inter',sans-serif;font-size:12px;fill:#94A3B8">firstName</text>
+          <line x1="220" y1="133" x2="372" y2="147" stroke="#4F46E5" stroke-width="2" filter="url(#sketch)"/>
+          <rect x="270" y="126" width="42" height="24" rx="6" fill="#4F46E5" filter="url(#sketch)"/>
+          <text x="291" y="143" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">* : 1</text>
+          <circle cx="291" cy="110" r="11" fill="#4F46E5"/><text x="291" y="110" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">1</text>
+          <text x="296" y="230" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">1 the relationship line</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say two tables share a column and nothing filters right yet. In <span class="hl">Model view</span>, drag that column onto its match in the other table. A line appears, and now one can filter the other.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Drag the shared column from one table onto the other.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Shaping the Model</span></div>
+    </section>
+
+    <section id="s19" class="sheet bb">
+      <h2 class="sr">Modeling page: a calculated column computes once per row and is stored in the table, while a measure computes on the spot from whatever filters are active and is never stored.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 12</div>
+        <span class="pill">Modeling</span>
+      </div>
+      <h1 class="title">Calculated Column vs Measure</h1>
+      <div class="sub">One is stored. The other is asked for.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a calculated column is the same value every time and gets stored in the table, while a measure uses today's filters and is recalculated live, never stored.">
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <filter id="cs" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter>
+          </defs>
+          <line x1="296" y1="38" x2="296" y2="178" stroke="#CBD2DC" stroke-width="1" stroke-dasharray="5 5"/>
+          <text x="147" y="42" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">CALCULATED COLUMN</text>
+          <text x="445" y="42" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">MEASURE</text>
+          <rect x="87" y="58" width="120" height="38" rx="11" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs)"/>
+          <text x="147" y="82" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E">Same value always</text>
+          <line x1="147" y1="97" x2="147" y2="142" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#ar)"/>
+          <rect x="57" y="146" width="180" height="34" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs)"/>
+          <text x="147" y="167" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#1A1A2E">Stored in the table</text>
+          <rect x="385" y="58" width="120" height="38" rx="11" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs)"/>
+          <text x="445" y="82" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#4F46E5">Uses today's filters</text>
+          <line x1="445" y1="97" x2="445" y2="142" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#ar)"/>
+          <rect x="375" y="146" width="140" height="34" rx="12" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1" filter="url(#cs)"/>
+          <text x="445" y="167" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#0D9488">Recalculated live</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you're about to write your first formula and aren't sure which kind to pick. A <span class="hl">calculated column</span> computes once per row when data refreshes, and that answer sits stored in the table. A <span class="good">measure</span> computes on the spot, using whatever filters are active right now, and it's never stored.</p>
+        <p class="close">If the answer changes with the filters, it's a measure. If not, a column will do.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Ask if the answer should change when a slicer changes. If yes, make it a measure.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Shaping the Model</span></div>
+    </section>
+
+    <section id="s20" class="sheet gp divider">
+      <div class="in">
+        <div class="gp-top">
+          <div class="gp-tab"></div>
+          <span class="gp-pill">Part 4 of 7</span>
+        </div>
+        <div class="dv-mid">
+          <div class="dv-eyebrow">Measures and formulas</div>
+          <div class="dv-num">4</div>
+          <h2 class="dv-name">Writing Your First DAX</h2>
+          <p class="dv-why">The formula language that turns raw rows into numbers worth looking at.</p>
+          <hr class="gp-rule">
+          <div class="dv-list-label">In this part</div>
+          <ol class="dv-list">
+            <li><span class="n">01</span><span class="nm">What DAX Actually Is</span></li>
+            <li><span class="n">02</span><span class="nm">Your First Measure: A Simple SUM</span></li>
+            <li><span class="n">03</span><span class="nm">CALCULATE and the Filter Context</span></li>
+            <li><span class="n">04</span><span class="nm">The Functions Worth Knowing Early</span></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Edition 1.0</span></div>
+      </div>
+    </section>
+
+    <section id="s21" class="sheet bb">
+      <h2 class="sr">DAX page: DAX is the formula language Power BI uses for measures and calculated columns, built from functions, operators, and values, and every formula starts with an equals sign like an Excel formula.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 13</div>
+        <span class="pill">DAX</span>
+      </div>
+      <h1 class="title">What DAX Actually Is</h1>
+      <div class="sub">If you've written an Excel formula, this will feel familiar.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: an Excel formula, equals SUM of A2 to A10, next to a DAX measure, Total Sales equals SUM of Sales Amount, with SUM and the reference highlighted the same colors in both.">
+          <defs><filter id="cs" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+          <text x="296" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">EXCEL</text>
+          <rect x="96" y="48" width="400" height="42" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs)"/>
+          <text x="296" y="74" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:15px"><tspan fill="#1A1A2E">=</tspan><tspan fill="#4F46E5" font-weight="600">SUM</tspan><tspan fill="#1A1A2E">(</tspan><tspan fill="#0D9488">A2:A10</tspan><tspan fill="#1A1A2E">)</tspan></text>
+          <text x="296" y="112" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">DAX</text>
+          <rect x="96" y="120" width="400" height="42" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs)"/>
+          <text x="296" y="146" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:15px"><tspan fill="#1A1A2E">Total Sales = </tspan><tspan fill="#4F46E5" font-weight="600">SUM</tspan><tspan fill="#1A1A2E">(</tspan><tspan fill="#0D9488">Sales[Amount]</tspan><tspan fill="#1A1A2E">)</tspan></text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you're about to write your first formula and the word <span class="hl">DAX</span> is still just letters to you. DAX is the formula language Power BI uses for measures and calculated columns. It starts with an equals sign and calls named functions, the same shape as an Excel formula, just pointed at a table and a column instead of a cell range.</p>
+        <p class="close">If you can write SUM in Excel, you can already read DAX.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Right-click your fact table in the Data pane and choose New measure.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Writing Your First DAX</span></div>
+    </section>
+
+    <section id="s22" class="sheet bb">
+      <h2 class="sr">DAX page: a working SUM measure is written by typing SUM, then the table name, then the column name in square brackets, the smallest useful measure there is.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 14</div>
+        <span class="pill">DAX</span>
+      </div>
+      <h1 class="title">Your First Measure: A Simple SUM</h1>
+      <div class="sub">The smallest useful measure there is.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 226" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sketch of the DAX formula bar with a measure named Total Sales, the letters su typed after the equals sign, and an autocomplete list with SUM highlighted.">
+          <defs>
+            <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <rect x="86" y="14" width="420" height="30" rx="7" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <text x="100" y="34" style="font-family:'JetBrains Mono',monospace;font-size:13px"><tspan fill="#1A1A2E">Total Sales = </tspan><tspan fill="#4F46E5" font-weight="700">su</tspan></text>
+          <rect x="86" y="48" width="230" height="150" rx="8" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <text x="100" y="70" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#5B6472">ISSELECTEDMEASURE</text>
+          <text x="100" y="92" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#5B6472">NONVISUAL</text>
+          <text x="100" y="114" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#5B6472">SELECTEDMEASURE</text>
+          <rect x="94" y="122" width="214" height="24" rx="5" fill="#4F46E5" filter="url(#sketch)"/>
+          <text x="100" y="139" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;fill:#FFFFFF">SUM</text>
+          <text x="100" y="164" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#5B6472">SUMMARIZE</text>
+          <text x="100" y="186" style="font-family:'JetBrains Mono',monospace;font-size:11px;fill:#5B6472">SUMMARIZECOLUMNS</text>
+          <circle cx="330" cy="134" r="11" fill="#4F46E5"/><text x="330" y="134" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">1</text>
+          <text x="296" y="218" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">1 pick SUM from the list</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p><span class="hl">Total Sales = SUM(Sales[Amount])</span> adds up one column, across whatever rows are in view. Type the equals sign, start typing SUM, and pick it from the list. Add the column in brackets, and you have a working measure.</p>
+        <p class="close">Table, then column in square brackets. That pattern carries you a long way.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Write that pattern with your own table and column names.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Writing Your First DAX</span></div>
+    </section>
+
+    <section id="s23" class="sheet bb">
+      <h2 class="sr">DAX page: CALCULATE reruns a calculation under a different set of filters than what would normally apply, and a new filter on a column already filtered elsewhere replaces the old one instead of stacking on top of it.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 15</div>
+        <span class="pill">DAX</span>
+      </div>
+      <h1 class="title">CALCULATE and the Filter Context</h1>
+      <div class="sub">Changing the filters a measure sees before it runs.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the measure West Sales equals CALCULATE of Total Sales where Sales Region is West. All rows are narrowed by CALCULATE into filtered rows for just the West region, then summed into a single result.">
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <filter id="cs" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter>
+          </defs>
+          <rect x="46" y="14" width="500" height="38" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs)"/>
+          <text x="296" y="38" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:12.5px"><tspan fill="#1A1A2E">West Sales = </tspan><tspan fill="#4F46E5" font-weight="600">CALCULATE</tspan><tspan fill="#1A1A2E">([Total Sales], </tspan><tspan fill="#0D9488">Sales[Region] = "West"</tspan><tspan fill="#1A1A2E">)</tspan></text>
+          <text x="197" y="80" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.3px;fill:#4F46E5">CALCULATE</text>
+          <rect x="24" y="90" width="150" height="54" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs)"/>
+          <text x="99" y="113" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#1A1A2E">All rows</text>
+          <text x="99" y="128" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">every region</text>
+          <rect x="220" y="90" width="150" height="54" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs)"/>
+          <text x="295" y="113" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#4F46E5">Filtered rows</text>
+          <text x="295" y="128" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#6366F1">region = West</text>
+          <rect x="416" y="90" width="150" height="54" rx="12" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1" filter="url(#cs)"/>
+          <text x="491" y="113" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#0D9488">The sum</text>
+          <text x="491" y="128" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">West only</text>
+          <line x1="174" y1="117" x2="220" y2="117" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#ar)"/>
+          <line x1="370" y1="117" x2="416" y2="117" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#ar)"/>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say a measure needs a filter of its own, like "sales, but only this region." <span class="hl">CALCULATE</span> reruns your calculation under a different set of filters than what's normally applied. Filter a column that's already filtered elsewhere, and yours replaces that filter rather than stacking on top.</p>
+        <p class="close">CALCULATE adds a filter, or swaps out the one already on that column.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Wrap your Total Sales measure in CALCULATE, add one filter, and watch the number change.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Writing Your First DAX</span></div>
+    </section>
+
+    <section id="s24" class="sheet bb">
+      <h2 class="sr">DAX page: the functions worth knowing early: SUMX and AVERAGEX work row by row, then add up or average the results, COUNTROWS counts rows instead of summing a column, DIVIDE returns a blank or a value you choose when dividing by zero, and RELATED pulls a value across a relationship from another table.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 16</div>
+        <span class="pill">DAX</span>
+      </div>
+      <h1 class="title">The Functions Worth Knowing Early</h1>
+      <div class="sub">The next handful to learn, after SUM.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: one card each, SUMX row then sum, AVERAGEX row then average, COUNTROWS counts rows, DIVIDE blank on zero, RELATED crosses a relationship. Below, an example: SUMX of Sales, Sales Units times Sales Price.">
+          <defs><filter id="cs" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+          <rect x="4" y="16" width="104" height="74" rx="10" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs)"/>
+          <text x="56" y="46" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;fill:#4F46E5">SUMX</text>
+          <text x="56" y="66" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">row, then</text>
+          <text x="56" y="78" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">sum</text>
+          <rect x="124" y="16" width="104" height="74" rx="10" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs)"/>
+          <text x="176" y="46" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;fill:#4F46E5">AVERAGEX</text>
+          <text x="176" y="66" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">row, then</text>
+          <text x="176" y="78" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">average</text>
+          <rect x="244" y="16" width="104" height="74" rx="10" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs)"/>
+          <text x="296" y="46" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;fill:#4F46E5">COUNTROWS</text>
+          <text x="296" y="66" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">counts</text>
+          <text x="296" y="78" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">rows</text>
+          <rect x="364" y="16" width="104" height="74" rx="10" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs)"/>
+          <text x="416" y="46" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;fill:#4F46E5">DIVIDE</text>
+          <text x="416" y="66" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">blank on</text>
+          <text x="416" y="78" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">a zero</text>
+          <rect x="484" y="16" width="104" height="74" rx="10" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs)"/>
+          <text x="536" y="46" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;fill:#4F46E5">RELATED</text>
+          <text x="536" y="66" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">crosses a</text>
+          <text x="536" y="78" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">relationship</text>
+          <text x="296" y="120" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.3px;fill:#5B6472">SUMX, ROW BY ROW</text>
+          <rect x="96" y="128" width="400" height="38" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs)"/>
+          <text x="296" y="152" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:13px"><tspan fill="#4F46E5" font-weight="600">SUMX</tspan><tspan fill="#1A1A2E">(Sales, </tspan><tspan fill="#0D9488">Sales[Units]</tspan><tspan fill="#1A1A2E"> * </tspan><tspan fill="#0D9488">Sales[Price]</tspan><tspan fill="#1A1A2E">)</tspan></text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say <span class="hl">SUM</span> is working and you want more. SUMX and AVERAGEX work row by row, then add up or average the results, like units times price above. COUNTROWS counts rows instead of summing a column. DIVIDE hands back a blank, or a value you pick, on a zero. RELATED pulls in a value across a relationship.</p>
+        <p class="close">You don't need every DAX function that exists. You need these, first.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Pick one and use it once this week, even in a throwaway measure.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Writing Your First DAX</span></div>
+    </section>
+
+    <section id="s25" class="sheet gp divider">
+      <div class="in">
+        <div class="gp-top">
+          <div class="gp-tab"></div>
+          <span class="gp-pill">Part 5 of 7</span>
+        </div>
+        <div class="dv-mid">
+          <div class="dv-eyebrow">Charts and visuals</div>
+          <div class="dv-num">5</div>
+          <h2 class="dv-name">Building the Report</h2>
+          <p class="dv-why">Turning the model into something a reader can look at and understand in seconds.</p>
+          <hr class="gp-rule">
+          <div class="dv-list-label">In this part</div>
+          <ol class="dv-list">
+            <li><span class="n">01</span><span class="nm">Choosing the Right Visual</span></li>
+            <li><span class="n">02</span><span class="nm">Building Your First Bar Chart</span></li>
+            <li><span class="n">03</span><span class="nm">Slicers: Letting the Reader Filter the Page</span></li>
+            <li><span class="n">04</span><span class="nm">Formatting a Visual So It's Readable</span></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Edition 1.0</span></div>
+      </div>
+    </section>
+
+    <section id="s26" class="sheet bb">
+      <h2 class="sr">Visuals page: bar and column charts compare separate categories, line charts show change over time, and a card shows one single number, so say your question first and let it pick the shape.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 17</div>
+        <span class="pill">Visuals</span>
+      </div>
+      <h1 class="title">Choosing the Right Visual</h1>
+      <div class="sub">Say your question first. The shape follows.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a bar chart answers which is biggest, a line chart answers how it's changed, and a card answers what's the one number.">
+          <defs><filter id="cs" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+          <rect x="6" y="52" width="168" height="90" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs)"/>
+          <text x="90" y="84" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;fill:#4F46E5">Bar chart</text>
+          <text x="90" y="106" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">which is</text>
+          <text x="90" y="122" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">biggest</text>
+          <rect x="212" y="52" width="168" height="90" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs)"/>
+          <text x="296" y="84" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;fill:#4F46E5">Line chart</text>
+          <text x="296" y="106" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">how it's</text>
+          <text x="296" y="122" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">changed</text>
+          <rect x="418" y="52" width="168" height="90" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cs)"/>
+          <text x="502" y="84" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;fill:#4F46E5">Card</text>
+          <text x="502" y="106" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">the one</text>
+          <text x="502" y="122" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">number</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you have a measure ready and a blank canvas, staring at the Visualizations pane. <span class="hl">Bar and column charts</span> compare separate categories against each other. A <span class="hl">line chart</span> shows change over time. A <span class="hl">card</span> puts one single number front and center.</p>
+        <p class="close">The question comes first. The chart is just its shape.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Before dragging anything, say your question out loud. It picks the chart for you.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Building the Report</span></div>
+    </section>
+
+    <section id="s27" class="sheet bb">
+      <h2 class="sr">Visuals page: a column chart, the upright kind of bar chart, needs at least one category field on the X-axis and one measure on the Y-axis, and Power BI draws the chart the moment both are filled in.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 18</div>
+        <span class="pill">Visuals</span>
+      </div>
+      <h1 class="title">Building Your First Bar Chart</h1>
+      <div class="sub">One axis, one measure, and it draws itself.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sketch of a column chart titled Total Sales by FiscalMonth, next to the Visualizations pane with the X-axis field well called out, holding FiscalMonth, and Total Sales in the Y-axis well.">
+          <defs>
+            <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <rect x="30" y="20" width="290" height="190" rx="10" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <line x1="50" y1="190" x2="290" y2="190" stroke="#94A3B8" stroke-width="1.5"/>
+          <rect x="56" y="130" width="26" height="60" fill="#4F46E5"/>
+          <rect x="92" y="100" width="26" height="90" fill="#4F46E5"/>
+          <rect x="128" y="150" width="26" height="40" fill="#4F46E5"/>
+          <rect x="164" y="80" width="26" height="110" fill="#4F46E5"/>
+          <rect x="200" y="120" width="26" height="70" fill="#4F46E5"/>
+          <rect x="236" y="60" width="26" height="130" fill="#4F46E5"/>
+          <text x="175" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">Total Sales by FiscalMonth</text>
+          <rect x="336" y="20" width="226" height="190" rx="10" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <text x="352" y="44" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;fill:#1A1A2E">Visualizations</text>
+          <rect x="352" y="56" width="22" height="22" rx="4" fill="#EEF0FE" stroke="#94A3B8" filter="url(#sketch)"/>
+          <rect x="380" y="56" width="22" height="22" rx="4" fill="#EEF0FE" stroke="#94A3B8" filter="url(#sketch)"/>
+          <rect x="408" y="56" width="22" height="22" rx="4" fill="#EEF0FE" stroke="#94A3B8" filter="url(#sketch)"/>
+          <text x="352" y="104" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;fill:#5B6472">X-axis</text>
+          <rect x="352" y="112" width="190" height="26" rx="6" fill="#EEF0FE" stroke="#4F46E5" stroke-width="1.75" filter="url(#sketch)"/>
+          <text x="362" y="130" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E">FiscalMonth</text>
+          <text x="352" y="160" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;fill:#5B6472">Y-axis</text>
+          <rect x="352" y="168" width="190" height="22" rx="6" fill="#F7F8FA" stroke="#E7E9EF" filter="url(#sketch)"/>
+          <text x="362" y="183" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">Total Sales</text>
+          <circle cx="522" cy="125" r="11" fill="#4F46E5"/><text x="522" y="125" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">1</text>
+          <text x="296" y="240" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">1 the X-axis field</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you want to compare sales month by month. Click the column chart icon, the upright kind of bar chart, then drag a category into <span class="hl">X-axis</span> and a measure into <span class="hl">Y-axis</span>. The chart draws itself once both are filled.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Build one column chart with your Total Sales measure and a category.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Building the Report</span></div>
+    </section>
+
+    <section id="s28" class="sheet bb">
+      <h2 class="sr">Visuals page: a slicer is a filter that lives on the report canvas itself, and by default it filters every other visual on the page automatically.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 19</div>
+        <span class="pill">Visuals</span>
+      </div>
+      <h1 class="title">Slicers: Letting the Reader Filter the Page</h1>
+      <div class="sub">A filter that lives on the canvas.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sketch of a basic vertical checkbox slicer titled Category, listing Select all, Mix, Rural, Urban and Youth as options, with Rural ticked.">
+          <defs>
+            <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <rect x="216" y="14" width="160" height="188" rx="10" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <text x="234" y="42" style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;fill:#1A1A2E">Category</text>
+          <rect x="234" y="56" width="14" height="14" rx="3" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+          <text x="256" y="68" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#4F46E5">Select all</text>
+          <rect x="234" y="82" width="14" height="14" rx="3" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+          <text x="256" y="94" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#4F46E5">Mix</text>
+          <rect x="228" y="102" width="138" height="26" rx="6" fill="#EEF0FE" stroke="#4F46E5" stroke-width="1.5" filter="url(#sketch)"/>
+          <rect x="234" y="108" width="14" height="14" rx="3" fill="#4F46E5" stroke="#4F46E5" stroke-width="1.5"/>
+          <path d="M237.5 115.5 L240.5 118.5 L245 111.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="256" y="120" style="font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;fill:#1A1A2E">Rural</text>
+          <rect x="234" y="134" width="14" height="14" rx="3" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+          <text x="256" y="146" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#4F46E5">Urban</text>
+          <rect x="234" y="160" width="14" height="14" rx="3" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+          <text x="256" y="172" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#4F46E5">Youth</text>
+          <circle cx="384" cy="115" r="11" fill="#4F46E5"/><text x="384" y="115" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">1</text>
+          <text x="296" y="222" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">1 select a value</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you want readers to filter without editing anything. A <span class="hl">slicer</span> is a filter that lives on the canvas. Drop one on the page and it filters every other visual by default.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Add a slicer for the field you'd filter by.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Building the Report</span></div>
+    </section>
+
+    <section id="s29" class="sheet bb">
+      <h2 class="sr">Visuals page: the paint roller icon in the Visualizations pane opens the Format pane, where a single toggle turns a chart's title section on or off.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 20</div>
+        <span class="pill">Visuals</span>
+      </div>
+      <h1 class="title">Formatting a Visual So It's Readable</h1>
+      <div class="sub">A chart with no title makes the reader guess.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sketch of a column chart with no title, next to the Visualizations pane with the Format visual paint roller icon called out and the Title toggle switched off, with X-axis and Y-axis toggles on.">
+          <defs>
+            <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <rect x="30" y="20" width="290" height="190" rx="10" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <line x1="50" y1="190" x2="290" y2="190" stroke="#94A3B8" stroke-width="1.5"/>
+          <rect x="56" y="110" width="22" height="80" fill="#0D9488"/>
+          <rect x="88" y="90" width="22" height="100" fill="#0D9488"/>
+          <rect x="120" y="130" width="22" height="60" fill="#0D9488"/>
+          <rect x="152" y="120" width="22" height="70" fill="#0D9488"/>
+          <rect x="184" y="140" width="22" height="50" fill="#0D9488"/>
+          <rect x="216" y="150" width="22" height="40" fill="#0D9488"/>
+          <rect x="110" y="30" width="130" height="20" rx="5" fill="none" stroke="#DC2626" stroke-width="1.25" stroke-dasharray="4 3"/>
+          <text x="175" y="44" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-style:italic;fill:#DC2626">no title</text>
+          <rect x="336" y="20" width="226" height="190" rx="10" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <text x="352" y="44" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;fill:#1A1A2E">Visualizations</text>
+          <rect x="352" y="56" width="24" height="24" rx="5" fill="#F7F8FA" stroke="#94A3B8" filter="url(#sketch)"/>
+          <rect x="382" y="54" width="28" height="28" rx="6" fill="#4F46E5" filter="url(#sketch)"/>
+          <text x="396" y="72" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:13px;fill:#FFFFFF">🖌</text>
+          <rect x="416" y="56" width="24" height="24" rx="5" fill="#F7F8FA" stroke="#94A3B8" filter="url(#sketch)"/>
+          <line x1="352" y1="94" x2="542" y2="94" stroke="#E7E9EF" stroke-width="1.5"/>
+          <rect x="346" y="104" width="196" height="26" rx="6" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/>
+          <text x="356" y="122" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E">Title</text>
+          <rect x="500" y="109" width="34" height="16" rx="8" fill="#E7E9EF"/><circle cx="510" cy="117" r="6" fill="#FFFFFF"/>
+          <text x="356" y="152" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E">X-axis</text>
+          <rect x="500" y="142" width="34" height="16" rx="8" fill="#4F46E5"/><circle cx="526" cy="150" r="6" fill="#FFFFFF"/>
+          <text x="356" y="178" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E">Y-axis</text>
+          <rect x="500" y="168" width="34" height="16" rx="8" fill="#4F46E5"/><circle cx="526" cy="176" r="6" fill="#FFFFFF"/>
+          <circle cx="458" cy="68" r="11" fill="#4F46E5"/><text x="458" y="68" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">1</text>
+          <circle cx="480" cy="117" r="11" fill="#4F46E5"/><text x="480" y="117" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">2</text>
+          <text x="296" y="240" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">1 the paint roller icon · 2 the Title toggle, off</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say a visual works but looks like a rough draft. The <span class="hl">paint roller icon</span> opens formatting: titles, labels, colors, axis ranges. One toggle turns the whole title on or off. Here it's off, and <span class="bad">the reader has to guess</span>.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Turn on data labels and write a real title.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Building the Report</span></div>
+    </section>
+
+    <section id="s30" class="sheet gp divider">
+      <div class="in">
+        <div class="gp-top">
+          <div class="gp-tab"></div>
+          <span class="gp-pill">Part 6 of 7</span>
+        </div>
+        <div class="dv-mid">
+          <div class="dv-eyebrow">Publishing</div>
+          <div class="dv-num">6</div>
+          <h2 class="dv-name">Sharing What You Built</h2>
+          <p class="dv-why">Getting the report out of your laptop and in front of the people who need it.</p>
+          <hr class="gp-rule">
+          <div class="dv-list-label">In this part</div>
+          <ol class="dv-list">
+            <li><span class="n">01</span><span class="nm">Publishing a Report to the Power BI Service</span></li>
+            <li><span class="n">02</span><span class="nm">Sharing a Report With Someone Else</span></li>
+            <li><span class="n">03</span><span class="nm">Scheduling a Data Refresh</span></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Edition 1.0</span></div>
+      </div>
+    </section>
+
+    <section id="s31" class="sheet bb">
+      <h2 class="sr">Publishing page: the Publish button on the Home ribbon uploads your data model and reports from Power BI Desktop into a workspace in the Power BI Service, where the report lives on the web.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 21</div>
+        <span class="pill">Publishing</span>
+      </div>
+      <h1 class="title">Publishing a Report to the Power BI Service</h1>
+      <div class="sub">One button moves it from your laptop to the web.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sketch of the right end of the Power BI Desktop Home ribbon, with the Publish button called out in the Share group.">
+          <defs>
+            <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <rect x="86" y="10" width="420" height="26" rx="8" fill="#1A1A2E" filter="url(#sketch)"/>
+          <text x="466" y="27" text-anchor="end" style="font-family:'Inter',sans-serif;font-size:11px;fill:#FFFFFF">Sign in　─　□　✕</text>
+          <rect x="86" y="46" width="420" height="130" rx="10" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <rect x="104" y="66" width="46" height="40" rx="8" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5" filter="url(#sketch)"/>
+          <text x="127" y="119" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:9.5px;fill:#5B6472">New</text>
+          <text x="127" y="130" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:9.5px;fill:#5B6472">measure</text>
+          <rect x="160" y="66" width="46" height="40" rx="8" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5" filter="url(#sketch)"/>
+          <text x="183" y="119" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:9.5px;fill:#5B6472">Quick</text>
+          <text x="183" y="130" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:9.5px;fill:#5B6472">measure</text>
+          <text x="152" y="150" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:10px;fill:#94A3B8">Calculations</text>
+          <line x1="230" y1="66" x2="230" y2="150" stroke="#E7E9EF" stroke-width="1.5"/>
+          <rect x="250" y="66" width="46" height="40" rx="8" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1.5"/>
+          <text x="273" y="120" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:9.5px;fill:#CBD5E1">Sensitivity</text>
+          <line x1="320" y1="66" x2="320" y2="150" stroke="#E7E9EF" stroke-width="1.5"/>
+          <rect x="340" y="60" width="52" height="52" rx="9" fill="#4F46E5" filter="url(#sketch)"/>
+          <text x="366" y="92" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:16px;fill:#FFFFFF">⬆</text>
+          <text x="366" y="128" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:10.5px;font-weight:700;fill:#1A1A2E">Publish</text>
+          <text x="366" y="150" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:10px;fill:#94A3B8">Share</text>
+          <circle cx="404" cy="86" r="11" fill="#4F46E5"/><text x="404" y="86" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">1</text>
+          <text x="296" y="200" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">1 select Publish</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say your report is finally ready for someone else to see. The <span class="hl">Publish</span> button, right on the Home ribbon, uploads your model and any reports from Desktop into a workspace in the Power BI Service. From there it lives on the web, not just your laptop.</p>
+        <p class="close">Publish early, so your first time isn't under pressure.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Publish once, even to a workspace only you can see.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Sharing What You Built</span></div>
+    </section>
+
+    <section id="s32" class="sheet bb">
+      <h2 class="sr">Publishing page: in the Power BI Service, Share sends a link to a report to a name or email address you type in, and the recipient opens it on the web, in the Service.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 22</div>
+        <span class="pill">Publishing</span>
+      </div>
+      <h1 class="title">Sharing a Report With Someone Else</h1>
+      <div class="sub">Type a name, and the Service sends them a link.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sketch of the Send link dialog in the Power BI service, showing a People in your organization sharing option and a field to enter a name or email address.">
+          <defs>
+            <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <rect x="106" y="10" width="380" height="210" rx="12" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2" filter="url(#sketch)"/>
+          <text x="296" y="40" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;fill:#1A1A2E">Send link</text>
+          <text x="296" y="60" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#5B6472">IT Spend Analysis Sample</text>
+          <text x="470" y="34" style="font-family:'Inter',sans-serif;font-size:14px;fill:#94A3B8">✕</text>
+          <rect x="130" y="78" width="332" height="56" rx="8" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5" filter="url(#sketch)"/>
+          <circle cx="156" cy="106" r="14" fill="#EEF0FE" stroke="#4F46E5"/>
+          <text x="156" y="110" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#4F46E5">👤</text>
+          <text x="180" y="100" style="font-family:'Inter',sans-serif;font-size:11px;fill:#1A1A2E">People in your organization</text>
+          <text x="180" y="116" style="font-family:'Inter',sans-serif;font-size:11px;fill:#1A1A2E">with the link can view and share</text>
+          <text x="446" y="110" style="font-family:'Inter',sans-serif;font-size:14px;fill:#94A3B8">›</text>
+          <rect x="130" y="160" width="332" height="30" rx="7" fill="#FFFFFF" stroke="#4F46E5" stroke-width="1.75" filter="url(#sketch)"/>
+          <text x="142" y="180" style="font-family:'Inter',sans-serif;font-size:12px;fill:#94A3B8">Enter a name or email address</text>
+          <circle cx="88" cy="175" r="11" fill="#4F46E5"/><text x="88" y="175" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">1</text>
+          <text x="296" y="240" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">1 type a name or email</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say a coworker needs to see your report. In the Service, <span class="hl">Share</span> sends a link straight to a name or email you type in. They open it on the web, in the Service, not in Desktop.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Share the report with one real person and ask what's confusing.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Sharing What You Built</span></div>
+    </section>
+
+    <section id="s33" class="sheet bb">
+      <h2 class="sr">Publishing page: turning on a scheduled refresh tells the Power BI Service to reconnect to the source and pull in new data automatically, on a frequency and time you set.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 23</div>
+        <span class="pill">Publishing</span>
+      </div>
+      <h1 class="title">Scheduling a Data Refresh</h1>
+      <div class="sub">Otherwise it freezes the day you published it.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sketch of the Configure a refresh schedule section of a semantic model's settings in the Power BI service, with the schedule toggle switched on.">
+          <defs>
+            <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <rect x="146" y="12" width="300" height="24" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5" filter="url(#sketch)"/>
+          <text x="160" y="28" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#5B6472">(UTC) Coordinated Universal Time ▾</text>
+          <text x="146" y="66" style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;fill:#1A1A2E">Configure a refresh schedule</text>
+          <text x="146" y="86" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#5B6472">Define a schedule to import new data automatically.</text>
+          <rect x="146" y="106" width="300" height="46" rx="10" fill="#ECFBF7" stroke="#0D9488" stroke-width="1.75" filter="url(#sketch)"/>
+          <rect x="164" y="118" width="34" height="20" rx="10" fill="#0D9488" filter="url(#sketch)"/><circle cx="188" cy="128" r="8" fill="#FFFFFF"/>
+          <text x="212" y="134" style="font-family:'Inter',sans-serif;font-size:14px;font-weight:700;fill:#0D9488">On</text>
+          <circle cx="130" cy="129" r="11" fill="#4F46E5"/><text x="130" y="129" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#FFFFFF">1</text>
+          <text x="296" y="192" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12.5px;fill:#5B6472">1 turn the schedule on</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say your source data changes daily, but your published report doesn't. A <span class="hl">scheduled refresh</span> tells the Service to reconnect and pull in new data on its own. Turn the toggle on, the way it's on here, and pick how often. On a Pro licence, that's up to eight times a day.</p>
+        <p class="close">A report nobody refreshes quietly turns into a wrong answer.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Set a refresh schedule on your published semantic model, the data behind the report, even once a day.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Sharing What You Built</span></div>
+    </section>
+
+    <section id="s34" class="sheet gp divider">
+      <div class="in">
+        <div class="gp-top">
+          <div class="gp-tab"></div>
+          <span class="gp-pill">Part 7 of 7</span>
+        </div>
+        <div class="dv-mid">
+          <div class="dv-eyebrow">Next steps</div>
+          <div class="dv-num">7</div>
+          <h2 class="dv-name">Where to Go From Here</h2>
+          <p class="dv-why">The mistakes almost everyone makes early on, and how to avoid them.</p>
+          <hr class="gp-rule">
+          <div class="dv-list-label">In this part</div>
+          <ol class="dv-list">
+            <li><span class="n">01</span><span class="nm">Mistakes Almost Every Beginner Makes</span></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Edition 1.0</span></div>
+      </div>
+    </section>
+
+    <section id="s35" class="sheet bb">
+      <h2 class="sr">Overview page: the same mistakes come up again and again for beginners, no relationships built in Model view, a calculated column used where a measure was needed, and no title on any chart, with the missing relationship being the most common.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Absolute Beginners</b> · No. 24</div>
+        <span class="pill">Overview</span>
+      </div>
+      <h1 class="title">Mistakes Almost Every Beginner Makes</h1>
+      <div class="sub">A short list, worth checking before you share.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a checklist of three common beginner mistakes, with no relationships built in Model view marked as the most common.">
+          <defs><filter id="cs" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs>
+          <rect x="46" y="34" width="500" height="120" rx="14" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cs)"/>
+          <circle cx="80" cy="64" r="10" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/>
+          <text x="80" y="65" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:700;fill:#DC2626">!</text>
+          <text x="100" y="69" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#DC2626">No relationships built in Model view</text>
+          <circle cx="80" cy="94" r="10" fill="#F1F2F6" stroke="#E7E9EF" stroke-width="1"/>
+          <text x="80" y="95" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">✗</text>
+          <text x="100" y="99" style="font-family:'Inter',sans-serif;font-size:13px;fill:#5B6472">A column used where a measure fits</text>
+          <circle cx="80" cy="124" r="10" fill="#F1F2F6" stroke="#E7E9EF" stroke-width="1"/>
+          <text x="80" y="125" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472">✗</text>
+          <text x="100" y="129" style="font-family:'Inter',sans-serif;font-size:13px;fill:#5B6472">No title on any chart</text>
+        </svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you've finished your first report and want a gut check before sharing it. The same handful of mistakes come up over and over: <span class="bad">no relationships built in Model view</span>, a calculated column used where a measure fit better, and a chart with no title on it anywhere.</p>
+        <p class="close">One check catches the most common mistake in this whole book.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Open Model view and look for a floating table with no line to anything else.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Where to Go From Here</span></div>
+    </section>
+
+    <section id="s36" class="sheet gp matter m-sources" data-title="Sources">
+      <div class="in">
+        <div class="gp-top"><div class="gp-tab"></div></div>
+        <h1 class="lp-title">Sources</h1>
+        <hr class="gp-rule">
+        <div class="mt-body">
+          
+          <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">Two Main Components</span><span class="pg">p. 6, 32</span></div><div class="sr">Microsoft Learn, "What is Power BI?": https://learn.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Mobile App Exists Too</span><span class="pg">p. 6</span></div><div class="sr">Microsoft Learn, "What is Power BI?": https://learn.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Desktop Is Free</span><span class="pg">p. 7</span></div><div class="sr">Microsoft Learn, "Download Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-get-the-desktop <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Two Ways To Install</span><span class="pg">p. 7</span></div><div class="sr">Microsoft Learn, "Download Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-get-the-desktop <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Monthly Updates</span><span class="pg">p. 7</span></div><div class="sr">Microsoft Learn, "Download Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-get-the-desktop <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Three View Icons</span><span class="pg">p. 8</span></div><div class="sr">Microsoft Learn, "Report View in Power BI Desktop: Create Reports": https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-report-view <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Ribbon Across The Top</span><span class="pg">p. 8</span></div><div class="sr">Microsoft Learn, "Get started with Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started <span class="ck">· Checked 2026-09-19.</span></div></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Power BI for Absolute Beginners</span></div>
+      </div>
+    </section>
+
+    <section id="s37" class="sheet gp matter m-sources" data-title="Sources">
+      <div class="in">
+        <div class="gp-top"><div class="gp-tab"></div><span class="gp-pill">Sources</span></div>
+        <hr class="gp-rule" style="margin-top:15px">
+        <div class="mt-body">
+          
+          <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">Fields Pane On The Right</span><span class="pg">p. 8</span></div><div class="sr">Microsoft Learn, "Get started with Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">The Views Are Report, Table And Model</span><span class="pg">p. 8</span></div><div class="sr">Microsoft Learn, "Query overview in Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-query-overview <span class="ck">· Checked 2026-09-23.</span></div></li>
+            <li><div class="sh"><span class="nm">Get Data On The Home Ribbon</span><span class="pg">p. 10</span></div><div class="sr">Microsoft Learn, "Quickstart: Connect to data in Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-quickstart-connect-to-data <span class="ck">· Checked 2026-09-23.</span></div></li>
+            <li><div class="sh"><span class="nm">Navigator Checkboxes</span><span class="pg">p. 10</span></div><div class="sr">Microsoft Learn, "Quickstart: Connect to data in Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-quickstart-connect-to-data <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Steps Get Written Down</span><span class="pg">p. 11</span></div><div class="sr">Microsoft Learn, "Applied Steps": https://learn.microsoft.com/en-us/power-query/applied-steps <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Click A Step To Rewind</span><span class="pg">p. 11</span></div><div class="sr">Microsoft Learn, "Applied Steps": https://learn.microsoft.com/en-us/power-query/applied-steps <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Data Type Guessed On Load</span><span class="pg">p. 12</span></div><div class="sr">Microsoft Learn, "Data types in Power BI": https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-data-types <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Set The Type Yourself</span><span class="pg">p. 12</span></div><div class="sr">Microsoft Learn, "Data types in Power BI": https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-data-types <span class="ck">· Checked 2026-09-19.</span></div></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Power BI for Absolute Beginners</span></div>
+      </div>
+    </section>
+
+    <section id="s38" class="sheet gp matter m-sources" data-title="Sources">
+      <div class="in">
+        <div class="gp-top"><div class="gp-tab"></div><span class="gp-pill">Sources</span></div>
+        <hr class="gp-rule" style="margin-top:15px">
+        <div class="mt-body">
+          
+          <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">Right-Click To Remove A Column</span><span class="pg">p. 13</span></div><div class="sr">Microsoft Learn, "Choose or remove columns": https://learn.microsoft.com/en-us/power-query/choose-remove-columns <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Remove Top Rows Command</span><span class="pg">p. 13</span></div><div class="sr">Microsoft Learn, "Filter a table by row position": https://learn.microsoft.com/en-us/power-query/filter-row-position <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Append Stacks Rows</span><span class="pg">p. 14</span></div><div class="sr">Microsoft Learn, "Append Queries": https://learn.microsoft.com/en-us/power-query/append-queries <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Merge Joins On A Shared Column</span><span class="pg">p. 14</span></div><div class="sr">Microsoft Learn, "Merge Queries Overview": https://learn.microsoft.com/en-us/power-query/merge-queries-overview <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Model View Draws The Shape</span><span class="pg">p. 16</span></div><div class="sr">Microsoft Learn, "Model view in Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-relationship-view <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Hover To See The Columns</span><span class="pg">p. 16</span></div><div class="sr">Microsoft Learn, "Model view in Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-relationship-view <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Fact Tables Store Events</span><span class="pg">p. 17</span></div><div class="sr">Microsoft Learn, "Understand star schema and the importance for Power BI": https://learn.microsoft.com/en-us/power-bi/guidance/star-schema <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Dimension Tables Filter And Group</span><span class="pg">p. 17</span></div><div class="sr">Microsoft Learn, "Understand star schema and the importance for Power BI": https://learn.microsoft.com/en-us/power-bi/guidance/star-schema <span class="ck">· Checked 2026-09-19.</span></div></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Power BI for Absolute Beginners</span></div>
+      </div>
+    </section>
+
+    <section id="s39" class="sheet gp matter m-sources" data-title="Sources">
+      <div class="in">
+        <div class="gp-top"><div class="gp-tab"></div><span class="gp-pill">Sources</span></div>
+        <hr class="gp-rule" style="margin-top:15px">
+        <div class="mt-body">
+          
+          <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">Drag One Column Onto Another</span><span class="pg">p. 18</span></div><div class="sr">Microsoft Learn, "Create and Manage Relationships in Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-create-and-manage-relationships <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Relationships Can Build Themselves</span><span class="pg">p. 18</span></div><div class="sr">Microsoft Learn, "Create and Manage Relationships in Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-create-and-manage-relationships <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Calculated Column Gets Stored</span><span class="pg">p. 19</span></div><div class="sr">Microsoft Learn, "Use Calculation Options in Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-calculations-options <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Measures Recalculate Live</span><span class="pg">p. 19</span></div><div class="sr">Microsoft Learn, "Use Calculation Options in Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-calculations-options <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Measures Are Never Stored</span><span class="pg">p. 19</span></div><div class="sr">Microsoft Learn, "Use Calculation Options in Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-calculations-options <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">DAX Is A Formula Language</span><span class="pg">p. 21</span></div><div class="sr">Microsoft Learn, "DAX overview": https://learn.microsoft.com/en-us/dax/dax-overview <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Formulas Start With An Equals Sign</span><span class="pg">p. 21</span></div><div class="sr">Microsoft Learn, "DAX overview": https://learn.microsoft.com/en-us/dax/dax-overview <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">The Fields Pane Is Now The Data Pane</span><span class="pg">p. 21</span></div><div class="sr">Microsoft Learn, "Use the Field list in Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-field-list <span class="ck">· Checked 2026-09-23.</span></div></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Power BI for Absolute Beginners</span></div>
+      </div>
+    </section>
+
+    <section id="s40" class="sheet gp matter m-sources" data-title="Sources">
+      <div class="in">
+        <div class="gp-top"><div class="gp-tab"></div><span class="gp-pill">Sources</span></div>
+        <hr class="gp-rule" style="margin-top:15px">
+        <div class="mt-body">
+          
+          <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">SUM Adds Up A Column</span><span class="pg">p. 22</span></div><div class="sr">Microsoft Learn, "SUM function (DAX)": https://learn.microsoft.com/en-us/dax/sum-function-dax <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">SUM Names The Table Then The Column</span><span class="pg">p. 22</span></div><div class="sr">Microsoft Learn, "SUM function (DAX)": https://learn.microsoft.com/en-us/dax/sum-function-dax <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">CALCULATE Changes The Filter Context</span><span class="pg">p. 23</span></div><div class="sr">Microsoft Learn, "CALCULATE function (DAX)": https://learn.microsoft.com/en-us/dax/calculate-function-dax <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">CALCULATE Adds A Filter Or Overwrites One</span><span class="pg">p. 23</span></div><div class="sr">Microsoft Learn, "CALCULATE function (DAX)": https://learn.microsoft.com/en-us/dax/calculate-function-dax <span class="ck">· Checked 2026-09-23.</span></div></li>
+            <li><div class="sh"><span class="nm">SUMX Works Row By Row Then Totals</span><span class="pg">p. 24</span></div><div class="sr">Microsoft Learn, "SUMX function (DAX)": https://learn.microsoft.com/en-us/dax/sumx-function-dax <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">AVERAGEX Averages Row By Row Results</span><span class="pg">p. 24</span></div><div class="sr">Microsoft Learn, "AVERAGEX function (DAX)": https://learn.microsoft.com/en-us/dax/averagex-function-dax <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">COUNTROWS Counts Rows, Not Values</span><span class="pg">p. 24</span></div><div class="sr">Microsoft Learn, "COUNTROWS function (DAX)": https://learn.microsoft.com/en-us/dax/countrows-function-dax <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">DIVIDE Returns A Blank On Zero</span><span class="pg">p. 24</span></div><div class="sr">Microsoft Learn, "DIVIDE function (DAX)": https://learn.microsoft.com/en-us/dax/divide-function-dax <span class="ck">· Checked 2026-09-23.</span></div></li>
+            <li><div class="sh"><span class="nm">RELATED Reaches Across A Relationship</span><span class="pg">p. 24</span></div><div class="sr">Microsoft Learn, "RELATED function (DAX)": https://learn.microsoft.com/en-us/dax/related-function-dax <span class="ck">· Checked 2026-09-19.</span></div></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Power BI for Absolute Beginners</span></div>
+      </div>
+    </section>
+
+    <section id="s41" class="sheet gp matter m-sources" data-title="Sources">
+      <div class="in">
+        <div class="gp-top"><div class="gp-tab"></div><span class="gp-pill">Sources</span></div>
+        <hr class="gp-rule" style="margin-top:15px">
+        <div class="mt-body">
+          
+          <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">Bar And Column Charts Compare Categories</span><span class="pg">p. 26</span></div><div class="sr">Microsoft Learn, "Overview of visualizations in Power BI": https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualizations-overview <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Line Charts Show Change Over Time</span><span class="pg">p. 26</span></div><div class="sr">Microsoft Learn, "Overview of visualizations in Power BI": https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualizations-overview <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Cards Highlight One Number</span><span class="pg">p. 26</span></div><div class="sr">Microsoft Learn, "Overview of visualizations in Power BI": https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualizations-overview <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">A Column Chart Needs An X-Axis Field And A Y-Axis Measure</span><span class="pg">p. 27</span></div><div class="sr">Microsoft Learn, "Create and use column charts in Power BI": https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-column-charts <span class="ck">· Checked 2026-09-23.</span></div></li>
+            <li><div class="sh"><span class="nm">A Slicer Filters From The Canvas</span><span class="pg">p. 28</span></div><div class="sr">Microsoft Learn, "Overview of slicers in Power BI": https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-slicers <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Slicers Filter Every Other Visual By Default</span><span class="pg">p. 28</span></div><div class="sr">Microsoft Learn, "Overview of slicers in Power BI": https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-slicers <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">The Paint Roller Icon Opens Formatting</span><span class="pg">p. 29</span></div><div class="sr">Microsoft Learn, "Format pane General tab overview": https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-format-pane-overview <span class="ck">· Checked 2026-09-19.</span></div></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Power BI for Absolute Beginners</span></div>
+      </div>
+    </section>
+
+    <section id="s42" class="sheet gp matter m-sources" data-title="Sources">
+      <div class="in">
+        <div class="gp-top"><div class="gp-tab"></div><span class="gp-pill">Sources</span></div>
+        <hr class="gp-rule" style="margin-top:15px">
+        <div class="mt-body">
+          
+          <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">One Toggle Controls The Whole Title</span><span class="pg">p. 29</span></div><div class="sr">Microsoft Learn, "Format pane General tab overview": https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-format-pane-overview <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Publish Lives On The Home Ribbon</span><span class="pg">p. 31</span></div><div class="sr">Microsoft Learn, "Publish from Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-upload-desktop-files <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Publishing Sends Your Model To A Workspace</span><span class="pg">p. 31</span></div><div class="sr">Microsoft Learn, "Publish from Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-upload-desktop-files <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Share By Typing In Names Or Emails</span><span class="pg">p. 32</span></div><div class="sr">Microsoft Learn, "Share and Collaborate on Power BI Reports and Dashboards": https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-share-dashboards <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">External Recipients See It In Their Own Browser Window</span><span class="pg">p. 32</span></div><div class="sr">Microsoft Learn, "Share and Collaborate on Power BI Reports and Dashboards": https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-share-dashboards <span class="ck">· Checked 2026-09-23.</span></div></li>
+            <li><div class="sh"><span class="nm">Sharing Needs A Pro Or PPU Licence</span><span class="pg">p. 32</span></div><div class="sr">Microsoft Learn, "Share and collaborate on Power BI reports and dashboards": https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-share-dashboards <span class="ck">· Checked 2026-09-23.</span></div></li>
+            <li><div class="sh"><span class="nm">Recipients Need A Licence Too</span><span class="pg">p. 32</span></div><div class="sr">Microsoft Learn, "Share and collaborate on Power BI reports and dashboards": https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-share-dashboards <span class="ck">· Checked 2026-09-23.</span></div></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Power BI for Absolute Beginners</span></div>
+      </div>
+    </section>
+
+    <section id="s43" class="sheet gp matter m-sources" data-title="Sources">
+      <div class="in">
+        <div class="gp-top"><div class="gp-tab"></div><span class="gp-pill">Sources</span></div>
+        <hr class="gp-rule" style="margin-top:15px">
+        <div class="mt-body">
+          
+          <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">Scheduled Refresh Runs On A Frequency And Time You Set</span><span class="pg">p. 33</span></div><div class="sr">Microsoft Learn, "Configure scheduled refresh": https://learn.microsoft.com/en-us/power-bi/connect-data/refresh-scheduled-refresh <span class="ck">· Checked 2026-09-19.</span></div></li>
+            <li><div class="sh"><span class="nm">Pro Licenses Cap Refresh At Eight Times A Day</span><span class="pg">p. 33</span></div><div class="sr">Microsoft Learn, "Configure scheduled refresh": https://learn.microsoft.com/en-us/power-bi/connect-data/refresh-scheduled-refresh <span class="ck">· Checked 2026-09-23.</span></div></li>
+            <li><div class="sh"><span class="nm">A Local File May Need A Gateway To Refresh</span><span class="pg">p. 33</span></div><div class="sr">Microsoft Learn, "Data sources for the Power BI service": https://learn.microsoft.com/en-us/power-bi/connect-data/service-get-data <span class="ck">· Checked 2026-09-23.</span></div></li>
+            <li><div class="sh"><span class="nm">Files On OneDrive Or SharePoint Stay Up To Date</span><span class="pg">p. 33</span></div><div class="sr">Microsoft Learn, "Data sources for the Power BI service": https://learn.microsoft.com/en-us/power-bi/connect-data/service-get-data <span class="ck">· Checked 2026-09-23.</span></div></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Power BI for Absolute Beginners</span></div>
+      </div>
+    </section>
+
+    <section id="s44" class="sheet gp index">
+      <div class="in">
+        <div class="gp-top">
+          <div class="gp-tab"></div>
+          <span class="gp-pill">Index</span>
+        </div>
+        <h1 class="lp-title">Index</h1>
+        <hr class="gp-rule">
+        <div class="idx">
+            <div class="idx-row"><span class="nm">A Tour of the Power BI Desktop Window</span><span class="pg">8</span></div>
+            <div class="idx-row"><span class="nm">Building a Relationship Between Two Tables</span><span class="pg">18</span></div>
+            <div class="idx-row"><span class="nm">Building Your First Bar Chart</span><span class="pg">27</span></div>
+            <div class="idx-row"><span class="nm">CALCULATE and the Filter Context</span><span class="pg">23</span></div>
+            <div class="idx-row"><span class="nm">Calculated Column vs Measure</span><span class="pg">19</span></div>
+            <div class="idx-row"><span class="nm">Choosing the Right Visual</span><span class="pg">26</span></div>
+            <div class="idx-row"><span class="nm">Combining Two Queries: Append vs Merge</span><span class="pg">14</span></div>
+            <div class="idx-row"><span class="nm">Connecting to an Excel Workbook</span><span class="pg">10</span></div>
+            <div class="idx-row"><span class="nm">Fact Tables and Dimension Tables</span><span class="pg">17</span></div>
+            <div class="idx-row"><span class="nm">Fixing a Column's Data Type</span><span class="pg">12</span></div>
+            <div class="idx-row"><span class="nm">Formatting a Visual So It's Readable</span><span class="pg">29</span></div>
+            <div class="idx-row"><span class="nm">Installing Power BI Desktop</span><span class="pg">7</span></div>
+            <div class="idx-row"><span class="nm">Mistakes Almost Every Beginner Makes</span><span class="pg">35</span></div>
+            <div class="idx-row"><span class="nm">Publishing a Report to the Power BI Service</span><span class="pg">31</span></div>
+            <div class="idx-row"><span class="nm">Removing Columns and Rows You Don't Need</span><span class="pg">13</span></div>
+            <div class="idx-row"><span class="nm">Scheduling a Data Refresh</span><span class="pg">33</span></div>
+            <div class="idx-row"><span class="nm">Sharing a Report With Someone Else</span><span class="pg">32</span></div>
+            <div class="idx-row"><span class="nm">Slicers: Letting the Reader Filter the Page</span><span class="pg">28</span></div>
+            <div class="idx-row"><span class="nm">The Functions Worth Knowing Early</span><span class="pg">24</span></div>
+            <div class="idx-row"><span class="nm">The Power Query Editor at a Glance</span><span class="pg">11</span></div>
+            <div class="idx-row"><span class="nm">What a Data Model Is</span><span class="pg">16</span></div>
+            <div class="idx-row"><span class="nm">What DAX Actually Is</span><span class="pg">21</span></div>
+            <div class="idx-row"><span class="nm">What Power BI Actually Is</span><span class="pg">6</span></div>
+            <div class="idx-row"><span class="nm">Your First Measure: A Simple SUM</span><span class="pg">22</span></div>
+          </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Power BI for Absolute Beginners</span></div>
+      </div>
+    </section>
+
+
+
+  </main>
+  <script src="../../engine/sheet-tools.js"></script>
+</body>
+</html>

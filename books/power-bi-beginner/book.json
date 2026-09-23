@@ -1,0 +1,140 @@
+{
+  "$schema": "../../engine/book.schema.json",
+  "title": "Power BI for Absolute Beginners",
+  "subtitle": "From opening the app to publishing your first report.",
+  "author": "M2E2 Labs",
+  "series": "Absolute Beginners",
+  "brand": "Third Watch Press",
+  "editionLabel": "Edition 1.0",
+  "unit": "lessons",
+  "numbered": true,
+  "contents": true,
+  "index": true,
+  "cover": {
+    "kicker": "No Experience Required",
+    "note": "One idea per page. No jargon left unexplained.",
+    "art": "<svg viewBox=\"0 0 400 220\" width=\"440\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A sketch of a monitor showing a rising bar chart.\"><defs><filter id=\"sketch\" x=\"-10%\" y=\"-10%\" width=\"120%\" height=\"120%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.045\" numOctaves=\"2\" seed=\"7\" result=\"noise\"/><feDisplacementMap in=\"SourceGraphic\" in2=\"noise\" scale=\"2.5\" xChannelSelector=\"R\" yChannelSelector=\"G\"/></filter></defs><rect x=\"60\" y=\"10\" width=\"280\" height=\"170\" rx=\"14\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\" filter=\"url(#sketch)\"/><line x1=\"80\" y1=\"150\" x2=\"320\" y2=\"150\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><rect x=\"100\" y=\"110\" width=\"30\" height=\"40\" fill=\"#4F46E5\" filter=\"url(#sketch)\"/><rect x=\"150\" y=\"90\" width=\"30\" height=\"60\" fill=\"#4F46E5\" filter=\"url(#sketch)\"/><rect x=\"200\" y=\"65\" width=\"30\" height=\"85\" fill=\"#4F46E5\" filter=\"url(#sketch)\"/><rect x=\"250\" y=\"45\" width=\"30\" height=\"105\" fill=\"#4F46E5\" filter=\"url(#sketch)\"/><path d=\"M95,138 L145,112 L195,85 L245,58 L286,39\" fill=\"none\" stroke=\"#0D9488\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#sketch)\"/><polygon points=\"300,26 280,35 293,50\" fill=\"#0D9488\" filter=\"url(#sketch)\"/><rect x=\"180\" y=\"184\" width=\"40\" height=\"14\" fill=\"#1A1A2E\" filter=\"url(#sketch)\"/><rect x=\"150\" y=\"198\" width=\"100\" height=\"8\" rx=\"4\" fill=\"#1A1A2E\" filter=\"url(#sketch)\"/></svg>"
+  },
+  "copyright": {
+    "year": 2026,
+    "rights": "© 2026 M2E2 Labs. All rights reserved.",
+    "lines": [
+      "Set in Space Grotesk, Inter and JetBrains Mono.",
+      "Power BI is a trademark of Microsoft Corporation. This is an independent guide, not published by or affiliated with Microsoft."
+    ]
+  },
+  "parts": [
+    {
+      "name": "Meet Power BI",
+      "eyebrow": "Before you open it",
+      "why": "What the app actually is and what you're looking at the first time you open it.",
+      "blocks": [
+        "What Power BI Actually Is",
+        "Installing Power BI Desktop",
+        "A Tour of the Power BI Desktop Window"
+      ]
+    },
+    {
+      "name": "Getting Your Data In",
+      "eyebrow": "Power Query",
+      "why": "Bringing a spreadsheet or a file into Power BI and cleaning it up before you build anything.",
+      "blocks": [
+        "Connecting to an Excel Workbook",
+        "The Power Query Editor at a Glance",
+        "Fixing a Column's Data Type",
+        "Removing Columns and Rows You Don't Need",
+        "Combining Two Queries: Append vs Merge"
+      ]
+    },
+    {
+      "name": "Shaping the Model",
+      "eyebrow": "Tables and relationships",
+      "why": "How separate tables connect into one model that can answer real questions.",
+      "blocks": [
+        "What a Data Model Is",
+        "Fact Tables and Dimension Tables",
+        "Building a Relationship Between Two Tables",
+        "Calculated Column vs Measure"
+      ]
+    },
+    {
+      "name": "Writing Your First DAX",
+      "eyebrow": "Measures and formulas",
+      "why": "The formula language that turns raw rows into numbers worth looking at.",
+      "blocks": [
+        "What DAX Actually Is",
+        "Your First Measure: A Simple SUM",
+        "CALCULATE and the Filter Context",
+        "The Functions Worth Knowing Early"
+      ]
+    },
+    {
+      "name": "Building the Report",
+      "eyebrow": "Charts and visuals",
+      "why": "Turning the model into something a reader can look at and understand in seconds.",
+      "blocks": [
+        "Choosing the Right Visual",
+        "Building Your First Bar Chart",
+        "Slicers: Letting the Reader Filter the Page",
+        "Formatting a Visual So It's Readable"
+      ]
+    },
+    {
+      "name": "Sharing What You Built",
+      "eyebrow": "Publishing",
+      "why": "Getting the report out of your laptop and in front of the people who need it.",
+      "blocks": [
+        "Publishing a Report to the Power BI Service",
+        "Sharing a Report With Someone Else",
+        "Scheduling a Data Refresh"
+      ]
+    },
+    {
+      "name": "Where to Go From Here",
+      "eyebrow": "Next steps",
+      "why": "The mistakes almost everyone makes early on, and how to avoid them.",
+      "blocks": [
+        "Mistakes Almost Every Beginner Makes"
+      ]
+    }
+  ],
+  "matter": {
+    "front": [],
+    "back": [
+      {
+        "kind": "sources"
+      },
+      {
+        "kind": "glossary"
+      }
+    ]
+  },
+  "language": "en",
+  "publishing": {
+    "description": "You don't need a data science degree to build your first Power BI report. You just need someone to show you where to click, and why.\n\nPower BI for Absolute Beginners is a hands-on, no-jargon guide for someone who has never opened Power BI Desktop before. Instead of long chapters, you get 24 short, focused lessons, one idea per page, each with a clear diagram showing exactly what to click and one small thing to try before moving on.\n\nInside, you'll learn how to:\n- Install Power BI Desktop and find your way around its three views\n- Connect to an Excel workbook and clean up messy data with Power Query\n- Build a real data model, with relationships between tables done right\n- Write your first DAX formulas, from a simple SUM to CALCULATE and beyond\n- Choose the right chart for the question you're actually asking\n- Add slicers, format your visuals, and publish a report to the Power BI Service\n- Share your work and keep it current with a scheduled refresh\n- Avoid the handful of mistakes almost every beginner makes\n\nEvery explanation is in plain, friendly language: no unexplained acronyms, no assumed expertise. If you can use Excel, you're ready to start.\n\nBy the last page, you won't just know what Power BI is. You'll have built something real in it.",
+    "keywords": [
+      "power bi for beginners",
+      "power bi desktop tutorial",
+      "learn power bi",
+      "dax formulas for beginners",
+      "business intelligence for beginners",
+      "excel to power bi",
+      "data visualization guide"
+    ],
+    "categories": [
+      "COM021030",
+      "COM005030"
+    ],
+    "publisher": "Third Watch Press",
+    "published": "2026-09-20",
+    "audience": "Complete beginners who have never opened Power BI before.",
+    "price": {
+      "amount": 7.99,
+      "currency": "USD"
+    },
+    "isbn": {
+      "print": "",
+      "epub": ""
+    }
+  }
+}

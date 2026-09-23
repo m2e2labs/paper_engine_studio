@@ -1,0 +1,172 @@
+{
+  "pages": {
+    "DAX Is Not Excel, and Not Power Query": {
+      "status": "approved",
+      "hash": "3cc1cbcab7dc",
+      "note": "",
+      "at": "2026-09-22T16:49:06.164Z"
+    },
+    "Measure, Calculated Column, Calculated Table": {
+      "status": "approved",
+      "hash": "46b0f6c91eef",
+      "note": "",
+      "at": "2026-09-22T16:49:08.962Z"
+    },
+    "Where You Type It: The Formula Bar": {
+      "status": "approved",
+      "hash": "434bce8d73a0",
+      "note": "",
+      "at": "2026-09-23T21:23:45.283Z"
+    },
+    "When the Formula Turns Red": {
+      "status": "approved",
+      "hash": "20ca308e2e0c",
+      "note": "",
+      "at": "2026-09-22T16:49:17.442Z"
+    },
+    "Filter Context: The Question the Cell Is Asking": {
+      "status": "approved",
+      "hash": "d701143b8450",
+      "note": "",
+      "at": "2026-09-22T16:49:19.604Z"
+    },
+    "Row Context: What a Calculated Column Sees": {
+      "status": "approved",
+      "hash": "cf4d93fb578a",
+      "note": "",
+      "at": "2026-09-22T16:49:21.058Z"
+    },
+    "CALCULATE: Changing the Question": {
+      "status": "approved",
+      "hash": "c0e4f766506a",
+      "note": "",
+      "at": "2026-09-23T21:23:58.146Z"
+    },
+    "Context Transition: The Thing Nobody Explains": {
+      "status": "approved",
+      "hash": "c74e5c61a08b",
+      "note": "",
+      "at": "2026-09-22T16:49:24.899Z"
+    },
+    "SUM, AVERAGE, MIN and MAX": {
+      "status": "approved",
+      "hash": "4804833bd848",
+      "note": "",
+      "at": "2026-09-22T16:49:27.351Z"
+    },
+    "Counting Things Without Getting It Wrong": {
+      "status": "approved",
+      "hash": "6b7c0b32fb8b",
+      "note": "",
+      "at": "2026-09-22T16:49:29.150Z"
+    },
+    "DIVIDE, and the One Time the Slash Is Fine": {
+      "status": "approved",
+      "hash": "fa9037ecfd77",
+      "note": "",
+      "at": "2026-09-23T21:27:23.489Z"
+    },
+    "IF and SWITCH": {
+      "status": "approved",
+      "hash": "a09f80b847ee",
+      "note": "",
+      "at": "2026-09-23T21:24:07.471Z"
+    },
+    "What an Iterator Actually Does": {
+      "status": "approved",
+      "hash": "f323f2b97a53",
+      "note": "",
+      "at": "2026-09-22T16:49:34.664Z"
+    },
+    "SUMX vs SUM: When You Need the X": {
+      "status": "approved",
+      "hash": "c00a045446ba",
+      "note": "",
+      "at": "2026-09-23T21:24:12.860Z"
+    },
+    "AVERAGEX, MAXX and the Rest of the Family": {
+      "status": "approved",
+      "hash": "c601dec011a1",
+      "note": "",
+      "at": "2026-09-23T21:24:14.789Z"
+    },
+    "RELATED: Reaching Across a Relationship": {
+      "status": "approved",
+      "hash": "a644acf3f24c",
+      "note": "",
+      "at": "2026-09-23T21:24:16.488Z"
+    },
+    "FILTER Returns a Table, Not a Yes or No": {
+      "status": "approved",
+      "hash": "ea4a49a2da38",
+      "note": "",
+      "at": "2026-09-23T21:24:20.699Z"
+    },
+    "ALL: Taking a Filter Off on Purpose": {
+      "status": "approved",
+      "hash": "6bd9ff299d7c",
+      "note": "",
+      "at": "2026-09-23T21:24:22.003Z"
+    },
+    "Percent of Total, the Pattern You'll Reuse Forever": {
+      "status": "approved",
+      "hash": "4b7bc6d67e90",
+      "note": "",
+      "at": "2026-09-22T16:49:59.664Z"
+    },
+    "SELECTEDVALUE: Reading the Slicer": {
+      "status": "approved",
+      "hash": "059b37dc86fa",
+      "note": "",
+      "at": "2026-09-23T21:24:28.528Z"
+    },
+    "Why Every Model Needs a Date Table": {
+      "status": "approved",
+      "hash": "b7c80b006054",
+      "note": "",
+      "at": "2026-09-23T21:24:33.119Z"
+    },
+    "Building One with CALENDAR": {
+      "status": "approved",
+      "hash": "ff9aff23ae6a",
+      "note": "",
+      "at": "2026-09-23T21:24:34.573Z"
+    },
+    "Year to Date with TOTALYTD": {
+      "status": "approved",
+      "hash": "07467bf8f521",
+      "note": "",
+      "at": "2026-09-23T21:24:35.645Z"
+    },
+    "SAMEPERIODLASTYEAR and DATEADD": {
+      "status": "approved",
+      "hash": "7525c4188b69",
+      "note": "",
+      "at": "2026-09-22T16:50:08.537Z"
+    },
+    "VAR and RETURN: Naming the Middle Step": {
+      "status": "approved",
+      "hash": "8cd6556ca1eb",
+      "note": "",
+      "at": "2026-09-22T16:50:10.003Z"
+    },
+    "Formatting a Formula So Future You Can Read It": {
+      "status": "approved",
+      "hash": "88f22f765f71",
+      "note": "",
+      "at": "2026-09-23T21:24:41.023Z"
+    },
+    "Where to Keep Your Measures": {
+      "status": "approved",
+      "hash": "715c24673250",
+      "note": "",
+      "at": "2026-09-23T21:24:42.085Z"
+    },
+    "Mistakes Almost Every Beginner Makes in DAX": {
+      "status": "approved",
+      "hash": "784aef4d685c",
+      "note": "",
+      "at": "2026-09-23T21:27:29.074Z"
+    }
+  }
+}

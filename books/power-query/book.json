@@ -1,0 +1,140 @@
+{
+  "$schema": "../../engine/book.schema.json",
+  "title": "Power Query for Absolute Beginners",
+  "subtitle": "Get the data in, get it clean, and make it stay that way.",
+  "author": "M2E2 Labs",
+  "series": "Absolute Beginners",
+  "brand": "Third Watch Press",
+  "editionLabel": "Edition 1.0",
+  "unit": "lessons",
+  "numbered": true,
+  "contents": true,
+  "index": true,
+  "cover": {
+    "kicker": "Still No Experience Required",
+    "note": "One idea per page. Every step explained.",
+    "art": "<svg viewBox=\"0 0 400 200\" width=\"440\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A sketch of a ragged table full of gaps being turned, one applied step at a time, into a single clean table.\">\n  <defs><filter id=\"pqCoverSketch\" filterUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"400\" height=\"200\">\n    <feTurbulence type=\"fractalNoise\" baseFrequency=\"0.045\" numOctaves=\"2\" seed=\"17\" result=\"noise\"/>\n    <feDisplacementMap in=\"SourceGraphic\" in2=\"noise\" scale=\"2.5\" xChannelSelector=\"R\" yChannelSelector=\"G\"/>\n  </filter></defs>\n  <g filter=\"url(#pqCoverSketch)\">\n    <rect x=\"24\" y=\"48\" width=\"120\" height=\"104\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/>\n    <rect x=\"64\" y=\"88\" width=\"40\" height=\"30\" fill=\"#FEF2F2\"/>\n    <rect x=\"104\" y=\"48\" width=\"40\" height=\"24\" fill=\"#FEF2F2\"/>\n    <line x1=\"24\" y1=\"72\" x2=\"144\" y2=\"72\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/>\n    <line x1=\"24\" y1=\"88\" x2=\"144\" y2=\"88\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/>\n    <line x1=\"24\" y1=\"118\" x2=\"144\" y2=\"118\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/>\n    <line x1=\"24\" y1=\"132\" x2=\"144\" y2=\"132\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/>\n    <line x1=\"64\" y1=\"48\" x2=\"64\" y2=\"152\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/>\n    <line x1=\"104\" y1=\"48\" x2=\"104\" y2=\"152\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/>\n\n    <line x1=\"150\" y1=\"100\" x2=\"163\" y2=\"100\" stroke=\"#94A3B8\" stroke-width=\"2.5\"/>\n    <polygon points=\"163,95 172,100 163,105\" fill=\"#94A3B8\"/>\n\n    <line x1=\"190\" y1=\"72\" x2=\"190\" y2=\"128\" stroke=\"#D5D8FA\" stroke-width=\"2.5\"/>\n    <rect x=\"176\" y=\"62\" width=\"44\" height=\"18\" rx=\"5\" fill=\"#EEF0FE\" stroke=\"#4F46E5\" stroke-width=\"2\"/>\n    <rect x=\"176\" y=\"91\" width=\"44\" height=\"18\" rx=\"5\" fill=\"#EEF0FE\" stroke=\"#4F46E5\" stroke-width=\"2\"/>\n    <rect x=\"176\" y=\"120\" width=\"44\" height=\"18\" rx=\"5\" fill=\"#EEF0FE\" stroke=\"#4F46E5\" stroke-width=\"2\"/>\n\n    <line x1=\"228\" y1=\"100\" x2=\"241\" y2=\"100\" stroke=\"#94A3B8\" stroke-width=\"2.5\"/>\n    <polygon points=\"241,95 250,100 241,105\" fill=\"#94A3B8\"/>\n\n    <rect x=\"256\" y=\"48\" width=\"120\" height=\"104\" rx=\"3\" fill=\"#ECFDF5\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/>\n    <line x1=\"256\" y1=\"74\" x2=\"376\" y2=\"74\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/>\n    <line x1=\"256\" y1=\"100\" x2=\"376\" y2=\"100\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/>\n    <line x1=\"256\" y1=\"126\" x2=\"376\" y2=\"126\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/>\n    <line x1=\"296\" y1=\"48\" x2=\"296\" y2=\"152\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/>\n    <line x1=\"336\" y1=\"48\" x2=\"336\" y2=\"152\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/>\n  </g>\n</svg>"
+  },
+  "copyright": {
+    "year": 2026,
+    "rights": "© 2026 M2E2 Labs. All rights reserved.",
+    "lines": [
+      "Set in Space Grotesk, Inter and JetBrains Mono.",
+      "Power BI and Power Query are trademarks of Microsoft Corporation. This is an independent guide, not published by or affiliated with Microsoft."
+    ]
+  },
+  "parts": [
+    {
+      "name": "What Power Query Actually Is",
+      "eyebrow": "Before you change a single cell",
+      "why": "Which of the two languages you're writing, where the work is kept, and what Close & Apply really does.",
+      "blocks": [
+        "Power Query Is Not DAX, and Not Excel",
+        "A Tour of the Power Query Editor",
+        "Applied Steps: A Recipe, Not an Edit",
+        "Close and Apply: What Loads and What Doesn't"
+      ]
+    },
+    {
+      "name": "Getting Data In",
+      "eyebrow": "Connect, preview, load",
+      "why": "Pointing at a file, choosing what comes through, and getting the types right before anything else.",
+      "blocks": [
+        "Connecting to Excel and CSV",
+        "The Navigator: Choosing What to Load",
+        "Get Data from a Folder: Many Files, One Table",
+        "Data Types: Set Them Early, Set Them Once"
+      ]
+    },
+    {
+      "name": "Cleaning What Arrived",
+      "eyebrow": "The unglamorous half",
+      "why": "Headers, junk rows, stray spaces and the columns nobody needs. Most of a real query is this.",
+      "blocks": [
+        "Promote Headers and Remove the Junk Rows",
+        "Choosing, Removing and Renaming Columns",
+        "Replace Values, Trim and Clean",
+        "Filtering Rows: Narrowing Without Deleting"
+      ]
+    },
+    {
+      "name": "Reshaping a Table",
+      "eyebrow": "Changing its shape, not its contents",
+      "why": "Splitting, combining, unpivoting and grouping: the four moves that turn a human-shaped sheet into a machine-shaped table.",
+      "blocks": [
+        "Splitting One Column Into Many",
+        "Merge Columns and the Custom Column",
+        "Unpivot: The Fix for a Sheet Built for Humans",
+        "Group By: Summarising Before It Loads"
+      ]
+    },
+    {
+      "name": "Combining Queries",
+      "eyebrow": "More than one table",
+      "why": "Stacking tables, joining them, and knowing which of the two you actually need.",
+      "blocks": [
+        "Append or Merge: Which One You Need",
+        "Append: Stacking Tables End to End",
+        "Merge: Joining Side by Side, and the Join Kinds",
+        "Duplicate or Reference: Two Ways to Branch"
+      ]
+    },
+    {
+      "name": "Why It's Slow, and Why It Breaks",
+      "eyebrow": "The part nobody warns you about",
+      "why": "Query folding, how to tell whether yours folds, and the refresh errors that only turn up after you've shared the report.",
+      "blocks": [
+        "Query Folding: Letting the Source Do the Work",
+        "Seeing Whether Your Query Folds",
+        "The Steps That Stop It Folding",
+        "Refresh Errors: Renamed Columns and Moved Files"
+      ]
+    },
+    {
+      "name": "Power Query You Can Live With",
+      "eyebrow": "Craft",
+      "why": "The code behind the buttons, one place to change the file path, and the mistakes worth knowing by name.",
+      "blocks": [
+        "The Advanced Editor and Your First Look at M",
+        "let and in: How Every Query Is Built",
+        "Parameters: One Place to Change the Path",
+        "Mistakes Almost Every Beginner Makes in Power Query"
+      ]
+    }
+  ],
+  "matter": {
+    "front": [],
+    "back": [
+      {
+        "kind": "sources"
+      },
+      {
+        "kind": "glossary"
+      }
+    ]
+  },
+  "language": "en",
+  "publishing": {
+    "description": "Power Query is the half of Power BI nobody puts on the box, and it is where most beginners actually get stuck.\n\nPower Query for Absolute Beginners picks up the moment your data arrives messy. A title row above the headers. Twelve month columns laid out for a human to read. A folder of spreadsheets that grows every month. None of that is a formula problem, and no amount of DAX will fix it.\n\nThis is 28 short lessons, one idea per page, each with a clear diagram of what is actually happening and one small thing to try in a file of your own.\n\nInside, you'll learn how to:\n- Tell Power Query apart from DAX, and know which of the two a problem belongs to\n- Read Applied Steps as a recipe that reruns, rather than edits you made once\n- Connect to Excel, CSV and a whole folder of files that grows on its own\n- Promote headers, strip junk rows, and clean the spaces that quietly break a join\n- Unpivot a sheet built for human eyes into a table a model can use\n- Append and merge, and know which of the two you actually need\n- Keep query folding alive, so a refresh takes seconds instead of an hour\n- Read the M behind the buttons, and pull a file path out into a parameter\n- Avoid the handful of mistakes almost every beginner makes\n\nNo unexplained jargon, no assumed expertise. If you can open Power BI Desktop, you're ready to start.\n\nBy the last page, your data won't just be in. It will stay in, every refresh.",
+    "keywords": [
+      "power query for beginners",
+      "power query tutorial",
+      "learn power query",
+      "power query m language",
+      "get and transform excel",
+      "data cleaning power bi",
+      "etl for beginners"
+    ],
+    "categories": [
+      "COM021030",
+      "COM053000"
+    ],
+    "publisher": "M2E2 Labs",
+    "published": "",
+    "audience": "Readers who can open Power BI Desktop and now need to get messy data into it and keep it working.",
+    "isbn": {
+      "print": "",
+      "epub": ""
+    }
+  }
+}

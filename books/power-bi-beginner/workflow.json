@@ -1,0 +1,154 @@
+{
+  "pages": {
+    "What Power BI Actually Is": {
+      "status": "approved",
+      "hash": "717ba476744d",
+      "note": "",
+      "at": "2026-09-20T12:41:24.449Z"
+    },
+    "Installing Power BI Desktop": {
+      "status": "approved",
+      "hash": "19a13339b567",
+      "note": "",
+      "at": "2026-09-23T20:07:33.569Z"
+    },
+    "A Tour of the Power BI Desktop Window": {
+      "status": "approved",
+      "hash": "e5989556e10f",
+      "note": "",
+      "at": "2026-09-23T20:07:35.562Z"
+    },
+    "Connecting to an Excel Workbook": {
+      "status": "approved",
+      "hash": "ac4ac7465c1c",
+      "note": "",
+      "at": "2026-09-23T20:07:37.444Z"
+    },
+    "The Power Query Editor at a Glance": {
+      "status": "approved",
+      "hash": "79e6e344ed0f",
+      "note": "",
+      "at": "2026-09-23T20:07:39.831Z"
+    },
+    "Fixing a Column's Data Type": {
+      "status": "approved",
+      "hash": "d6bf02b91bfa",
+      "note": "",
+      "at": "2026-09-23T20:07:41.806Z"
+    },
+    "Removing Columns and Rows You Don't Need": {
+      "status": "approved",
+      "hash": "7788241322ee",
+      "note": "",
+      "at": "2026-09-23T20:07:46.404Z"
+    },
+    "Combining Two Queries: Append vs Merge": {
+      "status": "approved",
+      "hash": "540edaad1d6e",
+      "note": "",
+      "at": "2026-09-23T20:07:47.548Z"
+    },
+    "What a Data Model Is": {
+      "status": "approved",
+      "hash": "ddcc02428a4a",
+      "note": "",
+      "at": "2026-09-23T20:07:50.822Z"
+    },
+    "Fact Tables and Dimension Tables": {
+      "status": "approved",
+      "hash": "50c723eb2571",
+      "note": "",
+      "at": "2026-09-23T20:07:52.875Z"
+    },
+    "Building a Relationship Between Two Tables": {
+      "status": "approved",
+      "hash": "69a07c166d63",
+      "note": "",
+      "at": "2026-09-23T20:07:54.358Z"
+    },
+    "Calculated Column vs Measure": {
+      "status": "approved",
+      "hash": "d4a4452b61bc",
+      "note": "",
+      "at": "2026-09-23T20:07:55.979Z"
+    },
+    "What DAX Actually Is": {
+      "status": "approved",
+      "hash": "5d2a2488dd79",
+      "note": "",
+      "at": "2026-09-23T20:07:57.449Z"
+    },
+    "Your First Measure: A Simple SUM": {
+      "status": "approved",
+      "hash": "b02090b8ee79",
+      "note": "",
+      "at": "2026-09-23T20:08:02.604Z"
+    },
+    "CALCULATE and the Filter Context": {
+      "status": "approved",
+      "hash": "1c9dbb330684",
+      "note": "",
+      "at": "2026-09-23T20:08:04.509Z"
+    },
+    "Five Functions Worth Knowing Early": {
+      "status": "approved",
+      "hash": "e91e78ae79cf",
+      "note": "",
+      "at": "2026-09-20T12:38:15.003Z"
+    },
+    "Choosing the Right Visual": {
+      "status": "approved",
+      "hash": "d51f03404c05",
+      "note": "",
+      "at": "2026-09-23T20:08:05.800Z"
+    },
+    "Building Your First Bar Chart": {
+      "status": "approved",
+      "hash": "d96de4be9d6d",
+      "note": "",
+      "at": "2026-09-23T20:08:07.129Z"
+    },
+    "Slicers: Letting the Reader Filter the Page": {
+      "status": "approved",
+      "hash": "e480b79d90b3",
+      "note": "",
+      "at": "2026-09-23T20:08:08.632Z"
+    },
+    "Formatting a Visual So It's Readable": {
+      "status": "approved",
+      "hash": "7a6d394b09d2",
+      "note": "",
+      "at": "2026-09-23T20:08:10.468Z"
+    },
+    "Publishing a Report to the Power BI Service": {
+      "status": "approved",
+      "hash": "af6e36204443",
+      "note": "",
+      "at": "2026-09-23T20:08:14.233Z"
+    },
+    "Sharing a Report With Someone Else": {
+      "status": "approved",
+      "hash": "88e0f3a3cb38",
+      "note": "",
+      "at": "2026-09-23T20:08:15.677Z"
+    },
+    "Scheduling a Data Refresh": {
+      "status": "approved",
+      "hash": "8505dba9f381",
+      "note": "",
+      "at": "2026-09-23T20:08:16.507Z"
+    },
+    "Mistakes Almost Every Beginner Makes": {
+      "status": "approved",
+      "hash": "a02121bb2b67",
+      "note": "",
+      "at": "2026-09-23T20:09:11.009Z"
+    },
+    "The Functions Worth Knowing Early": {
+      "status": "approved",
+      "hash": "41794098043f",
+      "note": "",
+      "at": "2026-09-23T20:09:32.184Z"
+    }
+  }
+}
