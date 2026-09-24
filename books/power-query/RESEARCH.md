@@ -1789,3 +1789,363 @@ in seconds. It is never printed: the book says things in its own words.
 - **Verified:** 2026-09-23, quote found on the page
 
 ---
+
+## R149 · Trailing spaces are trimmed, leading ones are not
+- **Claim:** The Power BI engine automatically trims trailing spaces that follow text data, but it does not remove leading spaces that come before it.
+- **Source:** Microsoft Learn, "Data types in Power BI": https://learn.microsoft.com/power-bi/connect-data/desktop-data-types
+- **Quote:** "The Power BI engine automatically trims any trailing spaces that follow text data, but doesn't remove leading spaces that precede the data."
+- **Kind:** reference
+- **Retrieved:** 2026-09-23
+- **For:** Replace Values, Trim and Clean
+- **Status:** accepted as F149, 2026-09-23
+- **Verified:** 2026-09-23, quote found on the page
+
+---
+
+## R150 · A leading space breaks relationships and visuals
+- **Claim:** If leading spaces are not removed, a relationship can fail to be created because duplicate values are detected, or visuals can return unexpected results.
+- **Source:** Microsoft Learn, "Data types in Power BI": https://learn.microsoft.com/power-bi/connect-data/desktop-data-types
+- **Quote:** "If you don't remove leading spaces, a relationship might fail to create because of duplicate values, or visuals might return unexpected results."
+- **Kind:** reference
+- **Retrieved:** 2026-09-23
+- **For:** Replace Values, Trim and Clean
+- **Status:** accepted as F150, 2026-09-23
+- **Verified:** 2026-09-23, quote found on the page
+
+---
+
+## R151 · Four rows in the table, two rows in the visual
+- **Claim:** In Microsoft's worked example, the same customer name entered four times with different leading and trailing spaces loads as four rows, but a visual built on it returns just two.
+- **Source:** Microsoft Learn, "Data types in Power BI": https://learn.microsoft.com/power-bi/connect-data/desktop-data-types
+- **Quote:** "However, a visual based on this data returns just two rows."
+- **Kind:** reference
+- **Retrieved:** 2026-09-23
+- **For:** Replace Values, Trim and Clean
+- **Status:** accepted as F151, 2026-09-23
+- **Verified:** 2026-09-23, quote found on the page
+
+---
+
+## R152 · Trim is the fix, in Power Query
+- **Claim:** Errors of this kind are traced back to leading or trailing spaces and fixed with Text.Trim, or Format then Trim on the Transform tab, in Power Query Editor.
+- **Source:** Microsoft Learn, "Data types in Power BI": https://learn.microsoft.com/power-bi/connect-data/desktop-data-types
+- **Quote:** "You can trace these errors back to leading or trailing spaces, and resolve them by using Text.Trim, or Format > Trim under Transform, to remove the spaces in Power Query Editor."
+- **Kind:** reference
+- **Retrieved:** 2026-09-23
+- **For:** Replace Values, Trim and Clean
+- **Status:** accepted as F152, 2026-09-23
+- **Verified:** 2026-09-23, quote found on the page
+
+---
+
+## R153 · The model ignores case, Power Query does not
+- **Claim:** The engine that stores and queries data in Power BI is case insensitive and treats different capitalisation as the same value, while Power Query is case sensitive, so values that differ only by case get merged on load.
+- **Source:** Microsoft Learn, "Data types in Power BI": https://learn.microsoft.com/power-bi/connect-data/desktop-data-types
+- **Quote:** "The engine that stores and queries data in Power BI is case insensitive, and treats different capitalization of letters as the same value."
+- **Kind:** reference
+- **Retrieved:** 2026-09-23
+- **For:** Replace Values, Trim and Clean
+- **Status:** accepted as F153, 2026-09-23
+- **Verified:** 2026-09-23, quote found on the page
+
+---
+
+## R154 · Pre-summarised data is the biggest size saving there is
+- **Claim:** Loading pre-summarised data is perhaps the most effective technique for reducing the size of a model, with a distinct trade-off in lost detail.
+- **Source:** Microsoft Learn, "Data reduction techniques for Import modeling": https://learn.microsoft.com/power-bi/guidance/import-modeling-data-reduction
+- **Quote:** "Perhaps the most effective technique to reduce a model size is to load pre-summarized data."
+- **Kind:** reference
+- **Retrieved:** 2026-09-23
+- **For:** Group By: Summarising Before It Loads
+- **Status:** accepted as F154, 2026-09-23
+- **Verified:** 2026-09-23, quote found on the page
+
+---
+
+## R155 · 99% smaller, and the detail is gone
+- **Claim:** In Microsoft's example, grouping sales to month level could achieve a possible 99% reduction in model size, after which reporting at day level or at individual order line level is no longer possible.
+- **Source:** Microsoft Learn, "Data reduction techniques for Import modeling": https://learn.microsoft.com/power-bi/guidance/import-modeling-data-reduction
+- **Quote:** "While it could achieve a possible 99% reduction in model size, reporting at day level or individual order line level is no longer possible."
+- **Kind:** reference
+- **Retrieved:** 2026-09-23
+- **For:** Group By: Summarising Before It Loads
+- **Status:** accepted as F155, 2026-09-23
+- **Verified:** 2026-09-23, quote found on the page
+
+---
+
+## R156 · A smaller model refreshes faster
+- **Claim:** Smaller model sizes refresh faster, which means lower latency reporting and less pressure on the source system.
+- **Source:** Microsoft Learn, "Data reduction techniques for Import modeling": https://learn.microsoft.com/power-bi/guidance/import-modeling-data-reduction
+- **Quote:** "Smaller model sizes achieve faster data refresh, resulting in lower latency reporting, higher semantic model refresh throughput, and less pressure on source system and capacity resources."
+- **Kind:** reference
+- **Retrieved:** 2026-09-23
+- **For:** Group By: Summarising Before It Loads; Query Folding: Letting the Source Do the Work
+- **Status:** accepted as F156, 2026-09-23
+- **Verified:** 2026-09-23, quote found on the page
+
+---
+
+## R157 · Adding a column back later is the easy direction
+- **Claim:** It is easier to add columns to a model later than to remove them later, because removing a column can break reports or the model structure.
+- **Source:** Microsoft Learn, "Data reduction techniques for Import modeling": https://learn.microsoft.com/power-bi/guidance/import-modeling-data-reduction
+- **Quote:** "bear in mind that it's easier to add columns later than it is to remove them later. Removing columns can break reports or the model structure."
+- **Kind:** reference
+- **Retrieved:** 2026-09-23
+- **For:** Choosing, Removing and Renaming Columns
+- **Status:** accepted as F157, 2026-09-23
+- **Verified:** 2026-09-23, quote found on the page
+
+---
+
+## R158 · Rename here, because the report shows these names
+- **Claim:** Microsoft's own walkthrough says to rename any column whose meaning is not obvious while still in Power Query, because short, clear column names are what show up in the report later.
+- **Source:** Microsoft Learn, "End-to-end: From raw data to a shared Power BI app": https://learn.microsoft.com/power-bi/create-reports/tutorial-end-to-end-power-bi
+- **Quote:** "Rename any column whose meaning isn't obvious from its name. Short, clear column names show up in your Power BI report later, so fix them before modeling."
+- **Kind:** reference
+- **Retrieved:** 2026-09-23
+- **For:** Choosing, Removing and Renaming Columns
+- **Status:** accepted as F158, 2026-09-23
+- **Verified:** 2026-09-23, quote found on the page
+
+---
+
+## R159 · Data source settings, then Change Source
+- **Claim:** Data source settings is opened from Transform data on the Home tab, and a connection is repointed by picking it from the list and selecting Change Source; Microsoft documents this route for switching a live Analysis Services connection to a different server.
+- **Source:** Microsoft Learn, "Connect to Analysis Services tabular data in Power BI Desktop": https://learn.microsoft.com/power-bi/connect-data/desktop-analysis-services-tabular-data
+- **Quote:** "In the Data source settings window, select the database from the list, then select the Change Source... button."
+- **Kind:** reference
+- **Retrieved:** 2026-09-23
+- **For:** Refresh Errors: Renamed Columns and Moved Files
+- **Status:** accepted as F159, 2026-09-23
+- **Verified:** 2026-09-23, quote found on the page
+
+---
+
+## R160 · Promoted Headers is the step name in Excel
+- **Claim:** In Excel, automatic detection adds a step named Promoted Headers right after Source, which turns the first row into the column headers.
+- **Source:** Microsoft Support, "Add or change data types (Power Query)": https://support.microsoft.com/en-us/excel/add-or-change-data-types-power-query
+- **Quote:** "Step: Promoted Headers Promotes the first row of the table to be the column header."
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** Promote Headers and Remove the Junk Rows
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R161 · Changed Type is the step name in Excel
+- **Claim:** In Excel, the automatic type step is named Changed Type, and it converts each column from Any to a type guessed from its values.
+- **Source:** Microsoft Support, "Add or change data types (Power Query)": https://support.microsoft.com/en-us/excel/add-or-change-data-types-power-query
+- **Quote:** "Step: Changed Type Converts the values from the Any data type to a data type based on the inspection"
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** Applied Steps: A Recipe, Not an Edit
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R162 · Removed Columns is a step name
+- **Claim:** In a Power BI Desktop query, removing unneeded columns shows up in Applied Steps as a step named Removed Columns.
+- **Source:** Microsoft Learn, "Shape and combine data in Power BI Desktop": https://learn.microsoft.com/power-bi/connect-data/desktop-shape-and-combine-data
+- **Quote:** "Removed Columns: Removes unnecessary columns."
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** Choosing, Removing and Renaming Columns
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R163 · Removed Other Columns is a step name
+- **Claim:** In Microsoft's Excel tutorial, the Remove Other Columns command creates a query step named Removed Other Columns.
+- **Source:** Microsoft Support, "Learn to combine multiple data sources (Power Query)": https://support.microsoft.com/en-us/office/learn-to-combine-multiple-data-sources-power-query-70cfe661-5a2a-4d9d-a4fe-586cc7878c7d
+- **Quote:** "Remove other columns to only display columns of interest Removed Other Columns"
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** Choosing, Removing and Renaming Columns
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R164 · Filtered Rows in Microsoft's sample M
+- **Claim:** In the sample M query on Microsoft's "What is Power Query?" page, the row-filter step is named Filtered Rows and uses Table.SelectRows.
+- **Source:** Microsoft Learn, "What is Power Query?": https://learn.microsoft.com/power-query/power-query-what-is-power-query
+- **Quote:** "#"Filtered Rows" = Table.SelectRows(#"Expanded Sender"
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** Filtering Rows: Narrowing Without Deleting
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R165 · Picking a table in the Navigator makes a Navigation step
+- **Claim:** When you pick a table in the Navigator after connecting to an Excel workbook, Power Query adds a step named Navigation to Applied Steps.
+- **Source:** Microsoft Support, "Learn to combine multiple data sources (Power Query)": https://support.microsoft.com/en-us/office/learn-to-combine-multiple-data-sources-power-query-70cfe661-5a2a-4d9d-a4fe-586cc7878c7d
+- **Quote:** "Right-click the Navigation step, and select Edit Settings. This step was created when you selected the table from the Navigation dialog box."
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** The Advanced Editor and Your First Look at M
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R166 · In the code, the Navigation step has the table's name
+- **Claim:** In Microsoft's Excel tutorial, the Changed Type formula refers to the table picked in the Navigator as Products_Table, not by the word Navigation.
+- **Source:** Microsoft Support, "Learn to combine multiple data sources (Power Query)": https://support.microsoft.com/en-us/office/learn-to-combine-multiple-data-sources-power-query-70cfe661-5a2a-4d9d-a4fe-586cc7878c7d
+- **Quote:** "Table.TransformColumnTypes( Products_Table"
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** The Advanced Editor and Your First Look at M
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R167 · The header icons: 123, 1.2, ABC
+- **Claim:** The icon left of a column header shows its type: 123 for whole number, 1.2 for decimal, a calendar for date, and ABC for text.
+- **Source:** Microsoft Learn, "End-to-end: From raw data to a shared Power BI app": https://learn.microsoft.com/power-bi/create-reports/tutorial-end-to-end-power-bi
+- **Quote:** "123 for whole number, 1.2 for decimal, the calendar icon for date, and ABC for text"
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** Data Types: Set Them Early, Set Them Once
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R168 · A folder query is set up once and refreshed
+- **Claim:** Microsoft's Excel help describes a folder query as set up once and then refreshed to see each month's results, using monthly budget workbooks as the example.
+- **Source:** Microsoft Support, "Import data from a folder with multiple files (Power Query)": https://support.microsoft.com/en-us/office/import-data-from-a-folder-with-multiple-files-power-query-94b8023c-2e66-4f6b-8c78-6a00041c90e4
+- **Quote:** "then refresh the data to see results for each month"
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** Get Data from a Folder: Many Files, One Table
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R169 · Source is the step that connects
+- **Claim:** The Source step is the one that connects to the original data; in Microsoft's Power BI tutorial it is the first step listed.
+- **Source:** Microsoft Learn, "Shape and combine data in Power BI Desktop": https://learn.microsoft.com/power-bi/connect-data/desktop-shape-and-combine-data
+- **Quote:** "Source: Connects to the original data."
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** Connecting to Excel and CSV
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R170 · The Source step holds the file path
+- **Claim:** For an Excel workbook, the Source step is created on import and its formula holds the file path inside File.Contents.
+- **Source:** Microsoft Support, "Learn to combine multiple data sources (Power Query)": https://support.microsoft.com/en-us/office/learn-to-combine-multiple-data-sources-power-query-70cfe661-5a2a-4d9d-a4fe-586cc7878c7d
+- **Quote:** "Excel.Workbook(File.Contents("C:\Products and Orders.xlsx"), null, true)"
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** Connecting to Excel and CSV
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R171 · New Parameter, under Manage Parameters
+- **Claim:** A parameter can be created with New Parameter from the Manage Parameters dropdown on the Home tab, or with New inside the Manage Parameters window.
+- **Source:** Microsoft Learn, "Using parameters": https://learn.microsoft.com/power-query/power-query-query-parameters
+- **Quote:** "Select the New Parameter option from the dropdown menu of Manage Parameters in the Home tab."
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** Parameters: One Place to Change the Path
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R172 · Append queries is on Home, in Combine
+- **Claim:** Append queries is on the Home tab in the Combine group, and its dropdown holds two options.
+- **Source:** Microsoft Learn, "Append queries": https://learn.microsoft.com/power-query/append-queries
+- **Quote:** "You can find the Append queries command on the Home tab in the Combine group."
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** Append or Merge: Which One You Need
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R173 · Merge queries is on Home, in Combine
+- **Claim:** Merge queries is on the Home tab in the Combine group, with Merge queries and Merge queries as new in its dropdown.
+- **Source:** Microsoft Learn, "Merge queries overview": https://learn.microsoft.com/power-query/merge-queries-overview
+- **Quote:** "You can find the Merge queries command on the Home tab, in the Combine group."
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** Append or Merge: Which One You Need
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R174 · Duplicate is on the query's menu
+- **Claim:** To duplicate a query, open its context menu in the Queries pane and select Duplicate.
+- **Source:** Microsoft Learn, "Using the Queries pane": https://learn.microsoft.com/power-query/queries-pane
+- **Quote:** "To duplicate your query, open the context pane on the query and select Duplicate."
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** Duplicate or Reference: Two Ways to Branch
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R175 · Reference is on the query's menu
+- **Claim:** To reference a query, open its context menu in the Queries pane and select Reference.
+- **Source:** Microsoft Learn, "Using the Queries pane": https://learn.microsoft.com/power-query/queries-pane
+- **Quote:** "To reference your query, open the context pane on the query and select Reference."
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** Duplicate or Reference: Two Ways to Branch
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R176 · Data Source Settings has a Change source button
+- **Claim:** In Excel, Data Source Settings (Data > Get Data > Data Source Settings) lists the workbook's sources and shows a Change source button.
+- **Source:** Microsoft Support, "Manage data source settings and permissions (Power Query)": https://support.microsoft.com/en-us/office/manage-data-source-settings-and-permissions-power-query-9f24a631-f7eb-4729-88dd-6a4921380ca9
+- **Quote:** "Data sources in current workbook This is the default option and it also displays the Change source button at the bottom."
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** Refresh Errors: Renamed Columns and Moved Files
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R177 · Changing a source reopens its first dialog
+- **Claim:** Changing a data source in Data Source Settings opens the same dialog you saw when you first imported the data, for any kind of source.
+- **Source:** Microsoft Support, "Manage data source settings and permissions (Power Query)": https://support.microsoft.com/en-us/office/manage-data-source-settings-and-permissions-power-query-9f24a631-f7eb-4729-88dd-6a4921380ca9
+- **Quote:** "This is the same dialog box you see when you first imported the data. Each kind of data source has a different dialog box."
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** Refresh Errors: Renamed Columns and Moved Files
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---
+
+## R178 · The Advanced Editor is on the Home tab too
+- **Claim:** Besides the View tab, the Advanced Editor can be opened from the Query group on the Home tab.
+- **Source:** Microsoft Learn, "Overview of query evaluation and query folding in Power Query": https://learn.microsoft.com/power-query/query-folding-basics
+- **Quote:** "You can also select Advanced Editor from the Query group in the Home tab."
+- **Kind:** reference
+- **Retrieved:** 2026-09-24
+- **For:** The Advanced Editor and Your First Look at M
+- **Status:** new
+- **Verified:** 2026-09-24, quote found on the page
+
+---

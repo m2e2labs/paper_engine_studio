@@ -1187,3 +1187,91 @@ Everything this book is allowed to state as true, and where each thing came from
 - **Checked:** 2026-09-23
 
 ---
+
+## F149 · Trailing spaces are trimmed, leading ones are not
+- **Claim:** The Power BI engine automatically trims trailing spaces that follow text data, but it does not remove leading spaces that come before it.
+- **Source:** Microsoft Learn, "Data types in Power BI": https://learn.microsoft.com/power-bi/connect-data/desktop-data-types
+- **Kind:** reference
+- **Checked:** 2026-09-23
+
+---
+
+## F150 · A leading space breaks relationships and visuals
+- **Claim:** If leading spaces are not removed, a relationship can fail to be created because duplicate values are detected, or visuals can return unexpected results.
+- **Source:** Microsoft Learn, "Data types in Power BI": https://learn.microsoft.com/power-bi/connect-data/desktop-data-types
+- **Kind:** reference
+- **Checked:** 2026-09-23
+
+---
+
+## F151 · Four rows in the table, two rows in the visual
+- **Claim:** In Microsoft's worked example, the same customer name entered four times with different leading and trailing spaces loads as four rows, but a visual built on it returns just two.
+- **Source:** Microsoft Learn, "Data types in Power BI": https://learn.microsoft.com/power-bi/connect-data/desktop-data-types
+- **Kind:** reference
+- **Checked:** 2026-09-23
+
+---
+
+## F152 · Trim is the fix, in Power Query
+- **Claim:** Errors of this kind are traced back to leading or trailing spaces and fixed with Text.Trim, or Format then Trim on the Transform tab, in Power Query Editor.
+- **Source:** Microsoft Learn, "Data types in Power BI": https://learn.microsoft.com/power-bi/connect-data/desktop-data-types
+- **Kind:** reference
+- **Checked:** 2026-09-23
+
+---
+
+## F153 · The model ignores case, Power Query does not
+- **Claim:** The engine that stores and queries data in Power BI is case insensitive and treats different capitalisation as the same value, while Power Query is case sensitive, so values that differ only by case get merged on load.
+- **Source:** Microsoft Learn, "Data types in Power BI": https://learn.microsoft.com/power-bi/connect-data/desktop-data-types
+- **Kind:** reference
+- **Checked:** 2026-09-23
+
+---
+
+## F154 · Pre-summarised data is the biggest size saving there is
+- **Claim:** Loading pre-summarised data is perhaps the most effective technique for reducing the size of a model, with a distinct trade-off in lost detail.
+- **Source:** Microsoft Learn, "Data reduction techniques for Import modeling": https://learn.microsoft.com/power-bi/guidance/import-modeling-data-reduction
+- **Kind:** reference
+- **Checked:** 2026-09-23
+
+---
+
+## F155 · 99% smaller, and the detail is gone
+- **Claim:** In Microsoft's example, grouping sales to month level could achieve a possible 99% reduction in model size, after which reporting at day level or at individual order line level is no longer possible.
+- **Source:** Microsoft Learn, "Data reduction techniques for Import modeling": https://learn.microsoft.com/power-bi/guidance/import-modeling-data-reduction
+- **Kind:** reference
+- **Checked:** 2026-09-23
+
+---
+
+## F156 · A smaller model refreshes faster
+- **Claim:** Smaller model sizes refresh faster, which means lower latency reporting and less pressure on the source system.
+- **Source:** Microsoft Learn, "Data reduction techniques for Import modeling": https://learn.microsoft.com/power-bi/guidance/import-modeling-data-reduction
+- **Kind:** reference
+- **Checked:** 2026-09-23
+
+---
+
+## F157 · Adding a column back later is the easy direction
+- **Claim:** It is easier to add columns to a model later than to remove them later, because removing a column can break reports or the model structure.
+- **Source:** Microsoft Learn, "Data reduction techniques for Import modeling": https://learn.microsoft.com/power-bi/guidance/import-modeling-data-reduction
+- **Kind:** reference
+- **Checked:** 2026-09-23
+
+---
+
+## F158 · Rename here, because the report shows these names
+- **Claim:** Microsoft's own walkthrough says to rename any column whose meaning is not obvious while still in Power Query, because short, clear column names are what show up in the report later.
+- **Source:** Microsoft Learn, "End-to-end: From raw data to a shared Power BI app": https://learn.microsoft.com/power-bi/create-reports/tutorial-end-to-end-power-bi
+- **Kind:** reference
+- **Checked:** 2026-09-23
+
+---
+
+## F159 · Data source settings, then Change Source
+- **Claim:** Data source settings is opened from Transform data on the Home tab, and a connection is repointed by picking it from the list and selecting Change Source; Microsoft documents this route for switching a live Analysis Services connection to a different server.
+- **Source:** Microsoft Learn, "Connect to Analysis Services tabular data in Power BI Desktop": https://learn.microsoft.com/power-bi/connect-data/desktop-analysis-services-tabular-data
+- **Kind:** reference
+- **Checked:** 2026-09-23
+
+---

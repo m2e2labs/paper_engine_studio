@@ -59,7 +59,9 @@ Overview · diagram
 Interface · diagram
 - **What:** four regions and what each is for: the Queries pane on the left, the preview
   in the middle, the ribbon on top, and Query Settings with Applied Steps on the right.
-  The preview is a sample, not the data.
+  Four is the Power BI Desktop count and it is what the reader is looking at; the
+  cross-product Power Query docs count five by adding the status bar, so say four and
+  do not call five wrong. The preview is a sample, not the data: up to 1,000 rows of it.
 - **Use when:** the reader has just clicked Transform data and does not know where to
   look. **Skip when:** they already work in here daily.
 - **Action:** "Open Transform data and name the four regions out loud before you touch
@@ -149,41 +151,46 @@ Mechanism · diagram
 
 #### Promote Headers and Remove the Junk Rows
 Cleaning · diagram
-- **What:** exports arrive with a title row, a blank row, then the real headers. Remove
-  the top rows, then promote the header row. In that order, because promoting first
-  makes the junk row your column names.
+- **What:** exports arrive with a title row above the real headers. With automatic
+  detection on, the query arrives with a promote step and a type step already built on
+  that title row, so delete those first. Then remove the top rows, then promote the
+  header row. In that order, because promoting first makes the junk row your column names.
 - **Use when:** any export from another system. **Skip when:** the file was built for
   loading.
-- **Action:** "Remove Top Rows, then Use First Row as Headers. Check the step order in
-  Applied Steps."
+- **Action:** "Delete the automatic Promoted Headers and Changed Type steps. Then Remove
+  Top Rows, then Use First Row as Headers."
 - **Band:** diagram (the same sheet twice: junk rows removed then headers promoted,
   versus headers promoted first and the junk row stuck as column names)
-- **Facts:** F43, F44, F45, F46, F47, F48
+- **Facts:** F39, F43, F44, F45, F46, F47, F48
 
 #### Choosing, Removing and Renaming Columns
 Cleaning · diagram
-- **What:** Choose Columns keeps what you name and is safer than Remove Columns, because
-  a new column appearing at the source will not silently join your table. Renaming here
-  is what the report will show, so do it once, here.
+- **What:** Choose Columns keeps what you name, and it is the transformation Microsoft
+  lists for a source whose column list changes: name what you want, and whatever else
+  turns up stays out. Remove Other Columns is the same move inverted. Renaming here is
+  what the report will show, so do it once, here. And removing is the hard direction to
+  undo: adding a column back later is easy, taking one away can break a report.
 - **Use when:** every query, early. **Skip when:** you genuinely want whatever arrives.
-- **Action:** "Swap a Removed Columns step for a Choose Columns step and imagine the
-  source adding a column tomorrow."
+- **Action:** "Swap a Removed Columns step for Choose Columns (it shows up as Removed
+  Other Columns). Then picture a new column arriving."
 - **Band:** diagram (two routes from the same table when a new column appears at source:
   one lets it through, the other does not)
-- **Facts:** F49, F50, F51, F52, F53, F54
+- **Facts:** F49, F50, F51, F52, F53, F54, F157, F158
 
 #### Replace Values, Trim and Clean
 Cleaning · diagram
-- **What:** trailing spaces, non-printing characters and placeholder text like N/A are
-  what make two apparently identical values refuse to match. Trim, Clean and Replace
-  Values fix them before they reach a relationship.
+- **What:** leading spaces, non-printing characters and placeholder text like N/A are
+  what make two apparently identical values behave differently. The model trims trailing
+  spaces by itself but leaves leading ones alone, so a leading space is the one that
+  survives to break a relationship or halve the rows in a visual. Trim, Clean and Replace
+  Values fix them before they reach the model.
 - **Use when:** a join or a group-by gives more groups than you expected. **Skip when:**
   the data came from a controlled system.
-- **Action:** "Group by a text column of yours. If you see two of the same thing, you
-  have found a space."
+- **Action:** "Group by a text column of yours in Power Query. Two of the same thing
+  means a hidden space, or different capitals."
 - **Band:** diagram (two values that look identical, one with a visible trailing space,
   failing to match and then matching after a trim)
-- **Facts:** F55, F56, F57, F58, F59
+- **Facts:** F55, F56, F57, F58, F59, F149, F150, F151, F152, F153
 
 #### Filtering Rows: Narrowing Without Deleting
 Cleaning · diagram
@@ -227,11 +234,12 @@ Reshaping · diagram
 #### Unpivot: The Fix for a Sheet Built for Humans
 Reshaping · diagram
 - **What:** twelve month columns read well on paper and are useless to a model. Unpivot
-  turns those columns into rows of attribute and value. Unpivot Other Columns is the
-  version that survives a thirteenth month appearing.
+  turns those columns into rows of attribute and value. Both Unpivot Columns and Unpivot
+  Other Columns pick up a thirteenth month when it appears. Unpivot Only Selected
+  Columns is the one that does not, and it leaves the new month sitting there unnoticed.
 - **Use when:** the column headers are data. **Skip when:** each column is a real field.
-- **Action:** "Unpivot your month columns, then add a month to the source and refresh.
-  Did it survive?"
+- **Action:** "Remove any quarter total, or it unpivots too. Select Region and Product,
+  pick Unpivot Other Columns, add a month at the source, refresh."
 - **Band:** diagram (a wide sheet with months across the top becoming a tall table of
   three columns)
 - **Facts:** F76, F77, F78, F79, F80, F81, F82
@@ -244,7 +252,7 @@ Reshaping · diagram
 - **Use when:** nobody needs the individual rows. **Skip when:** somebody might.
 - **Action:** "Group your sales by month and compare the row count before and after."
 - **Band:** diagram (many rows collapsing into a few, with the row count falling)
-- **Facts:** F83, F84, F85, F86, F87, F88
+- **Facts:** F83, F84, F85, F86, F87, F88, F154, F155, F156
 
 ---
 
@@ -314,25 +322,29 @@ Performance · diagram
   the next page."
 - **Band:** diagram (steps splitting into two groups: those pushed down to the source and
   those run locally after the data arrives)
-- **Facts:** F108, F109, F110, F111, F112, F113, F114
+- **Facts:** F108, F109, F110, F111, F112, F113, F114, F156
 
 #### Seeing Whether Your Query Folds
 Performance · diagram
-- **What:** right-click a step and look for View Native Query. If it is available,
-  everything up to that step folded. If it is greyed out, folding stopped at or before
-  it. That one menu item is the whole diagnostic.
+- **What:** right-click a step and look for View Native Query. It shows the request that
+  was actually sent, so if it is there, the query folded up to that step. If it is greyed
+  out on a source that normally offers it, you added a step that stopped folding. On the
+  desktop that one menu item is the whole diagnostic: the green and grey folding
+  indicators beside the steps exist only in Power Query Online.
 - **Use when:** a refresh is slow. **Skip when:** the source cannot fold at all.
 - **Action:** "Walk down your Applied Steps right-clicking each one. Note the first step
   where View Native Query goes grey."
 - **Band:** diagram (hand-drawn UI: the Applied Steps list with the context menu open,
   View Native Query enabled on one step and greyed on the next)
-- **Facts:** F115, F116, F117, F118
+- **Facts:** F115, F116, F117, F118, F120
 
 #### The Steps That Stop It Folding
 Performance · diagram
 - **What:** some steps have no equivalent in the source's language, so folding stops
-  there and everything after it runs locally. Once it stops, it does not start again,
-  which is why the order of your steps is a performance decision.
+  there and what follows runs locally. Generally everything up to the last folding step
+  folds and the rest happens afterwards, which is why the order of your steps is a
+  performance decision. It is not a one-way door, though: take away what broke folding
+  and the plan can fold again, and the engine sometimes reorders your steps for you.
 - **Use when:** View Native Query went grey. **Skip when:** the source is a file.
 - **Action:** "Move a folding-friendly step above a folding-breaking one and check View
   Native Query again."
@@ -344,14 +356,15 @@ Performance · diagram
 Errors · diagram
 - **What:** the query refers to columns and paths by name. Rename a column at the source,
   or move the file, and the step that named it fails. The error names the step, which is
-  most of the diagnosis. Data Source Settings is where a moved path gets fixed.
+  most of the diagnosis. The path lives in the query, so a moved file is fixed by
+  changing that path: Transform data, then Data source settings, then Change Source.
 - **Use when:** a refresh that used to work has stopped. **Skip when:** nothing has
   changed, which is rarer than it sounds.
 - **Action:** "Read the step name in the error before you read anything else. Then open
   that step."
 - **Band:** diagram (a renamed source column breaking one step, and the error naming that
   step)
-- **Facts:** F124, F125, F126, F127, F128, F129, F130
+- **Facts:** F124, F125, F126, F127, F128, F129, F130, F159
 
 ---
 
@@ -405,3 +418,4 @@ Review · diagram
   costs you time every refresh."
 - **Band:** diagram (six small cards, the mistake on one side and its one-line fix on the
   other)
+- **Facts:** F4, F5, F28, F29, F44, F45, F50, F52, F104, F105, F116, F122
