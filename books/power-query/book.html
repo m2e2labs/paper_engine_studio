@@ -494,7 +494,7 @@
       </div>
       <div class="ask">
         <span class="lbl">DO THIS NOW</span>
-        <p>Delete a middle step and watch what happens to the ones below it. Then undo.</p>
+        <p>Duplicate your query, then delete a middle step in the copy and watch what happens to the steps below it.</p>
       </div>
       <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">What Power Query Actually Is</span></div>
     </section>
@@ -1380,7 +1380,7 @@
       </div>
       <div class="ask">
         <span class="lbl">DO THIS NOW</span>
-        <p>Remove any quarter total, or it unpivots too. Select Region and Product, pick Unpivot Other Columns, add a month at the source, refresh.</p>
+        <p>Remove last lesson's quarter total, or it unpivots too. Select Region and Product, pick Unpivot Other Columns, add a month at the source, refresh.</p>
       </div>
       <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Reshaping a Table</span></div>
     </section>
@@ -1538,7 +1538,7 @@
       </div>
       <div class="ask">
         <span class="lbl">DO THIS NOW</span>
-        <p>Say out loud: more rows, or more columns? That is the answer.</p>
+        <p>Say out loud: more rows, or more columns? That's the answer.</p>
       </div>
       <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Combining Queries</span></div>
     </section>
@@ -1673,7 +1673,7 @@
       </div>
       <div class="ask">
         <span class="lbl">DO THIS NOW</span>
-        <p>Reference your cleaned query, then change a step in the original.</p>
+        <p>Reference your cleaned query, change a step in the original, watch both.</p>
       </div>
       <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Combining Queries</span></div>
     </section>
@@ -1742,7 +1742,7 @@
       <div class="explain">
         <p>Let's say your sales live in a database, not a folder of workbooks. <span class="hl">Query folding</span> turns the steps it can into the database's own operations, and Power Query runs the rest.</p>
         <p>In Microsoft's example, the query with no folding pulled <span class="bad">over 3.6 million rows and took 6 minutes 1 second</span>. Fully folded: <span class="good">10 rows, 31 seconds</span>. Excel and CSV files can't fold at all.</p>
-        <p class="close">The source does the work before the data leaves it.</p>
+        <p class="close">Same ten rows. One query pulled 3.6 million to find them.</p>
       </div>
       <div class="ask">
         <span class="lbl">DO THIS NOW</span>
@@ -1776,7 +1776,7 @@
       <div class="explain">
         <p>Let's say a refresh has gone slow. Right-click a step and look for <span class="hl">View Native Query</span>. It shows the request Power Query sends to the source, so if it's there, <span class="good">it folded up to that step</span>.</p>
         <p>If it's <span class="bad">greyed out</span> on a source that normally offers it, a step stopped folding. The coloured folding icons in Microsoft's articles are Power Query Online only.</p>
-        <p class="close">Walk down the steps. The first grey one is your answer.</p>
+        <p class="close">If you can see the query, the source is doing the work.</p>
       </div>
       <div class="ask">
         <span class="lbl">DO THIS NOW</span>
@@ -1935,7 +1935,7 @@
       <div class="explain">
         <p>Let's say your query is a long list of clicks and <span class="bad">you can't remember what some of them did</span>.</p>
         <p>On the View tab, the <span class="hl">Advanced Editor</span> shows the M code behind every step. Most step names match the code, though Navigation shows up as Sales_Sheet. Names with spaces come wrapped, like #"Promoted Headers".</p>
-        <p class="close">You'll read M long before you write it.</p>
+        <p class="close">You'll read far more M than you ever write.</p>
       </div>
       <div class="ask">
         <span class="lbl">DO THIS NOW</span>
@@ -2141,12 +2141,12 @@
           <ol class="mt-sources">
             <li><div class="sh"><span class="nm">Steps run in the order they appear</span><span class="pg">p. 8</span></div><div class="sr">Microsoft Learn, "Query overview in Power BI Desktop": https://learn.microsoft.com/power-bi/transform-model/desktop-query-overview <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Delete until end removes a step and everything after it</span><span class="pg">p. 8</span></div><div class="sr">Microsoft Learn, "Using the Applied Steps list": https://learn.microsoft.com/power-query/applied-steps <span class="ck">· Checked 2026-09-23.</span></div></li>
+            <li><div class="sh"><span class="nm">Duplicate makes a copy</span><span class="pg">p. 8, 29, 39</span></div><div class="sr">Microsoft Learn, "Using the Queries pane": https://learn.microsoft.com/power-query/queries-pane <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Close &amp; Apply applies and closes</span><span class="pg">p. 9</span></div><div class="sr">Microsoft Learn, "Query overview in Power BI Desktop": https://learn.microsoft.com/power-bi/transform-model/desktop-query-overview <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">The load command differs by product</span><span class="pg">p. 9</span></div><div class="sr">Microsoft Learn, "Power Query get data experience overview": https://learn.microsoft.com/power-query/get-data-experience <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Some queries are only intermediate steps</span><span class="pg">p. 9</span></div><div class="sr">Microsoft Learn, "Managing query refresh in Power BI": https://learn.microsoft.com/power-bi/connect-data/refresh-include-in-report-refresh <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Enable load keeps a query out of the model</span><span class="pg">p. 9</span></div><div class="sr">Microsoft Learn, "Managing query refresh in Power BI": https://learn.microsoft.com/power-bi/connect-data/refresh-include-in-report-refresh <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Include in report refresh is a separate setting</span><span class="pg">p. 9</span></div><div class="sr">Microsoft Learn, "Managing query refresh in Power BI": https://learn.microsoft.com/power-bi/connect-data/refresh-include-in-report-refresh <span class="ck">· Checked 2026-09-23.</span></div></li>
-            <li><div class="sh"><span class="nm">Connecting to a workbook needs its file path</span><span class="pg">p. 11</span></div><div class="sr">Microsoft Learn, "Power Query get data experience overview": https://learn.microsoft.com/power-query/get-data-experience <span class="ck">· Checked 2026-09-23.</span></div></li>
           </ol>
         </div>
         <div class="gp-foot"><span>Third Watch Press</span><span>Power Query for Absolute Beginners</span></div>
@@ -2160,6 +2160,7 @@
         <div class="mt-body">
           
           <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">Connecting to a workbook needs its file path</span><span class="pg">p. 11</span></div><div class="sr">Microsoft Learn, "Power Query get data experience overview": https://learn.microsoft.com/power-query/get-data-experience <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">A CSV file is not an Excel file</span><span class="pg">p. 11</span></div><div class="sr">Microsoft Learn, "Excel" connector: https://learn.microsoft.com/power-query/connectors/excel <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">The navigator suggests tables inside a sheet</span><span class="pg">p. 11</span></div><div class="sr">Microsoft Learn, "Excel" connector: https://learn.microsoft.com/power-query/connectors/excel <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Choosing the whole sheet fills blank cells with null</span><span class="pg">p. 11</span></div><div class="sr">Microsoft Learn, "Excel" connector: https://learn.microsoft.com/power-query/connectors/excel <span class="ck">· Checked 2026-09-23.</span></div></li>
@@ -2168,7 +2169,6 @@
             <li><div class="sh"><span class="nm">Transform data is always offered as a destination</span><span class="pg">p. 12, 39</span></div><div class="sr">Microsoft Learn, "Power Query get data experience overview": https://learn.microsoft.com/power-query/get-data-experience <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">The Navigator lists at most 10,000 objects</span><span class="pg">p. 12</span></div><div class="sr">Microsoft Learn, "Power Query get data experience overview": https://learn.microsoft.com/power-query/get-data-experience <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Many files of the same shape become one table</span><span class="pg">p. 13</span></div><div class="sr">Microsoft Learn, "Combine files overview": https://learn.microsoft.com/power-query/combine-files-overview <span class="ck">· Checked 2026-09-23.</span></div></li>
-            <li><div class="sh"><span class="nm">A folder connection lists every file, subfolders included</span><span class="pg">p. 13</span></div><div class="sr">Microsoft Learn, "Folder" connector: https://learn.microsoft.com/power-query/connectors/folder <span class="ck">· Checked 2026-09-23.</span></div></li>
           </ol>
         </div>
         <div class="gp-foot"><span>Third Watch Press</span><span>Power Query for Absolute Beginners</span></div>
@@ -2182,6 +2182,7 @@
         <div class="mt-body">
           
           <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">A folder connection lists every file, subfolders included</span><span class="pg">p. 13</span></div><div class="sr">Microsoft Learn, "Folder" connector: https://learn.microsoft.com/power-query/connectors/folder <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">The combined table carries the source file name</span><span class="pg">p. 13</span></div><div class="sr">Microsoft Learn, "Combine CSV files": https://learn.microsoft.com/power-query/combine-files-csv <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Every file must share structure and extension</span><span class="pg">p. 13</span></div><div class="sr">Microsoft Learn, "Combine CSV files": https://learn.microsoft.com/power-query/combine-files-csv <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Cleaning the sample file cleans every file</span><span class="pg">p. 13</span></div><div class="sr">Microsoft Learn, "Combine CSV files": https://learn.microsoft.com/power-query/combine-files-csv <span class="ck">· Checked 2026-09-23.</span></div></li>
@@ -2190,7 +2191,6 @@
             <li><div class="sh"><span class="nm">Type detection reads the first 200 rows</span><span class="pg">p. 14</span></div><div class="sr">Microsoft Learn, "Data types in Power Query": https://learn.microsoft.com/power-query/data-types <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Automatic detection writes two steps for you</span><span class="pg">p. 14, 16</span></div><div class="sr">Microsoft Learn, "Data types in Power Query": https://learn.microsoft.com/power-query/data-types <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">A column with no type set is Any</span><span class="pg">p. 14</span></div><div class="sr">Microsoft Learn, "Data types in Power Query": https://learn.microsoft.com/power-query/data-types <span class="ck">· Checked 2026-09-23.</span></div></li>
-            <li><div class="sh"><span class="nm">A type can be set in four places</span><span class="pg">p. 14</span></div><div class="sr">Microsoft Learn, "Data types in Power Query": https://learn.microsoft.com/power-query/data-types <span class="ck">· Checked 2026-09-23.</span></div></li>
           </ol>
         </div>
         <div class="gp-foot"><span>Third Watch Press</span><span>Power Query for Absolute Beginners</span></div>
@@ -2204,6 +2204,7 @@
         <div class="mt-body">
           
           <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">A type can be set in four places</span><span class="pg">p. 14</span></div><div class="sr">Microsoft Learn, "Data types in Power Query": https://learn.microsoft.com/power-query/data-types <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">The wrong locale turns dates into errors</span><span class="pg">p. 14</span></div><div class="sr">Microsoft Learn, "Data types in Power Query": https://learn.microsoft.com/power-query/data-types <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Power Query guesses the header row, and misses</span><span class="pg">p. 16</span></div><div class="sr">Microsoft Learn, "Promote or demote column headers": https://learn.microsoft.com/power-query/table-promote-demote-headers <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Remove the junk rows before promoting</span><span class="pg">p. 16, 39</span></div><div class="sr">Microsoft Learn, "Promote or demote column headers": https://learn.microsoft.com/power-query/table-promote-demote-headers <span class="ck">· Checked 2026-09-23.</span></div></li>
@@ -2211,7 +2212,6 @@
             <li><div class="sh"><span class="nm">A repeated value in the promoted row gets a suffix</span><span class="pg">p. 16</span></div><div class="sr">Microsoft Learn, "Promote or demote column headers": https://learn.microsoft.com/power-query/table-promote-demote-headers <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Promoting headers is followed by an automatic type step</span><span class="pg">p. 16</span></div><div class="sr">Microsoft Learn, "Combine CSV files": https://learn.microsoft.com/power-query/combine-files-csv <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">A fixed report layout is what Remove top rows is for</span><span class="pg">p. 16</span></div><div class="sr">Microsoft Learn, "Filter a table by row position": https://learn.microsoft.com/power-query/filter-row-position <span class="ck">· Checked 2026-09-23.</span></div></li>
-            <li><div class="sh"><span class="nm">Choose columns keeps what you tick</span><span class="pg">p. 17</span></div><div class="sr">Microsoft Learn, "Choose or remove columns": https://learn.microsoft.com/power-query/choose-remove-columns <span class="ck">· Checked 2026-09-23.</span></div></li>
           </ol>
         </div>
         <div class="gp-foot"><span>Third Watch Press</span><span>Power Query for Absolute Beginners</span></div>
@@ -2225,6 +2225,7 @@
         <div class="mt-body">
           
           <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">Choose columns keeps what you tick</span><span class="pg">p. 17</span></div><div class="sr">Microsoft Learn, "Choose or remove columns": https://learn.microsoft.com/power-query/choose-remove-columns <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Remove other columns is the same move, inverted</span><span class="pg">p. 17, 39</span></div><div class="sr">Microsoft Learn, "Choose or remove columns": https://learn.microsoft.com/power-query/choose-remove-columns <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Queries should be designed to survive source changes</span><span class="pg">p. 17</span></div><div class="sr">Microsoft Learn, "Best practices when working with Power Query": https://learn.microsoft.com/power-query/best-practices <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Choose columns is the resilient answer to a changing column list</span><span class="pg">p. 17, 39</span></div><div class="sr">Microsoft Learn, "Best practices when working with Power Query": https://learn.microsoft.com/power-query/best-practices <span class="ck">· Checked 2026-09-23.</span></div></li>
@@ -2233,7 +2234,6 @@
             <li><div class="sh"><span class="nm">Adding a column back later is the easy direction</span><span class="pg">p. 17</span></div><div class="sr">Microsoft Learn, "Data reduction techniques for Import modeling": https://learn.microsoft.com/power-bi/guidance/import-modeling-data-reduction <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Rename here, because the report shows these names</span><span class="pg">p. 17</span></div><div class="sr">Microsoft Learn, "End-to-end: From raw data to a shared Power BI app": https://learn.microsoft.com/power-bi/create-reports/tutorial-end-to-end-power-bi <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Replace values has two modes</span><span class="pg">p. 18</span></div><div class="sr">Microsoft Learn, "Replace values and errors": https://learn.microsoft.com/power-query/replace-values <span class="ck">· Checked 2026-09-23.</span></div></li>
-            <li><div class="sh"><span class="nm">Advanced replace options are text only</span><span class="pg">p. 18</span></div><div class="sr">Microsoft Learn, "Replace values and errors": https://learn.microsoft.com/power-query/replace-values <span class="ck">· Checked 2026-09-23.</span></div></li>
           </ol>
         </div>
         <div class="gp-foot"><span>Third Watch Press</span><span>Power Query for Absolute Beginners</span></div>
@@ -2247,6 +2247,7 @@
         <div class="mt-body">
           
           <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">Advanced replace options are text only</span><span class="pg">p. 18</span></div><div class="sr">Microsoft Learn, "Replace values and errors": https://learn.microsoft.com/power-query/replace-values <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Trim removes leading and trailing whitespace</span><span class="pg">p. 18</span></div><div class="sr">Microsoft Learn, "Text.Trim": https://learn.microsoft.com/powerquery-m/text-trim <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Clean removes control characters</span><span class="pg">p. 18</span></div><div class="sr">Microsoft Learn, "Text.Clean": https://learn.microsoft.com/powerquery-m/text-clean <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Replacing with nothing deletes a text string</span><span class="pg">p. 18</span></div><div class="sr">Microsoft Learn, "Replace values and errors": https://learn.microsoft.com/power-query/replace-values <span class="ck">· Checked 2026-09-23.</span></div></li>
@@ -2255,7 +2256,6 @@
             <li><div class="sh"><span class="nm">Four rows in the table, two rows in the visual</span><span class="pg">p. 18</span></div><div class="sr">Microsoft Learn, "Data types in Power BI": https://learn.microsoft.com/power-bi/connect-data/desktop-data-types <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Trim is the fix, in Power Query</span><span class="pg">p. 18</span></div><div class="sr">Microsoft Learn, "Data types in Power BI": https://learn.microsoft.com/power-bi/connect-data/desktop-data-types <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">The model ignores case, Power Query does not</span><span class="pg">p. 18</span></div><div class="sr">Microsoft Learn, "Data types in Power BI": https://learn.microsoft.com/power-bi/connect-data/desktop-data-types <span class="ck">· Checked 2026-09-23.</span></div></li>
-            <li><div class="sh"><span class="nm">The auto filter list shows the column's unique values</span><span class="pg">p. 19</span></div><div class="sr">Microsoft Learn, "Filter by values in a column": https://learn.microsoft.com/power-query/filter-values <span class="ck">· Checked 2026-09-23.</span></div></li>
           </ol>
         </div>
         <div class="gp-foot"><span>Third Watch Press</span><span>Power Query for Absolute Beginners</span></div>
@@ -2269,6 +2269,7 @@
         <div class="mt-body">
           
           <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">The auto filter list shows the column's unique values</span><span class="pg">p. 19</span></div><div class="sr">Microsoft Learn, "Filter by values in a column": https://learn.microsoft.com/power-query/filter-values <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">The filter list is capped at 1,000 distinct values</span><span class="pg">p. 19</span></div><div class="sr">Microsoft Learn, "Filter by values in a column": https://learn.microsoft.com/power-query/filter-values <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Filter early, and the source may do it for you</span><span class="pg">p. 19</span></div><div class="sr">Microsoft Learn, "Best practices when working with Power Query": https://learn.microsoft.com/power-query/best-practices <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Basic filtering allows two rules</span><span class="pg">p. 19</span></div><div class="sr">Microsoft Learn, "Filter by values in a column": https://learn.microsoft.com/power-query/filter-values <span class="ck">· Checked 2026-09-23.</span></div></li>
@@ -2277,7 +2278,6 @@
             <li><div class="sh"><span class="nm">A column can be split into rows, not just columns</span><span class="pg">p. 21</span></div><div class="sr">Microsoft Learn, "Split columns by delimiter": https://learn.microsoft.com/power-query/split-columns-delimiter <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Splitting into rows keeps the columns and adds rows</span><span class="pg">p. 21</span></div><div class="sr">Microsoft Learn, "Split columns by delimiter": https://learn.microsoft.com/power-query/split-columns-delimiter <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Split columns are named after the original</span><span class="pg">p. 21</span></div><div class="sr">Microsoft Learn, "Split columns by delimiter": https://learn.microsoft.com/power-query/split-columns-delimiter <span class="ck">· Checked 2026-09-23.</span></div></li>
-            <li><div class="sh"><span class="nm">Split at the first delimiter or at every one</span><span class="pg">p. 21</span></div><div class="sr">Microsoft Learn, "Split columns by delimiter": https://learn.microsoft.com/power-query/split-columns-delimiter <span class="ck">· Checked 2026-09-23.</span></div></li>
           </ol>
         </div>
         <div class="gp-foot"><span>Third Watch Press</span><span>Power Query for Absolute Beginners</span></div>
@@ -2291,6 +2291,7 @@
         <div class="mt-body">
           
           <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">Split at the first delimiter or at every one</span><span class="pg">p. 21</span></div><div class="sr">Microsoft Learn, "Split columns by delimiter": https://learn.microsoft.com/power-query/split-columns-delimiter <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Split column sits in three places</span><span class="pg">p. 21</span></div><div class="sr">Microsoft Learn, "Split columns by delimiter": https://learn.microsoft.com/power-query/split-columns-delimiter <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Merging columns is Table.CombineColumns</span><span class="pg">p. 22</span></div><div class="sr">Microsoft Learn, "Table.CombineColumns": https://learn.microsoft.com/powerquery-m/table-combinecolumns <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">A custom column is for when the built-in commands are not enough</span><span class="pg">p. 22</span></div><div class="sr">Microsoft Learn, "Add a custom column": https://learn.microsoft.com/power-query/add-custom-column <span class="ck">· Checked 2026-09-23.</span></div></li>
@@ -2299,7 +2300,6 @@
             <li><div class="sh"><span class="nm">On the desktop the type has to be set afterwards</span><span class="pg">p. 22</span></div><div class="sr">Microsoft Learn, "Add a custom column": https://learn.microsoft.com/power-query/add-custom-column <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Unpivot turns columns into rows</span><span class="pg">p. 23</span></div><div class="sr">Microsoft Learn, "Unpivot columns": https://learn.microsoft.com/power-query/unpivot-column <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Unpivot always produces Attribute and Value</span><span class="pg">p. 23</span></div><div class="sr">Microsoft Learn, "Unpivot columns": https://learn.microsoft.com/power-query/unpivot-column <span class="ck">· Checked 2026-09-23.</span></div></li>
-            <li><div class="sh"><span class="nm">A matrix of rows and date columns is hard to analyse</span><span class="pg">p. 23</span></div><div class="sr">Microsoft Learn, "Unpivot columns": https://learn.microsoft.com/power-query/unpivot-column <span class="ck">· Checked 2026-09-23.</span></div></li>
           </ol>
         </div>
         <div class="gp-foot"><span>Third Watch Press</span><span>Power Query for Absolute Beginners</span></div>
@@ -2313,6 +2313,7 @@
         <div class="mt-body">
           
           <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">A matrix of rows and date columns is hard to analyse</span><span class="pg">p. 23</span></div><div class="sr">Microsoft Learn, "Unpivot columns": https://learn.microsoft.com/power-query/unpivot-column <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">There are three unpivot commands</span><span class="pg">p. 23</span></div><div class="sr">Microsoft Learn, "Unpivot columns": https://learn.microsoft.com/power-query/unpivot-column <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Unpivot columns picks up a new column on refresh</span><span class="pg">p. 23</span></div><div class="sr">Microsoft Learn, "Unpivot columns": https://learn.microsoft.com/power-query/unpivot-column <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Unpivot other columns is for an unknown number of columns</span><span class="pg">p. 23</span></div><div class="sr">Microsoft Learn, "Unpivot columns": https://learn.microsoft.com/power-query/unpivot-column <span class="ck">· Checked 2026-09-23.</span></div></li>
@@ -2321,7 +2322,6 @@
             <li><div class="sh"><span class="nm">Count rows counts the rows in each group</span><span class="pg">p. 24</span></div><div class="sr">Microsoft Learn, "Grouping or summarizing rows": https://learn.microsoft.com/power-query/group-by <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">All rows keeps the detail in a table value</span><span class="pg">p. 24</span></div><div class="sr">Microsoft Learn, "Grouping or summarizing rows": https://learn.microsoft.com/power-query/group-by <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Group by sits in three places</span><span class="pg">p. 24</span></div><div class="sr">Microsoft Learn, "Grouping or summarizing rows": https://learn.microsoft.com/power-query/group-by <span class="ck">· Checked 2026-09-23.</span></div></li>
-            <li><div class="sh"><span class="nm">Two group-by operations are online only</span><span class="pg">p. 24</span></div><div class="sr">Microsoft Learn, "Grouping or summarizing rows": https://learn.microsoft.com/power-query/group-by <span class="ck">· Checked 2026-09-23.</span></div></li>
           </ol>
         </div>
         <div class="gp-foot"><span>Third Watch Press</span><span>Power Query for Absolute Beginners</span></div>
@@ -2335,6 +2335,7 @@
         <div class="mt-body">
           
           <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">Two group-by operations are online only</span><span class="pg">p. 24</span></div><div class="sr">Microsoft Learn, "Grouping or summarizing rows": https://learn.microsoft.com/power-query/group-by <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Expensive operations belong last</span><span class="pg">p. 24</span></div><div class="sr">Microsoft Learn, "Best practices when working with Power Query": https://learn.microsoft.com/power-query/best-practices <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Pre-summarised data is the biggest size saving there is</span><span class="pg">p. 24</span></div><div class="sr">Microsoft Learn, "Data reduction techniques for Import modeling": https://learn.microsoft.com/power-bi/guidance/import-modeling-data-reduction <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">99% smaller, and the detail is gone</span><span class="pg">p. 24</span></div><div class="sr">Microsoft Learn, "Data reduction techniques for Import modeling": https://learn.microsoft.com/power-bi/guidance/import-modeling-data-reduction <span class="ck">· Checked 2026-09-23.</span></div></li>
@@ -2342,7 +2343,6 @@
             <li><div class="sh"><span class="nm">Append adds the contents of tables to another</span><span class="pg">p. 26, 27</span></div><div class="sr">Microsoft Learn, "Append queries": https://learn.microsoft.com/power-query/append-queries <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Merge joins two tables on matching values</span><span class="pg">p. 26, 28</span></div><div class="sr">Microsoft Learn, "Merge queries overview": https://learn.microsoft.com/power-query/merge-queries-overview <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Append matches names, not positions</span><span class="pg">p. 27</span></div><div class="sr">Microsoft Learn, "Append queries": https://learn.microsoft.com/power-query/append-queries <span class="ck">· Checked 2026-09-23.</span></div></li>
-            <li><div class="sh"><span class="nm">A missing column gives nulls, not an error</span><span class="pg">p. 27</span></div><div class="sr">Microsoft Learn, "Append queries": https://learn.microsoft.com/power-query/append-queries <span class="ck">· Checked 2026-09-23.</span></div></li>
           </ol>
         </div>
         <div class="gp-foot"><span>Third Watch Press</span><span>Power Query for Absolute Beginners</span></div>
@@ -2356,6 +2356,7 @@
         <div class="mt-body">
           
           <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">A missing column gives nulls, not an error</span><span class="pg">p. 27</span></div><div class="sr">Microsoft Learn, "Append queries": https://learn.microsoft.com/power-query/append-queries <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Three or more tables append in one step</span><span class="pg">p. 27</span></div><div class="sr">Microsoft Learn, "Append queries": https://learn.microsoft.com/power-query/append-queries <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Append queries as new leaves both originals alone</span><span class="pg">p. 27</span></div><div class="sr">Microsoft Learn, "Append queries": https://learn.microsoft.com/power-query/append-queries <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Tables append in the order selected</span><span class="pg">p. 27</span></div><div class="sr">Microsoft Learn, "Append queries": https://learn.microsoft.com/power-query/append-queries <span class="ck">· Checked 2026-09-23.</span></div></li>
@@ -2364,7 +2365,6 @@
             <li><div class="sh"><span class="nm">The merge adds one column you then expand</span><span class="pg">p. 28</span></div><div class="sr">Microsoft Learn, "Merge queries overview": https://learn.microsoft.com/power-query/merge-queries-overview <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">A join kind says how the merge is performed</span><span class="pg">p. 28</span></div><div class="sr">Microsoft Learn, "Merge queries overview": https://learn.microsoft.com/power-query/merge-queries-overview <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Left outer keeps everything on the left</span><span class="pg">p. 28</span></div><div class="sr">Microsoft Learn, "Merge queries overview": https://learn.microsoft.com/power-query/merge-queries-overview <span class="ck">· Checked 2026-09-23.</span></div></li>
-            <li><div class="sh"><span class="nm">Inner keeps only what matched</span><span class="pg">p. 28</span></div><div class="sr">Microsoft Learn, "Merge queries overview": https://learn.microsoft.com/power-query/merge-queries-overview <span class="ck">· Checked 2026-09-23.</span></div></li>
           </ol>
         </div>
         <div class="gp-foot"><span>Third Watch Press</span><span>Power Query for Absolute Beginners</span></div>
@@ -2378,9 +2378,9 @@
         <div class="mt-body">
           
           <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">Inner keeps only what matched</span><span class="pg">p. 28</span></div><div class="sr">Microsoft Learn, "Merge queries overview": https://learn.microsoft.com/power-query/merge-queries-overview <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Left anti finds what did not match</span><span class="pg">p. 28</span></div><div class="sr">Microsoft Learn, "Left anti join": https://learn.microsoft.com/power-query/merge-queries-left-anti <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">The dialog estimates the matches before you commit</span><span class="pg">p. 28</span></div><div class="sr">Microsoft Learn, "Merge queries overview": https://learn.microsoft.com/power-query/merge-queries-overview <span class="ck">· Checked 2026-09-23.</span></div></li>
-            <li><div class="sh"><span class="nm">Duplicate makes a copy</span><span class="pg">p. 29, 39</span></div><div class="sr">Microsoft Learn, "Using the Queries pane": https://learn.microsoft.com/power-query/queries-pane <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Reference points back at the original</span><span class="pg">p. 29, 39</span></div><div class="sr">Microsoft Learn, "Using the Queries pane": https://learn.microsoft.com/power-query/queries-pane <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Split a long query into referenced queries</span><span class="pg">p. 29</span></div><div class="sr">Microsoft Learn, "Best practices when working with Power Query": https://learn.microsoft.com/power-query/best-practices <span class="ck">· Checked 2026-09-23.</span></div></li>
             <li><div class="sh"><span class="nm">Extract Previous splits a query in two</span><span class="pg">p. 29</span></div><div class="sr">Microsoft Learn, "Best practices when working with Power Query": https://learn.microsoft.com/power-query/best-practices <span class="ck">· Checked 2026-09-23.</span></div></li>

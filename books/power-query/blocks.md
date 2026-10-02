@@ -75,11 +75,11 @@ Mechanism · diagram
   data is never changed. You can rename, reorder and delete steps, and they always run
   in the order shown. This is the single idea the rest of the book rests on.
 - **Use when:** the reader thinks they are editing a spreadsheet. **Skip when:** never.
-- **Action:** "Delete a middle step and watch what happens to the ones below it. Then
-  undo."
+- **Action:** "Duplicate your query, then delete a middle step in the copy and watch
+  what happens to the steps below it."
 - **Band:** diagram (one source table, a numbered list of steps beside it, each step
   handing its result to the next)
-- **Facts:** F12, F13, F14, F15, F16, F17
+- **Facts:** F12, F13, F14, F15, F16, F17, F104
 
 #### Close and Apply: What Loads and What Doesn't
 Mechanism · diagram
