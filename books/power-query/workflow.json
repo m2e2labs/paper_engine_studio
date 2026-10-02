@@ -1,0 +1,172 @@
+{
+  "pages": {
+    "Power Query Is Not DAX, and Not Excel": {
+      "status": "approved",
+      "hash": "7816ef3f9507",
+      "note": "",
+      "at": "2026-10-02T18:20:35.925Z"
+    },
+    "A Tour of the Power Query Editor": {
+      "status": "approved",
+      "hash": "03355969d573",
+      "note": "",
+      "at": "2026-10-02T18:20:38.016Z"
+    },
+    "Applied Steps: A Recipe, Not an Edit": {
+      "status": "approved",
+      "hash": "80b19c1ab2e3",
+      "note": "",
+      "at": "2026-10-02T18:20:39.304Z"
+    },
+    "Close and Apply: What Loads and What Doesn't": {
+      "status": "approved",
+      "hash": "d5a440df98b2",
+      "note": "",
+      "at": "2026-10-02T18:20:40.698Z"
+    },
+    "Connecting to Excel and CSV": {
+      "status": "approved",
+      "hash": "fcffbe831b74",
+      "note": "",
+      "at": "2026-10-02T18:20:42.282Z"
+    },
+    "The Navigator: Choosing What to Load": {
+      "status": "approved",
+      "hash": "e0d80f7a9a6c",
+      "note": "",
+      "at": "2026-10-02T18:20:44.198Z"
+    },
+    "Get Data from a Folder: Many Files, One Table": {
+      "status": "approved",
+      "hash": "59dc5a6e9d63",
+      "note": "",
+      "at": "2026-10-02T18:20:45.703Z"
+    },
+    "Data Types: Set Them Early, Set Them Once": {
+      "status": "approved",
+      "hash": "c4f2a8f3b90b",
+      "note": "",
+      "at": "2026-10-02T18:20:46.924Z"
+    },
+    "Promote Headers and Remove the Junk Rows": {
+      "status": "approved",
+      "hash": "c47e317f77f5",
+      "note": "",
+      "at": "2026-10-02T18:20:47.802Z"
+    },
+    "Choosing, Removing and Renaming Columns": {
+      "status": "approved",
+      "hash": "08f81d32128a",
+      "note": "",
+      "at": "2026-10-02T18:20:48.559Z"
+    },
+    "Replace Values, Trim and Clean": {
+      "status": "approved",
+      "hash": "df1be7491537",
+      "note": "",
+      "at": "2026-10-02T18:20:49.776Z"
+    },
+    "Filtering Rows: Narrowing Without Deleting": {
+      "status": "approved",
+      "hash": "d3cabc266a2e",
+      "note": "",
+      "at": "2026-10-02T18:20:50.909Z"
+    },
+    "Splitting One Column Into Many": {
+      "status": "approved",
+      "hash": "1ceb44a7381c",
+      "note": "",
+      "at": "2026-10-02T18:20:51.949Z"
+    },
+    "Merge Columns and the Custom Column": {
+      "status": "approved",
+      "hash": "b47884665306",
+      "note": "",
+      "at": "2026-10-02T18:20:52.898Z"
+    },
+    "Unpivot: The Fix for a Sheet Built for Humans": {
+      "status": "approved",
+      "hash": "6a4f5a971233",
+      "note": "",
+      "at": "2026-10-02T18:20:53.710Z"
+    },
+    "Group By: Summarising Before It Loads": {
+      "status": "approved",
+      "hash": "baaf0fe253dc",
+      "note": "",
+      "at": "2026-10-02T18:20:54.823Z"
+    },
+    "Append or Merge: Which One You Need": {
+      "status": "approved",
+      "hash": "f2c7e14a9ee3",
+      "note": "",
+      "at": "2026-10-02T18:20:58.675Z"
+    },
+    "Append: Stacking Tables End to End": {
+      "status": "approved",
+      "hash": "74a056fa611c",
+      "note": "",
+      "at": "2026-10-02T18:20:59.776Z"
+    },
+    "Merge: Joining Side by Side, and the Join Kinds": {
+      "status": "approved",
+      "hash": "cda03da73e85",
+      "note": "",
+      "at": "2026-10-02T18:21:05.886Z"
+    },
+    "Duplicate or Reference: Two Ways to Branch": {
+      "status": "approved",
+      "hash": "bebb44bfb4b3",
+      "note": "",
+      "at": "2026-10-02T18:21:07.711Z"
+    },
+    "Query Folding: Letting the Source Do the Work": {
+      "status": "approved",
+      "hash": "a478577b32e0",
+      "note": "",
+      "at": "2026-10-02T18:21:09.409Z"
+    },
+    "Seeing Whether Your Query Folds": {
+      "status": "approved",
+      "hash": "ff608a619e73",
+      "note": "",
+      "at": "2026-10-02T18:21:10.599Z"
+    },
+    "The Steps That Stop It Folding": {
+      "status": "approved",
+      "hash": "fe5667ed4f31",
+      "note": "",
+      "at": "2026-10-02T18:21:11.684Z"
+    },
+    "Refresh Errors: Renamed Columns and Moved Files": {
+      "status": "approved",
+      "hash": "a0450e123280",
+      "note": "",
+      "at": "2026-10-02T18:21:12.743Z"
+    },
+    "The Advanced Editor and Your First Look at M": {
+      "status": "approved",
+      "hash": "40e4d9e22113",
+      "note": "",
+      "at": "2026-10-02T18:21:13.522Z"
+    },
+    "let and in: How Every Query Is Built": {
+      "status": "approved",
+      "hash": "bc06a734f41f",
+      "note": "",
+      "at": "2026-10-02T18:21:14.977Z"
+    },
+    "Parameters: One Place to Change the Path": {
+      "status": "approved",
+      "hash": "744a248df4ae",
+      "note": "",
+      "at": "2026-10-02T18:21:15.944Z"
+    },
+    "Mistakes Almost Every Beginner Makes in Power Query": {
+      "status": "approved",
+      "hash": "f5830ee30ba9",
+      "note": "",
+      "at": "2026-10-02T18:21:21.353Z"
+    }
+  }
+}
