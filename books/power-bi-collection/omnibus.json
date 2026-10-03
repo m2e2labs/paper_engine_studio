@@ -1,0 +1,17 @@
+{
+  "guide": "Three Books in One",
+  "books": [
+    {
+      "from": "power-bi-beginner",
+      "label": "Book One"
+    },
+    {
+      "from": "power-bi-dax",
+      "label": "Book Two"
+    },
+    {
+      "from": "power-query",
+      "label": "Book Three"
+    }
+  ]
+}

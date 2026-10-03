@@ -97,6 +97,10 @@ npm run studio                                                   # the same, as 
   repaints the finished book, tints included. Never hand-write a book's theme colours into a
   page or an SVG, and never add a per-book stylesheet. A theme changes what a role looks
   like, never what it means.
+- **A book folder with an `omnibus.json` is an omnibus**: its interior, `FACTS.md`,
+  `blocks.md`, `GLOSSARY.md` and the `parts` in its `book.json` are GENERATED from the books
+  it names. Never edit those. Change the page in its own book, then run
+  `node engine/tools/omnibus.mjs books/<slug>` and build.
 - `dist/`, `.studio/` and `book-<edition>.html` are regenerable and gitignored.
 - Shared code for these tools lives in `engine/tools/lib/`. `build-book.mjs`, `check.mjs`
   and `shot.mjs` are untouched upstream files (`build.mjs` wraps the first); keep them that way so upstream still merges.

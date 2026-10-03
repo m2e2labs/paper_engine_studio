@@ -370,6 +370,46 @@ a different set of pages is a different product. The print ISBN is not added to 
 copyright page for you; put it in `copyright.lines`, and preflight reminds you if it is
 missing. PDFs carry only the title, because that is all Chromium writes.
 
+### An omnibus: several books bound as one
+
+```bash
+node engine/tools/omnibus.mjs books/<slug>      # write its sources from the other books
+node engine/tools/build.mjs   books/<slug>      # then everything else, as for any book
+```
+
+An omnibus is a book folder with one extra file, `omnibus.json`, naming the books it
+binds and a label for each:
+
+```json
+{
+  "guide": "Three Books in One",
+  "books": [
+    { "from": "power-bi-beginner", "label": "Book One" },
+    { "from": "power-bi-dax",      "label": "Book Two" },
+    { "from": "power-query",       "label": "Book Three" }
+  ]
+}
+```
+
+`omnibus.mjs` writes the interior, `FACTS.md`, `blocks.md`, `GLOSSARY.md` and the `parts`
+in `book.json` from those books. Each carries a "GENERATED" line: **edit the source book,
+never these**, and run the tool again. Everything else in `book.json` (title, cover,
+copyright, listing) is the omnibus's own and yours to write.
+
+- Pages are copied whole, so a page has the same content hash as in its own book. The
+  omnibus still keeps its own `workflow.json`: an approval there is a person saying the
+  page is right *in this book*. `--carry-approvals` copies the source books' approvals
+  across, with their dates and notes, for every page still exactly as it was approved.
+- A fact keeps its number and gains its book: `F17` in the second book is `F2017`.
+- The label goes in front of each part's eyebrow, so a divider reads "Book Two · …".
+  `guide` is optional: a front matter page listing the books with the parts and lessons
+  each covers, made from the books' own titles and subtitles.
+- It stops, before writing anything, if two books have a page with the same title, or if
+  two pages define the same SVG id differently (in one document the first definition
+  wins, and a diagram is drawn with another page's filter).
+- A long book's index runs to more than one sheet. `build.mjs` lays it out again when the
+  titles would not fit; a short book's index is left exactly as it was.
+
 ### Bleed
 
 `--bleed 3` does **not** touch the sheet. Same box, same fonts, same sizes, so the rule

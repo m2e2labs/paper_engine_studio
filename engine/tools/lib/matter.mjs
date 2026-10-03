@@ -97,6 +97,46 @@ function paginate(things, cost, reserve = 0) {
   return bins;
 }
 
+/* build-book.mjs puts up to 91 names on an index sheet, which is right while a name is
+   one line. A lesson title wraps to two or three in a column this narrow, so a long book's
+   index ran off the page. An index that fits is handed back untouched; one that does not
+   is laid out again across as many sheets as it needs. */
+const IDX_ROW = /<div class="idx-row"><span class="nm">([\s\S]*?)<\/span><span class="pg">\d+<\/span><\/div>/g;
+const IDX_COLS = 3, IDX_LINE = 18.6, IDX_ROW_PX = 5, IDX_CHARS = 22;
+/* capitals are wide: SAMEPERIODLASTYEAR fills a line that holds 22 ordinary letters */
+const indexCost = (name) => {
+  const text = name.replace(/&[a-z]+;/g, '&');
+  return Math.ceil((text.length + 0.3 * (text.match(/[A-Z]/g) || []).length) / IDX_CHARS) * IDX_LINE + IDX_ROW_PX;
+};
+function refitIndex(sheets) {
+  if (!sheets.length) return sheets;
+  /* columns balance to within one row of each other, so the tallest is a row over the average */
+  const room = (i) => ((i ? NEXT_PX : FIRST_PX) - 3 * IDX_LINE - IDX_ROW_PX) * IDX_COLS * 0.95;
+  const rowsOf = (s) => [...s.html.matchAll(IDX_ROW)].map((m) => ({ html: m[0], cost: indexCost(m[1]) }));
+  const sum = (rows) => rows.reduce((n, r) => n + r.cost, 0);
+  if (sheets.every((s, i) => sum(rowsOf(s)) <= room(i))) return sheets;
+
+  const rows = sheets.flatMap(rowsOf);
+  const pack = (share) => {
+    const bins = [[]];
+    let left = room(0) * share;
+    for (const r of rows) {
+      if (bins.at(-1).length && r.cost > left + (share < 1 ? r.cost / 2 : 0)) { bins.push([]); left = room(bins.length - 1) * share; }
+      bins.at(-1).push(r); left -= r.cost;
+    }
+    return bins;
+  };
+  /* as few sheets as it takes, then the same number filled evenly, so the last is never two lonely rows */
+  let bins = pack(1);
+  const total = bins.reduce((n, b, i) => n + room(i), 0);
+  const even = pack(sum(rows) / total);
+  if (even.length === bins.length && even.every((b, i) => sum(b) <= room(i))) bins = even;
+
+  const fill = (tpl, bin) => tpl.replace(/(<div class="idx">)[\s\S]*?(\s*<\/div>\s*<div class="gp-foot">)/, (m, a, b) => `${a}\n            ${bin.map((r) => r.html).join('\n            ')}${b}`);
+  const next = sheets[0].html.replace(/<h1 class="lp-title">[\s\S]*?<\/h1>\s*<hr class="gp-rule">/, '<hr class="gp-rule" style="margin-top:15px">');
+  return bins.map((bin, i) => ({ kind: 'index', html: fill(i ? next : sheets[0].html, bin) }));
+}
+
 /* ------------------------------------------------------------------ sheets */
 function sheetsFor(item, B, facts, terms) {
   const title = titleOf(item);
@@ -267,7 +307,7 @@ export function applyMatter(html, json, { dir, edition = null } = {}) {
   const seq = [
     ...of('cover'), ...of('colophon'), ...frontA.flatMap((x) => x.sheets),
     ...bins.map((bin) => ({ kind: 'toc', bin })), ...frontB.flatMap((x) => x.sheets),
-    ...body, ...K.flatMap((x) => x.sheets), ...of('index'), ...of('other'),
+    ...body, ...K.flatMap((x) => x.sheets), ...refitIndex(of('index')), ...of('other'),
   ];
   const at = (sheet) => seq.indexOf(sheet) + 1;
   const pages = body.filter((s) => s.kind === 'page'), dividers = body.filter((s) => s.kind === 'divider');
@@ -312,5 +352,5 @@ export function applyMatter(html, json, { dir, edition = null } = {}) {
   const out = seq.map((s) => (s.html.startsWith('    ') ? s.html : '    ' + s.html)).join('\n\n');
   const merged = head.replace('</head>', `  <style>\n${[F.length + K.length ? CSS : '', hasXrefs ? XREF_CSS : ''].filter(Boolean).join('\n\n')}\n  </style>\n</head>`) + out + '\n' + tail;
   const count = (list) => list.reduce((n, x) => n + x.sheets.length, 0);
-  return { html: merged, changed: true, added: count(F) + count(K), front: count(F), back: count(K), total: seq.length, notes };
+  return { html: merged, changed: true, added: count(F) + count(K), front: count(F), back: count(K), index: seq.filter((s) => s.kind === 'index').length, total: seq.length, notes };
 }

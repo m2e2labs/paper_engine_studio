@@ -17,6 +17,7 @@
     "images": "node engine/tools/images.mjs",
     "preflight": "node engine/tools/preflight.mjs",
     "release": "node engine/tools/release.mjs",
+    "omnibus": "node engine/tools/omnibus.mjs",
     "studio": "node engine/studio/server.mjs",
     "studio:checklist": "node engine/tools/studio.mjs"
   },

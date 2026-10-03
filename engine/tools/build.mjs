@@ -57,5 +57,9 @@ if (r.added) {
   const extra = [r.front && ` + front matter×${r.front}`, r.back && ` + back matter×${r.back}`].filter(Boolean).join('');
   out[1] = /  \[/.test(out[1]) ? out[1].replace(/  \[/, extra + '  [') : out[1] + extra;
 }
+if (r.index) {   // a long index is laid out again by matter.mjs, so both counts may have moved
+  out[0] = out[0].replace(/^wrote \d+ pages/, `wrote ${r.total} pages`);
+  out[1] = out[1].replace(/index×\d+/, `index×${r.index}`);
+}
 for (const n of r.notes) out.splice(2, 0, `  note: ${n}`);
 process.stdout.write(out.join('\n'));

@@ -1,0 +1,310 @@
+{
+  "$schema": "../../engine/book.schema.json",
+  "title": "Power BI, DAX and Power Query for Absolute Beginners",
+  "subtitle": "The complete three-book collection in one volume.",
+  "author": "M2E2 Labs",
+  "series": "Absolute Beginners",
+  "brand": "Third Watch Press",
+  "editionLabel": "Edition 1.0",
+  "unit": "lessons",
+  "numbered": true,
+  "contents": true,
+  "index": true,
+  "cover": {
+    "kicker": "Three Books in One",
+    "note": "One idea per page. No jargon left unexplained.",
+    "art": "<svg viewBox=\"0 0 1280 220\" width=\"540\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Three sketches side by side: a monitor showing a rising bar chart, a table of rows collapsing into a single number, and a ragged table being turned into a clean one.\"><g transform=\"translate(0,0)\"><defs><filter id=\"omCoverA\" x=\"-10%\" y=\"-10%\" width=\"120%\" height=\"120%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.045\" numOctaves=\"2\" seed=\"7\" result=\"noise\"/><feDisplacementMap in=\"SourceGraphic\" in2=\"noise\" scale=\"2.5\" xChannelSelector=\"R\" yChannelSelector=\"G\"/></filter></defs><rect x=\"60\" y=\"10\" width=\"280\" height=\"170\" rx=\"14\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\" filter=\"url(#omCoverA)\"/><line x1=\"80\" y1=\"150\" x2=\"320\" y2=\"150\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><rect x=\"100\" y=\"110\" width=\"30\" height=\"40\" fill=\"#4F46E5\" filter=\"url(#omCoverA)\"/><rect x=\"150\" y=\"90\" width=\"30\" height=\"60\" fill=\"#4F46E5\" filter=\"url(#omCoverA)\"/><rect x=\"200\" y=\"65\" width=\"30\" height=\"85\" fill=\"#4F46E5\" filter=\"url(#omCoverA)\"/><rect x=\"250\" y=\"45\" width=\"30\" height=\"105\" fill=\"#4F46E5\" filter=\"url(#omCoverA)\"/><path d=\"M95,138 L145,112 L195,85 L245,58 L286,39\" fill=\"none\" stroke=\"#0D9488\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#omCoverA)\"/><polygon points=\"300,26 280,35 293,50\" fill=\"#0D9488\" filter=\"url(#omCoverA)\"/><rect x=\"180\" y=\"184\" width=\"40\" height=\"14\" fill=\"#1A1A2E\" filter=\"url(#omCoverA)\"/><rect x=\"150\" y=\"198\" width=\"100\" height=\"8\" rx=\"4\" fill=\"#1A1A2E\" filter=\"url(#omCoverA)\"/></g><g transform=\"translate(440,10)\"><defs><filter id=\"omCoverB\" filterUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"400\" height=\"200\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.045\" numOctaves=\"2\" seed=\"11\" result=\"noise\"/><feDisplacementMap in=\"SourceGraphic\" in2=\"noise\" scale=\"2.5\" xChannelSelector=\"R\" yChannelSelector=\"G\"/></filter></defs><g filter=\"url(#omCoverB)\"><rect x=\"26\" y=\"30\" width=\"140\" height=\"140\" rx=\"2\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><rect x=\"120\" y=\"55\" width=\"44\" height=\"113\" fill=\"#4F46E5\" opacity=\"0.85\"/><line x1=\"26\" y1=\"54\" x2=\"166\" y2=\"54\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><line x1=\"26\" y1=\"83\" x2=\"166\" y2=\"83\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"26\" y1=\"112\" x2=\"166\" y2=\"112\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"26\" y1=\"141\" x2=\"166\" y2=\"141\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"73\" y1=\"30\" x2=\"73\" y2=\"170\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"120\" y1=\"30\" x2=\"120\" y2=\"170\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"182\" y1=\"100\" x2=\"216\" y2=\"100\" stroke=\"#0D9488\" stroke-width=\"4\" stroke-linecap=\"round\"/><polygon points=\"216,92 232,100 216,108\" fill=\"#0D9488\"/><rect x=\"246\" y=\"55\" width=\"128\" height=\"90\" rx=\"12\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><path d=\"M333,76 L288,76 L310,100 L288,124 L333,124\" fill=\"none\" stroke=\"#4F46E5\" stroke-width=\"6.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g></g><g transform=\"translate(880,10)\">\n  <defs><filter id=\"omCoverC\" filterUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"400\" height=\"200\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.045\" numOctaves=\"2\" seed=\"17\" result=\"noise\"/><feDisplacementMap in=\"SourceGraphic\" in2=\"noise\" scale=\"2.5\" xChannelSelector=\"R\" yChannelSelector=\"G\"/></filter></defs><g filter=\"url(#omCoverC)\"><rect x=\"24\" y=\"48\" width=\"120\" height=\"104\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><rect x=\"64\" y=\"88\" width=\"40\" height=\"30\" fill=\"#FEF2F2\"/><rect x=\"104\" y=\"48\" width=\"40\" height=\"24\" fill=\"#FEF2F2\"/><line x1=\"24\" y1=\"72\" x2=\"144\" y2=\"72\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><line x1=\"24\" y1=\"88\" x2=\"144\" y2=\"88\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><line x1=\"24\" y1=\"118\" x2=\"144\" y2=\"118\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><line x1=\"24\" y1=\"132\" x2=\"144\" y2=\"132\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><line x1=\"64\" y1=\"48\" x2=\"64\" y2=\"152\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><line x1=\"104\" y1=\"48\" x2=\"104\" y2=\"152\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><line x1=\"150\" y1=\"100\" x2=\"163\" y2=\"100\" stroke=\"#94A3B8\" stroke-width=\"2.5\"/><polygon points=\"163,95 172,100 163,105\" fill=\"#94A3B8\"/><line x1=\"190\" y1=\"72\" x2=\"190\" y2=\"128\" stroke=\"#D5D8FA\" stroke-width=\"2.5\"/><rect x=\"176\" y=\"62\" width=\"44\" height=\"18\" rx=\"5\" fill=\"#EEF0FE\" stroke=\"#4F46E5\" stroke-width=\"2\"/><rect x=\"176\" y=\"91\" width=\"44\" height=\"18\" rx=\"5\" fill=\"#EEF0FE\" stroke=\"#4F46E5\" stroke-width=\"2\"/><rect x=\"176\" y=\"120\" width=\"44\" height=\"18\" rx=\"5\" fill=\"#EEF0FE\" stroke=\"#4F46E5\" stroke-width=\"2\"/><line x1=\"228\" y1=\"100\" x2=\"241\" y2=\"100\" stroke=\"#94A3B8\" stroke-width=\"2.5\"/><polygon points=\"241,95 250,100 241,105\" fill=\"#94A3B8\"/><rect x=\"256\" y=\"48\" width=\"120\" height=\"104\" rx=\"3\" fill=\"#ECFDF5\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><line x1=\"256\" y1=\"74\" x2=\"376\" y2=\"74\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/><line x1=\"256\" y1=\"100\" x2=\"376\" y2=\"100\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/><line x1=\"256\" y1=\"126\" x2=\"376\" y2=\"126\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/><line x1=\"296\" y1=\"48\" x2=\"296\" y2=\"152\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/><line x1=\"336\" y1=\"48\" x2=\"336\" y2=\"152\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/></g>\n</g></svg>"
+  },
+  "copyright": {
+    "year": 2026,
+    "rights": "© 2026 M2E2 Labs. All rights reserved.",
+    "lines": [
+      "This volume collects Power BI for Absolute Beginners, Power BI DAX for Absolute Beginners and Power Query for Absolute Beginners.",
+      "Set in Space Grotesk, Inter and JetBrains Mono.",
+      "Power BI, DAX and Power Query are trademarks of Microsoft Corporation. This is an independent guide, not published by or affiliated with Microsoft."
+    ]
+  },
+  "parts": [
+    {
+      "name": "Meet Power BI",
+      "eyebrow": "Book One · Before you open it",
+      "why": "What the app actually is and what you're looking at the first time you open it.",
+      "blocks": [
+        "What Power BI Actually Is",
+        "Installing Power BI Desktop",
+        "A Tour of the Power BI Desktop Window"
+      ]
+    },
+    {
+      "name": "Getting Your Data In",
+      "eyebrow": "Book One · Power Query",
+      "why": "Bringing a spreadsheet or a file into Power BI and cleaning it up before you build anything.",
+      "blocks": [
+        "Connecting to an Excel Workbook",
+        "The Power Query Editor at a Glance",
+        "Fixing a Column's Data Type",
+        "Removing Columns and Rows You Don't Need",
+        "Combining Two Queries: Append vs Merge"
+      ]
+    },
+    {
+      "name": "Shaping the Model",
+      "eyebrow": "Book One · Tables and relationships",
+      "why": "How separate tables connect into one model that can answer real questions.",
+      "blocks": [
+        "What a Data Model Is",
+        "Fact Tables and Dimension Tables",
+        "Building a Relationship Between Two Tables",
+        "Calculated Column vs Measure"
+      ]
+    },
+    {
+      "name": "Writing Your First DAX",
+      "eyebrow": "Book One · Measures and formulas",
+      "why": "The formula language that turns raw rows into numbers worth looking at.",
+      "blocks": [
+        "What DAX Actually Is",
+        "Your First Measure: A Simple SUM",
+        "CALCULATE and the Filter Context",
+        "The Functions Worth Knowing Early"
+      ]
+    },
+    {
+      "name": "Building the Report",
+      "eyebrow": "Book One · Charts and visuals",
+      "why": "Turning the model into something a reader can look at and understand in seconds.",
+      "blocks": [
+        "Choosing the Right Visual",
+        "Building Your First Bar Chart",
+        "Slicers: Letting the Reader Filter the Page",
+        "Formatting a Visual So It's Readable"
+      ]
+    },
+    {
+      "name": "Sharing What You Built",
+      "eyebrow": "Book One · Publishing",
+      "why": "Getting the report out of your laptop and in front of the people who need it.",
+      "blocks": [
+        "Publishing a Report to the Power BI Service",
+        "Sharing a Report With Someone Else",
+        "Scheduling a Data Refresh"
+      ]
+    },
+    {
+      "name": "Where to Go From Here",
+      "eyebrow": "Book One · Next steps",
+      "why": "The mistakes almost everyone makes early on, and how to avoid them.",
+      "blocks": [
+        "Mistakes Almost Every Beginner Makes"
+      ]
+    },
+    {
+      "name": "What DAX Actually Is",
+      "eyebrow": "Book Two · Before your first formula",
+      "why": "Which of the two formula languages in Power BI you're writing, where it lives, and what it looks like when it goes wrong.",
+      "blocks": [
+        "DAX Is Not Excel, and Not Power Query",
+        "Measure, Calculated Column, Calculated Table",
+        "Where You Type It: The Formula Bar",
+        "When the Formula Turns Red"
+      ]
+    },
+    {
+      "name": "Context, the Idea Everything Rests On",
+      "eyebrow": "Book Two · Why your number changes",
+      "why": "The one thing that separates people who guess at DAX from people who write it.",
+      "blocks": [
+        "Filter Context: The Question the Cell Is Asking",
+        "Row Context: What a Calculated Column Sees",
+        "CALCULATE: Changing the Question",
+        "Context Transition: The Thing Nobody Explains"
+      ]
+    },
+    {
+      "name": "The Everyday Functions",
+      "eyebrow": "Book Two · The ones you'll actually type",
+      "why": "The dozen or so functions that cover most of what a real report needs.",
+      "blocks": [
+        "SUM, AVERAGE, MIN and MAX",
+        "Counting Things Without Getting It Wrong",
+        "DIVIDE, and the One Time the Slash Is Fine",
+        "IF and SWITCH"
+      ]
+    },
+    {
+      "name": "Iterators",
+      "eyebrow": "Book Two · The X functions",
+      "why": "When the maths has to happen row by row before anything gets added up.",
+      "blocks": [
+        "What an Iterator Actually Does",
+        "SUMX vs SUM: When You Need the X",
+        "AVERAGEX, MAXX and the Rest of the Family",
+        "RELATED: Reaching Across a Relationship"
+      ]
+    },
+    {
+      "name": "Filters You Control",
+      "eyebrow": "Book Two · Tables in, tables out",
+      "why": "Taking filters off, putting them on, and reading what the reader selected.",
+      "blocks": [
+        "FILTER Returns a Table, Not a Yes or No",
+        "ALL: Taking a Filter Off on Purpose",
+        "Percent of Total, the Pattern You'll Reuse Forever",
+        "SELECTEDVALUE: Reading the Slicer"
+      ]
+    },
+    {
+      "name": "Time Intelligence",
+      "eyebrow": "Book Two · Dates, properly",
+      "why": "Why this year against last year needs a table of its own, and how to build one.",
+      "blocks": [
+        "Why Every Model Needs a Date Table",
+        "Building One with CALENDAR",
+        "Year to Date with TOTALYTD",
+        "SAMEPERIODLASTYEAR and DATEADD"
+      ]
+    },
+    {
+      "name": "DAX You Can Live With",
+      "eyebrow": "Book Two · Writing it so it lasts",
+      "why": "The habits that decide whether you can still read your own file in six months.",
+      "blocks": [
+        "VAR and RETURN: Naming the Middle Step",
+        "Formatting a Formula So Future You Can Read It",
+        "Where to Keep Your Measures",
+        "Mistakes Almost Every Beginner Makes in DAX"
+      ]
+    },
+    {
+      "name": "What Power Query Actually Is",
+      "eyebrow": "Book Three · Before you change a single cell",
+      "why": "Which of the two languages you're writing, where the work is kept, and what Close & Apply really does.",
+      "blocks": [
+        "Power Query Is Not DAX, and Not Excel",
+        "A Tour of the Power Query Editor",
+        "Applied Steps: A Recipe, Not an Edit",
+        "Close and Apply: What Loads and What Doesn't"
+      ]
+    },
+    {
+      "name": "Getting Data In",
+      "eyebrow": "Book Three · Connect, preview, load",
+      "why": "Pointing at a file, choosing what comes through, and getting the types right before anything else.",
+      "blocks": [
+        "Connecting to Excel and CSV",
+        "The Navigator: Choosing What to Load",
+        "Get Data from a Folder: Many Files, One Table",
+        "Data Types: Set Them Early, Set Them Once"
+      ]
+    },
+    {
+      "name": "Cleaning What Arrived",
+      "eyebrow": "Book Three · The unglamorous half",
+      "why": "Headers, junk rows, stray spaces and the columns nobody needs. Most of a real query is this.",
+      "blocks": [
+        "Promote Headers and Remove the Junk Rows",
+        "Choosing, Removing and Renaming Columns",
+        "Replace Values, Trim and Clean",
+        "Filtering Rows: Narrowing Without Deleting"
+      ]
+    },
+    {
+      "name": "Reshaping a Table",
+      "eyebrow": "Book Three · Changing its shape, not its contents",
+      "why": "Splitting, combining, unpivoting and grouping: the four moves that turn a human-shaped sheet into a machine-shaped table.",
+      "blocks": [
+        "Splitting One Column Into Many",
+        "Merge Columns and the Custom Column",
+        "Unpivot: The Fix for a Sheet Built for Humans",
+        "Group By: Summarising Before It Loads"
+      ]
+    },
+    {
+      "name": "Combining Queries",
+      "eyebrow": "Book Three · More than one table",
+      "why": "Stacking tables, joining them, and knowing which of the two you actually need.",
+      "blocks": [
+        "Append or Merge: Which One You Need",
+        "Append: Stacking Tables End to End",
+        "Merge: Joining Side by Side, and the Join Kinds",
+        "Duplicate or Reference: Two Ways to Branch"
+      ]
+    },
+    {
+      "name": "Why It's Slow, and Why It Breaks",
+      "eyebrow": "Book Three · The part nobody warns you about",
+      "why": "Query folding, how to tell whether yours folds, and the refresh errors that only turn up after you've shared the report.",
+      "blocks": [
+        "Query Folding: Letting the Source Do the Work",
+        "Seeing Whether Your Query Folds",
+        "The Steps That Stop It Folding",
+        "Refresh Errors: Renamed Columns and Moved Files"
+      ]
+    },
+    {
+      "name": "Power Query You Can Live With",
+      "eyebrow": "Book Three · Craft",
+      "why": "The code behind the buttons, one place to change the file path, and the mistakes worth knowing by name.",
+      "blocks": [
+        "The Advanced Editor and Your First Look at M",
+        "let and in: How Every Query Is Built",
+        "Parameters: One Place to Change the Path",
+        "Mistakes Almost Every Beginner Makes in Power Query"
+      ]
+    }
+  ],
+  "matter": {
+    "front": [
+      {
+        "kind": "list",
+        "title": "Three Books in One",
+        "items": [
+          {
+            "name": "Book One · Power BI for Absolute Beginners",
+            "note": "From opening the app to publishing your first report. Parts 1 to 7, lessons 1 to 24."
+          },
+          {
+            "name": "Book Two · Power BI DAX for Absolute Beginners",
+            "note": "From your first SUM to the formulas that run a real report. Parts 8 to 14, lessons 25 to 52."
+          },
+          {
+            "name": "Book Three · Power Query for Absolute Beginners",
+            "note": "Get the data in, get it clean, and make it stay that way. Parts 15 to 21, lessons 53 to 80."
+          }
+        ]
+      }
+    ],
+    "back": [
+      {
+        "kind": "sources"
+      },
+      {
+        "kind": "glossary"
+      }
+    ]
+  },
+  "language": "en",
+  "publishing": {
+    "description": "Three books, one volume, 80 short lessons. Everything a complete beginner needs to go from never having opened Power BI to building reports that hold up.\n\nThis collection holds the full text of all three Absolute Beginners guides:\n\nBook One, Power BI for Absolute Beginners: from opening the app to publishing your first report. Install Power BI Desktop, connect to an Excel workbook, build a real data model, choose the right chart, and share what you built.\n\nBook Two, Power BI DAX for Absolute Beginners: from your first SUM to the formulas that run a real report. Filter context and row context, CALCULATE, iterators like SUMX, a proper date table, and VAR for formulas you can still read in six months.\n\nBook Three, Power Query for Absolute Beginners: get the data in, get it clean, and make it stay that way. Applied Steps, a folder of files that grows on its own, unpivot, append and merge, query folding, and your first look at M.\n\nEvery lesson is one idea on one page, with a clear diagram of what is actually happening and one small thing to try before moving on. No unexplained jargon, no assumed expertise. If you can use Excel, you're ready to start.",
+    "keywords": [
+      "power bi for beginners",
+      "dax for beginners",
+      "power query for beginners",
+      "learn power bi",
+      "power bi desktop tutorial",
+      "dax formulas explained",
+      "data cleaning power bi"
+    ],
+    "categories": [
+      "COM021030",
+      "COM005030"
+    ],
+    "publisher": "Third Watch Press",
+    "published": "",
+    "audience": "Complete beginners who have never opened Power BI before.",
+    "isbn": {
+      "print": "",
+      "epub": ""
+    }
+  }
+}
