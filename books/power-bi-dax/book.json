@@ -32,7 +32,8 @@
         "DAX Is Not Excel, and Not Power Query",
         "Measure, Calculated Column, Calculated Table",
         "Where You Type It: The Formula Bar",
-        "When the Formula Turns Red"
+        "When the Formula Turns Red",
+        "Practice: Which Kind"
       ]
     },
     {
@@ -43,7 +44,8 @@
         "Filter Context: The Question the Cell Is Asking",
         "Row Context: What a Calculated Column Sees",
         "CALCULATE: Changing the Question",
-        "Context Transition: The Thing Nobody Explains"
+        "Context Transition: The Thing Nobody Explains",
+        "Practice: Context"
       ]
     },
     {
@@ -54,7 +56,8 @@
         "SUM, AVERAGE, MIN and MAX",
         "Counting Things Without Getting It Wrong",
         "DIVIDE, and the One Time the Slash Is Fine",
-        "IF and SWITCH"
+        "IF and SWITCH",
+        "Practice: Functions"
       ]
     },
     {
@@ -65,7 +68,8 @@
         "What an Iterator Actually Does",
         "SUMX vs SUM: When You Need the X",
         "AVERAGEX, MAXX and the Rest of the Family",
-        "RELATED: Reaching Across a Relationship"
+        "RELATED: Reaching Across a Relationship",
+        "Practice: Iterators"
       ]
     },
     {
@@ -76,7 +80,8 @@
         "FILTER Returns a Table, Not a Yes or No",
         "ALL: Taking a Filter Off on Purpose",
         "Percent of Total, the Pattern You'll Reuse Forever",
-        "SELECTEDVALUE: Reading the Slicer"
+        "SELECTEDVALUE: Reading the Slicer",
+        "Practice: Filters"
       ]
     },
     {
@@ -87,7 +92,8 @@
         "Why Every Model Needs a Date Table",
         "Building One with CALENDAR",
         "Year to Date with TOTALYTD",
-        "SAMEPERIODLASTYEAR and DATEADD"
+        "SAMEPERIODLASTYEAR and DATEADD",
+        "Practice: Dates"
       ]
     },
     {
@@ -98,13 +104,59 @@
         "VAR and RETURN: Naming the Middle Step",
         "Formatting a Formula So Future You Can Read It",
         "Where to Keep Your Measures",
-        "Mistakes Almost Every Beginner Makes in DAX"
+        "Mistakes Almost Every Beginner Makes in DAX",
+        "Practice: Craft"
       ]
     }
   ],
   "matter": {
-    "front": [],
+    "front": [
+      {
+        "kind": "prose",
+        "title": "The Sample Files",
+        "body": [
+          "Every practice page in this book uses the same small set of files: two years of sales from one bike shop, made up for this series. Nothing in them is real, and they come with the book.",
+          "Start from **Sales clean.xlsx** loaded, with Sales related to Products on Product and to Customers on CustomerID. That's where book one left off. If you haven't got that file open, load the three sheets and drag those two columns across in Model view. It takes a minute.",
+          "The model is the one every page in this book draws: a Sales table with Amount, Qty, Price and OrderDate, a Products table with Category, a Customers table, and from the time intelligence part on, a Date table you'll build yourself.",
+          "The answers to every practice page are at the back."
+        ]
+      }
+    ],
     "back": [
+      {
+        "kind": "prose",
+        "title": "Answers",
+        "body": [
+          "## Practice: Which Kind",
+          "116,922 in both cards. The measure works it out when the card asks; the column worked it out once per row at load and stored it.",
+          "Power BI can't tell which table Amount belongs to, so the formula turns red. With the table name in front, it always can.",
+          "Still 116,922. Line breaks are for you, not for the engine.",
+          "## Practice: Context",
+          "Card 116,922; Cycles 80,680, Gear 28,809, blank 7,433. The blank row is the lamp, which has no row on the Products sheet and so no category.",
+          "116,922 on every row. The row context tells the column which row it's on; it doesn't narrow what SUM sees.",
+          "80,680 everywhere. Blue is only the bike, and CALCULATE's filter on Colour applies in every cell, whatever the row's category was asking.",
+          "## Practice: Functions",
+          "99.42, 6 and 840. The smallest line is one bell; the largest is two bikes at full price.",
+          "1,176 against 1,179. COUNT skips the 3 blank amounts; COUNTROWS counts every row regardless. DISTINCTCOUNT of Product is 5.",
+          "61.83 overall, and 6 for the bell. Dividing total amount by total quantity gives a real average unit price, and a product with one price ever gives that price back exactly.",
+          "## Practice: Iterators",
+          "116,922 with SUMX, about 139,358 the other way. Multiplying a total quantity by an average price assumes every unit sold at the average, and bikes didn't.",
+          "5,846.10. AVERAGEX walked the Customers table, worked out Total Sales for each one, and averaged those twenty answers.",
+          "207 blank rows, all lamps. There's no lamp on the Products sheet, so there's no related row and RELATED hands back nothing.",
+          "## Practice: Filters",
+          "116,922 in every row. ALL(Sales) strips the category filter the row put on, so the measure sees the whole table while the visual stays sliced.",
+          "69.0%. Bikes are most of the money. The top of the fraction keeps the row's filter; the bottom removes it.",
+          "West, then All regions, then All regions. SELECTEDVALUE only hands back a value when the column is down to exactly one.",
+          "## Practice: Dates",
+          "731 rows: every day of 2024 and 2025, both whole years. Marking it lets Power BI check for gaps and drop the hidden date tables it was making for you.",
+          "4,388 for June alone, 28,131 from January to the end of June. TOTALYTD changed the date filter to run from the start of the year, then evaluated.",
+          "3,877, and the difference is 511. SAMEPERIODLASTYEAR shifted the selected June back a year and handed those dates to CALCULATE.",
+          "## Practice: Craft",
+          "69.0%, unchanged. The variables didn't change the maths; they named the two halves so the next person, probably you, can read it.",
+          "The formatted version puts DIVIDE, CALCULATE and ALL on their own lines with the brackets lined up. If it looks longer, that's the point: longer and readable beats short and opaque.",
+          "A table with a calculator icon at the top of the Data pane, holding nothing but measures. That's the file someone else can maintain."
+        ]
+      },
       {
         "kind": "sources"
       },

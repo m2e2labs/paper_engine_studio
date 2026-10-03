@@ -472,6 +472,61 @@ fact keeps its number and gains its book: F17 in the second book is F2017 here.
 
 ---
 
+## F1059 · The Sample Files
+- **Claim:** The sample files for this series are one made-up bike shop's sales: a Sales folder of 24 monthly workbooks (Sales 2024-01.xlsx to Sales 2025-12.xlsx, each with a title row above the headers), Sales by month.xlsx (a Sales sheet of 20 rows with 12 month columns, Jan to Dec, under a title row, and a Products sheet of 5 products), Sales clean.xlsx (3 sheets: Sales with 7 columns, OrderDate, Region, CustomerID, Product, Qty, Price and Amount, and 1,179 rows; Products; Customers), Customers.csv (20 customers) and Targets.csv.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F1060 · Practice: Meet Power BI
+- **Claim:** Sales clean.xlsx has 3 sheets, Sales, Products and Customers; its Sales sheet has 7 columns and 1,179 rows of order lines; Report view is the one with an empty canvas and the Visualizations pane.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F1061 · Practice: Getting the Data In
+- **Claim:** Loading Sales clean.xlsx with Sales, Products and Customers ticked gives 3 queries in the Power Query Editor and 3 tables in the Data pane; Qty, Price and Amount are whole numbers and OrderDate is a date.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F1062 · Practice: Shaping the Model
+- **Claim:** With Sales clean.xlsx loaded, Sales has 1,179 rows, Products 5 and Customers 20; the model needs 2 relationships, Sales[Product] to Products[Product] and Sales[CustomerID] to Customers[CustomerID].
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F1063 · Practice: Your First DAX
+- **Claim:** Over Sales clean.xlsx, SUM(Sales[Amount]) is 116,922, CALCULATE of that total with Sales[Region] = "West" is 27,787, COUNTROWS(Sales) is 1,179, and DIVIDE of the total by the row count is 99.17.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F1064 · Practice: Building the Report
+- **Claim:** In a column chart of Total Sales by Region the tallest bar is South at 34,335; a slicer on Products[Category] set to Gear brings Total Sales to 28,809, and the slicer also offers a blank for the lamp, which is sold but not on the Products sheet.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F1065 · Practice: The Whole Book
+- **Claim:** The finished book-one model has 2 relationships, no table floating on its own, a line-total calculated column that is correctly a column, and a Total Sales card that reads 116,922 with nothing selected.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+
 <!-- Copy the shape above for your own facts.
 
 ## F2 · <Short label>
@@ -1588,6 +1643,69 @@ fact keeps its number and gains its book: F17 in the second book is F2017 here.
 - **Checked:** 2026-09-23
 
 ---
+
+## F2140 · The Sample Files
+- **Claim:** The sample files for this series are one made-up bike shop's sales: a Sales folder of 24 monthly workbooks (Sales 2024-01.xlsx to Sales 2025-12.xlsx, each with a title row above the headers), Sales by month.xlsx (a Sales sheet of 20 rows with 12 month columns, Jan to Dec, under a title row, and a Products sheet of 5 products), Sales clean.xlsx (3 sheets: Sales with 7 columns, OrderDate, Region, CustomerID, Product, Qty, Price and Amount, and 1,179 rows; Products; Customers), Customers.csv (20 customers) and Targets.csv.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F2141 · Practice: Measure, Column or Table
+- **Claim:** SUM(Sales[Amount]) is 116,922 over Sales clean.xlsx; a calculated column Sales[Qty] * Sales[Price] summed in a card gives the same figure for every line that has a quantity; deleting the table name in front of [Amount] turns the formula red; Shift+Enter breaks a formula across lines without changing its result.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F2142 · Practice: Context
+- **Claim:** Total Sales by Products[Category] over Sales clean.xlsx is Cycles 80,680, Gear 28,809 and a blank row of 7,433 for the lamp, with 116,922 in an unfiltered card; a calculated column SUM(Sales[Amount]) shows 116,922 on every row; CALCULATE([Total Sales], Products[Colour] = "Blue") is 80,680 on every row, because the only blue product is the bike.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F2143 · Practice: The Everyday Functions
+- **Claim:** Over Sales clean.xlsx, AVERAGE of Sales[Amount] is 99.42, MIN is 6 and MAX is 840; COUNT(Sales[Amount]) is 1,176 and COUNTROWS(Sales) is 1,179, a gap of 3 lines with no amount; DISTINCTCOUNT(Sales[Product]) is 5; DIVIDE of total sales by total quantity is 61.83, and for the bell alone it is 6.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F2144 · Practice: Iterators
+- **Claim:** Over Sales clean.xlsx, SUMX(Sales, Sales[Qty] * Sales[Price]) is 116,922, while SUM(Sales[Qty]) * AVERAGE(Sales[Price]) comes out at about 139,358; AVERAGEX(Customers, [Total Sales]) is 5,846.10; a calculated column RELATED(Products[Category]) is blank on 207 rows, every one of them a lamp.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F2145 · Practice: Filters You Control
+- **Claim:** Over Sales clean.xlsx, CALCULATE([Total Sales], ALL(Sales)) is 116,922 in every row of a table by category; Cycles' share of the total is 69.0%; SELECTEDVALUE(Sales[Region], "All regions") shows the one region picked in a slicer and the fallback when more than one is picked or none.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F2146 · Practice: Time Intelligence
+- **Claim:** CALENDAR(DATE(2024, 1, 1), DATE(2025, 12, 31)) gives 731 rows; over Sales clean.xlsx with a date slicer from 1 June 2025 to 30 June 2025, Total Sales is 4,388, TOTALYTD is 28,131, SAMEPERIODLASTYEAR gives 3,877, and June 2025 beat June 2024 by 511.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F2147 · Practice: DAX You Can Live With
+- **Claim:** Cycles' share of total sales over Sales clean.xlsx is 69.0%, whether the measure is written as one expression or as VAR Top, VAR Bottom and RETURN DIVIDE(Top, Bottom).
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
 
 <!-- No facts yet. Nothing has been researched for this book.
 
@@ -2877,3 +2995,59 @@ fact keeps its number and gains its book: F17 in the second book is F2017 here.
 - **Source:** Microsoft Learn, "Connect to Analysis Services tabular data in Power BI Desktop": https://learn.microsoft.com/power-bi/connect-data/desktop-analysis-services-tabular-data
 - **Kind:** reference
 - **Checked:** 2026-09-23
+
+---
+
+## F3160 · The Sample Files
+- **Claim:** The sample files for this series are one made-up bike shop's sales: a Sales folder of 24 monthly workbooks (Sales 2024-01.xlsx to Sales 2025-12.xlsx, each with a title row above the headers), Sales by month.xlsx (a Sales sheet of 20 rows with 12 month columns, Jan to Dec, under a title row, and a Products sheet of 5 products), Sales clean.xlsx (3 sheets: Sales with 7 columns, OrderDate, Region, CustomerID, Product, Qty, Price and Amount, and 1,179 rows; Products; Customers), Customers.csv (20 customers) and Targets.csv.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F3161 · Practice: Getting Data In
+- **Claim:** Combining the 24 monthly workbooks in the Sales folder before the title rows are removed gives 1,203 rows, the 1,179 order lines plus one header row from each file; the header row of each file holds the text OrderDate in its first column.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F3162 · Practice: Cleaning What Arrived
+- **Claim:** With the title row removed from each monthly workbook and the headers promoted, the combined Sales folder query has 1,179 rows; its Region column lists 5 distinct values before Trim, because 4 lines in Sales 2025-02.xlsx have a leading space before North, and 4 after; filtering to North keeps 306 rows; Remove Top Rows takes 1 row, and leaving it gives 1,180 rows.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F3163 · Practice: Reshaping a Table
+- **Claim:** The Sales sheet of Sales by month.xlsx, once its title row is removed and the headers promoted, has 20 rows with 12 month columns; a custom column Q1 = [Jan] + [Feb] + [Mar] is 6 on the North, Bike row; unpivoting the month columns gives 240 rows, or 260 if a quarter column is left in; grouping by month gives 12 rows with Jan at 76 units.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F3164 · Practice: Combining Queries
+- **Claim:** Sales 2025-02.xlsx has 48 order lines and Sales 2025-03.xlsx has 58, so appending them gives 106 rows; merging the combined Sales folder query with the Products sheet on Product gives 207 rows for a left anti join (all lamps, which the Products sheet does not list), 972 for an inner join and 1,179 for a left outer join; grouped by region, South leads at 34,335.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F3165 · Practice: Why It Breaks
+- **Claim:** Renaming the Region header to Area in a copy of Sales 2025-03.xlsx breaks the refresh of the folder query at the step that names Region, and the error's detail line names that column; renaming the folder gives DataSource.NotFound until the source is repointed.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F3166 · Practice: Reading and Keeping M
+- **Claim:** Replacing the typed folder path in the Sales folder query with a text parameter named SalesPath leaves the result unchanged at 1,179 rows.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02

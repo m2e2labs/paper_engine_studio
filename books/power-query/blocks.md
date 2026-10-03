@@ -94,6 +94,15 @@ Mechanism · diagram
   feeding a sibling instead)
 - **Facts:** F18, F19, F20, F21, F22
 
+
+#### Practice: The Editor
+Practice · diagram
+- **What:** Open it, read the steps you never clicked, load only what you need. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "A Sales query with Region and Product as its headers means nothing was promoted, which is fine. The cleaning part removes the junk by hand either way."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F160
+
 ---
 
 ## Part 2 - Getting Data In
@@ -144,6 +153,15 @@ Mechanism · diagram
 - **Band:** diagram (a header row with a type icon over each column, and the same table
   with one type wrong and an error cell below it)
 - **Facts:** F36, F37, F38, F39, F40, F41, F42
+
+
+#### Practice: Data In
+Practice · diagram
+- **What:** Point at the folder, count what came through, set the types. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "A combine that stops with an error means a file in the folder isn't a workbook, or a copy of the folder got inside it. One structure, one extension."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F160, F161
 
 ---
 
@@ -203,6 +221,15 @@ Cleaning · diagram
   step text shown underneath)
 - **Facts:** F60, F61, F62, F63, F64, F65
 
+
+#### Practice: Cleaning
+Practice · diagram
+- **What:** Junk off, headers on, then find the second North. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "1,180 rows means one title row survived: the count is 1. A second North after Trim means Trim ran before the headers were promoted."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F160, F162
+
 ---
 
 ## Part 4 - Reshaping a Table
@@ -253,6 +280,15 @@ Reshaping · diagram
 - **Action:** "Group your sales by month and compare the row count before and after."
 - **Band:** diagram (many rows collapsing into a few, with the row count falling)
 - **Facts:** F83, F84, F85, F86, F87, F88, F154, F155, F156
+
+
+#### Practice: Reshaping
+Practice · diagram
+- **What:** Add a quarter, unpivot the months, group what's left. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "260 rows after the unpivot means Q1 was still there and went in as a month. Delete the Q1 step."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F160, F163
 
 ---
 
@@ -306,6 +342,15 @@ Combining · diagram
 - **Band:** diagram (one query branching two ways: duplicated steps side by side, versus
   a reference pointing back at the original)
 - **Facts:** F104, F105, F106, F107
+
+
+#### Practice: Combining
+Practice · diagram
+- **What:** Stack two months, join the products, count who's missing. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "A left anti join that returns nothing means the key columns differ in type, or one side was trimmed and the other wasn't. Both sides text, the same text."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F160, F164
 
 ---
 
@@ -366,6 +411,15 @@ Errors · diagram
   step)
 - **Facts:** F124, F125, F126, F127, F128, F129, F130, F159
 
+
+#### Practice: Breaking It
+Practice · diagram
+- **What:** Check for folding, rename a column, move the folder. Read every message. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "No error after the rename means no step named Region, so nothing noticed. Add a filter on Region and refresh again. The query finds things by name."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F160, F165
+
 ---
 
 ## Part 7 - Power Query You Can Live With
@@ -419,3 +473,14 @@ Review · diagram
 - **Band:** diagram (six small cards, the mistake on one side and its one-line fix on the
   other)
 - **Facts:** F4, F5, F28, F29, F44, F45, F50, F52, F104, F105, F116, F122
+
+#### Practice: Reading M
+Practice · diagram
+- **What:** Read the code, rename one thing both ways, move the path into a parameter. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "Folder.Files(SalesPath) erroring means the parameter has no type, or its value still has quotes. Type Text, and the bare path."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F160, F166
+
+---
+

@@ -94,6 +94,15 @@ Errors · diagram
   fix on the right)
 - **Facts:** F13, F14, F15, F16, F17, F129, F130, F131
 
+
+#### Practice: Which Kind
+Practice · diagram
+- **What:** Write both, break one on purpose, read the red line. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "Line Total a little under 116,922 is right: a few lines have no quantity, so their product is blank while their Amount isn't."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F140, F141
+
 ---
 
 ## Part 2 - Context, the Idea Everything Rests On
@@ -157,6 +166,15 @@ Context · diagram
   card, which then feeds the measure)
 - **Facts:** F28, F29, F30
 
+
+#### Practice: Context
+Practice · diagram
+- **What:** One measure, many cells, and a column that refuses to change. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "No blank row means the Products relationship is missing. A Blue Sales that moves per row means the filter went on Sales, not Products[Colour]."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F140, F142
+
 ---
 
 ## Part 3 - The Everyday Functions
@@ -212,6 +230,15 @@ Functions · diagram
 - **Band:** diagram (nested IFs drawn as a staircase running off the edge of the page;
   SWITCH as a flat list of conditions with one result each)
 - **Facts:** F48, F49, F50, F51, F52, F53
+
+
+#### Practice: Functions
+Practice · diagram
+- **What:** Aggregate, count, divide. Then say why the counts differ. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "COUNT and COUNTROWS agreeing means you counted a column with no blanks. Count Amount: its 3 missing values are the lesson."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F140, F143
 
 ---
 
@@ -271,6 +298,15 @@ Functions · diagram
   many side to the one side and carrying a value back with it)
 - **Facts:** F64, F65, F66, F67, F126, F127, F128
 
+
+#### Practice: Iterators
+Practice · diagram
+- **What:** Two revenues, one average per customer, a column that comes back blank. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "RELATED refusing to work means the relationship is missing or backwards. It only walks from the many side, Sales, to the one side, Products."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F140, F144
+
 ---
 
 ## Part 5 - Filters You Control
@@ -328,6 +364,15 @@ Filters · diagram
   three chosen falling through to the fallback text)
 - **Facts:** F80, F81, F82, F83, F84
 
+
+#### Practice: Filters
+Practice · diagram
+- **What:** Take a filter off, divide by it, read what the reader picked. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "An All Sales that still moves means ALL was given a column, not the table. Write ALL(Sales) exactly, the whole table named."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F140, F145
+
 ---
 
 ## Part 6 - Time Intelligence
@@ -382,6 +427,15 @@ Dates · diagram
 - **Band:** diagram (the selected months sliding back one year along a timeline, both
   sets of bars feeding a difference figure)
 - **Facts:** F99, F100, F101
+
+
+#### Practice: Dates
+Practice · diagram
+- **What:** Build the date table, then ask for June in different ways. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "A blank LY means the table wasn't marked, or the relationship isn't on 'Date'[Date]. A YTD equal to the month means the slicer is on Sales, not Date."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F140, F146
 
 ---
 
@@ -442,3 +496,14 @@ Review · diagram
   fix on the other)
 
 - **Facts:** F117, F118, F119, F138
+
+#### Practice: Craft
+Practice · diagram
+- **What:** Name the middle step, format it, give the measures a home. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "A Measures table that won't move to the top still has a visible column. Hide it, then collapse and expand the Data pane."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F140, F147
+
+---
+

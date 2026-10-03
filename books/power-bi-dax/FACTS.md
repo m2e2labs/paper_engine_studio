@@ -1128,6 +1128,71 @@ with the facts that page cites, and tells you which ones it cannot trace.
 
 ---
 
+---
+
+## F140 · The Sample Files
+- **Claim:** The sample files for this series are one made-up bike shop's sales: a Sales folder of 24 monthly workbooks (Sales 2024-01.xlsx to Sales 2025-12.xlsx, each with a title row above the headers), Sales by month.xlsx (a Sales sheet of 20 rows with 12 month columns, Jan to Dec, under a title row, and a Products sheet of 5 products), Sales clean.xlsx (3 sheets: Sales with 7 columns, OrderDate, Region, CustomerID, Product, Qty, Price and Amount, and 1,179 rows; Products; Customers), Customers.csv (20 customers) and Targets.csv.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F141 · Practice: Measure, Column or Table
+- **Claim:** SUM(Sales[Amount]) is 116,922 over Sales clean.xlsx; a calculated column Sales[Qty] * Sales[Price] summed in a card gives the same figure for every line that has a quantity; deleting the table name in front of [Amount] turns the formula red; Shift+Enter breaks a formula across lines without changing its result.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F142 · Practice: Context
+- **Claim:** Total Sales by Products[Category] over Sales clean.xlsx is Cycles 80,680, Gear 28,809 and a blank row of 7,433 for the lamp, with 116,922 in an unfiltered card; a calculated column SUM(Sales[Amount]) shows 116,922 on every row; CALCULATE([Total Sales], Products[Colour] = "Blue") is 80,680 on every row, because the only blue product is the bike.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F143 · Practice: The Everyday Functions
+- **Claim:** Over Sales clean.xlsx, AVERAGE of Sales[Amount] is 99.42, MIN is 6 and MAX is 840; COUNT(Sales[Amount]) is 1,176 and COUNTROWS(Sales) is 1,179, a gap of 3 lines with no amount; DISTINCTCOUNT(Sales[Product]) is 5; DIVIDE of total sales by total quantity is 61.83, and for the bell alone it is 6.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F144 · Practice: Iterators
+- **Claim:** Over Sales clean.xlsx, SUMX(Sales, Sales[Qty] * Sales[Price]) is 116,922, while SUM(Sales[Qty]) * AVERAGE(Sales[Price]) comes out at about 139,358; AVERAGEX(Customers, [Total Sales]) is 5,846.10; a calculated column RELATED(Products[Category]) is blank on 207 rows, every one of them a lamp.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F145 · Practice: Filters You Control
+- **Claim:** Over Sales clean.xlsx, CALCULATE([Total Sales], ALL(Sales)) is 116,922 in every row of a table by category; Cycles' share of the total is 69.0%; SELECTEDVALUE(Sales[Region], "All regions") shows the one region picked in a slicer and the fallback when more than one is picked or none.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F146 · Practice: Time Intelligence
+- **Claim:** CALENDAR(DATE(2024, 1, 1), DATE(2025, 12, 31)) gives 731 rows; over Sales clean.xlsx with a date slicer from 1 June 2025 to 30 June 2025, Total Sales is 4,388, TOTALYTD is 28,131, SAMEPERIODLASTYEAR gives 3,877, and June 2025 beat June 2024 by 511.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F147 · Practice: DAX You Can Live With
+- **Claim:** Cycles' share of total sales over Sales clean.xlsx is 69.0%, whether the measure is written as one expression or as VAR Top, VAR Bottom and RETURN DIVIDE(Top, Bottom).
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+
 <!-- No facts yet. Nothing has been researched for this book.
 
      Findings go into RESEARCH.md first:

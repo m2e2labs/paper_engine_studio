@@ -32,6 +32,9 @@
    the reader is in. "guide" is optional: the title of a front matter page
    listing the books, each with its subtitle and the parts and lessons it
    covers. It is made from the books' own titles, so there is nothing to write.
+   A prose page the books share by name in their back matter (an "Answers"
+   page) is carried over as one page holding every book's text in order. The
+   rest of the omnibus's matter is its own, written in its book.json.
 
    A fact keeps its number and gains its book: F17 in the second book is F2017.
 
@@ -232,12 +235,28 @@ for (const s of sources) {
 }
 
 const nextJson = { ...json, parts };
+
+/* Back matter the books share by name (an "Answers" page, say) is carried over as one
+   page, the books' bodies one after another in reading order. Front matter is the
+   omnibus's own: the books' prefaces do not add up to one. */
+const shared = new Map();
+for (const s of sources)
+  for (const m of s.book.json.matter?.back || [])
+    if (m && m.kind === 'prose' && m.title) shared.set(m.title, [...(shared.get(m.title) || []), ...(Array.isArray(m.body) ? m.body : [String(m.body || '')])]);
+if (shared.size) {
+  const back = [...(json.matter?.back || [])];
+  for (const [title, body] of shared) {
+    const i = back.findIndex((m) => m && m.kind === 'prose' && m.title === title);
+    if (i === -1) back.unshift({ kind: 'prose', title, body }); else back[i] = { ...back[i], body };
+  }
+  nextJson.matter = { ...(nextJson.matter || {}), back };
+}
 if (cfg.guide) {
   const page = { kind: 'list', title: String(cfg.guide), items: guideItems };
   const front = [...(json.matter?.front || [])];
   const i = front.findIndex((m) => m && m.kind === 'list' && m.title === page.title);
   if (i === -1) front.unshift(page); else front[i] = { ...front[i], items: guideItems };
-  nextJson.matter = { ...(json.matter || {}), front };
+  nextJson.matter = { ...(nextJson.matter || {}), front };
 }
 
 /* ------------------------------------------------------------- 5. write, only what changed */

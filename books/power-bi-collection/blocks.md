@@ -48,6 +48,15 @@ Interface · screenshot
   the ribbon)
 - **Facts:** F1006, F1007, F1008, F1057
 
+
+#### Practice: First Look
+Practice · diagram
+- **What:** Open the app, open the file, say which is which. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "Far fewer than 1,179 rows means you opened Sales by month.xlsx, the other workbook. That one is for the Power Query book."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F1059, F1060
+
 ---
 
 ## Part 2 · Getting Your Data In
@@ -111,6 +120,15 @@ Power Query · diagram
   side by side for Merge)
 - **Facts:** F1017, F1018
 
+
+#### Practice: Loading Data
+Practice · diagram
+- **What:** Load the workbook, read the types, remove a column and take it back. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "Numbers lined up on the left mean a type was guessed wrong. Click the icon in the header and set it yourself. A guess is only a guess."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F1059, F1061
+
 ---
 
 ## Part 3 · Shaping the Model
@@ -166,6 +184,15 @@ Modeling · diagram
 - **Band:** diagram (a column filling straight down inside a table vs. a measure
   recalculating live next to a chart that's being filtered)
 - **Facts:** F1025, F1026, F1027
+
+
+#### Practice: The Model
+Practice · diagram
+- **What:** Draw the lines, name the fact table, pick column or measure. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "A line that won't draw means the two columns aren't the same type, or you dropped onto the wrong column. Undo, and drag Product onto Product."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F1059, F1062
 
 ---
 
@@ -224,6 +251,15 @@ DAX · diagram
   icon of what it does)
 - **Facts:** F1034, F1035, F1036, F1037, F1038
 
+
+#### Practice: First DAX
+Practice · diagram
+- **What:** A sum, a filter, a count and a divide. Match the numbers. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "A little under 116,922 means Qty times Price was summed, not Amount. A few lines have no quantity, on purpose. Sum the Amount column."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F1059, F1063
+
 ---
 
 ## Part 5 · Building the Report
@@ -280,6 +316,15 @@ Visuals · screenshot
   toggle switched off, the chart beside it showing no title)
 - **Facts:** F1045, F1046
 
+
+#### Practice: The Report
+Practice · diagram
+- **What:** One chart, one slicer, one title. Then read the tallest bar. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "Gear not changing the card means the slicer is on Sales[Product], not Products[Category], or the relationship is missing. Check Model view."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F1059, F1064
+
 ---
 
 ## Part 6 · Sharing What You Built
@@ -322,6 +367,15 @@ Publishing · screenshot
   Scheduled refresh toggle)
 - **Facts:** F1051, F1052, F1055, F1056
 
+
+#### Practice: Publishing
+Practice · diagram
+- **What:** Publish it, open it in a browser, find the refresh switch. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "A greyed-out Publish button means you're not signed in, or the file isn't saved. Save, sign in at the top right, try again."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F1059
+
 ---
 
 ## Part 7 · Where to Go From Here
@@ -339,6 +393,15 @@ Overview · diagram
 - **Band:** diagram (a short checklist card, three items, a red mark next to the one
   most beginners get wrong)
 - **Facts:** none (restates concepts already taught and sourced on earlier pages)
+
+
+#### Practice: Final Check
+Practice · diagram
+- **What:** A last look at the file you've built, before you share it. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "Fix the floating table first. A missing relationship makes every visual touching that table quietly wrong, and no error ever says so."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F1059, F1065
 
 ---
 
@@ -414,6 +477,15 @@ Errors · diagram
   fix on the right)
 - **Facts:** F2013, F2014, F2015, F2016, F2017, F2129, F2130, F2131
 
+
+#### Practice: Which Kind
+Practice · diagram
+- **What:** Write both, break one on purpose, read the red line. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "Line Total a little under 116,922 is right: a few lines have no quantity, so their product is blank while their Amount isn't."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F2140, F2141
+
 ---
 
 ## Part 9 · Context, the Idea Everything Rests On
@@ -477,6 +549,15 @@ Context · diagram
   card, which then feeds the measure)
 - **Facts:** F2028, F2029, F2030
 
+
+#### Practice: Context
+Practice · diagram
+- **What:** One measure, many cells, and a column that refuses to change. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "No blank row means the Products relationship is missing. A Blue Sales that moves per row means the filter went on Sales, not Products[Colour]."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F2140, F2142
+
 ---
 
 ## Part 10 · The Everyday Functions
@@ -532,6 +613,15 @@ Functions · diagram
 - **Band:** diagram (nested IFs drawn as a staircase running off the edge of the page;
   SWITCH as a flat list of conditions with one result each)
 - **Facts:** F2048, F2049, F2050, F2051, F2052, F2053
+
+
+#### Practice: Functions
+Practice · diagram
+- **What:** Aggregate, count, divide. Then say why the counts differ. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "COUNT and COUNTROWS agreeing means you counted a column with no blanks. Count Amount: its 3 missing values are the lesson."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F2140, F2143
 
 ---
 
@@ -591,6 +681,15 @@ Functions · diagram
   many side to the one side and carrying a value back with it)
 - **Facts:** F2064, F2065, F2066, F2067, F2126, F2127, F2128
 
+
+#### Practice: Iterators
+Practice · diagram
+- **What:** Two revenues, one average per customer, a column that comes back blank. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "RELATED refusing to work means the relationship is missing or backwards. It only walks from the many side, Sales, to the one side, Products."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F2140, F2144
+
 ---
 
 ## Part 12 · Filters You Control
@@ -648,6 +747,15 @@ Filters · diagram
   three chosen falling through to the fallback text)
 - **Facts:** F2080, F2081, F2082, F2083, F2084
 
+
+#### Practice: Filters
+Practice · diagram
+- **What:** Take a filter off, divide by it, read what the reader picked. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "An All Sales that still moves means ALL was given a column, not the table. Write ALL(Sales) exactly, the whole table named."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F2140, F2145
+
 ---
 
 ## Part 13 · Time Intelligence
@@ -702,6 +810,15 @@ Dates · diagram
 - **Band:** diagram (the selected months sliding back one year along a timeline, both
   sets of bars feeding a difference figure)
 - **Facts:** F2099, F2100, F2101
+
+
+#### Practice: Dates
+Practice · diagram
+- **What:** Build the date table, then ask for June in different ways. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "A blank LY means the table wasn't marked, or the relationship isn't on 'Date'[Date]. A YTD equal to the month means the slicer is on Sales, not Date."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F2140, F2146
 
 ---
 
@@ -763,6 +880,14 @@ Review · diagram
 
 - **Facts:** F2117, F2118, F2119, F2138
 
+#### Practice: Craft
+Practice · diagram
+- **What:** Name the middle step, format it, give the measures a home. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "A Measures table that won't move to the top still has a visible column. Hide it, then collapse and expand the Data pane."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F2140, F2147
+
 ---
 
 <!-- ===== Book Three: books/power-query/blocks.md ===== -->
@@ -820,6 +945,15 @@ Mechanism · diagram
   feeding a sibling instead)
 - **Facts:** F3018, F3019, F3020, F3021, F3022
 
+
+#### Practice: The Editor
+Practice · diagram
+- **What:** Open it, read the steps you never clicked, load only what you need. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "A Sales query with Region and Product as its headers means nothing was promoted, which is fine. The cleaning part removes the junk by hand either way."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F3160
+
 ---
 
 ## Part 16 · Getting Data In
@@ -870,6 +1004,15 @@ Mechanism · diagram
 - **Band:** diagram (a header row with a type icon over each column, and the same table
   with one type wrong and an error cell below it)
 - **Facts:** F3036, F3037, F3038, F3039, F3040, F3041, F3042
+
+
+#### Practice: Data In
+Practice · diagram
+- **What:** Point at the folder, count what came through, set the types. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "A combine that stops with an error means a file in the folder isn't a workbook, or a copy of the folder got inside it. One structure, one extension."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F3160, F3161
 
 ---
 
@@ -929,6 +1072,15 @@ Cleaning · diagram
   step text shown underneath)
 - **Facts:** F3060, F3061, F3062, F3063, F3064, F3065
 
+
+#### Practice: Cleaning
+Practice · diagram
+- **What:** Junk off, headers on, then find the second North. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "1,180 rows means one title row survived: the count is 1. A second North after Trim means Trim ran before the headers were promoted."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F3160, F3162
+
 ---
 
 ## Part 18 · Reshaping a Table
@@ -979,6 +1131,15 @@ Reshaping · diagram
 - **Action:** "Group your sales by month and compare the row count before and after."
 - **Band:** diagram (many rows collapsing into a few, with the row count falling)
 - **Facts:** F3083, F3084, F3085, F3086, F3087, F3088, F3154, F3155, F3156
+
+
+#### Practice: Reshaping
+Practice · diagram
+- **What:** Add a quarter, unpivot the months, group what's left. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "260 rows after the unpivot means Q1 was still there and went in as a month. Delete the Q1 step."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F3160, F3163
 
 ---
 
@@ -1032,6 +1193,15 @@ Combining · diagram
 - **Band:** diagram (one query branching two ways: duplicated steps side by side, versus
   a reference pointing back at the original)
 - **Facts:** F3104, F3105, F3106, F3107
+
+
+#### Practice: Combining
+Practice · diagram
+- **What:** Stack two months, join the products, count who's missing. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "A left anti join that returns nothing means the key columns differ in type, or one side was trimmed and the other wasn't. Both sides text, the same text."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F3160, F3164
 
 ---
 
@@ -1092,6 +1262,15 @@ Errors · diagram
   step)
 - **Facts:** F3124, F3125, F3126, F3127, F3128, F3129, F3130, F3159
 
+
+#### Practice: Breaking It
+Practice · diagram
+- **What:** Check for folding, rename a column, move the folder. Read every message. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "No error after the rename means no step named Region, so nothing noticed. Add a filter on Region and refresh again. The query finds things by name."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F3160, F3165
+
 ---
 
 ## Part 21 · Power Query You Can Live With
@@ -1145,3 +1324,11 @@ Review · diagram
 - **Band:** diagram (six small cards, the mistake on one side and its one-line fix on the
   other)
 - **Facts:** F3004, F3005, F3028, F3029, F3044, F3045, F3050, F3052, F3104, F3105, F3116, F3122
+
+#### Practice: Reading M
+Practice · diagram
+- **What:** Read the code, rename one thing both ways, move the path into a parameter. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "Folder.Files(SalesPath) erroring means the parameter has no type, or its value still has quotes. Type Text, and the bare path."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F3160, F3166

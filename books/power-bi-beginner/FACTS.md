@@ -488,6 +488,63 @@ with the facts that page cites, and tells you which ones it cannot trace.
 
 ---
 
+---
+
+## F59 · The Sample Files
+- **Claim:** The sample files for this series are one made-up bike shop's sales: a Sales folder of 24 monthly workbooks (Sales 2024-01.xlsx to Sales 2025-12.xlsx, each with a title row above the headers), Sales by month.xlsx (a Sales sheet of 20 rows with 12 month columns, Jan to Dec, under a title row, and a Products sheet of 5 products), Sales clean.xlsx (3 sheets: Sales with 7 columns, OrderDate, Region, CustomerID, Product, Qty, Price and Amount, and 1,179 rows; Products; Customers), Customers.csv (20 customers) and Targets.csv.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F60 · Practice: Meet Power BI
+- **Claim:** Sales clean.xlsx has 3 sheets, Sales, Products and Customers; its Sales sheet has 7 columns and 1,179 rows of order lines; Report view is the one with an empty canvas and the Visualizations pane.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F61 · Practice: Getting the Data In
+- **Claim:** Loading Sales clean.xlsx with Sales, Products and Customers ticked gives 3 queries in the Power Query Editor and 3 tables in the Data pane; Qty, Price and Amount are whole numbers and OrderDate is a date.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F62 · Practice: Shaping the Model
+- **Claim:** With Sales clean.xlsx loaded, Sales has 1,179 rows, Products 5 and Customers 20; the model needs 2 relationships, Sales[Product] to Products[Product] and Sales[CustomerID] to Customers[CustomerID].
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F63 · Practice: Your First DAX
+- **Claim:** Over Sales clean.xlsx, SUM(Sales[Amount]) is 116,922, CALCULATE of that total with Sales[Region] = "West" is 27,787, COUNTROWS(Sales) is 1,179, and DIVIDE of the total by the row count is 99.17.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F64 · Practice: Building the Report
+- **Claim:** In a column chart of Total Sales by Region the tallest bar is South at 34,335; a slicer on Products[Category] set to Gear brings Total Sales to 28,809, and the slicer also offers a blank for the lamp, which is sold but not on the Products sheet.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F65 · Practice: The Whole Book
+- **Claim:** The finished book-one model has 2 relationships, no table floating on its own, a line-total calculated column that is correctly a column, and a Total Sales card that reads 116,922 with nothing selected.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+
 <!-- Copy the shape above for your own facts.
 
 ## F2 · <Short label>

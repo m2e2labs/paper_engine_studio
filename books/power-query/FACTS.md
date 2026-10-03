@@ -1275,3 +1275,59 @@ Everything this book is allowed to state as true, and where each thing came from
 - **Checked:** 2026-09-23
 
 ---
+
+---
+
+## F160 · The Sample Files
+- **Claim:** The sample files for this series are one made-up bike shop's sales: a Sales folder of 24 monthly workbooks (Sales 2024-01.xlsx to Sales 2025-12.xlsx, each with a title row above the headers), Sales by month.xlsx (a Sales sheet of 20 rows with 12 month columns, Jan to Dec, under a title row, and a Products sheet of 5 products), Sales clean.xlsx (3 sheets: Sales with 7 columns, OrderDate, Region, CustomerID, Product, Qty, Price and Amount, and 1,179 rows; Products; Customers), Customers.csv (20 customers) and Targets.csv.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F161 · Practice: Getting Data In
+- **Claim:** Combining the 24 monthly workbooks in the Sales folder before the title rows are removed gives 1,203 rows, the 1,179 order lines plus one header row from each file; the header row of each file holds the text OrderDate in its first column.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F162 · Practice: Cleaning What Arrived
+- **Claim:** With the title row removed from each monthly workbook and the headers promoted, the combined Sales folder query has 1,179 rows; its Region column lists 5 distinct values before Trim, because 4 lines in Sales 2025-02.xlsx have a leading space before North, and 4 after; filtering to North keeps 306 rows; Remove Top Rows takes 1 row, and leaving it gives 1,180 rows.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F163 · Practice: Reshaping a Table
+- **Claim:** The Sales sheet of Sales by month.xlsx, once its title row is removed and the headers promoted, has 20 rows with 12 month columns; a custom column Q1 = [Jan] + [Feb] + [Mar] is 6 on the North, Bike row; unpivoting the month columns gives 240 rows, or 260 if a quarter column is left in; grouping by month gives 12 rows with Jan at 76 units.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F164 · Practice: Combining Queries
+- **Claim:** Sales 2025-02.xlsx has 48 order lines and Sales 2025-03.xlsx has 58, so appending them gives 106 rows; merging the combined Sales folder query with the Products sheet on Product gives 207 rows for a left anti join (all lamps, which the Products sheet does not list), 972 for an inner join and 1,179 for a left outer join; grouped by region, South leads at 34,335.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F165 · Practice: Why It Breaks
+- **Claim:** Renaming the Region header to Area in a copy of Sales 2025-03.xlsx breaks the refresh of the folder query at the step that names Region, and the error's detail line names that column; renaming the folder gives DataSource.NotFound until the source is repointed.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02
+
+---
+
+## F166 · Practice: Reading and Keeping M
+- **Claim:** Replacing the typed folder path in the Sales folder query with a text parameter named SalesPath leaves the result unchanged at 1,179 rows.
+- **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
+- **Kind:** measurement
+- **Checked:** 2026-10-02

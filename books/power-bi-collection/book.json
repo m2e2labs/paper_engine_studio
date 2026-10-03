@@ -32,7 +32,8 @@
       "blocks": [
         "What Power BI Actually Is",
         "Installing Power BI Desktop",
-        "A Tour of the Power BI Desktop Window"
+        "A Tour of the Power BI Desktop Window",
+        "Practice: First Look"
       ]
     },
     {
@@ -44,7 +45,8 @@
         "The Power Query Editor at a Glance",
         "Fixing a Column's Data Type",
         "Removing Columns and Rows You Don't Need",
-        "Combining Two Queries: Append vs Merge"
+        "Combining Two Queries: Append vs Merge",
+        "Practice: Loading Data"
       ]
     },
     {
@@ -55,7 +57,8 @@
         "What a Data Model Is",
         "Fact Tables and Dimension Tables",
         "Building a Relationship Between Two Tables",
-        "Calculated Column vs Measure"
+        "Calculated Column vs Measure",
+        "Practice: The Model"
       ]
     },
     {
@@ -66,7 +69,8 @@
         "What DAX Actually Is",
         "Your First Measure: A Simple SUM",
         "CALCULATE and the Filter Context",
-        "The Functions Worth Knowing Early"
+        "The Functions Worth Knowing Early",
+        "Practice: First DAX"
       ]
     },
     {
@@ -77,7 +81,8 @@
         "Choosing the Right Visual",
         "Building Your First Bar Chart",
         "Slicers: Letting the Reader Filter the Page",
-        "Formatting a Visual So It's Readable"
+        "Formatting a Visual So It's Readable",
+        "Practice: The Report"
       ]
     },
     {
@@ -87,7 +92,8 @@
       "blocks": [
         "Publishing a Report to the Power BI Service",
         "Sharing a Report With Someone Else",
-        "Scheduling a Data Refresh"
+        "Scheduling a Data Refresh",
+        "Practice: Publishing"
       ]
     },
     {
@@ -95,7 +101,8 @@
       "eyebrow": "Book One · Next steps",
       "why": "The mistakes almost everyone makes early on, and how to avoid them.",
       "blocks": [
-        "Mistakes Almost Every Beginner Makes"
+        "Mistakes Almost Every Beginner Makes",
+        "Practice: Final Check"
       ]
     },
     {
@@ -106,7 +113,8 @@
         "DAX Is Not Excel, and Not Power Query",
         "Measure, Calculated Column, Calculated Table",
         "Where You Type It: The Formula Bar",
-        "When the Formula Turns Red"
+        "When the Formula Turns Red",
+        "Practice: Which Kind"
       ]
     },
     {
@@ -117,7 +125,8 @@
         "Filter Context: The Question the Cell Is Asking",
         "Row Context: What a Calculated Column Sees",
         "CALCULATE: Changing the Question",
-        "Context Transition: The Thing Nobody Explains"
+        "Context Transition: The Thing Nobody Explains",
+        "Practice: Context"
       ]
     },
     {
@@ -128,7 +137,8 @@
         "SUM, AVERAGE, MIN and MAX",
         "Counting Things Without Getting It Wrong",
         "DIVIDE, and the One Time the Slash Is Fine",
-        "IF and SWITCH"
+        "IF and SWITCH",
+        "Practice: Functions"
       ]
     },
     {
@@ -139,7 +149,8 @@
         "What an Iterator Actually Does",
         "SUMX vs SUM: When You Need the X",
         "AVERAGEX, MAXX and the Rest of the Family",
-        "RELATED: Reaching Across a Relationship"
+        "RELATED: Reaching Across a Relationship",
+        "Practice: Iterators"
       ]
     },
     {
@@ -150,7 +161,8 @@
         "FILTER Returns a Table, Not a Yes or No",
         "ALL: Taking a Filter Off on Purpose",
         "Percent of Total, the Pattern You'll Reuse Forever",
-        "SELECTEDVALUE: Reading the Slicer"
+        "SELECTEDVALUE: Reading the Slicer",
+        "Practice: Filters"
       ]
     },
     {
@@ -161,7 +173,8 @@
         "Why Every Model Needs a Date Table",
         "Building One with CALENDAR",
         "Year to Date with TOTALYTD",
-        "SAMEPERIODLASTYEAR and DATEADD"
+        "SAMEPERIODLASTYEAR and DATEADD",
+        "Practice: Dates"
       ]
     },
     {
@@ -172,7 +185,8 @@
         "VAR and RETURN: Naming the Middle Step",
         "Formatting a Formula So Future You Can Read It",
         "Where to Keep Your Measures",
-        "Mistakes Almost Every Beginner Makes in DAX"
+        "Mistakes Almost Every Beginner Makes in DAX",
+        "Practice: Craft"
       ]
     },
     {
@@ -183,7 +197,8 @@
         "Power Query Is Not DAX, and Not Excel",
         "A Tour of the Power Query Editor",
         "Applied Steps: A Recipe, Not an Edit",
-        "Close and Apply: What Loads and What Doesn't"
+        "Close and Apply: What Loads and What Doesn't",
+        "Practice: The Editor"
       ]
     },
     {
@@ -194,7 +209,8 @@
         "Connecting to Excel and CSV",
         "The Navigator: Choosing What to Load",
         "Get Data from a Folder: Many Files, One Table",
-        "Data Types: Set Them Early, Set Them Once"
+        "Data Types: Set Them Early, Set Them Once",
+        "Practice: Data In"
       ]
     },
     {
@@ -205,7 +221,8 @@
         "Promote Headers and Remove the Junk Rows",
         "Choosing, Removing and Renaming Columns",
         "Replace Values, Trim and Clean",
-        "Filtering Rows: Narrowing Without Deleting"
+        "Filtering Rows: Narrowing Without Deleting",
+        "Practice: Cleaning"
       ]
     },
     {
@@ -216,7 +233,8 @@
         "Splitting One Column Into Many",
         "Merge Columns and the Custom Column",
         "Unpivot: The Fix for a Sheet Built for Humans",
-        "Group By: Summarising Before It Loads"
+        "Group By: Summarising Before It Loads",
+        "Practice: Reshaping"
       ]
     },
     {
@@ -227,7 +245,8 @@
         "Append or Merge: Which One You Need",
         "Append: Stacking Tables End to End",
         "Merge: Joining Side by Side, and the Join Kinds",
-        "Duplicate or Reference: Two Ways to Branch"
+        "Duplicate or Reference: Two Ways to Branch",
+        "Practice: Combining"
       ]
     },
     {
@@ -238,7 +257,8 @@
         "Query Folding: Letting the Source Do the Work",
         "Seeing Whether Your Query Folds",
         "The Steps That Stop It Folding",
-        "Refresh Errors: Renamed Columns and Moved Files"
+        "Refresh Errors: Renamed Columns and Moved Files",
+        "Practice: Breaking It"
       ]
     },
     {
@@ -249,7 +269,8 @@
         "The Advanced Editor and Your First Look at M",
         "let and in: How Every Query Is Built",
         "Parameters: One Place to Change the Path",
-        "Mistakes Almost Every Beginner Makes in Power Query"
+        "Mistakes Almost Every Beginner Makes in Power Query",
+        "Practice: Reading M"
       ]
     }
   ],
@@ -261,20 +282,120 @@
         "items": [
           {
             "name": "Book One · Power BI for Absolute Beginners",
-            "note": "From opening the app to publishing your first report. Parts 1 to 7, lessons 1 to 24."
+            "note": "From opening the app to publishing your first report. Parts 1 to 7, lessons 1 to 31."
           },
           {
             "name": "Book Two · Power BI DAX for Absolute Beginners",
-            "note": "From your first SUM to the formulas that run a real report. Parts 8 to 14, lessons 25 to 52."
+            "note": "From your first SUM to the formulas that run a real report. Parts 8 to 14, lessons 32 to 66."
           },
           {
             "name": "Book Three · Power Query for Absolute Beginners",
-            "note": "Get the data in, get it clean, and make it stay that way. Parts 15 to 21, lessons 53 to 80."
+            "note": "Get the data in, get it clean, and make it stay that way. Parts 15 to 21, lessons 67 to 101."
           }
+        ]
+      },
+      {
+        "kind": "prose",
+        "title": "The Sample Files",
+        "body": [
+          "Every practice page in this volume uses the same small set of files: two years of sales from one bike shop, made up for this series. Nothing in them is real, and they come with the book.",
+          "Book One and Book Two load **Sales clean.xlsx**: three sheets, Sales with one row per order line, Products and Customers. Book Two expects the two relationships from Book One, Sales to Products on Product and Sales to Customers on CustomerID.",
+          "Book Three starts from the raw files, because that is where Power Query starts: a **Sales** folder of monthly workbooks, each with a title row above the headers, and **Sales by month.xlsx**, a sheet laid out for a person to read with a Products sheet that does not quite match. The dirt is deliberate, and the practice pages say where it is.",
+          "The answers to every practice page are at the back, book by book."
         ]
       }
     ],
     "back": [
+      {
+        "kind": "prose",
+        "title": "Answers",
+        "body": [
+          "## Practice: First Look",
+          "Report view. The canvas is where visuals go, and the Visualizations pane sits to its right. Table view shows the data, Model view shows the tables and the lines between them.",
+          "Three sheets: Sales, Products and Customers. The Sales sheet has seven columns, OrderDate, Region, CustomerID, Product, Qty, Price and Amount, and 1,179 rows under the headers.",
+          "Desktop. Every page in this book happens in Power BI Desktop until the publishing part, where the Service appears for the first time.",
+          "## Practice: Loading Data",
+          "Three queries, named after the sheets: Sales, Products, Customers. Transform Data opens the editor so you can look before anything loads.",
+          "Qty, Price and Amount are whole numbers; OrderDate is a date. The file is clean, so the guesses are right, but reading the icons is the habit that catches the day they aren't.",
+          "The column comes straight back. Removing it only wrote a step, and deleting the step unwrites it. After Close and Apply, the Data pane shows Sales, Products and Customers.",
+          "## Practice: The Model",
+          "Two relationships: Sales to Products on Product, Sales to Customers on CustomerID. Each line has a 1 at the Products or Customers end and a star at the Sales end: one product, many sales.",
+          "Sales is the fact table: 1,179 rows, each one an event with an amount on it. Products (5 rows) and Customers (20 rows) describe those events.",
+          "The line total is a calculated column: the answer for a row never changes, so store it. The sales total is a measure: it has to change every time a slicer does.",
+          "## Practice: First DAX",
+          "116,922. A card with no filter on it shows the sum of the whole column.",
+          "27,787. CALCULATE replaces whatever filter the slicer put on Region with its own, so picking North in the slicer changes Total Sales and leaves West Sales alone.",
+          "1,179 rows, and 99.17 per line. A slash gives the same answer here, but DIVIDE is the habit: the day the bottom is blank, a slash shows Infinity and DIVIDE shows nothing.",
+          "## Practice: The Report",
+          "South, 34,335. The order of the other bars doesn't matter; the shape of the question was which region sold most, and a column chart answers that at a glance.",
+          "28,809. The blank in the slicer is the lamp: it's in Sales, but there's no lamp row on the Products sheet, so it has no category to belong to.",
+          "A title that says what the chart is, and a number on every bar. That's the difference between a draft and something you'd hand to someone.",
+          "## Practice: Publishing",
+          "A link in the Publish dialog opens the report in the Service. Nothing about the report changes; what changed is where it lives.",
+          "The slicer works in the browser because the model travelled with the report. Share sends a link, and the reader opens it in the Service, never in Desktop.",
+          "Scheduled refresh lives in the semantic model's settings. Leave it off: the next page explains what it needs before it can reach a file on your own machine.",
+          "## Practice: Final Check",
+          "Two lines, no floating table. If Customers has no line to Sales, drag CustomerID across again.",
+          "The line total is right as a column. If you made a Total Sales column by mistake, it shows the same number on every row and ignores every slicer: delete it and write the measure.",
+          "116,922. A title on every visual and the right number in the card: that's the whole checklist.",
+          "## Practice: Which Kind",
+          "116,922 in both cards. The measure works it out when the card asks; the column worked it out once per row at load and stored it.",
+          "Power BI can't tell which table Amount belongs to, so the formula turns red. With the table name in front, it always can.",
+          "Still 116,922. Line breaks are for you, not for the engine.",
+          "## Practice: Context",
+          "Card 116,922; Cycles 80,680, Gear 28,809, blank 7,433. The blank row is the lamp, which has no row on the Products sheet and so no category.",
+          "116,922 on every row. The row context tells the column which row it's on; it doesn't narrow what SUM sees.",
+          "80,680 everywhere. Blue is only the bike, and CALCULATE's filter on Colour applies in every cell, whatever the row's category was asking.",
+          "## Practice: Functions",
+          "99.42, 6 and 840. The smallest line is one bell; the largest is two bikes at full price.",
+          "1,176 against 1,179. COUNT skips the 3 blank amounts; COUNTROWS counts every row regardless. DISTINCTCOUNT of Product is 5.",
+          "61.83 overall, and 6 for the bell. Dividing total amount by total quantity gives a real average unit price, and a product with one price ever gives that price back exactly.",
+          "## Practice: Iterators",
+          "116,922 with SUMX, about 139,358 the other way. Multiplying a total quantity by an average price assumes every unit sold at the average, and bikes didn't.",
+          "5,846.10. AVERAGEX walked the Customers table, worked out Total Sales for each one, and averaged those twenty answers.",
+          "207 blank rows, all lamps. There's no lamp on the Products sheet, so there's no related row and RELATED hands back nothing.",
+          "## Practice: Filters",
+          "116,922 in every row. ALL(Sales) strips the category filter the row put on, so the measure sees the whole table while the visual stays sliced.",
+          "69.0%. Bikes are most of the money. The top of the fraction keeps the row's filter; the bottom removes it.",
+          "West, then All regions, then All regions. SELECTEDVALUE only hands back a value when the column is down to exactly one.",
+          "## Practice: Dates",
+          "731 rows: every day of 2024 and 2025, both whole years. Marking it lets Power BI check for gaps and drop the hidden date tables it was making for you.",
+          "4,388 for June alone, 28,131 from January to the end of June. TOTALYTD changed the date filter to run from the start of the year, then evaluated.",
+          "3,877, and the difference is 511. SAMEPERIODLASTYEAR shifted the selected June back a year and handed those dates to CALCULATE.",
+          "## Practice: Craft",
+          "69.0%, unchanged. The variables didn't change the maths; they named the two halves so the next person, probably you, can read it.",
+          "The formatted version puts DIVIDE, CALCULATE and ALL on their own lines with the brackets lined up. If it looks longer, that's the point: longer and readable beats short and opaque.",
+          "A table with a calculator icon at the top of the Data pane, holding nothing but measures. That's the file someone else can maintain.",
+          "## Practice: The Editor",
+          "The ribbon, the Queries pane, the Table view and Query Settings. The two steps you never clicked are Promoted Headers and Changed Type, added by automatic detection.",
+          "At Source, row one holds the title and row two the real headers. By the last step the title has been promoted into a column name. The fix comes in the cleaning part: junk off first, then promote.",
+          "One table, Sales. Products with Enable load off is an ingredient: it exists in the editor and feeds other queries, but stays out of the model.",
+          "## Practice: Data In",
+          "1,203 rows. Each file's title row got promoted to the header, so its real header row, the one that says OrderDate, Region and so on, came through as a data row. 24 files, 24 junk rows.",
+          "Filtering OrderDate to text shows the word OrderDate repeated once per file. Those rows are the real headers, demoted. The fix belongs in Transform Sample File, so every file gets it.",
+          "Dates, whole numbers and text, set on purpose near the top. The errors in OrderDate are the junk rows refusing to be dates, and they disappear with the junk.",
+          "## Practice: Cleaning",
+          "1,179 rows, headers OrderDate, Region, CustomerID, Product, Qty, Price, Amount, with Source.Name in front. Junk off first, headers second, and every file gets the same recipe.",
+          "Five values, then four. The second North has a leading space, from a handful of lines in the February 2025 file. The model would have left that space alone and shown two Norths in every visual.",
+          "306 rows. The formula bar shows Table.SelectRows with [Region] = \"North\". Deleting the step puts every row back, because the source was never touched.",
+          "## Practice: Reshaping",
+          "6 for the North bike row. The custom column is plain M, and the formula bar shows Table.AddColumn with [Jan] + [Feb] + [Mar] in it.",
+          "240 rows: 20 rows times 12 months. Attribute is the old column header, now a value, and a new month column at the source would be picked up on refresh.",
+          "12 rows, Jan at 76. Group By collapsed 240 rows to 12, and the region and product detail stayed behind.",
+          "## Practice: Combining",
+          "106 rows, 48 from February and 58 from March. With one column renamed Area, the append matches by name, so Region and Area both appear with nulls where the other month has nothing.",
+          "Left anti: 207 lamp rows. Inner: 972, the rows that matched. Left outer: all 1,179, with Category null for the lamps. The join kind decides which rows survive.",
+          "South, 34,335. Reference starts from the result of Sales, so a fix there lands in both; Duplicate would copy the steps and then drift.",
+          "## Practice: Breaking It",
+          "Greyed out everywhere. Query folding needs a source that can run a query, and a workbook can't. Every step runs on your machine.",
+          "An Expression.Error whose detail line says Region. One file in the folder no longer has that column, and the step that typed Region finds nothing there.",
+          "DataSource.NotFound, then a refresh that works after Change Source. A moved folder breaks the address in the Source step and nothing else.",
+          "## Practice: Reading M",
+          "The step shows up as #\"Removed Top Rows\" = Table.Skip(Sales_Sheet, 1), and the Promoted Headers line names #\"Removed Top Rows\" inside it. Each step is built on the one before by naming it.",
+          "In the editor, renaming one end breaks the link and the query won't run. In Applied Steps, the rename updates every place the name is used.",
+          "1,179 rows. A parameter is just a named value; the query reads the name, and the path lives in one place."
+        ]
+      },
       {
         "kind": "sources"
       },

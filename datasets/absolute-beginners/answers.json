@@ -1,0 +1,119 @@
+{
+  "seed": 7,
+  "files": {
+    "monthly_workbooks": 24,
+    "products_on_sheet": 5,
+    "products_sold": 5,
+    "customers": 20,
+    "month_columns": 12,
+    "wide_rows": 20
+  },
+  "lines": {
+    "all": 1179,
+    "2024": 587,
+    "2025": 592,
+    "jan_2025": 49,
+    "feb_2025": 48,
+    "mar_2025": 58,
+    "feb_plus_mar_2025": 106,
+    "blank_qty": 3,
+    "leading_space_regions": 4,
+    "north": 306,
+    "feb_north_distinct_raw": 2
+  },
+  "total_sales": {
+    "all": 116922,
+    "2024": 61088,
+    "2025": 55834,
+    "h1_2025": 28131,
+    "jan_2025": 5163,
+    "by_region": {
+      "East": 24072,
+      "North": 30728,
+      "South": 34335,
+      "West": 27787
+    },
+    "by_product": {
+      "Bell": 2712,
+      "Bike": 80680,
+      "Helmet": 17916,
+      "Lamp": 7433,
+      "Lock": 8181
+    },
+    "by_category": {
+      "Cycles": 80680,
+      "Gear": 28809,
+      "blank": 7433
+    },
+    "west": 27787,
+    "blue": 80680,
+    "by_region_2025": {
+      "East": 13344,
+      "North": 13260,
+      "South": 16992,
+      "West": 12238
+    }
+  },
+  "units": {
+    "all": 1891,
+    "2025": 933,
+    "jan_2025_wide": 76,
+    "unpivoted_rows": 240,
+    "q1_north_bike": 6,
+    "by_month_2025": {
+      "Jan": 76,
+      "Feb": 74,
+      "Mar": 89,
+      "Apr": 80,
+      "May": 90,
+      "Jun": 76,
+      "Jul": 68,
+      "Aug": 69,
+      "Sep": 72,
+      "Oct": 81,
+      "Nov": 71,
+      "Dec": 87
+    }
+  },
+  "aggregates": {
+    "average_amount": 99.42,
+    "min_amount": 6,
+    "max_amount": 840,
+    "count_amount": 1176,
+    "countrows": 1179,
+    "distinct_products": 5,
+    "sum_qty": 1891,
+    "average_price": 73.7,
+    "wrong_revenue": 139358.2,
+    "sumx_revenue": 116922,
+    "averagex_customer": 5846.1,
+    "top_customer": "C02",
+    "top_customer_sales": 12061,
+    "pct_cycles": 69.0,
+    "bands": {
+      "small (under 50)": 817,
+      "medium (50 to 399)": 224,
+      "large (400 and up)": 135
+    },
+    "date_rows": 731,
+    "ytd_jun_2025": 28131,
+    "ly_jun_2025": 28679,
+    "jun_2025": 4388,
+    "jun_2024": 3877,
+    "top_region": "South",
+    "top_product": "Bike"
+  },
+  "targets": {
+    "North": 24000,
+    "South": 21000,
+    "East": 18000,
+    "West": 16000
+  },
+  "merge": {
+    "sales_product_without_match": "Lamp",
+    "products_row_without_sales": "Pump",
+    "left_outer_rows": 1179,
+    "inner_rows": 972,
+    "left_anti_rows": 207
+  }
+}

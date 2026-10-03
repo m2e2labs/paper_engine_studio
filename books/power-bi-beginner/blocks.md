@@ -62,6 +62,15 @@ Interface · screenshot
   the ribbon)
 - **Facts:** F6, F7, F8, F57
 
+
+#### Practice: First Look
+Practice · diagram
+- **What:** Open the app, open the file, say which is which. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "Far fewer than 1,179 rows means you opened Sales by month.xlsx, the other workbook. That one is for the Power Query book."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F59, F60
+
 ---
 
 ## Part 2 · Getting Your Data In
@@ -125,6 +134,15 @@ Power Query · diagram
   side by side for Merge)
 - **Facts:** F17, F18
 
+
+#### Practice: Loading Data
+Practice · diagram
+- **What:** Load the workbook, read the types, remove a column and take it back. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "Numbers lined up on the left mean a type was guessed wrong. Click the icon in the header and set it yourself. A guess is only a guess."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F59, F61
+
 ---
 
 ## Part 3 · Shaping the Model
@@ -180,6 +198,15 @@ Modeling · diagram
 - **Band:** diagram (a column filling straight down inside a table vs. a measure
   recalculating live next to a chart that's being filtered)
 - **Facts:** F25, F26, F27
+
+
+#### Practice: The Model
+Practice · diagram
+- **What:** Draw the lines, name the fact table, pick column or measure. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "A line that won't draw means the two columns aren't the same type, or you dropped onto the wrong column. Undo, and drag Product onto Product."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F59, F62
 
 ---
 
@@ -238,6 +265,15 @@ DAX · diagram
   icon of what it does)
 - **Facts:** F34, F35, F36, F37, F38
 
+
+#### Practice: First DAX
+Practice · diagram
+- **What:** A sum, a filter, a count and a divide. Match the numbers. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "A little under 116,922 means Qty times Price was summed, not Amount. A few lines have no quantity, on purpose. Sum the Amount column."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F59, F63
+
 ---
 
 ## Part 5 · Building the Report
@@ -294,6 +330,15 @@ Visuals · screenshot
   toggle switched off, the chart beside it showing no title)
 - **Facts:** F45, F46
 
+
+#### Practice: The Report
+Practice · diagram
+- **What:** One chart, one slicer, one title. Then read the tallest bar. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "Gear not changing the card means the slicer is on Sales[Product], not Products[Category], or the relationship is missing. Check Model view."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F59, F64
+
 ---
 
 ## Part 6 · Sharing What You Built
@@ -336,6 +381,15 @@ Publishing · screenshot
   Scheduled refresh toggle)
 - **Facts:** F51, F52, F55, F56
 
+
+#### Practice: Publishing
+Practice · diagram
+- **What:** Publish it, open it in a browser, find the refresh switch. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "A greyed-out Publish button means you're not signed in, or the file isn't saved. Save, sign in at the top right, try again."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F59
+
 ---
 
 ## Part 7 · Where to Go From Here
@@ -353,6 +407,15 @@ Overview · diagram
 - **Band:** diagram (a short checklist card, three items, a red mark next to the one
   most beginners get wrong)
 - **Facts:** none (restates concepts already taught and sourced on earlier pages)
+
+
+#### Practice: Final Check
+Practice · diagram
+- **What:** A last look at the file you've built, before you share it. Three things to do with the sample files at the end of this part, each with the figure or the sign that says it worked.
+- **Use when:** the reader has finished the part and has the sample files. **Skip when:** they are reading, not doing.
+- **Action:** "Fix the floating table first. A missing relationship makes every visual touching that table quietly wrong, and no error ever says so."
+- **Band:** diagram (three cards: the files to use, the work to do, the check to make)
+- **Facts:** F59, F65
 
 ---
 

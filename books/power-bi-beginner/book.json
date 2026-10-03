@@ -31,7 +31,8 @@
       "blocks": [
         "What Power BI Actually Is",
         "Installing Power BI Desktop",
-        "A Tour of the Power BI Desktop Window"
+        "A Tour of the Power BI Desktop Window",
+        "Practice: First Look"
       ]
     },
     {
@@ -43,7 +44,8 @@
         "The Power Query Editor at a Glance",
         "Fixing a Column's Data Type",
         "Removing Columns and Rows You Don't Need",
-        "Combining Two Queries: Append vs Merge"
+        "Combining Two Queries: Append vs Merge",
+        "Practice: Loading Data"
       ]
     },
     {
@@ -54,7 +56,8 @@
         "What a Data Model Is",
         "Fact Tables and Dimension Tables",
         "Building a Relationship Between Two Tables",
-        "Calculated Column vs Measure"
+        "Calculated Column vs Measure",
+        "Practice: The Model"
       ]
     },
     {
@@ -65,7 +68,8 @@
         "What DAX Actually Is",
         "Your First Measure: A Simple SUM",
         "CALCULATE and the Filter Context",
-        "The Functions Worth Knowing Early"
+        "The Functions Worth Knowing Early",
+        "Practice: First DAX"
       ]
     },
     {
@@ -76,7 +80,8 @@
         "Choosing the Right Visual",
         "Building Your First Bar Chart",
         "Slicers: Letting the Reader Filter the Page",
-        "Formatting a Visual So It's Readable"
+        "Formatting a Visual So It's Readable",
+        "Practice: The Report"
       ]
     },
     {
@@ -86,7 +91,8 @@
       "blocks": [
         "Publishing a Report to the Power BI Service",
         "Sharing a Report With Someone Else",
-        "Scheduling a Data Refresh"
+        "Scheduling a Data Refresh",
+        "Practice: Publishing"
       ]
     },
     {
@@ -94,13 +100,59 @@
       "eyebrow": "Next steps",
       "why": "The mistakes almost everyone makes early on, and how to avoid them.",
       "blocks": [
-        "Mistakes Almost Every Beginner Makes"
+        "Mistakes Almost Every Beginner Makes",
+        "Practice: Final Check"
       ]
     }
   ],
   "matter": {
-    "front": [],
+    "front": [
+      {
+        "kind": "prose",
+        "title": "The Sample Files",
+        "body": [
+          "Every practice page in this book uses the same small set of files: two years of sales from one bike shop, made up for this series. Nothing in them is real, and they come with the book.",
+          "The one you'll load is **Sales clean.xlsx**. It has three sheets: Sales, one row per order line; Products; and Customers. The practice page at the end of each part tells you what to build with it and the figure you should get.",
+          "The other files, a Sales folder of monthly workbooks and a sheet laid out for a person to read, are for the Power Query book, where the data arrives messy on purpose. Leave them for now.",
+          "The answers to every practice page are at the back."
+        ]
+      }
+    ],
     "back": [
+      {
+        "kind": "prose",
+        "title": "Answers",
+        "body": [
+          "## Practice: First Look",
+          "Report view. The canvas is where visuals go, and the Visualizations pane sits to its right. Table view shows the data, Model view shows the tables and the lines between them.",
+          "Three sheets: Sales, Products and Customers. The Sales sheet has seven columns, OrderDate, Region, CustomerID, Product, Qty, Price and Amount, and 1,179 rows under the headers.",
+          "Desktop. Every page in this book happens in Power BI Desktop until the publishing part, where the Service appears for the first time.",
+          "## Practice: Loading Data",
+          "Three queries, named after the sheets: Sales, Products, Customers. Transform Data opens the editor so you can look before anything loads.",
+          "Qty, Price and Amount are whole numbers; OrderDate is a date. The file is clean, so the guesses are right, but reading the icons is the habit that catches the day they aren't.",
+          "The column comes straight back. Removing it only wrote a step, and deleting the step unwrites it. After Close and Apply, the Data pane shows Sales, Products and Customers.",
+          "## Practice: The Model",
+          "Two relationships: Sales to Products on Product, Sales to Customers on CustomerID. Each line has a 1 at the Products or Customers end and a star at the Sales end: one product, many sales.",
+          "Sales is the fact table: 1,179 rows, each one an event with an amount on it. Products (5 rows) and Customers (20 rows) describe those events.",
+          "The line total is a calculated column: the answer for a row never changes, so store it. The sales total is a measure: it has to change every time a slicer does.",
+          "## Practice: First DAX",
+          "116,922. A card with no filter on it shows the sum of the whole column.",
+          "27,787. CALCULATE replaces whatever filter the slicer put on Region with its own, so picking North in the slicer changes Total Sales and leaves West Sales alone.",
+          "1,179 rows, and 99.17 per line. A slash gives the same answer here, but DIVIDE is the habit: the day the bottom is blank, a slash shows Infinity and DIVIDE shows nothing.",
+          "## Practice: The Report",
+          "South, 34,335. The order of the other bars doesn't matter; the shape of the question was which region sold most, and a column chart answers that at a glance.",
+          "28,809. The blank in the slicer is the lamp: it's in Sales, but there's no lamp row on the Products sheet, so it has no category to belong to.",
+          "A title that says what the chart is, and a number on every bar. That's the difference between a draft and something you'd hand to someone.",
+          "## Practice: Publishing",
+          "A link in the Publish dialog opens the report in the Service. Nothing about the report changes; what changed is where it lives.",
+          "The slicer works in the browser because the model travelled with the report. Share sends a link, and the reader opens it in the Service, never in Desktop.",
+          "Scheduled refresh lives in the semantic model's settings. Leave it off: the next page explains what it needs before it can reach a file on your own machine.",
+          "## Practice: Final Check",
+          "Two lines, no floating table. If Customers has no line to Sales, drag CustomerID across again.",
+          "The line total is right as a column. If you made a Total Sales column by mistake, it shows the same number on every row and ignores every slicer: delete it and write the measure.",
+          "116,922. A title on every visual and the right number in the card: that's the whole checklist."
+        ]
+      },
       {
         "kind": "sources"
       },

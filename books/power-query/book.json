@@ -32,7 +32,8 @@
         "Power Query Is Not DAX, and Not Excel",
         "A Tour of the Power Query Editor",
         "Applied Steps: A Recipe, Not an Edit",
-        "Close and Apply: What Loads and What Doesn't"
+        "Close and Apply: What Loads and What Doesn't",
+        "Practice: The Editor"
       ]
     },
     {
@@ -43,7 +44,8 @@
         "Connecting to Excel and CSV",
         "The Navigator: Choosing What to Load",
         "Get Data from a Folder: Many Files, One Table",
-        "Data Types: Set Them Early, Set Them Once"
+        "Data Types: Set Them Early, Set Them Once",
+        "Practice: Data In"
       ]
     },
     {
@@ -54,7 +56,8 @@
         "Promote Headers and Remove the Junk Rows",
         "Choosing, Removing and Renaming Columns",
         "Replace Values, Trim and Clean",
-        "Filtering Rows: Narrowing Without Deleting"
+        "Filtering Rows: Narrowing Without Deleting",
+        "Practice: Cleaning"
       ]
     },
     {
@@ -65,7 +68,8 @@
         "Splitting One Column Into Many",
         "Merge Columns and the Custom Column",
         "Unpivot: The Fix for a Sheet Built for Humans",
-        "Group By: Summarising Before It Loads"
+        "Group By: Summarising Before It Loads",
+        "Practice: Reshaping"
       ]
     },
     {
@@ -76,7 +80,8 @@
         "Append or Merge: Which One You Need",
         "Append: Stacking Tables End to End",
         "Merge: Joining Side by Side, and the Join Kinds",
-        "Duplicate or Reference: Two Ways to Branch"
+        "Duplicate or Reference: Two Ways to Branch",
+        "Practice: Combining"
       ]
     },
     {
@@ -87,7 +92,8 @@
         "Query Folding: Letting the Source Do the Work",
         "Seeing Whether Your Query Folds",
         "The Steps That Stop It Folding",
-        "Refresh Errors: Renamed Columns and Moved Files"
+        "Refresh Errors: Renamed Columns and Moved Files",
+        "Practice: Breaking It"
       ]
     },
     {
@@ -98,13 +104,59 @@
         "The Advanced Editor and Your First Look at M",
         "let and in: How Every Query Is Built",
         "Parameters: One Place to Change the Path",
-        "Mistakes Almost Every Beginner Makes in Power Query"
+        "Mistakes Almost Every Beginner Makes in Power Query",
+        "Practice: Reading M"
       ]
     }
   ],
   "matter": {
-    "front": [],
+    "front": [
+      {
+        "kind": "prose",
+        "title": "The Sample Files",
+        "body": [
+          "Every practice page in this book uses the same small set of files: two years of sales from one bike shop, made up for this series. Nothing in them is real, and they come with the book.",
+          "This book starts from the raw files, because that's where Power Query starts. A **Sales** folder holds one workbook per month, each with a title row above the headers. **Sales by month.xlsx** is a sheet laid out for a person to read, a column per month, with a Products sheet that doesn't quite match what was sold. The dirt is deliberate, and the practice pages tell you where it is.",
+          "If you'd rather see the finished shape first, Sales clean.xlsx is the same data after the cleaning. The DAX book works from that one.",
+          "The answers to every practice page are at the back."
+        ]
+      }
+    ],
     "back": [
+      {
+        "kind": "prose",
+        "title": "Answers",
+        "body": [
+          "## Practice: The Editor",
+          "The ribbon, the Queries pane, the Table view and Query Settings. The two steps you never clicked are Promoted Headers and Changed Type, added by automatic detection.",
+          "At Source, row one holds the title and row two the real headers. By the last step the title has been promoted into a column name. The fix comes in the cleaning part: junk off first, then promote.",
+          "One table, Sales. Products with Enable load off is an ingredient: it exists in the editor and feeds other queries, but stays out of the model.",
+          "## Practice: Data In",
+          "1,203 rows. Each file's title row got promoted to the header, so its real header row, the one that says OrderDate, Region and so on, came through as a data row. 24 files, 24 junk rows.",
+          "Filtering OrderDate to text shows the word OrderDate repeated once per file. Those rows are the real headers, demoted. The fix belongs in Transform Sample File, so every file gets it.",
+          "Dates, whole numbers and text, set on purpose near the top. The errors in OrderDate are the junk rows refusing to be dates, and they disappear with the junk.",
+          "## Practice: Cleaning",
+          "1,179 rows, headers OrderDate, Region, CustomerID, Product, Qty, Price, Amount, with Source.Name in front. Junk off first, headers second, and every file gets the same recipe.",
+          "Five values, then four. The second North has a leading space, from a handful of lines in the February 2025 file. The model would have left that space alone and shown two Norths in every visual.",
+          "306 rows. The formula bar shows Table.SelectRows with [Region] = \"North\". Deleting the step puts every row back, because the source was never touched.",
+          "## Practice: Reshaping",
+          "6 for the North bike row. The custom column is plain M, and the formula bar shows Table.AddColumn with [Jan] + [Feb] + [Mar] in it.",
+          "240 rows: 20 rows times 12 months. Attribute is the old column header, now a value, and a new month column at the source would be picked up on refresh.",
+          "12 rows, Jan at 76. Group By collapsed 240 rows to 12, and the region and product detail stayed behind.",
+          "## Practice: Combining",
+          "106 rows, 48 from February and 58 from March. With one column renamed Area, the append matches by name, so Region and Area both appear with nulls where the other month has nothing.",
+          "Left anti: 207 lamp rows. Inner: 972, the rows that matched. Left outer: all 1,179, with Category null for the lamps. The join kind decides which rows survive.",
+          "South, 34,335. Reference starts from the result of Sales, so a fix there lands in both; Duplicate would copy the steps and then drift.",
+          "## Practice: Breaking It",
+          "Greyed out everywhere. Query folding needs a source that can run a query, and a workbook can't. Every step runs on your machine.",
+          "An Expression.Error whose detail line says Region. One file in the folder no longer has that column, and the step that typed Region finds nothing there.",
+          "DataSource.NotFound, then a refresh that works after Change Source. A moved folder breaks the address in the Source step and nothing else.",
+          "## Practice: Reading M",
+          "The step shows up as #\"Removed Top Rows\" = Table.Skip(Sales_Sheet, 1), and the Promoted Headers line names #\"Removed Top Rows\" inside it. Each step is built on the one before by naming it.",
+          "In the editor, renaming one end breaks the link and the query won't run. In Applied Steps, the rename updates every place the name is used.",
+          "1,179 rows. A parameter is just a named value; the query reads the name, and the path lives in one place."
+        ]
+      },
       {
         "kind": "sources"
       },
