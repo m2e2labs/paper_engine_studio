@@ -321,63 +321,63 @@ Check each against the real menu before the page is written.
 - **Use when:** the reader is asked 'what share is North?'. **Skip when:** totals are all they need.
 - **Action:** "Right-click an Amount value and choose Show Values As, then % of Grand Total."
 - **Band:** diagram (the same figures shown as amounts and as shares)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F102, F103, F104, F105, F106
 
 #### Percent of a Row or a Column
 - **What:** Show each product as a share of its own region, or each region as a share of its own product. Which one you choose answers a different question.
 - **Use when:** the reader has a two-way table and wants shares. **Skip when:** a grand-total share is enough.
 - **Action:** "Show Values As, then % of Row Total, and read what each row adds up to."
 - **Band:** diagram (the same grid with rows adding to 100 and columns adding to 100)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F12, F13, F107, F108
 
 #### Rank Largest to Smallest
 - **What:** Show each region's rank rather than its amount. First place is 1. Say what a tie looks like.
 - **Use when:** the reader is asked 'who came first?'. **Skip when:** amounts are enough.
 - **Action:** "Show Values As, then Rank Largest to Smallest, based on Region."
 - **Band:** diagram (amounts turning into 1, 2, 3, 4)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F103, F109
 
 #### Running Totals
 - **What:** Show the total so far at the end of each month. Say what Excel needs set before it can do this.
 - **Use when:** the reader wants to watch a total build up. **Skip when:** single months are enough.
 - **Action:** "Show Values As, then Running Total In, based on Date."
 - **Band:** diagram (monthly bars with a climbing line)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F103, F110
 
-#### Change From the Previous Month
+#### Change From a Chosen Month
 - **What:** Show how much each month moved compared with the one before. Say what the first month shows and why.
 - **Use when:** the reader is asked 'are we up or down?'. **Skip when:** they have only one period.
 - **Action:** "Show Values As, then Difference From, based on the previous month."
 - **Band:** diagram (two months, a gap between them and the difference marked)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F103, F111
 
-#### Percent Change From the Previous Month
+#### Percent Change From a Chosen Month
 - **What:** Show each month's change as a percentage of the month before. The first month has nothing before it, and the lesson should say what is shown instead.
 - **Use when:** the reader is asked 'by how much did we grow?'. **Skip when:** the plain difference is enough.
 - **Action:** "Show Values As, then % Difference From, based on the previous month."
 - **Band:** diagram (two months with a percentage change marked)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F103, F112
 
 #### Comparing Everything to One Item
 - **What:** Pick one item, such as North, as the base and show every other region as a difference from it.
 - **Use when:** the reader has a clear benchmark. **Skip when:** no benchmark exists.
 - **Action:** "Show Values As, then Difference From, with Region as the field and North as the item."
 - **Band:** diagram (bars measured against one reference bar)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F103, F113
 
 #### Putting Back the Normal View
 - **What:** Switch any of these views off and get the plain numbers back with No Calculation.
 - **Use when:** the reader got lost in the Show Values As menu. **Skip when:** never.
 - **Action:** "Set your changed value back to No Calculation."
 - **Band:** diagram (a table returning to plain amounts)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F8, F103, F114
 
 #### Practice: Who Is Growing
 - **What:** Use one PivotTable to answer 'what share is each product?' and 'how did December compare with November?'
 - **Use when:** always, at the end of the part. **Skip when:** never.
 - **Action:** "Show product share of the grand total, then December's change from November."
 - **Band:** diagram (the two answers side by side)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F103, F104, F105, F111
 
 ## Part 6 · Calculations and keeping it right
 

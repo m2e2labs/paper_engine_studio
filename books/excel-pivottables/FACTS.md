@@ -831,3 +831,107 @@ findings appear here.
 - **Checked:** 2026-10-09
 
 ---
+
+## F102 · Show Values As
+- **Claim:** Show Values As presents the same values in different ways without writing formulas.
+- **Source:** Microsoft Support, "Show different calculations in PivotTable value fields": https://support.microsoft.com/en-us/excel/show-different-calculations-in-pivottable-value-fields
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F103 · Where Show Values As is
+- **Claim:** To change how a value is shown, right-click the value and choose Show Values As.
+- **Source:** Microsoft Support, "Show different calculations in PivotTable value fields": https://support.microsoft.com/en-us/excel/show-different-calculations-in-pivottable-value-fields
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F104 · % of Grand Total
+- **Claim:** % of Grand Total shows each value as a share of the grand total of everything in the report.
+- **Source:** Microsoft Support, "Show different calculations in PivotTable value fields": https://support.microsoft.com/en-us/excel/show-different-calculations-in-pivottable-value-fields
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F105 · Show the value and its share together
+- **Claim:** Because the same value field can be added more than once, you can show the actual value and another calculation side by side.
+- **Source:** Microsoft Support, "Show different calculations in PivotTable value fields": https://support.microsoft.com/en-us/excel/show-different-calculations-in-pivottable-value-fields
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F106 · Copies get a number on the name
+- **Claim:** A value field added a second time gets a version number added to its name, which you can edit.
+- **Source:** Microsoft Support, "Show different calculations in PivotTable value fields": https://support.microsoft.com/en-us/excel/show-different-calculations-in-pivottable-value-fields
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F107 · % of Column Total
+- **Claim:** % of Column Total shows each value in a column as a share of that column's total.
+- **Source:** Microsoft Support, "Show different calculations in PivotTable value fields": https://support.microsoft.com/en-us/excel/show-different-calculations-in-pivottable-value-fields
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F108 · % of Row Total
+- **Claim:** % of Row Total shows each value in a row as a share of that row's total.
+- **Source:** Microsoft Support, "Show different calculations in PivotTable value fields": https://support.microsoft.com/en-us/excel/show-different-calculations-in-pivottable-value-fields
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F109 · Rank Largest to Smallest
+- **Claim:** Rank Largest to Smallest gives the largest item rank 1, and each smaller value a higher rank number.
+- **Source:** Microsoft Support, "Show different calculations in PivotTable value fields": https://support.microsoft.com/en-us/excel/show-different-calculations-in-pivottable-value-fields
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F110 · Running Total in
+- **Claim:** Running Total in shows each item's value as a running total across the items of a base field.
+- **Source:** Microsoft Support, "Show different calculations in PivotTable value fields": https://support.microsoft.com/en-us/excel/show-different-calculations-in-pivottable-value-fields
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F111 · Difference From
+- **Claim:** Difference From shows each value as its difference from the value of one base item in a base field.
+- **Source:** Microsoft Support, "Show different calculations in PivotTable value fields": https://support.microsoft.com/en-us/excel/show-different-calculations-in-pivottable-value-fields
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F112 · % Difference From
+- **Claim:** % Difference From shows each value as a percentage difference from the value of one base item in a base field.
+- **Source:** Microsoft Support, "Show different calculations in PivotTable value fields": https://support.microsoft.com/en-us/excel/show-different-calculations-in-pivottable-value-fields
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F113 · % Of
+- **Claim:** % Of shows each value as a percentage of the value of one base item in a base field.
+- **Source:** Microsoft Support, "Show different calculations in PivotTable value fields": https://support.microsoft.com/en-us/excel/show-different-calculations-in-pivottable-value-fields
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F114 · No Calculation
+- **Claim:** No Calculation shows the value that is in the field, which puts a changed view back to normal.
+- **Source:** Microsoft Support, "Show different calculations in PivotTable value fields": https://support.microsoft.com/en-us/excel/show-different-calculations-in-pivottable-value-fields
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---

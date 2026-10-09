@@ -1237,7 +1237,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Percent of the Grand Total
-- **Status:** new
+- **Status:** accepted as F102, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1249,7 +1249,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Percent of the Grand Total
-- **Status:** new
+- **Status:** accepted as F103, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1261,7 +1261,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Percent of the Grand Total
-- **Status:** new
+- **Status:** accepted as F104, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1273,7 +1273,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Percent of the Grand Total
-- **Status:** new
+- **Status:** accepted as F105, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1285,7 +1285,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Percent of the Grand Total
-- **Status:** new
+- **Status:** accepted as F106, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1297,7 +1297,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Percent of a Row or a Column
-- **Status:** new
+- **Status:** accepted as F107, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1309,7 +1309,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Percent of a Row or a Column
-- **Status:** new
+- **Status:** accepted as F108, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1321,7 +1321,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Rank Largest to Smallest
-- **Status:** new
+- **Status:** accepted as F109, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1333,7 +1333,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Running Totals
-- **Status:** new
+- **Status:** accepted as F110, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1344,8 +1344,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "Displays values as the difference from the value of the Base item in the Base field."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Change From the Previous Month
-- **Status:** new
+- **For:** Change From a Chosen Month
+- **Status:** accepted as F111, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1356,8 +1356,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "Displays values as the percentage difference from the value of the Base item in the Base field."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Percent Change From the Previous Month
-- **Status:** new
+- **For:** Percent Change From a Chosen Month
+- **Status:** accepted as F112, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1369,7 +1369,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Comparing Everything to One Item
-- **Status:** new
+- **Status:** accepted as F113, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1381,7 +1381,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Putting Back the Normal View
-- **Status:** new
+- **Status:** accepted as F114, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
