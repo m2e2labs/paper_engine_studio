@@ -1,0 +1,36 @@
+{
+  "rows": 240,
+  "total_amount": 6325,
+  "average_amount": 26.35,
+  "min_amount": 2,
+  "max_amount": 90,
+  "count_amount_over_50": 35,
+  "rows_per_region": {
+    "East": 36,
+    "North": 107,
+    "South": 43,
+    "West": 54
+  },
+  "amount_by_region": {
+    "East": 839,
+    "North": 2756,
+    "South": 1256,
+    "West": 1474
+  },
+  "amount_by_product": {
+    "Bag": 2124,
+    "Mug": 1288,
+    "Notebook": 534,
+    "Pen": 294,
+    "Plant": 2085
+  },
+  "amount_by_category": {
+    "Garden": 2085,
+    "Kitchen": 3412,
+    "Stationery": 828
+  },
+  "north_total": 2756,
+  "bag_rows": 52,
+  "first_sale": "2025-01-03",
+  "last_sale": "2025-12-29"
+}

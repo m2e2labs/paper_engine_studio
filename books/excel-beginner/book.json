@@ -1,0 +1,196 @@
+{
+  "$schema": "../../engine/book.schema.json",
+  "title": "Excel for Absolute Beginners",
+  "subtitle": "From your first cell to a summary you can show someone.",
+  "author": "M2E2 Labs",
+  "series": "Absolute Beginners",
+  "brand": "Third Watch Press",
+  "editionLabel": "Edition 1.0",
+  "unit": "lessons",
+  "numbered": true,
+  "contents": true,
+  "index": true,
+  "cover": {
+    "kicker": "No Experience Required",
+    "note": "One idea per page. No jargon left unexplained."
+  },
+  "copyright": {
+    "year": 2026,
+    "rights": "© 2026 M2E2 Labs. All rights reserved.",
+    "lines": [
+      "Set in Space Grotesk, Inter and JetBrains Mono.",
+      "Microsoft and Excel are trademarks of Microsoft Corporation. This is an independent guide, not published by or affiliated with Microsoft."
+    ]
+  },
+  "matter": {
+    "back": [
+      {
+        "kind": "glossary"
+      }
+    ]
+  },
+  "parts": [
+    {
+      "name": "Meet Excel",
+      "eyebrow": "Getting started",
+      "why": "What Excel is for, how its screen is laid out, and how to get around a sheet without the mouse.",
+      "blocks": [
+        "What Excel Is For",
+        "Workbooks, Sheets and Cells",
+        "A Tour of the Excel Window",
+        "Moving Around the Sheet",
+        "Adding and Renaming Sheets",
+        "Practice: First Look at the Corner Shop Sales"
+      ]
+    },
+    {
+      "name": "Typing and moving around",
+      "eyebrow": "Typing and selecting",
+      "why": "How Excel takes what you type, how it tells numbers, text and dates apart, and how to select, edit and undo.",
+      "blocks": [
+        "Typing Into a Cell",
+        "Numbers, Text and Dates",
+        "Numbers Stored as Text",
+        "Entering Dates Excel Can Read",
+        "Selecting Cells",
+        "Editing and Clearing a Cell",
+        "Undo and Cancel",
+        "Selecting, Copying and Filling",
+        "Practice: Typing and Fixing a Short List"
+      ]
+    },
+    {
+      "name": "Making it look right",
+      "eyebrow": "Formatting",
+      "why": "How to make a sheet easy to read: bold and fonts, money and percent formats, column widths, borders and colour.",
+      "blocks": [
+        "Bold and Fonts",
+        "Showing Money With Currency",
+        "Percentages and Decimal Places",
+        "Changing Column Widths",
+        "Adding Borders",
+        "Colour in Cells",
+        "Practice: Making the Sales Sheet Readable"
+      ]
+    },
+    {
+      "name": "Your first formulas",
+      "eyebrow": "Formulas",
+      "why": "How to type a formula, the symbols and the order Excel uses, and the ready-made formulas that add, average, count and round.",
+      "blocks": [
+        "What a Formula Actually Is",
+        "Your First Formula: Adding Two Cells",
+        "The Symbols in a Formula",
+        "Brackets and the Order of Calculation",
+        "SUM and AutoSum",
+        "AVERAGE: The Middle of a Group",
+        "MIN and MAX: Smallest and Largest",
+        "COUNT: How Many Numbers",
+        "ROUND: Fewer Decimal Places",
+        "Practice: First Formulas on the Sales Sheet"
+      ]
+    },
+    {
+      "name": "Cell references",
+      "eyebrow": "References",
+      "why": "How a formula's cell addresses behave when you copy it: moving, locked, half-locked, and pointing to another sheet.",
+      "blocks": [
+        "Copying Formulas: Relative References",
+        "Locking a Cell With the Dollar Sign",
+        "Mixed References: Lock Only the Column or the Row",
+        "Switching Reference Type With F4",
+        "Referring to Another Sheet",
+        "Practice: Copying a Formula Down the Sales Sheet"
+      ]
+    },
+    {
+      "name": "Decisions and lookups",
+      "eyebrow": "Decisions",
+      "why": "How to make a cell decide: comparisons, IF, AND and OR, counting and adding what matches, looking a value up, and handling errors.",
+      "blocks": [
+        "Comparing Two Values",
+        "IF: Making a Decision in a Cell",
+        "AND and OR: More Than One Test",
+        "SUMIF: Adding Up Only What Matches",
+        "COUNTIF: Counting What Matches",
+        "XLOOKUP: Finding a Value in a List",
+        "IFERROR: Handling an Error",
+        "Practice: Decisions and a Lookup on the Sales Sheet"
+      ]
+    },
+    {
+      "name": "Dates and text",
+      "eyebrow": "Dates and text",
+      "why": "How Excel treats dates as numbers, how to pull a date apart, and how to join and tidy text.",
+      "blocks": [
+        "Dates Are Numbers",
+        "TODAY: Today's Date",
+        "YEAR, MONTH and DAY",
+        "Joining Text With the Ampersand",
+        "TRIM: Removing Extra Spaces",
+        "Practice: Dates and Text on the Staff Sheet"
+      ]
+    },
+    {
+      "name": "Organising rows",
+      "eyebrow": "Sorting, filtering, tables",
+      "why": "Finding the rows you need without scrolling through all of them.",
+      "blocks": [
+        "Keeping the Headings in View",
+        "Sorting Rows",
+        "Sorting by More Than One Column",
+        "Filtering Rows",
+        "Turning Your Data Into a Table",
+        "Removing Duplicate Rows",
+        "Practice: Sorting and Filtering the Sales Sheet"
+      ]
+    },
+    {
+      "name": "Charts",
+      "eyebrow": "Showing the answer",
+      "why": "How to choose a chart, label it, and draw the three you'll use most: column, line and pie.",
+      "blocks": [
+        "Choosing the Right Chart",
+        "Building Your First Column Chart",
+        "Adding Titles to a Chart",
+        "Line Charts: Trends Over Time",
+        "Pie Charts: Parts of a Whole",
+        "Practice: Charting the Targets"
+      ]
+    },
+    {
+      "name": "Summaries",
+      "eyebrow": "Summary tables",
+      "why": "Totals for each group without writing a formula for every one.",
+      "blocks": [
+        "Summary Tables: Totals by Group",
+        "Sum, Count or Average in a Summary Table",
+        "Rows and Columns: A Two-Way Summary",
+        "Refreshing a Summary Table",
+        "Practice: A Summary of the Sales Sheet"
+      ]
+    },
+    {
+      "name": "Printing and sharing",
+      "eyebrow": "Print and share",
+      "why": "Getting a sheet onto paper, or into someone else's hands, the way you meant it to look.",
+      "blocks": [
+        "Saving, and Which File Type to Use",
+        "Previewing and Printing a Sheet",
+        "Fitting the Sheet on the Page",
+        "Repeating Headings on Every Printed Page",
+        "Saving as a PDF to Share"
+      ]
+    },
+    {
+      "name": "Checking your work",
+      "eyebrow": "Checking",
+      "why": "How to read an error, see the formulas behind a sheet, and prove a total two ways.",
+      "blocks": [
+        "Reading an Error Message",
+        "Showing the Formulas Behind the Numbers",
+        "Practice: The Final Check"
+      ]
+    }
+  ]
+}

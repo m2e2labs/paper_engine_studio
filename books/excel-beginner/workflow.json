@@ -1,0 +1,472 @@
+{
+  "pages": {
+    "What a Formula Actually Is": {
+      "status": "approved",
+      "hash": "47e4ce7fef20",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T05:41:38.601Z"
+    },
+    "Selecting, Copying and Filling": {
+      "status": "approved",
+      "hash": "25822d5840e2",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T05:41:38.920Z"
+    },
+    "Locking a Cell With the Dollar Sign": {
+      "status": "approved",
+      "hash": "a9d69622c46d",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T05:41:39.219Z"
+    },
+    "SUMIF: Adding Up Only What Matches": {
+      "status": "approved",
+      "hash": "c212d5592c9e",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T05:41:39.518Z"
+    },
+    "Sorting Rows": {
+      "status": "approved",
+      "hash": "b910b2248014",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T05:41:39.817Z"
+    },
+    "Filtering Rows": {
+      "status": "approved",
+      "hash": "d97cfb1d7fbe",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T05:41:40.118Z"
+    },
+    "Turning Your Data Into a Table": {
+      "status": "approved",
+      "hash": "6793fe02b578",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T05:41:40.435Z"
+    },
+    "Building Your First Column Chart": {
+      "status": "approved",
+      "hash": "56fa2cd6f060",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T05:41:40.734Z"
+    },
+    "Summary Tables: Totals by Group": {
+      "status": "approved",
+      "hash": "31ddc1ecbd52",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T05:41:41.040Z"
+    },
+    "Saving, and Which File Type to Use": {
+      "status": "approved",
+      "hash": "9e3304846dd8",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T05:41:41.351Z"
+    },
+    "What Excel Is For": {
+      "status": "approved",
+      "hash": "f733dcbe5ae2",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T06:14:54.525Z"
+    },
+    "Workbooks, Sheets and Cells": {
+      "status": "approved",
+      "hash": "da234cc6d354",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T06:14:54.858Z"
+    },
+    "A Tour of the Excel Window": {
+      "status": "approved",
+      "hash": "4d592800c267",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T06:14:55.190Z"
+    },
+    "Moving Around the Sheet": {
+      "status": "approved",
+      "hash": "514a9da06a48",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T06:14:55.540Z"
+    },
+    "Adding and Renaming Sheets": {
+      "status": "approved",
+      "hash": "25e69b884a42",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T06:14:55.876Z"
+    },
+    "Practice: First Look at the Corner Shop Sales": {
+      "status": "approved",
+      "hash": "11e78ef619fc",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T06:14:56.207Z"
+    },
+    "Typing Into a Cell": {
+      "status": "approved",
+      "hash": "1c64d8ebba3a",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T06:43:05.833Z"
+    },
+    "Numbers, Text and Dates": {
+      "status": "approved",
+      "hash": "4974096739de",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T06:43:06.167Z"
+    },
+    "Numbers Stored as Text": {
+      "status": "approved",
+      "hash": "11669afa1403",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T06:43:06.499Z"
+    },
+    "Entering Dates Excel Can Read": {
+      "status": "approved",
+      "hash": "6d23b6da147b",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T06:43:06.818Z"
+    },
+    "Selecting Cells": {
+      "status": "approved",
+      "hash": "b917bf648904",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T06:43:07.142Z"
+    },
+    "Editing and Clearing a Cell": {
+      "status": "approved",
+      "hash": "c1c3e719bc98",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T06:43:07.466Z"
+    },
+    "Undo and Cancel": {
+      "status": "approved",
+      "hash": "9444a312aaab",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T06:43:07.801Z"
+    },
+    "Practice: Typing and Fixing a Short List": {
+      "status": "approved",
+      "hash": "17a7bea59bad",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T06:43:08.116Z"
+    },
+    "Bold and Fonts": {
+      "status": "approved",
+      "hash": "74af1f3d5155",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T07:20:49.783Z"
+    },
+    "Showing Money With Currency": {
+      "status": "approved",
+      "hash": "29488975d9a4",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T07:20:49.926Z"
+    },
+    "Percentages and Decimal Places": {
+      "status": "approved",
+      "hash": "f5ce5f47bc73",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T07:20:50.055Z"
+    },
+    "Changing Column Widths": {
+      "status": "approved",
+      "hash": "2016d0291c43",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T07:20:50.182Z"
+    },
+    "Adding Borders": {
+      "status": "approved",
+      "hash": "3eb939214ac4",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T07:20:50.320Z"
+    },
+    "Colour in Cells": {
+      "status": "approved",
+      "hash": "41711038997f",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T07:20:50.443Z"
+    },
+    "Practice: Making the Sales Sheet Readable": {
+      "status": "approved",
+      "hash": "347dd66325e1",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T07:20:50.567Z"
+    },
+    "Your First Formula: Adding Two Cells": {
+      "status": "approved",
+      "hash": "85166c2224ac",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T07:42:14.089Z"
+    },
+    "The Symbols in a Formula": {
+      "status": "approved",
+      "hash": "42f05f33693c",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T07:42:14.276Z"
+    },
+    "Brackets and the Order of Calculation": {
+      "status": "approved",
+      "hash": "db058b7ebebe",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T07:42:14.415Z"
+    },
+    "SUM and AutoSum": {
+      "status": "approved",
+      "hash": "6e58c17c73b3",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T07:42:14.558Z"
+    },
+    "AVERAGE: The Middle of a Group": {
+      "status": "approved",
+      "hash": "ebfea927dec2",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T07:42:14.698Z"
+    },
+    "MIN and MAX: Smallest and Largest": {
+      "status": "approved",
+      "hash": "fa02ade7d4fc",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T07:42:14.836Z"
+    },
+    "COUNT: How Many Numbers": {
+      "status": "approved",
+      "hash": "598ea29fe26e",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T07:42:14.973Z"
+    },
+    "ROUND: Fewer Decimal Places": {
+      "status": "approved",
+      "hash": "54c09b29d2dd",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T07:42:15.108Z"
+    },
+    "Practice: First Formulas on the Sales Sheet": {
+      "status": "approved",
+      "hash": "73c2d2022dcd",
+      "note": "Approved by the author in the Studio, at the author's request, 2026-10-09.",
+      "at": "2026-10-09T07:42:15.244Z"
+    },
+    "Copying Formulas: Relative References": {
+      "status": "approved",
+      "hash": "6963be63e9e3",
+      "note": "Part 5 approved by the author",
+      "at": "2026-10-09T07:57:09.175Z"
+    },
+    "Mixed References: Lock Only the Column or the Row": {
+      "status": "approved",
+      "hash": "914f760438a7",
+      "note": "Part 5 approved by the author",
+      "at": "2026-10-09T07:57:09.348Z"
+    },
+    "Switching Reference Type With F4": {
+      "status": "approved",
+      "hash": "fb4b82e37c44",
+      "note": "Part 5 approved by the author",
+      "at": "2026-10-09T07:57:09.498Z"
+    },
+    "Referring to Another Sheet": {
+      "status": "approved",
+      "hash": "d901426a8002",
+      "note": "Part 5 approved by the author",
+      "at": "2026-10-09T07:57:09.651Z"
+    },
+    "Practice: Copying a Formula Down the Sales Sheet": {
+      "status": "approved",
+      "hash": "bce741b4c959",
+      "note": "Part 5 approved by the author",
+      "at": "2026-10-09T07:57:09.814Z"
+    },
+    "Comparing Two Values": {
+      "status": "approved",
+      "hash": "90f6c718b40f",
+      "note": "Part 6 approved by the author",
+      "at": "2026-10-09T08:35:36.377Z"
+    },
+    "IF: Making a Decision in a Cell": {
+      "status": "approved",
+      "hash": "4a9362b42a43",
+      "note": "Part 6 approved by the author",
+      "at": "2026-10-09T08:35:36.565Z"
+    },
+    "AND and OR: More Than One Test": {
+      "status": "approved",
+      "hash": "3637f393831f",
+      "note": "Part 6 approved by the author",
+      "at": "2026-10-09T08:35:36.729Z"
+    },
+    "COUNTIF: Counting What Matches": {
+      "status": "approved",
+      "hash": "6cb4615ebf67",
+      "note": "Part 6 approved by the author",
+      "at": "2026-10-09T08:35:36.891Z"
+    },
+    "XLOOKUP: Finding a Value in a List": {
+      "status": "approved",
+      "hash": "a70adc80bfad",
+      "note": "Part 6 approved by the author",
+      "at": "2026-10-09T08:35:37.045Z"
+    },
+    "IFERROR: Handling an Error": {
+      "status": "approved",
+      "hash": "fa13c02245dd",
+      "note": "Part 6 approved by the author",
+      "at": "2026-10-09T08:35:37.197Z"
+    },
+    "Practice: Decisions and a Lookup on the Sales Sheet": {
+      "status": "approved",
+      "hash": "814446068b75",
+      "note": "Part 6 approved by the author",
+      "at": "2026-10-09T08:35:37.354Z"
+    },
+    "Dates Are Numbers": {
+      "status": "approved",
+      "hash": "1d4ca0364c37",
+      "note": "Part 7 approved by the author",
+      "at": "2026-10-09T08:45:50.705Z"
+    },
+    "TODAY: Today's Date": {
+      "status": "approved",
+      "hash": "0ab32acf138c",
+      "note": "Part 7 approved by the author",
+      "at": "2026-10-09T08:45:50.887Z"
+    },
+    "YEAR, MONTH and DAY": {
+      "status": "approved",
+      "hash": "5df0d2b26d6d",
+      "note": "Part 7 approved by the author",
+      "at": "2026-10-09T08:45:51.075Z"
+    },
+    "Joining Text With the Ampersand": {
+      "status": "approved",
+      "hash": "a053fc153ef8",
+      "note": "Part 7 approved by the author",
+      "at": "2026-10-09T08:45:51.243Z"
+    },
+    "TRIM: Removing Extra Spaces": {
+      "status": "approved",
+      "hash": "8f6a20a417fb",
+      "note": "Part 7 approved by the author",
+      "at": "2026-10-09T08:45:51.406Z"
+    },
+    "Practice: Dates and Text on the Staff Sheet": {
+      "status": "approved",
+      "hash": "1525bc3eaa55",
+      "note": "Part 7 approved by the author",
+      "at": "2026-10-09T08:45:51.577Z"
+    },
+    "Keeping the Headings in View": {
+      "status": "approved",
+      "hash": "6ac3fd35efc9",
+      "note": "Part 8 approved by the author",
+      "at": "2026-10-09T08:57:43.421Z"
+    },
+    "Sorting by More Than One Column": {
+      "status": "approved",
+      "hash": "ce0f6e6827ac",
+      "note": "Part 8 approved by the author",
+      "at": "2026-10-09T08:57:43.620Z"
+    },
+    "Removing Duplicate Rows": {
+      "status": "approved",
+      "hash": "2f714d9996f8",
+      "note": "Part 8 approved by the author",
+      "at": "2026-10-09T08:57:43.801Z"
+    },
+    "Practice: Sorting and Filtering the Sales Sheet": {
+      "status": "approved",
+      "hash": "2b54b89b0761",
+      "note": "Part 8 approved by the author",
+      "at": "2026-10-09T08:57:43.974Z"
+    },
+    "Choosing the Right Chart": {
+      "status": "approved",
+      "hash": "2f86e57ba68b",
+      "note": "Part 9 approved by the author",
+      "at": "2026-10-09T09:06:21.786Z"
+    },
+    "Adding Titles to a Chart": {
+      "status": "approved",
+      "hash": "913349a66d90",
+      "note": "Part 9 approved by the author",
+      "at": "2026-10-09T09:06:22.004Z"
+    },
+    "Line Charts: Trends Over Time": {
+      "status": "approved",
+      "hash": "9c76cacf55ec",
+      "note": "Part 9 approved by the author",
+      "at": "2026-10-09T09:06:22.204Z"
+    },
+    "Pie Charts: Parts of a Whole": {
+      "status": "approved",
+      "hash": "848c53449d3c",
+      "note": "Part 9 approved by the author",
+      "at": "2026-10-09T09:06:22.395Z"
+    },
+    "Practice: Charting the Targets": {
+      "status": "approved",
+      "hash": "7966f05382be",
+      "note": "Part 9 approved by the author",
+      "at": "2026-10-09T09:06:22.587Z"
+    },
+    "Sum, Count or Average in a Summary Table": {
+      "status": "approved",
+      "hash": "d8d4ae0005fe",
+      "note": "Part 10 approved by the author",
+      "at": "2026-10-09T09:19:16.976Z"
+    },
+    "Rows and Columns: A Two-Way Summary": {
+      "status": "approved",
+      "hash": "a6e03a19d301",
+      "note": "Part 10 approved by the author",
+      "at": "2026-10-09T09:19:17.193Z"
+    },
+    "Refreshing a Summary Table": {
+      "status": "approved",
+      "hash": "447f68fffdd2",
+      "note": "Part 10 approved by the author",
+      "at": "2026-10-09T09:19:17.391Z"
+    },
+    "Practice: A Summary of the Sales Sheet": {
+      "status": "approved",
+      "hash": "4cbfb49af4de",
+      "note": "Part 10 approved by the author",
+      "at": "2026-10-09T09:19:17.583Z"
+    },
+    "Previewing and Printing a Sheet": {
+      "status": "approved",
+      "hash": "9fa6045e7a21",
+      "note": "Part 11 approved by the author",
+      "at": "2026-10-09T09:28:33.280Z"
+    },
+    "Fitting the Sheet on the Page": {
+      "status": "approved",
+      "hash": "6433ccb803b7",
+      "note": "Part 11 approved by the author",
+      "at": "2026-10-09T09:28:33.528Z"
+    },
+    "Repeating Headings on Every Printed Page": {
+      "status": "approved",
+      "hash": "6186e797ed16",
+      "note": "Part 11 approved by the author",
+      "at": "2026-10-09T09:28:33.751Z"
+    },
+    "Saving as a PDF to Share": {
+      "status": "approved",
+      "hash": "e5bbd2e445c4",
+      "note": "Part 11 approved by the author",
+      "at": "2026-10-09T09:28:33.949Z"
+    },
+    "Reading an Error Message": {
+      "status": "approved",
+      "hash": "581dd9e2c56c",
+      "note": "Part 12 approved by the author",
+      "at": "2026-10-09T09:39:37.186Z"
+    },
+    "Showing the Formulas Behind the Numbers": {
+      "status": "approved",
+      "hash": "a53adb245a38",
+      "note": "Part 12 approved by the author",
+      "at": "2026-10-09T09:39:37.426Z"
+    },
+    "Practice: The Final Check": {
+      "status": "approved",
+      "hash": "cbf867a25b9d",
+      "note": "Part 12 approved by the author",
+      "at": "2026-10-09T09:39:37.645Z"
+    }
+  }
+}
