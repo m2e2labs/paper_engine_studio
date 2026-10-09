@@ -256,21 +256,21 @@ Check each against the real menu before the page is written.
 - **Use when:** the reader wants a monthly view. **Skip when:** their dates already come as months.
 - **Action:** "Drag Date into Rows, then group the dates by Months."
 - **Band:** diagram (many dates folding into twelve months)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F84, F85, F86, F87
 
-#### Grouping Dates by Quarter and Year
+#### Grouping Dates by Quarter
 - **What:** Choose more than one level at once and the PivotTable lets you open and close each year and quarter.
 - **Use when:** the reader has more than one year, or wants a quarterly view. **Skip when:** monthly is enough.
 - **Action:** "Group Date by Quarters as well as Months."
 - **Band:** diagram (months nesting inside quarters)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F86, F88
 
 #### Why Dates Won't Group
 - **What:** When a date column holds text, or has a blank or a bad date in it, the Group option goes grey or refuses. Find the cause and fix it at the source. Pairs with the first book's dates lessons.
 - **Use when:** the reader tries to group dates and nothing happens. **Skip when:** their dates group fine.
 - **Action:** "On the Sales sheet, check that Date in A2:A241 is right-aligned (a real date) and not left-aligned (text)."
 - **Band:** diagram (a real date and a text date side by side, only one grouping)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F93, F94
 
 #### Grouping by Every Seven Days
 - **What:** Group dates by days with a step of 7 to get a week-by-week view. Say what the first week's start date means.
@@ -284,35 +284,35 @@ Check each against the real menu before the page is written.
 - **Use when:** the reader wants to know how many sales were small, medium or large. **Skip when:** they don't need bands.
 - **Action:** "Put Amount in Rows and group it with a step of 20."
 - **Band:** diagram (numbers falling into equal bands)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F29, F33, F84, F85, F89
 
 #### Grouping Text Items by Hand
 - **What:** Select two or three items, such as North and East, and group them under a name you choose.
 - **Use when:** the reader wants a custom group the data doesn't have. **Skip when:** the data already has the group.
 - **Action:** "Select two regions in the rows and group them."
 - **Band:** diagram (two items pulled into a named group)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F84, F90, F91
 
 #### Ungrouping and Changing a Group
 - **What:** Undo a grouping, or regroup with a different step. Nothing in the data changes, only how the PivotTable folds it.
 - **Use when:** the reader grouped something the wrong way. **Skip when:** never.
 - **Action:** "Ungroup your monthly dates, then group them by Quarters instead."
 - **Band:** diagram (grouped then ungrouped rows)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F8, F84, F86, F92
 
 #### Adding a Helper Column to the Data
 - **What:** Some questions need a column the data doesn't have, such as the weekday of each sale. Add it to the source with a formula, then refresh. Uses a lookup or text formula from the first book.
 - **Use when:** the reader needs a grouping the PivotTable can't make. **Skip when:** the data already has the column.
 - **Action:** "Add a column H to the Sales sheet that gives the weekday of each Date, then refresh the PivotTable."
 - **Band:** diagram (a new column added to the source, then appearing in the field list)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F95, F96, F97, F98, F99, F100, F101
 
 #### Practice: Sales by Month and Quarter
 - **What:** Build a monthly and quarterly view of the year, and find the best month.
 - **Use when:** always, at the end of the part. **Skip when:** never.
 - **Action:** "Group Date by Months and Quarters and find the month with the highest Amount."
 - **Band:** diagram (the finished grouped table)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F52, F84, F86, F88, F92
 
 ## Part 5 · Showing values differently
 

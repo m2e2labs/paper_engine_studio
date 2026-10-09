@@ -88,7 +88,7 @@
       "why": "Turning 240 separate dates into months, quarters and weeks, numbers into bands, and a few items into one.",
       "blocks": [
         "Grouping Dates by Month",
-        "Grouping Dates by Quarter and Year",
+        "Grouping Dates by Quarter",
         "Why Dates Won't Group",
         "Grouping by Every Seven Days",
         "Grouping Numbers Into Bands",

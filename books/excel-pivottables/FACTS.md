@@ -687,3 +687,147 @@ findings appear here.
 - **Checked:** 2026-10-09
 
 ---
+
+## F84 · Group: right-click a value
+- **Claim:** To group, right-click a value in the PivotTable and choose Group.
+- **Source:** Microsoft Support, "Group or ungroup data in a PivotTable": https://support.microsoft.com/en-us/excel/get-started/group-or-ungroup-data-in-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F85 · Grouping box: start and end
+- **Claim:** The Grouping box has Starting at and Ending at tick boxes, with values you can edit.
+- **Source:** Microsoft Support, "Group or ungroup data in a PivotTable": https://support.microsoft.com/en-us/excel/get-started/group-or-ungroup-data-in-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F86 · Group by a time period
+- **Claim:** For dates, you pick the time period to group by under By.
+- **Source:** Microsoft Support, "Group or ungroup data in a PivotTable": https://support.microsoft.com/en-us/excel/get-started/group-or-ungroup-data-in-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F87 · Dates may group by themselves
+- **Claim:** Microsoft says time fields are detected and grouped automatically when you add them to a PivotTable. Check in Excel what happens when you tick Date before the page tells the reader to group by hand.
+- **Source:** Microsoft Support, "Group or ungroup data in a PivotTable": https://support.microsoft.com/en-us/excel/get-started/group-or-ungroup-data-in-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F88 · Quarters and months
+- **Claim:** Grouping can turn a long list of dates and times into quarters and months. The page doesn't say how to choose several periods at once, so check that in Excel.
+- **Source:** Microsoft Support, "Group or ungroup data in a PivotTable": https://support.microsoft.com/en-us/excel/get-started/group-or-ungroup-data-in-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F89 · Group numbers by an interval
+- **Claim:** For a number field, you type the size of the interval each group covers.
+- **Source:** Microsoft Support, "Group or ungroup data in a PivotTable": https://support.microsoft.com/en-us/excel/get-started/group-or-ungroup-data-in-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F90 · Group chosen items
+- **Claim:** To group items by hand, hold Ctrl, select two or more values, then right-click and choose Group.
+- **Source:** Microsoft Support, "Group or ungroup data in a PivotTable": https://support.microsoft.com/en-us/excel/get-started/group-or-ungroup-data-in-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F91 · Name a group
+- **Claim:** A group's name is changed through Field Settings, in the Custom Name box.
+- **Source:** Microsoft Support, "Group or ungroup data in a PivotTable": https://support.microsoft.com/en-us/excel/get-started/group-or-ungroup-data-in-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F92 · Ungroup
+- **Claim:** To ungroup, right-click any item in the group and choose Ungroup.
+- **Source:** Microsoft Support, "Group or ungroup data in a PivotTable": https://support.microsoft.com/en-us/excel/get-started/group-or-ungroup-data-in-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F93 · Excel stores dates as numbers
+- **Claim:** Excel stores dates as sequential serial numbers, so they can be used in calculations.
+- **Source:** Microsoft Support, "WEEKDAY function": https://support.microsoft.com/en-us/office/weekday-function-60e44483-2ed1-439f-8bd0-e404c190949a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F94 · Dates typed as text cause problems
+- **Claim:** Microsoft warns that problems can occur when dates are entered as text. It doesn't document the grouping failure itself, so test what Excel says in Excel.
+- **Source:** Microsoft Support, "WEEKDAY function": https://support.microsoft.com/en-us/office/weekday-function-60e44483-2ed1-439f-8bd0-e404c190949a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F95 · Tables pick up new columns
+- **Claim:** When the source is an Excel table, new columns appear in the PivotTable Fields list.
+- **Source:** Microsoft Support, "Create a PivotTable to analyze worksheet data" (macOS section of the page): https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F96 · Not a table: change the source
+- **Claim:** If the source isn't an Excel table, you have to change the source data of the PivotTable, or use a dynamic named range.
+- **Source:** Microsoft Support, "Create a PivotTable to analyze worksheet data" (macOS section of the page): https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F97 · Refresh to see new fields
+- **Claim:** After adding fields to the source you may need to refresh the PivotTable before they show in the Field List.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F98 · WEEKDAY
+- **Claim:** WEEKDAY returns the day of the week for a date.
+- **Source:** Microsoft Support, "WEEKDAY function": https://support.microsoft.com/en-us/office/weekday-function-60e44483-2ed1-439f-8bd0-e404c190949a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F99 · WEEKDAY gives 1 to 7
+- **Claim:** By default WEEKDAY gives a whole number from 1 (Sunday) to 7 (Saturday).
+- **Source:** Microsoft Support, "WEEKDAY function": https://support.microsoft.com/en-us/office/weekday-function-60e44483-2ed1-439f-8bd0-e404c190949a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F100 · TEXT with DDDD gives the day name
+- **Claim:** The TEXT function with the format code DDDD shows a date as the name of its weekday, such as Monday.
+- **Source:** Microsoft Support, "TEXT function": https://support.microsoft.com/en-us/office/text-function-20d5ac4d-7b94-49fd-bb38-93d29371225c
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F101 · TEXT returns text
+- **Claim:** TEXT turns a number into text, which can make it hard to use in later calculations.
+- **Source:** Microsoft Support, "TEXT function": https://support.microsoft.com/en-us/office/text-function-20d5ac4d-7b94-49fd-bb38-93d29371225c
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---

@@ -1021,7 +1021,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Grouping Dates by Month
-- **Status:** new
+- **Status:** accepted as F84, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1033,7 +1033,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Grouping Dates by Month
-- **Status:** new
+- **Status:** accepted as F85, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1045,7 +1045,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Grouping Dates by Month
-- **Status:** new
+- **Status:** accepted as F86, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1057,7 +1057,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Grouping Dates by Month
-- **Status:** new
+- **Status:** accepted as F87, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1068,8 +1068,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "group an unwieldy list date and time fields in the PivotTable into quarters and months"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Grouping Dates by Quarter and Year
-- **Status:** new
+- **For:** Grouping Dates by Quarter
+- **Status:** accepted as F88, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1081,7 +1081,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Grouping Numbers Into Bands
-- **Status:** new
+- **Status:** accepted as F89, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1093,7 +1093,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Grouping Text Items by Hand
-- **Status:** new
+- **Status:** accepted as F90, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1105,7 +1105,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Grouping Text Items by Hand
-- **Status:** new
+- **Status:** accepted as F91, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1117,7 +1117,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Ungrouping and Changing a Group
-- **Status:** new
+- **Status:** accepted as F92, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1129,7 +1129,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Why Dates Won't Group
-- **Status:** new
+- **Status:** accepted as F93, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1141,7 +1141,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Why Dates Won't Group
-- **Status:** new
+- **Status:** accepted as F94, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1153,7 +1153,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Adding a Helper Column to the Data
-- **Status:** new
+- **Status:** accepted as F95, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1165,7 +1165,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Adding a Helper Column to the Data
-- **Status:** new
+- **Status:** accepted as F96, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1177,7 +1177,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Adding a Helper Column to the Data
-- **Status:** new
+- **Status:** accepted as F97, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1189,7 +1189,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Adding a Helper Column to the Data
-- **Status:** new
+- **Status:** accepted as F98, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1201,7 +1201,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Adding a Helper Column to the Data
-- **Status:** new
+- **Status:** accepted as F99, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1213,7 +1213,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Adding a Helper Column to the Data
-- **Status:** new
+- **Status:** accepted as F100, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1225,7 +1225,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Adding a Helper Column to the Data
-- **Status:** new
+- **Status:** accepted as F101, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2437,6 +2437,18 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Checking the Dashboard Before You Send It
+- **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
+
+---
+
+## R203 · Group dates by a number of days (VBA reference)
+- **Claim:** In VBA, grouping a date field by days only, with the By argument set, gives groups of that many days. Microsoft's page is the VBA reference, so it doesn't give the menu steps for the Group box.
+- **Source:** Microsoft Learn, "Range.Group method (Excel)": https://learn.microsoft.com/office/vba/api/excel.range.group
+- **Quote:** "If the field is a date, this argument specifies the number of days in each group if element 4 in the Periods array is True and all the other elements are False."
+- **Kind:** reference
+- **Retrieved:** 2026-10-09
+- **For:** Grouping by Every Seven Days
 - **Status:** new
 - **Verified:** 2026-10-09, quote found on the page
 
