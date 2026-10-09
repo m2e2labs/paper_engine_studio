@@ -20,8 +20,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "A PivotTable is a powerful tool to calculate, summarize, and analyze data"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** One Question, Many Formulas: Why PivotTables Exist
-- **Status:** new
+- **For:** Why PivotTables Exist
+- **Status:** accepted as F1, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -33,7 +33,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Data a PivotTable Can Read
-- **Status:** new
+- **Status:** accepted as F2, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -45,7 +45,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Data a PivotTable Can Read
-- **Status:** new
+- **Status:** accepted as F3, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -57,7 +57,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Tidying a List Before You Pivot
-- **Status:** new
+- **Status:** accepted as F4, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -69,7 +69,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Tidying a List Before You Pivot
-- **Status:** new
+- **Status:** accepted as F5, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -81,7 +81,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Tidying a List Before You Pivot
-- **Status:** new
+- **Status:** accepted as F6, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -93,7 +93,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Inserting Your First PivotTable
-- **Status:** new
+- **Status:** accepted as F7, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -105,7 +105,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Inserting Your First PivotTable
-- **Status:** new
+- **Status:** accepted as F8, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -116,8 +116,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "Select New Worksheet to place the PivotTable in a new worksheet"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Where the PivotTable Goes: New Sheet or This One
-- **Status:** new
+- **For:** Where the PivotTable Goes
+- **Status:** accepted as F9, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -129,7 +129,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** The Field List and Its Four Boxes
-- **Status:** new
+- **Status:** accepted as F10, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -141,7 +141,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** The Field List and Its Four Boxes
-- **Status:** new
+- **Status:** accepted as F11, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -153,7 +153,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** The Field List and Its Four Boxes
-- **Status:** new
+- **Status:** accepted as F12, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -165,7 +165,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** The Field List and Its Four Boxes
-- **Status:** new
+- **Status:** accepted as F13, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -177,7 +177,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** The Field List and Its Four Boxes
-- **Status:** new
+- **Status:** accepted as F14, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -189,7 +189,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** The Field List and Its Four Boxes
-- **Status:** new
+- **Status:** accepted as F15, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -201,7 +201,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** The Field List and Its Four Boxes
-- **Status:** new
+- **Status:** accepted as F16, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -213,7 +213,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** The Field List and Its Four Boxes
-- **Status:** new
+- **Status:** accepted as F17, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -225,7 +225,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Practice: Your First PivotTable
-- **Status:** new
+- **Status:** accepted as F18, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -237,7 +237,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Reading Row Labels and Grand Totals
-- **Status:** new
+- **Status:** accepted as F19, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -249,7 +249,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Excel's Recommended PivotTables
-- **Status:** new
+- **Status:** accepted as F20, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -261,7 +261,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Excel's Recommended PivotTables
-- **Status:** new
+- **Status:** accepted as F21, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -273,7 +273,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Excel's Recommended PivotTables
-- **Status:** new
+- **Status:** accepted as F22, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1598,6 +1598,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Changing Which Data a PivotTable Reads
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1609,6 +1610,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Changing Which Data a PivotTable Reads
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1620,6 +1622,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Changing Which Data a PivotTable Reads
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1631,6 +1634,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Refreshing Every Time the File Opens
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1642,6 +1646,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Refreshing Every Time the File Opens
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1653,6 +1658,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Refreshing Every Time the File Opens
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1664,6 +1670,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Filling Empty Cells With a Zero
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1675,6 +1682,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Filling Empty Cells With a Zero
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1686,6 +1694,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Filling Empty Cells With a Zero
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1697,6 +1706,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Keeping Column Widths When You Refresh
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1708,6 +1718,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Keeping Column Widths When You Refresh
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1719,6 +1730,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Copying a PivotTable as Plain Values
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1730,6 +1742,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Copying a PivotTable as Plain Values
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1741,6 +1754,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Copying a PivotTable as Plain Values
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1752,6 +1766,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Why a Formula Shows GETPIVOTDATA
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1763,6 +1778,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Why a Formula Shows GETPIVOTDATA
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1774,6 +1790,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Why a Formula Shows GETPIVOTDATA
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1785,6 +1802,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Why a Formula Shows GETPIVOTDATA
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1796,6 +1814,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Why a Formula Shows GETPIVOTDATA
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1807,6 +1826,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Two PivotTables From One List
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1818,6 +1838,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Two PivotTables From One List
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1829,6 +1850,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** When the Numbers Look Wrong
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1840,6 +1862,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** When the Numbers Look Wrong
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1851,6 +1874,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** When the Numbers Look Wrong
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1862,6 +1886,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** PivotCharts
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1873,6 +1898,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** PivotCharts
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1884,6 +1910,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** PivotCharts
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1895,6 +1922,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** PivotCharts
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1906,6 +1934,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a Chart Type for a PivotChart
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1917,6 +1946,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a Chart Type for a PivotChart
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1928,6 +1958,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a Chart Type for a PivotChart
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1939,6 +1970,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a Chart Type for a PivotChart
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1950,6 +1982,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a Chart Type for a PivotChart
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1961,6 +1994,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a Chart Type for a PivotChart
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1972,6 +2006,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a Chart Type for a PivotChart
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1983,6 +2018,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Cleaning Up a PivotChart
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -1994,6 +2030,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Cleaning Up a PivotChart
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2005,6 +2042,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Cleaning Up a PivotChart
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2016,6 +2054,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Cleaning Up a PivotChart
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2027,6 +2066,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Slicers
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2038,6 +2078,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Slicers
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2049,6 +2090,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Slicers
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2060,6 +2102,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Slicers
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2071,6 +2114,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Slicers
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2082,6 +2126,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Slicers
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2093,6 +2138,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Slicers
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2104,6 +2150,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Making Slicers Look Right
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2115,6 +2162,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Making Slicers Look Right
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2126,6 +2174,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Making Slicers Look Right
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2137,6 +2186,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** One Slicer for Two PivotTables
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2148,6 +2198,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** One Slicer for Two PivotTables
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2159,6 +2210,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** One Slicer for Two PivotTables
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2170,6 +2222,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** One Slicer for Two PivotTables
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2181,6 +2234,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** One Slicer for Two PivotTables
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2192,6 +2246,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Timelines
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2203,6 +2258,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Timelines
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2214,6 +2270,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Timelines
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2225,6 +2282,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Timelines
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2236,6 +2294,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Timelines
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2247,6 +2306,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Timelines
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2258,6 +2318,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Timelines
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2269,6 +2330,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Timelines
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2280,6 +2342,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Laying Out a One-Page Dashboard
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2291,6 +2354,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Printing the Dashboard on One Page
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2302,6 +2366,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Printing the Dashboard on One Page
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2313,6 +2378,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Printing the Dashboard on One Page
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2324,6 +2390,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Printing the Dashboard on One Page
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2335,6 +2402,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Printing the Dashboard on One Page
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2346,6 +2414,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Printing the Dashboard on One Page
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2357,6 +2426,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Printing the Dashboard on One Page
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---
 
@@ -2368,5 +2438,6 @@ in seconds. It is never printed: the book says things in its own words.
 - **Retrieved:** 2026-10-09
 - **For:** Checking the Dashboard Before You Send It
 - **Status:** new
+- **Verified:** 2026-10-09, quote found on the page
 
 ---

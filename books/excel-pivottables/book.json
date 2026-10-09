@@ -35,11 +35,11 @@
       "eyebrow": "Getting ready",
       "why": "What a PivotTable is for, what shape your data needs first, and how to insert and read your first one.",
       "blocks": [
-        "One Question, Many Formulas: Why PivotTables Exist",
+        "Why PivotTables Exist",
         "Data a PivotTable Can Read",
         "Tidying a List Before You Pivot",
         "Inserting Your First PivotTable",
-        "Where the PivotTable Goes: New Sheet or This One",
+        "Where the PivotTable Goes",
         "The Field List and Its Four Boxes",
         "Reading Row Labels and Grand Totals",
         "Excel's Recommended PivotTables",

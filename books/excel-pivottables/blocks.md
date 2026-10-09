@@ -28,68 +28,68 @@ Check each against the real menu before the page is written.
 
 ## Part 1 · Before you build one
 
-#### One Question, Many Formulas: Why PivotTables Exist
+#### Why PivotTables Exist
 - **What:** You can answer 'how much by region?' with a SUMIF per region. Then someone asks about product, then month, and you're writing formulas all afternoon. A PivotTable answers all of them from one place.
 - **Use when:** the reader has only ever summarised with SUMIF or by hand. **Skip when:** they already build PivotTables.
 - **Action:** "On the Sales sheet, click cell A1. Look at the seven headings in row 1 and say which three you'd want totals by."
 - **Band:** diagram (one list of rows, three different summaries coming out of it)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F1
 
 #### Data a PivotTable Can Read
 - **What:** A PivotTable needs one heading per column, one kind of thing per column and no blank rows or columns in the middle. Say what 'one row per sale' means and why it matters.
 - **Use when:** the reader's own data has gaps, merged cells or a title above the headings. **Skip when:** their data already sits in a clean list.
 - **Action:** "Scroll the Sales sheet to row 241 and check there's no blank row anywhere between row 1 and the last sale."
 - **Band:** diagram (a clean list beside a messy one, with the problems marked)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F2, F3
 
 #### Tidying a List Before You Pivot
 - **What:** Fix the three things that trip a PivotTable up before you start: a blank row, a merged heading, two kinds of thing in one column.
 - **Use when:** the reader's list came from someone else or from a download. **Skip when:** their list is already tidy.
 - **Action:** "On the Sales sheet, look for a blank row or a merged cell in A1:G241 and fix any you find."
 - **Band:** diagram (a messy list with three problems circled, the same list tidied)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F4, F5, F6
 
 #### Inserting Your First PivotTable
 - **What:** Click one cell in the data, choose Insert, then PivotTable, and let Excel put it on a new sheet. The first result is empty on purpose.
 - **Use when:** the reader has a clean list and has never inserted one. **Skip when:** they have done it before.
 - **Action:** "Click cell A1 on the Sales sheet, choose Insert, then PivotTable, and click OK."
 - **Band:** diagram (the Insert tab, the dialog and the empty PivotTable on a new sheet)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F7, F8
 
-#### Where the PivotTable Goes: New Sheet or This One
+#### Where the PivotTable Goes
 - **What:** Excel asks where to put it. A new sheet keeps it out of the way of your data; the same sheet puts it beside the data and risks the two colliding as the data grows.
 - **Use when:** the reader reaches the Insert dialog and isn't sure which option to choose. **Skip when:** they always use a new sheet.
 - **Action:** "Insert a PivotTable from the Sales sheet and choose New Worksheet, then rename the new sheet Report."
 - **Band:** diagram (data and PivotTable on two sheets, then on one sheet colliding)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F9
 
 #### The Field List and Its Four Boxes
 - **What:** The field list holds every heading from your data. Four boxes sit under it: Filters, Columns, Rows and Values. Where you drop a heading decides what the PivotTable does with it.
 - **Use when:** the reader has an empty PivotTable and doesn't know what to do next. **Skip when:** they already drag fields without thinking.
 - **Action:** "Tick Region in the field list. Then drag Amount into the Values box."
 - **Band:** diagram (the field list with arrows from each heading to one of the four boxes)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F10, F11, F12, F13, F14, F15, F17
 
 #### Reading Row Labels and Grand Totals
 - **What:** Say what each part of a finished PivotTable is: the row labels, the column labels, the values, the grand total row and the grand total column.
 - **Use when:** the reader has built one and can't yet read it. **Skip when:** they read PivotTables already.
 - **Action:** "In your Region PivotTable, find the Grand Total and check it against the total of the Amount column on the Sales sheet."
 - **Band:** diagram (a small PivotTable with each part labelled)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F12, F13, F14, F18, F19
 
 #### Excel's Recommended PivotTables
 - **What:** Excel offers some ready-made PivotTables for your data. Useful for a first look, and a fair way to see what's possible; say what to check before trusting one.
 - **Use when:** the reader wants a starting point or wants to see ideas. **Skip when:** they know what they want to build.
 - **Action:** "Click a cell in the Sales data and choose Insert, then Recommended PivotTables."
 - **Band:** diagram (the dialog with several previews, one picked)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F20, F21, F22
 
 #### Practice: Your First PivotTable
 - **What:** Build amount by region from the Corner Shop sales, then check it against the total you already know from the first book.
 - **Use when:** always, at the end of the part. **Skip when:** never.
 - **Action:** "Build Amount by Region on a new sheet and check that the grand total matches the Sales sheet total."
 - **Band:** diagram (the finished table beside the four figures to check)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F7, F9, F15, F18, F19
 
 ## Part 2 · Rows, columns and values
 
