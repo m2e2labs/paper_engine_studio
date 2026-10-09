@@ -213,7 +213,8 @@ const CSS = `    /* ============================================================
     .gp.matter .mt-items .nt{ display:block; font-size:13px; line-height:1.55; color:var(--muted); }
     .gp.matter .mt-sources li{ padding:0 0 10px; margin:0 0 10px; border-bottom:1px solid #EFF1F5; break-inside:avoid; }
     .gp.matter .mt-sources .sh{ display:flex; align-items:baseline; gap:12px; line-height:1.5; }
-    .gp.matter .mt-sources .nm{ flex:1; font-size:13.5px; font-weight:600; color:var(--ink); }
+    .gp.matter .mt-sources .nm{ flex:0 0 auto; font-size:13.5px; font-weight:600; color:var(--ink); }
+    .gp.matter .mt-sources .sh .pg{ flex:1 1 0; min-width:0; text-align:right; }
     .gp.matter .mt-sources .sr{ font-size:12px; line-height:1.5; color:var(--muted); }
     .gp.matter .mt-sources .ck{ white-space:nowrap; }
     .gp.matter .mt-sources .df{ font-size:13px; line-height:1.5; color:var(--ink); }`;
