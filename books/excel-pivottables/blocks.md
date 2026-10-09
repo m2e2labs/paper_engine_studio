@@ -272,12 +272,12 @@ Check each against the real menu before the page is written.
 - **Band:** diagram (a real date and a text date side by side, only one grouping)
 - **Facts:** F93, F94
 
-#### Grouping by Every Seven Days
+#### Grouping Dates by Week
 - **What:** Group dates by days with a step of 7 to get a week-by-week view. Say what the first week's start date means.
 - **Use when:** the reader wants weekly totals. **Skip when:** months are enough.
 - **Action:** "Group Date by Days and set the number of days to 7."
 - **Band:** diagram (days folding into weeks)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F84, F86, F156
 
 #### Grouping Numbers Into Bands
 - **What:** Group Amount into steps of 20 and see how many sales fall in each band. A way to see the shape of your numbers.
@@ -381,96 +381,96 @@ Check each against the real menu before the page is written.
 
 ## Part 6 · Calculations and keeping it right
 
-#### Adding Your Own Calculation: A Calculated Field
+#### Adding a Calculated Field
 - **What:** Make a new field from existing ones, such as Amount divided by Quantity, and use it like any other. Say what a calculated field can't do.
 - **Use when:** the reader needs a figure the data doesn't hold. **Skip when:** the data already has it.
 - **Action:** "Add a calculated field that works out the average price per item."
 - **Band:** diagram (two fields combining into a third)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F115, F116, F117, F118, F119
 
 #### Counting Each Item Once
 - **What:** Count how many different products sold in each region, not how many rows. Research first how Excel does this, as it may need the Data Model.
 - **Use when:** the reader is asked 'how many different ...?'. **Skip when:** a plain count is what they want.
 - **Action:** "Add a count of different products for each region."
 - **Band:** diagram (repeated items collapsing to one each)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F120, F121, F122
 
-#### Drilling Down to the Rows Behind a Number
+#### Drilling Down Behind a Number
 - **What:** Double-click a number in the PivotTable and Excel lists the rows that made it. The quickest way to answer 'where did that come from?'
 - **Use when:** the reader doesn't trust a figure or is asked to explain it. **Skip when:** never.
 - **Action:** "Double-click the North total and look at the new sheet."
 - **Band:** diagram (a number opening into its source rows)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F123, F124, F125, F126
 
 #### When Your Data Grows Past the PivotTable
 - **What:** New rows added under the data aren't in the PivotTable until it's refreshed, and not at all if they fall outside what it reads. Turning the data into a table (the Excel kind, from the first book) fixes the second problem.
 - **Use when:** the reader adds rows and the PivotTable looks stale. **Skip when:** their data never changes.
 - **Action:** "Add one sale under row 241 and refresh the PivotTable."
 - **Band:** diagram (new rows landing inside and outside the source range)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F96, F127, F128, F129, F130
 
 #### Changing Which Data a PivotTable Reads
 - **What:** A PivotTable reads a fixed block of cells. When the list has grown or moved, point it at the right block with Change Data Source. Turning the list into an Excel table avoids the problem.
 - **Use when:** the reader's new rows aren't appearing after a refresh. **Skip when:** their data never grows.
 - **Action:** "Add a row at the bottom of the Sales sheet and use Change Data Source to include it."
 - **Band:** diagram (a data block with new rows outside the PivotTable's reach)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F96, F131, F132, F133, F134
 
 #### Refreshing Every Time the File Opens
 - **What:** Tell the PivotTable to refresh itself when the file opens, so it never shows yesterday's data.
 - **Use when:** the reader hands the file to someone who won't remember to refresh. **Skip when:** they refresh by hand.
 - **Action:** "In the PivotTable options, tick the option to refresh when opening the file."
 - **Band:** diagram (a file opening and the PivotTable updating itself)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F128, F135, F136
 
-#### Filling Empty Cells With a Zero
+#### Filling Empty Cells
 - **What:** A combination that never happened shows as a blank. A setting shows a zero or a dash instead, which reads better and doesn't break a chart.
 - **Use when:** the reader has blank cells in a two-way table. **Skip when:** there are no gaps.
 - **Action:** "In the PivotTable options, set empty cells to show 0."
 - **Band:** diagram (a grid with blanks, then with zeros)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F138, F139, F140
 
 #### Keeping Column Widths When You Refresh
 - **What:** A refresh can reset the column widths you set by hand. One setting stops that.
 - **Use when:** the reader's careful widths keep snapping back. **Skip when:** never.
 - **Action:** "In the PivotTable options, turn off Autofit Column Widths on Update."
 - **Band:** diagram (a widened column snapping back, then staying)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F49, F141, F142
 
 #### Copying a PivotTable as Plain Values
 - **What:** Copy the finished numbers to another place as plain values, so they stop being a PivotTable and won't change.
 - **Use when:** the reader needs a fixed snapshot to email or paste into a report. **Skip when:** they can send the PivotTable itself.
 - **Action:** "Copy your PivotTable and paste it as values in a new sheet."
 - **Band:** diagram (a live table beside a frozen copy)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F143, F144, F145
 
 #### Why a Formula Shows GETPIVOTDATA
 - **What:** Click a PivotTable value while writing a formula and Excel writes a GETPIVOTDATA formula for you. Say what it is, why it's useful, and how to turn it off if the reader prefers.
 - **Use when:** the reader sees a long formula they didn't type. **Skip when:** they never reference a PivotTable.
 - **Action:** "Type = in an empty cell, click a PivotTable total, and read the formula that appears."
 - **Band:** diagram (a click on a PivotTable total turning into a formula)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F146, F147, F148, F149, F150
 
 #### Two PivotTables From One List
 - **What:** Build a second PivotTable from the same list for a different question, and say whether it should share anything with the first.
 - **Use when:** the reader needs more than one view of the same data. **Skip when:** one view is enough.
 - **Action:** "Insert a second PivotTable on a new sheet and put Product in Rows."
 - **Band:** diagram (one list feeding two different tables)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F7, F9, F129, F152
 
 #### When the Numbers Look Wrong
 - **What:** A Count where you wanted a Sum, a blank heading, numbers stored as text, a total that doesn't match the sheet. Name each cause and how to see it.
 - **Use when:** the reader's PivotTable doesn't match what they expected. **Skip when:** never.
 - **Action:** "Find the Amount calculation and check it says Sum, not Count."
 - **Band:** diagram (four symptoms, each linked to its cause)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F26, F70, F94, F127, F153, F154, F155
 
 #### Practice: Fixing a Broken PivotTable
 - **What:** Take a deliberately faulty PivotTable and find the problem in each of four places: a Count, a stale refresh, a text number, an unwanted filter.
 - **Use when:** always, at the end of the part. **Skip when:** never.
 - **Action:** "Find which of four faults is making the grand total smaller than 6,325."
 - **Band:** diagram (four faults in a single table, each marked)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F26, F70, F127, F153
 
 ## Part 7 · From PivotTable to dashboard
 

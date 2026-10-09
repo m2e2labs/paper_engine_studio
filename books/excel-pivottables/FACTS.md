@@ -935,3 +935,339 @@ findings appear here.
 - **Checked:** 2026-10-09
 
 ---
+
+## F115 · Calculated fields
+- **Claim:** When summary functions and custom calculations don't give the result you want, you can write your own formula in a calculated field.
+- **Source:** Microsoft Support, "Calculate values in a PivotTable": https://support.microsoft.com/en-us/office/calculate-values-in-a-pivottable-11f41417-da80-435c-a5c6-b0185e59da77
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F116 · Calculated field: where
+- **Claim:** A calculated field is added from the Analyze tab: Calculations group, Fields, Items, & Sets, then Calculated Field.
+- **Source:** Microsoft Support, "Calculate values in a PivotTable": https://support.microsoft.com/en-us/office/calculate-values-in-a-pivottable-11f41417-da80-435c-a5c6-b0185e59da77
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F117 · Calculated field: using other fields
+- **Claim:** In the formula box, you use another field by selecting it in the Fields box and choosing Insert Field.
+- **Source:** Microsoft Support, "Calculate values in a PivotTable": https://support.microsoft.com/en-us/office/calculate-values-in-a-pivottable-11f41417-da80-435c-a5c6-b0185e59da77
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F118 · Calculated fields work on sums
+- **Claim:** A calculated field's formula works on the sum of each field it uses, not on each individual row.
+- **Source:** Microsoft Support, "Calculate values in a PivotTable": https://support.microsoft.com/en-us/office/calculate-values-in-a-pivottable-11f41417-da80-435c-a5c6-b0185e59da77
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F119 · No cell references in a PivotTable formula
+- **Claim:** A formula in a calculated field can't use cell references or defined names.
+- **Source:** Microsoft Support, "Calculate values in a PivotTable": https://support.microsoft.com/en-us/office/calculate-values-in-a-pivottable-11f41417-da80-435c-a5c6-b0185e59da77
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F120 · Distinct Count
+- **Claim:** Distinct Count is a summary function that counts the number of unique values.
+- **Source:** Microsoft Support, "Sum values in a PivotTable": https://support.microsoft.com/en-us/office/sum-values-in-a-pivottable-9ee73790-646a-42c9-9fc7-e1ca30096d9c
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F121 · Distinct Count needs the Data Model
+- **Claim:** Distinct Count only works when the PivotTable uses the Data Model in Excel.
+- **Source:** Microsoft Support, "Sum values in a PivotTable": https://support.microsoft.com/en-us/office/sum-values-in-a-pivottable-9ee73790-646a-42c9-9fc7-e1ca30096d9c
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F122 · Add this data to the Data Model
+- **Claim:** The Create PivotTable dialog has a tick box that adds the table or range to the workbook's Data Model.
+- **Source:** Microsoft Support, "Create a PivotTable to analyze worksheet data": https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F123 · Double-click a value to see its rows
+- **Claim:** Double-clicking a value in the PivotTable puts the detail data behind it on a new worksheet.
+- **Source:** Microsoft Support, "Expand, collapse, or show details in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/expand-collapse-or-show-details-in-a-pivottable-or-pivotchart-d70d7e70-d230-4d45-81db-1f5e39bcb394
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F124 · Show Details
+- **Claim:** You can also right-click a value and choose Show Details.
+- **Source:** Microsoft Support, "Expand, collapse, or show details in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/expand-collapse-or-show-details-in-a-pivottable-or-pivotchart-d70d7e70-d230-4d45-81db-1f5e39bcb394
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F125 · Remove the detail sheet
+- **Claim:** To get rid of the detail sheet, right-click its sheet tab and choose Hide or Delete.
+- **Source:** Microsoft Support, "Expand, collapse, or show details in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/expand-collapse-or-show-details-in-a-pivottable-or-pivotchart-d70d7e70-d230-4d45-81db-1f5e39bcb394
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F126 · Enable show details option
+- **Claim:** A PivotTable Options tick box, Enable show details, turns the double-click behaviour on or off.
+- **Source:** Microsoft Support, "Expand, collapse, or show details in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/expand-collapse-or-show-details-in-a-pivottable-or-pivotchart-d70d7e70-d230-4d45-81db-1f5e39bcb394
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F127 · New data needs a refresh
+- **Claim:** If you add new data to the source, the PivotTable needs to be refreshed to include it.
+- **Source:** Microsoft Support, "Create a PivotTable to analyze worksheet data": https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F128 · Right-click Refresh
+- **Claim:** To refresh one PivotTable, right-click it and choose Refresh.
+- **Source:** Microsoft Support, "Refresh PivotTable data": https://support.microsoft.com/en-us/office/refresh-pivottable-data-6d24cece-a038-468a-8176-8b6568ca9be2
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F129 · Refresh All
+- **Claim:** To refresh every PivotTable in the workbook at once, use the Refresh arrow on the PivotTable Analyze tab and choose Refresh All.
+- **Source:** Microsoft Support, "Refresh PivotTable data": https://support.microsoft.com/en-us/office/refresh-pivottable-data-6d24cece-a038-468a-8176-8b6568ca9be2
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F130 · Tables grow with the PivotTable
+- **Claim:** Rows added to an Excel table are included in a PivotTable built on it when you refresh.
+- **Source:** Microsoft Support, "Create a PivotTable to analyze worksheet data" (macOS section of the page): https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F131 · Change Data Source: expand the rows
+- **Claim:** After creating a PivotTable you can change the range its data comes from, for example to include more rows.
+- **Source:** Microsoft Support, "Change the source data for a PivotTable": https://support.microsoft.com/en-us/office/change-the-source-data-for-a-pivottable-afd93524-f7de-432c-84d0-3896fbbc2577
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F132 · Change Data Source: where
+- **Claim:** On the Analyze tab, in the Data group, choose Change Data Source, then Change Data Source again.
+- **Source:** Microsoft Support, "Change the source data for a PivotTable": https://support.microsoft.com/en-us/office/change-the-source-data-for-a-pivottable-afd93524-f7de-432c-84d0-3896fbbc2577
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F133 · Change Data Source: the range
+- **Claim:** In the dialog you choose Select a table or range and enter the first cell in the Table/Range box.
+- **Source:** Microsoft Support, "Change the source data for a PivotTable": https://support.microsoft.com/en-us/office/change-the-source-data-for-a-pivottable-afd93524-f7de-432c-84d0-3896fbbc2577
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F134 · Big source changes: start again
+- **Claim:** If the source has changed a lot, for example with more or fewer columns, Microsoft suggests creating a new PivotTable.
+- **Source:** Microsoft Support, "Change the source data for a PivotTable": https://support.microsoft.com/en-us/office/change-the-source-data-for-a-pivottable-afd93524-f7de-432c-84d0-3896fbbc2577
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F135 · Refresh data when opening the file
+- **Claim:** In PivotTable Options, on the Data tab, a tick box refreshes the PivotTable when the file opens.
+- **Source:** Microsoft Support, "Refresh PivotTable data": https://support.microsoft.com/en-us/office/refresh-pivottable-data-6d24cece-a038-468a-8176-8b6568ca9be2
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F136 · Older Excel doesn't refresh itself
+- **Claim:** In older versions of Excel, PivotTables are not refreshed automatically.
+- **Source:** Microsoft Support, "Refresh PivotTable data": https://support.microsoft.com/en-us/office/refresh-pivottable-data-6d24cece-a038-468a-8176-8b6568ca9be2
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F137 · Auto Refresh is Insider only
+- **Claim:** PivotTable Auto Refresh is described as available only to Microsoft 365 Insider program participants.
+- **Source:** Microsoft Support, "Refresh PivotTable data": https://support.microsoft.com/en-us/office/refresh-pivottable-data-6d24cece-a038-468a-8176-8b6568ca9be2
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F138 · For empty cells show
+- **Claim:** In PivotTable Options, on the Layout & Format tab, the For empty cells show box sets what appears in empty cells.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F139 · Zeros: clear the check box
+- **Claim:** Microsoft's tip says that to display zeros you clear the For empty cells show check box.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F140 · Where the empty-cell option lives
+- **Claim:** The option is on the Layout & Format tab of the PivotTable Options dialog.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F141 · Clear Autofit to keep widths
+- **Claim:** To keep the current column width when the PivotTable updates, clear the Autofit column widths on update check box.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F142 · Refresh page says to tick Autofit
+- **Claim:** The Refresh page says that to stop widths and formatting adjusting on refresh you check both Autofit column widths on update and Preserve cell formatting on update. This disagrees with the layout page (previous finding), so test it in Excel before the page tells the reader which way to set it.
+- **Source:** Microsoft Support, "Refresh PivotTable data": https://support.microsoft.com/en-us/office/refresh-pivottable-data-6d24cece-a038-468a-8176-8b6568ca9be2
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F143 · Paste Values
+- **Claim:** The Values paste option pastes the formula results, without formatting or comments.
+- **Source:** Microsoft Support, "Paste options": https://support.microsoft.com/en-us/excel/paste-options
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F144 · Paste Special Values
+- **Claim:** In Paste Special, Values pastes only the values as they are displayed in the cells.
+- **Source:** Microsoft Support, "Paste options": https://support.microsoft.com/en-us/excel/paste-options
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F145 · Paste Special shortcut
+- **Claim:** Ctrl+Alt+V opens Paste Special.
+- **Source:** Microsoft Support, "Paste options": https://support.microsoft.com/en-us/excel/paste-options
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F146 · GETPIVOTDATA
+- **Claim:** GETPIVOTDATA is a function that returns visible data from a PivotTable.
+- **Source:** Microsoft Support, "GETPIVOTDATA function": https://support.microsoft.com/en-us/excel/functions/getpivotdata-function
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F147 · Clicking a PivotTable cell writes GETPIVOTDATA
+- **Claim:** Typing an equals sign in a cell and then clicking a PivotTable cell makes Excel write a GETPIVOTDATA formula for you.
+- **Source:** Microsoft Support, "GETPIVOTDATA function": https://support.microsoft.com/en-us/excel/functions/getpivotdata-function
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F148 · Turn off Generate GetPivotData
+- **Claim:** To stop Excel writing GETPIVOTDATA when you click a PivotTable cell, clear Generate GetPivotData in PivotTable Options.
+- **Source:** Microsoft Support, "GETPIVOTDATA function": https://support.microsoft.com/en-us/excel/functions/getpivotdata-function
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F149 · GETPIVOTDATA grand total
+- **Claim:** =GETPIVOTDATA("Sales", $A$3) returns the grand total of the Sales field, where A3 is a cell in the PivotTable.
+- **Source:** Microsoft Support, "GETPIVOTDATA function": https://support.microsoft.com/en-us/excel/functions/getpivotdata-function
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F150 · GETPIVOTDATA gives #REF! if hidden
+- **Claim:** GETPIVOTDATA gives a #REF! error when the item you ask for isn't visible, for example because of a filter.
+- **Source:** Microsoft Support, "GETPIVOTDATA function": https://support.microsoft.com/en-us/excel/functions/getpivotdata-function
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F151 · Auto Refresh is per data source
+- **Claim:** Auto Refresh is set for the data source, so turning it on or off affects every PivotTable connected to that source.
+- **Source:** Microsoft Support, "Refresh PivotTable data": https://support.microsoft.com/en-us/office/refresh-pivottable-data-6d24cece-a038-468a-8176-8b6568ca9be2
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F152 · GETPIVOTDATA picks the newest PivotTable
+- **Claim:** If a GETPIVOTDATA reference covers cells from more than one PivotTable, the answer comes from the one created most recently.
+- **Source:** Microsoft Support, "GETPIVOTDATA function": https://support.microsoft.com/en-us/excel/functions/getpivotdata-function
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F153 · Don't mix data types in a value field
+- **Claim:** Microsoft stresses not mixing data types in a field you use as a value, because text turns a sum into a count.
+- **Source:** Microsoft Support, "Create a PivotTable to analyze worksheet data": https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F154 · Switching to Sum zeroes the text
+- **Claim:** If you change a counted field to Sum, blank and non-number values are changed to 0 so they can be summed.
+- **Source:** Microsoft Support, "Sum values in a PivotTable": https://support.microsoft.com/en-us/office/sum-values-in-a-pivottable-9ee73790-646a-42c9-9fc7-e1ca30096d9c
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F155 · For error values show
+- **Claim:** A PivotTable Options setting, For error values show, replaces error values with something you type.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F156 · Group dates by a number of days (VBA reference)
+- **Claim:** In VBA, grouping a date field by days only, with the By argument set, gives groups of that many days. Microsoft's page is the VBA reference, so it doesn't give the menu steps for the Group box.
+- **Source:** Microsoft Learn, "Range.Group method (Excel)": https://learn.microsoft.com/office/vba/api/excel.range.group
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---

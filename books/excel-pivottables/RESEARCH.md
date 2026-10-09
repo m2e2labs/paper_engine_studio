@@ -1392,8 +1392,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "you can create your own formulas in calculated fields and calculated items"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Adding Your Own Calculation: A Calculated Field
-- **Status:** new
+- **For:** Adding a Calculated Field
+- **Status:** accepted as F115, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1404,8 +1404,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "then select Calculated Field"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Adding Your Own Calculation: A Calculated Field
-- **Status:** new
+- **For:** Adding a Calculated Field
+- **Status:** accepted as F116, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1416,8 +1416,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "To use the data from another field in the formula, select the field in the Fields box, and then select Insert Field."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Adding Your Own Calculation: A Calculated Field
-- **Status:** new
+- **For:** Adding a Calculated Field
+- **Status:** accepted as F117, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1428,8 +1428,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "Formulas for calculated fields operate on the sum of the underlying data for any fields in the formula."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Adding Your Own Calculation: A Calculated Field
-- **Status:** new
+- **For:** Adding a Calculated Field
+- **Status:** accepted as F118, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1440,8 +1440,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "you cannot use cell references or defined names"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Adding Your Own Calculation: A Calculated Field
-- **Status:** new
+- **For:** Adding a Calculated Field
+- **Status:** accepted as F119, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1453,7 +1453,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Counting Each Item Once
-- **Status:** new
+- **Status:** accepted as F120, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1465,7 +1465,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Counting Each Item Once
-- **Status:** new
+- **Status:** accepted as F121, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1477,7 +1477,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Counting Each Item Once
-- **Status:** new
+- **Status:** accepted as F122, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1488,8 +1488,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "The detail data that the value field is based on is placed on a new worksheet."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Drilling Down to the Rows Behind a Number
-- **Status:** new
+- **For:** Drilling Down Behind a Number
+- **Status:** accepted as F123, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1500,8 +1500,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "Right-click a field in the values area of the PivotTable, and then click Show Details."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Drilling Down to the Rows Behind a Number
-- **Status:** new
+- **For:** Drilling Down Behind a Number
+- **Status:** accepted as F124, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1512,8 +1512,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "Right-click the sheet tab of the worksheet that contains the value field data, and then click Hide or Delete."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Drilling Down to the Rows Behind a Number
-- **Status:** new
+- **For:** Drilling Down Behind a Number
+- **Status:** accepted as F125, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1524,8 +1524,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "clear or select the Enable show details check box to disable or enable this option"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Drilling Down to the Rows Behind a Number
-- **Status:** new
+- **For:** Drilling Down Behind a Number
+- **Status:** accepted as F126, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1537,7 +1537,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** When Your Data Grows Past the PivotTable
-- **Status:** new
+- **Status:** accepted as F127, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1549,7 +1549,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** When Your Data Grows Past the PivotTable
-- **Status:** new
+- **Status:** accepted as F128, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1561,7 +1561,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** When Your Data Grows Past the PivotTable
-- **Status:** new
+- **Status:** accepted as F129, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1573,7 +1573,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** When Your Data Grows Past the PivotTable
-- **Status:** new
+- **Status:** accepted as F130, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1585,7 +1585,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Changing Which Data a PivotTable Reads
-- **Status:** new
+- **Status:** accepted as F131, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1597,7 +1597,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Changing Which Data a PivotTable Reads
-- **Status:** new
+- **Status:** accepted as F132, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1609,7 +1609,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Changing Which Data a PivotTable Reads
-- **Status:** new
+- **Status:** accepted as F133, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1621,7 +1621,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Changing Which Data a PivotTable Reads
-- **Status:** new
+- **Status:** accepted as F134, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1633,7 +1633,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Refreshing Every Time the File Opens
-- **Status:** new
+- **Status:** accepted as F135, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1645,7 +1645,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Refreshing Every Time the File Opens
-- **Status:** new
+- **Status:** accepted as F136, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1657,7 +1657,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Refreshing Every Time the File Opens
-- **Status:** new
+- **Status:** accepted as F137, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1668,8 +1668,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "select the For empty cells show check box, and then type the value that you want to display in empty cells"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Filling Empty Cells With a Zero
-- **Status:** new
+- **For:** Filling Empty Cells
+- **Status:** accepted as F138, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1680,8 +1680,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "To display zeros, clear the check box."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Filling Empty Cells With a Zero
-- **Status:** new
+- **For:** Filling Empty Cells
+- **Status:** accepted as F139, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1692,8 +1692,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "select the Layout & Format tab"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Filling Empty Cells With a Zero
-- **Status:** new
+- **For:** Filling Empty Cells
+- **Status:** accepted as F140, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1705,7 +1705,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Keeping Column Widths When You Refresh
-- **Status:** new
+- **Status:** accepted as F141, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1717,7 +1717,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Keeping Column Widths When You Refresh
-- **Status:** new
+- **Status:** accepted as F142, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1729,7 +1729,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Copying a PivotTable as Plain Values
-- **Status:** new
+- **Status:** accepted as F143, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1741,7 +1741,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Copying a PivotTable as Plain Values
-- **Status:** new
+- **Status:** accepted as F144, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1753,7 +1753,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Copying a PivotTable as Plain Values
-- **Status:** new
+- **Status:** accepted as F145, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1765,7 +1765,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Why a Formula Shows GETPIVOTDATA
-- **Status:** new
+- **Status:** accepted as F146, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1777,7 +1777,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Why a Formula Shows GETPIVOTDATA
-- **Status:** new
+- **Status:** accepted as F147, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1789,7 +1789,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Why a Formula Shows GETPIVOTDATA
-- **Status:** new
+- **Status:** accepted as F148, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1801,7 +1801,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Why a Formula Shows GETPIVOTDATA
-- **Status:** new
+- **Status:** accepted as F149, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1813,7 +1813,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Why a Formula Shows GETPIVOTDATA
-- **Status:** new
+- **Status:** accepted as F150, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1825,7 +1825,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Two PivotTables From One List
-- **Status:** new
+- **Status:** accepted as F151, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1837,7 +1837,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Two PivotTables From One List
-- **Status:** new
+- **Status:** accepted as F152, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1849,7 +1849,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** When the Numbers Look Wrong
-- **Status:** new
+- **Status:** accepted as F153, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1861,7 +1861,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** When the Numbers Look Wrong
-- **Status:** new
+- **Status:** accepted as F154, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1873,7 +1873,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** When the Numbers Look Wrong
-- **Status:** new
+- **Status:** accepted as F155, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2448,8 +2448,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "If the field is a date, this argument specifies the number of days in each group if element 4 in the Periods array is True and all the other elements are False."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Grouping by Every Seven Days
-- **Status:** new
+- **For:** Grouping Dates by Week
+- **Status:** accepted as F156, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
