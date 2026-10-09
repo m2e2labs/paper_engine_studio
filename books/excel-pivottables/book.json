@@ -1,0 +1,168 @@
+{
+  "$schema": "../../engine/book.schema.json",
+  "title": "Excel PivotTables and Dashboards for Absolute Beginners",
+  "subtitle": "From a long list of rows to a one-page dashboard.",
+  "author": "M2E2 Labs",
+  "series": "Absolute Beginners",
+  "brand": "Third Watch Press",
+  "editionLabel": "Edition 1.0",
+  "unit": "lessons",
+  "numbered": true,
+  "contents": true,
+  "index": true,
+  "cover": {
+    "kicker": "From Rows to Answers",
+    "note": "One idea per page. Every click explained."
+  },
+  "copyright": {
+    "year": 2026,
+    "rights": "© 2026 M2E2 Labs. All rights reserved.",
+    "lines": [
+      "Set in Space Grotesk, Inter and JetBrains Mono.",
+      "Microsoft and Excel are trademarks of Microsoft Corporation. This is an independent guide, not published by or affiliated with Microsoft."
+    ]
+  },
+  "matter": {
+    "back": [
+      {
+        "kind": "glossary"
+      }
+    ]
+  },
+  "parts": [
+    {
+      "name": "Before you build one",
+      "eyebrow": "Getting ready",
+      "why": "What a PivotTable is for, what shape your data needs first, and how to insert and read your first one.",
+      "blocks": [
+        "One Question, Many Formulas: Why PivotTables Exist",
+        "Data a PivotTable Can Read",
+        "Tidying a List Before You Pivot",
+        "Inserting Your First PivotTable",
+        "Where the PivotTable Goes: New Sheet or This One",
+        "The Field List and Its Four Boxes",
+        "Reading Row Labels and Grand Totals",
+        "Excel's Recommended PivotTables",
+        "Practice: Your First PivotTable"
+      ]
+    },
+    {
+      "name": "Rows, columns and values",
+      "eyebrow": "Building the table",
+      "why": "Putting fields where they belong, choosing what gets added up, and shaping and naming the result.",
+      "blocks": [
+        "Putting Fields in Rows",
+        "Moving and Removing Fields",
+        "Values: Choosing What Gets Added Up",
+        "Changing Sum to Count, Average, Max or Min",
+        "Putting Two Values Side by Side",
+        "Spreading a Field Across Columns",
+        "Stacking Two Fields in Rows",
+        "Expanding and Collapsing Groups",
+        "Renaming a Heading in a PivotTable",
+        "Formatting Numbers Inside a PivotTable",
+        "Practice: Amount by Region and Product"
+      ]
+    },
+    {
+      "name": "Sorting, filtering and layout",
+      "eyebrow": "Making it readable",
+      "why": "Putting the biggest first, leaving out what you don't need, and choosing a layout and style you can read.",
+      "blocks": [
+        "Sorting a PivotTable",
+        "Filtering Rows and Columns Inside a PivotTable",
+        "Filtering by Words in a Label",
+        "Filtering by a Value",
+        "Showing Only the Top Items",
+        "The Filters Box: One Filter for the Whole Table",
+        "Clearing Filters and Starting Again",
+        "Choosing a Layout: Compact, Outline or Tabular",
+        "Repeating Item Labels and Spacing Out Groups",
+        "Choosing a PivotTable Style",
+        "Practice: A Tidy Regional Report"
+      ]
+    },
+    {
+      "name": "Grouping",
+      "eyebrow": "Dates, numbers and text",
+      "why": "Turning 240 separate dates into months, quarters and weeks, numbers into bands, and a few items into one.",
+      "blocks": [
+        "Grouping Dates by Month",
+        "Grouping Dates by Quarter and Year",
+        "Why Dates Won't Group",
+        "Grouping by Every Seven Days",
+        "Grouping Numbers Into Bands",
+        "Grouping Text Items by Hand",
+        "Ungrouping and Changing a Group",
+        "Adding a Helper Column to the Data",
+        "Practice: Sales by Month and Quarter"
+      ]
+    },
+    {
+      "name": "Showing values differently",
+      "eyebrow": "Same numbers, new view",
+      "why": "Turning totals into shares, ranks, running totals and changes, without writing a formula.",
+      "blocks": [
+        "Percent of the Grand Total",
+        "Percent of a Row or a Column",
+        "Rank Largest to Smallest",
+        "Running Totals",
+        "Change From the Previous Month",
+        "Percent Change From the Previous Month",
+        "Comparing Everything to One Item",
+        "Putting Back the Normal View",
+        "Practice: Who Is Growing"
+      ]
+    },
+    {
+      "name": "Calculations and keeping it right",
+      "eyebrow": "Your own sums, and trust",
+      "why": "Adding a calculation of your own, looking behind a number, keeping it fresh, and fixing a PivotTable that's wrong.",
+      "blocks": [
+        "Adding Your Own Calculation: A Calculated Field",
+        "Counting Each Item Once",
+        "Drilling Down to the Rows Behind a Number",
+        "When Your Data Grows Past the PivotTable",
+        "Changing Which Data a PivotTable Reads",
+        "Refreshing Every Time the File Opens",
+        "Filling Empty Cells With a Zero",
+        "Keeping Column Widths When You Refresh",
+        "Copying a PivotTable as Plain Values",
+        "Why a Formula Shows GETPIVOTDATA",
+        "Two PivotTables From One List",
+        "When the Numbers Look Wrong",
+        "Practice: Fixing a Broken PivotTable"
+      ]
+    },
+    {
+      "name": "From PivotTable to dashboard",
+      "eyebrow": "Putting it on one page",
+      "why": "Charts, slicers and a timeline, laid out on one page someone else can use, printed and checked.",
+      "blocks": [
+        "PivotCharts",
+        "Choosing a Chart Type for a PivotChart",
+        "Cleaning Up a PivotChart",
+        "Slicers",
+        "Making Slicers Look Right",
+        "One Slicer for Two PivotTables",
+        "Timelines",
+        "Laying Out a One-Page Dashboard",
+        "Printing the Dashboard on One Page",
+        "Checking the Dashboard Before You Send It",
+        "Practice: The Corner Shop Dashboard"
+      ]
+    },
+    {
+      "name": "Putting it to work",
+      "eyebrow": "Real jobs",
+      "why": "Three whole jobs done from start to finish, and a pointer to what comes next.",
+      "blocks": [
+        "Practice: A Report by Salesperson",
+        "Practice: Sales Against Target",
+        "Practice: The Whole Job From Scratch",
+        "Where to Go After PivotTables"
+      ]
+    }
+  ],
+  "language": "en"
+}
