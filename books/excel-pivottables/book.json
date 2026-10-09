@@ -70,14 +70,14 @@
       "why": "Putting the biggest first, leaving out what you don't need, and choosing a layout and style you can read.",
       "blocks": [
         "Sorting a PivotTable",
-        "Filtering Rows and Columns Inside a PivotTable",
+        "Filtering Rows and Columns",
         "Filtering by Words in a Label",
         "Filtering by a Value",
         "Showing Only the Top Items",
-        "The Filters Box: One Filter for the Whole Table",
+        "One Filter for the Whole Table",
         "Clearing Filters and Starting Again",
-        "Choosing a Layout: Compact, Outline or Tabular",
-        "Repeating Item Labels and Spacing Out Groups",
+        "Compact, Outline or Tabular",
+        "Repeating Labels and Blank Rows",
         "Choosing a PivotTable Style",
         "Practice: A Tidy Regional Report"
       ]

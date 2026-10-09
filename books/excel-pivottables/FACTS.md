@@ -415,3 +415,275 @@ findings appear here.
 - **Checked:** 2026-10-09
 
 ---
+
+## F50 · Sort from the label arrow
+- **Claim:** To sort a PivotTable, use the arrow on the Row Labels or Column Labels cell and pick a sort option such as Sort A to Z.
+- **Source:** Microsoft Support, "Sort data in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/sort-data-in-a-pivottable-or-pivotchart-e41f7107-b92d-44ef-861f-24430830450a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F51 · What each sort does
+- **Claim:** Sorting puts text in alphabetical order, numbers from smallest to largest, and dates from oldest to newest, or the reverse.
+- **Source:** Microsoft Support, "Sort data in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/sort-data-in-a-pivottable-or-pivotchart-e41f7107-b92d-44ef-861f-24430830450a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F52 · Sort by a value
+- **Claim:** To sort by the numbers rather than the labels, right-click a value or subtotal, choose Sort, and pick a method.
+- **Source:** Microsoft Support, "Sort data in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/sort-data-in-a-pivottable-or-pivotchart-e41f7107-b92d-44ef-861f-24430830450a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F53 · Sort on the Grand Total column
+- **Claim:** Choosing any number in the Grand Total column and sorting on it orders the items by their grand totals.
+- **Source:** Microsoft Support, "Sort data in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/sort-data-in-a-pivottable-or-pivotchart-e41f7107-b92d-44ef-861f-24430830450a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F54 · A value sort covers one level
+- **Claim:** A sort on a value applies to all the cells at the same level in that column.
+- **Source:** Microsoft Support, "Sort data in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/sort-data-in-a-pivottable-or-pivotchart-e41f7107-b92d-44ef-861f-24430830450a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F55 · Leading spaces upset a sort
+- **Claim:** Leading spaces in the data change the sort order, so remove them before sorting.
+- **Source:** Microsoft Support, "Sort data in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/sort-data-in-a-pivottable-or-pivotchart-e41f7107-b92d-44ef-861f-24430830450a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F56 · Sorting can follow the data
+- **Claim:** In More Sort Options, a tick box lets the PivotTable sort itself again whenever its data updates, or stops it doing so.
+- **Source:** Microsoft Support, "Sort data in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/sort-data-in-a-pivottable-or-pivotchart-e41f7107-b92d-44ef-861f-24430830450a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F57 · Manual sort
+- **Claim:** Choosing Manual in the Sort dialog lets you rearrange items by dragging them.
+- **Source:** Microsoft Support, "Sort data in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/sort-data-in-a-pivottable-or-pivotchart-e41f7107-b92d-44ef-861f-24430830450a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F58 · Untick Select All, tick the items
+- **Claim:** To filter by item, open the filter arrow, untick Select All, then tick the items you want to show.
+- **Source:** Microsoft Support, "Filter data in a PivotTable": https://support.microsoft.com/en-us/topic/cc1ed287-3a97-4e95-b377-ddfafe79fa8f
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F59 · Search box in the filter
+- **Claim:** The filter menu has a Search box, so you can filter by typing text.
+- **Source:** Microsoft Support, "Filter data in a PivotTable": https://support.microsoft.com/en-us/topic/cc1ed287-3a97-4e95-b377-ddfafe79fa8f
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F60 · Keep Only Selected Items
+- **Claim:** Select items, right-click one, choose Filter, then Keep Only Selected Items to show just those.
+- **Source:** Microsoft Support, "Filter data in a PivotTable": https://support.microsoft.com/en-us/topic/cc1ed287-3a97-4e95-b377-ddfafe79fa8f
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F61 · Hide Selected Items
+- **Claim:** The same Filter menu has Hide Selected Items, which hides the items you selected.
+- **Source:** Microsoft Support, "Filter data in a PivotTable": https://support.microsoft.com/en-us/topic/cc1ed287-3a97-4e95-b377-ddfafe79fa8f
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F62 · Label Filters
+- **Claim:** Label Filters filter by a condition on the row or column labels.
+- **Source:** Microsoft Support, "Filter data in a PivotTable": https://support.microsoft.com/en-us/topic/cc1ed287-3a97-4e95-b377-ddfafe79fa8f
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F63 · Value Filters
+- **Claim:** Values Filters filter by the numbers in the PivotTable.
+- **Source:** Microsoft Support, "Filter data in a PivotTable": https://support.microsoft.com/en-us/topic/cc1ed287-3a97-4e95-b377-ddfafe79fa8f
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F64 · Top 10 path
+- **Claim:** To keep the top or bottom items, choose Values Filters and then Top 10.
+- **Source:** Microsoft Support, "Filter data in a PivotTable": https://support.microsoft.com/en-us/topic/cc1ed287-3a97-4e95-b377-ddfafe79fa8f
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F65 · Top 10: Top or Bottom, and how many
+- **Claim:** In the Top 10 dialog the first box picks Top or Bottom and the second takes a number.
+- **Source:** Microsoft Support, "Filter data in a PivotTable": https://support.microsoft.com/en-us/topic/cc1ed287-3a97-4e95-b377-ddfafe79fa8f
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F66 · Top 10: Items, Percentage or Sum
+- **Claim:** The third box in the Top 10 dialog decides whether the number counts items, a percentage or a sum.
+- **Source:** Microsoft Support, "Filter data in a PivotTable": https://support.microsoft.com/en-us/topic/cc1ed287-3a97-4e95-b377-ddfafe79fa8f
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F67 · Top 10: which value
+- **Claim:** The fourth box in the Top 10 dialog picks which values field the ranking uses.
+- **Source:** Microsoft Support, "Filter data in a PivotTable": https://support.microsoft.com/en-us/topic/cc1ed287-3a97-4e95-b377-ddfafe79fa8f
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F68 · Report filter shows chosen items only
+- **Claim:** With a report filter, the items you tick are shown in the PivotTable and the items you don't tick are hidden.
+- **Source:** Microsoft Support, "Filter data in a PivotTable": https://support.microsoft.com/en-us/topic/cc1ed287-3a97-4e95-b377-ddfafe79fa8f
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F69 · One sheet per filter item
+- **Claim:** A field in the Filters area lets you create a separate PivotTable worksheet for each of its items.
+- **Source:** Microsoft Support, "Filter data in a PivotTable": https://support.microsoft.com/en-us/topic/cc1ed287-3a97-4e95-b377-ddfafe79fa8f
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F70 · Clear a filter (Windows)
+- **Claim:** To bring hidden items back, right-click another item in the same field, choose Filter, then Clear Filter.
+- **Source:** Microsoft Support, "Filter data in a PivotTable": https://support.microsoft.com/en-us/topic/cc1ed287-3a97-4e95-b377-ddfafe79fa8f
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F71 · Filter icon and Clear Filters (macOS)
+- **Claim:** On Mac, the filter arrow changes to show a filter is on, and PivotTable Analyze, Clear, Clear Filters removes every filter at once.
+- **Source:** Microsoft Support, "Filter data in a PivotTable" (macOS section of the page): https://support.microsoft.com/en-us/topic/cc1ed287-3a97-4e95-b377-ddfafe79fa8f
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F72 · Include filtered items in totals
+- **Claim:** The Subtotals menu on the Design tab has an Include Filtered Items in Totals option. The page doesn't say which way it is set by default, so try it in Excel before saying whether filtered-out items count toward a total.
+- **Source:** Microsoft Support, "Show or hide subtotals and totals in a PivotTable": https://support.microsoft.com/en-us/office/show-or-hide-subtotals-and-totals-in-a-pivottable-fc4d8406-f230-4762-aa2f-310826f3e5e2
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F73 · Compact is the default
+- **Claim:** Compact form is the default layout for a PivotTable.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F74 · Tabular form
+- **Claim:** Tabular form shows one column for each field and has room for field headings.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F75 · Outline form
+- **Claim:** Outline form is like tabular form but can show subtotals at the top of each group.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F76 · Tabular form for copying
+- **Claim:** Show in Tabular Form gives a traditional table layout that is easy to copy to another worksheet.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F77 · Switch layout: Design, Report Layout
+- **Claim:** To change layout, click in the PivotTable, then on the Design tab choose Report Layout in the Layout group.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F78 · Repeat item labels (Web)
+- **Claim:** In Excel for the web, the PivotTable Settings pane lets you choose Repeat or Don't repeat, so item labels appear on every row or only once. The Windows desktop steps are not on this page.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable" (Web section of the page): https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F79 · Blank line after each item (Windows)
+- **Claim:** In Field Settings, on the Layout & Print tab, a tick box inserts a blank line after each item label.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F80 · Predefined styles
+- **Claim:** A PivotTable can take one of many ready-made styles, also called quick styles.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F81 · Styles are on the Design tab
+- **Claim:** The styles are in the PivotTable Styles group on the Design tab.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F82 · Banded Rows
+- **Claim:** Banded Rows, in the PivotTable Style Options group, alternates a lighter and darker colour down the rows.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F83 · Banding helps reading
+- **Claim:** Banding, a darker and lighter background in turn, can make the data easier to read and scan.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---

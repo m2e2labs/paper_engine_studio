@@ -609,7 +609,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Sorting a PivotTable
-- **Status:** new
+- **Status:** accepted as F50, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -621,7 +621,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Sorting a PivotTable
-- **Status:** new
+- **Status:** accepted as F51, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -633,7 +633,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Sorting a PivotTable
-- **Status:** new
+- **Status:** accepted as F52, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -645,7 +645,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Sorting a PivotTable
-- **Status:** new
+- **Status:** accepted as F53, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -657,7 +657,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Sorting a PivotTable
-- **Status:** new
+- **Status:** accepted as F54, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -669,7 +669,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Sorting a PivotTable
-- **Status:** new
+- **Status:** accepted as F55, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -681,7 +681,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Sorting a PivotTable
-- **Status:** new
+- **Status:** accepted as F56, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -693,7 +693,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Sorting a PivotTable
-- **Status:** new
+- **Status:** accepted as F57, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -704,8 +704,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "uncheck Select All, and then select the check boxes next to the items you want to show"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Filtering Rows and Columns Inside a PivotTable
-- **Status:** new
+- **For:** Filtering Rows and Columns
+- **Status:** accepted as F58, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -716,8 +716,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "You can also filter by entering text in the Search box."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Filtering Rows and Columns Inside a PivotTable
-- **Status:** new
+- **For:** Filtering Rows and Columns
+- **Status:** accepted as F59, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -728,8 +728,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "To display the selected items, click Keep Only Selected Items."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Filtering Rows and Columns Inside a PivotTable
-- **Status:** new
+- **For:** Filtering Rows and Columns
+- **Status:** accepted as F60, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -740,8 +740,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "To hide the selected items, click Hide Selected Items."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Filtering Rows and Columns Inside a PivotTable
-- **Status:** new
+- **For:** Filtering Rows and Columns
+- **Status:** accepted as F61, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -753,7 +753,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Filtering by Words in a Label
-- **Status:** new
+- **Status:** accepted as F62, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -765,7 +765,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Filtering by a Value
-- **Status:** new
+- **Status:** accepted as F63, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -777,7 +777,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Showing Only the Top Items
-- **Status:** new
+- **Status:** accepted as F64, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -789,7 +789,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Showing Only the Top Items
-- **Status:** new
+- **Status:** accepted as F65, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -801,7 +801,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Showing Only the Top Items
-- **Status:** new
+- **Status:** accepted as F66, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -813,7 +813,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Showing Only the Top Items
-- **Status:** new
+- **Status:** accepted as F67, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -824,8 +824,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "Items you select in the filter are displayed in the PivotTable, and items that are not selected will be hidden."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** The Filters Box: One Filter for the Whole Table
-- **Status:** new
+- **For:** One Filter for the Whole Table
+- **Status:** accepted as F68, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -836,8 +836,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "create individual PivotTable worksheets for each item in the Filter field"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** The Filters Box: One Filter for the Whole Table
-- **Status:** new
+- **For:** One Filter for the Whole Table
+- **Status:** accepted as F69, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -849,7 +849,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Clearing Filters and Starting Again
-- **Status:** new
+- **Status:** accepted as F70, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -861,7 +861,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Clearing Filters and Starting Again
-- **Status:** new
+- **Status:** accepted as F71, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -873,7 +873,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Clearing Filters and Starting Again
-- **Status:** new
+- **Status:** accepted as F72, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -884,8 +884,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "is therefore specified as the default layout form for PivotTables"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Choosing a Layout: Compact, Outline or Tabular
-- **Status:** new
+- **For:** Compact, Outline or Tabular
+- **Status:** accepted as F73, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -896,8 +896,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "Tabular form displays one column per field and provides space for field headers."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Choosing a Layout: Compact, Outline or Tabular
-- **Status:** new
+- **For:** Compact, Outline or Tabular
+- **Status:** accepted as F74, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -908,8 +908,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "it can display subtotals at the top of every group"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Choosing a Layout: Compact, Outline or Tabular
-- **Status:** new
+- **For:** Compact, Outline or Tabular
+- **Status:** accepted as F75, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -920,8 +920,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "to easily copy cells to another worksheet, select Show in Tabular Form"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Choosing a Layout: Compact, Outline or Tabular
-- **Status:** new
+- **For:** Compact, Outline or Tabular
+- **Status:** accepted as F76, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -932,8 +932,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "in the Layout group, select Report Layout"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Choosing a Layout: Compact, Outline or Tabular
-- **Status:** new
+- **For:** Compact, Outline or Tabular
+- **Status:** accepted as F77, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -944,8 +944,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "Select Repeat or Don't repeat to choose whether item labels appear for each item or just once per item label value."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Repeating Item Labels and Spacing Out Groups
-- **Status:** new
+- **For:** Repeating Labels and Blank Rows
+- **Status:** accepted as F78, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -956,8 +956,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "select or clear the Insert blank line after each item label check box"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Repeating Item Labels and Spacing Out Groups
-- **Status:** new
+- **For:** Repeating Labels and Blank Rows
+- **Status:** accepted as F79, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -969,7 +969,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a PivotTable Style
-- **Status:** new
+- **Status:** accepted as F80, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -981,7 +981,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a PivotTable Style
-- **Status:** new
+- **Status:** accepted as F81, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -993,7 +993,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a PivotTable Style
-- **Status:** new
+- **Status:** accepted as F82, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1005,7 +1005,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a PivotTable Style
-- **Status:** new
+- **Status:** accepted as F83, 2026-10-09
 
 ---
  Choosing a PivotTable Style

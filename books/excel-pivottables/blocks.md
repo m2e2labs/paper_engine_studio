@@ -177,77 +177,77 @@ Check each against the real menu before the page is written.
 - **Use when:** the reader wants the biggest first. **Skip when:** the order of the names is fine.
 - **Action:** "Click any Amount in the Region rows and sort largest to smallest."
 - **Band:** diagram (rows reordering by size)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F50, F51, F52, F53, F54, F55, F56, F57
 
-#### Filtering Rows and Columns Inside a PivotTable
+#### Filtering Rows and Columns
 - **What:** The arrow next to Row Labels hides items you don't want to see. The items still count in the grand total unless you say otherwise, and the lesson should say which.
 - **Use when:** the reader wants one region or a few products only. **Skip when:** they need every item.
 - **Action:** "Open the Row Labels arrow and untick one region."
 - **Band:** diagram (a filter menu with one item unticked and the table before and after)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F58, F59, F60, F61
 
 #### Filtering by Words in a Label
 - **What:** Keep only the items whose label begins with, ends with or contains certain letters. Say how this differs from ticking items.
 - **Use when:** the reader has many items and wants a family of them. **Skip when:** a few ticks are enough.
 - **Action:** "Open the Row Labels arrow, choose Label Filters, and keep products that contain 'o'."
 - **Band:** diagram (a list narrowing by a letter test)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F59, F62
 
 #### Filtering by a Value
 - **What:** Keep only the rows whose total is above or below a number you choose, such as regions over 1,000.
 - **Use when:** the reader wants to cut out the small ones. **Skip when:** they want every item.
 - **Action:** "Apply a Value Filter to Region for Amount greater than 1,000."
 - **Band:** diagram (bars with a threshold line, the short ones dropped)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F63
 
 #### Showing Only the Top Items
 - **What:** Keep the top three products by Amount and drop the rest. Say where the setting lives and what happens to the others.
 - **Use when:** the reader wants a short league table. **Skip when:** they want every item.
 - **Action:** "Filter Product to the top 3 by Amount."
 - **Band:** diagram (five products with the top three kept)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F63, F64, F65, F66, F67
 
-#### The Filters Box: One Filter for the Whole Table
+#### One Filter for the Whole Table
 - **What:** Drag a field into Filters and a drop-down appears above the table, so you can show one region at a time without changing the layout.
 - **Use when:** the reader wants to flip between regions on one table. **Skip when:** they want all regions visible.
 - **Action:** "Drag Region into the Filters box and pick South from the drop-down above the table."
 - **Band:** diagram (a drop-down above a table changing what's below)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F11, F68
 
 #### Clearing Filters and Starting Again
 - **What:** How to see that a filter is on, and how to clear one filter or all of them. Say what a filtered grand total is a total of.
 - **Use when:** the reader can't work out why a number is smaller than expected. **Skip when:** never.
 - **Action:** "Clear every filter on your PivotTable and check the grand total returns to 6,325."
 - **Band:** diagram (a filter icon on a heading, the table with and without it)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F70, F71, F72
 
-#### Choosing a Layout: Compact, Outline or Tabular
+#### Compact, Outline or Tabular
 - **What:** The same PivotTable can print in three layouts. Compact is the default; Tabular puts every field in its own column and reads most like a normal sheet.
 - **Use when:** the reader is going to print or share the table. **Skip when:** the default already reads well.
 - **Action:** "On the Design tab, choose Report Layout and switch to Show in Tabular Form."
 - **Band:** diagram (the same table in the three layouts)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F73, F74, F75, F76, F77
 
-#### Repeating Item Labels and Spacing Out Groups
+#### Repeating Labels and Blank Rows
 - **What:** Repeat each region's name on every row so the table can be copied and sorted elsewhere, and insert a blank row after each group so a long table breathes.
 - **Use when:** the reader needs to copy the table or read a long one. **Skip when:** the default looks fine.
 - **Action:** "In Tabular layout, turn on Repeat All Item Labels and add a blank row after each item."
 - **Band:** diagram (a table with labels once, then repeated)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F78, F79
 
 #### Choosing a PivotTable Style
 - **What:** The Design tab holds ready-made colours for a PivotTable. Pick one, switch banded rows on or off, and stop there.
 - **Use when:** the reader wants a table that looks finished. **Skip when:** never.
 - **Action:** "On the Design tab, open the PivotTable Styles gallery and pick a light one."
 - **Band:** diagram (the same table in three styles)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F80, F81, F82, F83
 
 #### Practice: A Tidy Regional Report
 - **What:** Turn a rough PivotTable into one you'd hand to someone: sorted, filtered and in a layout that reads.
 - **Use when:** always, at the end of the part. **Skip when:** never.
 - **Action:** "Sort regions by Amount, keep the top three products and switch to tabular layout."
 - **Band:** diagram (before and after of the same table)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F52, F53, F64, F65, F67, F76, F77
 
 ## Part 4 · Grouping
 
