@@ -1885,7 +1885,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** PivotCharts
-- **Status:** new
+- **Status:** accepted as F157, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1897,7 +1897,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** PivotCharts
-- **Status:** new
+- **Status:** accepted as F158, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1909,7 +1909,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** PivotCharts
-- **Status:** new
+- **Status:** accepted as F159, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1921,7 +1921,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** PivotCharts
-- **Status:** new
+- **Status:** accepted as F160, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1933,7 +1933,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a Chart Type for a PivotChart
-- **Status:** new
+- **Status:** accepted as F161, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1945,7 +1945,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a Chart Type for a PivotChart
-- **Status:** new
+- **Status:** accepted as F162, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1957,7 +1957,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a Chart Type for a PivotChart
-- **Status:** new
+- **Status:** accepted as F163, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1969,7 +1969,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a Chart Type for a PivotChart
-- **Status:** new
+- **Status:** accepted as F164, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1981,7 +1981,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a Chart Type for a PivotChart
-- **Status:** new
+- **Status:** accepted as F165, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -1993,7 +1993,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a Chart Type for a PivotChart
-- **Status:** new
+- **Status:** accepted as F166, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2005,7 +2005,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Choosing a Chart Type for a PivotChart
-- **Status:** new
+- **Status:** accepted as F167, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2017,7 +2017,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Cleaning Up a PivotChart
-- **Status:** new
+- **Status:** accepted as F168, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2029,7 +2029,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Cleaning Up a PivotChart
-- **Status:** new
+- **Status:** accepted as F169, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2041,7 +2041,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Cleaning Up a PivotChart
-- **Status:** new
+- **Status:** accepted as F170, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2053,7 +2053,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Cleaning Up a PivotChart
-- **Status:** new
+- **Status:** accepted as F171, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2065,7 +2065,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Slicers
-- **Status:** new
+- **Status:** accepted as F172, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2077,7 +2077,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Slicers
-- **Status:** new
+- **Status:** accepted as F173, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2089,7 +2089,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Slicers
-- **Status:** new
+- **Status:** accepted as F174, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2101,7 +2101,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Slicers
-- **Status:** new
+- **Status:** accepted as F175, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2113,7 +2113,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Slicers
-- **Status:** new
+- **Status:** accepted as F176, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2125,7 +2125,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Slicers
-- **Status:** new
+- **Status:** accepted as F177, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2137,7 +2137,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Slicers
-- **Status:** new
+- **Status:** accepted as F178, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2149,7 +2149,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Making Slicers Look Right
-- **Status:** new
+- **Status:** accepted as F179, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2161,7 +2161,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Making Slicers Look Right
-- **Status:** new
+- **Status:** accepted as F180, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2173,7 +2173,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Making Slicers Look Right
-- **Status:** new
+- **Status:** accepted as F181, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2185,7 +2185,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** One Slicer for Two PivotTables
-- **Status:** new
+- **Status:** accepted as F182, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2197,7 +2197,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** One Slicer for Two PivotTables
-- **Status:** new
+- **Status:** accepted as F183, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2209,7 +2209,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** One Slicer for Two PivotTables
-- **Status:** new
+- **Status:** accepted as F184, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2221,7 +2221,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** One Slicer for Two PivotTables
-- **Status:** new
+- **Status:** accepted as F185, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2233,7 +2233,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** One Slicer for Two PivotTables
-- **Status:** new
+- **Status:** accepted as F186, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2245,7 +2245,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Timelines
-- **Status:** new
+- **Status:** accepted as F187, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2257,7 +2257,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Timelines
-- **Status:** new
+- **Status:** accepted as F188, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2269,7 +2269,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Timelines
-- **Status:** new
+- **Status:** accepted as F189, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2281,7 +2281,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Timelines
-- **Status:** new
+- **Status:** accepted as F190, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2293,7 +2293,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Timelines
-- **Status:** new
+- **Status:** accepted as F191, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2305,7 +2305,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Timelines
-- **Status:** new
+- **Status:** accepted as F192, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2317,7 +2317,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Timelines
-- **Status:** new
+- **Status:** accepted as F193, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2329,7 +2329,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Timelines
-- **Status:** new
+- **Status:** accepted as F194, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2341,7 +2341,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Laying Out a One-Page Dashboard
-- **Status:** new
+- **Status:** accepted as F195, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2353,7 +2353,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Printing the Dashboard on One Page
-- **Status:** new
+- **Status:** accepted as F196, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2365,7 +2365,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Printing the Dashboard on One Page
-- **Status:** new
+- **Status:** accepted as F197, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2377,7 +2377,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Printing the Dashboard on One Page
-- **Status:** new
+- **Status:** accepted as F198, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2389,7 +2389,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Printing the Dashboard on One Page
-- **Status:** new
+- **Status:** accepted as F199, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2401,7 +2401,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Printing the Dashboard on One Page
-- **Status:** new
+- **Status:** accepted as F200, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2413,7 +2413,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Printing the Dashboard on One Page
-- **Status:** new
+- **Status:** accepted as F201, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2425,7 +2425,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Printing the Dashboard on One Page
-- **Status:** new
+- **Status:** accepted as F202, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -2436,8 +2436,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "A Clear Filter button removes the filter by selecting all items in the slicer."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Checking the Dashboard Before You Send It
-- **Status:** new
+- **For:** Checking the Dashboard
+- **Status:** accepted as F203, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---

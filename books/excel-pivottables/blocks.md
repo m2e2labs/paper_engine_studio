@@ -479,77 +479,77 @@ Check each against the real menu before the page is written.
 - **Use when:** the reader wants a chart that follows their table. **Skip when:** a plain chart is enough.
 - **Action:** "Click inside the PivotTable and insert a PivotChart."
 - **Band:** diagram (a PivotTable and its chart linked)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F157, F158, F159, F160
 
 #### Choosing a Chart Type for a PivotChart
 - **What:** Columns for comparing items, a line for change over time, a pie for a share of one whole. Pair each with the question it answers. Some chart types can't be used with a PivotTable; check which.
 - **Use when:** the reader has inserted a PivotChart and the type is wrong. **Skip when:** the default fits.
 - **Action:** "Change the PivotChart of Amount by Region to a column chart, then of Amount by Month to a line chart."
 - **Band:** diagram (three questions each matched with a chart type)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F161, F162, F164, F165, F166, F167
 
 #### Cleaning Up a PivotChart
 - **What:** Hide the grey field buttons, add a title and axis labels, and trim the legend so the chart reads on its own.
 - **Use when:** the reader's chart looks busy. **Skip when:** never.
 - **Action:** "Hide the field buttons on your PivotChart and give it a title."
 - **Band:** diagram (a cluttered chart and a clean one)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F168, F169, F170, F171
 
 #### Slicers
 - **What:** Buttons that filter a PivotTable by clicking, so anyone can use it without opening a menu. One slicer can drive more than one PivotTable.
 - **Use when:** the reader will hand the file to someone who doesn't use Excel. **Skip when:** only they use it.
 - **Action:** "Insert a slicer for Region and click North."
 - **Band:** diagram (slicer buttons driving a table and a chart)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F172, F173, F174, F175, F176, F177, F178, F203
 
 #### Making Slicers Look Right
 - **What:** Give a slicer a caption, set how many columns of buttons it shows, change its colour and size, and line it up.
 - **Use when:** the reader's slicer takes up half the sheet. **Skip when:** the defaults fit.
 - **Action:** "Resize your Region slicer to four columns and one row."
 - **Band:** diagram (a tall slicer and a tidy one)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F179, F180, F181
 
 #### One Slicer for Two PivotTables
 - **What:** Connect a slicer to a second PivotTable, so clicking North changes both. Say what 'connect' means and what happens to a table that isn't connected.
 - **Use when:** the reader has a dashboard of more than one table. **Skip when:** they have only one.
 - **Action:** "Right-click your Region slicer, choose Report Connections and tick the second PivotTable."
 - **Band:** diagram (one slicer driving two tables)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F182, F183, F184, F185, F186
 
 #### Timelines
 - **What:** A slicer made for dates, to pick a month or a quarter by sliding along a bar.
 - **Use when:** the reader's data has dates and they want a period picker. **Skip when:** no dates in the data.
 - **Action:** "Insert a timeline for Date and choose one quarter."
 - **Band:** diagram (a timeline bar selecting a range)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F187, F188, F189, F190, F191, F192, F193
 
 #### Laying Out a One-Page Dashboard
 - **What:** Put a few PivotTables, a chart and a slicer on one sheet, hide the clutter and leave room to breathe.
 - **Use when:** the reader wants one page to share. **Skip when:** they only need the tables.
 - **Action:** "Create a sheet called Dashboard and place one PivotChart and one slicer on it."
 - **Band:** diagram (a one-page layout with its parts labelled)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F9, F158, F174, F180, F188, F195
 
 #### Printing the Dashboard on One Page
 - **What:** Set the print area, the orientation and the fit-to-one-page option so the dashboard prints in one piece. Refers back to the first book's printing part.
 - **Use when:** the reader will print or save the dashboard. **Skip when:** it is screen only.
 - **Action:** "Set the Dashboard sheet to Landscape and Fit Sheet on One Page."
 - **Band:** diagram (a dashboard sized to a printed page)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F196, F197, F198, F199, F200, F201
 
-#### Checking the Dashboard Before You Send It
+#### Checking the Dashboard
 - **What:** A short checklist: clear the slicers, refresh, check the grand total against the data, and look for an error value or a blank.
 - **Use when:** the reader is about to send the file to someone else. **Skip when:** never.
 - **Action:** "Clear every slicer, refresh, and check the total against the Sales sheet."
 - **Band:** diagram (a short checklist with four ticks)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F19, F128, F129, F138, F155, F193, F203
 
 #### Practice: The Corner Shop Dashboard
 - **What:** Build a one-page dashboard from the Corner Shop sales: two PivotTables, a chart, a region slicer and a timeline.
 - **Use when:** always, the last page of the book. **Skip when:** never.
 - **Action:** "Finish the dashboard and click each slicer button to check everything moves together."
 - **Band:** diagram (the finished dashboard)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F7, F158, F174, F184, F185, F188
 
 ## Part 8 · Putting it to work
 

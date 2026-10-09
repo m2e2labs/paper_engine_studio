@@ -1271,3 +1271,379 @@ findings appear here.
 - **Checked:** 2026-10-09
 
 ---
+
+## F157 · PivotChart purpose
+- **Claim:** A PivotChart adds a visual to your data, for people who can't quickly see what's going on from a table of numbers.
+- **Source:** Microsoft Support, "Create a PivotChart": https://support.microsoft.com/en-us/excel/get-started/create-a-pivotchart
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F158 · Insert, then PivotChart
+- **Claim:** To make a PivotChart, select a cell in the data, choose Insert, then PivotChart.
+- **Source:** Microsoft Support, "Create a PivotChart": https://support.microsoft.com/en-us/excel/get-started/create-a-pivotchart
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F159 · Chart from an existing PivotTable
+- **Claim:** You can also make the chart from a PivotTable you already have, by selecting a cell in it and choosing Insert and PivotChart.
+- **Source:** Microsoft Support, "Create a PivotChart": https://support.microsoft.com/en-us/excel/get-started/create-a-pivotchart
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F160 · Filters and slicers filter the chart (macOS)
+- **Claim:** On Mac, when you filter the PivotTable or use a slicer, the chart is filtered too.
+- **Source:** Microsoft Support, "Create a PivotChart" (macOS section of the page): https://support.microsoft.com/en-us/excel/get-started/create-a-pivotchart
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F161 · Change Chart Type
+- **Claim:** To change an existing chart's type, select it, open the Design tab and choose Change Chart Type.
+- **Source:** Microsoft Support, "Available chart types in Office": https://support.microsoft.com/en-us/excel/available-chart-types-in-office
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F162 · Column chart: categories and values
+- **Claim:** A column chart typically shows categories along the bottom and values up the side.
+- **Source:** Microsoft Support, "Available chart types in Office": https://support.microsoft.com/en-us/excel/available-chart-types-in-office
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F163 · Clustered column suits unordered names
+- **Claim:** A clustered column chart suits categories that are names in no particular order, such as item names or people.
+- **Source:** Microsoft Support, "Available chart types in Office": https://support.microsoft.com/en-us/excel/available-chart-types-in-office
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F164 · Line chart for trends
+- **Claim:** Line charts suit trends at equal intervals such as months, quarters or fiscal years.
+- **Source:** Microsoft Support, "Available chart types in Office": https://support.microsoft.com/en-us/excel/available-chart-types-in-office
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F165 · Pie chart shows parts of one total
+- **Claim:** A pie chart shows the size of the items in one data series as parts of the whole.
+- **Source:** Microsoft Support, "Available chart types in Office": https://support.microsoft.com/en-us/excel/available-chart-types-in-office
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F166 · Pie chart limits
+- **Claim:** Consider a pie chart only when there are no more than seven categories that are parts of the whole.
+- **Source:** Microsoft Support, "Available chart types in Office": https://support.microsoft.com/en-us/excel/available-chart-types-in-office
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F167 · Not every chart type works with a PivotTable (macOS)
+- **Claim:** On Mac, only column, line, pie and radar charts work with a PivotTable. The Windows page doesn't give a list, so check which types your Excel allows.
+- **Source:** Microsoft Support, "Create a PivotChart" (macOS section of the page): https://support.microsoft.com/en-us/excel/get-started/create-a-pivotchart
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F168 · Hide field buttons
+- **Claim:** On a PivotChart, the Hide All command on the Field Buttons drop-down on the Analyze tab hides the grey field buttons.
+- **Source:** Microsoft Learn, "Chart.ShowAllFieldButtons property (Excel)": https://learn.microsoft.com/en-us/office/vba/api/excel.chart.showallfieldbuttons
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F169 · Chart title and axis titles
+- **Claim:** You can add a chart title and axis titles to any type of chart.
+- **Source:** Microsoft Support, "Add or remove titles in a chart": https://support.microsoft.com/en-us/office/excelexp/add-or-remove-titles-in-a-chart
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F170 · Add a chart title (Windows)
+- **Claim:** To add a chart title, use the + sign at the top right of the chart.
+- **Source:** Microsoft Support, "Add or remove titles in a chart": https://support.microsoft.com/en-us/office/excelexp/add-or-remove-titles-in-a-chart
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F171 · No axis titles on pie charts
+- **Claim:** Pie and doughnut charts have no axes, so they can't have axis titles.
+- **Source:** Microsoft Support, "Add or remove titles in a chart" (Mac section of the page): https://support.microsoft.com/en-us/office/excelexp/add-or-remove-titles-in-a-chart
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F172 · What a slicer is
+- **Claim:** A slicer is a set of buttons that filters a table or a PivotTable.
+- **Source:** Microsoft Support, "Use slicers to filter data": https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F173 · Slicers show the filter state
+- **Claim:** A slicer also shows what is currently filtered.
+- **Source:** Microsoft Support, "Use slicers to filter data": https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F174 · Insert a slicer
+- **Claim:** To add a slicer, click in the PivotTable and choose Insert, then Slicer.
+- **Source:** Microsoft Support, "Use slicers to filter data": https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F175 · Pick the fields for slicers
+- **Claim:** In the Insert Slicers dialog you tick the fields you want a slicer for, then choose OK.
+- **Source:** Microsoft Support, "Use slicers to filter data": https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F176 · Select several slicer items
+- **Claim:** Hold Ctrl to select more than one item in a slicer.
+- **Source:** Microsoft Support, "Use slicers to filter data": https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F177 · Clear a slicer
+- **Claim:** The Clear Filter button in a slicer clears its filter.
+- **Source:** Microsoft Support, "Use slicers to filter data": https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F178 · Delete a slicer
+- **Claim:** To delete a slicer, select it and press Delete.
+- **Source:** Microsoft Support, "Use slicers to filter data": https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F179 · Slicer style
+- **Claim:** A slicer's colour style is picked on the Slicer tab, or the Design tab in Excel 2016 and older.
+- **Source:** Microsoft Support, "Use slicers to filter data": https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F180 · Resize a slicer
+- **Claim:** To resize a slicer, select and hold its corner and drag.
+- **Source:** Microsoft Support, "Use slicers to filter data": https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F181 · Slicer header
+- **Claim:** A slicer's header shows the category of the items in it.
+- **Source:** Microsoft Support, "Use slicers to filter data": https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F182 · Reuse a slicer
+- **Claim:** A slicer that is already on one PivotTable can be used to filter another.
+- **Source:** Microsoft Support, "Use slicers to filter data": https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F183 · Same data source only
+- **Claim:** A slicer can only be connected to PivotTables that share the same data source.
+- **Source:** Microsoft Support, "Use slicers to filter data": https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F184 · Report Connections
+- **Claim:** On the Slicer tab, Report Connections lets you tick the PivotTables the slicer should filter.
+- **Source:** Microsoft Support, "Use slicers to filter data": https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F185 · Tick the other PivotTable
+- **Claim:** In the Report Connections dialog you select the check box of the PivotTable where you want the slicer to be available.
+- **Source:** Microsoft Support, "Use slicers to filter data": https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F186 · Disconnect a slicer
+- **Claim:** To disconnect a slicer, click in the PivotTable, choose Filter Connections on the PivotTable Analyze tab and clear the tick.
+- **Source:** Microsoft Support, "Use slicers to filter data": https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F187 · What a timeline is
+- **Claim:** A timeline is a filter for dates and times, with a slider to zoom in on the period you want.
+- **Source:** Microsoft Support, "Create a PivotTable timeline to filter dates": https://support.microsoft.com/en-us/excel/create-a-pivottable-timeline-to-filter-dates
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F188 · Insert a timeline
+- **Claim:** To add a timeline, click in the PivotTable, then choose Analyze and Insert Timeline.
+- **Source:** Microsoft Support, "Create a PivotTable timeline to filter dates": https://support.microsoft.com/en-us/excel/create-a-pivottable-timeline-to-filter-dates
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F189 · Pick the date field
+- **Claim:** In the Insert Timeline dialog you tick the date fields you want.
+- **Source:** Microsoft Support, "Create a PivotTable timeline to filter dates": https://support.microsoft.com/en-us/excel/create-a-pivottable-timeline-to-filter-dates
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F190 · Four time levels
+- **Claim:** A timeline can filter by years, quarters, months or days.
+- **Source:** Microsoft Support, "Create a PivotTable timeline to filter dates": https://support.microsoft.com/en-us/excel/create-a-pivottable-timeline-to-filter-dates
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F191 · Select a range of periods
+- **Claim:** To select a date range, click a period tile and drag across more tiles, then adjust with the handles.
+- **Source:** Microsoft Support, "Create a PivotTable timeline to filter dates": https://support.microsoft.com/en-us/excel/create-a-pivottable-timeline-to-filter-dates
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F192 · One timeline, several PivotTables
+- **Claim:** A single timeline can filter several PivotTables, provided they use the same data source.
+- **Source:** Microsoft Support, "Create a PivotTable timeline to filter dates": https://support.microsoft.com/en-us/excel/create-a-pivottable-timeline-to-filter-dates
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F193 · Clear a timeline
+- **Claim:** The Clear Filter button clears a timeline.
+- **Source:** Microsoft Support, "Create a PivotTable timeline to filter dates": https://support.microsoft.com/en-us/excel/create-a-pivottable-timeline-to-filter-dates
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F194 · Slicer and timeline on the same date field
+- **Claim:** To combine a slicer with a timeline on one date field, tick Allow multiple filters per field in PivotTable Options.
+- **Source:** Microsoft Support, "Create a PivotTable timeline to filter dates": https://support.microsoft.com/en-us/excel/create-a-pivottable-timeline-to-filter-dates
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F195 · Move and resize a timeline
+- **Claim:** A timeline can be moved by dragging it and resized with its sizing handles.
+- **Source:** Microsoft Support, "Create a PivotTable timeline to filter dates": https://support.microsoft.com/en-us/excel/create-a-pivottable-timeline-to-filter-dates
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F196 · Scale to Fit: width
+- **Claim:** On the Page Layout tab, in Scale to Fit, setting Width to 1 page puts the columns on one page.
+- **Source:** Microsoft Support, "Scale a worksheet": https://support.microsoft.com/en-us/excel/scale-a-worksheet
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F197 · Scale to Fit: height
+- **Claim:** To print the whole sheet on a single page, also set Height to 1 page.
+- **Source:** Microsoft Support, "Scale a worksheet": https://support.microsoft.com/en-us/excel/scale-a-worksheet
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F198 · Shrunk print can be hard to read
+- **Claim:** Fitting a sheet onto one page shrinks the data, so the printout may be difficult to read.
+- **Source:** Microsoft Support, "Scale a worksheet": https://support.microsoft.com/en-us/excel/scale-a-worksheet
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F199 · The Scale box shows the shrink
+- **Claim:** The Scale box shows how much the sheet has been scaled.
+- **Source:** Microsoft Support, "Scale a worksheet": https://support.microsoft.com/en-us/excel/scale-a-worksheet
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F200 · Landscape
+- **Claim:** Switch from portrait to landscape through Page Layout, Page Setup, Orientation.
+- **Source:** Microsoft Support, "Scale a worksheet": https://support.microsoft.com/en-us/excel/scale-a-worksheet
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F201 · Print Area
+- **Claim:** The Print Area command in the Page Setup group leaves out columns or rows you don't want printed.
+- **Source:** Microsoft Support, "Scale a worksheet": https://support.microsoft.com/en-us/excel/scale-a-worksheet
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F202 · Fit Sheet on One Page is a scaling option
+- **Claim:** Microsoft's page names Fit Sheet on One Page as one of the scaling options you can find applied in Print Preview.
+- **Source:** Microsoft Support, "Scale a worksheet": https://support.microsoft.com/en-us/excel/scale-a-worksheet
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F203 · Clear Filter clears a slicer
+- **Claim:** A slicer's Clear Filter button removes the filter by selecting all the items.
+- **Source:** Microsoft Support, "Use slicers to filter data": https://support.microsoft.com/en-us/office/use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
