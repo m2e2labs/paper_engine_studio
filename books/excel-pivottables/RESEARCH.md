@@ -285,7 +285,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Moving and Removing Fields
-- **Status:** new
+- **Status:** accepted as F23, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -297,7 +297,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Moving and Removing Fields
-- **Status:** new
+- **Status:** accepted as F24, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -309,7 +309,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Moving and Removing Fields
-- **Status:** new
+- **Status:** accepted as F25, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -321,7 +321,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Values: Choosing What Gets Added Up
-- **Status:** new
+- **Status:** accepted as F26, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -332,8 +332,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "right-click the value field you want to change, and then click Summarize Values By"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Changing Sum to Count, Average, Max or Min
-- **Status:** new
+- **For:** Changing the Calculation
+- **Status:** accepted as F27, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -344,8 +344,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "the arrow to the right of the field name, and then select the Value Field Settings option"
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Changing Sum to Count, Average, Max or Min
-- **Status:** new
+- **For:** Changing the Calculation
+- **Status:** accepted as F28, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -356,8 +356,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "The number of nonempty values."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Changing Sum to Count, Average, Max or Min
-- **Status:** new
+- **For:** Changing the Calculation
+- **Status:** accepted as F29, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -368,8 +368,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "The average of the values."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Changing Sum to Count, Average, Max or Min
-- **Status:** new
+- **For:** Changing the Calculation
+- **Status:** accepted as F30, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -380,8 +380,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "The largest value."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Changing Sum to Count, Average, Max or Min
-- **Status:** new
+- **For:** Changing the Calculation
+- **Status:** accepted as F31, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -392,8 +392,8 @@ in seconds. It is never printed: the book says things in its own words.
 - **Quote:** "The smallest value."
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
-- **For:** Changing Sum to Count, Average, Max or Min
-- **Status:** new
+- **For:** Changing the Calculation
+- **Status:** accepted as F32, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -405,7 +405,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Putting Two Values Side by Side
-- **Status:** new
+- **Status:** accepted as F33, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -417,7 +417,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Putting Two Values Side by Side
-- **Status:** new
+- **Status:** accepted as F34, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -429,7 +429,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Spreading a Field Across Columns
-- **Status:** new
+- **Status:** accepted as F35, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -441,7 +441,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Stacking Two Fields in Rows
-- **Status:** new
+- **Status:** accepted as F36, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -453,7 +453,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Stacking Two Fields in Rows
-- **Status:** new
+- **Status:** accepted as F37, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -465,7 +465,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Stacking Two Fields in Rows
-- **Status:** new
+- **Status:** accepted as F38, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -477,7 +477,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Expanding and Collapsing Groups
-- **Status:** new
+- **Status:** accepted as F39, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -489,7 +489,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Expanding and Collapsing Groups
-- **Status:** new
+- **Status:** accepted as F40, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -501,7 +501,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Expanding and Collapsing Groups
-- **Status:** new
+- **Status:** accepted as F41, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -513,7 +513,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Expanding and Collapsing Groups
-- **Status:** new
+- **Status:** accepted as F42, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -525,7 +525,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Expanding and Collapsing Groups
-- **Status:** new
+- **Status:** accepted as F43, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -537,7 +537,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Renaming a Heading in a PivotTable
-- **Status:** new
+- **Status:** accepted as F44, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -549,7 +549,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Renaming a Heading in a PivotTable
-- **Status:** new
+- **Status:** accepted as F45, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -561,7 +561,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Renaming a Heading in a PivotTable
-- **Status:** new
+- **Status:** accepted as F46, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -573,7 +573,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Formatting Numbers Inside a PivotTable
-- **Status:** new
+- **Status:** accepted as F47, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -585,7 +585,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Formatting Numbers Inside a PivotTable
-- **Status:** new
+- **Status:** accepted as F48, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---
@@ -597,7 +597,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-09
 - **For:** Formatting Numbers Inside a PivotTable
-- **Status:** new
+- **Status:** accepted as F49, 2026-10-09
 - **Verified:** 2026-10-09, quote found on the page
 
 ---

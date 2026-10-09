@@ -98,77 +98,77 @@ Check each against the real menu before the page is written.
 - **Use when:** the reader can insert a PivotTable but the layout isn't what they pictured. **Skip when:** they already shape rows with confidence.
 - **Action:** "Drag Product into Rows, then drag it back out."
 - **Band:** diagram (list rows collapsing into one row per product)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F8, F13, F15, F23
 
 #### Moving and Removing Fields
 - **What:** Drag a field from one box to another to change the view; drag it out to remove it. The data is never touched, so there's nothing to break.
 - **Use when:** the reader is afraid of 'ruining' the PivotTable. **Skip when:** they already move fields freely.
 - **Action:** "Drag Region from Rows to Columns and back again."
 - **Band:** diagram (one field moving between boxes, the table redrawing)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F8, F23, F24, F25
 
 #### Values: Choosing What Gets Added Up
 - **What:** The Values box is where the numbers go. Say what Excel does by default, and how to check which calculation a field is using.
 - **Use when:** the reader sees 'Count of Amount' where they expected a total. **Skip when:** they already set the calculation themselves.
 - **Action:** "Drag Quantity into Values as well and read the label Excel gives it."
 - **Band:** diagram (two value fields side by side, each with its calculation named)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F14, F18, F26, F44
 
-#### Changing Sum to Count, Average, Max or Min
+#### Changing the Calculation
 - **What:** The same field can be added up, counted, averaged, or the largest or smallest found. Right-click a value to switch.
 - **Use when:** the reader wants an average sale, not a total. **Skip when:** a total is what they need.
 - **Action:** "Right-click an Amount value, choose Summarise Values By, then Average."
 - **Band:** diagram (the same four numbers shown as sum, count, average and max)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F27, F28, F29, F30, F31, F32
 
 #### Putting Two Values Side by Side
 - **What:** Add Amount and Quantity together, or the same field twice with two different calculations. They appear as two columns.
 - **Use when:** the reader wants totals and counts in one table. **Skip when:** one value is enough.
 - **Action:** "Drag Amount into Values a second time and set the second to Count."
 - **Band:** diagram (a table with two value columns, each labelled by its calculation)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F33, F34
 
 #### Spreading a Field Across Columns
 - **What:** Drop a field into Columns and each item becomes a column heading. Region down the side and Product across the top gives a two-way table from one drag.
 - **Use when:** the reader wants to compare two things at once. **Skip when:** they only need one list.
 - **Action:** "Drag Product into Columns with Region still in Rows."
 - **Band:** diagram (rows and columns crossing to make a grid of totals)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F12, F13, F19, F35
 
 #### Stacking Two Fields in Rows
 - **What:** Put a second field under the first in Rows and each region splits into its products, with a subtotal for each region.
 - **Use when:** the reader wants detail inside each group. **Skip when:** one level of grouping is enough.
 - **Action:** "Drag Product into Rows under Region and look for the subtotal rows."
 - **Band:** diagram (regions nesting products, subtotals highlighted)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F19, F36, F37, F38
 
 #### Expanding and Collapsing Groups
 - **What:** Click the small plus and minus beside an item to show or hide the rows inside it. Good for a report that opens on the headlines.
 - **Use when:** the reader has two fields in Rows and wants a shorter view. **Skip when:** they have one field in Rows.
 - **Action:** "Collapse every region in your Region and Product table, then open just North."
 - **Band:** diagram (a grouped table with one region open and the others closed)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F39, F40, F41, F42, F43
 
 #### Renaming a Heading in a PivotTable
 - **What:** Type over a heading such as 'Sum of Amount' to call it something a reader understands. Say what to do if Excel refuses because the name is already a field.
 - **Use when:** the reader wants a report they can hand to someone. **Skip when:** the default headings are fine.
 - **Action:** "Click the 'Sum of Amount' heading and type Sales."
 - **Band:** diagram (a default heading becoming a plain one)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F44, F45, F46
 
 #### Formatting Numbers Inside a PivotTable
 - **What:** Format the numbers through the value settings, not by formatting the cells, so the format survives a refresh.
 - **Use when:** the reader formats the cells and the formatting vanishes on refresh. **Skip when:** they don't need a format.
 - **Action:** "Right-click an Amount value, choose Number Format and set it to Number with a thousands separator."
 - **Band:** diagram (a cell format lost on refresh versus a value-setting format that stays)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F47, F48, F49
 
 #### Practice: Amount by Region and Product
 - **What:** Build one table that shows Amount for every region and product, then answer three questions from it without a formula.
 - **Use when:** always, at the end of the part. **Skip when:** never.
 - **Action:** "Build Region in Rows, Product in Columns and Amount in Values, then find the biggest single cell."
 - **Band:** diagram (the finished grid with three cells marked)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F7, F9, F12, F13, F14, F18, F19, F35
 
 ## Part 3 · Sorting, filtering and layout
 

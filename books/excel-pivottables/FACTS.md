@@ -199,3 +199,219 @@ findings appear here.
 - **Checked:** 2026-10-09
 
 ---
+
+## F23 · Remove a field by dragging it out
+- **Claim:** To take a field out of a PivotTable, drag it out of the areas section of the Field List.
+- **Source:** Microsoft Support, "Use the Field List to arrange fields in a PivotTable": https://support.microsoft.com/en-us/office/use-the-field-list-to-arrange-fields-in-a-pivottable-43980e05-a585-4fcd-bd91-80160adfebec
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F24 · Remove a field from its arrow
+- **Claim:** You can also remove a field by clicking the down arrow beside it and choosing Remove Field.
+- **Source:** Microsoft Support, "Use the Field List to arrange fields in a PivotTable": https://support.microsoft.com/en-us/office/use-the-field-list-to-arrange-fields-in-a-pivottable-43980e05-a585-4fcd-bd91-80160adfebec
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F25 · A field sits in only one of Filters, Rows, Columns
+- **Claim:** A field can be in the Filters, Rows or Columns area only once, so dropping it into a second one moves it out of the first.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F26 · Text and blanks are counted, not added
+- **Claim:** If a field has blanks or non-number values such as text when you put it in Values, Excel counts it instead of adding it up.
+- **Source:** Microsoft Support, "Sum values in a PivotTable": https://support.microsoft.com/en-us/office/sum-values-in-a-pivottable-9ee73790-646a-42c9-9fc7-e1ca30096d9c
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F27 · Change the calculation: Summarize Values By
+- **Claim:** To change a value field's calculation, right-click it and choose Summarize Values By.
+- **Source:** Microsoft Support, "Sum values in a PivotTable": https://support.microsoft.com/en-us/office/sum-values-in-a-pivottable-9ee73790-646a-42c9-9fc7-e1ca30096d9c
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F28 · Change the calculation: Value Field Settings
+- **Claim:** Another way to change the calculation is the arrow beside the field name in the Values area, then Value Field Settings.
+- **Source:** Microsoft Support, "Create a PivotTable to analyze worksheet data": https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F29 · Count counts non-empty values
+- **Claim:** The Count calculation gives the number of values that aren't empty.
+- **Source:** Microsoft Support, "Sum values in a PivotTable": https://support.microsoft.com/en-us/office/sum-values-in-a-pivottable-9ee73790-646a-42c9-9fc7-e1ca30096d9c
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F30 · Average
+- **Claim:** The Average calculation gives the average of the values.
+- **Source:** Microsoft Support, "Sum values in a PivotTable": https://support.microsoft.com/en-us/office/sum-values-in-a-pivottable-9ee73790-646a-42c9-9fc7-e1ca30096d9c
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F31 · Max
+- **Claim:** The Max calculation gives the largest value.
+- **Source:** Microsoft Support, "Sum values in a PivotTable": https://support.microsoft.com/en-us/office/sum-values-in-a-pivottable-9ee73790-646a-42c9-9fc7-e1ca30096d9c
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F32 · Min
+- **Claim:** The Min calculation gives the smallest value.
+- **Source:** Microsoft Support, "Sum values in a PivotTable": https://support.microsoft.com/en-us/office/sum-values-in-a-pivottable-9ee73790-646a-42c9-9fc7-e1ca30096d9c
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F33 · Copy a field into Values
+- **Claim:** You can drag the same field into Values as many times as you like to make copies, then give each copy its own calculation.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F34 · The Values label moves values to rows or columns
+- **Claim:** With two or more fields in Values, Excel adds a Values label that you can move to the Columns or Rows area, which decides whether the values sit side by side or stacked.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F35 · Columns nest
+- **Claim:** When there is more than one field in Columns, a field lower down the list is nested inside the one above it.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F36 · Rows nest
+- **Claim:** When there is more than one field in Rows, a field lower down the list is nested inside the one above it.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F37 · Reorder fields within an area
+- **Claim:** If an area holds more than one field, you change their order by dragging them to the position you want.
+- **Source:** Microsoft Support, "Use the Field List to arrange fields in a PivotTable": https://support.microsoft.com/en-us/office/use-the-field-list-to-arrange-fields-in-a-pivottable-43980e05-a585-4fcd-bd91-80160adfebec
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F38 · Compact form indents inner fields
+- **Claim:** In compact form, the items from different row fields share one column and are indented to show which field they belong to.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F39 · Expand and collapse buttons
+- **Claim:** To expand or collapse an item, use the expand or collapse button beside it.
+- **Source:** Microsoft Support, "Expand, collapse, or show details in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/expand-collapse-or-show-details-in-a-pivottable-or-pivotchart-d70d7e70-d230-4d45-81db-1f5e39bcb394
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F40 · Expand and collapse by double-click
+- **Claim:** Double-clicking an item expands or collapses it.
+- **Source:** Microsoft Support, "Expand, collapse, or show details in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/expand-collapse-or-show-details-in-a-pivottable-or-pivotchart-d70d7e70-d230-4d45-81db-1f5e39bcb394
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F41 · Collapse Entire Field
+- **Claim:** Right-click an item, then Expand/Collapse, then Collapse Entire Field to hide the details for every item in that field.
+- **Source:** Microsoft Support, "Expand, collapse, or show details in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/expand-collapse-or-show-details-in-a-pivottable-or-pivotchart-d70d7e70-d230-4d45-81db-1f5e39bcb394
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F42 · Show or hide the +/- buttons
+- **Claim:** If the expand and collapse buttons are missing, the +/- Buttons command in the Show group on the Analyze tab turns them back on.
+- **Source:** Microsoft Support, "Expand, collapse, or show details in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/expand-collapse-or-show-details-in-a-pivottable-or-pivotchart-d70d7e70-d230-4d45-81db-1f5e39bcb394
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F43 · Expand and collapse buttons are on by default
+- **Claim:** The expand and collapse buttons are shown by default, but they can be hidden, for example before printing a report.
+- **Source:** Microsoft Support, "Expand, collapse, or show details in a PivotTable or PivotChart": https://support.microsoft.com/en-us/office/expand-collapse-or-show-details-in-a-pivottable-or-pivotchart-d70d7e70-d230-4d45-81db-1f5e39bcb394
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F44 · Headings get a 'Sum of' name
+- **Claim:** When you set a value field's calculation, Excel puts it in the Custom Name box as a new heading, such as 'Sum of Amount', which you can change.
+- **Source:** Microsoft Support, "Create a PivotTable to analyze worksheet data": https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F45 · Rename last
+- **Claim:** Microsoft's advice is to rename PivotTable fields only after you've finished setting the calculations, because changing a calculation changes the name.
+- **Source:** Microsoft Support, "Create a PivotTable to analyze worksheet data": https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F46 · Strip 'Sum of' with Find and Replace
+- **Claim:** To remove 'Sum of' from every heading at once, use Find and Replace with 'Sum of' as the text to find and nothing as the replacement.
+- **Source:** Microsoft Support, "Create a PivotTable to analyze worksheet data": https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F47 · Number Format changes the whole field
+- **Claim:** Choosing Number Format in the Value Field Settings dialog sets the number format for the entire field.
+- **Source:** Microsoft Support, "Create a PivotTable to analyze worksheet data": https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F48 · Number Format from a right-click
+- **Claim:** You can also right-click a value and choose Number Format.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F49 · Preserve cell formatting on update
+- **Claim:** The PivotTable Options setting 'Preserve cell formatting on update' keeps the table's layout and format each time you do something to it, and clearing it goes back to the defaults.
+- **Source:** Microsoft Support, "Design the layout and format of a PivotTable": https://support.microsoft.com/en-us/excel/design-the-layout-and-format-of-a-pivottable
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
