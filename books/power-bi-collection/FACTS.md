@@ -3051,3 +3051,155 @@ fact keeps its number and gains its book: F17 in the second book is F2017 here.
 - **Source:** my own work: the sample files are written by datasets/absolute-beginners/make.py (seed 7) and every figure here is computed by the same script into answers.json, so the files and the answers come from one place
 - **Kind:** measurement
 - **Checked:** 2026-10-02
+
+---
+
+## F3167 · Promoted Headers is the step name in Excel
+- **Claim:** In Excel, automatic detection adds a step named Promoted Headers right after Source, which turns the first row into the column headers.
+- **Source:** Microsoft Support, "Add or change data types (Power Query)": https://support.microsoft.com/en-us/excel/add-or-change-data-types-power-query
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3168 · Changed Type is the step name in Excel
+- **Claim:** In Excel, the automatic type step is named Changed Type, and it converts each column from Any to a type guessed from its values.
+- **Source:** Microsoft Support, "Add or change data types (Power Query)": https://support.microsoft.com/en-us/excel/add-or-change-data-types-power-query
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3169 · Removed Columns is a step name
+- **Claim:** In a Power BI Desktop query, removing unneeded columns shows up in Applied Steps as a step named Removed Columns.
+- **Source:** Microsoft Learn, "Shape and combine data in Power BI Desktop": https://learn.microsoft.com/power-bi/connect-data/desktop-shape-and-combine-data
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3170 · Removed Other Columns is a step name
+- **Claim:** In Microsoft's Excel tutorial, the Remove Other Columns command creates a query step named Removed Other Columns.
+- **Source:** Microsoft Support, "Learn to combine multiple data sources (Power Query)": https://support.microsoft.com/en-us/office/learn-to-combine-multiple-data-sources-power-query-70cfe661-5a2a-4d9d-a4fe-586cc7878c7d
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3171 · Filtered Rows in Microsoft's sample M
+- **Claim:** In the sample M query on Microsoft's "What is Power Query?" page, the row-filter step is named Filtered Rows and uses Table.SelectRows.
+- **Source:** Microsoft Learn, "What is Power Query?": https://learn.microsoft.com/power-query/power-query-what-is-power-query
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3172 · Picking a table in the Navigator makes a Navigation step
+- **Claim:** When you pick a table in the Navigator after connecting to an Excel workbook, Power Query adds a step named Navigation to Applied Steps.
+- **Source:** Microsoft Support, "Learn to combine multiple data sources (Power Query)": https://support.microsoft.com/en-us/office/learn-to-combine-multiple-data-sources-power-query-70cfe661-5a2a-4d9d-a4fe-586cc7878c7d
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3173 · In the code, the Navigation step has the table's name
+- **Claim:** In Microsoft's Excel tutorial, the Changed Type formula refers to the table picked in the Navigator as Products_Table, not by the word Navigation.
+- **Source:** Microsoft Support, "Learn to combine multiple data sources (Power Query)": https://support.microsoft.com/en-us/office/learn-to-combine-multiple-data-sources-power-query-70cfe661-5a2a-4d9d-a4fe-586cc7878c7d
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3174 · The header icons: 123, 1.2, ABC
+- **Claim:** The icon left of a column header shows its type: 123 for whole number, 1.2 for decimal, a calendar for date, and ABC for text.
+- **Source:** Microsoft Learn, "End-to-end: From raw data to a shared Power BI app": https://learn.microsoft.com/power-bi/create-reports/tutorial-end-to-end-power-bi
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3175 · A folder query is set up once and refreshed
+- **Claim:** Microsoft's Excel help describes a folder query as set up once and then refreshed to see each month's results, using monthly budget workbooks as the example.
+- **Source:** Microsoft Support, "Import data from a folder with multiple files (Power Query)": https://support.microsoft.com/en-us/office/import-data-from-a-folder-with-multiple-files-power-query-94b8023c-2e66-4f6b-8c78-6a00041c90e4
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3176 · Source is the step that connects
+- **Claim:** The Source step is the one that connects to the original data; in Microsoft's Power BI tutorial it is the first step listed.
+- **Source:** Microsoft Learn, "Shape and combine data in Power BI Desktop": https://learn.microsoft.com/power-bi/connect-data/desktop-shape-and-combine-data
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3177 · The Source step holds the file path
+- **Claim:** For an Excel workbook, the Source step is created on import and its formula holds the file path inside File.Contents.
+- **Source:** Microsoft Support, "Learn to combine multiple data sources (Power Query)": https://support.microsoft.com/en-us/office/learn-to-combine-multiple-data-sources-power-query-70cfe661-5a2a-4d9d-a4fe-586cc7878c7d
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3178 · New Parameter, under Manage Parameters
+- **Claim:** A parameter can be created with New Parameter from the Manage Parameters dropdown on the Home tab, or with New inside the Manage Parameters window.
+- **Source:** Microsoft Learn, "Using parameters": https://learn.microsoft.com/power-query/power-query-query-parameters
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3179 · Append queries is on Home, in Combine
+- **Claim:** Append queries is on the Home tab in the Combine group, and its dropdown holds two options.
+- **Source:** Microsoft Learn, "Append queries": https://learn.microsoft.com/power-query/append-queries
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3180 · Merge queries is on Home, in Combine
+- **Claim:** Merge queries is on the Home tab in the Combine group, with Merge queries and Merge queries as new in its dropdown.
+- **Source:** Microsoft Learn, "Merge queries overview": https://learn.microsoft.com/power-query/merge-queries-overview
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3181 · Duplicate is on the query's menu
+- **Claim:** To duplicate a query, open its context menu in the Queries pane and select Duplicate.
+- **Source:** Microsoft Learn, "Using the Queries pane": https://learn.microsoft.com/power-query/queries-pane
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3182 · Reference is on the query's menu
+- **Claim:** To reference a query, open its context menu in the Queries pane and select Reference.
+- **Source:** Microsoft Learn, "Using the Queries pane": https://learn.microsoft.com/power-query/queries-pane
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3183 · Data Source Settings has a Change source button
+- **Claim:** In Excel, Data Source Settings (Data > Get Data > Data Source Settings) lists the workbook's sources and shows a Change source button.
+- **Source:** Microsoft Support, "Manage data source settings and permissions (Power Query)": https://support.microsoft.com/en-us/office/manage-data-source-settings-and-permissions-power-query-9f24a631-f7eb-4729-88dd-6a4921380ca9
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3184 · Changing a source reopens its first dialog
+- **Claim:** Changing a data source in Data Source Settings opens the same dialog you saw when you first imported the data, for any kind of source.
+- **Source:** Microsoft Support, "Manage data source settings and permissions (Power Query)": https://support.microsoft.com/en-us/office/manage-data-source-settings-and-permissions-power-query-9f24a631-f7eb-4729-88dd-6a4921380ca9
+- **Kind:** reference
+- **Checked:** 2026-10-10
+
+---
+
+## F3185 · The Advanced Editor is on the Home tab too
+- **Claim:** Besides the View tab, the Advanced Editor can be opened from the Query group on the Home tab.
+- **Source:** Microsoft Learn, "Overview of query evaluation and query folding in Power Query": https://learn.microsoft.com/power-query/query-folding-basics
+- **Kind:** reference
+- **Checked:** 2026-10-10

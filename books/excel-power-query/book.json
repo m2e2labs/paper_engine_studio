@@ -1,0 +1,191 @@
+{
+  "$schema": "../../engine/book.schema.json",
+  "title": "Excel Power Query for Absolute Beginners",
+  "subtitle": "Clean your data once, then refresh it every time.",
+  "author": "M2E2 Labs",
+  "series": "Absolute Beginners",
+  "brand": "Third Watch Press",
+  "editionLabel": "Edition 1.0",
+  "unit": "lessons",
+  "numbered": true,
+  "contents": true,
+  "index": true,
+  "cover": {
+    "kicker": "Clean It Once",
+    "note": "One idea per page. Every click explained.",
+    "art": "<svg viewBox=\"0 0 400 200\" width=\"440\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A sketch of three untidy sheets passing through a funnel to become one clean table, with a refresh arrow below.\"><defs><filter id=\"exCoverC\" filterUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"400\" height=\"200\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.045\" numOctaves=\"2\" seed=\"31\" result=\"noise\"/><feDisplacementMap in=\"SourceGraphic\" in2=\"noise\" scale=\"2.5\" xChannelSelector=\"R\" yChannelSelector=\"G\"/></filter></defs><g filter=\"url(#exCoverC)\"><rect x=\"18\" y=\"30\" width=\"92\" height=\"76\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><line x1=\"18\" y1=\"54\" x2=\"110\" y2=\"54\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><line x1=\"18\" y1=\"80\" x2=\"110\" y2=\"80\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"68\" y=\"58\" width=\"30\" height=\"18\" fill=\"#FEF2F2\"/><rect x=\"32\" y=\"52\" width=\"92\" height=\"76\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><line x1=\"32\" y1=\"76\" x2=\"124\" y2=\"76\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><line x1=\"32\" y1=\"102\" x2=\"124\" y2=\"102\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"82\" y=\"80\" width=\"30\" height=\"18\" fill=\"#FEF2F2\"/><rect x=\"46\" y=\"74\" width=\"92\" height=\"76\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><line x1=\"46\" y1=\"98\" x2=\"138\" y2=\"98\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><line x1=\"46\" y1=\"124\" x2=\"138\" y2=\"124\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"96\" y=\"102\" width=\"30\" height=\"18\" fill=\"#FEF2F2\"/><path d=\"M150 56 L226 56 L196 108 L196 150 L180 160 L180 108 Z\" fill=\"#EEF0FE\" stroke=\"#4F46E5\" stroke-width=\"3\" stroke-linejoin=\"round\"/><line x1=\"162\" y1=\"72\" x2=\"214\" y2=\"72\" stroke=\"#4F46E5\" stroke-width=\"2\"/><line x1=\"228\" y1=\"120\" x2=\"253\" y2=\"120\" stroke=\"#94A3B8\" stroke-width=\"3\" stroke-linecap=\"round\"/><polygon points=\"252,114 262,120 252,126\" fill=\"#94A3B8\"/><rect x=\"270\" y=\"46\" width=\"112\" height=\"92\" rx=\"3\" fill=\"#ECFDF5\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><line x1=\"270\" y1=\"69\" x2=\"382\" y2=\"69\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/><line x1=\"270\" y1=\"92\" x2=\"382\" y2=\"92\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/><line x1=\"270\" y1=\"115\" x2=\"382\" y2=\"115\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/><line x1=\"307\" y1=\"46\" x2=\"307\" y2=\"138\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/><line x1=\"344\" y1=\"46\" x2=\"344\" y2=\"138\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/><path d=\"M298 162 A22 22 0 1 0 322 150\" fill=\"none\" stroke=\"#0D9488\" stroke-width=\"5\" stroke-linecap=\"round\"/><polygon points=\"313,146 330,148 322,160\" fill=\"#0D9488\"/></g></svg>"
+  },
+  "copyright": {
+    "year": 2026,
+    "rights": "© 2026 M2E2 Labs. All rights reserved.",
+    "lines": [
+      "Set in Space Grotesk, Inter and JetBrains Mono.",
+      "Microsoft and Excel are trademarks of Microsoft Corporation. This is an independent guide, not published by or affiliated with Microsoft."
+    ]
+  },
+  "matter": {
+    "back": [
+      {
+        "kind": "glossary"
+      }
+    ]
+  },
+  "parts": [
+    {
+      "name": "Before you open the editor",
+      "eyebrow": "Getting ready",
+      "why": "Why cleaning the same data by hand costs you every week, what Power Query is, and how to run your first query.",
+      "blocks": [
+        "Cleaning the Same Data Every Week",
+        "What Power Query Does in Excel",
+        "Finding Get & Transform on the Ribbon",
+        "Turning a List Into an Excel Table",
+        "Your First Query From a Table",
+        "Finding Your Way Around the Editor",
+        "How Excel Records Your Steps",
+        "Loading the Result to a Sheet",
+        "Practice: Your First Query"
+      ]
+    },
+    {
+      "name": "Getting data in",
+      "eyebrow": "Bringing data in",
+      "why": "Connecting to workbooks, text files, folders and web pages, and getting the kind of data right at the start.",
+      "blocks": [
+        "Importing From Another Workbook",
+        "Importing a CSV or Text File",
+        "Choosing What to Load in the Navigator",
+        "Many Files in One Folder, One Table",
+        "Importing a Table From a Web Page",
+        "Setting the Kind of Data Early",
+        "Dates That Arrive as Text",
+        "Numbers That Arrive as Text",
+        "Load to a Sheet, or Only Connect",
+        "Practice: Bringing Data In"
+      ]
+    },
+    {
+      "name": "Cleaning what arrived",
+      "eyebrow": "Cleaning",
+      "why": "Headers, junk rows, stray spaces, wrong capitals, duplicates and blanks: the fixes that make a list ready.",
+      "blocks": [
+        "Using the First Row as Headers",
+        "Removing Junk Rows at the Top",
+        "Removing Blank Rows",
+        "Choosing Which Columns to Keep",
+        "Renaming Columns",
+        "Trimming Stray Spaces",
+        "Fixing Capital Letters",
+        "Replacing Values",
+        "Dropping Repeated Rows",
+        "Filling Down Empty Cells",
+        "Practice: A Clean Sales List"
+      ]
+    },
+    {
+      "name": "Choosing the rows you want",
+      "eyebrow": "Filtering and sorting",
+      "why": "Filtering rows, sorting, finding errors and adding a row number.",
+      "blocks": [
+        "Filtering Rows in the Editor",
+        "Filtering by Text, Number and Date",
+        "Keeping the Top Rows",
+        "Sorting Inside a Query",
+        "Finding and Removing Errors",
+        "Adding an Index Column",
+        "Practice: Narrowing the List"
+      ]
+    },
+    {
+      "name": "Reshaping a table",
+      "eyebrow": "Reshaping",
+      "why": "Splitting and merging columns, adding calculated columns, turning columns into rows and back, and grouping.",
+      "blocks": [
+        "Splitting a Column at a Delimiter",
+        "Splitting a Column by Length",
+        "Pulling Out Text Before or After",
+        "Merging Columns Into One",
+        "Adding a Column From Examples",
+        "Adding a Custom Column",
+        "Adding a Conditional Column",
+        "Pulling Year and Month From a Date",
+        "Unpivoting Columns Into Rows",
+        "Pivoting Rows Into Columns",
+        "Transposing a Table",
+        "Grouping and Summarising Rows",
+        "Practice: Reshaping a Report"
+      ]
+    },
+    {
+      "name": "Combining queries",
+      "eyebrow": "Combining",
+      "why": "Stacking tables, joining them side by side, and looking things up with a merge.",
+      "blocks": [
+        "Stacking or Joining: Which Do You Need",
+        "Appending Tables One Under Another",
+        "Merging Tables Side by Side",
+        "The Join Kinds in Plain Words",
+        "Looking Up a Value With a Merge",
+        "Duplicating or Referencing a Query",
+        "Checking a Combined Result",
+        "Practice: Combining Two Lists"
+      ]
+    },
+    {
+      "name": "Keeping it working",
+      "eyebrow": "Refreshing and repairing",
+      "why": "Refreshing, finding what a query depends on, and fixing the usual breaks.",
+      "blocks": [
+        "Refreshing a Query",
+        "Refreshing When the File Opens",
+        "How Queries Depend on Each Other",
+        "Naming Steps and Queries Clearly",
+        "Editing or Deleting an Earlier Step",
+        "When a Step Shows an Error",
+        "When a Heading Was Renamed",
+        "When the File Has Moved",
+        "Using a Parameter for the File Path",
+        "Practice: Breaking and Fixing a Query"
+      ]
+    },
+    {
+      "name": "Putting it to work",
+      "eyebrow": "Putting it to work",
+      "why": "Feeding PivotTables, reading what Excel writes behind each step, and finishing the job from scratch.",
+      "blocks": [
+        "Loading a Query Into a PivotTable",
+        "Loading to the Data Model",
+        "Reading the Code Behind a Step",
+        "Opening the Advanced Editor",
+        "Practice: Monthly Messy Files",
+        "Practice: Someone Else's Report",
+        "Practice: Messy File to PivotTable",
+        "Mistakes Almost Everyone Makes",
+        "Where to Go After Power Query"
+      ]
+    }
+  ],
+  "language": "en",
+  "publishing": {
+    "description": "The export arrives with stray spaces, numbers stored as text and junk rows at the top. You fix it by hand. Next month's export has the same problems, and you fix it again.\n\nExcel Power Query for Absolute Beginners shows you how to fix it once. Power Query records every cleaning step you take and repeats them each time you refresh. Instead of long chapters, you get 77 short lessons, one idea per page, each with a clear diagram of what is happening and one small thing to try before you move on.\n\nInside, you'll learn how to:\n- Start a query from a table, and read the Power Query Editor and its Applied Steps\n- Bring data in from other workbooks, text files and whole folders\n- Set the kind of data right, so dates sort and numbers add up\n- Clean what arrives: headers, junk rows, stray spaces, capital letters and duplicates\n- Filter, sort and find errors\n- Split and merge columns, add calculated columns, and unpivot a report built for people\n- Stack tables and join them, including looking up a value\n- Refresh a query, and fix it when a heading is renamed or a file moves\n- Feed a clean query into a PivotTable\n\nIt helps if you can already type data into Excel and use SUM. No unexplained jargon.\n\nBy the last page, your data won't just be clean. It will stay clean, every refresh.",
+    "keywords": [
+      "excel power query for beginners",
+      "power query tutorial",
+      "learn power query",
+      "get and transform excel",
+      "clean data in excel",
+      "excel data cleaning",
+      "automate excel data import"
+    ],
+    "categories": [
+      "COM054000",
+      "COM021030"
+    ],
+    "publisher": "Third Watch Press",
+    "audience": "Excel users who clean the same untidy export by hand every week or month.",
+    "price": {
+      "amount": 11.99,
+      "currency": "USD"
+    }
+  }
+}

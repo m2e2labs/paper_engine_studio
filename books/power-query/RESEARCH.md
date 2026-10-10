@@ -1929,7 +1929,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** Promote Headers and Remove the Junk Rows
-- **Status:** new
+- **Status:** accepted as F167, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -1941,7 +1941,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** Applied Steps: A Recipe, Not an Edit
-- **Status:** new
+- **Status:** accepted as F168, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -1953,7 +1953,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** Choosing, Removing and Renaming Columns
-- **Status:** new
+- **Status:** accepted as F169, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -1965,7 +1965,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** Choosing, Removing and Renaming Columns
-- **Status:** new
+- **Status:** accepted as F170, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -1977,7 +1977,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** Filtering Rows: Narrowing Without Deleting
-- **Status:** new
+- **Status:** accepted as F171, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -1989,7 +1989,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** The Advanced Editor and Your First Look at M
-- **Status:** new
+- **Status:** accepted as F172, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -2001,7 +2001,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** The Advanced Editor and Your First Look at M
-- **Status:** new
+- **Status:** accepted as F173, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -2013,7 +2013,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** Data Types: Set Them Early, Set Them Once
-- **Status:** new
+- **Status:** accepted as F174, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -2025,7 +2025,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** Get Data from a Folder: Many Files, One Table
-- **Status:** new
+- **Status:** accepted as F175, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -2037,7 +2037,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** Connecting to Excel and CSV
-- **Status:** new
+- **Status:** accepted as F176, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -2049,7 +2049,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** Connecting to Excel and CSV
-- **Status:** new
+- **Status:** accepted as F177, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -2061,7 +2061,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** Parameters: One Place to Change the Path
-- **Status:** new
+- **Status:** accepted as F178, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -2073,7 +2073,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** Append or Merge: Which One You Need
-- **Status:** new
+- **Status:** accepted as F179, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -2085,7 +2085,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** Append or Merge: Which One You Need
-- **Status:** new
+- **Status:** accepted as F180, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -2097,7 +2097,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** Duplicate or Reference: Two Ways to Branch
-- **Status:** new
+- **Status:** accepted as F181, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -2109,7 +2109,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** Duplicate or Reference: Two Ways to Branch
-- **Status:** new
+- **Status:** accepted as F182, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -2121,7 +2121,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** Refresh Errors: Renamed Columns and Moved Files
-- **Status:** new
+- **Status:** accepted as F183, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -2133,7 +2133,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** Refresh Errors: Renamed Columns and Moved Files
-- **Status:** new
+- **Status:** accepted as F184, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---
@@ -2145,7 +2145,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-09-24
 - **For:** The Advanced Editor and Your First Look at M
-- **Status:** new
+- **Status:** accepted as F185, 2026-10-10
 - **Verified:** 2026-09-24, quote found on the page
 
 ---

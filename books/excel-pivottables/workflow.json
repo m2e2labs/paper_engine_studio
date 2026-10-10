@@ -1,0 +1,466 @@
+{
+  "pages": {
+    "Why PivotTables Exist": {
+      "status": "approved",
+      "hash": "2775d95faa83",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:25.715Z"
+    },
+    "Data a PivotTable Can Read": {
+      "status": "approved",
+      "hash": "282a19bafe4c",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:25.765Z"
+    },
+    "Tidying a List Before You Pivot": {
+      "status": "approved",
+      "hash": "3428ebff1790",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:25.814Z"
+    },
+    "Inserting Your First PivotTable": {
+      "status": "approved",
+      "hash": "060db7441738",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:25.861Z"
+    },
+    "Where the PivotTable Goes": {
+      "status": "approved",
+      "hash": "eaff328d10ca",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:25.907Z"
+    },
+    "The Field List and Its Four Boxes": {
+      "status": "approved",
+      "hash": "ecfaf254cb6b",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:25.953Z"
+    },
+    "Reading Row Labels and Grand Totals": {
+      "status": "approved",
+      "hash": "6e35cb1a56fe",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.006Z"
+    },
+    "Excel's Recommended PivotTables": {
+      "status": "approved",
+      "hash": "5424ddfca4b1",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.055Z"
+    },
+    "Practice: Your First PivotTable": {
+      "status": "approved",
+      "hash": "1a4cebc59704",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.103Z"
+    },
+    "Putting Fields in Rows": {
+      "status": "approved",
+      "hash": "f85300f28e0f",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.150Z"
+    },
+    "Moving and Removing Fields": {
+      "status": "approved",
+      "hash": "c1b028ea6613",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.196Z"
+    },
+    "Values: Choosing What Gets Added Up": {
+      "status": "approved",
+      "hash": "fee47e687034",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.240Z"
+    },
+    "Changing the Calculation": {
+      "status": "approved",
+      "hash": "ac9810e96456",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.286Z"
+    },
+    "Putting Two Values Side by Side": {
+      "status": "approved",
+      "hash": "7552e26f7776",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.332Z"
+    },
+    "Spreading a Field Across Columns": {
+      "status": "approved",
+      "hash": "e1d3cd09e994",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.378Z"
+    },
+    "Stacking Two Fields in Rows": {
+      "status": "approved",
+      "hash": "a7bf64a51353",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.424Z"
+    },
+    "Expanding and Collapsing Groups": {
+      "status": "approved",
+      "hash": "9b9e4a83b475",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.470Z"
+    },
+    "Renaming a Heading in a PivotTable": {
+      "status": "approved",
+      "hash": "9056ca2510c8",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.516Z"
+    },
+    "Formatting Numbers Inside a PivotTable": {
+      "status": "approved",
+      "hash": "7a9f36e3a34b",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.563Z"
+    },
+    "Practice: Amount by Region and Product": {
+      "status": "approved",
+      "hash": "13c2d0cd8a8c",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.609Z"
+    },
+    "Sorting a PivotTable": {
+      "status": "approved",
+      "hash": "5c85f457421e",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.655Z"
+    },
+    "Filtering Rows and Columns": {
+      "status": "approved",
+      "hash": "8e772ee6fcd6",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.709Z"
+    },
+    "Filtering by Words in a Label": {
+      "status": "approved",
+      "hash": "701ba8bbfe49",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.755Z"
+    },
+    "Filtering by a Value": {
+      "status": "approved",
+      "hash": "92f4934521fc",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.800Z"
+    },
+    "Showing Only the Top Items": {
+      "status": "approved",
+      "hash": "df2996107474",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.846Z"
+    },
+    "One Filter for the Whole Table": {
+      "status": "approved",
+      "hash": "3cf08f0309e9",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.893Z"
+    },
+    "Clearing Filters and Starting Again": {
+      "status": "approved",
+      "hash": "19497c18c731",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.941Z"
+    },
+    "Compact, Outline or Tabular": {
+      "status": "approved",
+      "hash": "af2304b93046",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:26.987Z"
+    },
+    "Repeating Labels and Blank Rows": {
+      "status": "approved",
+      "hash": "12098fce3475",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.033Z"
+    },
+    "Choosing a PivotTable Style": {
+      "status": "approved",
+      "hash": "de2de54b78f9",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.078Z"
+    },
+    "Practice: A Tidy Regional Report": {
+      "status": "approved",
+      "hash": "47f0e359ad65",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.123Z"
+    },
+    "Grouping Dates by Month": {
+      "status": "approved",
+      "hash": "8260eb9d4948",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.169Z"
+    },
+    "Grouping Dates by Quarter": {
+      "status": "approved",
+      "hash": "b2e15064529a",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.214Z"
+    },
+    "Why Dates Won't Group": {
+      "status": "approved",
+      "hash": "b70751a40abe",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.259Z"
+    },
+    "Grouping Numbers Into Bands": {
+      "status": "approved",
+      "hash": "ba8063f3ca38",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.305Z"
+    },
+    "Grouping Text Items by Hand": {
+      "status": "approved",
+      "hash": "971aace4c609",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.358Z"
+    },
+    "Ungrouping and Changing a Group": {
+      "status": "approved",
+      "hash": "fd9ef414ad62",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.404Z"
+    },
+    "Adding a Helper Column to the Data": {
+      "status": "approved",
+      "hash": "418838dcc7f4",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.457Z"
+    },
+    "Practice: Sales by Month and Quarter": {
+      "status": "approved",
+      "hash": "67fa1b4f16db",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.503Z"
+    },
+    "Percent of the Grand Total": {
+      "status": "approved",
+      "hash": "a238117aeee4",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.548Z"
+    },
+    "Percent of a Row or a Column": {
+      "status": "approved",
+      "hash": "211bd52ba5e1",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.594Z"
+    },
+    "Rank Largest to Smallest": {
+      "status": "approved",
+      "hash": "233659bb03ae",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.638Z"
+    },
+    "Running Totals": {
+      "status": "approved",
+      "hash": "ab13aed90144",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.685Z"
+    },
+    "Change From a Chosen Month": {
+      "status": "approved",
+      "hash": "f3035a0405c0",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.732Z"
+    },
+    "Percent Change From a Chosen Month": {
+      "status": "approved",
+      "hash": "61d6d2eb5a2f",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.779Z"
+    },
+    "Comparing Everything to One Item": {
+      "status": "approved",
+      "hash": "965baac0f617",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.824Z"
+    },
+    "Putting Back the Normal View": {
+      "status": "approved",
+      "hash": "79f1824b0142",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.870Z"
+    },
+    "Practice: Who Is Growing": {
+      "status": "approved",
+      "hash": "4552cf1ac2dd",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.915Z"
+    },
+    "Adding a Calculated Field": {
+      "status": "approved",
+      "hash": "bad214f48fe2",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:27.962Z"
+    },
+    "Counting Each Item Once": {
+      "status": "approved",
+      "hash": "34fb15204772",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.019Z"
+    },
+    "Drilling Down Behind a Number": {
+      "status": "approved",
+      "hash": "203a571c3cf8",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.065Z"
+    },
+    "When Your Data Grows Past the PivotTable": {
+      "status": "approved",
+      "hash": "402519b85013",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.110Z"
+    },
+    "Changing Which Data a PivotTable Reads": {
+      "status": "approved",
+      "hash": "adc16a7f3c8e",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.156Z"
+    },
+    "Refreshing Every Time the File Opens": {
+      "status": "approved",
+      "hash": "2c45b2f633b3",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.202Z"
+    },
+    "Filling Empty Cells": {
+      "status": "approved",
+      "hash": "b46e1bcbd111",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.249Z"
+    },
+    "Keeping Column Widths When You Refresh": {
+      "status": "approved",
+      "hash": "e1be62cd2cb9",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.297Z"
+    },
+    "Copying a PivotTable as Plain Values": {
+      "status": "approved",
+      "hash": "1c5916fbde95",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.343Z"
+    },
+    "Why a Formula Shows GETPIVOTDATA": {
+      "status": "approved",
+      "hash": "82d44951ab67",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.389Z"
+    },
+    "Two PivotTables From One List": {
+      "status": "approved",
+      "hash": "52c15070092f",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.434Z"
+    },
+    "When the Numbers Look Wrong": {
+      "status": "approved",
+      "hash": "92b3880ec611",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.481Z"
+    },
+    "Practice: Fixing a Broken PivotTable": {
+      "status": "approved",
+      "hash": "572a5880e158",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.524Z"
+    },
+    "Grouping Dates by Week": {
+      "status": "approved",
+      "hash": "05acea42d28a",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.572Z"
+    },
+    "PivotCharts": {
+      "status": "approved",
+      "hash": "7af9c36748c8",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.620Z"
+    },
+    "Choosing a Chart Type for a PivotChart": {
+      "status": "approved",
+      "hash": "9f4b37e2da53",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.678Z"
+    },
+    "Cleaning Up a PivotChart": {
+      "status": "approved",
+      "hash": "a5075437fc2a",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.726Z"
+    },
+    "Slicers": {
+      "status": "approved",
+      "hash": "9027fae50547",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.772Z"
+    },
+    "Making Slicers Look Right": {
+      "status": "approved",
+      "hash": "5282118519f6",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.818Z"
+    },
+    "One Slicer for Two PivotTables": {
+      "status": "approved",
+      "hash": "a7c70faff54d",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.864Z"
+    },
+    "Timelines": {
+      "status": "approved",
+      "hash": "72b4cc9df219",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.910Z"
+    },
+    "Laying Out a One-Page Dashboard": {
+      "status": "approved",
+      "hash": "cf9f7a5c189e",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:28.955Z"
+    },
+    "Printing the Dashboard on One Page": {
+      "status": "approved",
+      "hash": "5ee4d74bd9a5",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:29.008Z"
+    },
+    "Checking the Dashboard": {
+      "status": "approved",
+      "hash": "638db654c52b",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:29.053Z"
+    },
+    "Practice: The Corner Shop Dashboard": {
+      "status": "approved",
+      "hash": "4bac979c2245",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:29.099Z"
+    },
+    "Practice: A Report by Salesperson": {
+      "status": "approved",
+      "hash": "fec872b20864",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:29.145Z"
+    },
+    "Practice: Sales Against Target": {
+      "status": "approved",
+      "hash": "797edcd926b9",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:29.191Z"
+    },
+    "Practice: The Whole Job From Scratch": {
+      "status": "approved",
+      "hash": "8d7a9243b265",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:29.239Z"
+    },
+    "Where to Go After PivotTables": {
+      "status": "approved",
+      "hash": "c853239157e8",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:29.286Z"
+    }
+  }
+}

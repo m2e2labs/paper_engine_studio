@@ -930,7 +930,7 @@ Mechanism · diagram
   what happens to the steps below it."
 - **Band:** diagram (one source table, a numbered list of steps beside it, each step
   handing its result to the next)
-- **Facts:** F3012, F3013, F3014, F3015, F3016, F3017, F3104
+- **Facts:** F3012, F3013, F3014, F3015, F3016, F3017, F3104, F3168
 
 #### Close and Apply: What Loads and What Doesn't
 Mechanism · diagram
@@ -967,7 +967,7 @@ Interface · diagram
 - **Action:** "Connect to a workbook and note where the file path ended up in your first
   step."
 - **Band:** diagram (a file on disk, a connection line, and the query holding the path)
-- **Facts:** F3023, F3024, F3025, F3026
+- **Facts:** F3023, F3024, F3025, F3026, F3176, F3177
 
 #### The Navigator: Choosing What to Load
 Interface · diagram
@@ -991,7 +991,7 @@ Patterns · diagram
   refresh after dropping in a third."
 - **Band:** diagram (a folder of dated files, combining into one table with a source
   column)
-- **Facts:** F3031, F3032, F3033, F3034, F3035
+- **Facts:** F3031, F3032, F3033, F3034, F3035, F3175
 
 #### Data Types: Set Them Early, Set Them Once
 Mechanism · diagram
@@ -1003,7 +1003,7 @@ Mechanism · diagram
   before you look at the menu."
 - **Band:** diagram (a header row with a type icon over each column, and the same table
   with one type wrong and an error cell below it)
-- **Facts:** F3036, F3037, F3038, F3039, F3040, F3041, F3042
+- **Facts:** F3036, F3037, F3038, F3039, F3040, F3041, F3042, F3174
 
 
 #### Practice: Data In
@@ -1030,7 +1030,7 @@ Cleaning · diagram
   Top Rows, then Use First Row as Headers."
 - **Band:** diagram (the same sheet twice: junk rows removed then headers promoted,
   versus headers promoted first and the junk row stuck as column names)
-- **Facts:** F3039, F3043, F3044, F3045, F3046, F3047, F3048
+- **Facts:** F3039, F3043, F3044, F3045, F3046, F3047, F3048, F3167
 
 #### Choosing, Removing and Renaming Columns
 Cleaning · diagram
@@ -1044,7 +1044,7 @@ Cleaning · diagram
   Other Columns). Then picture a new column arriving."
 - **Band:** diagram (two routes from the same table when a new column appears at source:
   one lets it through, the other does not)
-- **Facts:** F3049, F3050, F3051, F3052, F3053, F3054, F3157, F3158
+- **Facts:** F3049, F3050, F3051, F3052, F3053, F3054, F3157, F3158, F3169, F3170
 
 #### Replace Values, Trim and Clean
 Cleaning · diagram
@@ -1070,7 +1070,7 @@ Cleaning · diagram
 - **Action:** "Filter a column, then read the step it wrote in the formula bar."
 - **Band:** diagram (a table entering a filter step and a shorter table leaving, with the
   step text shown underneath)
-- **Facts:** F3060, F3061, F3062, F3063, F3064, F3065
+- **Facts:** F3060, F3061, F3062, F3063, F3064, F3065, F3171
 
 
 #### Practice: Cleaning
@@ -1154,7 +1154,7 @@ Overview · diagram
 - **Action:** "Say out loud whether you want more rows or more columns. That is the
   answer."
 - **Band:** diagram (the same two tables combined both ways: longer, and wider)
-- **Facts:** F3089, F3090
+- **Facts:** F3089, F3090, F3179, F3180
 
 #### Append: Stacking Tables End to End
 Combining · diagram
@@ -1192,7 +1192,7 @@ Combining · diagram
   the original and watch both."
 - **Band:** diagram (one query branching two ways: duplicated steps side by side, versus
   a reference pointing back at the original)
-- **Facts:** F3104, F3105, F3106, F3107
+- **Facts:** F3104, F3105, F3106, F3107, F3181, F3182
 
 
 #### Practice: Combining
@@ -1260,7 +1260,7 @@ Errors · diagram
   that step."
 - **Band:** diagram (a renamed source column breaking one step, and the error naming that
   step)
-- **Facts:** F3124, F3125, F3126, F3127, F3128, F3129, F3130, F3159
+- **Facts:** F3124, F3125, F3126, F3127, F3128, F3129, F3130, F3159, F3183, F3184
 
 
 #### Practice: Breaking It
@@ -1285,7 +1285,7 @@ Craft · diagram
   selected."
 - **Band:** diagram (the Applied Steps list beside the M code, with one step and its line
   joined)
-- **Facts:** F3131, F3132, F3133, F3134, F3135, F3136
+- **Facts:** F3131, F3132, F3133, F3134, F3135, F3136, F3172, F3173, F3185
 
 #### let and in: How Every Query Is Built
 Craft · diagram
@@ -1310,7 +1310,7 @@ Craft · diagram
 - **Action:** "Pull your folder path out into a parameter and point one query at it."
 - **Band:** diagram (a path repeated in several queries, versus one parameter feeding
   them all)
-- **Facts:** F3142, F3143, F3144, F3145, F3146, F3147, F3148
+- **Facts:** F3142, F3143, F3144, F3145, F3146, F3147, F3148, F3178
 
 #### Mistakes Almost Every Beginner Makes in Power Query
 Review · diagram

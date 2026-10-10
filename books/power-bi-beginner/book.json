@@ -163,7 +163,7 @@
   },
   "language": "en",
   "publishing": {
-    "description": "You don't need a data science degree to build your first Power BI report. You just need someone to show you where to click, and why.\n\nPower BI for Absolute Beginners is a hands-on, no-jargon guide for someone who has never opened Power BI Desktop before. Instead of long chapters, you get 24 short, focused lessons, one idea per page, each with a clear diagram showing exactly what to click and one small thing to try before moving on.\n\nInside, you'll learn how to:\n- Install Power BI Desktop and find your way around its three views\n- Connect to an Excel workbook and clean up messy data with Power Query\n- Build a real data model, with relationships between tables done right\n- Write your first DAX formulas, from a simple SUM to CALCULATE and beyond\n- Choose the right chart for the question you're actually asking\n- Add slicers, format your visuals, and publish a report to the Power BI Service\n- Share your work and keep it current with a scheduled refresh\n- Avoid the handful of mistakes almost every beginner makes\n\nEvery explanation is in plain, friendly language: no unexplained acronyms, no assumed expertise. If you can use Excel, you're ready to start.\n\nBy the last page, you won't just know what Power BI is. You'll have built something real in it.",
+    "description": "You don't need a data science degree to build your first Power BI report. You just need someone to show you where to click, and why.\n\nPower BI for Absolute Beginners is a hands-on, no-jargon guide for someone who has never opened Power BI Desktop before. Instead of long chapters, you get 31 short, focused lessons, one idea per page, each with a clear diagram showing exactly what to click and one small thing to try before moving on.\n\nInside, you'll learn how to:\n- Install Power BI Desktop and find your way around its three views\n- Connect to an Excel workbook and clean up messy data with Power Query\n- Build a real data model, with relationships between tables done right\n- Write your first DAX formulas, from a simple SUM to CALCULATE and beyond\n- Choose the right chart for the question you're actually asking\n- Add slicers, format your visuals, and publish a report to the Power BI Service\n- Share your work and keep it current with a scheduled refresh\n- Avoid the handful of mistakes almost every beginner makes\n\nEvery explanation is in plain, friendly language: no unexplained acronyms, no assumed expertise. If you can use Excel, you're ready to start.\n\nBy the last page, you won't just know what Power BI is. You'll have built something real in it.",
     "keywords": [
       "power bi for beginners",
       "power bi desktop tutorial",
@@ -181,7 +181,7 @@
     "published": "2026-09-20",
     "audience": "Complete beginners who have never opened Power BI before.",
     "price": {
-      "amount": 7.99,
+      "amount": 11.99,
       "currency": "USD"
     },
     "isbn": {

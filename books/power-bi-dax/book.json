@@ -167,7 +167,7 @@
   },
   "language": "en",
   "publishing": {
-    "description": "You can build a Power BI report without writing much DAX. You just can't build a good one.\n\nPower BI DAX for Absolute Beginners picks up where the first book left off. Your data is in, there's a chart on the canvas, and now every real question you want to ask needs a formula. This is 28 short lessons, one idea per page, each with a clear diagram of what's actually happening and one small thing to try in the file you already have open.\n\nInside, you'll learn how to:\n- Tell DAX apart from Excel formulas and from Power Query, and know which one you need\n- Choose between a measure, a calculated column and a calculated table, and know why it matters\n- Understand filter context and row context, the two ideas everything else rests on\n- Use CALCULATE to change the question a measure is answering\n- Count things without getting it quietly wrong, and divide without breaking the report\n- Write iterators like SUMX, and know when you actually need the X\n- Build a proper date table and compare this year to last year in one line\n- Use VAR to write formulas you can still read in six months\n- Avoid the handful of DAX mistakes almost every beginner makes\n\nNo unexplained acronyms, no assumed expertise, no wall of reference documentation. Every function turns up at the moment you need it, in the order you'll meet it.\n\nBy the last page, you won't be copying formulas off the internet and hoping. You'll know what they do.",
+    "description": "You can build a Power BI report without writing much DAX. You just can't build a good one.\n\nPower BI DAX for Absolute Beginners picks up where the first book left off. Your data is in, there's a chart on the canvas, and now every real question you want to ask needs a formula. This is 35 short lessons, one idea per page, each with a clear diagram of what's actually happening and one small thing to try in the file you already have open.\n\nInside, you'll learn how to:\n- Tell DAX apart from Excel formulas and from Power Query, and know which one you need\n- Choose between a measure, a calculated column and a calculated table, and know why it matters\n- Understand filter context and row context, the two ideas everything else rests on\n- Use CALCULATE to change the question a measure is answering\n- Count things without getting it quietly wrong, and divide without breaking the report\n- Write iterators like SUMX, and know when you actually need the X\n- Build a proper date table and compare this year to last year in one line\n- Use VAR to write formulas you can still read in six months\n- Avoid the handful of DAX mistakes almost every beginner makes\n\nNo unexplained acronyms, no assumed expertise, no wall of reference documentation. Every function turns up at the moment you need it, in the order you'll meet it.\n\nBy the last page, you won't be copying formulas off the internet and hoping. You'll know what they do.",
     "keywords": [
       "dax for beginners",
       "power bi dax tutorial",
@@ -189,7 +189,7 @@
       "epub": ""
     },
     "price": {
-      "amount": 7.99,
+      "amount": 11.99,
       "currency": "USD"
     }
   }

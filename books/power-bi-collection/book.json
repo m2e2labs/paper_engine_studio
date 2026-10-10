@@ -406,7 +406,7 @@
   },
   "language": "en",
   "publishing": {
-    "description": "Three books, one volume, 80 short lessons. Everything a complete beginner needs to go from never having opened Power BI to building reports that hold up.\n\nThis collection holds the full text of all three Absolute Beginners guides:\n\nBook One, Power BI for Absolute Beginners: from opening the app to publishing your first report. Install Power BI Desktop, connect to an Excel workbook, build a real data model, choose the right chart, and share what you built.\n\nBook Two, Power BI DAX for Absolute Beginners: from your first SUM to the formulas that run a real report. Filter context and row context, CALCULATE, iterators like SUMX, a proper date table, and VAR for formulas you can still read in six months.\n\nBook Three, Power Query for Absolute Beginners: get the data in, get it clean, and make it stay that way. Applied Steps, a folder of files that grows on its own, unpivot, append and merge, query folding, and your first look at M.\n\nEvery lesson is one idea on one page, with a clear diagram of what is actually happening and one small thing to try before moving on. No unexplained jargon, no assumed expertise. If you can use Excel, you're ready to start.",
+    "description": "Three books, one volume, 101 short lessons. Everything a complete beginner needs to go from never having opened Power BI to building reports that hold up.\n\nThis collection holds the full text of all three Absolute Beginners guides:\n\nBook One, Power BI for Absolute Beginners: from opening the app to publishing your first report. Install Power BI Desktop, connect to an Excel workbook, build a real data model, choose the right chart, and share what you built.\n\nBook Two, Power BI DAX for Absolute Beginners: from your first SUM to the formulas that run a real report. Filter context and row context, CALCULATE, iterators like SUMX, a proper date table, and VAR for formulas you can still read in six months.\n\nBook Three, Power Query for Absolute Beginners: get the data in, get it clean, and make it stay that way. Applied Steps, a folder of files that grows on its own, unpivot, append and merge, query folding, and your first look at M.\n\nThese titles have been previously published as standalone books.\n\nEvery lesson is one idea on one page, with a clear diagram of what is actually happening and one small thing to try before moving on. No unexplained jargon, no assumed expertise. If you can use Excel, you're ready to start.",
     "keywords": [
       "power bi for beginners",
       "dax for beginners",
@@ -426,6 +426,10 @@
     "isbn": {
       "print": "",
       "epub": ""
+    },
+    "price": {
+      "amount": 24.99,
+      "currency": "USD"
     }
   }
 }

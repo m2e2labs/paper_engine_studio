@@ -167,7 +167,7 @@
   },
   "language": "en",
   "publishing": {
-    "description": "Power Query is the half of Power BI nobody puts on the box, and it is where most beginners actually get stuck.\n\nPower Query for Absolute Beginners picks up the moment your data arrives messy. A title row above the headers. Twelve month columns laid out for a human to read. A folder of spreadsheets that grows every month. None of that is a formula problem, and no amount of DAX will fix it.\n\nThis is 28 short lessons, one idea per page, each with a clear diagram of what is actually happening and one small thing to try in a file of your own.\n\nInside, you'll learn how to:\n- Tell Power Query apart from DAX, and know which of the two a problem belongs to\n- Read Applied Steps as a recipe that reruns, rather than edits you made once\n- Connect to Excel, CSV and a whole folder of files that grows on its own\n- Promote headers, strip junk rows, and clean the spaces that quietly break a join\n- Unpivot a sheet built for human eyes into a table a model can use\n- Append and merge, and know which of the two you actually need\n- Keep query folding alive, so a refresh takes seconds instead of an hour\n- Read the M behind the buttons, and pull a file path out into a parameter\n- Avoid the handful of mistakes almost every beginner makes\n\nNo unexplained jargon, no assumed expertise. If you can open Power BI Desktop, you're ready to start.\n\nBy the last page, your data won't just be in. It will stay in, every refresh.",
+    "description": "Power Query is the half of Power BI nobody puts on the box, and it is where most beginners actually get stuck.\n\nPower Query for Absolute Beginners picks up the moment your data arrives messy. A title row above the headers. Twelve month columns laid out for a human to read. A folder of spreadsheets that grows every month. None of that is a formula problem, and no amount of DAX will fix it.\n\nThis is 35 short lessons, one idea per page, each with a clear diagram of what is actually happening and one small thing to try in a file of your own.\n\nInside, you'll learn how to:\n- Tell Power Query apart from DAX, and know which of the two a problem belongs to\n- Read Applied Steps as a recipe that reruns, rather than edits you made once\n- Connect to Excel, CSV and a whole folder of files that grows on its own\n- Promote headers, strip junk rows, and clean the spaces that quietly break a join\n- Unpivot a sheet built for human eyes into a table a model can use\n- Append and merge, and know which of the two you actually need\n- Keep query folding alive, so a refresh takes seconds instead of an hour\n- Read the M behind the buttons, and pull a file path out into a parameter\n- Avoid the handful of mistakes almost every beginner makes\n\nNo unexplained jargon, no assumed expertise. If you can open Power BI Desktop, you're ready to start.\n\nBy the last page, your data won't just be in. It will stay in, every refresh.",
     "keywords": [
       "power query for beginners",
       "power query tutorial",
@@ -187,6 +187,10 @@
     "isbn": {
       "print": "",
       "epub": ""
+    },
+    "price": {
+      "amount": 11.99,
+      "currency": "USD"
     }
   }
 }

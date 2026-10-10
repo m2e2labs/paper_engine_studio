@@ -167,6 +167,48 @@
       "hash": "784aef4d685c",
       "note": "",
       "at": "2026-09-23T21:27:29.074Z"
+    },
+    "Practice: Which Kind": {
+      "status": "approved",
+      "hash": "629159bf8dff",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:23.923Z"
+    },
+    "Practice: Context": {
+      "status": "approved",
+      "hash": "98ae5e996b79",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:23.955Z"
+    },
+    "Practice: Functions": {
+      "status": "approved",
+      "hash": "271f114527fe",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:23.985Z"
+    },
+    "Practice: Iterators": {
+      "status": "approved",
+      "hash": "6435db697e3e",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:24.015Z"
+    },
+    "Practice: Filters": {
+      "status": "approved",
+      "hash": "daf405e05a03",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:24.045Z"
+    },
+    "Practice: Dates": {
+      "status": "approved",
+      "hash": "9436783ca864",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:24.075Z"
+    },
+    "Practice: Craft": {
+      "status": "approved",
+      "hash": "d774a4f0b12d",
+      "note": "Bulk approval on the author's instruction, 2026-10-10. Not reviewed page by page by Claude.",
+      "at": "2026-10-10T17:50:24.106Z"
     }
   }
 }

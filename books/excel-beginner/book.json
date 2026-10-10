@@ -12,7 +12,8 @@
   "index": true,
   "cover": {
     "kicker": "No Experience Required",
-    "note": "One idea per page. No jargon left unexplained."
+    "note": "One idea per page. No jargon left unexplained.",
+    "art": "<svg viewBox=\"0 0 400 200\" width=\"440\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"A sketch of a spreadsheet with one cell selected, adding up into a single total.\"><defs><filter id=\"exCoverA\" filterUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"400\" height=\"200\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.045\" numOctaves=\"2\" seed=\"23\" result=\"noise\"/><feDisplacementMap in=\"SourceGraphic\" in2=\"noise\" scale=\"2.5\" xChannelSelector=\"R\" yChannelSelector=\"G\"/></filter></defs><g filter=\"url(#exCoverA)\"><rect x=\"30\" y=\"30\" width=\"200\" height=\"140\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><rect x=\"30\" y=\"30\" width=\"200\" height=\"24\" fill=\"#EEF0FE\"/><line x1=\"70\" y1=\"30\" x2=\"70\" y2=\"170\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"110\" y1=\"30\" x2=\"110\" y2=\"170\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"150\" y1=\"30\" x2=\"150\" y2=\"170\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"190\" y1=\"30\" x2=\"190\" y2=\"170\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"30\" y1=\"54\" x2=\"230\" y2=\"54\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"30\" y1=\"77\" x2=\"230\" y2=\"77\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"30\" y1=\"100\" x2=\"230\" y2=\"100\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"30\" y1=\"124\" x2=\"230\" y2=\"124\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"30\" y1=\"147\" x2=\"230\" y2=\"147\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><rect x=\"162\" y=\"66\" width=\"16\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"162\" y=\"89\" width=\"21\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"162\" y=\"112\" width=\"26\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"162\" y=\"135\" width=\"19\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"150\" y=\"100.5\" width=\"40\" height=\"23\" fill=\"none\" stroke=\"#4F46E5\" stroke-width=\"4\"/><line x1=\"244\" y1=\"100\" x2=\"281\" y2=\"100\" stroke=\"#94A3B8\" stroke-width=\"3\" stroke-linecap=\"round\"/><polygon points=\"280,94 290,100 280,106\" fill=\"#94A3B8\"/><rect x=\"298\" y=\"60\" width=\"78\" height=\"80\" rx=\"12\" fill=\"#ECFDF5\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><path d=\"M352 80 L322 80 L338 100 L322 120 L352 120\" fill=\"none\" stroke=\"#0D9488\" stroke-width=\"7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g></svg>"
   },
   "copyright": {
     "year": 2026,
@@ -192,5 +193,28 @@
         "Practice: The Final Check"
       ]
     }
-  ]
+  ],
+  "publishing": {
+    "description": "You don't need to be good with computers to be good with Excel. You need someone to show you where to click, and why it works.\n\nExcel for Absolute Beginners is a plain-English guide for someone who has never built a spreadsheet, or who has built one and never quite trusted it. Instead of long chapters, you get 78 short lessons, one idea per page, each with a clear diagram of what is happening and one small thing to try before you move on.\n\nInside, you'll learn how to:\n- Find your way around the Excel window, workbooks, sheets and cells\n- Type numbers, text and dates, and fix numbers that Excel has stored as text\n- Make a sheet easy to read, with formats for money and percentages, colour and borders\n- Write your first formulas: SUM, AVERAGE, MIN, MAX, COUNT and ROUND\n- Copy a formula down a column, and lock the cells that mustn't move\n- Make a cell decide, with IF, AND, OR, SUMIF, COUNTIF and XLOOKUP, and handle errors with IFERROR\n- Work with dates and tidy up text\n- Sort, filter and tidy rows, and turn your data into a table\n- Build column, line and pie charts\n- Total each group with a summary table\n- Print a sheet, fit it on the page and save it as a PDF\n- Read an error message, and check a total two ways\n\nThe practice pages all use the same small example, a corner shop's year of sales, so you are always working on something real.\n\nNo unexplained jargon, no assumed experience. By the last page you will have a sheet you can build, read, check and share.",
+    "keywords": [
+      "excel for beginners",
+      "learn excel step by step",
+      "excel formulas for beginners",
+      "excel basics",
+      "excel tutorial",
+      "spreadsheet for beginners",
+      "excel for absolute beginners"
+    ],
+    "categories": [
+      "COM054000",
+      "COM005000"
+    ],
+    "publisher": "Third Watch Press",
+    "audience": "Complete beginners who have never built a spreadsheet, or never trusted one.",
+    "price": {
+      "amount": 11.99,
+      "currency": "USD"
+    }
+  },
+  "language": "en"
 }
