@@ -558,25 +558,25 @@ Check each against the real menu before the page is written.
 - **Use when:** always. **Skip when:** never.
 - **Action:** "Build Amount by Salesperson and name the best, then show that person's sales by product."
 - **Band:** diagram (the finished report with its three answers marked)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F13, F14, F36, F52, F64, F65
 
 #### Practice: Sales Against Target
 - **What:** Put the region totals beside each region's target and show whether each region hit it. Uses the Targets sheet and a lookup from the first book.
 - **Use when:** always. **Skip when:** never.
 - **Action:** "Next to the Region totals, look up each target and work out whether it was reached."
 - **Band:** diagram (totals and targets side by side with a pass or miss each)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F204, F205, F206, F207, F208, F209
 
 #### Practice: The Whole Job From Scratch
 - **What:** Start with a fresh copy of the Sales sheet and finish with a one-page dashboard, using only what the book has taught, with no steps given.
 - **Use when:** always, as the end of the book's practice. **Skip when:** never.
 - **Action:** "Make a fresh copy of the workbook and build a dashboard with two tables, one chart and one slicer."
 - **Band:** diagram (the whole workflow from list to dashboard)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F2, F3, F6, F7, F158, F174, F188, F196, F197
 
 #### Where to Go After PivotTables
 - **What:** What the next skill is and why: cleaning messy data before it reaches a PivotTable. Points to the next book, if the author wants it named. Only the author can say what comes next.
 - **Use when:** always, the last page. **Skip when:** never.
 - **Action:** "Pick one real list of your own and decide which three questions a PivotTable could answer from it."
 - **Band:** diagram (a messy list becoming a clean one, then a PivotTable)
-- **Facts:** none accepted yet. Needs research from Microsoft Support before the page is written.
+- **Facts:** F2, F210, F211, F212, F215, F216, F217

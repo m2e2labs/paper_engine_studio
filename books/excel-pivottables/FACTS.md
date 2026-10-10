@@ -1647,3 +1647,131 @@ findings appear here.
 - **Checked:** 2026-10-09
 
 ---
+
+## F204 · IF returns one value or another
+- **Claim:** IF returns one value if a condition is true and another value if it is false.
+- **Source:** Microsoft Support, "IF function": https://support.microsoft.com/office/if-function-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F205 · IF has three parts
+- **Claim:** IF takes the test, the value to return if the test is true, and optionally the value to return if it is false.
+- **Source:** Microsoft Support, "IF function": https://support.microsoft.com/office/if-function-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F206 · Over Budget example
+- **Claim:** In a formula such as =IF(C2>B2,"Over Budget","Within Budget"), IF checks whether C2 is greater than B2, and returns Over Budget if it is.
+- **Source:** Microsoft Support, "IF function": https://support.microsoft.com/office/if-function-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F207 · XLOOKUP finds things by row
+- **Claim:** XLOOKUP finds things in a table or range by row.
+- **Source:** Microsoft Support, "XLOOKUP function": https://support.microsoft.com/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F208 · Search one column, return from another
+- **Claim:** XLOOKUP looks in one column for a search term and returns a result from the same row in another column, on either side.
+- **Source:** Microsoft Support, "XLOOKUP function": https://support.microsoft.com/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F209 · XLOOKUP parts
+- **Claim:** XLOOKUP takes the value to search for, the range to search, and the range to return from, with optional extras.
+- **Source:** Microsoft Support, "XLOOKUP function": https://support.microsoft.com/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F210 · Power Query is Get & Transform
+- **Claim:** Power Query is known as Get & Transform in Excel, and lets you import or connect to external data.
+- **Source:** Microsoft Support, "About Power Query in Excel": https://support.microsoft.com/en-us/office/about-power-query-in-excel-7104fbee-9e62-4cb9-a02e-5bfb1a6c536a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F211 · Power Query shapes data
+- **Claim:** Power Query lets you shape data to meet your needs while the original source stays unchanged.
+- **Source:** Microsoft Support, "About Power Query in Excel": https://support.microsoft.com/en-us/office/about-power-query-in-excel-7104fbee-9e62-4cb9-a02e-5bfb1a6c536a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F212 · Power Query transformation examples
+- **Claim:** Examples of shaping are removing a column, changing a data type or merging tables.
+- **Source:** Microsoft Support, "About Power Query in Excel": https://support.microsoft.com/en-us/office/about-power-query-in-excel-7104fbee-9e62-4cb9-a02e-5bfb1a6c536a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F213 · Power Query combines sources
+- **Claim:** Power Query can combine data from several sources into one view.
+- **Source:** Microsoft Support, "About Power Query in Excel": https://support.microsoft.com/en-us/office/about-power-query-in-excel-7104fbee-9e62-4cb9-a02e-5bfb1a6c536a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F214 · Power Query loads to a worksheet
+- **Claim:** A finished query can be loaded into a worksheet or the Data Model and refreshed from time to time.
+- **Source:** Microsoft Support, "About Power Query in Excel": https://support.microsoft.com/en-us/office/about-power-query-in-excel-7104fbee-9e62-4cb9-a02e-5bfb1a6c536a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F215 · Power Query records each step
+- **Claim:** The Power Query Editor records and labels each transformation you make, and the steps are listed in Applied Steps.
+- **Source:** Microsoft Support, "About Power Query in Excel": https://support.microsoft.com/en-us/office/about-power-query-in-excel-7104fbee-9e62-4cb9-a02e-5bfb1a6c536a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F216 · Power Query steps rerun on refresh
+- **Claim:** When you refresh a query, each recorded step runs again automatically.
+- **Source:** Microsoft Support, "About Power Query in Excel": https://support.microsoft.com/en-us/office/about-power-query-in-excel-7104fbee-9e62-4cb9-a02e-5bfb1a6c536a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F217 · Where Power Query is (Windows)
+- **Claim:** On Windows, Power Query is on the Data tab, in the Get & Transform Data group.
+- **Source:** Microsoft Support, "About Power Query in Excel": https://support.microsoft.com/en-us/office/about-power-query-in-excel-7104fbee-9e62-4cb9-a02e-5bfb1a6c536a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F218 · Power Query on Windows, Mac and the web
+- **Claim:** Power Query is available in Excel for Windows, Excel for Mac and Excel for the web.
+- **Source:** Microsoft Support, "About Power Query in Excel": https://support.microsoft.com/en-us/office/about-power-query-in-excel-7104fbee-9e62-4cb9-a02e-5bfb1a6c536a
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
+
+## F219 · Power Query in older Excel
+- **Claim:** The Power Query experience is available in all Excel 2016 or later Windows stand-alone versions.
+- **Source:** Microsoft Support, "Power Query data sources in Excel versions": https://support.microsoft.com/en-us/office/where-is-get-transform-power-query-e9332067-8e49-46fc-97ff-f2e1bfa0cb16
+- **Kind:** reference
+- **Checked:** 2026-10-09
+
+---
