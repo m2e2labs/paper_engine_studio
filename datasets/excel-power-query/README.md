@@ -19,7 +19,7 @@ North 2756, South 1256, West 1474.
 | `Monthly messy/` | The same 12 months, each with a title row and a blank row above the headings, a `Total` row at the bottom, and 2 Regions with a leading space | Part 8: Monthly Messy Files |
 | `Sales by month report.xlsx`, sheet **Wide** | One row per region, a column per month headed `Jan 2025` to `Dec 2025` | Part 5: unpivot and its practice |
 | … sheet **Report** | Built for a person: two title rows, a region named once per block, a subtotal and a blank row after each region, a Grand total, months `Jan` to `Dec`, empty where nothing sold | Part 8: Someone Else's Report |
-| `Year-end export.csv` | A fresh messy file: semicolons, three lines above the headings, Region in mixed capitals, a pound sign on every Amount, three sales twice, a `Total` line | Part 8: Messy File to PivotTable |
+| `Year-end export.csv` | A fresh messy file: semicolons, three lines above the headings (padded with semicolons), Region in mixed capitals, a pound sign on every Amount, three sales twice, a `Total` line | Part 8: Messy File to PivotTable |
 | `answers.json` | Every figure a practice page can print | All practice pages |
 
 The book's first lessons (Ctrl+T, From Table/Range, importing from another workbook) use the
@@ -50,12 +50,21 @@ python datasets/excel-power-query/make.py
 It needs `openpyxl`, uses one seed (23) and writes the same files every time. If the beginner
 workbook changes, `make.py` stops with an error rather than write files that don't match.
 
-## Not yet checked in Excel
+## Checked in Excel
 
-These files were checked by reading them back in Python, not by opening them in Excel's Power
-Query Editor. Before a practice page is written, check in Excel that:
+On 2026-10-15 the files were run through Excel's own Power Query engine (Excel 16, build
+20430, en-US) with M queries driven from a script, not through the editor's buttons:
 
-- Changing the Wide sheet's unpivoted month headings (`Jan 2025`) to the Date kind gives the
-  first of each month.
-- The Year-end CSV opens with semicolons detected and the `£` signs shown correctly.
-- Combining `Monthly messy/` works once the sample file's first two rows are removed.
+- **Wide:** unpivoting and changing `Jan 2025` to the Date kind gives 48 rows, the first of
+  each month from 2025-01-01 to 2025-12-01, no errors, 6325 in all.
+- **Year-end export.csv:** read with a semicolon delimiter it has 8 columns; after removing
+  3 top rows and promoting headings there are 244 rows, and the first Amount reads `£72`.
+  The byte order mark wins over the encoding setting, so `£` reads correctly either way.
+  The lines above the headings are padded with semicolons on purpose: unpadded, `Csv.Document`
+  took its column count from the first line and read the whole file as one column.
+- **Monthly messy/:** 12 files; removing 2 top rows, promoting headings, combining and
+  dropping the `Total` rows gives 240 rows and 6325, with the region totals above once
+  Region is trimmed.
+
+Not tested: whether From Text/CSV's dialog detects the semicolon by itself (the script set
+it), and anything that depends on the editor's buttons rather than the M they write.

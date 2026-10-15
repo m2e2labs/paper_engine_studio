@@ -3349,3 +3349,219 @@ in seconds. It is never printed: the book says things in its own words.
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
+
+## R279 · Table.NestedJoin defaults to left outer
+- **Claim:** Table.NestedJoin, the M function Power Query uses for a merge, does a left outer join when no join kind is given.
+- **Source:** Microsoft Learn, "Table.NestedJoin": https://learn.microsoft.com/en-us/powerquery-m/table-nestedjoin
+- **Quote:** "By default, a left outer join is performed if a joinKind is not specified."
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** The Join Kinds in Plain Words
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R280 · Power BI tutorial: Left Outer is the default
+- **Claim:** Microsoft's Power BI Desktop tutorial on merging tells the reader to keep the default join kind, Left Outer (all from first, matching from second).
+- **Source:** Microsoft Learn, "Shape and combine data in Power BI Desktop": https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-shape-and-combine-data
+- **Quote:** "Use the default join type: Left Outer (all from first, matching from second)"
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** The Join Kinds in Plain Words
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R281 · Learn calls left outer the default join kind
+- **Claim:** A Microsoft Learn article on Power Query merges calls left outer the default join kind in the Merge dialog.
+- **Source:** Microsoft Learn, "Optimize Power Query when expanding table columns": https://learn.microsoft.com/en-us/power-query/optimize-expanding-table-columns
+- **Quote:** "You'll likely want to use the default join kind (left outer) for this kind of data."
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** The Join Kinds in Plain Words
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R282 · Merges are Table.NestedJoin
+- **Claim:** Microsoft names Table.NestedJoin as the function behind a merge in Power Query.
+- **Source:** Microsoft Learn, "Common authoring issues in Power Query": https://learn.microsoft.com/en-us/power-query/common-issues
+- **Quote:** "merges (such as Table.NestedJoin )"
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** The Join Kinds in Plain Words
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R283 · Ctrl+F5 restores the window
+- **Claim:** In the function-key table of Excel's keyboard shortcuts, Ctrl+F5 restores the size of the selected workbook window; it is not listed there as a refresh.
+- **Source:** Microsoft Support, "Keyboard shortcuts in Excel": https://support.microsoft.com/en-us/accessibility/excel/keyboard-shortcuts-in-excel
+- **Quote:** "Ctrl+F5: restores the window size of the selected workbook window."
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Refreshing a Query
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R284 · Shortcut list also gives Ctrl+F5 as refresh
+- **Claim:** The same keyboard shortcuts page, in its section on refreshing external data, gives Ctrl+F5 for refreshing the current worksheet and Ctrl+Alt+F5 for the whole workbook, so Microsoft's own pages disagree about Ctrl+F5.
+- **Source:** Microsoft Support, "Keyboard shortcuts in Excel": https://support.microsoft.com/en-us/accessibility/excel/keyboard-shortcuts-in-excel
+- **Quote:** "Refresh data in the current worksheet. Ctrl+F5 Refresh all data in the workbook. Ctrl+Alt+F5"
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Refreshing a Query
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R285 · Excel for the web: Alt+F5 refreshes
+- **Claim:** In Excel for the web, Alt+F5 refreshes external data and Ctrl+Alt+F5 refreshes all external data.
+- **Source:** Microsoft Support, "Keyboard shortcuts in Excel": https://support.microsoft.com/en-us/accessibility/excel/keyboard-shortcuts-in-excel
+- **Quote:** "Refresh external data. Alt+F5 Refresh all external data. Ctrl+Alt+F5"
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Refreshing a Query
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R286 · Refresh one query from the ribbon
+- **Claim:** To refresh only the selected data from the ribbon, choose Data, the arrow under Refresh All, then Refresh.
+- **Source:** Microsoft Support, "Refresh an external data connection in Excel": https://support.microsoft.com/en-us/excel/refresh-an-external-data-connection-in-excel
+- **Quote:** "click the arrow under Refresh All , and then click Refresh ."
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Refreshing a Query
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R287 · Keep range of rows counts from row 1
+- **Claim:** In Microsoft Learn's Keep range of rows example, entering 6 as the First row removes the rows above row 6 and keeps 8 rows.
+- **Source:** Microsoft Learn, "Filter a table by row position": https://learn.microsoft.com/en-us/power-query/filter-row-position
+- **Quote:** "Any rows above the First row that you defined (row 6) are removed."
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Keeping the Top Rows
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R288 · Support page also counts from 1
+- **Claim:** The Support page that says the first data row is row zero also says that entering 2 as the first row to remove keeps row one and removes row two, which counts from one.
+- **Source:** Microsoft Support, "Filter data (Power Query)": https://support.microsoft.com/en-us/excel/filter-data-power-query
+- **Quote:** "If you enter 2, the first row is kept but the second row is removed."
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Keeping the Top Rows
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R289 · Support: first data row is row zero
+- **Claim:** Microsoft Support says that when you give a range of rows, the first data row is row zero, and suggests adding an index column to see row positions first.
+- **Source:** Microsoft Support, "Filter data (Power Query)": https://support.microsoft.com/en-us/excel/filter-data-power-query
+- **Quote:** "the first data row in a table is row zero (0), not row one (1)."
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Keeping the Top Rows
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R290 · Format, Trim under Transform
+- **Claim:** Leading and trailing spaces can be removed in the Power Query Editor with Format, Trim on the Transform tab.
+- **Source:** Microsoft Learn, "Data types in Power BI": https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-data-types
+- **Quote:** "Format Trim under Transform , to remove the spaces in Power Query Editor."
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Trimming Stray Spaces
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R291 · Later steps may not keep the sort
+- **Claim:** Power Query does not guarantee that a sort survives later steps that group rows, merge queries or remove duplicates.
+- **Source:** Microsoft Learn, "Common authoring issues in Power Query": https://learn.microsoft.com/en-us/power-query/common-issues
+- **Quote:** "sort order isn't guaranteed to be preserved through aggregations"
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Sorting Inside a Query
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R292 · Sort after the other steps
+- **Claim:** Microsoft's first suggested fix is to sort after the step that could change the order.
+- **Source:** Microsoft Learn, "Common authoring issues in Power Query": https://learn.microsoft.com/en-us/power-query/common-issues
+- **Quote:** "Perform a sort after applying the downstream operation."
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Sorting Inside a Query
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R293 · One row for each matching pair
+- **Claim:** An inner join gives one row for each pair of matching rows, so a key that appears twice in the second table gives two rows for one row of the first.
+- **Source:** Microsoft Learn, "JoinKind.Type": https://learn.microsoft.com/en-us/powerquery-m/joinkind-type
+- **Quote:** "contains a row for each pair of rows from the specified tables that were determined to match"
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Looking Up a Value With a Merge
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R294 · Expanding can add rows
+- **Claim:** Expanding a merged column turns each nested table into rows and columns, so a nested table with several rows becomes several rows.
+- **Source:** Microsoft Learn, "Table.ExpandTableColumn": https://learn.microsoft.com/en-us/powerquery-m/table-expandtablecolumn
+- **Quote:** "into multiple rows and columns"
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Looking Up a Value With a Merge
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R295 · First visit asks how to sign in
+- **Claim:** The first time Power Query connects to a web site, it asks for a sign-in method; Anonymous is for a page that needs no credentials.
+- **Source:** Microsoft Learn, "Power Query Web connector": https://learn.microsoft.com/en-us/power-query/connectors/web/web
+- **Quote:** "Anonymous : Select this authentication method if the web page doesn't require any credentials."
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Importing a Table From a Web Page
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R296 · Changing pages cause refresh errors
+- **Claim:** A web page that loads its content as it goes can make a refresh fail now and then with an error that a column was not found.
+- **Source:** Microsoft Learn, "Troubleshooting the Power Query Web connector": https://learn.microsoft.com/en-us/power-query/connectors/web/web-troubleshoot
+- **Quote:** "the column 'Foo' of the table wasn't found"
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Importing a Table From a Web Page
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---

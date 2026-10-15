@@ -352,12 +352,15 @@ wb.save(os.path.join(HERE, "Sales by month report.xlsx"))
 # A fresh messy file for the last practice page, with different dirt from the Export sheet:
 # semicolons between values, two title lines and a blank line, Region in mixed capitals,
 # Amount with a pound sign on every value, three sales twice, and a Total line at the end.
+# The lines above the headings are padded with semicolons, as many exporters do. Without
+# them, Csv.Document takes its column count from the first line and reads one column.
 ye_dupes = pick(3, range(240))
 mixed = pick(30, range(240))
 lines = 0
 with open(os.path.join(HERE, "Year-end export.csv"), "w", newline="", encoding="utf-8-sig") as fh:
     w = csv.writer(fh, delimiter=";")
-    w.writerow(["Corner Shop year-end export"]); w.writerow(["Generated 02/01/2026"]); w.writerow([])
+    pad = [""] * 7
+    w.writerow(["Corner Shop year-end export"] + pad); w.writerow(["Generated 02/01/2026"] + pad); w.writerow([""] + pad)
     w.writerow(["Sale ID", "Date", "Region", "Salesperson", "Product", "Qty", "Price", "Amount"])
     for i, s in enumerate(sales):
         region = (s["region"].upper() if i % 2 else s["region"].lower()) if i in mixed else s["region"]
