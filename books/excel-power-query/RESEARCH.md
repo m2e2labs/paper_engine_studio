@@ -3649,3 +3649,102 @@ in seconds. It is never printed: the book says things in its own words.
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
+
+## R304 · List sheet rows and total
+- **Claim:** The List sheet of Corner Shop export.xlsx has 240 sales rows under one heading row, worth 6325 in all.
+- **Source:** My own work: datasets/excel-power-query/make.py writes the file from the 240 beginner sales, and answers.json records list rows: 240 and total_amount: 6325, replayed in Python on 2026-10-15.
+- **Kind:** measurement
+- **Retrieved:** 2026-10-15
+- **For:** Practice: Your First Query
+- **Status:** new
+- **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
+
+---
+
+## R305 · Three sources, same rows
+- **Claim:** The List sheet, Corner Shop sales.csv and the 12 files in the Monthly folder each give 240 sales rows worth 6325.
+- **Source:** My own work: datasets/excel-power-query/make.py writes the file from the 240 beginner sales, and answers.json records rows: 240 and total_amount: 6325 for list, csv and monthly (files: 12), replayed in Python on 2026-10-15.
+- **Kind:** measurement
+- **Retrieved:** 2026-10-15
+- **For:** Practice: Bringing Data In
+- **Status:** new
+- **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
+
+---
+
+## R306 · North rows and total
+- **Claim:** Filtered to North, the clean sales list has 107 rows worth 2756.
+- **Source:** My own work: datasets/excel-beginner/answers.json records rows_per_region North: 107 and amount_by_region North: 2756, the same 240 sales, checked on 2026-10-15.
+- **Kind:** measurement
+- **Retrieved:** 2026-10-15
+- **For:** Practice: Narrowing the List
+- **Status:** new
+- **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
+
+---
+
+## R307 · Wide report unpivots to 48 rows
+- **Claim:** Unpivoting the Wide sheet (4 regions, 12 month columns) gives 48 rows worth 6325, and January 2025 totals 451.
+- **Source:** My own work: datasets/excel-power-query/make.py writes the file from the 240 beginner sales, and answers.json records wide rows_after_unpivot: 48, total_amount: 6325 and amount_by_month Jan: 451, replayed in Python and in Excel's Power Query engine on 2026-10-15.
+- **Kind:** measurement
+- **Retrieved:** 2026-10-15
+- **For:** Practice: Reshaping a Report
+- **Status:** new
+- **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
+
+---
+
+## R308 · January and February appended
+- **Claim:** Appending the January (16 rows) and February (15 rows) files gives 31 rows worth 826.
+- **Source:** My own work: datasets/excel-power-query/make.py writes the file from the 240 beginner sales, and answers.json records jan_feb_with_products january_rows: 16, february_rows: 15, appended_rows: 31, appended_amount: 826, replayed in Python on 2026-10-15.
+- **Kind:** measurement
+- **Retrieved:** 2026-10-15
+- **For:** Practice: Combining Two Lists
+- **Status:** new
+- **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
+
+---
+
+## R309 · Merging with Products
+- **Claim:** Merging those 31 rows with the Products sheet keeps 31 rows with a left outer join, 6 of them Plant with no category; an inner join keeps 25 rows worth 571.
+- **Source:** My own work: datasets/excel-power-query/make.py writes the file from the 240 beginner sales, and answers.json records left_outer_rows: 31, left_outer_rows_with_no_category: 6, inner_rows: 25, inner_amount: 571, replayed in Python on 2026-10-15.
+- **Kind:** measurement
+- **Retrieved:** 2026-10-15
+- **For:** Practice: Combining Two Lists
+- **Status:** new
+- **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
+
+---
+
+## R310 · Messy folder cleans to 240 rows
+- **Claim:** Combining the 12 files in Monthly messy, after removing 2 top rows and the Total rows, gives 240 rows worth 6325; keeping the Total rows gives 252 rows and 12650.
+- **Source:** My own work: datasets/excel-power-query/make.py writes the file from the 240 beginner sales, and answers.json records monthly_messy rows_after_cleaning: 240, total_after_cleaning: 6325, rows_if_total_rows_are_kept: 252, amount_if_total_rows_are_kept: 12650, replayed in Python and in Excel's Power Query engine on 2026-10-15.
+- **Kind:** measurement
+- **Retrieved:** 2026-10-15
+- **For:** Practice: Monthly Messy Files
+- **Status:** new
+- **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
+
+---
+
+## R311 · Report sheet cleans to 150 rows
+- **Claim:** The Report sheet has 20 product rows once the titles, subtotals, blank rows and Grand total are removed, and unpivoting the months gives 150 rows worth 6325.
+- **Source:** My own work: datasets/excel-power-query/make.py writes the file from the 240 beginner sales, and answers.json records report rows_after_removing_junk: 20, rows_after_unpivot: 150, grand_total: 6325, replayed in Python on 2026-10-15.
+- **Kind:** measurement
+- **Retrieved:** 2026-10-15
+- **For:** Practice: Someone Else's Report
+- **Status:** new
+- **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
+
+---
+
+## R312 · Year-end CSV cleans to 240 rows
+- **Claim:** Year-end export.csv has 243 sale lines, 3 of them repeats (S0039, S0056, S0067), and cleans to 240 rows worth 6325, North 2756, South 1256, East 839, West 1474.
+- **Source:** My own work: datasets/excel-power-query/make.py writes the file from the 240 beginner sales, and answers.json records year_end_csv sale_lines_with_duplicates: 243, rows_after_cleaning: 240, total_after_cleaning: 6325, replayed in Python on 2026-10-15; the semicolon split was checked in Excel's Power Query engine.
+- **Kind:** measurement
+- **Retrieved:** 2026-10-15
+- **For:** Practice: Messy File to PivotTable
+- **Status:** new
+- **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
+
+---
