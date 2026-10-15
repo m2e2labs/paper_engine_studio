@@ -451,7 +451,7 @@ Check each against the real menu before the page is written.
 ## Part 7 · Keeping it working
 
 #### Refreshing a Query
-- **What:** New data in the source doesn't appear until the query refreshes. Right-click the result and choose Refresh, or use Data, Refresh All.
+- **What:** New data in the source doesn't appear until the query refreshes. Select a cell in the result and choose Query, Refresh, or right-click the query in Queries & Connections and choose Refresh. Data, Refresh All (Ctrl+Alt+F5) refreshes everything. Give no shortcut for one query: Microsoft's pages disagree about Ctrl+F5 and Alt+F5.
 - **Use when:** the reader's result looks out of date. **Skip when:** it is current.
 - **Action:** "Add a row to the source and refresh the query."
 - **Band:** diagram (a new row in the source arriving after a refresh)

@@ -3565,3 +3565,39 @@ in seconds. It is never printed: the book says things in its own words.
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
+
+## R297 · Query commands are on a right-click menu
+- **Claim:** The query commands, Refresh among them, appear on the right-click menu of a query on the Queries tab of the Queries & Connections pane.
+- **Source:** Microsoft Support, "Manage queries (Power Query)": https://support.microsoft.com/en-us/excel/manage-queries-power-query
+- **Quote:** "listed in the order they are displayed on their respective context menus of the Queries tab"
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Refreshing a Query
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R298 · Refresh in Queries & Connections
+- **Claim:** Refresh in the Queries & Connections pane brings in up-to-date data from the source, and is only offered on that pane, not in the editor.
+- **Source:** Microsoft Support, "Manage queries (Power Query)": https://support.microsoft.com/en-us/excel/manage-queries-power-query
+- **Quote:** "Refresh Brings in up-to-date data from external data sources. Only available on the Queries tab of the Queries & Connections pane."
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Refreshing a Query
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R299 · Mac: right-click the table, Refresh
+- **Claim:** In Excel for Mac, to refresh one query, right-click its table on the sheet and choose Refresh.
+- **Source:** Microsoft Support, "Import and shape data in Excel for Mac (Power Query)": https://support.microsoft.com/en-us/excel/import-and-shape-data-in-excel-for-mac-power-query
+- **Quote:** "right click a query table on a sheet, and then select Refresh"
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Refreshing a Query
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
