@@ -3601,3 +3601,51 @@ in seconds. It is never printed: the book says things in its own words.
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
+
+## R300 · Esc stops a refresh
+- **Claim:** Pressing Esc stops a refresh that is running.
+- **Source:** Microsoft Support, "Keyboard shortcuts in Excel": https://support.microsoft.com/en-us/accessibility/excel/keyboard-shortcuts-in-excel
+- **Quote:** "Stop a refresh operation. Esc"
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Refreshing a Query
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R301 · Ctrl+Alt+F5 or Refresh All updates everything
+- **Claim:** Ctrl+Alt+F5, or Data, Refresh All, updates all the data in the workbook.
+- **Source:** Microsoft Support, "Refresh an external data connection in Excel": https://support.microsoft.com/en-us/excel/refresh-an-external-data-connection-in-excel
+- **Quote:** "Update all data in the workbook Press CTRL+ALT+F5 , or on the Data tab, in the Connections group, click Refresh All ."
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Refreshing a Query
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R302 · US: copyright does not protect facts
+- **Claim:** In the United States, copyright does not protect facts themselves, only original works of authorship.
+- **Source:** U.S. Copyright Office, "What Does Copyright Protect? (FAQ)": https://www.copyright.gov/help/faq/faq-protect.html
+- **Quote:** "Copyright does not protect facts"
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Importing a Table From a Web Page
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R303 · UK: database right
+- **Claim:** In the UK, a database can carry its own "database right" when substantial investment went into obtaining, verifying or presenting its contents, separate from copyright.
+- **Source:** legislation.gov.uk, "The Copyright and Rights in Databases Regulations 1997, regulation 13": https://www.legislation.gov.uk/uksi/1997/3032/regulation/13
+- **Quote:** "subsists, in accordance with this Part, in a database if there has been a substantial investment in obtaining, verifying or presenting the contents"
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Importing a Table From a Web Page
+- **Status:** new
+- **Verified:** 2026-10-15, quote found on the page
+
+---

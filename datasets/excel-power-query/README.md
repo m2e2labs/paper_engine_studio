@@ -66,5 +66,9 @@ On 2026-10-15 the files were run through Excel's own Power Query engine (Excel 1
   dropping the `Total` rows gives 240 rows and 6325, with the region totals above once
   Region is trimmed.
 
-Not tested: whether From Text/CSV's dialog detects the semicolon by itself (the script set
-it), and anything that depends on the editor's buttons rather than the M they write.
+- **Delimiter detection:** `Binary.InferContentType` on the CSV, Power Query's own file
+  analysis, reports `text/csv`, encoding 65001 (UTF-8), and of the delimiters it tries only
+  the semicolon splits the file (8 columns; comma and tab give 1).
+
+Not tested: the From Text/CSV dialog itself, and anything else that depends on the editor's
+buttons rather than the M they write.
