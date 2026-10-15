@@ -21,7 +21,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Cleaning the Same Data Every Week
-- **Status:** new
+- **Status:** accepted as F1, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -33,7 +33,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Cleaning the Same Data Every Week
-- **Status:** new
+- **Status:** accepted as F2, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -45,7 +45,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Cleaning the Same Data Every Week
-- **Status:** new
+- **Status:** accepted as F3, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -57,7 +57,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** What Power Query Does in Excel
-- **Status:** new
+- **Status:** accepted as F4, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -69,7 +69,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** What Power Query Does in Excel
-- **Status:** new
+- **Status:** accepted as F5, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -81,7 +81,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** What Power Query Does in Excel
-- **Status:** new
+- **Status:** accepted as F6, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -93,7 +93,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** What Power Query Does in Excel
-- **Status:** new
+- **Status:** accepted as F7, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -105,7 +105,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** What Power Query Does in Excel
-- **Status:** new
+- **Status:** accepted as F8, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -117,7 +117,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** What Power Query Does in Excel
-- **Status:** new
+- **Status:** accepted as F9, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -129,7 +129,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding Get & Transform on the Ribbon
-- **Status:** new
+- **Status:** accepted as F10, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -141,7 +141,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding Get & Transform on the Ribbon
-- **Status:** new
+- **Status:** accepted as F11, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -153,7 +153,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding Get & Transform on the Ribbon
-- **Status:** new
+- **Status:** accepted as F12, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -165,7 +165,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding Get & Transform on the Ribbon
-- **Status:** new
+- **Status:** accepted as F13, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -177,7 +177,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding Get & Transform on the Ribbon
-- **Status:** new
+- **Status:** accepted as F14, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -189,7 +189,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding Get & Transform on the Ribbon
-- **Status:** new
+- **Status:** accepted as F15, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -201,7 +201,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding Get & Transform on the Ribbon
-- **Status:** new
+- **Status:** accepted as F16, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -213,7 +213,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Turning a List Into an Excel Table
-- **Status:** new
+- **Status:** accepted as F17, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -225,7 +225,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Turning a List Into an Excel Table
-- **Status:** new
+- **Status:** accepted as F18, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -237,7 +237,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Turning a List Into an Excel Table
-- **Status:** new
+- **Status:** accepted as F19, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -249,7 +249,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Turning a List Into an Excel Table
-- **Status:** new
+- **Status:** accepted as F20, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -261,7 +261,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Turning a List Into an Excel Table
-- **Status:** new
+- **Status:** accepted as F21, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -273,7 +273,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Turning a List Into an Excel Table
-- **Status:** new
+- **Status:** accepted as F22, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -285,7 +285,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Your First Query From a Table
-- **Status:** new
+- **Status:** accepted as F23, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -297,7 +297,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Your First Query From a Table; Turning a List Into an Excel Table
-- **Status:** new
+- **Status:** accepted as F24, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -309,7 +309,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Your First Query From a Table
-- **Status:** new
+- **Status:** accepted as F25, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -321,7 +321,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Your First Query From a Table
-- **Status:** new
+- **Status:** accepted as F26, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -333,7 +333,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding Your Way Around the Editor
-- **Status:** new
+- **Status:** accepted as F27, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -345,7 +345,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding Your Way Around the Editor
-- **Status:** new
+- **Status:** accepted as F28, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -357,7 +357,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding Your Way Around the Editor
-- **Status:** new
+- **Status:** accepted as F29, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -369,7 +369,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding Your Way Around the Editor
-- **Status:** new
+- **Status:** accepted as F30, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -381,7 +381,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding Your Way Around the Editor; Practice: Your First Query
-- **Status:** new
+- **Status:** accepted as F31, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -393,7 +393,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** How Excel Records Your Steps
-- **Status:** new
+- **Status:** accepted as F32, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -405,7 +405,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** How Excel Records Your Steps
-- **Status:** new
+- **Status:** accepted as F33, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -417,7 +417,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** How Excel Records Your Steps
-- **Status:** new
+- **Status:** accepted as F34, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -429,7 +429,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** How Excel Records Your Steps
-- **Status:** new
+- **Status:** accepted as F35, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -441,7 +441,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** How Excel Records Your Steps
-- **Status:** new
+- **Status:** accepted as F36, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -453,7 +453,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Loading the Result to a Sheet
-- **Status:** new
+- **Status:** accepted as F37, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -465,7 +465,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Loading the Result to a Sheet
-- **Status:** new
+- **Status:** accepted as F38, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -477,7 +477,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Loading the Result to a Sheet
-- **Status:** new
+- **Status:** accepted as F39, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -489,7 +489,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Loading the Result to a Sheet
-- **Status:** new
+- **Status:** accepted as F40, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -501,7 +501,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Loading the Result to a Sheet
-- **Status:** new
+- **Status:** accepted as F41, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -513,7 +513,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Importing From Another Workbook
-- **Status:** new
+- **Status:** accepted as F42, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -525,7 +525,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Importing From Another Workbook
-- **Status:** new
+- **Status:** accepted as F43, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -537,7 +537,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Importing a CSV or Text File
-- **Status:** new
+- **Status:** accepted as F44, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -549,7 +549,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Importing a CSV or Text File
-- **Status:** new
+- **Status:** accepted as F45, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -561,7 +561,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Importing a CSV or Text File
-- **Status:** new
+- **Status:** accepted as F46, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -573,7 +573,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Importing a CSV or Text File
-- **Status:** new
+- **Status:** accepted as F47, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -585,7 +585,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Importing a CSV or Text File; Load to a Sheet, or Only Connect
-- **Status:** new
+- **Status:** accepted as F48, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -597,7 +597,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Importing a CSV or Text File; Setting the Kind of Data Early
-- **Status:** new
+- **Status:** accepted as F49, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -609,7 +609,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Choosing What to Load in the Navigator
-- **Status:** new
+- **Status:** accepted as F50, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -621,7 +621,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Choosing What to Load in the Navigator
-- **Status:** new
+- **Status:** accepted as F51, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -633,7 +633,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Choosing What to Load in the Navigator
-- **Status:** new
+- **Status:** accepted as F52, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -645,7 +645,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Choosing What to Load in the Navigator
-- **Status:** new
+- **Status:** accepted as F53, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -657,7 +657,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Choosing What to Load in the Navigator
-- **Status:** new
+- **Status:** accepted as F54, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -669,7 +669,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Many Files in One Folder, One Table
-- **Status:** new
+- **Status:** accepted as F55, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -681,7 +681,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Many Files in One Folder, One Table
-- **Status:** new
+- **Status:** accepted as F56, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -693,7 +693,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Many Files in One Folder, One Table
-- **Status:** new
+- **Status:** accepted as F57, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -705,7 +705,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Many Files in One Folder, One Table
-- **Status:** new
+- **Status:** accepted as F58, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -717,7 +717,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Many Files in One Folder, One Table
-- **Status:** new
+- **Status:** accepted as F59, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -729,7 +729,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Many Files in One Folder, One Table
-- **Status:** new
+- **Status:** accepted as F60, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -741,7 +741,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Many Files in One Folder, One Table
-- **Status:** new
+- **Status:** accepted as F61, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -753,7 +753,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Many Files in One Folder, One Table
-- **Status:** new
+- **Status:** accepted as F62, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -765,7 +765,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Importing a Table From a Web Page
-- **Status:** new
+- **Status:** accepted as F63, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -777,7 +777,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Importing a Table From a Web Page
-- **Status:** new
+- **Status:** accepted as F64, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -789,7 +789,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Importing a Table From a Web Page
-- **Status:** new
+- **Status:** accepted as F65, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -801,7 +801,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Setting the Kind of Data Early
-- **Status:** new
+- **Status:** accepted as F66, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -813,7 +813,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Setting the Kind of Data Early
-- **Status:** new
+- **Status:** accepted as F67, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -825,7 +825,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Setting the Kind of Data Early
-- **Status:** new
+- **Status:** accepted as F68, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -837,7 +837,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Setting the Kind of Data Early
-- **Status:** new
+- **Status:** accepted as F69, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -849,7 +849,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Setting the Kind of Data Early
-- **Status:** new
+- **Status:** accepted as F70, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -861,7 +861,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Setting the Kind of Data Early
-- **Status:** new
+- **Status:** accepted as F71, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -873,7 +873,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Dates That Arrive as Text
-- **Status:** new
+- **Status:** accepted as F72, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -885,7 +885,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Dates That Arrive as Text
-- **Status:** new
+- **Status:** accepted as F73, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -897,7 +897,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Dates That Arrive as Text
-- **Status:** new
+- **Status:** accepted as F74, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -909,7 +909,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Dates That Arrive as Text
-- **Status:** new
+- **Status:** accepted as F75, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -921,7 +921,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Numbers That Arrive as Text
-- **Status:** new
+- **Status:** accepted as F76, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -933,7 +933,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Numbers That Arrive as Text
-- **Status:** new
+- **Status:** accepted as F77, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -945,7 +945,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Numbers That Arrive as Text
-- **Status:** new
+- **Status:** accepted as F78, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -957,7 +957,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Load to a Sheet, or Only Connect
-- **Status:** new
+- **Status:** accepted as F79, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -969,7 +969,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Load to a Sheet, or Only Connect
-- **Status:** new
+- **Status:** accepted as F80, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -981,7 +981,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Load to a Sheet, or Only Connect
-- **Status:** new
+- **Status:** accepted as F81, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -993,7 +993,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Load to a Sheet, or Only Connect
-- **Status:** new
+- **Status:** accepted as F82, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1005,7 +1005,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Load to a Sheet, or Only Connect
-- **Status:** new
+- **Status:** accepted as F83, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1017,7 +1017,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Load to a Sheet, or Only Connect
-- **Status:** new
+- **Status:** accepted as F84, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1029,7 +1029,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Using the First Row as Headers
-- **Status:** new
+- **Status:** accepted as F85, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1041,7 +1041,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Using the First Row as Headers
-- **Status:** new
+- **Status:** accepted as F86, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1053,7 +1053,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Using the First Row as Headers
-- **Status:** new
+- **Status:** accepted as F87, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1065,7 +1065,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Using the First Row as Headers
-- **Status:** new
+- **Status:** accepted as F88, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1077,7 +1077,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Using the First Row as Headers
-- **Status:** new
+- **Status:** accepted as F89, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1089,7 +1089,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Removing Junk Rows at the Top
-- **Status:** new
+- **Status:** accepted as F90, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1101,7 +1101,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Removing Junk Rows at the Top; Using the First Row as Headers
-- **Status:** new
+- **Status:** accepted as F91, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1113,7 +1113,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Removing Junk Rows at the Top
-- **Status:** new
+- **Status:** accepted as F92, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1125,7 +1125,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Removing Junk Rows at the Top
-- **Status:** new
+- **Status:** accepted as F93, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1137,7 +1137,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Removing Blank Rows
-- **Status:** new
+- **Status:** accepted as F94, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1149,7 +1149,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Removing Blank Rows
-- **Status:** new
+- **Status:** accepted as F95, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1161,7 +1161,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Removing Blank Rows
-- **Status:** new
+- **Status:** accepted as F96, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1173,7 +1173,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Choosing Which Columns to Keep
-- **Status:** new
+- **Status:** accepted as F97, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1185,7 +1185,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Choosing Which Columns to Keep
-- **Status:** new
+- **Status:** accepted as F98, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1197,7 +1197,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Choosing Which Columns to Keep
-- **Status:** new
+- **Status:** accepted as F99, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1209,7 +1209,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Choosing Which Columns to Keep
-- **Status:** new
+- **Status:** accepted as F100, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1221,7 +1221,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Renaming Columns
-- **Status:** new
+- **Status:** accepted as F101, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1233,7 +1233,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Renaming Columns
-- **Status:** new
+- **Status:** accepted as F102, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1245,7 +1245,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Renaming Columns
-- **Status:** new
+- **Status:** accepted as F103, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1257,7 +1257,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Renaming Columns; When a Heading Was Renamed
-- **Status:** new
+- **Status:** accepted as F104, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1269,7 +1269,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Trimming Stray Spaces; Fixing Capital Letters
-- **Status:** new
+- **Status:** accepted as F105, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1281,7 +1281,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Trimming Stray Spaces; Fixing Capital Letters
-- **Status:** new
+- **Status:** accepted as F106, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1293,7 +1293,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Trimming Stray Spaces
-- **Status:** new
+- **Status:** accepted as F107, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1305,7 +1305,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Trimming Stray Spaces
-- **Status:** new
+- **Status:** accepted as F108, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1317,7 +1317,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Trimming Stray Spaces; Replacing Values
-- **Status:** new
+- **Status:** accepted as F109, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1329,7 +1329,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Fixing Capital Letters
-- **Status:** new
+- **Status:** accepted as F110, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1341,7 +1341,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Fixing Capital Letters
-- **Status:** new
+- **Status:** accepted as F111, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1353,7 +1353,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Fixing Capital Letters
-- **Status:** new
+- **Status:** accepted as F112, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1365,7 +1365,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Replacing Values
-- **Status:** new
+- **Status:** accepted as F113, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1377,7 +1377,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Replacing Values
-- **Status:** new
+- **Status:** accepted as F114, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1389,7 +1389,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Replacing Values
-- **Status:** new
+- **Status:** accepted as F115, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1401,7 +1401,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Replacing Values
-- **Status:** new
+- **Status:** accepted as F116, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1413,7 +1413,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Dropping Repeated Rows
-- **Status:** new
+- **Status:** accepted as F117, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1425,7 +1425,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Dropping Repeated Rows
-- **Status:** new
+- **Status:** accepted as F118, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1437,7 +1437,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Dropping Repeated Rows; Fixing Capital Letters
-- **Status:** new
+- **Status:** accepted as F119, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1449,7 +1449,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Filling Down Empty Cells
-- **Status:** new
+- **Status:** accepted as F120, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1461,7 +1461,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Filling Down Empty Cells
-- **Status:** new
+- **Status:** accepted as F121, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1473,7 +1473,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Filling Down Empty Cells; Replacing Values
-- **Status:** new
+- **Status:** accepted as F122, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1485,7 +1485,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Practice: A Clean Sales List; Practice: Your First Query
-- **Status:** new
+- **Status:** accepted as F123, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1497,7 +1497,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Practice: A Clean Sales List; Removing Blank Rows
-- **Status:** new
+- **Status:** accepted as F124, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1509,7 +1509,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Practice: A Clean Sales List
-- **Status:** new
+- **Status:** accepted as F125, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1521,7 +1521,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Filtering Rows in the Editor
-- **Status:** new
+- **Status:** accepted as F126, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1533,7 +1533,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Filtering Rows in the Editor
-- **Status:** new
+- **Status:** accepted as F127, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1545,7 +1545,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Filtering Rows in the Editor
-- **Status:** new
+- **Status:** accepted as F128, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1557,7 +1557,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Filtering Rows in the Editor
-- **Status:** new
+- **Status:** accepted as F129, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1569,7 +1569,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Filtering Rows in the Editor
-- **Status:** new
+- **Status:** accepted as F130, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1581,7 +1581,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Filtering by Text, Number and Date
-- **Status:** new
+- **Status:** accepted as F131, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1593,7 +1593,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Filtering by Text, Number and Date
-- **Status:** new
+- **Status:** accepted as F132, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1605,7 +1605,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Filtering by Text, Number and Date
-- **Status:** new
+- **Status:** accepted as F133, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1617,7 +1617,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Filtering by Text, Number and Date
-- **Status:** new
+- **Status:** accepted as F134, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1629,7 +1629,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Filtering by Text, Number and Date
-- **Status:** new
+- **Status:** accepted as F135, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1641,7 +1641,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Keeping the Top Rows
-- **Status:** new
+- **Status:** accepted as F136, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1653,7 +1653,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Keeping the Top Rows
-- **Status:** new
+- **Status:** accepted as F137, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1665,7 +1665,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Keeping the Top Rows
-- **Status:** new
+- **Status:** accepted as F138, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1677,7 +1677,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Keeping the Top Rows
-- **Status:** new
+- **Status:** accepted as F139, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1689,7 +1689,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Sorting Inside a Query
-- **Status:** new
+- **Status:** accepted as F140, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1701,7 +1701,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Sorting Inside a Query
-- **Status:** new
+- **Status:** accepted as F141, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1713,7 +1713,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Sorting Inside a Query
-- **Status:** new
+- **Status:** accepted as F142, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1725,7 +1725,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Sorting Inside a Query
-- **Status:** new
+- **Status:** accepted as F143, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1737,7 +1737,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding and Removing Errors
-- **Status:** new
+- **Status:** accepted as F144, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1749,7 +1749,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding and Removing Errors
-- **Status:** new
+- **Status:** accepted as F145, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1761,7 +1761,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding and Removing Errors
-- **Status:** new
+- **Status:** accepted as F146, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1773,7 +1773,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding and Removing Errors
-- **Status:** new
+- **Status:** accepted as F147, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1785,7 +1785,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding and Removing Errors
-- **Status:** new
+- **Status:** accepted as F148, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1797,7 +1797,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Finding and Removing Errors
-- **Status:** new
+- **Status:** accepted as F149, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1809,7 +1809,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding an Index Column
-- **Status:** new
+- **Status:** accepted as F150, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1821,7 +1821,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding an Index Column
-- **Status:** new
+- **Status:** accepted as F151, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1833,7 +1833,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding an Index Column
-- **Status:** new
+- **Status:** accepted as F152, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1845,7 +1845,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding an Index Column
-- **Status:** new
+- **Status:** accepted as F153, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1857,7 +1857,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Splitting a Column at a Delimiter
-- **Status:** new
+- **Status:** accepted as F154, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1869,7 +1869,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Splitting a Column at a Delimiter
-- **Status:** new
+- **Status:** accepted as F155, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1881,7 +1881,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Splitting a Column at a Delimiter; Splitting a Column by Length
-- **Status:** new
+- **Status:** accepted as F156, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1893,7 +1893,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Splitting a Column at a Delimiter; Merging Columns Into One
-- **Status:** new
+- **Status:** accepted as F157, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1905,7 +1905,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Splitting a Column by Length
-- **Status:** new
+- **Status:** accepted as F158, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1917,7 +1917,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Splitting a Column by Length
-- **Status:** new
+- **Status:** accepted as F159, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1929,7 +1929,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Splitting a Column by Length
-- **Status:** new
+- **Status:** accepted as F160, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1941,7 +1941,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Pulling Out Text Before or After
-- **Status:** new
+- **Status:** accepted as F161, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1953,7 +1953,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Merging Columns Into One
-- **Status:** new
+- **Status:** accepted as F162, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1965,7 +1965,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Merging Columns Into One
-- **Status:** new
+- **Status:** accepted as F163, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1977,7 +1977,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Merging Columns Into One
-- **Status:** new
+- **Status:** accepted as F164, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -1989,7 +1989,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Merging Columns Into One
-- **Status:** new
+- **Status:** accepted as F165, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2001,7 +2001,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Merging Columns Into One; Adding a Custom Column
-- **Status:** new
+- **Status:** accepted as F166, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2013,7 +2013,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding a Column From Examples
-- **Status:** new
+- **Status:** accepted as F167, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2025,7 +2025,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding a Column From Examples
-- **Status:** new
+- **Status:** accepted as F168, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2037,7 +2037,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding a Column From Examples
-- **Status:** new
+- **Status:** accepted as F169, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2049,7 +2049,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding a Column From Examples
-- **Status:** new
+- **Status:** accepted as F170, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2061,7 +2061,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding a Column From Examples
-- **Status:** new
+- **Status:** accepted as F171, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2073,7 +2073,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding a Custom Column
-- **Status:** new
+- **Status:** accepted as F172, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2085,7 +2085,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding a Custom Column
-- **Status:** new
+- **Status:** accepted as F173, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2097,7 +2097,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding a Custom Column
-- **Status:** new
+- **Status:** accepted as F174, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2109,7 +2109,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding a Custom Column; Reading the Code Behind a Step
-- **Status:** new
+- **Status:** accepted as F175, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2121,7 +2121,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding a Custom Column
-- **Status:** new
+- **Status:** accepted as F176, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2133,7 +2133,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding a Conditional Column
-- **Status:** new
+- **Status:** accepted as F177, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2145,7 +2145,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding a Conditional Column
-- **Status:** new
+- **Status:** accepted as F178, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2157,7 +2157,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding a Conditional Column
-- **Status:** new
+- **Status:** accepted as F179, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2169,7 +2169,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Adding a Conditional Column
-- **Status:** new
+- **Status:** accepted as F180, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2181,7 +2181,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Pulling Year and Month From a Date
-- **Status:** new
+- **Status:** accepted as F181, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2193,7 +2193,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Pulling Year and Month From a Date
-- **Status:** new
+- **Status:** accepted as F182, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2205,7 +2205,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Pulling Year and Month From a Date
-- **Status:** new
+- **Status:** accepted as F183, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2217,7 +2217,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Unpivoting Columns Into Rows
-- **Status:** new
+- **Status:** accepted as F184, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2229,7 +2229,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Unpivoting Columns Into Rows
-- **Status:** new
+- **Status:** accepted as F185, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2241,7 +2241,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Unpivoting Columns Into Rows
-- **Status:** new
+- **Status:** accepted as F186, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2253,7 +2253,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Unpivoting Columns Into Rows
-- **Status:** new
+- **Status:** accepted as F187, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2265,7 +2265,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Unpivoting Columns Into Rows
-- **Status:** new
+- **Status:** accepted as F188, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2277,7 +2277,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Pivoting Rows Into Columns
-- **Status:** new
+- **Status:** accepted as F189, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2289,7 +2289,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Pivoting Rows Into Columns
-- **Status:** new
+- **Status:** accepted as F190, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2301,7 +2301,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Pivoting Rows Into Columns
-- **Status:** new
+- **Status:** accepted as F191, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2313,7 +2313,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Transposing a Table
-- **Status:** new
+- **Status:** accepted as F192, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2325,7 +2325,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Transposing a Table
-- **Status:** new
+- **Status:** accepted as F193, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2337,7 +2337,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Grouping and Summarising Rows
-- **Status:** new
+- **Status:** accepted as F194, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2349,7 +2349,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Grouping and Summarising Rows
-- **Status:** new
+- **Status:** accepted as F195, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2361,7 +2361,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Grouping and Summarising Rows
-- **Status:** new
+- **Status:** accepted as F196, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2373,7 +2373,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Stacking or Joining: Which Do You Need
-- **Status:** new
+- **Status:** accepted as F197, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2385,7 +2385,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Stacking or Joining: Which Do You Need
-- **Status:** new
+- **Status:** accepted as F198, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2397,7 +2397,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Appending Tables One Under Another
-- **Status:** new
+- **Status:** accepted as F199, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2409,7 +2409,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Appending Tables One Under Another
-- **Status:** new
+- **Status:** accepted as F200, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2421,7 +2421,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Appending Tables One Under Another
-- **Status:** new
+- **Status:** accepted as F201, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2433,7 +2433,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Merging Tables Side by Side
-- **Status:** new
+- **Status:** accepted as F202, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2445,7 +2445,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Merging Tables Side by Side
-- **Status:** new
+- **Status:** accepted as F203, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2457,7 +2457,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Merging Tables Side by Side; Checking a Combined Result
-- **Status:** new
+- **Status:** accepted as F204, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2469,7 +2469,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Merging Tables Side by Side
-- **Status:** new
+- **Status:** accepted as F205, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2481,7 +2481,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Merging Tables Side by Side; Looking Up a Value With a Merge
-- **Status:** new
+- **Status:** accepted as F206, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2493,7 +2493,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** The Join Kinds in Plain Words
-- **Status:** new
+- **Status:** accepted as F207, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2505,7 +2505,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** The Join Kinds in Plain Words
-- **Status:** new
+- **Status:** accepted as F208, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2517,7 +2517,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** The Join Kinds in Plain Words
-- **Status:** new
+- **Status:** accepted as F209, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2529,7 +2529,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** The Join Kinds in Plain Words; Checking a Combined Result
-- **Status:** new
+- **Status:** accepted as F210, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2553,7 +2553,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** The Join Kinds in Plain Words; Looking Up a Value With a Merge
-- **Status:** new
+- **Status:** accepted as F211, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2565,7 +2565,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Looking Up a Value With a Merge
-- **Status:** new
+- **Status:** accepted as F212, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2577,7 +2577,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Looking Up a Value With a Merge
-- **Status:** new
+- **Status:** accepted as F213, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2589,7 +2589,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Duplicating or Referencing a Query
-- **Status:** new
+- **Status:** accepted as F214, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2601,7 +2601,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Duplicating or Referencing a Query
-- **Status:** new
+- **Status:** accepted as F215, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2613,7 +2613,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Duplicating or Referencing a Query
-- **Status:** new
+- **Status:** accepted as F216, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2625,7 +2625,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Duplicating or Referencing a Query
-- **Status:** new
+- **Status:** accepted as F217, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2637,7 +2637,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Checking a Combined Result
-- **Status:** new
+- **Status:** accepted as F218, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2649,7 +2649,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Checking a Combined Result
-- **Status:** new
+- **Status:** accepted as F219, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2661,7 +2661,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing a Query
-- **Status:** new
+- **Status:** accepted as F220, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2685,7 +2685,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing a Query
-- **Status:** new
+- **Status:** accepted as F221, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2697,7 +2697,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing a Query
-- **Status:** new
+- **Status:** accepted as F222, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2709,7 +2709,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing a Query
-- **Status:** new
+- **Status:** accepted as F223, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2721,7 +2721,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing When the File Opens
-- **Status:** new
+- **Status:** accepted as F224, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2733,7 +2733,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing When the File Opens
-- **Status:** new
+- **Status:** accepted as F225, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2745,7 +2745,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing When the File Opens
-- **Status:** new
+- **Status:** accepted as F226, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2757,7 +2757,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing When the File Opens
-- **Status:** new
+- **Status:** accepted as F227, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2769,7 +2769,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** How Queries Depend on Each Other
-- **Status:** new
+- **Status:** accepted as F228, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2781,7 +2781,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** How Queries Depend on Each Other
-- **Status:** new
+- **Status:** accepted as F229, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2793,7 +2793,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** How Queries Depend on Each Other
-- **Status:** new
+- **Status:** accepted as F230, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2805,7 +2805,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Naming Steps and Queries Clearly
-- **Status:** new
+- **Status:** accepted as F231, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2817,7 +2817,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Naming Steps and Queries Clearly
-- **Status:** new
+- **Status:** accepted as F232, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2829,7 +2829,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Naming Steps and Queries Clearly
-- **Status:** new
+- **Status:** accepted as F233, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2841,7 +2841,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Naming Steps and Queries Clearly
-- **Status:** new
+- **Status:** accepted as F234, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2853,7 +2853,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Editing or Deleting an Earlier Step
-- **Status:** new
+- **Status:** accepted as F235, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2865,7 +2865,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Editing or Deleting an Earlier Step
-- **Status:** new
+- **Status:** accepted as F236, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2877,7 +2877,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Editing or Deleting an Earlier Step
-- **Status:** new
+- **Status:** accepted as F237, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2889,7 +2889,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Editing or Deleting an Earlier Step
-- **Status:** new
+- **Status:** accepted as F238, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2901,7 +2901,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Editing or Deleting an Earlier Step
-- **Status:** new
+- **Status:** accepted as F239, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2913,7 +2913,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** When a Step Shows an Error
-- **Status:** new
+- **Status:** accepted as F240, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2925,7 +2925,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** When a Step Shows an Error
-- **Status:** new
+- **Status:** accepted as F241, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2937,7 +2937,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** When a Step Shows an Error
-- **Status:** new
+- **Status:** accepted as F242, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2949,7 +2949,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** When a Step Shows an Error; When a Heading Was Renamed
-- **Status:** new
+- **Status:** accepted as F243, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2961,7 +2961,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** When a Heading Was Renamed
-- **Status:** new
+- **Status:** accepted as F244, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2973,7 +2973,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** When a Heading Was Renamed
-- **Status:** new
+- **Status:** accepted as F245, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2985,7 +2985,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** When a Heading Was Renamed
-- **Status:** new
+- **Status:** accepted as F246, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -2997,7 +2997,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** When the File Has Moved
-- **Status:** new
+- **Status:** accepted as F247, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3009,7 +3009,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** When the File Has Moved
-- **Status:** new
+- **Status:** accepted as F248, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3021,7 +3021,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** When the File Has Moved
-- **Status:** new
+- **Status:** accepted as F249, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3033,7 +3033,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** When the File Has Moved
-- **Status:** new
+- **Status:** accepted as F250, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3045,7 +3045,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Using a Parameter for the File Path
-- **Status:** new
+- **Status:** accepted as F251, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3057,7 +3057,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Using a Parameter for the File Path
-- **Status:** new
+- **Status:** accepted as F252, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3069,7 +3069,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Using a Parameter for the File Path
-- **Status:** new
+- **Status:** accepted as F253, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3081,7 +3081,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Using a Parameter for the File Path
-- **Status:** new
+- **Status:** accepted as F254, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3093,7 +3093,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Using a Parameter for the File Path
-- **Status:** new
+- **Status:** accepted as F255, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3105,7 +3105,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Practice: Breaking and Fixing a Query
-- **Status:** new
+- **Status:** accepted as F256, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3117,7 +3117,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Loading a Query Into a PivotTable
-- **Status:** new
+- **Status:** accepted as F257, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3129,7 +3129,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Loading a Query Into a PivotTable
-- **Status:** new
+- **Status:** accepted as F258, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3141,7 +3141,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Loading a Query Into a PivotTable
-- **Status:** new
+- **Status:** accepted as F259, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3153,7 +3153,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Loading to the Data Model
-- **Status:** new
+- **Status:** accepted as F260, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3165,7 +3165,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Loading to the Data Model
-- **Status:** new
+- **Status:** accepted as F261, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3177,7 +3177,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Loading to the Data Model
-- **Status:** new
+- **Status:** accepted as F262, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3189,7 +3189,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Loading to the Data Model
-- **Status:** new
+- **Status:** accepted as F263, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3201,7 +3201,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Loading to the Data Model
-- **Status:** new
+- **Status:** accepted as F264, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3213,7 +3213,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Reading the Code Behind a Step
-- **Status:** new
+- **Status:** accepted as F265, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3225,7 +3225,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Reading the Code Behind a Step
-- **Status:** new
+- **Status:** accepted as F266, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3237,7 +3237,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Reading the Code Behind a Step
-- **Status:** new
+- **Status:** accepted as F267, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3249,7 +3249,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Reading the Code Behind a Step
-- **Status:** new
+- **Status:** accepted as F268, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3261,7 +3261,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Opening the Advanced Editor
-- **Status:** new
+- **Status:** accepted as F269, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3273,7 +3273,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Opening the Advanced Editor
-- **Status:** new
+- **Status:** accepted as F270, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3285,7 +3285,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Opening the Advanced Editor
-- **Status:** new
+- **Status:** accepted as F271, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3297,7 +3297,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Opening the Advanced Editor
-- **Status:** new
+- **Status:** accepted as F272, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3309,7 +3309,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Opening the Advanced Editor; Reading the Code Behind a Step
-- **Status:** new
+- **Status:** accepted as F273, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3321,7 +3321,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Mistakes Almost Everyone Makes
-- **Status:** new
+- **Status:** accepted as F274, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3333,7 +3333,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Mistakes Almost Everyone Makes
-- **Status:** new
+- **Status:** accepted as F275, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3345,7 +3345,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Mistakes Almost Everyone Makes; Refreshing a Query
-- **Status:** new
+- **Status:** accepted as F276, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3357,7 +3357,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** The Join Kinds in Plain Words
-- **Status:** new
+- **Status:** accepted as F277, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3369,7 +3369,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** The Join Kinds in Plain Words
-- **Status:** new
+- **Status:** accepted as F278, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3381,7 +3381,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** The Join Kinds in Plain Words
-- **Status:** new
+- **Status:** accepted as F279, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3441,7 +3441,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing a Query
-- **Status:** new
+- **Status:** accepted as F280, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3453,7 +3453,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Keeping the Top Rows
-- **Status:** new
+- **Status:** accepted as F281, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3489,7 +3489,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Trimming Stray Spaces
-- **Status:** new
+- **Status:** accepted as F282, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3501,7 +3501,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Sorting Inside a Query
-- **Status:** new
+- **Status:** accepted as F283, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3513,7 +3513,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Sorting Inside a Query
-- **Status:** new
+- **Status:** accepted as F284, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3525,7 +3525,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Looking Up a Value With a Merge
-- **Status:** new
+- **Status:** accepted as F285, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3537,7 +3537,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Looking Up a Value With a Merge
-- **Status:** new
+- **Status:** accepted as F286, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3549,7 +3549,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Importing a Table From a Web Page
-- **Status:** new
+- **Status:** accepted as F287, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3561,7 +3561,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Importing a Table From a Web Page
-- **Status:** new
+- **Status:** accepted as F288, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3573,7 +3573,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing a Query
-- **Status:** new
+- **Status:** accepted as F289, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3585,7 +3585,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing a Query
-- **Status:** new
+- **Status:** accepted as F290, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3597,7 +3597,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing a Query
-- **Status:** new
+- **Status:** accepted as F291, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3609,7 +3609,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing a Query
-- **Status:** new
+- **Status:** accepted as F292, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3621,7 +3621,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing a Query
-- **Status:** new
+- **Status:** accepted as F293, 2026-10-15
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3656,7 +3656,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** measurement
 - **Retrieved:** 2026-10-15
 - **For:** Practice: Your First Query
-- **Status:** new
+- **Status:** accepted as F294, 2026-10-15
 - **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
 
 ---
@@ -3667,7 +3667,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** measurement
 - **Retrieved:** 2026-10-15
 - **For:** Practice: Bringing Data In
-- **Status:** new
+- **Status:** accepted as F295, 2026-10-15
 - **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
 
 ---
@@ -3678,7 +3678,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** measurement
 - **Retrieved:** 2026-10-15
 - **For:** Practice: Narrowing the List
-- **Status:** new
+- **Status:** accepted as F296, 2026-10-15
 - **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
 
 ---
@@ -3689,7 +3689,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** measurement
 - **Retrieved:** 2026-10-15
 - **For:** Practice: Reshaping a Report
-- **Status:** new
+- **Status:** accepted as F297, 2026-10-15
 - **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
 
 ---
@@ -3700,7 +3700,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** measurement
 - **Retrieved:** 2026-10-15
 - **For:** Practice: Combining Two Lists
-- **Status:** new
+- **Status:** accepted as F298, 2026-10-15
 - **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
 
 ---
@@ -3711,7 +3711,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** measurement
 - **Retrieved:** 2026-10-15
 - **For:** Practice: Combining Two Lists
-- **Status:** new
+- **Status:** accepted as F299, 2026-10-15
 - **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
 
 ---
@@ -3722,7 +3722,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** measurement
 - **Retrieved:** 2026-10-15
 - **For:** Practice: Monthly Messy Files
-- **Status:** new
+- **Status:** accepted as F300, 2026-10-15
 - **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
 
 ---
@@ -3733,7 +3733,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** measurement
 - **Retrieved:** 2026-10-15
 - **For:** Practice: Someone Else's Report
-- **Status:** new
+- **Status:** accepted as F301, 2026-10-15
 - **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
 
 ---
@@ -3744,7 +3744,43 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** measurement
 - **Retrieved:** 2026-10-15
 - **For:** Practice: Messy File to PivotTable
-- **Status:** new
+- **Status:** accepted as F302, 2026-10-15
 - **Verified:** 2026-10-15, no link: measurement, so it is yours to vouch for
+
+---
+
+## R313 · Power Query is also in Power BI Desktop
+- **Claim:** The desktop version of Power Query is in Excel and in Power BI Desktop.
+- **Source:** Microsoft Learn, "What is Power Query?": https://learn.microsoft.com/en-us/power-query/power-query-what-is-power-query
+- **Quote:** "Power Query Desktop : Available in desktop products such as Excel and Power BI Desktop."
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Where to Go After Power Query
+- **Status:** accepted as F303, 2026-10-15
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R314 · Same editor online and on the desktop
+- **Claim:** The online and desktop versions of Power Query share the same core editor and transformations, though connectors and other options differ by product.
+- **Source:** Microsoft Learn, "What is Power Query?": https://learn.microsoft.com/en-us/power-query/power-query-what-is-power-query
+- **Quote:** "They share the core editor and transformation experience"
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Where to Go After Power Query
+- **Status:** accepted as F304, 2026-10-15
+- **Verified:** 2026-10-15, quote found on the page
+
+---
+
+## R315 · Power BI can refresh on a schedule
+- **Claim:** Queries can be refreshed by hand, on a schedule in products such as Power BI, or by code through the Excel object model.
+- **Source:** Microsoft Learn, "What is Power Query?": https://learn.microsoft.com/en-us/power-query/power-query-what-is-power-query
+- **Quote:** "by using scheduled refresh capabilities in specific products such as Power BI, or programmatically by using the Excel object model"
+- **Kind:** reference
+- **Retrieved:** 2026-10-15
+- **For:** Where to Go After Power Query
+- **Status:** accepted as F305, 2026-10-15
+- **Verified:** 2026-10-15, quote found on the page
 
 ---
