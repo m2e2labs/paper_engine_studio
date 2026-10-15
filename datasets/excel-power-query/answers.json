@@ -1,0 +1,270 @@
+{
+  "source": "datasets/excel-beginner/Corner Shop sales.xlsx",
+  "rows": 240,
+  "total_amount": 6325,
+  "export": {
+    "sheet": "Export",
+    "heading_row": 4,
+    "rows_above_headings": 3,
+    "rows_after_promoting_headings": 251,
+    "data_rows_with_duplicates": 244,
+    "blank_rows_in_data": 5,
+    "blank_rows_at_the_end": 1,
+    "end_line": "End of export, 244 rows",
+    "duplicate_sale_ids": [
+      "S0075",
+      "S0200",
+      "S0229",
+      "S0237"
+    ],
+    "region_cells_left_empty": 71,
+    "region_cells_with_stray_spaces": 12,
+    "region_cells_misspelt_Nrth": 3,
+    "product_cells_with_wrong_capitals": 18,
+    "amount_cells_with_a_pound_sign": 6,
+    "pound_sign_sale_ids": [
+      "S0005",
+      "S0022",
+      "S0080",
+      "S0110",
+      "S0153",
+      "S0215"
+    ],
+    "amount_lost_if_errors_are_removed_not_fixed": 178,
+    "rows_if_errors_are_removed_not_fixed": 234,
+    "total_if_errors_are_removed_not_fixed": 6147,
+    "rows_after_cleaning": 240,
+    "total_after_cleaning": 6325
+  },
+  "list": {
+    "sheet": "List",
+    "rows": 240,
+    "total_amount": 6325,
+    "region_cells_with_a_trailing_space": 10,
+    "product_cells_in_lower_case": 10
+  },
+  "staff_list": {
+    "sheet": "Staff list",
+    "rows": [
+      {
+        "team": "North - Ada Okafor",
+        "code": "NOR2019AO",
+        "first": "Ada",
+        "last": "Okafor"
+      },
+      {
+        "team": "South - Ben Lindqvist",
+        "code": "SOU2021BL",
+        "first": "Ben",
+        "last": "Lindqvist"
+      },
+      {
+        "team": "East - Carla Moreau",
+        "code": "EAS2022CM",
+        "first": "Carla",
+        "last": "Moreau"
+      },
+      {
+        "team": "West - Dev Patel",
+        "code": "WES2023DP",
+        "first": "Dev",
+        "last": "Patel"
+      },
+      {
+        "team": "North - Elin Haddad",
+        "code": "NOR2024EH",
+        "first": "Elin",
+        "last": "Haddad"
+      }
+    ]
+  },
+  "targets_sideways": {
+    "sheet": "Targets sideways",
+    "rows": 2,
+    "columns": 5,
+    "after_transpose_and_headings": [
+      [
+        "North",
+        1500
+      ],
+      [
+        "South",
+        1400
+      ],
+      [
+        "East",
+        1300
+      ],
+      [
+        "West",
+        1200
+      ]
+    ]
+  },
+  "csv": {
+    "file": "Corner Shop sales.csv",
+    "rows": 240,
+    "total_amount": 6325,
+    "date_format": "dd/mm/yyyy, as text"
+  },
+  "monthly": {
+    "folder": "Monthly",
+    "files": 12,
+    "rows": 240,
+    "total_amount": 6325,
+    "by_month": {
+      "2025-01": {
+        "rows": 16,
+        "amount": 451
+      },
+      "2025-02": {
+        "rows": 15,
+        "amount": 375
+      },
+      "2025-03": {
+        "rows": 20,
+        "amount": 468
+      },
+      "2025-04": {
+        "rows": 18,
+        "amount": 603
+      },
+      "2025-05": {
+        "rows": 22,
+        "amount": 553
+      },
+      "2025-06": {
+        "rows": 26,
+        "amount": 567
+      },
+      "2025-07": {
+        "rows": 26,
+        "amount": 621
+      },
+      "2025-08": {
+        "rows": 9,
+        "amount": 295
+      },
+      "2025-09": {
+        "rows": 20,
+        "amount": 601
+      },
+      "2025-10": {
+        "rows": 23,
+        "amount": 717
+      },
+      "2025-11": {
+        "rows": 25,
+        "amount": 667
+      },
+      "2025-12": {
+        "rows": 20,
+        "amount": 407
+      }
+    }
+  },
+  "monthly_messy": {
+    "folder": "Monthly messy",
+    "files": 12,
+    "rows_above_headings": 2,
+    "total_rows": 12,
+    "region_cells_with_a_leading_space": 24,
+    "rows_after_cleaning": 240,
+    "total_after_cleaning": 6325,
+    "rows_if_total_rows_are_kept": 252,
+    "amount_if_total_rows_are_kept": 12650
+  },
+  "jan_feb_with_products": {
+    "january_rows": 16,
+    "february_rows": 15,
+    "appended_rows": 31,
+    "appended_amount": 826,
+    "plant_rows": 6,
+    "plant_amount": 255,
+    "left_outer_rows": 31,
+    "left_outer_rows_with_no_category": 6,
+    "inner_rows": 25,
+    "inner_amount": 571,
+    "left_anti_rows": 6,
+    "amount_by_category_left_outer": {
+      "Kitchen": 460,
+      "Stationery": 111
+    }
+  },
+  "wide": {
+    "sheet": "Wide",
+    "rows": 4,
+    "month_columns": 12,
+    "rows_after_unpivot": 48,
+    "month_headings": [
+      "Jan 2025",
+      "Feb 2025",
+      "Mar 2025",
+      "Apr 2025",
+      "May 2025",
+      "Jun 2025",
+      "Jul 2025",
+      "Aug 2025",
+      "Sep 2025",
+      "Oct 2025",
+      "Nov 2025",
+      "Dec 2025"
+    ],
+    "amount_by_month": {
+      "Jan": 451,
+      "Feb": 375,
+      "Mar": 468,
+      "Apr": 603,
+      "May": 553,
+      "Jun": 567,
+      "Jul": 621,
+      "Aug": 295,
+      "Sep": 601,
+      "Oct": 717,
+      "Nov": 667,
+      "Dec": 407
+    },
+    "amount_by_region": {
+      "North": 2756,
+      "South": 1256,
+      "East": 839,
+      "West": 1474
+    },
+    "total_amount": 6325
+  },
+  "report": {
+    "sheet": "Report",
+    "rows_above_headings": 3,
+    "product_rows": 20,
+    "subtotal_rows": 4,
+    "blank_rows": 4,
+    "grand_total_rows": 1,
+    "rows_after_promoting_headings": 29,
+    "rows_after_removing_junk": 20,
+    "rows_after_unpivot": 150,
+    "empty_month_cells": 90,
+    "subtotals": {
+      "North": 2756,
+      "South": 1256,
+      "East": 839,
+      "West": 1474
+    },
+    "grand_total": 6325
+  },
+  "year_end_csv": {
+    "file": "Year-end export.csv",
+    "delimiter": "semicolon",
+    "encoding": "UTF-8 with a byte order mark",
+    "lines_above_headings": 3,
+    "sale_lines_with_duplicates": 243,
+    "duplicate_sale_ids": [
+      "S0039",
+      "S0056",
+      "S0067"
+    ],
+    "region_cells_in_wrong_capitals": 30,
+    "total_line": "Total ... £6325",
+    "rows_after_cleaning": 240,
+    "total_after_cleaning": 6325
+  }
+}

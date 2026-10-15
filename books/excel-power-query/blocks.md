@@ -17,12 +17,13 @@ This book is about Excel's Power Query (Get & Transform). It is a different book
 book in `books/power-query`: that one is for Power BI Desktop, this one is for Excel, and the lesson
 titles here are checked to differ from every other book's so an omnibus can still be built.
 
-Practice pages need MESSY sample files. The shared Corner Shop workbook
-(`datasets/excel-beginner/Corner Shop sales.xlsx`) is clean, so it can't be cleaned. The messy files
-(a sales export with stray spaces, text numbers and junk rows; a monthly folder of files; a report
-built for people with months across the top) don't exist yet. They must be made, from the same
-240 sales so the totals still match `datasets/excel-beginner/answers.json`, before any practice page
-is written. Any new figure a practice page prints has to be added to the answers first.
+Practice pages use the MESSY sample files in `datasets/excel-power-query/` (see its README for which
+file serves which part): a sales export with junk rows, stray spaces, text numbers and repeated
+sales; tidy and messy monthly folders; a report built for people with months across the top; and a
+fresh messy CSV for the last practice. They are made from the same 240 Corner Shop sales, so once
+cleaned they match `datasets/excel-beginner/answers.json` (240 rows, 6325). Every figure a practice
+page can print is in `datasets/excel-power-query/answers.json`; a new figure goes into `make.py` and
+the answers first, then into FACTS.md as a measurement.
 
 Every Action below names a click the author hasn't checked in the current version of Excel.
 Check each against the real menu before the page is written.
