@@ -65,7 +65,7 @@ Check each against the real menu before the page is written.
 - **Use when:** the reader has a table and no query. **Skip when:** they have run one.
 - **Action:** "Click inside the Sales table and choose From Table/Range."
 - **Band:** diagram (a table on the sheet and the editor window opening on a copy)
-- **Facts:** F23, F24, F25, F26
+- **Facts:** F23, F24, F25, F26, F33
 
 #### Finding Your Way Around the Editor
 - **What:** Name the parts of the window the reader will use: the preview of the data, the Query Settings pane with Applied Steps, and the ribbon tabs Home, Transform and Add Column.
@@ -93,7 +93,7 @@ Check each against the real menu before the page is written.
 - **Use when:** always, at the end of the part. **Skip when:** never.
 - **Action:** "Make a query from the messy sales table, load it, and compare the row counts."
 - **Band:** diagram (the messy list, the loaded result and the row counts to check)
-- **Facts:** F31, F123, F294
+- **Facts:** F31, F123, F294, F17, F23, F36, F37
 
 ## Part 2 · Getting data in
 
