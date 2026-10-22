@@ -3784,3 +3784,27 @@ in seconds. It is never printed: the book says things in its own words.
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
+
+## R316 · Whole Number is a kind of data
+- **Claim:** Whole Number is one of the kinds of data in Power Query, for numbers with no decimal part; the list also has Decimal number, Text and Date.
+- **Source:** Microsoft Support, "Add or change data types (Power Query)": https://support.microsoft.com/en-us/excel/add-or-change-data-types-power-query
+- **Quote:** "Whole Number A 64-bit (eight-byte) integer value."
+- **Kind:** reference
+- **Retrieved:** 2026-10-19
+- **For:** Numbers That Arrive as Text
+- **Status:** accepted as F306, 2026-10-19
+- **Verified:** 2026-10-19, quote found on the page
+
+---
+
+## R317 · Day-first dates: English (United Kingdom)
+- **Claim:** In Microsoft's example of day/month/year dates read wrongly as month/day/year, the locale to pick in the Change Type with Locale dialog box is English (United Kingdom).
+- **Source:** Microsoft Learn, "Data types in Power Query": https://learn.microsoft.com/en-us/power-query/data-types
+- **Quote:** "which in this case needs to be English (United Kingdom)"
+- **Kind:** reference
+- **Retrieved:** 2026-10-19
+- **For:** Dates That Arrive as Text
+- **Status:** accepted as F307, 2026-10-19
+- **Verified:** 2026-10-19, quote found on the page
+
+---

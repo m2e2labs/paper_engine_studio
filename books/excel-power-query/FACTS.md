@@ -2463,3 +2463,19 @@ findings appear here.
 - **Checked:** 2026-10-15
 
 ---
+
+## F306 · Whole Number is a kind of data
+- **Claim:** Whole Number is one of the kinds of data in Power Query, for numbers with no decimal part; the list also has Decimal number, Text and Date.
+- **Source:** Microsoft Support, "Add or change data types (Power Query)": https://support.microsoft.com/en-us/excel/add-or-change-data-types-power-query
+- **Kind:** reference
+- **Checked:** 2026-10-19
+
+---
+
+## F307 · Day-first dates: English (United Kingdom)
+- **Claim:** In Microsoft's example of day/month/year dates read wrongly as month/day/year, the locale to pick in the Change Type with Locale dialog box is English (United Kingdom).
+- **Source:** Microsoft Learn, "Data types in Power Query": https://learn.microsoft.com/en-us/power-query/data-types
+- **Kind:** reference
+- **Checked:** 2026-10-19
+
+---

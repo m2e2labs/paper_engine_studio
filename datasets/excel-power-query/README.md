@@ -70,5 +70,7 @@ On 2026-10-15 the files were run through Excel's own Power Query engine (Excel 1
   analysis, reports `text/csv`, encoding 65001 (UTF-8), and of the delimiters it tries only
   the semicolon splits the file (8 columns; comma and tab give 1).
 
-Not tested: the From Text/CSV dialog itself, and anything else that depends on the editor's
-buttons rather than the M they write.
+- **The From Text/CSV dialog (2026-10-22):** opened by script in Excel 16 (build 20430, en-US),
+  it picks Semicolon and 65001: Unicode (UTF-8) for `Year-end export.csv` by itself, shows the
+  `£` signs correctly, and gives 8 columns with the three title lines as rows. For
+  `Corner Shop sales.csv` it picks Comma, with Data Type Detection based on the first 200 rows.

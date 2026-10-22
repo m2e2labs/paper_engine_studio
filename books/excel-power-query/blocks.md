@@ -27,6 +27,10 @@ the answers first, then into FACTS.md as a measurement.
 
 Every Action below names a click the author hasn't checked in the current version of Excel.
 Check each against the real menu before the page is written.
+Parts 1 and 2 were checked by script in Excel 16 (build 20430) on 2026-10-22: the Data tab and
+Get Data menus, the editor's tabs and panes, the Close & Load To menu, the right-click Change Type
+menu (Using Locale), the Navigator and the Text/CSV preview. Excel names steps in title case
+(Renamed Columns), and the Navigator lists sheets alphabetically.
 
 ---
 
@@ -144,14 +148,14 @@ Check each against the real menu before the page is written.
 - **Use when:** the reader's dates won't sort. **Skip when:** their dates are real dates.
 - **Action:** "Change the Date column to the Date kind and check it sorts."
 - **Band:** diagram (text dates beside real dates, sorted and unsorted)
-- **Facts:** F72, F73, F74, F75
+- **Facts:** F72, F73, F74, F75, F307
 
 #### Numbers That Arrive as Text
 - **What:** A number stored as text won't add up. Change the column's kind to a number type and say what happens to values that can't be converted.
 - **Use when:** the reader's totals come out as zero. **Skip when:** their numbers are numbers.
 - **Action:** "Change the Amount column to a number kind and look for errors."
 - **Band:** diagram (text numbers that add up to nothing, then real numbers that do)
-- **Facts:** F76, F77, F78
+- **Facts:** F76, F77, F78, F306
 
 #### Load to a Sheet, or Only Connect
 - **What:** A query can load its result to a sheet or stay as a connection only. Say when each fits, and that a connection-only query can feed other queries.
@@ -165,7 +169,7 @@ Check each against the real menu before the page is written.
 - **Use when:** always, at the end of the part. **Skip when:** never.
 - **Action:** "Import the three versions and compare their row counts."
 - **Band:** diagram (three sources arriving at the same row count)
-- **Facts:** F295
+- **Facts:** F295, F31, F42, F44, F56, F59
 
 ## Part 3 · Cleaning what arrived
 
