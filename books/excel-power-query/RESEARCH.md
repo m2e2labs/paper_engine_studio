@@ -3465,8 +3465,9 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Keeping the Top Rows
-- **Status:** new
+- **Status:** rejected, 2026-10-22
 - **Verified:** 2026-10-15, quote found on the page
+- **Why:** not used; superseded or evidence only
 
 ---
 
@@ -3477,8 +3478,9 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Keeping the Top Rows
-- **Status:** new
+- **Status:** rejected, 2026-10-22
 - **Verified:** 2026-10-15, quote found on the page
+- **Why:** not used; superseded or evidence only
 
 ---
 
@@ -3633,8 +3635,9 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Importing a Table From a Web Page
-- **Status:** new
+- **Status:** rejected, 2026-10-22
 - **Verified:** 2026-10-15, quote found on the page
+- **Why:** not used; superseded or evidence only
 
 ---
 
@@ -3645,8 +3648,9 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Importing a Table From a Web Page
-- **Status:** new
+- **Status:** rejected, 2026-10-22
 - **Verified:** 2026-10-15, quote found on the page
+- **Why:** not used; superseded or evidence only
 
 ---
 

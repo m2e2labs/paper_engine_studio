@@ -385,14 +385,14 @@ menu (Using Locale), the Navigator and the Text/CSV preview. Excel names steps i
 - **Use when:** the reader wants a summary as a table that refreshes. **Skip when:** a PivotTable is enough.
 - **Action:** "Group by Region and sum Amount."
 - **Band:** diagram (many rows grouped to one row per region)
-- **Facts:** F194, F195, F196
+- **Facts:** F194, F195, F196, F296
 
 #### Practice: Reshaping a Report
 - **What:** Take a wide monthly report, unpivot it, add a month name and group it, then check one total.
 - **Use when:** always, at the end of the part. **Skip when:** never.
 - **Action:** "Unpivot the wide report, then group it and check one total."
 - **Band:** diagram (the wide report, the long list and the grouped result)
-- **Facts:** F297
+- **Facts:** F297, F185, F181, F194, F186
 
 ## Part 6 · Combining queries
 

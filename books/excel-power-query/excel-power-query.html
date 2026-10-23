@@ -988,6 +988,344 @@
       <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
     </section>
 
+    <section class="sheet bb snug">
+      <h2 class="sr">Reshaping page: the Team column holding North - Ada Okafor split at the dash into Team.1 with the region and Team.2 with the name.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 38</div>
+        <span class="pill">Reshaping</span>
+      </div>
+      <h1 class="title">Splitting a Column at a Delimiter</h1>
+      <div class="sub">One column holding two things splits in two.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the Team column holding North - Ada Okafor split at the dash into Team.1 with the region and Team.2 with the name."><defs><marker id="arpq38" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq38" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="18" width="180" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="35" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Team</text><rect x="24" y="44" width="180" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="59" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">North - Ada Okafor</text><rect x="24" y="66" width="180" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="81" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">South - Ben Lindqvist</text><line x1="214" y1="58" x2="324" y2="58" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq38)"/><text x="269" y="48" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">By Delimiter: -</text><rect x="334" y="18" width="100" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="346" y="35" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Team.1</text><rect x="334" y="44" width="100" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="346" y="59" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">North</text><rect x="334" y="66" width="100" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="346" y="81" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">South</text><rect x="434" y="18" width="134" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="446" y="35" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Team.2</text><rect x="434" y="44" width="134" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="446" y="59" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Ada Okafor</text><rect x="434" y="66" width="134" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="446" y="81" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Ben Lindqvist</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say Team holds North - Ada Okafor: a region and a name in one cell, which <span class="bad">won't filter by region</span>.</p>
+        <p>Choose Home, Split Column, <span class="hl">By Delimiter</span>, type the dash, and choose where to split: the left-most, the right-most, or each one. The new columns are called Team.1 and Team.2; rename them. Microsoft advises splitting a copy rather than the original, to avoid refresh errors.</p>
+        <p class="close">One fact per column.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>On the Staff list, split Team By Delimiter at the dash.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Reshaping page: the staff code NOR2019AO split by number of characters into NOR and 2019AO, and by positions into NOR, 2019 and AO.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 39</div>
+        <span class="pill">Reshaping</span>
+      </div>
+      <h1 class="title">Splitting a Column by Length</h1>
+      <div class="sub">When a code's parts are a fixed width, split by count.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the staff code NOR2019AO split by number of characters into NOR and 2019AO, and by positions into NOR, 2019 and AO."><defs><marker id="arpq39" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq39" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="40" width="150" height="34" rx="6" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="99" y="61" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:12px;fill:#1A1A2E;">NOR2019AO</text><line x1="184" y1="57" x2="334" y2="57" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq39)"/><text x="259" y="47" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">By Number of Characters</text><rect x="344" y="22" width="70" height="30" rx="6" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="379" y="41" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;fill:#0D9488;">NOR</text><rect x="418" y="22" width="150" height="30" rx="6" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="493" y="41" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:12px;fill:#1A1A2E;">2019AO</text><text x="344" y="80" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">By Positions splits at several places:</text><rect x="344" y="88" width="70" height="28" rx="6" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="379" y="106" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;fill:#4F46E5;">NOR</text><rect x="418" y="88" width="80" height="28" rx="6" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="458" y="106" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;fill:#4F46E5;">2019</text><rect x="502" y="88" width="66" height="28" rx="6" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="535" y="106" text-anchor="middle" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;fill:#4F46E5;">AO</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say Staff code runs a region, a year and initials together, as in the drawing, <span class="bad">with nothing to split at</span>.</p>
+        <p>Choose Split Column, <span class="hl">By Number of Characters</span>, once from the left, and the region letters come off the front. By Positions splits at several places at once, for parts of different lengths.</p>
+        <p class="close">No separator? Count instead.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Split Staff code By Number of Characters, once, from the left, keeping the region letters.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Reshaping page: Extract, Text Before Delimiter on Add Column takes North and South from the Team column into a new column, leaving Team as it was.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 40</div>
+        <span class="pill">Reshaping</span>
+      </div>
+      <h1 class="title">Pulling Out Text Before or After</h1>
+      <div class="sub">Take part of a cell without splitting the column.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: Extract, Text Before Delimiter on Add Column takes North and South from the Team column into a new column, leaving Team as it was."><defs><marker id="arpq40" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq40" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="18" width="190" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="35" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Team</text><rect x="24" y="44" width="190" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="59" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">North - Ada Okafor</text><rect x="24" y="66" width="190" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="81" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">South - Ben Lindqvist</text><line x1="224" y1="58" x2="384" y2="58" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq40)"/><text x="304" y="48" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Text Before Delimiter</text><rect x="394" y="18" width="174" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="406" y="35" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Region</text><rect x="394" y="44" width="174" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="406" y="59" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">North</text><rect x="394" y="66" width="174" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="406" y="81" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">South</text><text x="119" y="112" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Team stays as it was</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you only want the region from Team. <span class="hl">Extract</span> keeps part of the text: First Characters, Last Characters, Range, or the text before, after or between a delimiter.</p>
+        <p>On the Transform tab it changes the column. On Add Column it adds a new one and <span class="good">leaves Team as it was</span>.</p>
+        <p class="close">Extract keeps what you need and leaves the rest.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Choose Add Column, Extract, Text Before Delimiter, and type the dash.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Reshaping page: First name Ada and Last name Okafor, selected first and second, merged with a space into Ada Okafor.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 41</div>
+        <span class="pill">Reshaping</span>
+      </div>
+      <h1 class="title">Merging Columns Into One</h1>
+      <div class="sub">Two columns become one, with a separator between them.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: First name Ada and Last name Okafor, selected first and second, merged with a space into Ada Okafor."><defs><marker id="arpq41" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq41" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="18" width="124" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="35" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">First name</text><rect x="24" y="44" width="124" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="59" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">Ada</text><circle cx="136" cy="31" r="10" fill="#6366F1"/><text x="136" y="35" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#FFFFFF;">1</text><rect x="154" y="18" width="124" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="166" y="35" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Last name</text><rect x="154" y="44" width="124" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="166" y="59" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">Okafor</text><circle cx="266" cy="31" r="10" fill="#6366F1"/><text x="266" y="35" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#FFFFFF;">2</text><line x1="288" y1="57" x2="404" y2="57" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq41)"/><text x="346" y="47" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Merge Columns, space</text><rect x="414" y="18" width="154" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="426" y="35" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Merged</text><rect x="414" y="44" width="154" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="426" y="59" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Ada Okafor</text><text x="24" y="100" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#5B6472;">the order you select them is the order they appear</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you want Ada Okafor in one column. Select First name, then Last name, and choose <span class="hl">Merge Columns</span> with a space as the separator. The order you select them in is the order they appear.</p>
+        <p>On the Transform tab the originals are replaced by one column called Merged, so Microsoft suggests Add Column, Merge Columns instead. <span class="bad">Only Text columns can be merged</span>: change others to Text first.</p>
+        <p class="close">Select in the order you want to read.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Select First name, then Last name, and choose Add Column, Merge Columns with a space.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Reshaping page: a new column where you type Ada beside North - Ada Okafor and Power Query fills Ben and Carla for the rows below.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 42</div>
+        <span class="pill">Reshaping</span>
+      </div>
+      <h1 class="title">Adding a Column From Examples</h1>
+      <div class="sub">Type what you want, and Power Query works out how.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a new column where you type Ada beside North - Ada Okafor and Power Query fills Ben and Carla for the rows below."><defs><marker id="arpq42" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq42" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="14" width="220" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="31" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Team</text><rect x="24" y="40" width="220" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="55" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">North - Ada Okafor</text><rect x="24" y="62" width="220" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="77" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">South - Ben Lindqvist</text><rect x="24" y="84" width="220" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="99" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">East - Carla Moreau</text><rect x="244" y="14" width="130" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="256" y="31" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Column1</text><rect x="244" y="40" width="130" height="22" rx="0" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="256" y="55" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Ada</text><rect x="244" y="62" width="130" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="256" y="77" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Ben</text><rect x="244" y="84" width="130" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="256" y="99" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Carla</text><text x="390" y="52" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">you type Ada</text><text x="390" y="80" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Power Query guesses</text><text x="390" y="96" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">the rest</text><text x="24" y="132" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#5B6472;">Ctrl+Enter fills the column; check rows past the preview.</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you know the result but not the command. Add Column, <span class="hl">Column From Examples</span>: type what one row should say, press Ctrl+Enter, and Power Query fills the rest and shows its formula.</p>
+        <p><span class="bad">Its guess is based on the top 100 rows</span>, so check the others, and give more examples if one isn't enough. OK adds the step.</p>
+        <p class="close">Give an example, then check the guess.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Type Ada in a new column beside North - Ada Okafor and check Power Query's guess.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Reshaping page: a custom column formula, [Quantity] * [Unit price], filling a new Value column for every row.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 43</div>
+        <span class="pill">Reshaping</span>
+      </div>
+      <h1 class="title">Adding a Custom Column</h1>
+      <div class="sub">A formula for every row, with column names in brackets.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 136" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a custom column formula, [Quantity] * [Unit price], filling a new Value column for every row."><defs><marker id="arpq43" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq43" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="14" width="250" height="64" rx="10" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cspq43)"/><text x="36" y="34" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#4F46E5;">Custom Column</text><text x="40" y="60" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;fill:#1A1A2E;">= [Quantity] * [Unit price]</text><line x1="274" y1="46" x2="300" y2="46" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq43)"/><rect x="304" y="14" width="84" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="316" y="31" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Quantity</text><rect x="304" y="40" width="84" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="376" y="55" text-anchor="end" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">6</text><rect x="304" y="62" width="84" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="376" y="77" text-anchor="end" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">1</text><rect x="388" y="14" width="90" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="400" y="31" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Unit price</text><rect x="388" y="40" width="90" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="466" y="55" text-anchor="end" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">12</text><rect x="388" y="62" width="90" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="466" y="77" text-anchor="end" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">15</text><rect x="478" y="14" width="90" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="490" y="31" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Value</text><rect x="478" y="40" width="90" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="556" y="55" text-anchor="end" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">72</text><rect x="478" y="62" width="90" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="556" y="77" text-anchor="end" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">15</text><text x="24" y="112" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#5B6472;">square brackets mean a column; capitals must match</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you want each sale's value worked out. Add Column, <span class="hl">Custom Column</span>: name it, and write [Quantity] * [Unit price], picking columns from the Available Columns list.</p>
+        <p>It isn't an Excel formula. It's written in Power Query's language, M, and <span class="bad">capitals must match exactly</span>. &amp; still joins text. Afterwards check the new column's kind: an Any icon means set one.</p>
+        <p class="close">Square brackets mean a column.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Add a custom column called Value with the formula [Quantity] * [Unit price].</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Reshaping page: a conditional column rule, if Amount is greater than a value then Big, else Small, filling a Label column.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 44</div>
+        <span class="pill">Reshaping</span>
+      </div>
+      <h1 class="title">Adding a Conditional Column</h1>
+      <div class="sub">If-then-else rules from boxes, with no formula.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 144" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a conditional column rule, if Amount is greater than a value then Big, else Small, filling a Label column."><defs><marker id="arpq44" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq44" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="10" width="340" height="124" rx="10" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cspq44)"/><text x="36" y="30" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#4F46E5;">Conditional Column</text><text x="38" y="57" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#4F46E5;">If</text><rect x="74" y="40" width="70" height="26" rx="6" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="109" y="57" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E;">Amount</text><rect x="148" y="40" width="104" height="26" rx="6" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="200" y="57" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E;">is greater than</text><rect x="254" y="40" width="34" height="26" rx="6" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="271" y="57" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;fill:#1A1A2E;">50</text><text x="294" y="57" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">then</text><rect x="322" y="40" width="36" height="26" rx="6" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="340" y="57" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#0D9488;">Big</text><text x="38" y="103" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#4F46E5;">Else</text><rect x="74" y="86" width="60" height="26" rx="6" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="104" y="103" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#0D9488;">Small</text><line x1="364" y1="72" x2="410" y2="72" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq44)"/><rect x="414" y="14" width="154" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="426" y="31" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Label</text><rect x="414" y="40" width="154" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="426" y="55" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Big</text><rect x="414" y="62" width="154" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="426" y="77" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Small</text><rect x="414" y="84" width="154" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="426" y="99" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Big</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you want to label big sales. Add Column, <span class="hl">Conditional Column</span>: pick a column, an operator, a value and the output, such as Amount is greater than a figure, then Big.</p>
+        <p>Add Clause adds more rules; Else covers the rest. <span class="bad">Rules run from the top</span>, so order matters. Set the new column's kind afterwards.</p>
+        <p class="close">Rules run in order, so put the narrowest first.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Add a conditional column: if Amount is greater than a value you choose, then Big, else Small.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Reshaping page: a sale date turned into new Year, Month and Name of Month columns: 2025, 1 and January.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 45</div>
+        <span class="pill">Reshaping</span>
+      </div>
+      <h1 class="title">Pulling Year and Month From a Date</h1>
+      <div class="sub">One date column gives you year, month and quarter.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a sale date turned into new Year, Month and Name of Month columns: 2025, 1 and January."><defs><marker id="arpq45" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq45" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="18" width="130" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="35" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Sale date</text><rect x="24" y="44" width="130" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="59" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">03/01/2025</text><line x1="154" y1="57" x2="196" y2="57" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq45)"/><rect x="200" y="18" width="100" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="212" y="35" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Year</text><rect x="200" y="44" width="100" height="22" rx="0" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="212" y="59" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">2025</text><rect x="300" y="18" width="90" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="312" y="35" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Month</text><rect x="300" y="44" width="90" height="22" rx="0" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="312" y="59" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">1</text><rect x="390" y="18" width="178" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="402" y="35" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Name of Month</text><rect x="390" y="44" width="178" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="402" y="59" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">January</text><text x="24" y="106" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#5B6472;">Add Column, Date: the date stays; the parts are new columns</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say a report needs sales by month. Add Column, <span class="hl">Date</span> offers Year, Month, Name of Month, Quarter of Year and Week of Year.</p>
+        <p>Month gives a number from 1 to 12, so April is 4. <span class="good">Name of Month gives the word.</span></p>
+        <p class="close">Keep the date; add the parts you report on.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Select Sale date and choose Add Column, Date, Month, Name of Month.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Reshaping page: a report with months across the top, Jan 2025 and Feb 2025, unpivoted into Region, Attribute and Value columns with one row per month.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 46</div>
+        <span class="pill">Reshaping</span>
+      </div>
+      <h1 class="title">Unpivoting Columns Into Rows</h1>
+      <div class="sub">Months across the top become rows a PivotTable can read.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a report with months across the top, Jan 2025 and Feb 2025, unpivoted into Region, Attribute and Value columns with one row per month."><defs><marker id="arpq46" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq46" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="26" width="78" height="20" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="63" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472;">Region</text><rect x="102" y="26" width="78" height="20" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="141" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472;">Jan 2025</text><rect x="180" y="26" width="78" height="20" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="219" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472;">Feb 2025</text><rect x="24" y="46" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="39.6" y="52" width="46.8" height="8" rx="4" fill="#E7E9EF"/><rect x="102" y="46" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="117.6" y="52" width="46.8" height="8" rx="4" fill="#E7E9EF"/><rect x="180" y="46" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="195.6" y="52" width="46.8" height="8" rx="4" fill="#E7E9EF"/><rect x="24" y="66" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="39.6" y="72" width="46.8" height="8" rx="4" fill="#E7E9EF"/><rect x="102" y="66" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="117.6" y="72" width="46.8" height="8" rx="4" fill="#E7E9EF"/><rect x="180" y="66" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="195.6" y="72" width="46.8" height="8" rx="4" fill="#E7E9EF"/><text x="24" y="16" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#5B6472;letter-spacing:.3px;">BUILT FOR PEOPLE</text><line x1="264" y1="56" x2="300" y2="56" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq46)"/><text x="282" y="46" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Unpivot</text><text x="310" y="16" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;letter-spacing:.3px;">BUILT FOR A PIVOTTABLE</text><rect x="310" y="26" width="86" height="20" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="353" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488;">Region</text><rect x="396" y="26" width="86" height="20" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="439" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488;">Attribute</text><rect x="482" y="26" width="86" height="20" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="525" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#0D9488;">Value</text><rect x="310" y="46" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#CDEFE8" stroke-width="1"/><rect x="327.2" y="52" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="396" y="46" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#CDEFE8" stroke-width="1"/><rect x="413.2" y="52" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="482" y="46" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#CDEFE8" stroke-width="1"/><rect x="499.2" y="52" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="310" y="66" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#CDEFE8" stroke-width="1"/><rect x="327.2" y="72" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="396" y="66" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#CDEFE8" stroke-width="1"/><rect x="413.2" y="72" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="482" y="66" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#CDEFE8" stroke-width="1"/><rect x="499.2" y="72" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="310" y="86" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#CDEFE8" stroke-width="1"/><rect x="327.2" y="92" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="396" y="86" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#CDEFE8" stroke-width="1"/><rect x="413.2" y="92" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="482" y="86" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#CDEFE8" stroke-width="1"/><rect x="499.2" y="92" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="310" y="106" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#CDEFE8" stroke-width="1"/><rect x="327.2" y="112" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="396" y="106" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#CDEFE8" stroke-width="1"/><rect x="413.2" y="112" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="482" y="106" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#CDEFE8" stroke-width="1"/><rect x="499.2" y="112" width="51.6" height="8" rx="4" fill="#E7E9EF"/></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say a report puts months across the top. It reads well, but <span class="bad">a PivotTable can't total across those columns</span>.</p>
+        <p>Select the month columns and choose Transform, <span class="hl">Unpivot Columns</span>. You get Attribute, holding the old headings, and Value, holding the numbers. Unpivot Other Columns takes every column you didn't select, including ones added later.</p>
+        <p class="close">Similar values belong in one column.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Open the Wide sheet, select Region, and choose Unpivot Other Columns.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Reshaping page: Region, Attribute and Value columns pivoted back to months across the top, with a warning that Don't aggregate gives an error when two values meet in one cell.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 47</div>
+        <span class="pill">Reshaping</span>
+      </div>
+      <h1 class="title">Pivoting Rows Into Columns</h1>
+      <div class="sub">The values of one column become headings.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: Region, Attribute and Value columns pivoted back to months across the top, with a warning that Don't aggregate gives an error when two values meet in one cell."><defs><marker id="arpq47" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq47" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="26" width="78" height="20" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="63" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472;">Region</text><rect x="102" y="26" width="78" height="20" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="141" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472;">Attribute</text><rect x="180" y="26" width="78" height="20" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="219" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472;">Value</text><rect x="24" y="46" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="39.6" y="52" width="46.8" height="8" rx="4" fill="#E7E9EF"/><rect x="102" y="46" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="117.6" y="52" width="46.8" height="8" rx="4" fill="#E7E9EF"/><rect x="180" y="46" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="195.6" y="52" width="46.8" height="8" rx="4" fill="#E7E9EF"/><rect x="24" y="66" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="39.6" y="72" width="46.8" height="8" rx="4" fill="#E7E9EF"/><rect x="102" y="66" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="117.6" y="72" width="46.8" height="8" rx="4" fill="#E7E9EF"/><rect x="180" y="66" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="195.6" y="72" width="46.8" height="8" rx="4" fill="#E7E9EF"/><rect x="24" y="86" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="39.6" y="92" width="46.8" height="8" rx="4" fill="#E7E9EF"/><rect x="102" y="86" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="117.6" y="92" width="46.8" height="8" rx="4" fill="#E7E9EF"/><rect x="180" y="86" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="195.6" y="92" width="46.8" height="8" rx="4" fill="#E7E9EF"/><rect x="24" y="106" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="39.6" y="112" width="46.8" height="8" rx="4" fill="#E7E9EF"/><rect x="102" y="106" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="117.6" y="112" width="46.8" height="8" rx="4" fill="#E7E9EF"/><rect x="180" y="106" width="78" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="195.6" y="112" width="46.8" height="8" rx="4" fill="#E7E9EF"/><line x1="264" y1="72" x2="300" y2="72" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq47)"/><text x="282" y="62" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Pivot</text><rect x="310" y="26" width="86" height="20" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="353" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472;">Region</text><rect x="396" y="26" width="86" height="20" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="439" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472;">Jan 2025</text><rect x="482" y="26" width="86" height="20" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="525" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#5B6472;">Feb 2025</text><rect x="310" y="46" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="327.2" y="52" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="396" y="46" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="413.2" y="52" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="482" y="46" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="499.2" y="52" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="310" y="66" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="327.2" y="72" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="396" y="66" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="413.2" y="72" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="482" y="66" width="86" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="499.2" y="72" width="51.6" height="8" rx="4" fill="#E7E9EF"/><rect x="310" y="100" width="258" height="26" rx="13" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="439" y="117" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">Don't aggregate + two values = Error</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you want months back across the top. Select Attribute and choose Transform, <span class="hl">Pivot Column</span>, with Value as the Values Column.</p>
+        <p>Under Advanced options choose how values that meet in one cell combine, such as Sum. <span class="bad">With Don't aggregate, two values in one cell give an error</span>, and that can start only after a later refresh.</p>
+        <p class="close">Pick a way to combine, or the next refresh may fail.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Select Attribute, choose Pivot Column, Values Column Value, and Sum.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Reshaping page: a small table with regions across the top, transposed so the regions run down the rows, with the new columns named Column1 and Column2 until the first row is promoted.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 48</div>
+        <span class="pill">Reshaping</span>
+      </div>
+      <h1 class="title">Transposing a Table</h1>
+      <div class="sub">Rows become columns, and columns become rows.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a small table with regions across the top, transposed so the regions run down the rows, with the new columns named Column1 and Column2 until the first row is promoted."><defs><marker id="arpq48" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq48" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><text x="24" y="16" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#5B6472;letter-spacing:.3px;">ON ITS SIDE</text><rect x="24" y="26" width="70" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="59" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E;">Region</text><rect x="94" y="26" width="70" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="129" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E;">North</text><rect x="164" y="26" width="70" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="199" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E;">South</text><rect x="24" y="46" width="70" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="38" y="52" width="42" height="8" rx="4" fill="#E7E9EF"/><rect x="94" y="46" width="70" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="108" y="52" width="42" height="8" rx="4" fill="#E7E9EF"/><rect x="164" y="46" width="70" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><rect x="178" y="52" width="42" height="8" rx="4" fill="#E7E9EF"/><rect x="24" y="46" width="70" height="20" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="59" y="60" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E;">Target</text><line x1="244" y1="50" x2="290" y2="50" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq48)"/><text x="267" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Transpose</text><rect x="300" y="26" width="90" height="20" rx="0" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="345" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#DC2626;">Column1</text><rect x="390" y="26" width="90" height="20" rx="0" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="435" y="40" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#DC2626;">Column2</text><rect x="300" y="46" width="90" height="20" rx="0" fill="#FFFFFF" stroke="#F8D6D6" stroke-width="1"/><rect x="318" y="52" width="54" height="8" rx="4" fill="#E7E9EF"/><rect x="390" y="46" width="90" height="20" rx="0" fill="#FFFFFF" stroke="#F8D6D6" stroke-width="1"/><rect x="408" y="52" width="54" height="8" rx="4" fill="#E7E9EF"/><rect x="300" y="66" width="90" height="20" rx="0" fill="#FFFFFF" stroke="#F8D6D6" stroke-width="1"/><rect x="318" y="72" width="54" height="8" rx="4" fill="#E7E9EF"/><rect x="390" y="66" width="90" height="20" rx="0" fill="#FFFFFF" stroke="#F8D6D6" stroke-width="1"/><rect x="408" y="72" width="54" height="8" rx="4" fill="#E7E9EF"/><rect x="300" y="86" width="90" height="20" rx="0" fill="#FFFFFF" stroke="#F8D6D6" stroke-width="1"/><rect x="318" y="92" width="54" height="8" rx="4" fill="#E7E9EF"/><rect x="390" y="86" width="90" height="20" rx="0" fill="#FFFFFF" stroke="#F8D6D6" stroke-width="1"/><rect x="408" y="92" width="54" height="8" rx="4" fill="#E7E9EF"/><text x="490" y="52" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">headings</text><text x="490" y="68" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">lost:</text><text x="490" y="90" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">promote the</text><text x="490" y="106" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">first row</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say a small table arrived on its side, with regions across the top. Transform, <span class="hl">Transpose</span> swaps rows and columns.</p>
+        <p><span class="bad">The headings are lost</span>: the new columns are called Column1, Column2, so promote the first row afterwards. For months across the top, unpivot instead.</p>
+        <p class="close">Transpose flips the whole table. Unpivot reshapes the values.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>On Targets sideways, choose Transform, Transpose, then Use First Row as Headers.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Reshaping page: many sales rows grouped by Region with Amount summed: East 839, North 2756, South 1256 and West 1474.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 49</div>
+        <span class="pill">Reshaping</span>
+      </div>
+      <h1 class="title">Grouping and Summarising Rows</h1>
+      <div class="sub">One row per item, with its total, as a step.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: many sales rows grouped by Region with Amount summed: East 839, North 2756, South 1256 and West 1474."><defs><marker id="arpq49" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq49" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="10" width="150" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="27" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Region</text><rect x="24" y="36" width="150" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="51" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">North</text><rect x="24" y="58" width="150" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="73" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">East</text><rect x="24" y="80" width="150" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="95" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">North</text><rect x="24" y="102" width="150" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="117" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">West</text><rect x="24" y="124" width="150" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="139" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">South</text><line x1="184" y1="72" x2="330" y2="72" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq49)"/><text x="257" y="62" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Group By, Sum</text><rect x="340" y="10" width="120" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="352" y="27" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Region</text><rect x="340" y="36" width="120" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="352" y="51" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">East</text><rect x="340" y="58" width="120" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="352" y="73" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">North</text><rect x="340" y="80" width="120" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="352" y="95" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">South</text><rect x="340" y="102" width="120" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="352" y="117" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">West</text><rect x="460" y="10" width="108" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="472" y="27" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Amount</text><rect x="460" y="36" width="108" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="556" y="51" text-anchor="end" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">839</text><rect x="460" y="58" width="108" height="22" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="556" y="73" text-anchor="end" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">2756</text><rect x="460" y="80" width="108" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="556" y="95" text-anchor="end" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">1256</text><rect x="460" y="102" width="108" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="556" y="117" text-anchor="end" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">1474</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say you want each region's total. Home, <span class="hl">Group By</span>: group by Region and Sum Amount. Count Rows, Average, Min and Max work the same way.</p>
+        <p>It does what a PivotTable does, but as a step that <span class="good">runs again on refresh</span>. North should come to 2756.</p>
+        <p class="close">Group in the query when the total has to stay fixed.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>In your clean query, choose Group By, Region, Sum of Amount.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Practice page: the Wide sheet, 4 regions by 12 months, unpivoted to 48 rows worth 6325, given a month name, then grouped so January totals 451.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 50</div>
+        <span class="pill">Practice</span>
+      </div>
+      <h1 class="title">Practice: Reshaping a Report</h1>
+      <div class="sub">Unpivot a wide report, group it and check one total.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the Wide sheet, 4 regions by 12 months, unpivoted to 48 rows worth 6325, given a month name, then grouped so January totals 451."><defs><marker id="arpq50" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq50" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="36" width="124" height="58" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cspq50)"/><text x="86" y="62" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#1A1A2E;">Wide sheet</text><text x="86" y="78" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">4 regions x 12 months</text><line x1="148" y1="65" x2="162" y2="65" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq50)"/><rect x="164" y="36" width="124" height="58" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cspq50)"/><text x="226" y="62" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#4F46E5;">Unpivot</text><text x="226" y="78" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">48 rows, 6325</text><line x1="288" y1="65" x2="302" y2="65" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq50)"/><rect x="304" y="36" width="124" height="58" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cspq50)"/><text x="366" y="62" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#4F46E5;">Month name</text><text x="366" y="78" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">Date, Name of Month</text><line x1="428" y1="65" x2="442" y2="65" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq50)"/><rect x="444" y="36" width="124" height="58" rx="12" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1" filter="url(#cspq50)"/><text x="506" y="62" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#0D9488;">Group By</text><text x="506" y="78" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">January: 451</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say the Wide sheet holds 4 regions and 12 month columns. Unpivot Other Columns from Region: you should get 48 rows, worth 6325.</p>
+        <p>Change Attribute to a date, add Name of Month, then Group By the month with a Sum of Value. <span class="good">January should be 451.</span></p>
+        <p class="close">Reshape first, then the totals fall out.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Unpivot the Wide sheet, group by month, and check January is 451.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
   </main>
 
 </body>
