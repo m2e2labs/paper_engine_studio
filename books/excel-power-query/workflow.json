@@ -1,0 +1,466 @@
+{
+  "pages": {
+    "Cleaning the Same Data Every Week": {
+      "status": "approved",
+      "hash": "8e1333bd5d61",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:00.966Z"
+    },
+    "What Power Query Does in Excel": {
+      "status": "approved",
+      "hash": "7e7ec311a04f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.021Z"
+    },
+    "Finding Get & Transform on the Ribbon": {
+      "status": "approved",
+      "hash": "85ddff9ab35e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.068Z"
+    },
+    "Turning a List Into an Excel Table": {
+      "status": "approved",
+      "hash": "e8e7eba687c3",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.115Z"
+    },
+    "Your First Query From a Table": {
+      "status": "approved",
+      "hash": "649d908e0229",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.164Z"
+    },
+    "Finding Your Way Around the Editor": {
+      "status": "approved",
+      "hash": "b0f7870eb68e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.212Z"
+    },
+    "How Excel Records Your Steps": {
+      "status": "approved",
+      "hash": "1bef01751a93",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.259Z"
+    },
+    "Loading the Result to a Sheet": {
+      "status": "approved",
+      "hash": "39fca9e6987c",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.318Z"
+    },
+    "Practice: Your First Query": {
+      "status": "approved",
+      "hash": "9a4825e1de93",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.365Z"
+    },
+    "Importing From Another Workbook": {
+      "status": "approved",
+      "hash": "45e72a24191c",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.413Z"
+    },
+    "Importing a CSV or Text File": {
+      "status": "approved",
+      "hash": "6058e755c1a1",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.459Z"
+    },
+    "Choosing What to Load in the Navigator": {
+      "status": "approved",
+      "hash": "a7e1a23937a4",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.506Z"
+    },
+    "Many Files in One Folder, One Table": {
+      "status": "approved",
+      "hash": "3ebabc41811f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.552Z"
+    },
+    "Importing a Table From a Web Page": {
+      "status": "approved",
+      "hash": "72ae0c37bada",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.598Z"
+    },
+    "Setting the Kind of Data Early": {
+      "status": "approved",
+      "hash": "562f221fc84e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.649Z"
+    },
+    "Dates That Arrive as Text": {
+      "status": "approved",
+      "hash": "5d82e1dd5db0",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.695Z"
+    },
+    "Numbers That Arrive as Text": {
+      "status": "approved",
+      "hash": "da86f7ab4c1c",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.740Z"
+    },
+    "Load to a Sheet, or Only Connect": {
+      "status": "approved",
+      "hash": "9d96b37529fd",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.788Z"
+    },
+    "Practice: Bringing Data In": {
+      "status": "approved",
+      "hash": "5c7f7da83f2f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.833Z"
+    },
+    "Using the First Row as Headers": {
+      "status": "approved",
+      "hash": "4a860527ba27",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.878Z"
+    },
+    "Removing Junk Rows at the Top": {
+      "status": "approved",
+      "hash": "80243093b824",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.923Z"
+    },
+    "Removing Blank Rows": {
+      "status": "approved",
+      "hash": "4f08e779448b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:01.975Z"
+    },
+    "Choosing Which Columns to Keep": {
+      "status": "approved",
+      "hash": "c24d3fa85743",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.025Z"
+    },
+    "Renaming Columns": {
+      "status": "approved",
+      "hash": "89f73d0c3427",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.072Z"
+    },
+    "Trimming Stray Spaces": {
+      "status": "approved",
+      "hash": "6213fc753134",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.117Z"
+    },
+    "Fixing Capital Letters": {
+      "status": "approved",
+      "hash": "830bbc3c0fd6",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.167Z"
+    },
+    "Replacing Values": {
+      "status": "approved",
+      "hash": "b0ad226eafec",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.215Z"
+    },
+    "Dropping Repeated Rows": {
+      "status": "approved",
+      "hash": "5b22144cb7b2",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.263Z"
+    },
+    "Filling Down Empty Cells": {
+      "status": "approved",
+      "hash": "64ee4a1891bf",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.311Z"
+    },
+    "Practice: A Clean Sales List": {
+      "status": "approved",
+      "hash": "803cc47fe77b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.362Z"
+    },
+    "Filtering Rows in the Editor": {
+      "status": "approved",
+      "hash": "67712adf5f03",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.408Z"
+    },
+    "Filtering by Text, Number and Date": {
+      "status": "approved",
+      "hash": "a31ff5d1899e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.459Z"
+    },
+    "Keeping the Top Rows": {
+      "status": "approved",
+      "hash": "272feb7af277",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.508Z"
+    },
+    "Sorting Inside a Query": {
+      "status": "approved",
+      "hash": "3f2bd60e08f2",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.561Z"
+    },
+    "Finding and Removing Errors": {
+      "status": "approved",
+      "hash": "468a3bf2e727",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.610Z"
+    },
+    "Adding an Index Column": {
+      "status": "approved",
+      "hash": "228a482c5bd7",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.664Z"
+    },
+    "Practice: Narrowing the List": {
+      "status": "approved",
+      "hash": "3a8f11cacd0f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.718Z"
+    },
+    "Splitting a Column at a Delimiter": {
+      "status": "approved",
+      "hash": "ca0a4241b0c7",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.770Z"
+    },
+    "Splitting a Column by Length": {
+      "status": "approved",
+      "hash": "591a36e31551",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.819Z"
+    },
+    "Pulling Out Text Before or After": {
+      "status": "approved",
+      "hash": "381b4595074c",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.867Z"
+    },
+    "Merging Columns Into One": {
+      "status": "approved",
+      "hash": "71eafd7e7f2f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.913Z"
+    },
+    "Adding a Column From Examples": {
+      "status": "approved",
+      "hash": "7afa2aa2037d",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:02.959Z"
+    },
+    "Adding a Custom Column": {
+      "status": "approved",
+      "hash": "5884eb316aa9",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.007Z"
+    },
+    "Adding a Conditional Column": {
+      "status": "approved",
+      "hash": "a9fd09a05ae5",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.054Z"
+    },
+    "Pulling Year and Month From a Date": {
+      "status": "approved",
+      "hash": "845640b603e5",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.099Z"
+    },
+    "Unpivoting Columns Into Rows": {
+      "status": "approved",
+      "hash": "d4ccdb102a10",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.147Z"
+    },
+    "Pivoting Rows Into Columns": {
+      "status": "approved",
+      "hash": "421f18080b40",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.194Z"
+    },
+    "Transposing a Table": {
+      "status": "approved",
+      "hash": "064c01a44dbb",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.241Z"
+    },
+    "Grouping and Summarising Rows": {
+      "status": "approved",
+      "hash": "cf3088d5734c",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.287Z"
+    },
+    "Practice: Reshaping a Report": {
+      "status": "approved",
+      "hash": "b5db7e681e57",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.338Z"
+    },
+    "Stacking or Joining: Which Do You Need": {
+      "status": "approved",
+      "hash": "3c19853c1ce2",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.384Z"
+    },
+    "Appending Tables One Under Another": {
+      "status": "approved",
+      "hash": "52ddc900142e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.432Z"
+    },
+    "Merging Tables Side by Side": {
+      "status": "approved",
+      "hash": "75333bdeb336",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.477Z"
+    },
+    "The Join Kinds in Plain Words": {
+      "status": "approved",
+      "hash": "a41375525e86",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.525Z"
+    },
+    "Looking Up a Value With a Merge": {
+      "status": "approved",
+      "hash": "8f62d254796d",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.574Z"
+    },
+    "Duplicating or Referencing a Query": {
+      "status": "approved",
+      "hash": "c76f783749b7",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.625Z"
+    },
+    "Checking a Combined Result": {
+      "status": "approved",
+      "hash": "9d75c014f194",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.673Z"
+    },
+    "Practice: Combining Two Lists": {
+      "status": "approved",
+      "hash": "ab0aea2d434f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.721Z"
+    },
+    "Refreshing a Query": {
+      "status": "approved",
+      "hash": "d01abaeb5d03",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.766Z"
+    },
+    "Refreshing When the File Opens": {
+      "status": "approved",
+      "hash": "e2f7178e795b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.814Z"
+    },
+    "How Queries Depend on Each Other": {
+      "status": "approved",
+      "hash": "275a45fa04a3",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.861Z"
+    },
+    "Naming Steps and Queries Clearly": {
+      "status": "approved",
+      "hash": "f04d514b8b2d",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.907Z"
+    },
+    "Editing or Deleting an Earlier Step": {
+      "status": "approved",
+      "hash": "c61440419cfe",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.954Z"
+    },
+    "When a Step Shows an Error": {
+      "status": "approved",
+      "hash": "904e9625d81d",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:03.999Z"
+    },
+    "When a Heading Was Renamed": {
+      "status": "approved",
+      "hash": "7b12ad06815b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:04.055Z"
+    },
+    "When the File Has Moved": {
+      "status": "approved",
+      "hash": "a654300edeac",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:04.099Z"
+    },
+    "Using a Parameter for the File Path": {
+      "status": "approved",
+      "hash": "8c708e0fa216",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:04.146Z"
+    },
+    "Practice: Breaking and Fixing a Query": {
+      "status": "approved",
+      "hash": "a11cb46e86fb",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:04.192Z"
+    },
+    "Loading a Query Into a PivotTable": {
+      "status": "approved",
+      "hash": "8189b416c934",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:04.239Z"
+    },
+    "Loading to the Data Model": {
+      "status": "approved",
+      "hash": "a0022e9cb76b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:04.288Z"
+    },
+    "Reading the Code Behind a Step": {
+      "status": "approved",
+      "hash": "3fac5580b6d5",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:04.333Z"
+    },
+    "Opening the Advanced Editor": {
+      "status": "approved",
+      "hash": "944df99b1c3b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:04.380Z"
+    },
+    "Practice: Monthly Messy Files": {
+      "status": "approved",
+      "hash": "70509f57476e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:04.426Z"
+    },
+    "Practice: Someone Else's Report": {
+      "status": "approved",
+      "hash": "91c821ddf3b1",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:04.473Z"
+    },
+    "Practice: Messy File to PivotTable": {
+      "status": "approved",
+      "hash": "f0ca07607d00",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:04.522Z"
+    },
+    "Mistakes Almost Everyone Makes": {
+      "status": "approved",
+      "hash": "c8d106d391af",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:04.569Z"
+    },
+    "Where to Go After Power Query": {
+      "status": "approved",
+      "hash": "94e35e88697f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Claude rendered and read each page when it was written; not reviewed page by page by the author.",
+      "at": "2026-10-23T08:11:04.614Z"
+    }
+  }
+}
