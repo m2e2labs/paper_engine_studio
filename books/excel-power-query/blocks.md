@@ -299,7 +299,7 @@ menu (Using Locale), the Navigator and the Text/CSV preview. Excel names steps i
 - **Use when:** always, at the end of the part. **Skip when:** never.
 - **Action:** "Filter, sort and compare against a PivotTable total."
 - **Band:** diagram (a filtered list beside the PivotTable that confirms it)
-- **Facts:** F296
+- **Facts:** F296, F123, F126, F136, F140
 
 ## Part 5 · Reshaping a table
 
