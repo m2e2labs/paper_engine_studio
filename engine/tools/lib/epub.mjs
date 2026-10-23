@@ -178,7 +178,7 @@ export async function exportEpub(bookHtml, out, { json = {}, edition = null, dat
     ${pub.author ? `<dc:creator>${xml(pub.author)}</dc:creator>` : ''}
     ${pub.description || pub.subtitle ? `<dc:description>${xml(pub.description || pub.subtitle)}</dc:description>` : ''}
     ${pub.publisher ? `<dc:publisher>${xml(pub.publisher)}</dc:publisher>` : ''}
-    ${pub.published ? `<dc:date>${xml(pub.published)}</dc:date>` : ''}
+    ${/^\d{4}-\d{2}-\d{2}$/.test(pub.published || '') ? `<dc:date>${xml(pub.published)}</dc:date>` : ''}
     ${[...pub.keywords, ...pub.categories].map((k) => `<dc:subject>${xml(k)}</dc:subject>`).join('\n    ')}
     ${pub.rights ? `<dc:rights>${xml(pub.rights)}</dc:rights>` : ''}
     <meta property="dcterms:modified">${date.toISOString().slice(0, 19)}Z</meta>

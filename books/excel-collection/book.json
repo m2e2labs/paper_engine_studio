@@ -1,0 +1,508 @@
+{
+  "$schema": "../../engine/book.schema.json",
+  "title": "Excel, PivotTables and Power Query for Absolute Beginners",
+  "subtitle": "The complete three-book collection in one volume.",
+  "author": "M2E2 Labs",
+  "series": "Absolute Beginners",
+  "brand": "Third Watch Press",
+  "editionLabel": "Edition 1.0",
+  "unit": "lessons",
+  "numbered": true,
+  "contents": true,
+  "index": true,
+  "language": "en",
+  "cover": {
+    "kicker": "Three Books in One",
+    "note": "One idea per page. Every click explained.",
+    "art": "<svg viewBox=\"0 0 1280 220\" width=\"540\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Three sketches side by side: a first spreadsheet, a long list of rows becoming a short summary and a chart, and untidy sheets passing through a funnel into one clean table.\"><g transform=\"translate(0,0)\"><defs><filter id=\"exCoverA\" filterUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"400\" height=\"200\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.045\" numOctaves=\"2\" seed=\"23\" result=\"noise\"/><feDisplacementMap in=\"SourceGraphic\" in2=\"noise\" scale=\"2.5\" xChannelSelector=\"R\" yChannelSelector=\"G\"/></filter></defs><g filter=\"url(#exCoverA)\"><rect x=\"30\" y=\"30\" width=\"200\" height=\"140\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><rect x=\"30\" y=\"30\" width=\"200\" height=\"24\" fill=\"#EEF0FE\"/><line x1=\"70\" y1=\"30\" x2=\"70\" y2=\"170\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"110\" y1=\"30\" x2=\"110\" y2=\"170\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"150\" y1=\"30\" x2=\"150\" y2=\"170\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"190\" y1=\"30\" x2=\"190\" y2=\"170\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"30\" y1=\"54\" x2=\"230\" y2=\"54\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"30\" y1=\"77\" x2=\"230\" y2=\"77\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"30\" y1=\"100\" x2=\"230\" y2=\"100\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"30\" y1=\"124\" x2=\"230\" y2=\"124\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><line x1=\"30\" y1=\"147\" x2=\"230\" y2=\"147\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><rect x=\"162\" y=\"66\" width=\"16\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"162\" y=\"89\" width=\"21\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"162\" y=\"112\" width=\"26\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"162\" y=\"135\" width=\"19\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"150\" y=\"100.5\" width=\"40\" height=\"23\" fill=\"none\" stroke=\"#4F46E5\" stroke-width=\"4\"/><line x1=\"244\" y1=\"100\" x2=\"281\" y2=\"100\" stroke=\"#94A3B8\" stroke-width=\"3\" stroke-linecap=\"round\"/><polygon points=\"280,94 290,100 280,106\" fill=\"#94A3B8\"/><rect x=\"298\" y=\"60\" width=\"78\" height=\"80\" rx=\"12\" fill=\"#ECFDF5\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><path d=\"M352 80 L322 80 L338 100 L322 120 L352 120\" fill=\"none\" stroke=\"#0D9488\" stroke-width=\"7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g></g><g transform=\"translate(440,10)\"><defs><filter id=\"exCoverB\" filterUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"400\" height=\"200\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.045\" numOctaves=\"2\" seed=\"29\" result=\"noise\"/><feDisplacementMap in=\"SourceGraphic\" in2=\"noise\" scale=\"2.5\" xChannelSelector=\"R\" yChannelSelector=\"G\"/></filter></defs><g filter=\"url(#exCoverB)\"><rect x=\"20\" y=\"16\" width=\"110\" height=\"170\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><line x1=\"20\" y1=\"21\" x2=\"130\" y2=\"21\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"25\" width=\"34\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"100\" y=\"25\" width=\"20\" height=\"6\" rx=\"3\" fill=\"#4F46E5\"/><line x1=\"20\" y1=\"36\" x2=\"130\" y2=\"36\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"40\" width=\"41\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"100\" y=\"40\" width=\"20\" height=\"6\" rx=\"3\" fill=\"#818CF8\"/><line x1=\"20\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"54\" width=\"48\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"100\" y=\"54\" width=\"20\" height=\"6\" rx=\"3\" fill=\"#0D9488\"/><line x1=\"20\" y1=\"64\" x2=\"130\" y2=\"64\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"68\" width=\"55\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"100\" y=\"68\" width=\"20\" height=\"6\" rx=\"3\" fill=\"#F59E0B\"/><line x1=\"20\" y1=\"79\" x2=\"130\" y2=\"79\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"83\" width=\"38\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"100\" y=\"83\" width=\"20\" height=\"6\" rx=\"3\" fill=\"#4F46E5\"/><line x1=\"20\" y1=\"94\" x2=\"130\" y2=\"94\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"98\" width=\"45\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"100\" y=\"98\" width=\"20\" height=\"6\" rx=\"3\" fill=\"#818CF8\"/><line x1=\"20\" y1=\"108\" x2=\"130\" y2=\"108\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"112\" width=\"52\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"100\" y=\"112\" width=\"20\" height=\"6\" rx=\"3\" fill=\"#0D9488\"/><line x1=\"20\" y1=\"122\" x2=\"130\" y2=\"122\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"126\" width=\"35\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"100\" y=\"126\" width=\"20\" height=\"6\" rx=\"3\" fill=\"#F59E0B\"/><line x1=\"20\" y1=\"137\" x2=\"130\" y2=\"137\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"141\" width=\"42\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"100\" y=\"141\" width=\"20\" height=\"6\" rx=\"3\" fill=\"#4F46E5\"/><line x1=\"20\" y1=\"152\" x2=\"130\" y2=\"152\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"156\" width=\"49\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"100\" y=\"156\" width=\"20\" height=\"6\" rx=\"3\" fill=\"#818CF8\"/><line x1=\"20\" y1=\"166\" x2=\"130\" y2=\"166\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"170\" width=\"56\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"100\" y=\"170\" width=\"20\" height=\"6\" rx=\"3\" fill=\"#0D9488\"/><line x1=\"140\" y1=\"100\" x2=\"175\" y2=\"100\" stroke=\"#94A3B8\" stroke-width=\"3\" stroke-linecap=\"round\"/><polygon points=\"174,94 184,100 174,106\" fill=\"#94A3B8\"/><rect x=\"192\" y=\"44\" width=\"110\" height=\"112\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><rect x=\"192\" y=\"44\" width=\"110\" height=\"24\" fill=\"#EEF0FE\"/><line x1=\"192\" y1=\"68\" x2=\"302\" y2=\"68\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><rect x=\"202\" y=\"76\" width=\"24\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"234\" y=\"75\" width=\"16\" height=\"8\" rx=\"3\" fill=\"#4F46E5\"/><line x1=\"192\" y1=\"90\" x2=\"302\" y2=\"90\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><rect x=\"202\" y=\"98\" width=\"24\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"234\" y=\"97\" width=\"47\" height=\"8\" rx=\"3\" fill=\"#818CF8\"/><line x1=\"192\" y1=\"112\" x2=\"302\" y2=\"112\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><rect x=\"202\" y=\"120\" width=\"24\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"234\" y=\"119\" width=\"23\" height=\"8\" rx=\"3\" fill=\"#0D9488\"/><line x1=\"192\" y1=\"134\" x2=\"302\" y2=\"134\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><rect x=\"202\" y=\"142\" width=\"24\" height=\"6\" rx=\"3\" fill=\"#94A3B8\"/><rect x=\"234\" y=\"141\" width=\"28\" height=\"8\" rx=\"3\" fill=\"#F59E0B\"/><line x1=\"228\" y1=\"44\" x2=\"228\" y2=\"156\" stroke=\"#94A3B8\" stroke-width=\"1.5\"/><rect x=\"318\" y=\"62\" width=\"64\" height=\"80\" rx=\"10\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><rect x=\"326\" y=\"112\" width=\"9\" height=\"20\" fill=\"#4F46E5\"/><rect x=\"339\" y=\"76\" width=\"9\" height=\"56\" fill=\"#818CF8\"/><rect x=\"352\" y=\"104\" width=\"9\" height=\"28\" fill=\"#0D9488\"/><rect x=\"365\" y=\"96\" width=\"9\" height=\"36\" fill=\"#F59E0B\"/></g></g><g transform=\"translate(880,10)\"><defs><filter id=\"exCoverC\" filterUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"400\" height=\"200\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.045\" numOctaves=\"2\" seed=\"31\" result=\"noise\"/><feDisplacementMap in=\"SourceGraphic\" in2=\"noise\" scale=\"2.5\" xChannelSelector=\"R\" yChannelSelector=\"G\"/></filter></defs><g filter=\"url(#exCoverC)\"><rect x=\"18\" y=\"30\" width=\"92\" height=\"76\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><line x1=\"18\" y1=\"54\" x2=\"110\" y2=\"54\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><line x1=\"18\" y1=\"80\" x2=\"110\" y2=\"80\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"68\" y=\"58\" width=\"30\" height=\"18\" fill=\"#FEF2F2\"/><rect x=\"32\" y=\"52\" width=\"92\" height=\"76\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><line x1=\"32\" y1=\"76\" x2=\"124\" y2=\"76\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><line x1=\"32\" y1=\"102\" x2=\"124\" y2=\"102\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"82\" y=\"80\" width=\"30\" height=\"18\" fill=\"#FEF2F2\"/><rect x=\"46\" y=\"74\" width=\"92\" height=\"76\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><line x1=\"46\" y1=\"98\" x2=\"138\" y2=\"98\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><line x1=\"46\" y1=\"124\" x2=\"138\" y2=\"124\" stroke=\"#E7E9EF\" stroke-width=\"1.5\"/><rect x=\"96\" y=\"102\" width=\"30\" height=\"18\" fill=\"#FEF2F2\"/><path d=\"M150 56 L226 56 L196 108 L196 150 L180 160 L180 108 Z\" fill=\"#EEF0FE\" stroke=\"#4F46E5\" stroke-width=\"3\" stroke-linejoin=\"round\"/><line x1=\"162\" y1=\"72\" x2=\"214\" y2=\"72\" stroke=\"#4F46E5\" stroke-width=\"2\"/><line x1=\"228\" y1=\"120\" x2=\"253\" y2=\"120\" stroke=\"#94A3B8\" stroke-width=\"3\" stroke-linecap=\"round\"/><polygon points=\"252,114 262,120 252,126\" fill=\"#94A3B8\"/><rect x=\"270\" y=\"46\" width=\"112\" height=\"92\" rx=\"3\" fill=\"#ECFDF5\" stroke=\"#1A1A2E\" stroke-width=\"2.5\"/><line x1=\"270\" y1=\"69\" x2=\"382\" y2=\"69\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/><line x1=\"270\" y1=\"92\" x2=\"382\" y2=\"92\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/><line x1=\"270\" y1=\"115\" x2=\"382\" y2=\"115\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/><line x1=\"307\" y1=\"46\" x2=\"307\" y2=\"138\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/><line x1=\"344\" y1=\"46\" x2=\"344\" y2=\"138\" stroke=\"#A7F3D0\" stroke-width=\"1.5\"/><path d=\"M298 162 A22 22 0 1 0 322 150\" fill=\"none\" stroke=\"#0D9488\" stroke-width=\"5\" stroke-linecap=\"round\"/><polygon points=\"313,146 330,148 322,160\" fill=\"#0D9488\"/></g></g></svg>"
+  },
+  "copyright": {
+    "year": 2026,
+    "rights": "© 2026 M2E2 Labs. All rights reserved.",
+    "lines": [
+      "This volume collects Excel for Absolute Beginners, Excel PivotTables and Dashboards for Absolute Beginners and Excel Power Query for Absolute Beginners.",
+      "Set in Space Grotesk, Inter and JetBrains Mono.",
+      "Microsoft and Excel are trademarks of Microsoft Corporation. This is an independent guide, not published by or affiliated with Microsoft."
+    ]
+  },
+  "matter": {
+    "back": [
+      {
+        "kind": "glossary"
+      }
+    ],
+    "front": [
+      {
+        "kind": "list",
+        "title": "Three Books in One",
+        "items": [
+          {
+            "name": "Book One · Excel for Absolute Beginners",
+            "note": "From your first cell to a summary you can show someone. Parts 1 to 12, lessons 1 to 78."
+          },
+          {
+            "name": "Book Two · Excel PivotTables and Dashboards for Absolute Beginners",
+            "note": "From a long list of rows to a one-page dashboard. Parts 13 to 20, lessons 79 to 155."
+          },
+          {
+            "name": "Book Three · Excel Power Query for Absolute Beginners",
+            "note": "Clean your data once, then refresh it every time. Parts 21 to 28, lessons 156 to 232."
+          }
+        ]
+      }
+    ]
+  },
+  "parts": [
+    {
+      "name": "Meet Excel",
+      "eyebrow": "Book One · Getting started",
+      "why": "What Excel is for, how its screen is laid out, and how to get around a sheet without the mouse.",
+      "blocks": [
+        "What Excel Is For",
+        "Workbooks, Sheets and Cells",
+        "A Tour of the Excel Window",
+        "Moving Around the Sheet",
+        "Adding and Renaming Sheets",
+        "Practice: First Look at the Corner Shop Sales"
+      ]
+    },
+    {
+      "name": "Typing and moving around",
+      "eyebrow": "Book One · Typing and selecting",
+      "why": "How Excel takes what you type, how it tells numbers, text and dates apart, and how to select, edit and undo.",
+      "blocks": [
+        "Typing Into a Cell",
+        "Numbers, Text and Dates",
+        "Numbers Stored as Text",
+        "Entering Dates Excel Can Read",
+        "Selecting Cells",
+        "Editing and Clearing a Cell",
+        "Undo and Cancel",
+        "Selecting, Copying and Filling",
+        "Practice: Typing and Fixing a Short List"
+      ]
+    },
+    {
+      "name": "Making it look right",
+      "eyebrow": "Book One · Formatting",
+      "why": "How to make a sheet easy to read: bold and fonts, money and percent formats, column widths, borders and colour.",
+      "blocks": [
+        "Bold and Fonts",
+        "Showing Money With Currency",
+        "Percentages and Decimal Places",
+        "Changing Column Widths",
+        "Adding Borders",
+        "Colour in Cells",
+        "Practice: Making the Sales Sheet Readable"
+      ]
+    },
+    {
+      "name": "Your first formulas",
+      "eyebrow": "Book One · Formulas",
+      "why": "How to type a formula, the symbols and the order Excel uses, and the ready-made formulas that add, average, count and round.",
+      "blocks": [
+        "What a Formula Actually Is",
+        "Your First Formula: Adding Two Cells",
+        "The Symbols in a Formula",
+        "Brackets and the Order of Calculation",
+        "SUM and AutoSum",
+        "AVERAGE: The Middle of a Group",
+        "MIN and MAX: Smallest and Largest",
+        "COUNT: How Many Numbers",
+        "ROUND: Fewer Decimal Places",
+        "Practice: First Formulas on the Sales Sheet"
+      ]
+    },
+    {
+      "name": "Cell references",
+      "eyebrow": "Book One · References",
+      "why": "How a formula's cell addresses behave when you copy it: moving, locked, half-locked, and pointing to another sheet.",
+      "blocks": [
+        "Copying Formulas: Relative References",
+        "Locking a Cell With the Dollar Sign",
+        "Mixed References: Lock Only the Column or the Row",
+        "Switching Reference Type With F4",
+        "Referring to Another Sheet",
+        "Practice: Copying a Formula Down the Sales Sheet"
+      ]
+    },
+    {
+      "name": "Decisions and lookups",
+      "eyebrow": "Book One · Decisions",
+      "why": "How to make a cell decide: comparisons, IF, AND and OR, counting and adding what matches, looking a value up, and handling errors.",
+      "blocks": [
+        "Comparing Two Values",
+        "IF: Making a Decision in a Cell",
+        "AND and OR: More Than One Test",
+        "SUMIF: Adding Up Only What Matches",
+        "COUNTIF: Counting What Matches",
+        "XLOOKUP: Finding a Value in a List",
+        "IFERROR: Handling an Error",
+        "Practice: Decisions and a Lookup on the Sales Sheet"
+      ]
+    },
+    {
+      "name": "Dates and text",
+      "eyebrow": "Book One · Dates and text",
+      "why": "How Excel treats dates as numbers, how to pull a date apart, and how to join and tidy text.",
+      "blocks": [
+        "Dates Are Numbers",
+        "TODAY: Today's Date",
+        "YEAR, MONTH and DAY",
+        "Joining Text With the Ampersand",
+        "TRIM: Removing Extra Spaces",
+        "Practice: Dates and Text on the Staff Sheet"
+      ]
+    },
+    {
+      "name": "Organising rows",
+      "eyebrow": "Book One · Sorting, filtering, tables",
+      "why": "Finding the rows you need without scrolling through all of them.",
+      "blocks": [
+        "Keeping the Headings in View",
+        "Sorting Rows",
+        "Sorting by More Than One Column",
+        "Filtering Rows",
+        "Turning Your Data Into a Table",
+        "Removing Duplicate Rows",
+        "Practice: Sorting and Filtering the Sales Sheet"
+      ]
+    },
+    {
+      "name": "Charts",
+      "eyebrow": "Book One · Showing the answer",
+      "why": "How to choose a chart, label it, and draw the three you'll use most: column, line and pie.",
+      "blocks": [
+        "Choosing the Right Chart",
+        "Building Your First Column Chart",
+        "Adding Titles to a Chart",
+        "Line Charts: Trends Over Time",
+        "Pie Charts: Parts of a Whole",
+        "Practice: Charting the Targets"
+      ]
+    },
+    {
+      "name": "Summaries",
+      "eyebrow": "Book One · Summary tables",
+      "why": "Totals for each group without writing a formula for every one.",
+      "blocks": [
+        "Summary Tables: Totals by Group",
+        "Sum, Count or Average in a Summary Table",
+        "Rows and Columns: A Two-Way Summary",
+        "Refreshing a Summary Table",
+        "Practice: A Summary of the Sales Sheet"
+      ]
+    },
+    {
+      "name": "Printing and sharing",
+      "eyebrow": "Book One · Print and share",
+      "why": "Getting a sheet onto paper, or into someone else's hands, the way you meant it to look.",
+      "blocks": [
+        "Saving, and Which File Type to Use",
+        "Previewing and Printing a Sheet",
+        "Fitting the Sheet on the Page",
+        "Repeating Headings on Every Printed Page",
+        "Saving as a PDF to Share"
+      ]
+    },
+    {
+      "name": "Checking your work",
+      "eyebrow": "Book One · Checking",
+      "why": "How to read an error, see the formulas behind a sheet, and prove a total two ways.",
+      "blocks": [
+        "Reading an Error Message",
+        "Showing the Formulas Behind the Numbers",
+        "Practice: The Final Check"
+      ]
+    },
+    {
+      "name": "Before you build one",
+      "eyebrow": "Book Two · Getting ready",
+      "why": "What a PivotTable is for, what shape your data needs first, and how to insert and read your first one.",
+      "blocks": [
+        "Why PivotTables Exist",
+        "Data a PivotTable Can Read",
+        "Tidying a List Before You Pivot",
+        "Inserting Your First PivotTable",
+        "Where the PivotTable Goes",
+        "The Field List and Its Four Boxes",
+        "Reading Row Labels and Grand Totals",
+        "Excel's Recommended PivotTables",
+        "Practice: Your First PivotTable"
+      ]
+    },
+    {
+      "name": "Rows, columns and values",
+      "eyebrow": "Book Two · Building the table",
+      "why": "Putting fields where they belong, choosing what gets added up, and shaping and naming the result.",
+      "blocks": [
+        "Putting Fields in Rows",
+        "Moving and Removing Fields",
+        "Values: Choosing What Gets Added Up",
+        "Changing the Calculation",
+        "Putting Two Values Side by Side",
+        "Spreading a Field Across Columns",
+        "Stacking Two Fields in Rows",
+        "Expanding and Collapsing Groups",
+        "Renaming a Heading in a PivotTable",
+        "Formatting Numbers Inside a PivotTable",
+        "Practice: Amount by Region and Product"
+      ]
+    },
+    {
+      "name": "Sorting, filtering and layout",
+      "eyebrow": "Book Two · Making it readable",
+      "why": "Putting the biggest first, leaving out what you don't need, and choosing a layout and style you can read.",
+      "blocks": [
+        "Sorting a PivotTable",
+        "Filtering Rows and Columns",
+        "Filtering by Words in a Label",
+        "Filtering by a Value",
+        "Showing Only the Top Items",
+        "One Filter for the Whole Table",
+        "Clearing Filters and Starting Again",
+        "Compact, Outline or Tabular",
+        "Repeating Labels and Blank Rows",
+        "Choosing a PivotTable Style",
+        "Practice: A Tidy Regional Report"
+      ]
+    },
+    {
+      "name": "Grouping",
+      "eyebrow": "Book Two · Dates, numbers and text",
+      "why": "Turning 240 separate dates into months, quarters and weeks, numbers into bands, and a few items into one.",
+      "blocks": [
+        "Grouping Dates by Month",
+        "Grouping Dates by Quarter",
+        "Why Dates Won't Group",
+        "Grouping Dates by Week",
+        "Grouping Numbers Into Bands",
+        "Grouping Text Items by Hand",
+        "Ungrouping and Changing a Group",
+        "Adding a Helper Column to the Data",
+        "Practice: Sales by Month and Quarter"
+      ]
+    },
+    {
+      "name": "Showing values differently",
+      "eyebrow": "Book Two · Same numbers, new view",
+      "why": "Turning totals into shares, ranks, running totals and changes, without writing a formula.",
+      "blocks": [
+        "Percent of the Grand Total",
+        "Percent of a Row or a Column",
+        "Rank Largest to Smallest",
+        "Running Totals",
+        "Change From a Chosen Month",
+        "Percent Change From a Chosen Month",
+        "Comparing Everything to One Item",
+        "Putting Back the Normal View",
+        "Practice: Who Is Growing"
+      ]
+    },
+    {
+      "name": "Calculations and keeping it right",
+      "eyebrow": "Book Two · Your own sums, and trust",
+      "why": "Adding a calculation of your own, looking behind a number, keeping it fresh, and fixing a PivotTable that's wrong.",
+      "blocks": [
+        "Adding a Calculated Field",
+        "Counting Each Item Once",
+        "Drilling Down Behind a Number",
+        "When Your Data Grows Past the PivotTable",
+        "Changing Which Data a PivotTable Reads",
+        "Refreshing Every Time the File Opens",
+        "Filling Empty Cells",
+        "Keeping Column Widths When You Refresh",
+        "Copying a PivotTable as Plain Values",
+        "Why a Formula Shows GETPIVOTDATA",
+        "Two PivotTables From One List",
+        "When the Numbers Look Wrong",
+        "Practice: Fixing a Broken PivotTable"
+      ]
+    },
+    {
+      "name": "From PivotTable to dashboard",
+      "eyebrow": "Book Two · Putting it on one page",
+      "why": "Charts, slicers and a timeline, laid out on one page someone else can use, printed and checked.",
+      "blocks": [
+        "PivotCharts",
+        "Choosing a Chart Type for a PivotChart",
+        "Cleaning Up a PivotChart",
+        "Slicers",
+        "Making Slicers Look Right",
+        "One Slicer for Two PivotTables",
+        "Timelines",
+        "Laying Out a One-Page Dashboard",
+        "Printing the Dashboard on One Page",
+        "Checking the Dashboard",
+        "Practice: The Corner Shop Dashboard"
+      ]
+    },
+    {
+      "name": "Putting it to work",
+      "eyebrow": "Book Two · Real jobs",
+      "why": "Three whole jobs done from start to finish, and a pointer to what comes next.",
+      "blocks": [
+        "Practice: A Report by Salesperson",
+        "Practice: Sales Against Target",
+        "Practice: The Whole Job From Scratch",
+        "Where to Go After PivotTables"
+      ]
+    },
+    {
+      "name": "Before you open the editor",
+      "eyebrow": "Book Three · Getting ready",
+      "why": "Why cleaning the same data by hand costs you every week, what Power Query is, and how to run your first query.",
+      "blocks": [
+        "Cleaning the Same Data Every Week",
+        "What Power Query Does in Excel",
+        "Finding Get & Transform on the Ribbon",
+        "Turning a List Into an Excel Table",
+        "Your First Query From a Table",
+        "Finding Your Way Around the Editor",
+        "How Excel Records Your Steps",
+        "Loading the Result to a Sheet",
+        "Practice: Your First Query"
+      ]
+    },
+    {
+      "name": "Getting data in",
+      "eyebrow": "Book Three · Bringing data in",
+      "why": "Connecting to workbooks, text files, folders and web pages, and getting the kind of data right at the start.",
+      "blocks": [
+        "Importing From Another Workbook",
+        "Importing a CSV or Text File",
+        "Choosing What to Load in the Navigator",
+        "Many Files in One Folder, One Table",
+        "Importing a Table From a Web Page",
+        "Setting the Kind of Data Early",
+        "Dates That Arrive as Text",
+        "Numbers That Arrive as Text",
+        "Load to a Sheet, or Only Connect",
+        "Practice: Bringing Data In"
+      ]
+    },
+    {
+      "name": "Cleaning what arrived",
+      "eyebrow": "Book Three · Cleaning",
+      "why": "Headers, junk rows, stray spaces, wrong capitals, duplicates and blanks: the fixes that make a list ready.",
+      "blocks": [
+        "Using the First Row as Headers",
+        "Removing Junk Rows at the Top",
+        "Removing Blank Rows",
+        "Choosing Which Columns to Keep",
+        "Renaming Columns",
+        "Trimming Stray Spaces",
+        "Fixing Capital Letters",
+        "Replacing Values",
+        "Dropping Repeated Rows",
+        "Filling Down Empty Cells",
+        "Practice: A Clean Sales List"
+      ]
+    },
+    {
+      "name": "Choosing the rows you want",
+      "eyebrow": "Book Three · Filtering and sorting",
+      "why": "Filtering rows, sorting, finding errors and adding a row number.",
+      "blocks": [
+        "Filtering Rows in the Editor",
+        "Filtering by Text, Number and Date",
+        "Keeping the Top Rows",
+        "Sorting Inside a Query",
+        "Finding and Removing Errors",
+        "Adding an Index Column",
+        "Practice: Narrowing the List"
+      ]
+    },
+    {
+      "name": "Reshaping a table",
+      "eyebrow": "Book Three · Reshaping",
+      "why": "Splitting and merging columns, adding calculated columns, turning columns into rows and back, and grouping.",
+      "blocks": [
+        "Splitting a Column at a Delimiter",
+        "Splitting a Column by Length",
+        "Pulling Out Text Before or After",
+        "Merging Columns Into One",
+        "Adding a Column From Examples",
+        "Adding a Custom Column",
+        "Adding a Conditional Column",
+        "Pulling Year and Month From a Date",
+        "Unpivoting Columns Into Rows",
+        "Pivoting Rows Into Columns",
+        "Transposing a Table",
+        "Grouping and Summarising Rows",
+        "Practice: Reshaping a Report"
+      ]
+    },
+    {
+      "name": "Combining queries",
+      "eyebrow": "Book Three · Combining",
+      "why": "Stacking tables, joining them side by side, and looking things up with a merge.",
+      "blocks": [
+        "Stacking or Joining: Which Do You Need",
+        "Appending Tables One Under Another",
+        "Merging Tables Side by Side",
+        "The Join Kinds in Plain Words",
+        "Looking Up a Value With a Merge",
+        "Duplicating or Referencing a Query",
+        "Checking a Combined Result",
+        "Practice: Combining Two Lists"
+      ]
+    },
+    {
+      "name": "Keeping it working",
+      "eyebrow": "Book Three · Refreshing and repairing",
+      "why": "Refreshing, finding what a query depends on, and fixing the usual breaks.",
+      "blocks": [
+        "Refreshing a Query",
+        "Refreshing When the File Opens",
+        "How Queries Depend on Each Other",
+        "Naming Steps and Queries Clearly",
+        "Editing or Deleting an Earlier Step",
+        "When a Step Shows an Error",
+        "When a Heading Was Renamed",
+        "When the File Has Moved",
+        "Using a Parameter for the File Path",
+        "Practice: Breaking and Fixing a Query"
+      ]
+    },
+    {
+      "name": "Putting it to work",
+      "eyebrow": "Book Three · Putting it to work",
+      "why": "Feeding PivotTables, reading what Excel writes behind each step, and finishing the job from scratch.",
+      "blocks": [
+        "Loading a Query Into a PivotTable",
+        "Loading to the Data Model",
+        "Reading the Code Behind a Step",
+        "Opening the Advanced Editor",
+        "Practice: Monthly Messy Files",
+        "Practice: Someone Else's Report",
+        "Practice: Messy File to PivotTable",
+        "Mistakes Almost Everyone Makes",
+        "Where to Go After Power Query"
+      ]
+    }
+  ],
+  "publishing": {
+    "description": "Three books, one volume, 232 short lessons. Everything a complete beginner needs to go from never having typed in a cell to a clean, refreshing report someone else can use.\n\nThis collection holds the full text of all three Excel guides in the Absolute Beginners series:\n\nBook One, Excel for Absolute Beginners: from your first cell to a summary you can show someone. Workbooks and sheets, typing and formatting, formulas and functions like SUM and XLOOKUP, sorting, filtering, tables and your first chart.\n\nBook Two, Excel PivotTables and Dashboards for Absolute Beginners: from a long list of rows to a one-page dashboard. The Field List, grouping dates, showing values as shares and running totals, PivotCharts, slicers and a timeline.\n\nBook Three, Excel Power Query for Absolute Beginners: clean your data once, then refresh it every time. Junk rows, stray spaces and dates stored as text, whole folders of files, unpivot, append and merge, and fixing a query when the source changes.\n\nThese titles have been previously published as standalone books.\n\nEvery lesson is one idea on one page, with a clear diagram of what is actually happening and one small thing to try before moving on. The practice pages all use the same small example, a corner shop's year of sales. No unexplained jargon, no assumed expertise.",
+    "keywords": [
+      "excel for beginners",
+      "learn excel",
+      "excel pivot tables for beginners",
+      "power query for beginners",
+      "excel dashboard",
+      "excel data cleaning",
+      "excel formulas explained"
+    ],
+    "categories": [
+      "COM054000",
+      "COM021030"
+    ],
+    "publisher": "Third Watch Press",
+    "published": "on release",
+    "audience": "Complete beginners who have never used Excel, or use it only to type lists.",
+    "price": {
+      "amount": 24.99,
+      "currency": "USD"
+    }
+  }
+}

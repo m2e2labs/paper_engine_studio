@@ -1,0 +1,17 @@
+{
+  "guide": "Three Books in One",
+  "books": [
+    {
+      "from": "excel-beginner",
+      "label": "Book One"
+    },
+    {
+      "from": "excel-pivottables",
+      "label": "Book Two"
+    },
+    {
+      "from": "excel-power-query",
+      "label": "Book Three"
+    }
+  ]
+}

@@ -40,6 +40,7 @@ Practice pages use the sample file `datasets/excel-beginner/Corner Shop sales.xl
 - **Action:** "Type 5 in cell A1. Click A1 and read it in the formula bar. Then type B2 in the Name box and press Enter."
 - **Band:** diagram (hand-drawn close-up of the formula bar and the Name box side by side, the Name box at the left end, with cell A1's contents shown in the formula bar. No ribbon or grid, so the drawing makes no placement claim the sources do not back.)
 - **Facts:** F50, F51, F52, F62, F63. Gaps: no source says the formula bar sits below the ribbon, so the drawing's formula bar position is unsourced. No source says the Name box shows the address of the selected cell, so the page does not say it.
+- **Not figures:** 3 · "Three parts do most of the early work" counts the parts this page shows.
 
 #### Moving Around the Sheet
 - **What:** Arrow keys move one cell at a time. Ctrl with an arrow key jumps to the edge of a block of data. Ctrl+Home returns to the start of the sheet, and Ctrl+End goes to the last used cell. Enter completes what you typed and selects the cell below.
@@ -352,6 +353,7 @@ Practice pages use the sample file `datasets/excel-beginner/Corner Shop sales.xl
 - **Action:** "In A1 type 55 and in B1 type 0. In C1 type =A1/B1 and press Enter, then type =IFERROR(A1/B1,"Check B1") in D1."
 - **Band:** diagram (a division by zero error on one side and the chosen message on the other)
 - **Facts:** F168, F169, F170, F171
+- **Not figures:** 7 · "seven kinds of error" counts the errors F170 lists by name.
 
 #### Practice: Decisions and a Lookup on the Sales Sheet
 - **What:** On the Sales sheet, use IF to label each sale Big or Small, COUNTIF to count the big ones, and XLOOKUP to bring each sale's category in from the Products sheet.
@@ -382,6 +384,7 @@ Practice pages use the sample file `datasets/excel-beginner/Corner Shop sales.xl
 - **Action:** "In A1 type =DATE(2025,5,23). In B1 type =YEAR(A1), in C1 type =MONTH(A1) and in D1 type =DAY(A1)."
 - **Band:** diagram (one date split into its year, month and day)
 - **Facts:** F181, F182, F183, F184, F185
+- **Not figures:** 3 · "One date, three parts" counts the YEAR, MONTH and DAY this page teaches.
 
 #### Joining Text With the Ampersand
 - **What:** The ampersand joins text from different cells into one. =A2&" "&B2 joins what's in A2, a space, and what's in B2. CONCAT does the same job.
@@ -447,6 +450,7 @@ Practice pages use the sample file `datasets/excel-beginner/Corner Shop sales.xl
 - **Action:** "Copy the Sales data to a new sheet. Click any cell in it, then on the Data tab click Remove Duplicates. Leave every box ticked and click OK."
 - **Band:** diagram (two identical rows, with the second one removed)
 - **Facts:** F206, F207, F208, F209, F210, F211. Gap: no source gives the message Excel shows after removing duplicates, so the page doesn't quote one.
+- **Not figures:** 2 · "entered twice" sets up a Let's say example, not a claim.
 
 #### Practice: Sorting and Filtering the Sales Sheet
 - **What:** Sort the Sales sheet by Amount, largest first, then filter the Region column to North.
@@ -484,6 +488,7 @@ Practice pages use the sample file `datasets/excel-beginner/Corner Shop sales.xl
 - **Action:** "Type Month, North and South in A1 to C1, then four months and two numbers each below. Select A1 to C5. Click Insert, then Recommended Charts, then All Charts, and pick Line."
 - **Band:** diagram (two lines rising and falling across four months)
 - **Facts:** F38, F44, F215, F224, F225, F234
+- **Not figures:** 4 · "two regions over four months" sets up a Let's say example, not a claim.
 
 #### Pie Charts: Parts of a Whole
 - **What:** A pie chart shows how each value contributes to a total, as a share of the whole pie. Use it when you have one data series, no negative values, almost no zeros and no more than seven categories. Data labels show the numbers on the slices.

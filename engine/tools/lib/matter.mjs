@@ -81,7 +81,13 @@ export function matterProblems(json, edition = null) {
 const FIRST_PX = 690, NEXT_PX = 750;
 const proseCost = (p) => (p.startsWith('## ') ? 50 : Math.ceil(p.length / 76) * 23.2 + 13);
 const sourceCost = (f) => 21 + Math.ceil((f.source.length + 24) / 72) * 18 + 21;
-const termCost = (t) => 21 + Math.ceil(t.means.length / 74) * 19 + 21;
+/* Measured on the page: a term with a one-line head and a one-line meaning takes 51px, and
+   each line either wraps onto adds about 19.5px. The head holds the term and its page list
+   ("p. 8, 12, …", up to 5.5 characters a page with its comma and space), wrapping at about 90 characters. A meaning
+   is counted at 74 a line, to stay careful. Counting the list matters once a term is used on dozens of pages. */
+const termCost = (t) => 51 +
+  (Math.ceil((t.term.length + 3 + (t.usedBy?.length || 0) * 5.5) / 90) - 1) * 19.5 +
+  (Math.ceil(t.means.length / 74) - 1) * 19.5;
 const itemCost = (it) => 22 + (it.note ? Math.ceil(it.note.length / 78) * 20 : 0) + 13;
 
 function paginate(things, cost, reserve = 0) {

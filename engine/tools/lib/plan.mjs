@@ -54,6 +54,10 @@ export function parseBlocks(md) {
       action: field(body, 'Action'), bandNote: field(body, 'Band'),
       /* null = the line is missing (nobody has thought about it); [] = "none", on purpose */
       facts: !factsRaw ? null : /^none\b/i.test(factsRaw) ? [] : [...new Set(factsRaw.match(/\bF\d+\b/gi)?.map((f) => f.toUpperCase()) || [])],
+      /* "- **Not figures:** 3, 4 · why": numbers on the page that claim nothing, such as a
+         "Let's say" scenario or the page counting its own parts. Only what comes before the
+         " · " counts, so the reason can say anything. It stays in blocks.md, in plain sight. */
+      notFigures: [...numbersIn((field(body, 'Not figures') || '').split(/\s[·—]\s/)[0])],
     });
   });
   return parts;
@@ -100,6 +104,16 @@ export function proseOf(pageHtml) {
     .replace(/<div class="(?:eyebrow|foot|top)">[\s\S]*?<\/div>/g, ' '));
 }
 
+/* Where a page's figures are looked for: its prose, less the DO THIS NOW box, which tells the
+   reader what to type rather than claiming anything. A cell address (B2, $A$1) and a worked
+   function call (ROUND(A1,1), DATE(2025,5,23)) are not figures either. The glossary still
+   reads the whole of proseOf, box and all. */
+export function claimsOf(pageHtml) {
+  return proseOf(pageHtml.replace(/<div class="ask">[\s\S]*?<\/div>/g, ' '))
+    .replace(/\b[A-Z][A-Z0-9.]*\([^()]*\)/g, ' ')
+    .replace(/\$?\b[A-Z]{1,3}\$?\d+\b/g, ' ');
+}
+
 /* ------------------------------------------------------------------ the whole picture */
 export function loadPlan(dir) {
   const book = loadBook(dir);
@@ -126,7 +140,8 @@ export function loadPlan(dir) {
     if (page) {
       const allowed = numbersIn((b.facts || []).map((id) => factById.get(id)).filter(Boolean)
         .map((f) => `${f.claim} ${f.label}`).join(' '));
-      b.unbacked = [...numbersIn(proseOf(page.html))].filter((n) => !allowed.has(n));
+      for (const n of b.notFigures || []) allowed.add(n);
+      b.unbacked = [...numbersIn(claimsOf(page.html))].filter((n) => !allowed.has(n));
     }
   }
   for (const f of facts) f.usedBy = used.get(f.id) || [];

@@ -1,0 +1,1396 @@
+{
+  "pages": {
+    "What Excel Is For": {
+      "status": "approved",
+      "hash": "f733dcbe5ae2",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:29.929Z"
+    },
+    "Workbooks, Sheets and Cells": {
+      "status": "approved",
+      "hash": "da234cc6d354",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:30.039Z"
+    },
+    "A Tour of the Excel Window": {
+      "status": "approved",
+      "hash": "4d592800c267",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:30.143Z"
+    },
+    "Moving Around the Sheet": {
+      "status": "approved",
+      "hash": "514a9da06a48",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:30.243Z"
+    },
+    "Adding and Renaming Sheets": {
+      "status": "approved",
+      "hash": "25e69b884a42",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:30.344Z"
+    },
+    "Practice: First Look at the Corner Shop Sales": {
+      "status": "approved",
+      "hash": "11e78ef619fc",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:30.455Z"
+    },
+    "Typing Into a Cell": {
+      "status": "approved",
+      "hash": "1c64d8ebba3a",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:30.563Z"
+    },
+    "Numbers, Text and Dates": {
+      "status": "approved",
+      "hash": "4974096739de",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:30.671Z"
+    },
+    "Numbers Stored as Text": {
+      "status": "approved",
+      "hash": "11669afa1403",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:30.776Z"
+    },
+    "Entering Dates Excel Can Read": {
+      "status": "approved",
+      "hash": "6d23b6da147b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:30.886Z"
+    },
+    "Selecting Cells": {
+      "status": "approved",
+      "hash": "b917bf648904",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:30.986Z"
+    },
+    "Editing and Clearing a Cell": {
+      "status": "approved",
+      "hash": "c1c3e719bc98",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:31.089Z"
+    },
+    "Undo and Cancel": {
+      "status": "approved",
+      "hash": "9444a312aaab",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:31.188Z"
+    },
+    "Selecting, Copying and Filling": {
+      "status": "approved",
+      "hash": "25822d5840e2",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:31.289Z"
+    },
+    "Practice: Typing and Fixing a Short List": {
+      "status": "approved",
+      "hash": "17a7bea59bad",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:31.390Z"
+    },
+    "Bold and Fonts": {
+      "status": "approved",
+      "hash": "74af1f3d5155",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:31.496Z"
+    },
+    "Showing Money With Currency": {
+      "status": "approved",
+      "hash": "29488975d9a4",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:31.603Z"
+    },
+    "Percentages and Decimal Places": {
+      "status": "approved",
+      "hash": "f5ce5f47bc73",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:31.706Z"
+    },
+    "Changing Column Widths": {
+      "status": "approved",
+      "hash": "2016d0291c43",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:31.805Z"
+    },
+    "Adding Borders": {
+      "status": "approved",
+      "hash": "3eb939214ac4",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:31.920Z"
+    },
+    "Colour in Cells": {
+      "status": "approved",
+      "hash": "41711038997f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:32.020Z"
+    },
+    "Practice: Making the Sales Sheet Readable": {
+      "status": "approved",
+      "hash": "347dd66325e1",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:32.121Z"
+    },
+    "What a Formula Actually Is": {
+      "status": "approved",
+      "hash": "47e4ce7fef20",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:32.225Z"
+    },
+    "Your First Formula: Adding Two Cells": {
+      "status": "approved",
+      "hash": "85166c2224ac",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:32.324Z"
+    },
+    "The Symbols in a Formula": {
+      "status": "approved",
+      "hash": "42f05f33693c",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:32.425Z"
+    },
+    "Brackets and the Order of Calculation": {
+      "status": "approved",
+      "hash": "db058b7ebebe",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:32.534Z"
+    },
+    "SUM and AutoSum": {
+      "status": "approved",
+      "hash": "6e58c17c73b3",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:32.636Z"
+    },
+    "AVERAGE: The Middle of a Group": {
+      "status": "approved",
+      "hash": "ebfea927dec2",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:32.738Z"
+    },
+    "MIN and MAX: Smallest and Largest": {
+      "status": "approved",
+      "hash": "fa02ade7d4fc",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:32.839Z"
+    },
+    "COUNT: How Many Numbers": {
+      "status": "approved",
+      "hash": "598ea29fe26e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:32.939Z"
+    },
+    "ROUND: Fewer Decimal Places": {
+      "status": "approved",
+      "hash": "54c09b29d2dd",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:33.040Z"
+    },
+    "Practice: First Formulas on the Sales Sheet": {
+      "status": "approved",
+      "hash": "73c2d2022dcd",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:33.140Z"
+    },
+    "Copying Formulas: Relative References": {
+      "status": "approved",
+      "hash": "6963be63e9e3",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:33.242Z"
+    },
+    "Locking a Cell With the Dollar Sign": {
+      "status": "approved",
+      "hash": "a9d69622c46d",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:33.347Z"
+    },
+    "Mixed References: Lock Only the Column or the Row": {
+      "status": "approved",
+      "hash": "914f760438a7",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:33.450Z"
+    },
+    "Switching Reference Type With F4": {
+      "status": "approved",
+      "hash": "fb4b82e37c44",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:33.552Z"
+    },
+    "Referring to Another Sheet": {
+      "status": "approved",
+      "hash": "d901426a8002",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:33.661Z"
+    },
+    "Practice: Copying a Formula Down the Sales Sheet": {
+      "status": "approved",
+      "hash": "bce741b4c959",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:33.763Z"
+    },
+    "Comparing Two Values": {
+      "status": "approved",
+      "hash": "90f6c718b40f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:33.867Z"
+    },
+    "IF: Making a Decision in a Cell": {
+      "status": "approved",
+      "hash": "4a9362b42a43",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:33.974Z"
+    },
+    "AND and OR: More Than One Test": {
+      "status": "approved",
+      "hash": "3637f393831f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:34.077Z"
+    },
+    "SUMIF: Adding Up Only What Matches": {
+      "status": "approved",
+      "hash": "c212d5592c9e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:34.186Z"
+    },
+    "COUNTIF: Counting What Matches": {
+      "status": "approved",
+      "hash": "6cb4615ebf67",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:34.291Z"
+    },
+    "XLOOKUP: Finding a Value in a List": {
+      "status": "approved",
+      "hash": "a70adc80bfad",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:34.395Z"
+    },
+    "IFERROR: Handling an Error": {
+      "status": "approved",
+      "hash": "fa13c02245dd",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:34.509Z"
+    },
+    "Practice: Decisions and a Lookup on the Sales Sheet": {
+      "status": "approved",
+      "hash": "814446068b75",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:34.618Z"
+    },
+    "Dates Are Numbers": {
+      "status": "approved",
+      "hash": "1d4ca0364c37",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:34.720Z"
+    },
+    "TODAY: Today's Date": {
+      "status": "approved",
+      "hash": "0ab32acf138c",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:34.821Z"
+    },
+    "YEAR, MONTH and DAY": {
+      "status": "approved",
+      "hash": "5df0d2b26d6d",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:34.928Z"
+    },
+    "Joining Text With the Ampersand": {
+      "status": "approved",
+      "hash": "a053fc153ef8",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:35.028Z"
+    },
+    "TRIM: Removing Extra Spaces": {
+      "status": "approved",
+      "hash": "8f6a20a417fb",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:35.130Z"
+    },
+    "Practice: Dates and Text on the Staff Sheet": {
+      "status": "approved",
+      "hash": "1525bc3eaa55",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:35.233Z"
+    },
+    "Keeping the Headings in View": {
+      "status": "approved",
+      "hash": "6ac3fd35efc9",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:35.336Z"
+    },
+    "Sorting Rows": {
+      "status": "approved",
+      "hash": "b910b2248014",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:35.440Z"
+    },
+    "Sorting by More Than One Column": {
+      "status": "approved",
+      "hash": "ce0f6e6827ac",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:35.543Z"
+    },
+    "Filtering Rows": {
+      "status": "approved",
+      "hash": "d97cfb1d7fbe",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:35.655Z"
+    },
+    "Turning Your Data Into a Table": {
+      "status": "approved",
+      "hash": "6793fe02b578",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:35.757Z"
+    },
+    "Removing Duplicate Rows": {
+      "status": "approved",
+      "hash": "2f714d9996f8",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:35.859Z"
+    },
+    "Practice: Sorting and Filtering the Sales Sheet": {
+      "status": "approved",
+      "hash": "2b54b89b0761",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:35.956Z"
+    },
+    "Choosing the Right Chart": {
+      "status": "approved",
+      "hash": "2f86e57ba68b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:36.058Z"
+    },
+    "Building Your First Column Chart": {
+      "status": "approved",
+      "hash": "56fa2cd6f060",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:36.159Z"
+    },
+    "Adding Titles to a Chart": {
+      "status": "approved",
+      "hash": "913349a66d90",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:36.261Z"
+    },
+    "Line Charts: Trends Over Time": {
+      "status": "approved",
+      "hash": "9c76cacf55ec",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:36.370Z"
+    },
+    "Pie Charts: Parts of a Whole": {
+      "status": "approved",
+      "hash": "848c53449d3c",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:36.471Z"
+    },
+    "Practice: Charting the Targets": {
+      "status": "approved",
+      "hash": "7966f05382be",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:36.573Z"
+    },
+    "Summary Tables: Totals by Group": {
+      "status": "approved",
+      "hash": "31ddc1ecbd52",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:36.673Z"
+    },
+    "Sum, Count or Average in a Summary Table": {
+      "status": "approved",
+      "hash": "d8d4ae0005fe",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:36.774Z"
+    },
+    "Rows and Columns: A Two-Way Summary": {
+      "status": "approved",
+      "hash": "a6e03a19d301",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:36.876Z"
+    },
+    "Refreshing a Summary Table": {
+      "status": "approved",
+      "hash": "447f68fffdd2",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:36.976Z"
+    },
+    "Practice: A Summary of the Sales Sheet": {
+      "status": "approved",
+      "hash": "4cbfb49af4de",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:37.078Z"
+    },
+    "Saving, and Which File Type to Use": {
+      "status": "approved",
+      "hash": "9e3304846dd8",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:37.178Z"
+    },
+    "Previewing and Printing a Sheet": {
+      "status": "approved",
+      "hash": "9fa6045e7a21",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:37.279Z"
+    },
+    "Fitting the Sheet on the Page": {
+      "status": "approved",
+      "hash": "6433ccb803b7",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:37.382Z"
+    },
+    "Repeating Headings on Every Printed Page": {
+      "status": "approved",
+      "hash": "6186e797ed16",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:37.489Z"
+    },
+    "Saving as a PDF to Share": {
+      "status": "approved",
+      "hash": "e5bbd2e445c4",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:37.590Z"
+    },
+    "Reading an Error Message": {
+      "status": "approved",
+      "hash": "581dd9e2c56c",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:37.690Z"
+    },
+    "Showing the Formulas Behind the Numbers": {
+      "status": "approved",
+      "hash": "a53adb245a38",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:37.799Z"
+    },
+    "Practice: The Final Check": {
+      "status": "approved",
+      "hash": "cbf867a25b9d",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:37.905Z"
+    },
+    "Why PivotTables Exist": {
+      "status": "approved",
+      "hash": "2775d95faa83",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:38.006Z"
+    },
+    "Data a PivotTable Can Read": {
+      "status": "approved",
+      "hash": "282a19bafe4c",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:38.108Z"
+    },
+    "Tidying a List Before You Pivot": {
+      "status": "approved",
+      "hash": "3428ebff1790",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:38.216Z"
+    },
+    "Inserting Your First PivotTable": {
+      "status": "approved",
+      "hash": "060db7441738",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:38.317Z"
+    },
+    "Where the PivotTable Goes": {
+      "status": "approved",
+      "hash": "eaff328d10ca",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:38.418Z"
+    },
+    "The Field List and Its Four Boxes": {
+      "status": "approved",
+      "hash": "ecfaf254cb6b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:38.520Z"
+    },
+    "Reading Row Labels and Grand Totals": {
+      "status": "approved",
+      "hash": "6e35cb1a56fe",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:38.623Z"
+    },
+    "Excel's Recommended PivotTables": {
+      "status": "approved",
+      "hash": "5424ddfca4b1",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:38.723Z"
+    },
+    "Practice: Your First PivotTable": {
+      "status": "approved",
+      "hash": "1a4cebc59704",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:38.828Z"
+    },
+    "Putting Fields in Rows": {
+      "status": "approved",
+      "hash": "f85300f28e0f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:38.931Z"
+    },
+    "Moving and Removing Fields": {
+      "status": "approved",
+      "hash": "c1b028ea6613",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:39.039Z"
+    },
+    "Values: Choosing What Gets Added Up": {
+      "status": "approved",
+      "hash": "fee47e687034",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:39.139Z"
+    },
+    "Changing the Calculation": {
+      "status": "approved",
+      "hash": "ac9810e96456",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:39.249Z"
+    },
+    "Putting Two Values Side by Side": {
+      "status": "approved",
+      "hash": "7552e26f7776",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:39.351Z"
+    },
+    "Spreading a Field Across Columns": {
+      "status": "approved",
+      "hash": "e1d3cd09e994",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:39.451Z"
+    },
+    "Stacking Two Fields in Rows": {
+      "status": "approved",
+      "hash": "a7bf64a51353",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:39.565Z"
+    },
+    "Expanding and Collapsing Groups": {
+      "status": "approved",
+      "hash": "9b9e4a83b475",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:39.669Z"
+    },
+    "Renaming a Heading in a PivotTable": {
+      "status": "approved",
+      "hash": "9056ca2510c8",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:39.771Z"
+    },
+    "Formatting Numbers Inside a PivotTable": {
+      "status": "approved",
+      "hash": "7a9f36e3a34b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:39.873Z"
+    },
+    "Practice: Amount by Region and Product": {
+      "status": "approved",
+      "hash": "13c2d0cd8a8c",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:39.972Z"
+    },
+    "Sorting a PivotTable": {
+      "status": "approved",
+      "hash": "5c85f457421e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:40.073Z"
+    },
+    "Filtering Rows and Columns": {
+      "status": "approved",
+      "hash": "8e772ee6fcd6",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:40.175Z"
+    },
+    "Filtering by Words in a Label": {
+      "status": "approved",
+      "hash": "701ba8bbfe49",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:40.274Z"
+    },
+    "Filtering by a Value": {
+      "status": "approved",
+      "hash": "92f4934521fc",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:40.375Z"
+    },
+    "Showing Only the Top Items": {
+      "status": "approved",
+      "hash": "df2996107474",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:40.475Z"
+    },
+    "One Filter for the Whole Table": {
+      "status": "approved",
+      "hash": "3cf08f0309e9",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:40.583Z"
+    },
+    "Clearing Filters and Starting Again": {
+      "status": "approved",
+      "hash": "19497c18c731",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:40.689Z"
+    },
+    "Compact, Outline or Tabular": {
+      "status": "approved",
+      "hash": "af2304b93046",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:40.789Z"
+    },
+    "Repeating Labels and Blank Rows": {
+      "status": "approved",
+      "hash": "12098fce3475",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:40.888Z"
+    },
+    "Choosing a PivotTable Style": {
+      "status": "approved",
+      "hash": "de2de54b78f9",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:40.988Z"
+    },
+    "Practice: A Tidy Regional Report": {
+      "status": "approved",
+      "hash": "47f0e359ad65",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:41.088Z"
+    },
+    "Grouping Dates by Month": {
+      "status": "approved",
+      "hash": "8260eb9d4948",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:41.191Z"
+    },
+    "Grouping Dates by Quarter": {
+      "status": "approved",
+      "hash": "b2e15064529a",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:41.291Z"
+    },
+    "Why Dates Won't Group": {
+      "status": "approved",
+      "hash": "b70751a40abe",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:41.392Z"
+    },
+    "Grouping Dates by Week": {
+      "status": "approved",
+      "hash": "05acea42d28a",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:41.494Z"
+    },
+    "Grouping Numbers Into Bands": {
+      "status": "approved",
+      "hash": "ba8063f3ca38",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:41.602Z"
+    },
+    "Grouping Text Items by Hand": {
+      "status": "approved",
+      "hash": "971aace4c609",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:41.704Z"
+    },
+    "Ungrouping and Changing a Group": {
+      "status": "approved",
+      "hash": "fd9ef414ad62",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:41.804Z"
+    },
+    "Adding a Helper Column to the Data": {
+      "status": "approved",
+      "hash": "418838dcc7f4",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:41.905Z"
+    },
+    "Practice: Sales by Month and Quarter": {
+      "status": "approved",
+      "hash": "67fa1b4f16db",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:42.005Z"
+    },
+    "Percent of the Grand Total": {
+      "status": "approved",
+      "hash": "a238117aeee4",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:42.114Z"
+    },
+    "Percent of a Row or a Column": {
+      "status": "approved",
+      "hash": "211bd52ba5e1",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:42.215Z"
+    },
+    "Rank Largest to Smallest": {
+      "status": "approved",
+      "hash": "233659bb03ae",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:42.322Z"
+    },
+    "Running Totals": {
+      "status": "approved",
+      "hash": "ab13aed90144",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:42.422Z"
+    },
+    "Change From a Chosen Month": {
+      "status": "approved",
+      "hash": "f3035a0405c0",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:42.524Z"
+    },
+    "Percent Change From a Chosen Month": {
+      "status": "approved",
+      "hash": "61d6d2eb5a2f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:42.626Z"
+    },
+    "Comparing Everything to One Item": {
+      "status": "approved",
+      "hash": "965baac0f617",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:42.730Z"
+    },
+    "Putting Back the Normal View": {
+      "status": "approved",
+      "hash": "79f1824b0142",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:42.831Z"
+    },
+    "Practice: Who Is Growing": {
+      "status": "approved",
+      "hash": "4552cf1ac2dd",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:42.933Z"
+    },
+    "Adding a Calculated Field": {
+      "status": "approved",
+      "hash": "bad214f48fe2",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:43.036Z"
+    },
+    "Counting Each Item Once": {
+      "status": "approved",
+      "hash": "34fb15204772",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:43.138Z"
+    },
+    "Drilling Down Behind a Number": {
+      "status": "approved",
+      "hash": "203a571c3cf8",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:43.239Z"
+    },
+    "When Your Data Grows Past the PivotTable": {
+      "status": "approved",
+      "hash": "402519b85013",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:43.339Z"
+    },
+    "Changing Which Data a PivotTable Reads": {
+      "status": "approved",
+      "hash": "adc16a7f3c8e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:43.440Z"
+    },
+    "Refreshing Every Time the File Opens": {
+      "status": "approved",
+      "hash": "2c45b2f633b3",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:43.551Z"
+    },
+    "Filling Empty Cells": {
+      "status": "approved",
+      "hash": "b46e1bcbd111",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:43.654Z"
+    },
+    "Keeping Column Widths When You Refresh": {
+      "status": "approved",
+      "hash": "e1be62cd2cb9",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:43.756Z"
+    },
+    "Copying a PivotTable as Plain Values": {
+      "status": "approved",
+      "hash": "1c5916fbde95",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:43.855Z"
+    },
+    "Why a Formula Shows GETPIVOTDATA": {
+      "status": "approved",
+      "hash": "82d44951ab67",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:43.964Z"
+    },
+    "Two PivotTables From One List": {
+      "status": "approved",
+      "hash": "52c15070092f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:44.068Z"
+    },
+    "When the Numbers Look Wrong": {
+      "status": "approved",
+      "hash": "92b3880ec611",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:44.174Z"
+    },
+    "Practice: Fixing a Broken PivotTable": {
+      "status": "approved",
+      "hash": "572a5880e158",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:44.275Z"
+    },
+    "PivotCharts": {
+      "status": "approved",
+      "hash": "7af9c36748c8",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:44.380Z"
+    },
+    "Choosing a Chart Type for a PivotChart": {
+      "status": "approved",
+      "hash": "9f4b37e2da53",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:44.483Z"
+    },
+    "Cleaning Up a PivotChart": {
+      "status": "approved",
+      "hash": "a5075437fc2a",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:44.586Z"
+    },
+    "Slicers": {
+      "status": "approved",
+      "hash": "9027fae50547",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:44.690Z"
+    },
+    "Making Slicers Look Right": {
+      "status": "approved",
+      "hash": "5282118519f6",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:44.800Z"
+    },
+    "One Slicer for Two PivotTables": {
+      "status": "approved",
+      "hash": "a7c70faff54d",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:44.901Z"
+    },
+    "Timelines": {
+      "status": "approved",
+      "hash": "72b4cc9df219",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:45.009Z"
+    },
+    "Laying Out a One-Page Dashboard": {
+      "status": "approved",
+      "hash": "cf9f7a5c189e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:45.112Z"
+    },
+    "Printing the Dashboard on One Page": {
+      "status": "approved",
+      "hash": "5ee4d74bd9a5",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:45.210Z"
+    },
+    "Checking the Dashboard": {
+      "status": "approved",
+      "hash": "638db654c52b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:45.313Z"
+    },
+    "Practice: The Corner Shop Dashboard": {
+      "status": "approved",
+      "hash": "4bac979c2245",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:45.414Z"
+    },
+    "Practice: A Report by Salesperson": {
+      "status": "approved",
+      "hash": "fec872b20864",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:45.517Z"
+    },
+    "Practice: Sales Against Target": {
+      "status": "approved",
+      "hash": "797edcd926b9",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:45.619Z"
+    },
+    "Practice: The Whole Job From Scratch": {
+      "status": "approved",
+      "hash": "8d7a9243b265",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:45.729Z"
+    },
+    "Where to Go After PivotTables": {
+      "status": "approved",
+      "hash": "c853239157e8",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:45.831Z"
+    },
+    "Cleaning the Same Data Every Week": {
+      "status": "approved",
+      "hash": "8e1333bd5d61",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:45.933Z"
+    },
+    "What Power Query Does in Excel": {
+      "status": "approved",
+      "hash": "7e7ec311a04f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:46.035Z"
+    },
+    "Finding Get & Transform on the Ribbon": {
+      "status": "approved",
+      "hash": "85ddff9ab35e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:46.135Z"
+    },
+    "Turning a List Into an Excel Table": {
+      "status": "approved",
+      "hash": "e8e7eba687c3",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:46.237Z"
+    },
+    "Your First Query From a Table": {
+      "status": "approved",
+      "hash": "649d908e0229",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:46.340Z"
+    },
+    "Finding Your Way Around the Editor": {
+      "status": "approved",
+      "hash": "b0f7870eb68e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:46.441Z"
+    },
+    "How Excel Records Your Steps": {
+      "status": "approved",
+      "hash": "1bef01751a93",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:46.547Z"
+    },
+    "Loading the Result to a Sheet": {
+      "status": "approved",
+      "hash": "39fca9e6987c",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:46.653Z"
+    },
+    "Practice: Your First Query": {
+      "status": "approved",
+      "hash": "9a4825e1de93",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:46.753Z"
+    },
+    "Importing From Another Workbook": {
+      "status": "approved",
+      "hash": "45e72a24191c",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:46.856Z"
+    },
+    "Importing a CSV or Text File": {
+      "status": "approved",
+      "hash": "6058e755c1a1",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:46.956Z"
+    },
+    "Choosing What to Load in the Navigator": {
+      "status": "approved",
+      "hash": "a7e1a23937a4",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:47.057Z"
+    },
+    "Many Files in One Folder, One Table": {
+      "status": "approved",
+      "hash": "3ebabc41811f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:47.158Z"
+    },
+    "Importing a Table From a Web Page": {
+      "status": "approved",
+      "hash": "72ae0c37bada",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:47.265Z"
+    },
+    "Setting the Kind of Data Early": {
+      "status": "approved",
+      "hash": "562f221fc84e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:47.366Z"
+    },
+    "Dates That Arrive as Text": {
+      "status": "approved",
+      "hash": "5d82e1dd5db0",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:47.476Z"
+    },
+    "Numbers That Arrive as Text": {
+      "status": "approved",
+      "hash": "da86f7ab4c1c",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:47.579Z"
+    },
+    "Load to a Sheet, or Only Connect": {
+      "status": "approved",
+      "hash": "9d96b37529fd",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:47.683Z"
+    },
+    "Practice: Bringing Data In": {
+      "status": "approved",
+      "hash": "5c7f7da83f2f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:47.785Z"
+    },
+    "Using the First Row as Headers": {
+      "status": "approved",
+      "hash": "4a860527ba27",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:47.886Z"
+    },
+    "Removing Junk Rows at the Top": {
+      "status": "approved",
+      "hash": "80243093b824",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:47.994Z"
+    },
+    "Removing Blank Rows": {
+      "status": "approved",
+      "hash": "4f08e779448b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:48.097Z"
+    },
+    "Choosing Which Columns to Keep": {
+      "status": "approved",
+      "hash": "c24d3fa85743",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:48.199Z"
+    },
+    "Renaming Columns": {
+      "status": "approved",
+      "hash": "89f73d0c3427",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:48.300Z"
+    },
+    "Trimming Stray Spaces": {
+      "status": "approved",
+      "hash": "6213fc753134",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:48.403Z"
+    },
+    "Fixing Capital Letters": {
+      "status": "approved",
+      "hash": "830bbc3c0fd6",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:48.505Z"
+    },
+    "Replacing Values": {
+      "status": "approved",
+      "hash": "b0ad226eafec",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:48.607Z"
+    },
+    "Dropping Repeated Rows": {
+      "status": "approved",
+      "hash": "5b22144cb7b2",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:48.711Z"
+    },
+    "Filling Down Empty Cells": {
+      "status": "approved",
+      "hash": "64ee4a1891bf",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:48.813Z"
+    },
+    "Practice: A Clean Sales List": {
+      "status": "approved",
+      "hash": "803cc47fe77b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:48.914Z"
+    },
+    "Filtering Rows in the Editor": {
+      "status": "approved",
+      "hash": "67712adf5f03",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:49.016Z"
+    },
+    "Filtering by Text, Number and Date": {
+      "status": "approved",
+      "hash": "a31ff5d1899e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:49.118Z"
+    },
+    "Keeping the Top Rows": {
+      "status": "approved",
+      "hash": "272feb7af277",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:49.234Z"
+    },
+    "Sorting Inside a Query": {
+      "status": "approved",
+      "hash": "3f2bd60e08f2",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:49.334Z"
+    },
+    "Finding and Removing Errors": {
+      "status": "approved",
+      "hash": "468a3bf2e727",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:49.440Z"
+    },
+    "Adding an Index Column": {
+      "status": "approved",
+      "hash": "228a482c5bd7",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:49.545Z"
+    },
+    "Practice: Narrowing the List": {
+      "status": "approved",
+      "hash": "3a8f11cacd0f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:49.646Z"
+    },
+    "Splitting a Column at a Delimiter": {
+      "status": "approved",
+      "hash": "ca0a4241b0c7",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:49.748Z"
+    },
+    "Splitting a Column by Length": {
+      "status": "approved",
+      "hash": "591a36e31551",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:49.849Z"
+    },
+    "Pulling Out Text Before or After": {
+      "status": "approved",
+      "hash": "381b4595074c",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:49.951Z"
+    },
+    "Merging Columns Into One": {
+      "status": "approved",
+      "hash": "71eafd7e7f2f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:50.052Z"
+    },
+    "Adding a Column From Examples": {
+      "status": "approved",
+      "hash": "7afa2aa2037d",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:50.153Z"
+    },
+    "Adding a Custom Column": {
+      "status": "approved",
+      "hash": "5884eb316aa9",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:50.255Z"
+    },
+    "Adding a Conditional Column": {
+      "status": "approved",
+      "hash": "a9fd09a05ae5",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:50.356Z"
+    },
+    "Pulling Year and Month From a Date": {
+      "status": "approved",
+      "hash": "845640b603e5",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:50.458Z"
+    },
+    "Unpivoting Columns Into Rows": {
+      "status": "approved",
+      "hash": "d4ccdb102a10",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:50.562Z"
+    },
+    "Pivoting Rows Into Columns": {
+      "status": "approved",
+      "hash": "421f18080b40",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:50.664Z"
+    },
+    "Transposing a Table": {
+      "status": "approved",
+      "hash": "064c01a44dbb",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:50.767Z"
+    },
+    "Grouping and Summarising Rows": {
+      "status": "approved",
+      "hash": "cf3088d5734c",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:50.875Z"
+    },
+    "Practice: Reshaping a Report": {
+      "status": "approved",
+      "hash": "b5db7e681e57",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:50.985Z"
+    },
+    "Stacking or Joining: Which Do You Need": {
+      "status": "approved",
+      "hash": "3c19853c1ce2",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:51.086Z"
+    },
+    "Appending Tables One Under Another": {
+      "status": "approved",
+      "hash": "52ddc900142e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:51.187Z"
+    },
+    "Merging Tables Side by Side": {
+      "status": "approved",
+      "hash": "75333bdeb336",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:51.287Z"
+    },
+    "The Join Kinds in Plain Words": {
+      "status": "approved",
+      "hash": "a41375525e86",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:51.388Z"
+    },
+    "Looking Up a Value With a Merge": {
+      "status": "approved",
+      "hash": "8f62d254796d",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:51.489Z"
+    },
+    "Duplicating or Referencing a Query": {
+      "status": "approved",
+      "hash": "c76f783749b7",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:51.590Z"
+    },
+    "Checking a Combined Result": {
+      "status": "approved",
+      "hash": "9d75c014f194",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:51.697Z"
+    },
+    "Practice: Combining Two Lists": {
+      "status": "approved",
+      "hash": "ab0aea2d434f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:51.799Z"
+    },
+    "Refreshing a Query": {
+      "status": "approved",
+      "hash": "d01abaeb5d03",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:51.901Z"
+    },
+    "Refreshing When the File Opens": {
+      "status": "approved",
+      "hash": "e2f7178e795b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:52.003Z"
+    },
+    "How Queries Depend on Each Other": {
+      "status": "approved",
+      "hash": "275a45fa04a3",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:52.105Z"
+    },
+    "Naming Steps and Queries Clearly": {
+      "status": "approved",
+      "hash": "f04d514b8b2d",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:52.206Z"
+    },
+    "Editing or Deleting an Earlier Step": {
+      "status": "approved",
+      "hash": "c61440419cfe",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:52.321Z"
+    },
+    "When a Step Shows an Error": {
+      "status": "approved",
+      "hash": "904e9625d81d",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:52.420Z"
+    },
+    "When a Heading Was Renamed": {
+      "status": "approved",
+      "hash": "7b12ad06815b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:52.522Z"
+    },
+    "When the File Has Moved": {
+      "status": "approved",
+      "hash": "a654300edeac",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:52.622Z"
+    },
+    "Using a Parameter for the File Path": {
+      "status": "approved",
+      "hash": "8c708e0fa216",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:52.731Z"
+    },
+    "Practice: Breaking and Fixing a Query": {
+      "status": "approved",
+      "hash": "a11cb46e86fb",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:52.833Z"
+    },
+    "Loading a Query Into a PivotTable": {
+      "status": "approved",
+      "hash": "8189b416c934",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:52.935Z"
+    },
+    "Loading to the Data Model": {
+      "status": "approved",
+      "hash": "a0022e9cb76b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:53.037Z"
+    },
+    "Reading the Code Behind a Step": {
+      "status": "approved",
+      "hash": "3fac5580b6d5",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:53.138Z"
+    },
+    "Opening the Advanced Editor": {
+      "status": "approved",
+      "hash": "944df99b1c3b",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:53.239Z"
+    },
+    "Practice: Monthly Messy Files": {
+      "status": "approved",
+      "hash": "70509f57476e",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:53.342Z"
+    },
+    "Practice: Someone Else's Report": {
+      "status": "approved",
+      "hash": "91c821ddf3b1",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:53.446Z"
+    },
+    "Practice: Messy File to PivotTable": {
+      "status": "approved",
+      "hash": "f0ca07607d00",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:53.549Z"
+    },
+    "Mistakes Almost Everyone Makes": {
+      "status": "approved",
+      "hash": "c8d106d391af",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:53.667Z"
+    },
+    "Where to Go After Power Query": {
+      "status": "approved",
+      "hash": "94e35e88697f",
+      "note": "Bulk approval on the author's instruction, 2026-10-23. Each page is byte-for-byte the same as in its own book, where it is approved; not reviewed again in this volume.",
+      "at": "2026-10-23T08:23:53.775Z"
+    }
+  }
+}

@@ -102,7 +102,7 @@
         "keywords": { "type": "array", "maxItems": 7, "uniqueItems": true, "items": { "type": "string", "minLength": 1, "maxLength": 50 }, "description": "Search phrases. KDP takes seven." },
         "categories": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 }, "description": "BISAC codes or the store's own category paths. Example: COM053000 or Computers / Security / General" },
         "publisher": { "type": "string", "description": "The imprint. Defaults to brand in the EPUB." },
-        "published": { "$ref": "#/$defs/date", "description": "Publication date, YYYY-MM-DD." },
+        "published": { "type": "string", "pattern": "^$|^on release$|^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$", "description": "Publication date, YYYY-MM-DD, or \"on release\" when the store sets it the day the book goes live (KDP asks for a date only if the book was published before)." },
         "audience": { "type": "string", "description": "Who it is for, in a few words. For you and for the listing sheet." },
         "price": { "$ref": "#/$defs/price" },
         "isbn": { "$ref": "#/$defs/isbns" },
