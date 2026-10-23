@@ -1794,6 +1794,240 @@
       <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
     </section>
 
+    <section class="sheet bb snug">
+      <h2 class="sr">Loading page: a query loaded with Close &amp; Load To as a PivotTable Report instead of a table, so the PivotTable reads the query and Refresh All brings both up to date.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 69</div>
+        <span class="pill">Loading</span>
+      </div>
+      <h1 class="title">Loading a Query Into a PivotTable</h1>
+      <div class="sub">Skip the sheet: the query feeds the PivotTable.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a query loaded with Close &amp; Load To as a PivotTable Report instead of a table, so the PivotTable reads the query and Refresh All brings both up to date."><defs><marker id="arpq69" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq69" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="50" width="110" height="52" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cspq69)"/><text x="79" y="73" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#1A1A2E;">Query</text><text x="79" y="89" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">clean steps</text><line x1="134" y1="76" x2="162" y2="76" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq69)"/><rect x="166" y="10" width="220" height="140" rx="10" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cspq69)"/><text x="178" y="30" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Close &amp; Load To</text><circle cx="186" cy="46" r="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.4"/><text x="200" y="50" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#5B6472;">Table</text><circle cx="186" cy="72" r="6" fill="#FFFFFF" stroke="#4F46E5" stroke-width="1.4"/><circle cx="186" cy="72" r="3" fill="#4F46E5"/><text x="200" y="76" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">PivotTable Report</text><circle cx="186" cy="98" r="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.4"/><text x="200" y="102" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#5B6472;">PivotChart</text><circle cx="186" cy="124" r="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.4"/><text x="200" y="128" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#5B6472;">Only Create Connection</text><line x1="386" y1="76" x2="414" y2="76" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq69)"/><rect x="418" y="50" width="150" height="52" rx="12" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1" filter="url(#cspq69)"/><text x="493" y="73" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#0D9488;">PivotTable</text><text x="493" y="89" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">reads the query</text><text x="418" y="132" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Refresh All brings</text><text x="418" y="148" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">both up to date</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Choose Close &amp; Load To and pick <span class="hl">PivotTable Report</span> instead of Table. The PivotTable reads the query directly, with no copy of the rows on a sheet. Microsoft calls Power Query the recommended way to bring data in for PivotTables.</p>
+        <p>A PivotTable built on a pasted copy <span class="bad">never sees new data</span>. One built on a query does: select it and choose PivotTable Analyze, Refresh, or Data, Refresh All.</p>
+        <p class="close">Clean in the query, summarise in the PivotTable.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Load your clean query to a PivotTable Report.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Loading page: Import Data with Add this data to the Data Model ticked, loading Sales and Products into the Data Model, which the PivotTable Field List shows as a set of tables.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 70</div>
+        <span class="pill">Loading</span>
+      </div>
+      <h1 class="title">Loading to the Data Model</h1>
+      <div class="sub">Tables kept inside the workbook, ready for PivotTables.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: Import Data with Add this data to the Data Model ticked, loading Sales and Products into the Data Model, which the PivotTable Field List shows as a set of tables."><defs><marker id="arpq70" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq70" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="20" width="176" height="84" rx="10" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cspq70)"/><text x="36" y="40" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Import Data</text><rect x="38" y="54" width="12" height="12" rx="3" fill="#4F46E5" stroke="#4F46E5" stroke-width="1"/><path d="M41 60 l3 3 l5 -6" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/><text x="58" y="64" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5;">Add this data to the</text><text x="58" y="80" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#4F46E5;">Data Model</text><line x1="200" y1="62" x2="230" y2="62" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq70)"/><rect x="234" y="10" width="160" height="120" rx="10" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cspq70)"/><text x="246" y="30" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#4F46E5;">Data Model</text><rect x="250" y="42" width="128" height="26" rx="6" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="314" y="59" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">Sales</text><rect x="250" y="78" width="128" height="26" rx="6" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="314" y="95" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">Products</text><line x1="394" y1="70" x2="424" y2="70" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq70)"/><rect x="428" y="10" width="140" height="120" rx="10" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cspq70)"/><text x="440" y="30" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Field List</text><text x="444" y="58" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Sales</text><text x="444" y="84" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Products</text><text x="444" y="116" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">a set of tables</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>The <span class="hl">Data Model</span> holds several tables inside the workbook and feeds PivotTables and PivotCharts. To use it, choose Close &amp; Load To and tick Add this data to the Data Model.</p>
+        <p>You'll mostly meet it in the PivotTable Field List, where it shows up as a set of tables. Power Query fills the Data Model; <span class="hl">Power Pivot</span> is where you build on it, for example by relating tables. Load tables, not plain ranges.</p>
+        <p class="close">Power Query fills it. PivotTables read it.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Load a query to the Data Model.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">The editor page: the Changed Type step selected, with its formula bar line Table.TransformColumnTypes naming the step before, Promoted Headers, and listing each column with its kind.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 71</div>
+        <span class="pill">The editor</span>
+      </div>
+      <h1 class="title">Reading the Code Behind a Step</h1>
+      <div class="sub">Every click writes a line you can read.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the Changed Type step selected, with its formula bar line Table.TransformColumnTypes naming the step before, Promoted Headers, and listing each column with its kind."><defs><marker id="arpq71" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq71" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><text x="24" y="18" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#5B6472;letter-spacing:.3px;">APPLIED STEPS</text><rect x="24" y="28" width="150" height="24" rx="6" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="34" y="44" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">Source</text><rect x="24" y="56" width="150" height="24" rx="6" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="34" y="72" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">Promoted Headers</text><rect x="24" y="84" width="150" height="24" rx="6" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="34" y="100" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Changed Type</text><rect x="194" y="28" width="374" height="52" rx="6" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="206" y="48" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:10.5px;fill:#1A1A2E;">= Table.TransformColumnTypes(#"Promoted Headers",</text><text x="206" y="68" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:10.5px;fill:#1A1A2E;">  {{"Date", type date}, {"Amount", Int64.Type}})</text><text x="206" y="108" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">the step before, by name</text><text x="206" y="126" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">each column and its kind</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Everything a query does is written in Power Query's language, <span class="hl">M</span>. Turn on View, Formula Bar, then click a step, and its line appears. The arrow at the right opens it out.</p>
+        <p>Click Changed Type and you'll read Table.TransformColumnTypes, then the step before it by name, then each column with its kind. You don't need to write M, only read it. <span class="bad">Capitals matter</span>: M is case-sensitive.</p>
+        <p class="close">Read the line before you trust the step.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Click a step and read its formula bar text.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">The editor page: the Advanced Editor showing a query as code, from let through Source, Promoted Headers and Changed Type, each step using the name of the one before, with Cancel to close with no change and Done.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 72</div>
+        <span class="pill">The editor</span>
+      </div>
+      <h1 class="title">Opening the Advanced Editor</h1>
+      <div class="sub">The whole query as text, one step per line.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the Advanced Editor showing a query as code, from let through Source, Promoted Headers and Changed Type, each step using the name of the one before, with Cancel to close with no change and Done."><defs><marker id="arpq72" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq72" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="8" width="400" height="160" rx="10" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cspq72)"/><text x="36" y="28" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Advanced Editor</text><text x="38" y="44" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:10.5px;fill:#1A1A2E;">let</text><text x="38" y="62" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:10.5px;fill:#1A1A2E;">  Source = Excel.Workbook(...),</text><text x="38" y="80" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:10.5px;fill:#1A1A2E;">  #"Promoted Headers" = Table.PromoteHeaders(Source),</text><text x="38" y="98" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:10.5px;fill:#1A1A2E;">  #"Changed Type" = ...(#"Promoted Headers", ...)</text><text x="38" y="116" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:10.5px;fill:#1A1A2E;">in</text><text x="38" y="134" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:10.5px;fill:#1A1A2E;">  #"Changed Type"</text><rect x="444" y="60" width="124" height="30" rx="6" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="506" y="79" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Cancel</text><text x="506" y="108" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">no change</text><rect x="444" y="124" width="124" height="30" rx="6" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="506" y="143" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Done</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Choose Home or View, <span class="hl">Advanced Editor</span>. A window shows the whole query as code: each step is named and builds on the one before it by using that name.</p>
+        <p>You can edit the code there. To only look, close it with <span class="good">Cancel</span> and nothing changes; Done keeps what you typed.</p>
+        <p class="close">Look with Cancel. Change with Done.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Open the Advanced Editor and close it without a change.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Practice page: the Monthly messy folder of 12 files, cleaned once in the sample file query, combined without the Total rows and trimmed, giving a PivotTable of 240 rows worth 6325; keeping the Total rows gives 252 rows and 12650.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 73</div>
+        <span class="pill">Practice</span>
+      </div>
+      <h1 class="title">Practice: Monthly Messy Files</h1>
+      <div class="sub">A folder of messy months becomes one PivotTable.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 146" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the Monthly messy folder of 12 files, cleaned once in the sample file query, combined without the Total rows and trimmed, giving a PivotTable of 240 rows worth 6325; keeping the Total rows gives 252 rows and 12650."><defs><marker id="arpq73" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq73" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="24" width="124" height="58" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cspq73)"/><text x="86" y="50" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#1A1A2E;">Monthly messy</text><text x="86" y="66" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">12 files</text><line x1="148" y1="53" x2="162" y2="53" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq73)"/><rect x="164" y="24" width="124" height="58" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cspq73)"/><text x="226" y="50" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#4F46E5;">Sample file</text><text x="226" y="66" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">top rows, headers</text><line x1="288" y1="53" x2="302" y2="53" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq73)"/><rect x="304" y="24" width="124" height="58" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cspq73)"/><text x="366" y="50" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#4F46E5;">Combined</text><text x="366" y="66" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">no Total, trim</text><line x1="428" y1="53" x2="442" y2="53" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq73)"/><rect x="444" y="24" width="124" height="58" rx="12" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1" filter="url(#cspq73)"/><text x="506" y="50" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#0D9488;">PivotTable</text><text x="506" y="66" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">240 rows, 6325</text><rect x="304" y="100" width="264" height="28" rx="14" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="436" y="118" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">Total rows kept: 252 rows, 12650</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Combine the Monthly messy folder. Each file has rows above its headings, so in <span class="hl">Transform Sample File</span> remove them and use the first row as headers: every file gets those steps. If the combined query errors, delete its Changed Type step.</p>
+        <p>Filter out the Total rows and trim Region: 240 rows, worth 6325. <span class="bad">Keep the Total rows and you get 252 rows and 12650.</span> Load it to a PivotTable.</p>
+        <p class="close">Clean one file, and every file is cleaned.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Combine the folder, clean it, load it and check the total.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Practice page: a report with a title, Region named once per block, a subtotal, a blank row and a Grand total, cleaned by removing top rows, filling Region down, filtering out empty Product, removing the Total column and unpivoting, giving 150 rows worth 6325.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 74</div>
+        <span class="pill">Practice</span>
+      </div>
+      <h1 class="title">Practice: Someone Else's Report</h1>
+      <div class="sub">Turn a report built for people into a list.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a report with a title, Region named once per block, a subtotal, a blank row and a Grand total, cleaned by removing top rows, filling Region down, filtering out empty Product, removing the Total column and unpivoting, giving 150 rows worth 6325."><defs><marker id="arpq74" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq74" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="10" width="250" height="22" rx="0" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="34" y="25" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#DC2626;">Corner Shop</text><text x="110" y="25" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#1A1A2E;"></text><line x1="32" y1="21" x2="98.9" y2="21" stroke="#DC2626" stroke-width="1.5"/><rect x="24" y="32" width="250" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="34" y="47" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E;">Region</text><text x="110" y="47" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#1A1A2E;">Product   Jan   Feb ...   Total</text><rect x="24" y="54" width="250" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="34" y="69" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#1A1A2E;">North</text><text x="110" y="69" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#1A1A2E;">Notebook</text><rect x="24" y="76" width="250" height="22" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="34" y="91" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#1A1A2E;"></text><text x="110" y="91" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#1A1A2E;">Pen</text><rect x="24" y="98" width="250" height="22" rx="0" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="34" y="113" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#DC2626;">North total</text><text x="110" y="113" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#1A1A2E;"></text><line x1="32" y1="109" x2="98.9" y2="109" stroke="#DC2626" stroke-width="1.5"/><rect x="24" y="120" width="250" height="22" rx="0" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="34" y="135" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#DC2626;"></text><text x="110" y="135" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#1A1A2E;"></text><rect x="24" y="142" width="250" height="22" rx="0" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="34" y="157" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#DC2626;">Grand total</text><text x="110" y="157" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#1A1A2E;"></text><line x1="32" y1="153" x2="98.9" y2="153" stroke="#DC2626" stroke-width="1.5"/><text x="34" y="91" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#B45309;">(blank)</text><rect x="300" y="10" width="268" height="24" rx="6" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="310" y="26" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Remove top rows, headers</text><rect x="300" y="38" width="268" height="24" rx="6" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="310" y="54" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Fill Down Region</text><rect x="300" y="66" width="268" height="24" rx="6" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="310" y="82" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Filter out empty Product</text><rect x="300" y="94" width="268" height="24" rx="6" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="310" y="110" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Remove the Total column</text><rect x="300" y="122" width="268" height="24" rx="6" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="310" y="138" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Unpivot Other Columns</text><text x="300" y="166" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#0D9488;">150 rows, worth 6325</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Open the Report sheet in Sales by month report.xlsx. Remove the rows above the headings and promote them, fill Region down, and filter out rows with no Product: the subtotals, blank rows and Grand total go, leaving 20 product rows.</p>
+        <p>Remove the Total column first, or it <span class="bad">gets unpivoted as if it were a month</span>. Then select Region and Product and choose Unpivot Other Columns: <span class="good">150 rows, worth 6325</span>.</p>
+        <p class="close">Strip the decoration, then unpivot.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Remove the junk, unpivot the months and load the list.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Practice page: Year-end export.csv, with semicolons, title lines, mixed capitals, pound signs, repeated sales and a Total line, turned by steps you choose into a PivotTable by Region: North 2756, South 1256, East 839, West 1474, 240 rows worth 6325.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 75</div>
+        <span class="pill">Practice</span>
+      </div>
+      <h1 class="title">Practice: Messy File to PivotTable</h1>
+      <div class="sub">No steps this time: just the file and the answer.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: Year-end export.csv, with semicolons, title lines, mixed capitals, pound signs, repeated sales and a Total line, turned by steps you choose into a PivotTable by Region: North 2756, South 1256, East 839, West 1474, 240 rows worth 6325."><defs><marker id="arpq75" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq75" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="14" width="196" height="142" rx="10" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1" filter="url(#cspq75)"/><text x="36" y="34" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#DC2626;">Year-end export.csv</text><text x="38" y="52" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">semicolons</text><text x="38" y="69" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">title lines on top</text><text x="38" y="86" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">MIXED capitals</text><text x="38" y="103" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">a pound sign on Amount</text><text x="38" y="120" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">repeated sales</text><text x="38" y="137" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">a Total line</text><line x1="220" y1="85" x2="256" y2="85" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq75)"/><text x="284" y="98" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:600;fill:#4F46E5;">?</text><line x1="312" y1="85" x2="348" y2="85" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq75)"/><rect x="352" y="14" width="216" height="142" rx="10" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1" filter="url(#cspq75)"/><text x="364" y="34" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#0D9488;">PivotTable by Region</text><text x="368" y="56" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">North</text><text x="552" y="56" text-anchor="end" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">2756</text><text x="368" y="78" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">South</text><text x="552" y="78" text-anchor="end" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">1256</text><text x="368" y="100" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">East</text><text x="552" y="100" text-anchor="end" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">839</text><text x="368" y="122" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">West</text><text x="552" y="122" text-anchor="end" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">1474</text><text x="368" y="146" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">240 rows, 6325</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Copy Year-end export.csv to a folder of your own, and build a query and a PivotTable from it. No steps are given: <span class="hl">look at the data and decide</span>. It has 243 sale lines, and 3 of them are repeats.</p>
+        <p>You're done when the query has 240 rows, worth 6325, and a PivotTable by Region shows <span class="good">North 2756, South 1256, East 839 and West 1474</span>. Then add a sale to the file, save it, and Refresh All.</p>
+        <p class="close">Messy file in, refreshing PivotTable out.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Copy the file and build the query and PivotTable with no steps given.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Power Query page: four slips and their fixes: every query loaded to a sheet, fixed with Only Create Connection; forgetting to refresh, fixed with Refresh All; typing over the result, fixed by changing the query; cleaning by hand beside it, fixed by making it a step.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 76</div>
+        <span class="pill">Power Query</span>
+      </div>
+      <h1 class="title">Mistakes Almost Everyone Makes</h1>
+      <div class="sub">The usual slips, and the fix for each.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: four slips and their fixes: every query loaded to a sheet, fixed with Only Create Connection; forgetting to refresh, fixed with Refresh All; typing over the result, fixed by changing the query; cleaning by hand beside it, fixed by making it a step."><defs><marker id="arpq76" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq76" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="10" width="250" height="28" rx="6" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="34" y="28" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">Every query loaded to a sheet</text><line x1="274" y1="24" x2="310" y2="24" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq76)"/><rect x="314" y="10" width="254" height="28" rx="6" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="324" y="28" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Only Create Connection</text><rect x="24" y="44" width="250" height="28" rx="6" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="34" y="62" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">Forgot to refresh</text><line x1="274" y1="58" x2="310" y2="58" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq76)"/><rect x="314" y="44" width="254" height="28" rx="6" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="324" y="62" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Refresh All</text><rect x="24" y="78" width="250" height="28" rx="6" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="34" y="96" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">Typed over the result</text><line x1="274" y1="92" x2="310" y2="92" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq76)"/><rect x="314" y="78" width="254" height="28" rx="6" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="324" y="96" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">change the query</text><rect x="24" y="112" width="250" height="28" rx="6" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="34" y="130" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">Cleaned by hand beside it</text><line x1="274" y1="126" x2="310" y2="126" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq76)"/><rect x="314" y="112" width="254" height="28" rx="6" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="324" y="130" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">make it a step</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Loading every query to a sheet fills the workbook with copies: <span class="good">load helper queries as connections only</span>. Forgetting to refresh leaves old numbers. Even the editor's preview is a cached copy, and a message says when it may be days old.</p>
+        <p>Typing over a loaded result, or fixing cells by hand beside it, <span class="bad">isn't a step</span>, so the next refresh won't repeat it. Put every fix in the query, on a copy of a column if you're unsure, and take control of Changed Type when it guesses wrong.</p>
+        <p class="close">If it isn't a step, it won't happen again.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Check your queries against the list of slips.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Power Query page: your messy list cleaned by Power Query steps that work in Excel and in Power BI Desktop with the same editor, refreshed by hand, on a schedule or by code.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 77</div>
+        <span class="pill">Power Query</span>
+      </div>
+      <h1 class="title">Where to Go After Power Query</h1>
+      <div class="sub">The same editor, in more places.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: your messy list cleaned by Power Query steps that work in Excel and in Power BI Desktop with the same editor, refreshed by hand, on a schedule or by code."><defs><marker id="arpq77" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq77" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="40" width="130" height="56" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cspq77)"/><text x="89" y="65" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#1A1A2E;">Your messy list</text><text x="89" y="81" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">any source</text><line x1="154" y1="68" x2="184" y2="68" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq77)"/><rect x="188" y="40" width="150" height="56" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cspq77)"/><text x="263" y="65" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#4F46E5;">Power Query</text><text x="263" y="81" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">your steps</text><line x1="338" y1="60" x2="384" y2="34" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq77)"/><line x1="338" y1="76" x2="384" y2="102" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq77)"/><rect x="388" y="10" width="180" height="52" rx="12" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1" filter="url(#cspq77)"/><text x="478" y="33" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#0D9488;">Excel</text><text x="478" y="49" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">same editor</text><rect x="388" y="78" width="180" height="52" rx="12" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1" filter="url(#cspq77)"/><text x="478" y="101" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#0D9488;">Power BI Desktop</text><text x="478" y="117" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">same editor</text><rect x="24" y="128" width="108" height="24" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="78" y="144" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#1A1A2E;">refresh by hand</text><rect x="140" y="128" width="108" height="24" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="194" y="144" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#1A1A2E;">on a schedule</text><rect x="256" y="128" width="108" height="24" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="310" y="144" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#1A1A2E;">by code</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>What you've learned isn't only for Excel. Power Query is also in <span class="hl">Power BI Desktop</span>, and the online versions share the same core editor, though their connectors differ.</p>
+        <p>Queries can be refreshed by hand, as you've done, on a schedule in products such as Power BI, or by code. Start with one messy list of your own, and <span class="good">clean it once, for good</span>.</p>
+        <p class="close">Clean it once. Refresh it every time.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Pick one messy list of your own and decide which steps it needs.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
   </main>
 
 </body>

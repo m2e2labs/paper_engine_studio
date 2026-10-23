@@ -3832,3 +3832,27 @@ in seconds. It is never printed: the book says things in its own words.
 - **Status:** accepted as F309, 2026-10-22
 
 ---
+
+## R320 · Clean every file in Transform Sample file
+- **Claim:** When files in a folder each have extra rows above the headings, you remove them in the Transform Sample file query, and each step there is applied to every file in the folder before they are combined.
+- **Source:** Microsoft Learn, "Combine CSV files": https://learn.microsoft.com/power-query/combine-files-csv
+- **Quote:** "To make this change in each file before you combine them, select the Transform Sample file query in the Queries pane on the left side of your screen."
+- **Kind:** reference
+- **Retrieved:** 2026-10-23
+- **For:** Practice: Monthly Messy Files
+- **Status:** accepted as F310, 2026-10-23
+- **Verified:** 2026-10-23, quote found on the page
+
+---
+
+## R321 · Check the combined query's last step
+- **Claim:** If your changes to the Transform Sample file query change the column names or kinds, check the last step of the combined query: a Changed Type step there can give an error.
+- **Source:** Microsoft Learn, "Combine files overview": https://learn.microsoft.com/power-query/combine-files-overview
+- **Quote:** "If any of the changes affect column names or column data types, be sure to check the last step of your output query."
+- **Kind:** reference
+- **Retrieved:** 2026-10-23
+- **For:** Practice: Monthly Messy Files
+- **Status:** accepted as F311, 2026-10-23
+- **Verified:** 2026-10-23, quote found on the page
+
+---

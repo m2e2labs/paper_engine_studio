@@ -559,7 +559,7 @@ menu (Using Locale), the Navigator and the Text/CSV preview. Excel names steps i
 - **Use when:** always. **Skip when:** never.
 - **Action:** "Combine the folder, clean it, load it and check the total."
 - **Band:** diagram (a folder of files becoming a PivotTable)
-- **Facts:** F300
+- **Facts:** F300, F310, F311
 
 #### Practice: Someone Else's Report
 - **What:** Take a report built for people, with titles, subtotals and months across the top, and turn it into a clean list.

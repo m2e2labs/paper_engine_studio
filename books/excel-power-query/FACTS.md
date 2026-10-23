@@ -2495,3 +2495,19 @@ findings appear here.
 - **Checked:** 2026-10-22
 
 ---
+
+## F310 · Clean every file in Transform Sample file
+- **Claim:** When files in a folder each have extra rows above the headings, you remove them in the Transform Sample file query, and each step there is applied to every file in the folder before they are combined.
+- **Source:** Microsoft Learn, "Combine CSV files": https://learn.microsoft.com/power-query/combine-files-csv
+- **Kind:** reference
+- **Checked:** 2026-10-23
+
+---
+
+## F311 · Check the combined query's last step
+- **Claim:** If your changes to the Transform Sample file query change the column names or kinds, check the last step of the combined query: a Changed Type step there can give an error.
+- **Source:** Microsoft Learn, "Combine files overview": https://learn.microsoft.com/power-query/combine-files-overview
+- **Kind:** reference
+- **Checked:** 2026-10-23
+
+---
