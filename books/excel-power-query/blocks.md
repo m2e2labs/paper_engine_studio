@@ -522,7 +522,7 @@ menu (Using Locale), the Navigator and the Text/CSV preview. Excel names steps i
 - **Use when:** always, at the end of the part. **Skip when:** never.
 - **Action:** "Break the query, read the message and fix it."
 - **Band:** diagram (the three breaks and the fix for each)
-- **Facts:** F256
+- **Facts:** F256, F104, F244, F247, F248
 
 ## Part 8 · Putting it to work
 

@@ -2673,7 +2673,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing a Query
-- **Status:** new
+- **Status:** rejected, 2026-10-23
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3393,7 +3393,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** The Join Kinds in Plain Words
-- **Status:** new
+- **Status:** rejected, 2026-10-23
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3405,7 +3405,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing a Query
-- **Status:** new
+- **Status:** rejected, 2026-10-23
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3417,7 +3417,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing a Query
-- **Status:** new
+- **Status:** rejected, 2026-10-23
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
@@ -3429,7 +3429,7 @@ in seconds. It is never printed: the book says things in its own words.
 - **Kind:** reference
 - **Retrieved:** 2026-10-15
 - **For:** Refreshing a Query
-- **Status:** new
+- **Status:** rejected, 2026-10-23
 - **Verified:** 2026-10-15, quote found on the page
 
 ---
