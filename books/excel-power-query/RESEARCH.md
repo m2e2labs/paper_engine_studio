@@ -3808,3 +3808,23 @@ in seconds. It is never printed: the book says things in its own words.
 - **Verified:** 2026-10-19, quote found on the page
 
 ---
+
+## R318 · Export sheet opens with the title as heading
+- **Claim:** Opened from the Export sheet of Corner Shop export.xlsx, Power Query promotes the title, Corner Shop sales export, as the first column's heading; the real headings sit in the third row of the preview, and the status bar shows 254 rows.
+- **Source:** My own work: the Export sheet opened with Get Data, From Excel Workbook and Transform Data in Excel 16 (build 20430), captured by script on 2026-10-22; the same steps replayed in Excel's Power Query engine give 254 rows.
+- **Kind:** measurement
+- **Retrieved:** 2026-10-22
+- **For:** Using the First Row as Headers
+- **Status:** accepted as F308, 2026-10-22
+
+---
+
+## R319 · Export sheet cleans to 240 rows
+- **Claim:** Cleaning the Export sheet (remove the top 2 rows, use the first row as headers, remove blank rows, remove the bottom row, fill down Region, trim, replace Nrth, capitalise Product, remove the pound sign, change Amount to a number, remove duplicates on Sale ID) gives 240 rows worth 6325: 6 blank rows and 4 repeated sales go, and no errors are left.
+- **Source:** My own work: the steps replayed as M in Excel 16's Power Query engine on 2026-10-22, matching answers.json (export rows_after_cleaning 240, total_after_cleaning 6325).
+- **Kind:** measurement
+- **Retrieved:** 2026-10-22
+- **For:** Practice: A Clean Sales List
+- **Status:** accepted as F309, 2026-10-22
+
+---

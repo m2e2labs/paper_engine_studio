@@ -178,14 +178,14 @@ menu (Using Locale), the Navigator and the Text/CSV preview. Excel names steps i
 - **Use when:** the columns are called Column1, Column2. **Skip when:** the headings already arrive.
 - **Action:** "Choose Use First Row as Headers on the messy file."
 - **Band:** diagram (headings sitting in the first data row, then moved up)
-- **Facts:** F85, F86, F87, F88, F89, F91
+- **Facts:** F85, F86, F87, F88, F89, F91, F308
 
 #### Removing Junk Rows at the Top
 - **What:** Reports often start with a title and a blank line. Remove Rows, Remove Top Rows drops a set number of rows from the top.
 - **Use when:** the file has a title above the headings. **Skip when:** it starts with headings.
 - **Action:** "Remove the top rows above the headings."
 - **Band:** diagram (a title block above the headings being removed)
-- **Facts:** F90, F91, F92, F93
+- **Facts:** F90, F91, F92, F93, F308, F309
 
 #### Removing Blank Rows
 - **What:** Blank rows break a list. Remove Rows, Remove Blank Rows drops the ones that are completely empty.
@@ -248,7 +248,7 @@ menu (Using Locale), the Navigator and the Text/CSV preview. Excel names steps i
 - **Use when:** always, at the end of the part. **Skip when:** never.
 - **Action:** "Clean the messy sales list and check its row count and total."
 - **Band:** diagram (the messy list, the finished clean list and the totals to check)
-- **Facts:** F123, F124, F125
+- **Facts:** F123, F124, F125, F309, F308
 
 ## Part 4 · Choosing the rows you want
 

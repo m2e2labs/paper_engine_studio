@@ -520,6 +520,292 @@
       <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
     </section>
 
+    <section class="sheet bb snug">
+      <h2 class="sr">Cleaning page: Power Query has taken the title Corner Shop sales export as the first heading, with the real headings Sale ID, Sale date and Region sitting in a lower row.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 20</div>
+        <span class="pill">Cleaning</span>
+      </div>
+      <h1 class="title">Using the First Row as Headers</h1>
+      <div class="sub">Check the headings are the real ones.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: Power Query has taken the title Corner Shop sales export as the first heading, with the real headings Sale ID, Sale date and Region sitting in a lower row."><defs><marker id="arpq20" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq20" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><text x="24" y="14" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#5B6472;letter-spacing:.3px;">WHAT POWER QUERY GUESSED</text><rect x="24" y="24" width="170" height="26" rx="0" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="34" y="41" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">Corner Shop sales export</text><rect x="194" y="24" width="90" height="26" rx="0" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="204" y="41" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">Column2</text><rect x="284" y="24" width="90" height="26" rx="0" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="294" y="41" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">Column3</text><rect x="24" y="50" width="350" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="34" y="66" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;fill:#1A1A2E;">Exported 05/01/2026 from the till system</text><rect x="24" y="74" width="350" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="34" y="90" text-anchor="start" style="font-family:'Inter',sans-serif;font-style:italic;font-size:11.5px;fill:#94A3B8;">null</text><rect x="24" y="98" width="350" height="24" rx="0" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="34" y="114" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;fill:#4F46E5;">Sale ID | Sale date | Region</text><rect x="24" y="122" width="350" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="34" y="138" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;fill:#1A1A2E;">S0001 | 03/01/2025 | North</text><text x="384" y="120" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">the real headings</text><text x="384" y="136" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">are down here</text><text x="24" y="166" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;letter-spacing:.3px;">AFTER: SALE ID, SALE DATE, REGION ON TOP</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say the first heading on the Export sheet says Corner Shop sales export. Power Query often spots headings, but <span class="bad">its guess isn't always right</span>: here it took the title.</p>
+        <p>Once the real headings are the first row, choose Home, <span class="hl">Use First Row as Headers</span>. The arrow beside it has Use Headers as First Row, which moves them back. <span class="good">Each column gets its proper name.</span></p>
+        <p class="close">Check the headings before you trust a column.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Open the Export sheet in the editor and read its first heading.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Cleaning page: the Exported line and a blank line above the real headings, marked Remove Top Rows: 2, then the headings row promoted.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 21</div>
+        <span class="pill">Cleaning</span>
+      </div>
+      <h1 class="title">Removing Junk Rows at the Top</h1>
+      <div class="sub">Titles and blank lines above the headings have to go.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the Exported line and a blank line above the real headings, marked Remove Top Rows: 2, then the headings row promoted."><defs><marker id="arpq21" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq21" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="14" width="330" height="28" rx="0" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="34" y="32" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;fill:#DC2626;">Exported 05/01/2026 from the till system</text><rect x="24" y="42" width="330" height="28" rx="0" fill="#FFFFFF" stroke="#DC2626" stroke-width="1" stroke-dasharray="4 3"/><rect x="24" y="70" width="330" height="28" rx="0" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="34" y="88" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;fill:#4F46E5;">Sale ID | Sale date | Region</text><rect x="24" y="98" width="330" height="28" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="34" y="116" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;fill:#1A1A2E;">S0001 | 03/01/2025 | North</text><rect x="24" y="126" width="330" height="28" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="34" y="144" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;fill:#1A1A2E;">S0002 | 06/01/2025 | East</text><path d="M362 16 h8 v52 h-8" fill="none" stroke="#DC2626" stroke-width="1.5"/><text x="380" y="38" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">Remove Top Rows: 2</text><text x="380" y="54" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">they aren't sales</text><path d="M362 72 h8 v24 h-8" fill="none" stroke="#4F46E5" stroke-width="1.5"/><text x="380" y="88" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">then Use First Row</text><text x="380" y="104" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">as Headers</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say the export starts with a title, an Exported line and a blank line. <span class="bad">While they sit on top, the headings can't be promoted.</span></p>
+        <p>Choose Home, Remove Rows, <span class="hl">Remove Top Rows</span>, and type how many to drop: 2 on the Export sheet. Then use the first row as headers. Remove Bottom Rows does the same at the end, for totals and notes.</p>
+        <p class="close">Count the junk, remove it, then promote.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>In the Export query, choose Remove Top Rows, type 2, then choose Use First Row as Headers.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Cleaning page: a list with two empty rows showing null, and after Remove Blank Rows the same list with no gaps.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 22</div>
+        <span class="pill">Cleaning</span>
+      </div>
+      <h1 class="title">Removing Blank Rows</h1>
+      <div class="sub">Empty rows break a list. Drop them in one step.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 162" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a list with two empty rows showing null, and after Remove Blank Rows the same list with no gaps."><defs><marker id="arpq22" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq22" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="10" width="170" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="27" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Region</text><rect x="24" y="36" width="170" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="52" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">North</text><rect x="24" y="60" width="170" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="76" text-anchor="start" style="font-family:'Inter',sans-serif;font-style:italic;font-size:11.5px;fill:#94A3B8;">null</text><rect x="24" y="84" width="170" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="100" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">East</text><rect x="24" y="108" width="170" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="124" text-anchor="start" style="font-family:'Inter',sans-serif;font-style:italic;font-size:11.5px;fill:#94A3B8;">null</text><rect x="24" y="132" width="170" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="148" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">West</text><rect x="24" y="60" width="170" height="24" rx="0" fill="none" stroke="#DC2626" stroke-width="1" stroke-dasharray="4 3"/><rect x="24" y="108" width="170" height="24" rx="0" fill="none" stroke="#DC2626" stroke-width="1" stroke-dasharray="4 3"/><line x1="204" y1="82" x2="380" y2="82" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq22)"/><text x="292" y="72" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Remove Blank Rows</text><rect x="398" y="10" width="170" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="410" y="27" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Region</text><rect x="398" y="36" width="170" height="24" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="410" y="52" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">North</text><rect x="398" y="60" width="170" height="24" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="410" y="76" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">East</text><rect x="398" y="84" width="170" height="24" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="410" y="100" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">West</text><text x="483" y="146" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">no gaps left</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say empty rows are scattered through the export. Each cell shows null, Power Query's word for nothing, and <span class="bad">they sit in the list like sales with nothing in them</span>.</p>
+        <p>Choose Home, Remove Rows, <span class="hl">Remove Blank Rows</span>. It looks at the whole row, so a row goes only when every cell is empty. To spot gaps first, turn on View, Column Quality.</p>
+        <p class="close">A row with nothing in it isn't a sale.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>In the Export query, choose Remove Rows, then Remove Blank Rows.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Cleaning page: the export's ten column headings, with Till and Exported by crossed out and the other eight kept.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 23</div>
+        <span class="pill">Cleaning</span>
+      </div>
+      <h1 class="title">Choosing Which Columns to Keep</h1>
+      <div class="sub">Keep the columns you use, and say which by name.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the export's ten column headings, with Till and Exported by crossed out and the other eight kept."><defs><marker id="arpq23" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq23" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><text x="24" y="14" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#5B6472;letter-spacing:.3px;">TICK THE ONES TO KEEP</text><rect x="24" y="26" width="104" height="28" rx="14" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="76" y="44" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Sale ID</text><rect x="134" y="26" width="104" height="28" rx="14" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="186" y="44" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Sale date</text><rect x="244" y="26" width="104" height="28" rx="14" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="296" y="44" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Region</text><rect x="354" y="26" width="104" height="28" rx="14" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="406" y="44" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Salesperson</text><rect x="464" y="26" width="104" height="28" rx="14" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="516" y="44" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Product</text><rect x="24" y="62" width="104" height="28" rx="14" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="76" y="80" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Qty</text><rect x="134" y="62" width="104" height="28" rx="14" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="186" y="80" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Unit price</text><rect x="244" y="62" width="104" height="28" rx="14" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="296" y="80" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Amount</text><rect x="354" y="62" width="104" height="28" rx="14" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="406" y="80" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">Till</text><line x1="364" y1="76.0" x2="448" y2="76.0" stroke="#DC2626" stroke-width="1.5"/><rect x="464" y="62" width="104" height="28" rx="14" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="516" y="80" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">Exported by</text><line x1="474" y1="76.0" x2="558" y2="76.0" stroke="#DC2626" stroke-width="1.5"/><text x="24" y="128" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:600;fill:#0D9488;">Till and Exported by go; the rest stay.</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say the export has columns you never use, like Till and Exported by. Home, <span class="hl">Choose Columns</span> lists every column with a tick box; clear the ones you don't want.</p>
+        <p>You can also Ctrl+click columns and choose Remove Columns, or Remove Other Columns to keep only the ones selected. But <span class="bad">Remove Other Columns drops any column added to the source later</span>, while removing named columns lets new ones through.</p>
+        <p class="close">Decide which columns stay, by name.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Choose Home, Choose Columns, and clear Till and Exported by.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Cleaning page: the heading Qty renamed to Quantity by double-clicking it and typing, while the source keeps Qty.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 24</div>
+        <span class="pill">Cleaning</span>
+      </div>
+      <h1 class="title">Renaming Columns</h1>
+      <div class="sub">Plain names now save confusion in every report later.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the heading Qty renamed to Quantity by double-clicking it and typing, while the source keeps Qty."><defs><marker id="arpq24" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq24" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="34" width="160" height="58" rx="12" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1" filter="url(#cspq24)"/><text x="104" y="60" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#1A1A2E;">Qty</text><text x="104" y="76" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">the export's heading</text><line x1="184" y1="63" x2="398" y2="63" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq24)"/><text x="291" y="53" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">double-click, type</text><rect x="408" y="34" width="160" height="58" rx="12" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1" filter="url(#cspq24)"/><text x="488" y="60" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#0D9488;">Quantity</text><text x="488" y="76" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">the name you'll read</text><rect x="24" y="106" width="220" height="24" rx="12" fill="#FDF6E8" stroke="#EFDCB6" stroke-width="1"/><text x="134" y="122" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#B45309;">the source keeps Qty</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say a heading says Qty. You'll read that name in every PivotTable and formula, so <span class="hl">make it plain</span>.</p>
+        <p>Select the column and choose Transform, Rename, or double-click the heading, and type. One at a time, and no two columns can share a name. <span class="good">The source keeps its heading</span>, but if someone renames a heading in the source, <span class="bad">the query may say the column wasn't found</span>.</p>
+        <p class="close">Rename it once in the query, not in every report.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Double-click the Qty heading and type Quantity.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Cleaning page: North and North with a trailing space counted as two regions, then one North after Transform, Format, Trim.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 25</div>
+        <span class="pill">Cleaning</span>
+      </div>
+      <h1 class="title">Trimming Stray Spaces</h1>
+      <div class="sub">North, and North with a space, are two different names.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: North and North with a trailing space counted as two regions, then one North after Transform, Format, Trim."><defs><marker id="arpq25" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq25" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="24" width="150" height="30" rx="15" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="99" y="43" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">North</text><rect x="24" y="66" width="150" height="30" rx="15" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="99" y="85" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">North</text><rect x="130" y="74" width="14" height="14" rx="3" fill="#DC2626" stroke="#DC2626" stroke-width="1"/><text x="152" y="116" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;fill:#DC2626;">a space you can't see</text><line x1="186" y1="60" x2="394" y2="60" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq25)"/><text x="290" y="50" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Transform, Format, Trim</text><rect x="408" y="45" width="160" height="30" rx="15" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="488" y="64" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">North</text><text x="488" y="96" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">one region again</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say a PivotTable lists North two times. One has <span class="bad">a space at the end you can't see</span>, so it counts as a different region.</p>
+        <p>Choose Transform, Format, <span class="hl">Trim</span>: spaces at the start and end go, and spaces between words stay. Clean, on the same menu, removes hidden characters such as line feeds. Microsoft warns that changing the column itself can cause refresh errors; Add Column, Format makes a new one instead.</p>
+        <p class="close">Trim every text column that comes from a system.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Select the Region column and choose Transform, Format, Trim.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Cleaning page: mug, MUG and Mug counted as three products, then one Mug after Format, Capitalize Each Word.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 26</div>
+        <span class="pill">Cleaning</span>
+      </div>
+      <h1 class="title">Fixing Capital Letters</h1>
+      <div class="sub">To Power Query, MUG and Mug are different products.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: mug, MUG and Mug counted as three products, then one Mug after Format, Capitalize Each Word."><defs><marker id="arpq26" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq26" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="14" width="120" height="30" rx="15" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="84" y="33" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">mug</text><rect x="24" y="52" width="120" height="30" rx="15" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="84" y="71" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">MUG</text><rect x="24" y="90" width="120" height="30" rx="15" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="84" y="109" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">Mug</text><line x1="156" y1="68" x2="394" y2="68" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq26)"/><text x="275" y="58" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Format, Capitalize Each Word</text><rect x="408" y="53" width="160" height="30" rx="15" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="488" y="72" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">Mug</text><text x="488" y="104" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">one product again</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say Product has Mug, MUG and mug. Power Query is case-sensitive, so <span class="bad">they count as different products</span>.</p>
+        <p>Choose Transform, Format, then lowercase, UPPERCASE or <span class="hl">Capitalize Each Word</span>, which capitalises each word's first letter and lowers the rest. Do it before removing duplicates, because that check minds capitals too.</p>
+        <p class="close">Pick one spelling and let Power Query keep it.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Select the Product column and choose Transform, Format, Capitalize Each Word.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Cleaning page: a Region column with Nrth misspelt, the Replace Values box changing Nrth to North, and the corrected column.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 27</div>
+        <span class="pill">Cleaning</span>
+      </div>
+      <h1 class="title">Replacing Values</h1>
+      <div class="sub">Swap a wrong spelling for the right one, every time.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a Region column with Nrth misspelt, the Replace Values box changing Nrth to North, and the corrected column."><defs><marker id="arpq27" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq27" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="10" width="130" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="27" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Region</text><rect x="24" y="36" width="130" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="52" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">North</text><rect x="24" y="60" width="130" height="24" rx="0" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="36" y="76" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#DC2626;">Nrth</text><rect x="24" y="84" width="130" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="100" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">East</text><rect x="178" y="24" width="236" height="96" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1" filter="url(#cspq27)"/><text x="194" y="46" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#4F46E5;">Replace Values</text><text x="194" y="70" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">Value To Find</text><rect x="300" y="57" width="100" height="20" rx="10" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="350" y="71" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#1A1A2E;">Nrth</text><text x="194" y="100" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">Replace With</text><rect x="300" y="87" width="100" height="20" rx="10" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="350" y="101" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#1A1A2E;">North</text><line x1="414" y1="70" x2="434" y2="70" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq27)"/><rect x="438" y="10" width="130" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="450" y="27" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Region</text><rect x="438" y="36" width="130" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="450" y="52" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">North</text><rect x="438" y="60" width="130" height="24" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="450" y="76" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">North</text><rect x="438" y="84" width="130" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="450" y="100" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">East</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say some rows say Nrth. Choose Transform, <span class="hl">Replace Values</span>, type Nrth in Value To Find and North in Replace With.</p>
+        <p>In a text column it replaces matching text inside each cell, unless you tick Match entire cell contents; in a number or date column it always replaces the whole cell. <span class="good">The source isn't changed.</span> The same box turns empty-looking cells into null, ready for Fill Down.</p>
+        <p class="close">Fix a misspelling once, in the query.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Select Region, choose Transform, Replace Values, and replace Nrth with North.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Cleaning page: sale S0075 listed twice in the Sale ID column, and once after Remove Duplicates.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 28</div>
+        <span class="pill">Cleaning</span>
+      </div>
+      <h1 class="title">Dropping Repeated Rows</h1>
+      <div class="sub">A repeated sale adds its amount again.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: sale S0075 listed twice in the Sale ID column, and once after Remove Duplicates."><defs><marker id="arpq28" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq28" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="10" width="150" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="27" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Sale ID</text><rect x="24" y="36" width="150" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="52" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;fill:#1A1A2E;">S0074</text><rect x="24" y="60" width="150" height="24" rx="0" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="36" y="76" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;fill:#DC2626;">S0075</text><rect x="24" y="84" width="150" height="24" rx="0" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1"/><text x="36" y="100" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;fill:#DC2626;">S0075</text><rect x="24" y="108" width="150" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="124" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;fill:#1A1A2E;">S0076</text><line x1="184" y1="72" x2="394" y2="72" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq28)"/><text x="289" y="62" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Remove Duplicates</text><rect x="418" y="10" width="150" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="430" y="27" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Sale ID</text><rect x="418" y="36" width="150" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="430" y="52" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;fill:#1A1A2E;">S0074</text><rect x="418" y="60" width="150" height="24" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="430" y="76" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;fill:#0D9488;">S0075</text><rect x="418" y="84" width="150" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="430" y="100" text-anchor="start" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;fill:#1A1A2E;">S0076</text><text x="493" y="130" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">each sale once</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say the export sent a few sales two times. <span class="bad">Each repeat adds its amount to every total again.</span></p>
+        <p>Select the column that should be unique, here Sale ID, and choose Home, Remove Rows, <span class="hl">Remove Duplicates</span>. The columns you select decide what counts as a repeat. Keep Rows, Keep Duplicates shows the repeats first. Capitals count, so fix them before this step.</p>
+        <p class="close">Pick the column that makes a row unique.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Select the Sale ID column and choose Remove Rows, Remove Duplicates.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Cleaning page: a Region column naming North and East once with null below, filled down so every row has its region.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 29</div>
+        <span class="pill">Cleaning</span>
+      </div>
+      <h1 class="title">Filling Down Empty Cells</h1>
+      <div class="sub">A region named once, with blanks below, needs filling in.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 162" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: a Region column naming North and East once with null below, filled down so every row has its region."><defs><marker id="arpq29" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq29" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="10" width="160" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="27" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Region</text><rect x="24" y="36" width="160" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="52" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">North</text><rect x="24" y="60" width="160" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="76" text-anchor="start" style="font-family:'Inter',sans-serif;font-style:italic;font-size:11.5px;fill:#94A3B8;">null</text><rect x="24" y="84" width="160" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="100" text-anchor="start" style="font-family:'Inter',sans-serif;font-style:italic;font-size:11.5px;fill:#94A3B8;">null</text><rect x="24" y="108" width="160" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="124" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">East</text><rect x="24" y="132" width="160" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="36" y="148" text-anchor="start" style="font-family:'Inter',sans-serif;font-style:italic;font-size:11.5px;fill:#94A3B8;">null</text><line x1="194" y1="82" x2="394" y2="82" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq29)"/><text x="294" y="72" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Fill, Down</text><rect x="408" y="10" width="160" height="26" rx="0" fill="#F6F7FA" stroke="#E7E9EF" stroke-width="1"/><text x="420" y="27" text-anchor="start" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:#1A1A2E;">Region</text><rect x="408" y="36" width="160" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="420" y="52" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">North</text><rect x="408" y="60" width="160" height="24" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="420" y="76" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">North</text><rect x="408" y="84" width="160" height="24" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="420" y="100" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">North</text><rect x="408" y="108" width="160" height="24" rx="0" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="1"/><text x="420" y="124" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;fill:#1A1A2E;">East</text><rect x="408" y="132" width="160" height="24" rx="0" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1"/><text x="420" y="148" text-anchor="start" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#0D9488;">East</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say the export names a region once and leaves the cells below empty until it changes. <span class="bad">Those rows belong to a region, but they don't say which.</span></p>
+        <p>Right-click the heading and choose <span class="hl">Fill, Down</span>: each null takes the last value above it. Fill only fills null cells, so cells that only look empty must become null first, with Replace Values. <span class="good">Every row gets its own region.</span></p>
+        <p class="close">Fill the gaps from the value above.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Right-click the Region heading and choose Fill, then Down.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
+    <section class="sheet bb snug">
+      <h2 class="sr">Practice page: the messy Export sheet, 254 rows with the title on top, passing through ten cleaning steps to a clean list of 240 rows worth 6325.</h2>
+      <div class="tab"></div>
+      <div class="top">
+        <div class="eyebrow"><b>Excel Power Query for Absolute Beginners</b> · No. 30</div>
+        <span class="pill">Practice</span>
+      </div>
+      <h1 class="title">Practice: A Clean Sales List</h1>
+      <div class="sub">Every step from this part, on one export.</div>
+      <hr class="rule">
+      <div class="diagram">
+        <svg width="100%" viewBox="0 0 592 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: the messy Export sheet, 254 rows with the title on top, passing through ten cleaning steps to a clean list of 240 rows worth 6325."><defs><marker id="arpq30" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="cspq30" x="-20%" y="-25%" width="140%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.07"/></filter></defs><rect x="24" y="50" width="140" height="64" rx="12" fill="#FEF1F1" stroke="#F8D6D6" stroke-width="1" filter="url(#cspq30)"/><text x="94" y="79" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#DC2626;">Export sheet</text><text x="94" y="95" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">254 rows, title on top</text><line x1="164" y1="82" x2="186" y2="82" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq30)"/><rect x="190" y="10" width="114" height="24" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="247" y="26" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Top rows</text><rect x="190" y="40" width="114" height="24" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="247" y="56" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Headers</text><rect x="190" y="70" width="114" height="24" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="247" y="86" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Blank rows</text><rect x="190" y="100" width="114" height="24" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="247" y="116" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Bottom row</text><rect x="190" y="130" width="114" height="24" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="247" y="146" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Fill down</text><rect x="310" y="10" width="114" height="24" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="367" y="26" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Trim</text><rect x="310" y="40" width="114" height="24" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="367" y="56" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Nrth to North</text><rect x="310" y="70" width="114" height="24" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="367" y="86" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Capitals</text><rect x="310" y="100" width="114" height="24" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="367" y="116" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">£ and number</text><rect x="310" y="130" width="114" height="24" rx="12" fill="#EEF0FE" stroke="#D5D8FA" stroke-width="1"/><text x="367" y="146" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;fill:#4F46E5;">Duplicates</text><line x1="424" y1="82" x2="444" y2="82" stroke="#94A3B8" stroke-width="1.75" marker-end="url(#arpq30)"/><rect x="448" y="50" width="120" height="64" rx="12" fill="#ECFBF7" stroke="#CDEFE8" stroke-width="1" filter="url(#cspq30)"/><text x="508" y="79" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;fill:#0D9488;">240 rows</text><text x="508" y="95" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:11px;fill:#5B6472;">worth 6325</text></svg>
+      </div>
+      <hr class="rule">
+      <div class="explain">
+        <p>Let's say the Export sheet from Corner Shop export.xlsx is open in the editor. Use every lesson in this part, in the order the drawing shows, starting with the top 2 rows and ending with duplicate Sale IDs.</p>
+        <p>Choose Transform, Count Rows: <span class="good">240 rows, worth 6325 in all.</span> The column profiles only cover the first 1,000 rows, so trust the count.</p>
+        <p class="close">Same mess every week. One query, every time.</p>
+      </div>
+      <div class="ask">
+        <span class="lbl">DO THIS NOW</span>
+        <p>Clean the Export sheet, then check for 240 rows worth 6325.</p>
+      </div>
+      <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Excel Power Query for Absolute Beginners</span></div>
+    </section>
+
   </main>
 
 </body>
