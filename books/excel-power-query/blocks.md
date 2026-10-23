@@ -422,7 +422,7 @@ menu (Using Locale), the Navigator and the Text/CSV preview. Excel names steps i
 - **Use when:** the reader doesn't know which join to pick. **Skip when:** they know.
 - **Action:** "Try two join kinds and compare the row counts."
 - **Band:** diagram (two circles, with a different part kept by each join kind)
-- **Facts:** F207, F208, F209, F210, F211, F277, F278, F279
+- **Facts:** F207, F208, F209, F210, F211, F277, F278, F279, F299
 
 #### Looking Up a Value With a Merge
 - **What:** A merge does what XLOOKUP does, for the whole list, and keeps working when the data changes. Show the Products sheet filling in a Category column.
@@ -443,7 +443,7 @@ menu (Using Locale), the Navigator and the Text/CSV preview. Excel names steps i
 - **Use when:** the reader has just combined tables. **Skip when:** no.
 - **Action:** "Compare the combined row count with the sum of the parts."
 - **Band:** diagram (a row-count check before and after a merge)
-- **Facts:** F204, F210, F218, F219
+- **Facts:** F204, F210, F218, F219, F285
 
 #### Practice: Combining Two Lists
 - **What:** Append two months of sales, merge in the Products sheet and check the row count and total.
