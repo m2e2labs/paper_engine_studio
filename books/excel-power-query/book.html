@@ -130,7 +130,31 @@
     .bb .foot .pg::before{ content:counter(pageno); }
   </style>
   <style>
-
+    /* ====================================================================
+       FRONT AND BACK MATTER, written by engine/tools/lib/matter.mjs from
+       book.json "matter". Scoped .sheet.gp.matter, on top of build-book's .gp.
+       ==================================================================== */
+    .gp.matter .mt-mid{ flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:0 12mm 18mm; }
+    .gp.matter.m-dedication .mt-mid p{ font-size:17px; line-height:1.6; font-style:italic; color:var(--ink); margin:0 0 6px; }
+    .gp.matter.m-epigraph blockquote{ margin:0; max-width:27em; }
+    .gp.matter.m-epigraph blockquote p{ font-family:"Space Grotesk",sans-serif; font-size:21px; line-height:1.45; letter-spacing:-.01em; color:var(--ink); margin:0 0 10px; }
+    .gp.matter .mt-mid .mt-by{ font-size:13.5px; font-style:normal; color:var(--muted); margin:16px 0 0; }
+    .gp.matter .mt-body{ margin-top:2px; overflow-wrap:anywhere; }
+    .gp.matter .mt-body p{ font-size:14.5px; line-height:1.6; color:var(--ink); margin:0 0 13px; max-width:40em; }
+    .gp.matter .mt-body h2{ font-family:"Space Grotesk",sans-serif; font-size:17px; font-weight:600; letter-spacing:-.01em; margin:20px 0 8px; }
+    .gp.matter .mt-body h2:first-child{ margin-top:0; }
+    .gp.matter .mt-body .mt-by{ font-family:"Space Grotesk",sans-serif; font-weight:600; color:var(--ink); margin-top:20px; }
+    .gp.matter .mt-items, .gp.matter .mt-sources{ list-style:none; margin:4px 0 0; padding:0; }
+    .gp.matter .mt-items li{ padding:0 0 12px; margin:0 0 12px; border-bottom:1px solid #EFF1F5; }
+    .gp.matter .mt-items .nm{ display:block; font-size:14.5px; font-weight:600; color:var(--ink); line-height:1.5; }
+    .gp.matter .mt-items .nt{ display:block; font-size:13px; line-height:1.55; color:var(--muted); }
+    .gp.matter .mt-sources li{ padding:0 0 10px; margin:0 0 10px; border-bottom:1px solid #EFF1F5; break-inside:avoid; }
+    .gp.matter .mt-sources .sh{ display:flex; align-items:baseline; gap:12px; line-height:1.5; }
+    .gp.matter .mt-sources .nm{ flex:0 0 auto; font-size:13.5px; font-weight:600; color:var(--ink); }
+    .gp.matter .mt-sources .sh .pg{ flex:1 1 0; min-width:0; text-align:right; }
+    .gp.matter .mt-sources .sr{ font-size:12px; line-height:1.5; color:var(--muted); }
+    .gp.matter .mt-sources .ck{ white-space:nowrap; }
+    .gp.matter .mt-sources .df{ font-size:13px; line-height:1.5; color:var(--ink); }
   </style>
 </head>
 <body>
@@ -323,6 +347,9 @@
             <div class="toc-row"><span class="nm">Practice: Messy File to PivotTable</span><span class="pg">89</span></div>
             <div class="toc-row"><span class="nm">Mistakes Almost Everyone Makes</span><span class="pg">90</span></div>
             <div class="toc-row"><span class="nm">Where to Go After Power Query</span><span class="pg">91</span></div>
+          </div>
+          <div class="toc-part">
+            <div class="toc-row"><span class="nm">Glossary</span><span class="pg">92</span></div>
           </div>
         </div>
         <div class="gp-foot"><span>Third Watch Press</span><span>Excel Power Query for Absolute Beginners</span></div>
@@ -2568,7 +2595,31 @@
       <div class="foot"><span class="brand">Third Watch Press</span><span class="pg"></span><span class="series">Putting it to work</span></div>
     </section>
 
-    <section id="s92" class="sheet gp index">
+    <section id="s92" class="sheet gp matter m-glossary" data-title="Glossary">
+      <div class="in">
+        <div class="gp-top"><div class="gp-tab"></div></div>
+        <h1 class="lp-title">Glossary</h1>
+        <hr class="gp-rule">
+        <div class="mt-body">
+          
+          <ol class="mt-sources">
+            <li><div class="sh"><span class="nm">Append</span><span class="pg">p. 63, 64, 69, 70</span></div><div class="sr df">putting one table's rows under another's, with columns matched by heading.</div></li>
+            <li><div class="sh"><span class="nm">Applied Steps</span><span class="pg">p. 14, 75</span></div><div class="sr df">the list of a query's steps, in order, on the right of the editor.</div></li>
+            <li><div class="sh"><span class="nm">Data Model</span><span class="pg">p. 73, 84</span></div><div class="sr df">tables kept inside the workbook for PivotTables to use.</div></li>
+            <li><div class="sh"><span class="nm">Merge</span><span class="pg">p. 44, 52, 63, 65, 66, 67, 69, 70</span></div><div class="sr df">joining two tables side by side on a column they share.</div></li>
+            <li><div class="sh"><span class="nm">Power Query</span><span class="pg">p. 8, 9, 10, 12, 15, 18, 19, 23, 24, 25, 29, 31, 35, 44, 53, 54, 83, 84, 85, 90, 91</span></div><div class="sr df">the part of Excel that brings data in and cleans it, recording each step so it can repeat them.</div></li>
+            <li><div class="sh"><span class="nm">Power Query Editor</span><span class="pg">p. 12</span></div><div class="sr df">the window where you build and change a query.</div></li>
+            <li><div class="sh"><span class="nm">Query</span><span class="pg">p. 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 23, 24, 25, 26, 27, 29, 30, 31, 33, 35, 36, 39, 41, 44, 47, 53, 54, 60, 64, 65, 68, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 83, 84, 85, 86, 87, 89, 90, 91</span></div><div class="sr df">a saved set of steps that reads data from a source and shapes it.</div></li>
+            <li><div class="sh"><span class="nm">Refresh</span><span class="pg">p. 8, 20, 21, 22, 23, 34, 41, 49, 58, 60, 67, 72, 73, 78, 79, 81, 83, 89, 90, 91</span></div><div class="sr df">running a query's steps again on the data in its source now.</div></li>
+            <li><div class="sh"><span class="nm">Step</span><span class="pg">p. 8, 13, 14, 15, 16, 23, 31, 37, 39, 41, 44, 45, 53, 60, 67, 68, 69, 75, 76, 77, 78, 80, 81, 85, 86, 87, 89, 90, 91</span></div><div class="sr df">one recorded action in a query, such as removing a column.</div></li>
+            <li><div class="sh"><span class="nm">Unpivot</span><span class="pg">p. 57, 59, 61, 88</span></div><div class="sr df">turning columns across the top, such as months, into rows.</div></li>
+          </ol>
+        </div>
+        <div class="gp-foot"><span>Third Watch Press</span><span>Excel Power Query for Absolute Beginners</span></div>
+      </div>
+    </section>
+
+    <section id="s93" class="sheet gp index">
       <div class="in">
         <div class="gp-top">
           <div class="gp-tab"></div>
@@ -2618,7 +2669,7 @@
       </div>
     </section>
 
-    <section id="s93" class="sheet gp index">
+    <section id="s94" class="sheet gp index">
       <div class="in">
         <div class="gp-top">
           <div class="gp-tab"></div>
